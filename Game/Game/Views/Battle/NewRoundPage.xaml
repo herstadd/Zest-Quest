@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.NewRoundPage">
+
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+
+            <StackLayout Style="{StaticResource VerticalStack}">
+
+                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+
+                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
+
+                <FlexLayout x:Name="PartyListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+
+                <FlexLayout x:Name="MonsterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                <StackLayout Padding="1"></StackLayout>
+
+                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

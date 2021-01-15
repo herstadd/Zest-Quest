@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.GamePage"
+             >
+
+    <ContentPage.Content>
+
+        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
+
+            <FlexLayout x:Name="flexLayout"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceAround"
+                        AlignContent="SpaceAround">
+
+                <StackLayout Style="{StaticResource CardImageTextBox}">
+
+                    <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageLargeStyle}"
+                        Clicked="VillageButton_Clicked"/>
+
+                    <Label 
+                        Text="Village"
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource CardImageTextBox}">
+
+                    <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageLargeStyle}"
+                        Clicked="DungeonButton_Clicked"/>
+
+                    <Label 
+                        Text="Dungeon"
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource CardImageTextBox}">
+
+                    <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageLargeStyle}"
+                        Clicked="AutobattleButton_Clicked"/>
+
+                    <Label 
+                        Text="Auto Battle"
+                        Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+            </FlexLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

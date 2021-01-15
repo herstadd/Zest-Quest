@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.ScorePage">
+
+    <ContentPage.Content>
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+            <StackLayout Style="{StaticResource VerticalStack}">
+
+            <Label Text="Score Page" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+            <Button Clicked="CloseButton_Clicked" Text="Close"/>
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label Text="Score : " Style="{StaticResource MessageStyle}"/>
+                <Label Text="0" x:Name="TotalScore" Style="{StaticResource MessageStyle}"/>
+            </StackLayout>
+
+            <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
+            <FlexLayout x:Name="CharacterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+            <Label Text="Monsters" Style="{StaticResource MessageStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label Text="Killed : " Style="{StaticResource LabelStyle}"/>
+                    <Label Text="0" x:Name="TotalKilled" Style="{StaticResource ValueStyle}"/>
+                </StackLayout>
+                <FlexLayout x:Name="MonsterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+            <Label Text="Items" Style="{StaticResource MessageStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}">
+                    <Label Text="Collected : " Style="{StaticResource LabelStyle}"/>
+                    <Label Text="0" x:Name="TotalCollected" Style="{StaticResource ValueStyle}"/>
+                </StackLayout>
+                <FlexLayout x:Name="ItemListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+                
+                <Button Clicked="CloseButton_Clicked" Text="Close"/>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

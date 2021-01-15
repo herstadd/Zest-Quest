@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Game.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+
+            <!--Colors -->
+
+            <!--
+                Light
+                    #BF895A
+                    #D9C6B0
+                    #733612
+                    #8C3D20
+                    #400D01
+                Dark
+                -->
+
+            <Color x:Key="PageBackgroundColor">Pink</Color>
+            <Color x:Key="ViewBackgroundColor">green</Color>
+            <Color x:Key="NavigationBarColor">orange</Color>
+
+            <Color x:Key="PrimaryBackgroundColor">red</Color>
+            <Color x:Key="SecondaryBackgroundColor">gray</Color>
+            <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
+            <Color x:Key="LightBackgroundColor">orange</Color>
+
+            <Color x:Key="PrimaryTextColor">lightblue</Color>
+            <Color x:Key="SecondaryTextColor">darkblue</Color>
+            <Color x:Key="TriciaryTextColor">darkgreen</Color>
+
+            <Color x:Key="TransparentColor">Transparent</Color>
+
+            <Color x:Key="BlockingColor">
+                <x:Arguments>
+                    <x:Double>0</x:Double>
+                    <x:Double>0</x:Double>
+                    <x:Double>0</x:Double>
+                    <x:Double>0.75</x:Double>
+                </x:Arguments>
+            </Color>
+
+            <!-- Battle Map Colors for Backgrounds -->
+            <Color x:Key="BattleMapTransparentColor">Transparent</Color>
+            <Color x:Key="BattleMapCharacterColor">purple</Color>
+            <Color x:Key="BattleMapMonsterColor">lavender</Color>
+            <Color x:Key="BattleMapDeathColor">lightgreen</Color>
+            <Color x:Key="BattleMapHitColor">darkorange</Color>
+            <Color x:Key="BattleMapMissColor">darkred</Color>
+            <Color x:Key="BattleMapLevelColor">skyblue</Color>
+
+            <!-- <Thickness x:Key="PageMargin">0</Thickness> -->
+            
+            <!-- Pages -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource SecondaryTextColor}" />
+            </Style>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+                <Setter Property="Padding" Value="10,10,10,10" />
+            </Style>
+
+            <!--<Style TargetType="ContentPage"
+                x:Key="BlockingPanel">
+                <Setter Property="BackgroundColor" Value="{StaticResource BlockingColor}" />
+                <Setter Property="HeightRequest" Value="400" />
+                <Setter Property="WidthRequest" Value="400" />
+            </Style>-->
+
+            <!--Global Styles for Views-->
+
+            <!-- Scroll View -->
+
+            <Style TargetType="ScrollView">
+                <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
+                <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
+            </Style>
+
+            <!-- Label -->
+
+            <Style TargetType="Label"
+                x:Key="LabelBaseStyle"
+                BaseResourceKey="LayoutFontSize">
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="LineBreakMode" Value="NoWrap" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ListStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="HeaderStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="LabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ValueStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ValueStyleMicro"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ValueStyleBattleMicro"
+                BasedOn="{StaticResource ValueStyleMicro}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="LineBreakMode" Value="NoWrap" />
+            </Style>
+            
+            <Style TargetType="Label"
+                x:Key="MessageStyle"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
+            </Style>
+
+            <!--<Style TargetType="Label"
+                x:Key="MessageLargeStyle"
+                BasedOn="{StaticResource MessageStyle}">
+                <Setter Property="FontSize" Value="Large" />
+            </Style>-->            
+            
+            <Style TargetType="Label"
+                x:Key="CenterMessageStyle"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="CenterMessageLargeStyle"
+                BasedOn="{StaticResource CenterMessageStyle}">
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+            
+            <!--<Style TargetType="Label"
+                x:Key="GridLabelStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="Padding" Value="3" />
+            </Style>-->
+
+            <!--<Style TargetType="Label"
+                x:Key="GridValueStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Padding" Value="3" />
+            </Style>-->
+
+            <Style TargetType="Label"
+                x:Key="PopupItemTextStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+            
+            <!-- Image -->
+            <Style TargetType="Image"
+                x:Key="ImageLargeStyle">
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Aspect" Value="Fill" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageMediumStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageSmallStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="PlayerBattleSmallStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="PlayerBattleMediumStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="WidthRequest" Value="75" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageBattleSmallStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageBattleMediumStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageBattleLargeStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="WidthRequest" Value="75" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="BattleMapPlayerSmallStyle"
+                BasedOn="{StaticResource ImageBattleSmallStyle}">
+            </Style>
+
+            <!-- ImageButton -->
+            <Style TargetType="ImageButton">
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <!-- ImageButton -->
+            <Style TargetType="ImageButton"
+                   x:Key="BattleToolbarStyle">
+                <Setter Property="Aspect" Value="Fill" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            </Style>
+
+            <!-- Button -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
+            <!-- Stack Layouts -->
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalStack">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalStack"
+                   BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="OuterBoxStack"
+                BasedOn="{StaticResource VerticalStack}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="CardImageTextBox">
+                <Setter Property="Orientation" Value="Vertical" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="ItemImageBox"
+                BasedOn="{StaticResource CardImageTextBox}">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="PlayerInfoBox"
+                BasedOn="{StaticResource CardImageTextBox}">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="Spacing" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="PlayerBattleDisplayBox"
+                BasedOn="{StaticResource PlayerInfoBox}">
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="WidthRequest" Value="80" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="ScoreCharacterInfoBox"
+                BasedOn="{StaticResource PlayerInfoBox}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="ScoreMonsterInfoBox"
+                BasedOn="{StaticResource ScoreCharacterInfoBox}">
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="WidthRequest" Value="80" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="ScoreItemInfoBox"
+                BasedOn="{StaticResource ScoreMonsterInfoBox}">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="BattleMapBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="PlayerBattleOuterBox"
+                BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="PlayerBattleInfoBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HeightRequest" Value="110" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="BattleMapImageBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="BattleUIBottomBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="MinimumHeightRequest" Value="250" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+            </Style>
+
+            <!-- Frame -->
+            <Style TargetType="Frame">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HasShadow" Value="false" />
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="PlayerBattleOuterFrame">
+                <Setter Property="HeightRequest" Value="112" />
+                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="BattleMapFrame">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            </Style>
+            
+            <!-- Grid -->
+            <Style TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0" />
+                <Setter Property="RowSpacing" Value="0" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+            
+            <Style TargetType="Grid"
+                x:Key="MapGridStyle">
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+            
+            <!-- Entry -->
+            <Style TargetType="Entry"
+                x:Key="EntryStyle">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
+            </Style>
+
+            <!-- Editor-->
+            <Style TargetType="Editor">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="StartAndExpand" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="AutoSize" Value="TextChanges" />
+            </Style>
+
+            <!-- Stepper -->
+            <Style TargetType="Stepper">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="Minimum" Value="0" />
+                <Setter Property="Maximum" Value="9" />
+                <Setter Property="Increment" Value="1" />
+            </Style>
+
+            <!-- Picker -->
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

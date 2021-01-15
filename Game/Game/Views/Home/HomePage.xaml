@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.HomePage">
+
+    <ContentPage.Content>
+        <ScrollView
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            
+            <StackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+
+                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <Image
+                         Source="item.png"
+                         Style="{StaticResource ImageLargeStyle}"/>
+                
+                </StackLayout>
+                
+                <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
+               
+                    <Label 
+                        Text="Your Game Iformation"
+                        Style="{StaticResource CenterMessageStyle}"
+                        FontSize="Micro"
+                        LineBreakMode="WordWrap"
+                        MaxLines="5"
+                        />
+
+                    <Label 
+                        Text="Help them on their mission."
+                        Style="{StaticResource CenterMessageStyle}"
+                        FontSize="Micro"
+                        LineBreakMode="WordWrap"
+                        MaxLines="5"
+                        />
+                </StackLayout>
+
+                <Button
+                    Text="Enter"
+                    Clicked="GameButton_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

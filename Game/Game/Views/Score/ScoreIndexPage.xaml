@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Name="BrowseItemsPage"
+             x:Class="Game.Views.ScoreIndexPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddScore_Clicked" IconImageSource="icon_add.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource OuterBoxStack}">
+
+            <Label Text="Score List Page" Style="{StaticResource HeaderStyle}"/>
+
+            <ListView x:Name="DataListView" 
+                    ItemsSource="{Binding Dataset}"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    CachingStrategy="RecycleElement"
+                    ItemSelected="OnItemSelected"
+                    HasUnevenRows="true"
+                    Margin="5,0,5,0"
+                    RowHeight="80"
+                    >
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="1" RowSpacing="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Column="0" Grid.Row="0"
+                                       Text="{Binding Name}" 
+                                       Style="{StaticResource ListStyle}"/>
+
+                                <Label Grid.Column="0" Grid.Row="1"
+                                       Text="Rounds" 
+                                       Style="{StaticResource ListStyle}"/>
+
+                                <Label Grid.Column="1" Grid.Row="1"
+                                       Text="{Binding RoundCount}" 
+                                       Style="{StaticResource ListStyle}"/>
+
+                                <Label Grid.Column="0" Grid.Row="2"
+                                       Text="Score" 
+                                       Style="{StaticResource ListStyle}"/>
+                                
+                                <Label Grid.Column="1" Grid.Row="2"
+                                       Text="{Binding ScoreTotal}" 
+                                       Style="{StaticResource ListStyle}"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

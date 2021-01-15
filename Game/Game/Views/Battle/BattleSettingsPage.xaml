@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.BattleSettingsPage">
+
+    <ContentPage.Content>
+
+        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+
+            <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Battle Settings" HorizontalTextAlignment="Center"/>
+
+            <Label Text ="Battle Mode" Style="{StaticResource HeaderStyle}" />
+
+            <Grid 
+                HorizontalOptions="StartAndExpand" 
+                Padding="10"
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label 
+                    Grid.Row="0" Grid.Column="0"
+                    Text="Battle Mode" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Picker 
+                    Grid.Row="0" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    FontSize="Micro"
+                    x:Name="BattleModePicker"
+                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
+                    SelectedIndexChanged="BattleModePicker_Changed"/>
+            </Grid>
+
+            <Label Text ="Control Hit Actions" Style="{StaticResource HeaderStyle}" />
+
+            <Grid
+                HorizontalOptions="StartAndExpand" 
+                Padding="10"
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label 
+                    Grid.Row="0" Grid.Column="0"
+                    Text="Monster Hit Control" 
+                    Style="{DynamicResource LabelStyle}"/>
+                
+                <Picker 
+                    Grid.Row="0" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    FontSize="Micro"
+                    x:Name="MonsterHitPicker"
+                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
+                    SelectedIndexChanged="MonsterHitPicker_Changed"/>
+
+                
+                <Label 
+                    Grid.Row="1" Grid.Column="0"
+                    Text="Character Hit Control" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Picker 
+                    Grid.Row="1" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    FontSize="Micro"
+                    x:Name="CharacterHitPicker"
+                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
+                    SelectedIndexChanged="CharacterHitPicker_Changed"/>
+
+                <Label 
+                    Grid.Row="2" Grid.Column="0"
+                    Text="Allow Critical Hit" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch 
+                    Grid.Row="2" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="AllowCriticalHitSwitch"
+                    Toggled="AllowCriticalHit_Toggled"/>
+
+                <Label 
+                    Grid.Row="3" Grid.Column="0"
+                    Text="Allow Critical Miss" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch 
+                    Grid.Row="3" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="AllowCriticalMissSwitch"
+                    Toggled="AllowCriticalMiss_Toggled"/>
+
+                <Label 
+                    Grid.Row="4" Grid.Column="0"
+                    Text="Allow Monster Items" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch 
+                    Grid.Row="4" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="AllowMonsterItemsSwitch"
+                    Toggled="AllowMonsterItems_Toggled"/>
+            </Grid>
+
+            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

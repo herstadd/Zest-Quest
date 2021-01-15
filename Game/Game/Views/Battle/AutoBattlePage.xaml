@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.AutoBattlePage"
+             >
+
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
+            <StackLayout Style="{StaticResource CardImageTextBox}">
+
+                <ImageButton
+                        Source="item.png"
+                        Style="{StaticResource ImageLargeStyle}"
+                        Clicked="AutobattleButton_Clicked"/>
+
+                <Label 
+                        Text="Begin Battle"
+                        Style="{StaticResource CenterMessageStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource CardImageTextBox}">
+
+                <Label 
+                    x:Name="BattleMessageValue"
+                    Text=""
+                    LineBreakMode="WordWrap"
+                    MaxLines="10"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    Style="{StaticResource ListStyle}"
+                    />
+
+                <Image
+                        x:Name="AutobattleImage"
+                        Source="elf1_a.gif"
+                        IsAnimationPlaying="True"
+                        Style="{StaticResource ImageLargeStyle}"></Image>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

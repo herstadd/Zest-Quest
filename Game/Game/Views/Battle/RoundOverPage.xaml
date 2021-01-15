@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.RoundOverPage">
+
+    <ContentPage.Content>
+
+        <AbsoluteLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        >
+
+            <StackLayout Style="{StaticResource VerticalStack}"
+                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                    AbsoluteLayout.LayoutFlags="All">
+
+                <ScrollView x:Name="ScrollView">
+
+                    <StackLayout Style="{StaticResource VerticalStack}">
+
+                        <Label Text="Round Cleared" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+                            <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
+                            <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
+                        </StackLayout>
+
+                        <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
+                        <FlexLayout x:Name="CharacterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                        <Label Text="Items Found" Style="{StaticResource MessageStyle}"/>
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+                            <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
+                            <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
+                        </StackLayout>
+                        <FlexLayout x:Name="ItemListFoundFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                        <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
+
+                        <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+                            <Label Text="Selected : " Style="{StaticResource LabelStyle}"/>
+                            <Label Text="0" x:Name="TotalSelected" Style="{StaticResource ValueStyle}"/>
+                        </StackLayout>
+                        <FlexLayout x:Name="ItemListSelectedFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+            <!--The Item Popup-->
+            <StackLayout 
+                    x:Name="PopupLoadingView" 
+                    BackgroundColor="{StaticResource PageBackgroundColor}" 
+                    IsVisible="false" 
+                    AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
+                    AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300"
+                        HeightRequest="300"
+                        >
+
+                    <Frame 
+                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+
+                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
+                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}"/>
+
+                            <Label x:Name="PopupItemName" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label Text="Location : " Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Label x:Name="PopupItemAttribute" Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
+                            </StackLayout>
+
+                            <Button x:Name="PopupCloseButton" 
+                                Clicked="ClosePopup_Clicked" 
+                                Text="Close"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
