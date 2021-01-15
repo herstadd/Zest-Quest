@@ -22,7 +22,7 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">Pink</Color>
+            <Color x:Key="PageBackgroundColor">white</Color>
             <Color x:Key="ViewBackgroundColor">green</Color>
             <Color x:Key="NavigationBarColor">orange</Color>
 
@@ -31,7 +31,7 @@
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
             <Color x:Key="LightBackgroundColor">orange</Color>
 
-            <Color x:Key="PrimaryTextColor">lightblue</Color>
+            <Color x:Key="PrimaryTextColor">black</Color>
             <Color x:Key="SecondaryTextColor">darkblue</Color>
             <Color x:Key="TriciaryTextColor">darkgreen</Color>
 
