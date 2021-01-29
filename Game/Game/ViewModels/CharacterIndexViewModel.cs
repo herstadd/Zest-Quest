@@ -53,7 +53,7 @@ namespace Game.ViewModels
         /// </summary>
         public CharacterIndexViewModel()
         {
-            Title = "Items";
+            Title = "Characters";
 
             #region Messages
 
