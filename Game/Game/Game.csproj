@@ -46,6 +46,9 @@
     <Compile Update="Views\Characters\CharacterIndexPage.xaml.cs">
       <DependentUpon>CharacterIndexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Characters\CharacterCreatePage.xaml.cs">
+      <DependentUpon>CharacterCreatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Village\VillagePage.xaml.cs">
       <DependentUpon>VillagePage.xaml</DependentUpon>
     </Compile>
