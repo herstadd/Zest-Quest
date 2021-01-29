@@ -35,7 +35,7 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void CharactersButton_Clicked(object sender, EventArgs e)
 		{
-			//await Navigation.PushAsync(new CharacterIndexPage());
+			await Navigation.PushAsync(new CharacterIndexPage());
 		}
 
 		/// <summary>
