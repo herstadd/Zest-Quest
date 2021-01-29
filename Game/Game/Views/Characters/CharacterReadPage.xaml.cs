@@ -16,7 +16,7 @@ namespace Game.Views
     public partial class CharacterReadPage : ContentPage
     {
         // View Model for Item
-        public readonly GenericViewModel<ItemModel> ViewModel;
+        public readonly GenericViewModel<CharacterModel> ViewModel;
 
         // Empty Constructor for UTs
         public CharacterReadPage(bool UnitTest) { }
@@ -27,7 +27,7 @@ namespace Game.Views
         /// The viewModel is the data that should be displayed
         /// </summary>
         /// <param name="viewModel"></param>
-        public CharacterReadPage(GenericViewModel<ItemModel> data)
+        public CharacterReadPage(GenericViewModel<CharacterModel> data)
         {
             InitializeComponent();
 
@@ -41,7 +41,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Update_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new ItemUpdatePage(ViewModel)));
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
             await Navigation.PopAsync();
         }
 
@@ -52,7 +52,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Delete_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new ItemDeletePage(ViewModel)));
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(ViewModel)));
             await Navigation.PopAsync();
         }
     }
