@@ -7,10 +7,7 @@
              x:Class="Game.Views.CharacterDeletePage"
              Title="Delete Page">
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
+ 
 
     <ScrollView>
         <StackLayout Style="{StaticResource OuterBoxStack}"
