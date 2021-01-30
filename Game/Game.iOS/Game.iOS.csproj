@@ -171,4 +171,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\mapcell.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_save.png" />
+  </ItemGroup>
 </Project>
