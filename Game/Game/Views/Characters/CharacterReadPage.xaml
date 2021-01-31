@@ -41,6 +41,15 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
+                    Text="Chef Type : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Job}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
                     Text="Range : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
