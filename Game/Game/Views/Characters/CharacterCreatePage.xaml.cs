@@ -64,33 +64,109 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Range
+        /// Update Level value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void LevelValueChanged(object sender, EventArgs e)
         {
-            RangeValue.Text = String.Format("{0}", e.NewValue);
+            int NewLevelValue = Int32.Parse(LevelValue.Text);
+            switch ((sender as Button).Text)
+            {
+                case "-":
+                    NewLevelValue--;
+                    NewLevelValue = NewLevelValue < 0 ? 0 : NewLevelValue;
+                    break;
+                case "+":
+                    NewLevelValue++;
+                    break;
+            }
+            LevelValue.Text = NewLevelValue.ToString();
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Value
+        /// Update Attack value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void AttackValueChanged(object sender, EventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
+            int NewAttackValue = Int32.Parse(AttackValue.Text);
+            switch ((sender as Button).Text)
+            {
+                case "-":
+                    NewAttackValue--;
+                    NewAttackValue = NewAttackValue < 0 ? 0 : NewAttackValue ;
+                    break;
+                case "+":
+                    NewAttackValue++;
+                    break;
+            }
+            AttackValue.Text = NewAttackValue.ToString();
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Damage
+        /// Update Defense value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void DefenseValueChanged(object sender, EventArgs e)
         {
-            DamageValue.Text = String.Format("{0}", e.NewValue);
+            int NewDefenseValue = Int32.Parse(DefenseValue.Text);
+            switch ((sender as Button).Text)
+            {
+                case "-":
+                    NewDefenseValue--;
+                    NewDefenseValue = NewDefenseValue < 0 ? 0 : NewDefenseValue;
+                    break;
+                case "+":
+                    NewDefenseValue++;
+                    break;
+            }
+            DefenseValue.Text = NewDefenseValue.ToString();
+        }
+
+        /// <summary>
+        /// Update Speed value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SpeedValueChanged(object sender, EventArgs e)
+        {
+            int NewSpeedValue = Int32.Parse(SpeedValue.Text);
+            switch ((sender as Button).Text)
+            {
+                case "-":
+                    NewSpeedValue--;
+                    NewSpeedValue = NewSpeedValue < 0 ? 0 : NewSpeedValue;
+                    break;
+                case "+":
+                    NewSpeedValue++;
+                    break;
+            }
+            SpeedValue.Text = NewSpeedValue.ToString();
+        }
+
+        /// <summary>
+        /// Update Max Health value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void MaxHealthValueChanged(object sender, EventArgs e)
+        {
+
+            int NewMaxHealthValue = Int32.Parse(MaxHealthValue.Text);
+            switch ((sender as Button).Text)
+            {
+                case "-":
+                    NewMaxHealthValue--;
+                    NewMaxHealthValue = NewMaxHealthValue < 0 ? 0 : NewMaxHealthValue;
+                    break;
+                case "+":
+                    NewMaxHealthValue++;
+                    break;
+            }
+            MaxHealthValue.Text = NewMaxHealthValue.ToString();
         }
     }
 }
