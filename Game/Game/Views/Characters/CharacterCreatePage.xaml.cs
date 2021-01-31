@@ -71,17 +71,7 @@ namespace Game.Views
         public void LevelValueChanged(object sender, EventArgs e)
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
-            switch ((sender as Button).Text)
-            {
-                case "-":
-                    NewLevelValue--;
-                    NewLevelValue = NewLevelValue < 1 ? 1 : NewLevelValue;
-                    break;
-                case "+":
-                    NewLevelValue++;
-                    break;
-            }
-            LevelValue.Text = NewLevelValue.ToString();
+            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true).ToString();
         }
 
         /// <summary>
@@ -92,17 +82,7 @@ namespace Game.Views
         public void AttackValueChanged(object sender, EventArgs e)
         {
             int NewAttackValue = Int32.Parse(AttackValue.Text);
-            switch ((sender as Button).Text)
-            {
-                case "-":
-                    NewAttackValue--;
-                    NewAttackValue = NewAttackValue < 0 ? 0 : NewAttackValue ;
-                    break;
-                case "+":
-                    NewAttackValue++;
-                    break;
-            }
-            AttackValue.Text = NewAttackValue.ToString();
+            AttackValue.Text = ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
         }
 
         /// <summary>
@@ -113,17 +93,7 @@ namespace Game.Views
         public void DefenseValueChanged(object sender, EventArgs e)
         {
             int NewDefenseValue = Int32.Parse(DefenseValue.Text);
-            switch ((sender as Button).Text)
-            {
-                case "-":
-                    NewDefenseValue--;
-                    NewDefenseValue = NewDefenseValue < 0 ? 0 : NewDefenseValue;
-                    break;
-                case "+":
-                    NewDefenseValue++;
-                    break;
-            }
-            DefenseValue.Text = NewDefenseValue.ToString();
+            DefenseValue.Text = ValueChange((sender as Button).Text, NewDefenseValue, false).ToString();
         }
 
         /// <summary>
@@ -134,17 +104,7 @@ namespace Game.Views
         public void SpeedValueChanged(object sender, EventArgs e)
         {
             int NewSpeedValue = Int32.Parse(SpeedValue.Text);
-            switch ((sender as Button).Text)
-            {
-                case "-":
-                    NewSpeedValue--;
-                    NewSpeedValue = NewSpeedValue < 0 ? 0 : NewSpeedValue;
-                    break;
-                case "+":
-                    NewSpeedValue++;
-                    break;
-            }
-            SpeedValue.Text = NewSpeedValue.ToString();
+            SpeedValue.Text = ValueChange((sender as Button).Text, NewSpeedValue, false).ToString();
         }
 
         /// <summary>
@@ -154,19 +114,35 @@ namespace Game.Views
         /// <param name="e"></param>
         public void MaxHealthValueChanged(object sender, EventArgs e)
         {
-
             int NewMaxHealthValue = Int32.Parse(MaxHealthValue.Text);
-            switch ((sender as Button).Text)
+            MaxHealthValue.Text = ValueChange((sender as Button).Text, NewMaxHealthValue, false).ToString();
+        }
+
+        /// <summary>
+        /// Change Stat value
+        /// </summary>
+        /// <param name="ButtonText"></param>
+        /// <param name="num"></param>
+        /// <param name="IsLevel"></param>
+        /// <returns></returns>
+        private int ValueChange(String ButtonText, int num, bool IsLevel) 
+        {
+            if (ButtonText.Equals("-"))
             {
-                case "-":
-                    NewMaxHealthValue--;
-                    NewMaxHealthValue = NewMaxHealthValue < 0 ? 0 : NewMaxHealthValue;
-                    break;
-                case "+":
-                    NewMaxHealthValue++;
-                    break;
+                num--;
+                if (IsLevel)
+                {
+                    return num < 1 ? 1 : num;
+                } 
+                else
+                {
+                    return num < 0 ? 0 : num;
+                }
             }
-            MaxHealthValue.Text = NewMaxHealthValue.ToString();
+            else 
+            {
+                return num + 1;
+            }
         }
     }
 }
