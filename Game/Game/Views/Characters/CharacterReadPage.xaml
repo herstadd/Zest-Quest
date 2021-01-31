@@ -78,20 +78,32 @@
 
             
             <StackLayout Orientation="Horizontal">
-                <Label Text="Name" />
-                <Label />
+                <Label
+                    Text="Name: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Name}" 
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="LV" />
                 <Label />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Type" />
-                <Label />
+                <Label 
+                    Text="Type : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Job}" 
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Specialty" />
-                <Label />
+                <Label 
+                    Text="Specialty : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Description}" 
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Attack" />
