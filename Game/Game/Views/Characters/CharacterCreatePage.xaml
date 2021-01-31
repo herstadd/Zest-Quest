@@ -27,8 +27,6 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
-
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
                 <Grid
@@ -46,98 +44,138 @@
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
                         Style="{StaticResource LabelStyle}"/>
-                    
+
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
+                        Text="Level" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="1" Grid.Column="1"
+                    <StackLayout Grid.Row="1" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Level}" 
+                            x:Name="LevelValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="LevelValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="LevelValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Specialty" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
-                        Text="Image" 
+                        Text="Attack" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                        <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
-
+                    <StackLayout Grid.Row="4" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Attack}" 
+                            x:Name="AttackValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="AttackValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="AttackValueChanged"/>
                     </StackLayout>
+
+                    <Label Grid.Row="5" Grid.Column="0"
+                        Text="Defense" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="5" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Defense}" 
+                            x:Name="DefenseValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="DefenseValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="DefenseValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="6" Grid.Column="0"
+                        Text="Speed" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="6" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Speed}" 
+                            x:Name="SpeedValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="SpeedValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="SpeedValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="7" Grid.Column="0"
+                        Text="MaxHealth" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="7" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.MaxHealth}" 
+                            x:Name="MaxHealthValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="MaxHealthValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="MaxHealthValueChanged"/>
+                    </StackLayout>
+
                 </Grid>
-
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Label 
-                            Text="Range" 
-                            Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                    
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
-                        
-                    </StackLayout>
-
-                    <Label 
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
-                        <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
-                    </StackLayout>
-
-                    <Label 
-                        Text="Damage" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Damage}" 
-                            x:Name="DamageValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
-                    
-                    </StackLayout>
-                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
