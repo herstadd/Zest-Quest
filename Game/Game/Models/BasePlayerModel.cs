@@ -187,10 +187,10 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
+                    case CharacterJobEnum.HeadChef:
                         result = -1;
                         break;
-                    case CharacterJobEnum.Fighter:
+                    case CharacterJobEnum.SousChef:
                         result = +2;
                         break;
                     case CharacterJobEnum.Unknown:
@@ -230,10 +230,10 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
+                    case CharacterJobEnum.HeadChef:
                         result = +2;
                         break;
-                    case CharacterJobEnum.Fighter:
+                    case CharacterJobEnum.SousChef:
                         result = -1;
                         break;
                     case CharacterJobEnum.Unknown:
@@ -270,10 +270,10 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
+                    case CharacterJobEnum.HeadChef:
                         result = 0;
                         break;
-                    case CharacterJobEnum.Fighter:
+                    case CharacterJobEnum.SousChef:
                         result = +1;
                         break;
                     case CharacterJobEnum.Unknown:
