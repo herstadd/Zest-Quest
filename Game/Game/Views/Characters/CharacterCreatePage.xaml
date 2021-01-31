@@ -70,9 +70,10 @@
                         Text="Type" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"/>
+                    <Picker Grid.Row="2" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListCharacter}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="JobPicker"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
                         Text="Specialty" 
