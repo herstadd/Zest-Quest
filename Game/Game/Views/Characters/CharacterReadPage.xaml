@@ -34,7 +34,7 @@
                     Text="LV: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
-                    Text=""
+                    Text="{Binding Data.Level}"
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -82,7 +82,7 @@
                     Text="Health: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
-                    Text=""
+                    Text="{Binding Data.MaxHealth}"
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
