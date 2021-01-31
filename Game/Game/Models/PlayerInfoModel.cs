@@ -112,16 +112,46 @@ namespace Game.Models
             // TODO: Mike, Refactor this, so it is in a helper, and call it on level up as well.
             switch (Job)
             {
-                case CharacterJobEnum.Cleric:
+                case CharacterJobEnum.HeadChef:
 
-                    foreach (var item in AbilityEnumHelper.GetListCleric)
+                    foreach (var item in AbilityEnumHelper.GetListHeadChef)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }
                     break;
 
-                case CharacterJobEnum.Fighter:
-                    foreach (var item in AbilityEnumHelper.GetListFighter)
+                case CharacterJobEnum.SousChef:
+                    foreach (var item in AbilityEnumHelper.GetListSousChef)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.SchoolChef:
+
+                    foreach (var item in AbilityEnumHelper.GetListSchoolChef)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.SushiChef:
+                    foreach (var item in AbilityEnumHelper.GetListSushiChef)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.CatChef:
+
+                    foreach (var item in AbilityEnumHelper.GetListCatChef)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.HomeCook:
+                    foreach (var item in AbilityEnumHelper.GetListHomeCook)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }
