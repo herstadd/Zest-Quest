@@ -75,6 +75,43 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
+
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="LV" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Type" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Specialty" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Attack" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Defense" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Speed" />
+                <Label />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Health" />
+                <Label />
+            </StackLayout>
+
+
+
         </StackLayout>
     </ScrollView>
 </ContentPage>
