@@ -75,7 +75,7 @@ namespace Game.Views
             {
                 case "-":
                     NewLevelValue--;
-                    NewLevelValue = NewLevelValue < 0 ? 0 : NewLevelValue;
+                    NewLevelValue = NewLevelValue < 1 ? 1 : NewLevelValue;
                     break;
                 case "+":
                     NewLevelValue++;
