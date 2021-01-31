@@ -30,8 +30,12 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="LV" />
-                <Label />
+                <Label
+                    Text="LV"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text=""
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label 
@@ -50,20 +54,36 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Attack" />
-                <Label />
+                <Label
+                    Text="Attack"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text=""
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Defense" />
-                <Label />
+                <Label
+                    Text="Defense"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text=""
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Speed" />
-                <Label />
+                <Label
+                    Text="Speed"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text=""
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Health" />
-                <Label />
+                <Label
+                    Text="Health"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text=""
+                    Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
 
