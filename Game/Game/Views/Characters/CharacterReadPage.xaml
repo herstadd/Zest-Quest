@@ -31,7 +31,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
-                    Text="LV"
+                    Text="LV: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
                     Text=""
@@ -39,7 +39,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label 
-                    Text="Type : " 
+                    Text="Type: " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Job}" 
@@ -47,7 +47,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label 
-                    Text="Specialty : " 
+                    Text="Specialty: " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Description}" 
@@ -55,7 +55,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
-                    Text="Attack"
+                    Text="Attack: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
                     Text=""
@@ -63,7 +63,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
-                    Text="Defense"
+                    Text="Defense: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
                     Text=""
@@ -71,7 +71,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
-                    Text="Speed"
+                    Text="Speed: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
                     Text=""
@@ -79,7 +79,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
-                    Text="Health"
+                    Text="Health: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
                     Text=""
