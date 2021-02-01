@@ -52,7 +52,7 @@
                                  Orientation="Horizontal"
                         Style="{StaticResource VerticalStack}" >
                         <Label 
-                            Text="{Binding Data.Level}" 
+                            Text="{Binding Data.Level, Mode=TwoWay}" 
                             x:Name="LevelValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -91,7 +91,7 @@
                                  Orientation="Horizontal"
                         Style="{StaticResource VerticalStack}" >
                         <Label 
-                            Text="{Binding Data.Attack}" 
+                            Text="{Binding Data.Attack, Mode=TwoWay}" 
                             x:Name="AttackValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -113,7 +113,7 @@
                                  Orientation="Horizontal"
                         Style="{StaticResource VerticalStack}" >
                         <Label 
-                            Text="{Binding Data.Defense}" 
+                            Text="{Binding Data.Defense, Mode=TwoWay}" 
                             x:Name="DefenseValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -135,7 +135,7 @@
                                  Orientation="Horizontal"
                         Style="{StaticResource VerticalStack}" >
                         <Label 
-                            Text="{Binding Data.Speed}" 
+                            Text="{Binding Data.Speed, Mode=TwoWay}" 
                             x:Name="SpeedValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -157,7 +157,7 @@
                                  Orientation="Horizontal"
                         Style="{StaticResource VerticalStack}" >
                         <Label 
-                            Text="{Binding Data.MaxHealth}" 
+                            Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
                             x:Name="MaxHealthValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
