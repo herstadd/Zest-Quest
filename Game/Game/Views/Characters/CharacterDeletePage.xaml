@@ -16,6 +16,10 @@
                 Padding="40">
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Label Text="{Binding Data.Name}"
+                   HorizontalOptions="Center"
+                   Font="Bold"/>
+
 
             <StackLayout 
               HorizontalOptions="Center" 
