@@ -58,7 +58,7 @@
                     Text="Attack: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
-                    Text=""
+                    Text="{Binding Data.Attack}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -66,7 +66,7 @@
                     Text="Defense: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
-                    Text=""
+                    Text="{Binding Data.Defense}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -74,7 +74,7 @@
                     Text="Speed: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label
-                    Text=""
+                    Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
