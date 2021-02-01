@@ -124,7 +124,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Fighter
+        /// Returns a list of strings of the enum for HeadChef
         /// </summary>
         public static List<string> GetListHeadChef
         {
@@ -142,7 +142,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Cleric
+        /// Returns a list of strings of the enum for SousChef
         /// </summary>
         public static List<string> GetListSousChef
         {
@@ -162,7 +162,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Fighter
+        /// Returns a list of strings of the enum for SchoolChef
         /// </summary>
         public static List<string> GetListSchoolChef
         {
@@ -180,7 +180,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Cleric
+        /// Returns a list of strings of the enum for SushiChef
         /// </summary>
         public static List<string> GetListSushiChef
         {
@@ -200,7 +200,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Fighter
+        /// Returns a list of strings of the enum for CatChef
         /// </summary>
         public static List<string> GetListCatChef
         {
@@ -218,7 +218,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Cleric
+        /// Returns a list of strings of the enum for HomeCook
         /// </summary>
         public static List<string> GetListHomeCook
         {
@@ -238,7 +238,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum of not Cleric or Fighter
+        /// Returns a list of strings of default chef
         /// </summary>
         public static List<string> GetListOthers
         {
