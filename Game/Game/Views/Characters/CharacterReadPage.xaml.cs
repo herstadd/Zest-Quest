@@ -55,16 +55,5 @@ namespace Game.Views
             await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(ViewModel)));
             await Navigation.PopAsync();
         }
-
-        /// <summary>
-        /// Calls for Items
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Items_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(ViewModel)));
-            //await Navigation.PopAsync();
-        }
     }
 }
