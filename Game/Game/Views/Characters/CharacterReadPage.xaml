@@ -86,8 +86,6 @@
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
-            <Button Text="Items" Clicked="Items_Clicked"/>
-
         </StackLayout>
     </ScrollView>
 </ContentPage>
