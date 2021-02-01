@@ -10,21 +10,26 @@ namespace Game.Models
     /// </summary>
     public enum CharacterJobEnum
     {
-        // Not specified
+        // Unknown is not used at the moment, but has no skills
         Unknown = 0,    
 
-        // Fighters hit hard and have fight abilities
+        // Head Chef's items will have double stat modifiers for extra impact
         HeadChef = 10,
 
-        // Clerics defend well and have buff abilities
+        // Sous Chef's attack attribute will be 3 times stronger than usual for the first attack of every round
         SousChef = 12,
 
+        // School Chef will provide a 20% attack buff to the rest of the team if the school chef dies in battle
         SchoolChef = 15,
 
+        // Sushi chef has the ability to attack from anywhere on the map with any item
         SushiChef = 18,
 
+        // Cat Chef has 9 lives (so if character dies, it comes back to life 8 more times) but cannot hold more than
+        //   one item at a time
         CatChef = 22,
 
+        // After winning a battle, their current health will be recovered by 10% of original max health up to max health
         HomeCook = 24,
 
     }
