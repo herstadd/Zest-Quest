@@ -14,7 +14,7 @@ namespace Game.ViewModels
     /// Index View Model
     /// Manages the list of data records
     /// </summary>
-    public class MonsterIndexViewModel : BaseViewModel<CharacterModel>
+    public class MonsterIndexViewModel : BaseViewModel<MonsterModel>
     {
         #region Singleton
 
@@ -58,24 +58,24 @@ namespace Game.ViewModels
             #region Messages
 
             // Register the Create Message
-            MessagingCenter.Subscribe<CharacterCreatePage, CharacterModel>(this, "Create", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterCreatePage, MonsterModel>(this, "Create", async (obj, data) =>
             {
-                await CreateAsync(data as CharacterModel);
+                await CreateAsync(data as MonsterModel);
             });
 
             // Register the Update Message
-            MessagingCenter.Subscribe<CharacterUpdatePage, CharacterModel>(this, "Update", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterUpdatePage, MonsterModel>(this, "Update", async (obj, data) =>
             {
                 // Have the item update itself
                 data.Update(data);
 
-                await UpdateAsync(data as CharacterModel);
+                await UpdateAsync(data as MonsterModel);
             });
 
             // Register the Delete Message
-            MessagingCenter.Subscribe<CharacterDeletePage, CharacterModel>(this, "Delete", async (obj, data) =>
+            MessagingCenter.Subscribe<MonsterDeletePage, MonsterModel>(this, "Delete", async (obj, data) =>
             {
-                await DeleteAsync(data as CharacterModel);
+                await DeleteAsync(data as MonsterModel);
             });
 
             // Register the Set Data Source Message
@@ -102,7 +102,7 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public override CharacterModel CheckIfExists(CharacterModel data)
+        public override MonsterModel CheckIfExists(MonsterModel data)
         {
             if (data == null)
             {
@@ -131,9 +131,9 @@ namespace Game.ViewModels
         /// Load the Default Data
         /// </summary>
         /// <returns></returns>
-        public override List<CharacterModel> GetDefaultData() 
+        public override List<MonsterModel> GetDefaultData() 
         {
-            return DefaultData.LoadData(new CharacterModel());
+            return DefaultData.LoadData(new MonsterModel());
         }
 
         #endregion DataOperations_CRUDi
@@ -141,11 +141,11 @@ namespace Game.ViewModels
         #region SortDataSet
 
         /// <summary>
-        /// The Sort Order for the CharacterModel
+        /// The Sort Order for the MonsterModel
         /// </summary>
         /// <param name="dataset"></param>
         /// <returns></returns>
-        public override List<CharacterModel> SortDataset(List<CharacterModel> dataset)
+        public override List<MonsterModel> SortDataset(List<MonsterModel> dataset)
         {
             return dataset
                     .OrderBy(a => a.Name)
