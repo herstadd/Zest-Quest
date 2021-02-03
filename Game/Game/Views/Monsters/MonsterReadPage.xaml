@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Game.Views.MonsterReadPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ScrollView>
+        <StackLayout Style="{StaticResource OuterBoxStack}"
+            Spacing="10">
+
+            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Name: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Name}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="LV: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text="{Binding Data.Level}"
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                    Text="Type: " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Job}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label 
+                    Text="Specialty: " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Description}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Attack: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text="{Binding Data.Attack}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Defense: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text="{Binding Data.Defense}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Speed: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text="{Binding Data.Speed}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Text="Health: "
+                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Text="{Binding Data.MaxHealth}"
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                </StackLayout>
+            </StackLayout>
+        
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
