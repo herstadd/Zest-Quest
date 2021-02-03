@@ -71,8 +71,8 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        ItemsSource="{x:Static local_enum:MonsterJobEnumHelper.GetListMonster}" 
+                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="JobPicker"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
