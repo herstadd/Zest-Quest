@@ -241,44 +241,54 @@ namespace Game.GameRules
         var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "M1",
-                    Description = "M1",
+                    Name = "Evil Refrigerator",
+                    Description = "Boss",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M2",
-                    Description = "M2",
+                    Name = "Evil Toaster",
+                    Description = "Boss",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M3",
-                    Description = "M3",
+                    Name = "Evil Blender",
+                    Description = "Boss",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M4",
-                    Description = "M4",
+                    Name = "Evil Dishwasher",
+                    Description = "Standard",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M5",
-                    Description = "M5",
+                    Name = "Evil Stove",
+                    Description = "Standard",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M6",
-                    Description = "M6",
+                    Name = "Evil Kitchen Sink",
+                    Description = "Standard",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M7",
-                    Description = "M7",
+                    Name = "Evil Rice Cooker",
+                    Description = "Standard",
+                    ImageURI = "item.png",
+                },
+                new MonsterModel {
+                    Name = "Evil Crock pot",
+                    Description = "Standard",
+                    ImageURI = "item.png",
+                },
+                new MonsterModel {
+                    Name = "Evil Can Opener",
+                    Description = "Standard",
                     ImageURI = "item.png",
                 },
             };
