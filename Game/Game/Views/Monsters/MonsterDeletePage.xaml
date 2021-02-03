@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Game.Views.MonsterDeletePage"
+             Title="Monster Delete Page">
+    
+    <ScrollView>
+        <StackLayout Style="{StaticResource OuterBoxStack}"
+                HorizontalOptions="Center" 
+                Spacing="20"
+                Padding="40">
+
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Label Text="{Binding Data.Name}"
+                   HorizontalOptions="Center"
+                   Font="Bold"/>
+
+
+            <StackLayout 
+              HorizontalOptions="Center" 
+               Padding="10">
+                <StackLayout 
+                 Orientation="Vertical">
+                    <Label Text="Are you sure you" 
+                           TextColor = "Black"
+                           Font="Bold"
+                           Style="{StaticResource MessageStyle}"
+                           FontSize="Large"
+                            />
+                    <Label Text="want to delete?"
+                           HorizontalOptions="Center"
+                           TextColor = "Black"
+                           Font="Bold"
+                           Style="{StaticResource MessageStyle}"
+                           FontSize="Large"
+                            />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <ImageButton 
+                      Clicked="Delete_Clicked" 
+                      HorizontalOptions="Start"
+                      Source="icon_delete.png"
+                       HeightRequest="40"
+                      >
+                </ImageButton>
+                <ImageButton 
+                      Clicked="Cancel_Clicked" 
+                      HorizontalOptions="Start"
+                      Source="icon_cancel.png"
+                       HeightRequest="40"
+                      >
+                </ImageButton>
+            </StackLayout>
+        
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
