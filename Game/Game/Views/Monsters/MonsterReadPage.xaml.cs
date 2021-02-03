@@ -52,7 +52,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Delete_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(ViewModel)));
+            await Navigation.PushModalAsync(new NavigationPage(new MonsterDeletePage(ViewModel)));
             await Navigation.PopAsync();
         }
     }
