@@ -41,7 +41,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Update_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
+            await Navigation.PushModalAsync(new NavigationPage(new MonsterUpdatePage(ViewModel)));
             await Navigation.PopAsync();
         }
 
