@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
+             xmlns:local="using:Game.Models"
+             x:Class="Game.Views.MonsterUpdatePage"
+             Title="{Binding Title}">
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Style="{StaticResource OuterBoxStack}"
+                Spacing="10">
+
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+
+                <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="2"
+                    VerticalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Name" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                        Text="Level" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="1" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Level, Mode=TwoWay}" 
+                            x:Name="LevelValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="LevelValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="LevelValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Picker Grid.Row="2" Grid.Column="1"
+                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetListCharacter}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="JobPicker"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Specialty" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1"
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                        Text="Attack" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="4" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Attack, Mode=TwoWay}" 
+                            x:Name="AttackValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="AttackValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="AttackValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="5" Grid.Column="0"
+                        Text="Defense" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="5" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Defense, Mode=TwoWay}" 
+                            x:Name="DefenseValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="DefenseValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="DefenseValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="6" Grid.Column="0"
+                        Text="Speed" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="6" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.Speed, Mode=TwoWay}" 
+                            x:Name="SpeedValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="SpeedValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="SpeedValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="7" Grid.Column="0"
+                        Text="MaxHealth" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <StackLayout Grid.Row="7" Grid.Column="1"
+                                 Orientation="Horizontal"
+                        Style="{StaticResource VerticalStack}" >
+                        <Label 
+                            Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
+                            x:Name="MaxHealthValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="MaxHealthValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="MaxHealthValueChanged"/>
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout 
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                    <Button Text="Update" Clicked="Update_Clicked"/>
+                    <Button Text="Cancel" Clicked="Cancel_Clicked"/>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
