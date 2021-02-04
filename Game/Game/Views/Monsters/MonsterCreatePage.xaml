@@ -59,11 +59,9 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                         <Button
-                            Text="-"
-                            Clicked="LevelValueChanged"/>
+                            Text="-"/>
                         <Button
-                            Text="+"
-                            Clicked="LevelValueChanged"/>
+                            Text="+"/>
                     </StackLayout>
 
                     <Label Grid.Row="2" Grid.Column="0"
@@ -98,11 +96,9 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                         <Button
-                            Text="-"
-                            Clicked="AttackValueChanged"/>
+                            Text="-" />
                         <Button
-                            Text="+"
-                            Clicked="AttackValueChanged"/>
+                            Text="+" />
                     </StackLayout>
 
                     <Label Grid.Row="5" Grid.Column="0"
@@ -120,11 +116,9 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                         <Button
-                            Text="-"
-                            Clicked="DefenseValueChanged"/>
+                            Text="-" />
                         <Button
-                            Text="+"
-                            Clicked="DefenseValueChanged"/>
+                            Text="+" />
                     </StackLayout>
 
                     <Label Grid.Row="6" Grid.Column="0"
@@ -142,11 +136,9 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                         <Button
-                            Text="-"
-                            Clicked="SpeedValueChanged"/>
+                            Text="-" />
                         <Button
-                            Text="+"
-                            Clicked="SpeedValueChanged"/>
+                            Text="+" />
                     </StackLayout>
 
                     <Label Grid.Row="7" Grid.Column="0"
@@ -164,11 +156,9 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                         <Button
-                            Text="-"
-                            Clicked="MaxHealthValueChanged"/>
+                            Text="-" />
                         <Button
-                            Text="+"
-                            Clicked="MaxHealthValueChanged"/>
+                            Text="+" />
                     </StackLayout>
 
                 </Grid>
