@@ -75,6 +75,7 @@ namespace Game.Views
         {
             var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)JobPicker.SelectedItem);
             UniqueDrop.Text  = MonsterJobEnumExtensions.GetSpecialDrop(selected);
+            MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(selected);
         }
     }
 }

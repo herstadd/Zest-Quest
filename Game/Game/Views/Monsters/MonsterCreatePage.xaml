@@ -58,7 +58,7 @@
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"
                         />
-                                       
+
                     <Entry Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"
@@ -72,6 +72,16 @@
                         Text="{Binding Data.SpecialDrop}" 
                         Style="{StaticResource EntryStyle}"
                         x:Name="UniqueDrop"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                        Text="Class" 
+                        Style="{StaticResource LabelStyle}"
+                        />
+
+                    <Entry Grid.Row="4" Grid.Column="1"
+                        Text="Standard" 
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="MonsterClass"/>
 
                 </Grid>
 
