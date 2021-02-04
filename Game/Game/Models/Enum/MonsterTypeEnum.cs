@@ -104,10 +104,10 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Display a String for the Enums
+        /// Displays a Special drop for a Enum type monster
         /// </summary>
         /// <param name="value"></param>
-        /// <returns></returns>
+        /// <returns>String value of Special drop</returns>
         public static string GetSpecialDrop(this MonsterTypeEnum value)
         {
             // Default String
