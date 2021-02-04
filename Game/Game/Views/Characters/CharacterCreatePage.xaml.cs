@@ -3,7 +3,7 @@ using Game.ViewModels;
 
 using System;
 using System.ComponentModel;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -146,6 +146,36 @@ namespace Game.Views
             {
                 return num + 1;
             }
+        }
+
+        public void TypeChanged(object sender, EventArgs e)
+        {
+            var selected = JobPicker.SelectedItem;
+            if(selected.Equals("HeadChef"))
+            {
+                Description.Text = "Each item grants this character double the normal stat modifier";
+            } 
+            else if(selected.Equals("SousChef"))
+            {
+                Description.Text = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round";
+            }
+            else if (selected.Equals("SchoolChef"))
+            {
+                Description.Text = "Provide a 20% attack buff to the rest of team if the school chef dies in a battle";
+            }
+            else if (selected.Equals("SushiChef"))
+            {
+                Description.Text = "Has the ability to attack from anywhere on the map with any item";
+            }
+            else if (selected.Equals("CatChef"))
+            {
+                Description.Text = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time";
+            }
+            else if (selected.Equals("HomeCook"))
+            {
+                Description.Text = "After winning a battle their current health will be recovered by 10% of original max health up to max health";
+            }
+
         }
     }
 }
