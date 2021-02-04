@@ -45,26 +45,6 @@
                         Style="{StaticResource EntryStyle}"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
-                        Text="Level" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="1" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Level, Mode=TwoWay}" 
-                            x:Name="LevelValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"/>
-                        <Button
-                            Text="+"/>
-                    </StackLayout>
-
-                    <Label Grid.Row="2" Grid.Column="0"
                         Text="Type" 
                         Style="{StaticResource LabelStyle}"/>
 
@@ -76,90 +56,19 @@
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"/>
-
+                                       
                     <Entry Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="4" Grid.Column="0"
-                        Text="Attack" 
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Unique Drop" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Attack, Mode=TwoWay}" 
-                            x:Name="AttackValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-" />
-                        <Button
-                            Text="+" />
-                    </StackLayout>
-
-                    <Label Grid.Row="5" Grid.Column="0"
-                        Text="Defense" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="5" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Defense, Mode=TwoWay}" 
-                            x:Name="DefenseValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-" />
-                        <Button
-                            Text="+" />
-                    </StackLayout>
-
-                    <Label Grid.Row="6" Grid.Column="0"
-                        Text="Speed" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="6" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Speed, Mode=TwoWay}" 
-                            x:Name="SpeedValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-" />
-                        <Button
-                            Text="+" />
-                    </StackLayout>
-
-                    <Label Grid.Row="7" Grid.Column="0"
-                        Text="MaxHealth" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="7" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
-                            x:Name="MaxHealthValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-" />
-                        <Button
-                            Text="+" />
-                    </StackLayout>
+                    <Picker Grid.Row="3" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:SpecialDropEnumHelper.GetListSpecialDrop}" 
+                        SelectedItem="{Binding Data.SpecialDrop, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="ItemPicker"/>
 
                 </Grid>
 
