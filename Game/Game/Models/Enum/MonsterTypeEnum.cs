@@ -134,6 +134,38 @@ namespace Game.Models
 
             return Message;
         }
+
+        /// <summary>
+        /// Displays The Class of a Enum type monster
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>String value of the Monster Class</returns>
+        public static string GetMonsterClass(this MonsterTypeEnum value)
+        {
+            // Default String
+            var Message = "Standard";
+
+            switch (value)
+            {
+                case MonsterTypeEnum.EvilRefrigerator:
+                    Message = "Boss";
+                    break;
+
+                case MonsterTypeEnum.EvilToaster:
+                    Message = "Boss";
+                    break;
+
+                case MonsterTypeEnum.EvilBlender:
+                    Message = "Boss";
+                    break;
+
+                case MonsterTypeEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return Message;
+        }
     }
 
     /// <summary>
