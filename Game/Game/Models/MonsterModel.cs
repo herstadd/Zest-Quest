@@ -11,6 +11,8 @@ namespace Game.Models
     {
         // The Type for the Monster
         public MonsterTypeEnum MonsterType { get; set; } = MonsterTypeEnum.Unknown;
+        
+        // The special drop item for Monster
         public SpecialDropEnum SpecialDrop { get; set; }
 
 
