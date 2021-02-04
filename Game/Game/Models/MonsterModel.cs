@@ -11,6 +11,8 @@ namespace Game.Models
     {
         // The Type for the Monster
         public MonsterTypeEnum MonsterType { get; set; } = MonsterTypeEnum.Unknown;
+        public SpecialDropEnum SpecialDrop { get; set; }
+
 
         /// <summary>
         /// Set Type to Monster
@@ -33,6 +35,9 @@ namespace Game.Models
 
             // Default to unknown, which is no special job
             //MonsterType = MonsterTypeEnum.Unknown;
+
+            // Default to unknown, which hasno special drop
+            SpecialDrop = SpecialDropEnum.Unknown;
         }
 
         /// <summary>
