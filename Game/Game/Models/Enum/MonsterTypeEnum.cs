@@ -102,6 +102,38 @@ namespace Game.Models
 
             return Message;
         }
+
+        /// <summary>
+        /// Display a String for the Enums
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string GetSpecialDrop(this MonsterTypeEnum value)
+        {
+            // Default String
+            var Message = "None";
+
+            switch (value)
+            {
+                case MonsterTypeEnum.EvilRefrigerator:
+                    Message = "Refrigerator";
+                    break;
+
+                case MonsterTypeEnum.EvilToaster:
+                    Message = "Onion Ring";
+                    break;
+
+                case MonsterTypeEnum.EvilBlender:
+                    Message = "Butcher knife";
+                    break;               
+
+                case MonsterTypeEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return Message;
+        }
     }
 
     /// <summary>
