@@ -65,5 +65,16 @@ namespace Game.Views
         {
             await Navigation.PopModalAsync();
         }
+
+        /// <summary>
+        /// Changes the item for a Monster based on the type that is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TypeChanged(object sender, EventArgs e)
+        {
+            var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)JobPicker.SelectedItem);
+            UniqueDrop.Text  = MonsterJobEnumExtensions.GetSpecialDrop(selected);
+        }
     }
 }
