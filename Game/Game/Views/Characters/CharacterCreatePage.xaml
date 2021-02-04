@@ -72,7 +72,7 @@
 
                     <Picker Grid.Row="2" Grid.Column="1"
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
                         x:Name="JobPicker"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
@@ -81,7 +81,8 @@
 
                     <Entry Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="Description"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Attack" 
