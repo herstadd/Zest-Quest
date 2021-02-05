@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d"
              x:Class="Game.Views.MonsterReadPage"
              Title="Monster Read">
@@ -12,133 +13,85 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10">
+    <ContentPage.Content>
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+        <ScrollView>
+            <StackLayout Style="{StaticResource OuterBoxStack}"
+                Spacing="10">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Name: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="LV: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label
-                    Text="{Binding Data.Level}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label 
-                    Text="Type: " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Job}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label 
-                    Text="Specialty: " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Attack: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label
-                    Text="{Binding Data.Attack}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Defense: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label
-                    Text="{Binding Data.Defense}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Speed: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label
-                    Text="{Binding Data.Speed}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Health: "
-                    Style="{StaticResource LabelStyle}"/>
-                <Label
-                    Text="{Binding Data.MaxHealth}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="2"
+                    VerticalOptions="Center">
 
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
 
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Name" 
+                        Style="{StaticResource LabelStyle}"/>
 
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Data.Name}"
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"/>
 
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
+                    <Label Grid.Row="1" Grid.Column="0"
+                        Text="Type" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="1" Grid.Column="1"
+                        Text="{Binding Data.MonsterType}" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"/>
+
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Description" 
+                        Style="{StaticResource LabelStyle}"
+                        />
+
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Description}" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="Description"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Unique Drop" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1"
+                        Text="{Binding Data.SpecialDrop}" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="UniqueDrop"/>
+
+                    <Label Grid.Row="4" Grid.Column="0"
+                        Text="Class" 
+                        Style="{StaticResource LabelStyle}"
+                        />
+
+                    <Entry Grid.Row="4" Grid.Column="1"
+                        Text="Standard" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="MonsterClass"/>
+
+                </Grid>
             </StackLayout>
-            
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-            </StackLayout>
-        
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
