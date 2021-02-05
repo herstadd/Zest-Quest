@@ -132,6 +132,9 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="catchef.png" />
+    <Content Include="headchef.png" />
+    <Content Include="homechef.png" />
     <Content Include="icon_add.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_delete.png" />
@@ -168,6 +171,9 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="schoolchef.png" />
+    <Content Include="souschef.png" />
+    <Content Include="sushichef.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
