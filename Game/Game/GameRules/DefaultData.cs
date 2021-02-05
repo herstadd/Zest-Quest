@@ -232,64 +232,86 @@ namespace Game.GameRules
     }
 
     /// <summary>
-    /// Load Characters
+    /// Load Monsters
     /// </summary>
     /// <param name="temp"></param>
     /// <returns></returns>
     public static List<MonsterModel> LoadData(MonsterModel temp)
     {
-        var datalist = new List<MonsterModel>()
+            var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
                     Name = "Evil Refrigerator",
                     Description = "Boss",
+                    MonsterType = MonsterTypeEnum.EvilRefrigerator,
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Refrigerator,
                 },
 
                 new MonsterModel {
                     Name = "Evil Toaster",
+                    MonsterType = MonsterTypeEnum.EvilToaster,
                     Description = "Boss",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.OnionRing,
+
                 },
 
                 new MonsterModel {
                     Name = "Evil Blender",
+                    MonsterType = MonsterTypeEnum.EvilBlender,
                     Description = "Boss",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.ButcherKnife,
                 },
 
                 new MonsterModel {
                     Name = "Evil Dishwasher",
+                    MonsterType = MonsterTypeEnum.EvilDishwasher,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
                 },
 
                 new MonsterModel {
                     Name = "Evil Stove",
+                    MonsterType = MonsterTypeEnum.EvilStove,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
                 },
 
                 new MonsterModel {
                     Name = "Evil Kitchen Sink",
+                    MonsterType = MonsterTypeEnum.EvilKitchenSink,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
+
                 },
 
                 new MonsterModel {
                     Name = "Evil Rice Cooker",
+                    MonsterType = MonsterTypeEnum.EvilRiceCooker,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
                 },
+
                 new MonsterModel {
                     Name = "Evil Crock pot",
+                    MonsterType = MonsterTypeEnum.EvilCrockpot,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
                 },
+
                 new MonsterModel {
                     Name = "Evil Can Opener",
+                    MonsterType = MonsterTypeEnum.EvilCanOpener,
                     Description = "Standard",
                     ImageURI = "item.png",
+                    SpecialDrop = SpecialDropEnum.Unknown,
                 },
             };
 
