@@ -165,12 +165,6 @@
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="MaxHealthValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="MaxHealthValueChanged"/>
                     </StackLayout>
 
                 </Grid>
