@@ -154,7 +154,7 @@
                     </StackLayout>
 
                     <Label Grid.Row="7" Grid.Column="0"
-                        Text="MaxHealth" 
+                        Text="Health: "
                         Style="{StaticResource LabelStyle}"/>
 
                     <StackLayout Grid.Row="7" Grid.Column="1"
@@ -164,7 +164,7 @@
                             Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
                             x:Name="MaxHealthValue"
                             Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
+                            Padding="0,10,0,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
                     </StackLayout>
