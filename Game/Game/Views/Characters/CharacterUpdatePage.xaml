@@ -171,6 +171,59 @@
                             HorizontalTextAlignment="End"/>
                     </StackLayout>
                 </Grid>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                        HorizontalOptions="Center"
+                        />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                        HorizontalOptions="Center"
+                        />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                        HorizontalOptions="Center"
+                        />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                        HorizontalOptions="Center"
+                        />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        <Label Text="Item Name" 
+                           HorizontalOptions="Center"
+                           />
+                    </StackLayout>
+                </StackLayout>
+
+
 
                 <StackLayout 
                     Orientation="Horizontal"
