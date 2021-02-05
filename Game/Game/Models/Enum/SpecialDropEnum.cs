@@ -42,7 +42,7 @@ namespace Game.Models
         public static string ToMessage(this SpecialDropEnum value)
         {
             // Default String
-            var Message = "Player";
+            var Message = "None";
 
             switch (value)
             {
@@ -113,6 +113,11 @@ namespace Game.Models
         /// <returns></returns>
         public static SpecialDropEnum ConvertStringToEnum(string value)
         {
+            if (value == "None")
+            {
+                return SpecialDropEnum.Unknown;
+            }
+
             return (SpecialDropEnum)Enum.Parse(typeof(SpecialDropEnum), value);
         }
     }
