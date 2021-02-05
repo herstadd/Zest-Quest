@@ -75,6 +75,19 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Change the description of the character when the type dropdown is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TypeChanged(object sender, EventArgs e)
+        {
+            var selected = (string)JobPicker.SelectedItem;
+
+            DescriptionEnum Type = DescriptionEnumExtensions.ToEnum(selected);
+            Description.Text = DescriptionEnumExtensions.ToMessage(Type);
+        }
+
+        /// <summary>
         /// Update Attack value
         /// </summary>
         /// <param name="sender"></param>
