@@ -32,6 +32,8 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(ViewModel.Data.MonsterType);
         }
 
         /// <summary>
