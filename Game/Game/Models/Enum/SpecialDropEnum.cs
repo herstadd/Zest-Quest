@@ -47,15 +47,15 @@ namespace Game.Models
             switch (value)
             {
                 case SpecialDropEnum.ButcherKnife:
-                    Message = "Butcher Knife";
+                    Message = "ButcherKnife";
                     break;
 
                 case SpecialDropEnum.FriedChicken:
-                    Message = "Fried Chicken";
+                    Message = "FriedChicken";
                     break;
 
                 case SpecialDropEnum.OnionRing:
-                    Message = "Onion Ring";
+                    Message = "OnionRing";
                     break;
 
                 case SpecialDropEnum.Refrigerator:
@@ -63,7 +63,7 @@ namespace Game.Models
                     break;
 
                 case SpecialDropEnum.ScreamRing:
-                    Message = "Scream Ring";
+                    Message = "ScreamRing";
                     break;
 
                 case SpecialDropEnum.Unknown:
