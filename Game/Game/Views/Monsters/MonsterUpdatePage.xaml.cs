@@ -49,6 +49,12 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
+            // If the Name in the data box is empty, use the default one..
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                ViewModel.Data.Name = "New Monster";
+            }
+
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
