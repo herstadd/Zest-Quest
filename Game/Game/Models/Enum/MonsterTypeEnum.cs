@@ -124,7 +124,7 @@ namespace Game.Models
                     break;
 
                 case MonsterTypeEnum.EvilBlender:
-                    Message = "Butcherknife";
+                    Message = "ButcherKnife";
                     break;               
 
                 case MonsterTypeEnum.Unknown:
