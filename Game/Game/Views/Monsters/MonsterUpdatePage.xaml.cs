@@ -72,6 +72,16 @@ namespace Game.Views
             MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(selected);
         }
 
+        /// <summary>
+        /// Changes the name for the Monster when updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void NameChanged(object sender, EventArgs e)
+        {
+            ViewModel.Data.Name = MonsterName.Text;
+        }
+
 
         /// <summary>
         /// Save calls to Update

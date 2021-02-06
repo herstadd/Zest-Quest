@@ -43,6 +43,7 @@
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
+                        TextChanged="NameChanged"
                         x:Name="MonsterName"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
