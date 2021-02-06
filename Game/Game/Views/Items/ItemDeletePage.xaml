@@ -6,55 +6,56 @@
              mc:Ignorable="d"
              x:Class="Game.Views.ItemDeletePage"
              Title="{Binding Title}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
-
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
+        <StackLayout 
+            Style="{StaticResource OuterBoxStack}"
+            HorizontalOptions="Center" 
+            Spacing="20"
+            Padding="40">
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
+            <Label Text="{Binding Data.Name}"
+                HorizontalOptions="Center"
+                Font="Bold"/>
 
             <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
+                HorizontalOptions="Center" 
+                Padding="10">
 
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+                <StackLayout Orientation="Vertical">
 
-                <Button 
-                Text="Yes" 
-                Clicked="Delete_Clicked" 
-                HorizontalOptions="Center"
-                FontSize="Medium"
-                BorderWidth="1" 
-                BorderColor="black">
-                </Button>
+                    <Label Text="Are you sure you" 
+                        TextColor = "Black"
+                        Font="Bold"
+                        Style="{StaticResource MessageStyle}"
+                        FontSize="Large"/>
+
+                    <Label Text="want to delete?"
+                        HorizontalOptions="Center"
+                        TextColor = "Black"
+                        Font="Bold"
+                        Style="{StaticResource MessageStyle}"
+                        FontSize="Large"/>
+
+                </StackLayout>
             </StackLayout>
-            
+
+            <StackLayout Orientation="Horizontal">
+
+                <ImageButton 
+                    Clicked="Delete_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_delete.png"
+                    HeightRequest="40"/>
+
+                <ImageButton 
+                    Clicked="Cancel_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_cancel.png"
+                    HeightRequest="40"/>
+
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>
