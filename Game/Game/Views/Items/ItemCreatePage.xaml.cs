@@ -123,7 +123,8 @@ namespace Game.Views
             }
             else
             {
-                return num + 1;
+                num++;
+                return num > 9 ? 9 : num;
             }
         }
     }
