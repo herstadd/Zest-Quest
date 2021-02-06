@@ -22,7 +22,7 @@
                 <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
                
                     <Label 
-                        Text="Your Game Iformation"
+                        Text="Zest Quest"
                         Style="{StaticResource CenterMessageStyle}"
                         FontSize="Micro"
                         LineBreakMode="WordWrap"
@@ -30,7 +30,7 @@
                         />
 
                     <Label 
-                        Text="Help them on their mission."
+                        Text="Help the Chefs on their Quest for Zest!"
                         Style="{StaticResource CenterMessageStyle}"
                         FontSize="Micro"
                         LineBreakMode="WordWrap"
@@ -39,7 +39,7 @@
                 </StackLayout>
 
                 <Button
-                    Text="Enter"
+                    Text="Begin"
                     Clicked="GameButton_Clicked"/>
 
             </StackLayout>
