@@ -77,6 +77,11 @@
             return Message;
         }
 
+        /// <summary>
+        /// Gets the name of the picture that is associated with the Chef type
+        /// </summary>
+        /// <param name="value">The type of chef</param>
+        /// <returns>The name of the associated image</returns>
         public static string GetPicture(this DescriptionEnum value)
         {
             // Default String
