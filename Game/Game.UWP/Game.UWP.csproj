@@ -135,6 +135,7 @@
     <Content Include="catchef.png" />
     <Content Include="headchef.png" />
     <Content Include="homechef.png" />
+    <Content Include="house.png" />
     <Content Include="icon_add.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_delete.png" />
