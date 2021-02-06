@@ -19,8 +19,8 @@ namespace Game.GameRules
                     Name = "I1",
                     Description = "I1",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
+                    Range = 9,
+                    Damage = 9,
                     Value = 9,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack
@@ -29,9 +29,9 @@ namespace Game.GameRules
                     Name = "I2",
                     Description = "I2",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Range = 9,
+                    Damage = 5,
+                    Value = 3,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Attack
                 },
@@ -39,9 +39,9 @@ namespace Game.GameRules
                     Name = "I3",
                     Description = "I3",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Range = 7,
+                    Damage = 1,
+                    Value = 2,
                     Location = ItemLocationEnum.Necklass,
                     Attribute = AttributeEnum.Attack
                 },
@@ -49,8 +49,8 @@ namespace Game.GameRules
                     Name = "I4",
                     Description = "I4",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
+                    Range = 4,
+                    Damage = 2,
                     Value = 9,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack
@@ -59,8 +59,8 @@ namespace Game.GameRules
                     Name = "I5",
                     Description = "I5",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
+                    Range = 9,
+                    Damage = 0,
                     Value = 9,
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Attack
@@ -69,8 +69,8 @@ namespace Game.GameRules
                     Name = "I6",
                     Description = "I6",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
+                    Range = 8,
+                    Damage = 7,
                     Value = 9,
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Attack
@@ -83,7 +83,7 @@ namespace Game.GameRules
                 {
                     ImageURI = "item.png",
                     Range = 2,
-                    Damage = 10,
+                    Damage = 3,
                     Value = 9,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack

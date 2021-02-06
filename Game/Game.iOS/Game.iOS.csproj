@@ -192,4 +192,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\schoolchef.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\house.png" />
+  </ItemGroup>
 </Project>

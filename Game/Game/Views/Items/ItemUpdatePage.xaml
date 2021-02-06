@@ -102,7 +102,7 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                         <Label 
-                            Text="{Binding Data.Range}" 
+                            Text="{Binding Data.Range, Mode=TwoWay}" 
                             x:Name="RangeValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -125,7 +125,7 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                         <Label 
-                            Text="{Binding Data.Value}" 
+                            Text="{Binding Data.Value, Mode=TwoWay}" 
                             x:Name="ValueValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
@@ -148,7 +148,7 @@
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                         <Label 
-                            Text="{Binding Data.Damage}" 
+                            Text="{Binding Data.Damage, Mode=TwoWay}" 
                             x:Name="DamageValue"
                             Style="{StaticResource ValueStyle}"
                             Padding="0,0,10,0"
