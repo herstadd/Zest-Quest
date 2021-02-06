@@ -94,11 +94,10 @@
                     </StackLayout>
                 </Grid>
 
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Label 
-                            Text="Range" 
-                            Style="{StaticResource LabelStyle}"/>
+                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+                    <Label 
+                        Text="Range" 
+                        Style="{StaticResource LabelStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
@@ -109,10 +108,13 @@
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
-                    
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
+
+                        <Button
+                            Text="-"
+                            Clicked="RangeValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="RangeValueChanged"/>
                         
                     </StackLayout>
 
@@ -130,10 +132,13 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
+                        <Button
+                            Text="-"
+                            Clicked="ValueValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="ValueValueChanged"/>
+                        
                     </StackLayout>
 
                     <Label 
@@ -150,10 +155,13 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
-                    
+                        <Button
+                            Text="-"
+                            Clicked="DamageValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="DamageValueChanged"/>
+                        
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
