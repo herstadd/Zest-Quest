@@ -115,15 +115,57 @@
             return Picture;
         }
 
+        /// <summary>
+        /// Gets the max health of a character given their DescriptionEnum value
+        /// </summary>
+        /// <param name="value">The DescriptionEnum value of the chef</param>
+        /// <returns>The maxHealth of the chef</returns>
+        public static string GetMaxHealth(this DescriptionEnum value)
+        {
+            int maxHealth = 0;
+
+            switch(value)
+            {
+                case DescriptionEnum.HeadChef:
+                    maxHealth = 10;
+                    break;
+
+                case DescriptionEnum.SousChef:
+                    maxHealth = 1;
+                    break;
+
+                case DescriptionEnum.SchoolChef:
+                    maxHealth = 5;
+                    break;
+
+                case DescriptionEnum.SushiChef:
+                    maxHealth = 1;
+                    break;
+
+                case DescriptionEnum.CatChef:
+                    maxHealth = 1;
+                    break;
+
+                case DescriptionEnum.HomeCook:
+                    maxHealth = 10;
+                    break;
+
+                case DescriptionEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return maxHealth.ToString();
+        }
 
 
 
-                    /// <summary>
-                    /// Converts a string to the enum representation
-                    /// </summary>
-                    /// <param name="value"></param>
-                    /// <returns></returns>
-                    public static DescriptionEnum ToEnum(string value)
+        /// <summary>
+        /// Converts a string to the enum representation
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static DescriptionEnum ToEnum(string value)
         {
             var Type = DescriptionEnum.Unknown;
 
