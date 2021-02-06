@@ -65,33 +65,64 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Range
+        /// Update Range value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void RangeValueChanged(object sender, EventArgs e)
         {
-            RangeValue.Text = String.Format("{0}", e.NewValue);
+            int NewAttackValue = Int32.Parse(RangeValue.Text);
+            RangeValue.Text = ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Value
+        /// Update Value value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void ValueValueChanged(object sender, EventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
+            int NewAttackValue = Int32.Parse(ValueValue.Text);
+            ValueValue.Text = ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Damage
+        /// Update Damge value
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void DamageValueChanged(object sender, EventArgs e)
         {
-            DamageValue.Text = String.Format("{0}", e.NewValue);
+            int NewAttackValue = Int32.Parse(DamageValue.Text);
+            DamageValue.Text = ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
+        }
+
+        /// <summary>
+        /// Change Stat value
+        /// </summary>
+        /// <param name="ButtonText"></param>
+        /// <param name="num"></param>
+        /// <param name="IsLevel"></param>
+        /// <returns></returns>
+        private int ValueChange(String ButtonText, int num, bool IsLevel)
+        {
+            if (ButtonText.Equals("-"))
+            {
+                num--;
+                if (IsLevel)
+                {
+                    return num < 1 ? 1 : num;
+                }
+                else
+                {
+                    return num < 0 ? 0 : num;
+                }
+            }
+            else
+            {
+                num++;
+                return num > 9 ? 9 : num;
+            }
         }
     }
 }
