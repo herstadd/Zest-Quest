@@ -109,9 +109,12 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
+                        <Button
+                            Text="-"
+                            Clicked="RangeValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="RangeValueChanged"/>
 
                     </StackLayout>
 
@@ -129,9 +132,12 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
+                        <Button
+                            Text="-"
+                            Clicked="ValueValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="ValueValueChanged"/>
 
                     </StackLayout>
 
@@ -149,9 +155,12 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
+                        <Button
+                            Text="-"
+                            Clicked="DamageValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="DamageValueChanged"/>
 
                     </StackLayout>
                 </StackLayout>
