@@ -14,7 +14,7 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     <Image
-                         Source="item.png"
+                         Source="headchef.png"
                          Style="{StaticResource ImageLargeStyle}"/>
                 
                 </StackLayout>
