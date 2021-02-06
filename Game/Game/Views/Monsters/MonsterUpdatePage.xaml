@@ -9,11 +9,7 @@
              x:Class="Game.Views.MonsterUpdatePage"
              Title="Monster Update">
 
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
-    </ContentPage.ToolbarItems>-->
-
+ 
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
@@ -46,134 +42,48 @@
 
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="MonsterName"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
-                        Text="Level" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="1" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Level, Mode=TwoWay}" 
-                            x:Name="LevelValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="LevelValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="LevelValueChanged"/>
-                    </StackLayout>
-
-                    <Label Grid.Row="2" Grid.Column="0"
                         Text="Type" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                    <Picker Grid.Row="1" Grid.Column="1"
+                        ItemsSource="{x:Static local:MonsterJobEnumHelper.GetListMonster}" 
+                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedIndexChanged="TypeChanged"
                         x:Name="JobPicker"/>
 
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Description" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="MonsterDescription"/>
+
                     <Label Grid.Row="3" Grid.Column="0"
-                        Text="Specialty" 
+                        Text="Unique Drop" 
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Text="{Binding Data.SpecialDrop}" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="UniqueDrop"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
-                        Text="Attack" 
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="Class" 
+                        Style="{StaticResource LabelStyle}"
+                        />
 
-                    <StackLayout Grid.Row="4" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Attack, Mode=TwoWay}" 
-                            x:Name="AttackValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="AttackValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="AttackValueChanged"/>
-                    </StackLayout>
-
-                    <Label Grid.Row="5" Grid.Column="0"
-                        Text="Defense" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="5" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Defense, Mode=TwoWay}" 
-                            x:Name="DefenseValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="DefenseValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="DefenseValueChanged"/>
-                    </StackLayout>
-
-                    <Label Grid.Row="6" Grid.Column="0"
-                        Text="Speed" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="6" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.Speed, Mode=TwoWay}" 
-                            x:Name="SpeedValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="SpeedValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="SpeedValueChanged"/>
-                    </StackLayout>
-
-                    <Label Grid.Row="7" Grid.Column="0"
-                        Text="MaxHealth" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="7" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
-                            x:Name="MaxHealthValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                        <Button
-                            Text="-"
-                            Clicked="MaxHealthValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="MaxHealthValueChanged"/>
-                    </StackLayout>
+                    <Entry Grid.Row="4" Grid.Column="1"
+                        Text="Standard" 
+                        IsEnabled="False"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="MonsterClass"/>
                 </Grid>
 
                 <StackLayout 
