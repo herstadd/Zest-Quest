@@ -77,7 +77,7 @@
             return Message;
         }
 
-        public static string getPicture(this DescriptionEnum value)
+        public static string GetPicture(this DescriptionEnum value)
         {
             // Default String
             var Picture = "None";
