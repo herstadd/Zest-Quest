@@ -77,12 +77,53 @@
             return Message;
         }
 
-        /// <summary>
-        /// Converts a string to the enum representation
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static DescriptionEnum ToEnum(string value)
+        public static string getPicture(this DescriptionEnum value)
+        {
+            // Default String
+            var Picture = "None";
+
+            switch (value)
+            {
+                case DescriptionEnum.HeadChef:
+                    Picture = "headchef.png";
+                    break;
+
+                case DescriptionEnum.SousChef:
+                    Picture = "souschef.png";
+                    break;
+
+                case DescriptionEnum.SchoolChef:
+                    Picture = "schoolchef.png";
+                    break;
+
+                case DescriptionEnum.SushiChef:
+                    Picture = "sushichef.png";
+                    break;
+
+                case DescriptionEnum.CatChef:
+                    Picture = "catchef.png";
+                    break;
+
+                case DescriptionEnum.HomeCook:
+                    Picture = "homechef.png";
+                    break;
+
+                case DescriptionEnum.Unknown:
+                default:
+                    break;
+            }
+            return Picture;
+        }
+
+
+
+
+                    /// <summary>
+                    /// Converts a string to the enum representation
+                    /// </summary>
+                    /// <param name="value"></param>
+                    /// <returns></returns>
+                    public static DescriptionEnum ToEnum(string value)
         {
             var Type = DescriptionEnum.Unknown;
 

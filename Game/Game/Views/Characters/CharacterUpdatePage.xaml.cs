@@ -91,7 +91,7 @@ namespace Game.Views
 
             DescriptionEnum Type = DescriptionEnumExtensions.ToEnum(selected);
             Description.Text = DescriptionEnumExtensions.ToMessage(Type);
-            PictureSource.Source = "catchef.png";
+            PictureSource.Source = DescriptionEnumExtensions.getPicture(Type);
         }
 
         /// <summary>
