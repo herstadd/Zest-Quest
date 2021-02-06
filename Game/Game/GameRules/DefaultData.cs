@@ -135,12 +135,13 @@ namespace Game.GameRules
         var RightFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
         var LeftFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
 
-        var datalist = new List<CharacterModel>()
+            var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
                     Name = "Head Chef",
                     Description = "Each item grants this character double the normal stat modifier",
                     Level = 10,
+                    Job = CharacterJobEnum.HeadChef,
                     MaxHealth = 5,
                     ImageURI = "headchef.png",
                     Head = HeadString,
@@ -156,6 +157,7 @@ namespace Game.GameRules
                     Name = "Sous Chef ",
                     Description = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round",
                     Level = 1,
+                    Job = CharacterJobEnum.SousChef,
                     MaxHealth = 5,
                     ImageURI = "souschef.png",
                     Head = HeadString,
@@ -171,6 +173,7 @@ namespace Game.GameRules
                     Name = "School Chef ",
                     Description = "Provide a 20% attack buff to the rest of team if the school chef dies in a battle",
                     Level = 5,
+                    Job = CharacterJobEnum.SchoolChef,
                     MaxHealth = 5,
                     ImageURI = "schoolchef.png",
                     Head = HeadString,
@@ -186,6 +189,7 @@ namespace Game.GameRules
                     Name = "Sushi Chef ",
                     Description = "Has the ability to attack from anywhere on the map with any item ",
                     Level = 1,
+                    Job = CharacterJobEnum.SushiChef,
                     MaxHealth = 5,
                     ImageURI = "sushichef.png",
                     Head = HeadString,
@@ -201,6 +205,7 @@ namespace Game.GameRules
                     Name = "Cat Chef ",
                     Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time",
                     Level = 1,
+                    Job = CharacterJobEnum.CatChef,
                     MaxHealth = 5,
                     ImageURI = "catchef.png",
                     Head = HeadString,
@@ -216,6 +221,7 @@ namespace Game.GameRules
                     Name = "Home Cook",
                     Description = "After winning a battle their current health will be recovered by 10% of original max health up to max health",
                     Level = 10,
+                    Job = CharacterJobEnum.HomeCook,
                     MaxHealth = 5,
                     ImageURI = "homechef.png",
                     Head = HeadString,
