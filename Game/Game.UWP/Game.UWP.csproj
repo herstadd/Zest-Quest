@@ -178,6 +178,7 @@
     <Content Include="schoolchef.png" />
     <Content Include="souschef.png" />
     <Content Include="sushichef.png" />
+    <Content Include="zelda_items.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
