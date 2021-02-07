@@ -9,7 +9,7 @@ using Game.Models;
 namespace Game.Views
 {
     /// <summary>
-    /// The Read Page
+    /// Monster Delete Page
     /// </summary>
     [DesignTimeVisible(false)] 
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -18,10 +18,16 @@ namespace Game.Views
         // View Model for Item
         readonly GenericViewModel<MonsterModel> viewModel;
 
-        // Empty Constructor for UTs
+        /// <summary>
+        /// Empty Constructor for UTs 
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public MonsterDeletePage(bool UnitTest) { }
 
-        // Constructor for Delete takes a view model of what to delete
+        /// <summary>
+        /// Constructor for Delete takes a view model of what to delete
+        /// </summary>
+        /// <param name="data"></param>
         public MonsterDeletePage(GenericViewModel<MonsterModel> data)
         {
             InitializeComponent();
