@@ -199,6 +199,6 @@
     <BundleResource Include="Resources\oscar.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Monster2.png" />
+    <BundleResource Include="Resources\monster2.png" />
   </ItemGroup>
 </Project>
