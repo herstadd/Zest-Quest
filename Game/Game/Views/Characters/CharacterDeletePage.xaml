@@ -7,25 +7,22 @@
              x:Class="Game.Views.CharacterDeletePage"
              Title="Delete Page">
     
- 
-
+    
     <ScrollView>
         <StackLayout Style="{StaticResource OuterBoxStack}"
-                HorizontalOptions="Center" 
-                Spacing="20"
-                Padding="40">
+            HorizontalOptions="Center" 
+            Spacing="20"
+            Padding="40">
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
             <Label Text="{Binding Data.Name}"
                    HorizontalOptions="Center"
                    Font="Bold"/>
 
-
             <StackLayout 
-              HorizontalOptions="Center" 
-               Padding="10">
-                <StackLayout 
-                 Orientation="Vertical">
+                HorizontalOptions="Center" 
+                Padding="10">
+                <StackLayout Orientation="Vertical">
                     <Label Style="{StaticResource DeleteMessageStyle1}" />
                     <Label Style="{StaticResource DeleteMessageStyle2}" />
                 </StackLayout>
@@ -33,19 +30,16 @@
 
             <StackLayout Orientation="Horizontal">
                 <ImageButton 
-                      Clicked="Delete_Clicked" 
-                      HorizontalOptions="Start"
-                      Source="icon_delete.png"
-                       HeightRequest="40"
-                      >
-                </ImageButton>
+                    Clicked="Delete_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_delete.png"
+                    HeightRequest="40" />
+
                 <ImageButton 
-                      Clicked="Cancel_Clicked" 
-                      HorizontalOptions="Start"
-                      Source="icon_cancel.png"
-                       HeightRequest="40"
-                      >
-                </ImageButton>
+                    Clicked="Cancel_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_cancel.png"
+                    HeightRequest="40" />
             </StackLayout>
         
         </StackLayout>
