@@ -24,20 +24,8 @@
                 Padding="10">
 
                 <StackLayout Orientation="Vertical">
-
-                    <Label Text="Are you sure you" 
-                        TextColor = "Black"
-                        Font="Bold"
-                        Style="{StaticResource MessageStyle}"
-                        FontSize="Large"/>
-
-                    <Label Text="want to delete?"
-                        HorizontalOptions="Center"
-                        TextColor = "Black"
-                        Font="Bold"
-                        Style="{StaticResource MessageStyle}"
-                        FontSize="Large"/>
-
+                    <Label Style="{StaticResource DeleteMessageStyle1}" />
+                    <Label Style="{StaticResource DeleteMessageStyle2}" />
                 </StackLayout>
             </StackLayout>
 
