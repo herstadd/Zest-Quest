@@ -20,8 +20,8 @@
 
 
             <StackLayout 
-              HorizontalOptions="Center" 
-               Padding="10">
+                HorizontalOptions="Center" 
+                Padding="10">
                 <StackLayout 
                  Orientation="Vertical">
                     <Label Style="{StaticResource DeleteMessageStyle1}" />
@@ -30,20 +30,19 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
+                
                 <ImageButton 
-                      Clicked="Delete_Clicked" 
-                      HorizontalOptions="Start"
-                      Source="icon_delete.png"
-                       HeightRequest="40"
-                      >
-                </ImageButton>
+                    Clicked="Delete_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_delete.png"
+                    HeightRequest="40" />
+                
                 <ImageButton 
-                      Clicked="Cancel_Clicked" 
-                      HorizontalOptions="Start"
-                      Source="icon_cancel.png"
-                       HeightRequest="40"
-                      >
-                </ImageButton>
+                    Clicked="Cancel_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_cancel.png"
+                    HeightRequest="40" />
+                
             </StackLayout>
         
         </StackLayout>
