@@ -129,7 +129,6 @@ namespace Game.Views
         /// <returns></returns>
         private int ValueChange(String ButtonText, int num, bool IsMaxHealth, int maxHealth=0) 
         {
-            Debug.WriteLine(num + "is the level being passed in");
             if (ButtonText.Equals("-"))
             {
                 if (IsMaxHealth)
