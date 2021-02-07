@@ -117,17 +117,6 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Update Max Health value
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void MaxHealthValueChanged(object sender, EventArgs e)
-        {
-            int NewMaxHealthValue = Int32.Parse(MaxHealthValue.Text);
-            MaxHealthValue.Text = ValueChange((sender as Button).Text, NewMaxHealthValue, false).ToString();
-        }
-
-        /// <summary>
         /// Change Stat value
         /// </summary>
         /// <param name="ButtonText"></param>
