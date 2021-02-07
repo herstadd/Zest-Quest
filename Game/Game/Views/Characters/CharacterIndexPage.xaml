@@ -23,8 +23,7 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     Margin="5,0,5,0"
-                    RowHeight="100"
-                    >
+                    RowHeight="100">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
