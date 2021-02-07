@@ -22,7 +22,15 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <Image Source="{Binding Data.ImageURI}" 
+                       Style="{StaticResource ImageLargeStyle}" 
+                       HorizontalOptions="CenterAndExpand"
+                       x:Name="PictureSource"/>
+
+                <Entry
+                    IsVisible="false"
+                    Text="{Binding Data.ImageURI}" 
+                    x:Name="ChangeImage"/>
 
                 <Grid
                     RowSpacing="1"
