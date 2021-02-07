@@ -132,27 +132,18 @@
             switch(value)
             {
                 case DescriptionEnum.HeadChef:
+                case DescriptionEnum.HomeCook:
                     DefaultLevel = 10;
-                    break;
-
-                case DescriptionEnum.SousChef:
-                    DefaultLevel = 1;
                     break;
 
                 case DescriptionEnum.SchoolChef:
                     DefaultLevel = 5;
                     break;
 
+                case DescriptionEnum.SousChef:
                 case DescriptionEnum.SushiChef:
-                    DefaultLevel = 1;
-                    break;
-
                 case DescriptionEnum.CatChef:
                     DefaultLevel = 1;
-                    break;
-
-                case DescriptionEnum.HomeCook:
-                    DefaultLevel = 10;
                     break;
 
                 case DescriptionEnum.Unknown:
