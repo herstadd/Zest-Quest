@@ -20,9 +20,9 @@ namespace Game.Models
             Guid = Id;
             Name = "Chef";
             Job = CharacterJobEnum.HeadChef;
-            Description = "I am a happy little chef";
-            Level = 1;
-            ImageURI = "item.png";
+            Attack = 1;
+            Defense = 1;
+            Speed = 1;
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
