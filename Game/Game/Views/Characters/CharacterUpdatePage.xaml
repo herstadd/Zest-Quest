@@ -34,7 +34,6 @@
                 <Entry
                     IsVisible="false"
                     Text="{Binding Data.ImageURI}" 
-                    Style="{StaticResource EntryStyle}"
                     x:Name="ChangeImage"/>
 
                 <Grid
