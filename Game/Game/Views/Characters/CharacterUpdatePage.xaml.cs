@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Game.Helpers;
 
 using Game.ViewModels;
 using Game.Models;
@@ -77,7 +78,9 @@ namespace Game.Views
         public void LevelValueChanged(object sender, EventArgs e)
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
+            int MaxHealth = Int32.Parse(MaxHealthValue.Text);
             LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true).ToString();
+            MaxHealthValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true, MaxHealth).ToString();
         }
 
         /// <summary>
@@ -94,6 +97,36 @@ namespace Game.Views
             PictureSource.Source = DescriptionEnumExtensions.GetPicture(Type);
             ChangeImage.Text = DescriptionEnumExtensions.GetPicture(Type);
             LevelValue.Text = DescriptionEnumExtensions.GetDefaultLevel(Type);
+        }
+
+        /// <summary>
+        /// Change Stat value
+        /// </summary>
+        /// <param name="ButtonText"></param>
+        /// <param name="num"></param>
+        /// <param name="IsMaxHealth"></param>
+        /// <param name="maxHealth"></param>
+        /// <returns></returns>
+        private int ValueChange(String ButtonText, int num, bool IsMaxHealth, int maxHealth = 0)
+        {
+            if (ButtonText.Equals("-"))
+            {
+                if (IsMaxHealth)
+                {
+                    num--;
+                    return num < 1 ? maxHealth : DiceHelper.RollDice(num, 10);
+                }
+                num--;
+                return num < 1 ? 1 : num;
+            }
+            else
+            {
+                if (IsMaxHealth)
+                {
+                    return DiceHelper.RollDice(num + 1, 10);
+                }
+                return num + 1;
+            }
         }
 
         /// <summary>
