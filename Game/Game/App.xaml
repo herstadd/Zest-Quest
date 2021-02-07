@@ -146,6 +146,25 @@
                 <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
+            <Style TargetType="Label" 
+                x:Key="DeleteMessageStyle1"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Text" Value="Are you sure you" />
+            </Style>
+
+            <Style TargetType="Label" 
+                x:Key="DeleteMessageStyle2"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Text" Value="want to delete?" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
             <Style TargetType="Label"
                 x:Key="MessageLargeStyle"
                 BasedOn="{StaticResource MessageStyle}">
