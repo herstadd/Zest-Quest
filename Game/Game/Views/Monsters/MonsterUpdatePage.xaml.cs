@@ -15,7 +15,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterUpdatePage : ContentPage
     {
-        // View Model for Item
+        // View Model for Monster
         public readonly GenericViewModel<MonsterModel> ViewModel;
 
         // Current Monster Name
@@ -68,7 +68,7 @@ namespace Game.Views
 
 
         /// <summary>
-        /// Changes the item for a Monster based on the type that is selected
+        /// Changes the items for a Monster based on the type that is selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +83,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Changes the name for the Monster when updated
+        /// Changes the name of the Monster when updated
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

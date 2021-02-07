@@ -16,7 +16,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterCreatePage : ContentPage
     {
-        // The item to create
+        // The Monster to create
         public GenericViewModel<MonsterModel> ViewModel = new GenericViewModel<MonsterModel>();
 
         // Empty Constructor for UTs
@@ -73,7 +73,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Changes the item for a Monster based on the type that is selected
+        /// Change based on the type of a monster that is selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
