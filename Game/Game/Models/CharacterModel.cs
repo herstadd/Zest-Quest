@@ -1,4 +1,5 @@
 ﻿using Game.GameRules;
+using Game.Helpers;
 
 namespace Game.Models
 {
@@ -23,6 +24,7 @@ namespace Game.Models
             Attack = 1;
             Defense = 1;
             Speed = 1;
+            MaxHealth = DiceHelper.RollDice(10, 10);
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
