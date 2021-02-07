@@ -104,6 +104,62 @@ namespace Game.Models
         }
 
         /// <summary>
+        /// Gets the name of the picture that is associated with the Monster type
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string GetPicture(this MonsterTypeEnum value)
+        {
+            // Default String
+            var MonsterImage = "None";
+
+            switch (value)
+            {
+                case MonsterTypeEnum.EvilRefrigerator:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilToaster:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilBlender:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilDishwasher:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilStove:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilKitchenSink:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilRiceCooker:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilCrockpot:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.EvilCanOpener:
+                    MonsterImage = "crock_pot.png";
+                    break;
+
+                case MonsterTypeEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return MonsterImage;
+        }
+
+        /// <summary>
         /// Displays a Special drop for a Enum type monster
         /// </summary>
         /// <param name="value"></param>
