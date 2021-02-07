@@ -31,6 +31,12 @@
                        HorizontalOptions="CenterAndExpand"
                        x:Name="PictureSource"/>
 
+                <Entry
+                    IsVisible="false"
+                    Text="{Binding Data.ImageURI}" 
+                    Style="{StaticResource EntryStyle}"
+                    x:Name="ChangeImage"/>
+
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
