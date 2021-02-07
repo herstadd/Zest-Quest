@@ -169,6 +169,7 @@ namespace Game.Views
 
             PictureSource.Source = DescriptionEnumExtensions.GetPicture(Type);
             ChangeImage.Text = DescriptionEnumExtensions.GetPicture(Type);
+            LevelValue.Text = DescriptionEnumExtensions.GetDefaultLevel(Type);
         }
     }
 }
