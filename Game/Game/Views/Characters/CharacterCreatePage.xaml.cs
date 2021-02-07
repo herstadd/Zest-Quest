@@ -139,14 +139,7 @@ namespace Game.Views
             if (ButtonText.Equals("-"))
             {
                 num--;
-                if (IsLevel)
-                {
-                    return num < 1 ? 1 : num;
-                } 
-                else
-                {
-                    return num < 0 ? 0 : num;
-                }
+                return num < 1 ? 1 : num;
             }
             else 
             {
