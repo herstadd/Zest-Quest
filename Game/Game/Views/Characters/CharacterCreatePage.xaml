@@ -62,10 +62,7 @@
                         <Label 
                             Text="{Binding Data.Level, Mode=TwoWay}" 
                             x:Name="LevelValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Style="{StaticResource CharacterStatStyle}"/>
                         <Button
                             Text="-"
                             Clicked="LevelValueChanged"/>
@@ -103,10 +100,7 @@
                         <Label 
                             Text="{Binding Data.Attack, Mode=TwoWay}" 
                             x:Name="AttackValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Style="{StaticResource CharacterStatStyle}"/>
                         <Button
                             Text="-"
                             Clicked="AttackValueChanged"/>
@@ -125,10 +119,7 @@
                         <Label 
                             Text="{Binding Data.Defense, Mode=TwoWay}" 
                             x:Name="DefenseValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Style="{StaticResource CharacterStatStyle}"/>
                         <Button
                             Text="-"
                             Clicked="DefenseValueChanged"/>
@@ -147,10 +138,7 @@
                         <Label 
                             Text="{Binding Data.Speed, Mode=TwoWay}" 
                             x:Name="SpeedValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Style="{StaticResource CharacterStatStyle}"/>
                         <Button
                             Text="-"
                             Clicked="SpeedValueChanged"/>
@@ -169,10 +157,8 @@
                         <Label 
                             Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
                             x:Name="MaxHealthValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,10,0,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                            Style="{StaticResource CharacterStatStyle}"
+                            Padding="0,10,0,0" />
                     </StackLayout>
 
                 </Grid>
