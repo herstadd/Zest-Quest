@@ -144,6 +144,7 @@
     <Content Include="icon_save.png" />
     <Content Include="item.png" />
     <Content Include="mapcell.png" />
+    <Content Include="oscar.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
