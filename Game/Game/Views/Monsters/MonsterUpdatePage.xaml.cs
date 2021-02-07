@@ -33,6 +33,12 @@ namespace Game.Views
         // Current Monster Class (Boss or Standard)
         public String CurrentClass { set; get; }
 
+        // Current Monster Image
+        public String CurrentImage { set; get; }
+
+        // Current Monster PictureSource
+        public ImageSource CurrentPictureSource { set; get; }
+
 
         // Empty Constructor for Tests
         public MonsterUpdatePage(bool UnitTest){ }
@@ -55,7 +61,9 @@ namespace Game.Views
             CurrentName = ViewModel.Data.Name;
             CurrentType = ViewModel.Data.MonsterType;
             CurrentDescription = ViewModel.Data.Description;
-            CurrentUiqueDrop = ViewModel.Data.SpecialDrop; 
+            CurrentUiqueDrop = ViewModel.Data.SpecialDrop;
+            CurrentPictureSource = PictureSource.Source;
+            CurrentImage = ViewModel.Data.ImageURI;
         }
 
 
@@ -70,6 +78,8 @@ namespace Game.Views
             UniqueDrop.Text = MonsterJobEnumExtensions.GetSpecialDrop(selected);
             ViewModel.Data.SpecialDrop = SpecialDropEnumHelper.ConvertStringToEnum(UniqueDrop.Text);
             MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(selected);
+            PictureSource.Source = MonsterJobEnumExtensions.GetPicture(selected);
+            ChangeImage.Text = MonsterJobEnumExtensions.GetPicture(selected);
         }
 
         /// <summary>
@@ -118,6 +128,8 @@ namespace Game.Views
             ViewModel.Data.MonsterType = CurrentType;
             ViewModel.Data.Description = CurrentDescription;
             ViewModel.Data.SpecialDrop = CurrentUiqueDrop;
+            PictureSource.Source = CurrentPictureSource;
+            ViewModel.Data.ImageURI = CurrentImage;
 
             await Navigation.PopModalAsync();
         }
