@@ -1,4 +1,6 @@
-﻿namespace Game.Models
+﻿using Game.Helpers;
+
+namespace Game.Models
 {
     /// <summary>
     /// The Types of s a Action can have
@@ -129,7 +131,7 @@
         {
             int DefaultLevel = 0;
 
-            switch(value)
+            switch (value)
             {
                 case DescriptionEnum.HeadChef:
                 case DescriptionEnum.HomeCook:
@@ -197,6 +199,40 @@
             }
 
             return Type;
+        }
+
+        /// <summary>
+        /// Calculates a new max health value based on which chef type was selected
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static int CalcMaxHealth(this DescriptionEnum value)
+        {
+            int DefaultLevel = 0;
+
+            switch (value)
+            {
+                case DescriptionEnum.HeadChef:
+                case DescriptionEnum.HomeCook:
+                    DefaultLevel = DiceHelper.RollDice(10, 10);
+                    break;
+
+                case DescriptionEnum.SchoolChef:
+                    DefaultLevel = DiceHelper.RollDice(5, 10);
+                    break;
+
+                case DescriptionEnum.SousChef:
+                case DescriptionEnum.SushiChef:
+                case DescriptionEnum.CatChef:
+                    DefaultLevel = DiceHelper.RollDice(1, 10);
+                    break;
+
+                case DescriptionEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return DefaultLevel;
         }
     }
 }
