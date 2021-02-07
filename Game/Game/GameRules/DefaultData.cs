@@ -343,7 +343,7 @@ namespace Game.GameRules
                     Name = "Evil Refrigerator",
                     Description = "Boss",
                     MonsterType = MonsterTypeEnum.EvilRefrigerator,
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "monster2.png",
                     SpecialDrop = SpecialDropEnum.Refrigerator,
                 },
 

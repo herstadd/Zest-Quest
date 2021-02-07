@@ -116,7 +116,7 @@ namespace Game.Models
             switch (value)
             {
                 case MonsterTypeEnum.EvilRefrigerator:
-                    MonsterImage = "crock_pot.png";
+                    MonsterImage = "monster2.png";
                     break;
 
                 case MonsterTypeEnum.EvilToaster:
