@@ -172,32 +172,5 @@ namespace Game.Views
             int NewMaxHealthValue = Int32.Parse(MaxHealthValue.Text);
             MaxHealthValue.Text = ValueChange((sender as Button).Text, NewMaxHealthValue, false).ToString();
         }
-
-        /// <summary>
-        /// Change Stat value
-        /// </summary>
-        /// <param name="ButtonText"></param>
-        /// <param name="num"></param>
-        /// <param name="IsLevel"></param>
-        /// <returns></returns>
-        private int ValueChange(String ButtonText, int num, bool IsLevel)
-        {
-            if (ButtonText.Equals("-"))
-            {
-                num--;
-                if (IsLevel)
-                {
-                    return num < 1 ? 1 : num;
-                }
-                else
-                {
-                    return num < 0 ? 0 : num;
-                }
-            }
-            else
-            {
-                return num + 1;
-            }
-        }
     }
 }
