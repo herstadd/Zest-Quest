@@ -125,34 +125,34 @@
         /// </summary>
         /// <param name="value">The DescriptionEnum value of the chef</param>
         /// <returns>The maxHealth of the chef</returns>
-        public static string GetMaxHealth(this DescriptionEnum value)
+        public static string GetDefaultLevel(this DescriptionEnum value)
         {
-            int maxHealth = 0;
+            int DefaultLevel = 0;
 
             switch(value)
             {
                 case DescriptionEnum.HeadChef:
-                    maxHealth = 10;
+                    DefaultLevel = 10;
                     break;
 
                 case DescriptionEnum.SousChef:
-                    maxHealth = 1;
+                    DefaultLevel = 1;
                     break;
 
                 case DescriptionEnum.SchoolChef:
-                    maxHealth = 5;
+                    DefaultLevel = 5;
                     break;
 
                 case DescriptionEnum.SushiChef:
-                    maxHealth = 1;
+                    DefaultLevel = 1;
                     break;
 
                 case DescriptionEnum.CatChef:
-                    maxHealth = 1;
+                    DefaultLevel = 1;
                     break;
 
                 case DescriptionEnum.HomeCook:
-                    maxHealth = 10;
+                    DefaultLevel = 10;
                     break;
 
                 case DescriptionEnum.Unknown:
@@ -160,7 +160,7 @@
                     break;
             }
 
-            return maxHealth.ToString();
+            return DefaultLevel.ToString();
         }
 
 

@@ -93,7 +93,7 @@ namespace Game.Views
             Description.Text = DescriptionEnumExtensions.ToMessage(Type);
             PictureSource.Source = DescriptionEnumExtensions.GetPicture(Type);
             ChangeImage.Text = DescriptionEnumExtensions.GetPicture(Type);
-            MaxHealthValue.Text = DescriptionEnumExtensions.GetMaxHealth(Type);
+            LevelValue.Text = DescriptionEnumExtensions.GetDefaultLevel(Type);
         }
 
         /// <summary>
