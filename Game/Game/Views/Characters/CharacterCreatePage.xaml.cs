@@ -1,4 +1,5 @@
-﻿using Game.Models;
+﻿using Game.Helpers;
+using Game.Models;
 using Game.ViewModels;
 
 using System;
@@ -81,6 +82,9 @@ namespace Game.Views
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
             LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true).ToString();
+
+            int NewMaxHealth = DiceHelper.RollDice(NewLevelValue, 10);
+            MaxHealthValue.Text = NewMaxHealth.ToString();
         }
 
         /// <summary>
