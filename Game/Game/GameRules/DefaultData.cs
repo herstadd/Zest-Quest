@@ -16,83 +16,176 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "I1",
+                    Name = "Chef Hat",
                     Description = "I1",
                     ImageURI = "item.png",
-                    Range = 9,
+                    Range = 3,
                     Damage = 9,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
-                },
-                new ItemModel {
-                    Name = "I2",
-                    Description = "I2",
-                    ImageURI = "item.png",
-                    Range = 9,
-                    Damage = 5,
-                    Value = 3,
+                    Value = 4,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I3",
+                    Name = "Bandana",
+                    Description = "I2",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 5,
+                    Value = 3,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Speed
+                },
+                new ItemModel {
+                    Name = "Roasted Turkey Hat",
                     Description = "I3",
                     ImageURI = "item.png",
-                    Range = 7,
+                    Range = 0,
                     Damage = 1,
-                    Value = 2,
+                    Value = 4,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.MaxHealth
+                },
+                new ItemModel {
+                    Name = "Butcher Knife Necklace",
+                    Description = "I4",
+                    ImageURI = "item.png",
+                    Range = 2,
+                    Damage = 5,
+                    Value = 3,
                     Location = ItemLocationEnum.Necklass,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I4",
-                    Description = "I4",
-                    ImageURI = "item.png",
-                    Range = 4,
-                    Damage = 2,
-                    Value = 9,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack
-                },
-                new ItemModel {
-                    Name = "I5",
+                    Name = "Timer",
                     Description = "I5",
                     ImageURI = "item.png",
-                    Range = 9,
+                    Range = 0,
                     Damage = 0,
-                    Value = 9,
-                    Location = ItemLocationEnum.Finger,
+                    Value = 4,
+                    Location = ItemLocationEnum.Necklass,
+                    Attribute = AttributeEnum.MaxHealth
+                },
+                new ItemModel {
+                    Name = "Apron",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 3,
+                    Location = ItemLocationEnum.Necklass,
+                    Attribute = AttributeEnum.Defense
+                },
+                new ItemModel {
+                    Name = "Refrigerator",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 5,
+                    Damage = 9,
+                    Value = 6,
+                    Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I6",
+                    Name = "Pan",
                     Description = "I6",
                     ImageURI = "item.png",
-                    Range = 8,
+                    Range = 0,
+                    Damage = 6,
+                    Value = 4,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Defense
+                },
+                new ItemModel {
+                    Name = "Knife",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 2,
+                    Damage = 4,
+                    Value = 4,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Speed
+                },
+                new ItemModel {
+                    Name = "Cutting Board",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 2,
                     Damage = 7,
-                    Value = 9,
+                    Value = 5,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Attack
+                },
+                new ItemModel {
+                    Name = "Ring pop",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 2,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.MaxHealth
+                },
+                new ItemModel {
+                    Name = "Scream Ring",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 5,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.Speed
+                },
+                new ItemModel {
+                    Name = "Onion Ring",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 4,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.MaxHealth
+                },
+                new ItemModel {
+                    Name = "Flipflop",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 4,
+                    Damage = 0,
+                    Value = 5,
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Attack
                 },
-            };
-
-            for (int i = 0; i < 20; i++)
-            {
-                var item = new ItemModel
-                {
+                new ItemModel {
+                    Name = "Crocs",
+                    Description = "I6",
                     ImageURI = "item.png",
-                    Range = 2,
-                    Damage = 3,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
-                };
-                item.Name = "I" + (datalist.Count+1).ToString();
-                item.Description = item.Name;
-
-                datalist.Add(item);
-            }
+                    Range = 0,
+                    Damage = 0,
+                    Value = 2,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Defense
+                },
+                new ItemModel {
+                    Name = "Wookie Boots",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 3,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Speed
+                },
+                new ItemModel {
+                    Name = "Santa shoes",
+                    Description = "I6",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 5,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.MaxHealth
+                },
+            };
 
             return datalist;
         }
