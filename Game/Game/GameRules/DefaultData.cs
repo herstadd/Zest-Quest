@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using Game.Helpers;
 using Game.Models;
 using Game.ViewModels;
 
@@ -235,7 +235,7 @@ namespace Game.GameRules
                     Description = "Each item grants this character double the normal stat modifier",
                     Level = 10,
                     Job = CharacterJobEnum.HeadChef,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(10, 10),
                     ImageURI = "headchef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -251,7 +251,7 @@ namespace Game.GameRules
                     Description = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round",
                     Level = 1,
                     Job = CharacterJobEnum.SousChef,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(1, 10),
                     ImageURI = "souschef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -267,7 +267,7 @@ namespace Game.GameRules
                     Description = "Provide a 20% attack buff to the rest of team if the school chef dies in a battle",
                     Level = 5,
                     Job = CharacterJobEnum.SchoolChef,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(5, 10),
                     ImageURI = "schoolchef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -283,7 +283,7 @@ namespace Game.GameRules
                     Description = "Has the ability to attack from anywhere on the map with any item ",
                     Level = 1,
                     Job = CharacterJobEnum.SushiChef,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(1, 10),
                     ImageURI = "sushichef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -299,7 +299,7 @@ namespace Game.GameRules
                     Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time",
                     Level = 1,
                     Job = CharacterJobEnum.CatChef,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(1, 10),
                     ImageURI = "catchef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -315,7 +315,7 @@ namespace Game.GameRules
                     Description = "After winning a battle their current health will be recovered by 10% of original max health up to max health",
                     Level = 10,
                     Job = CharacterJobEnum.HomeCook,
-                    MaxHealth = 5,
+                    MaxHealth = DiceHelper.RollDice(10, 10),
                     ImageURI = "homechef.png",
                     Head = HeadString,
                     Necklass = NecklassString,
