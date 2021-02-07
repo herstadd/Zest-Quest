@@ -176,6 +176,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="schoolchef.png" />
+    <Content Include="scorecard.png" />
     <Content Include="souschef.png" />
     <Content Include="sushichef.png" />
     <Content Include="zelda_items.png" />

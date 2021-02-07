@@ -207,4 +207,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\zelda_items.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scorecard.png" />
+  </ItemGroup>
 </Project>
