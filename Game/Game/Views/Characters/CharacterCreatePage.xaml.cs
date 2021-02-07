@@ -81,10 +81,9 @@ namespace Game.Views
         public void LevelValueChanged(object sender, EventArgs e)
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
-            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true).ToString();
-
-            int NewMaxHealth = DiceHelper.RollDice(NewLevelValue, 10);
-            MaxHealthValue.Text = NewMaxHealth.ToString();
+            int MaxHealth = Int32.Parse(MaxHealthValue.Text);
+            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, false).ToString();
+            MaxHealthValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true, MaxHealth).ToString();
         }
 
         /// <summary>
@@ -125,17 +124,28 @@ namespace Game.Views
         /// </summary>
         /// <param name="ButtonText"></param>
         /// <param name="num"></param>
-        /// <param name="IsLevel"></param>
+        /// <param name="IsMaxHealth"></param>
+        /// <param name="maxHealth"></param>
         /// <returns></returns>
-        private int ValueChange(String ButtonText, int num, bool IsLevel) 
+        private int ValueChange(String ButtonText, int num, bool IsMaxHealth, int maxHealth=0) 
         {
+            Debug.WriteLine(num + "is the level being passed in");
             if (ButtonText.Equals("-"))
             {
+                if (IsMaxHealth)
+                {
+                    num--;
+                    return num < 1 ? maxHealth : DiceHelper.RollDice(num, 10);
+                }
                 num--;
                 return num < 1 ? 1 : num;
             }
             else 
             {
+                if (IsMaxHealth)
+                {
+                    return DiceHelper.RollDice(num + 1, 10);
+                }
                 return num + 1;
             }
         }
