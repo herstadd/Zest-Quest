@@ -219,4 +219,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\kitchen2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\auto_battle.png" />
+  </ItemGroup>
 </Project>
