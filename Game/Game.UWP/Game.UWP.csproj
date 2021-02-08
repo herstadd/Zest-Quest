@@ -184,6 +184,7 @@
     <Content Include="souschef.png" />
     <Content Include="sushichef.png" />
     <Content Include="teamtelephone.png" />
+    <Content Include="teamtelephone2.png" />
     <Content Include="zelda_items.png" />
   </ItemGroup>
   <ItemGroup>
