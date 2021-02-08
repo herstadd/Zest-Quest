@@ -18,7 +18,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Chef Hat",
                     Description = "I1",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 3,
                     Damage = 9,
                     Value = 4,
@@ -28,7 +28,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bandana",
                     Description = "I2",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 5,
                     Value = 3,
@@ -38,7 +38,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Roasted Turkey Hat",
                     Description = "I3",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 1,
                     Value = 4,
@@ -48,7 +48,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Butcher Knife Necklace",
                     Description = "I4",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 5,
                     Value = 3,
@@ -58,7 +58,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Timer",
                     Description = "I5",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 4,
@@ -68,7 +68,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Apron",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 3,
@@ -78,7 +78,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Refrigerator",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 5,
                     Damage = 9,
                     Value = 6,
@@ -88,7 +88,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Pan",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 6,
                     Value = 4,
@@ -98,7 +98,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Knife",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 4,
                     Value = 4,
@@ -108,7 +108,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Cutting Board",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 7,
                     Value = 5,
@@ -118,7 +118,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Ring pop",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 2,
@@ -128,7 +128,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Scream Ring",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 5,
@@ -138,7 +138,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Onion Ring",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 4,
@@ -148,7 +148,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Flipflop",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 4,
                     Damage = 0,
                     Value = 5,
@@ -158,7 +158,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Crocs",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 2,
@@ -168,7 +168,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Wookie Boots",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 3,
@@ -178,7 +178,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Santa shoes",
                     Description = "I6",
-                    ImageURI = "item.png",
+                    ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
                     Value = 5,
