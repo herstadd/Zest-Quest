@@ -114,6 +114,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="BigHeaderStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
