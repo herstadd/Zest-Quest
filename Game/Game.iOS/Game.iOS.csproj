@@ -210,4 +210,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\scorecard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mushroom.png" />
+  </ItemGroup>
 </Project>
