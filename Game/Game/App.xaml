@@ -229,8 +229,8 @@
 
             <Style TargetType="Image"
                 x:Key="ImageLargerStyle">
-                <Setter Property="HeightRequest" Value="180" />
-                <Setter Property="WidthRequest" Value="180" />
+                <Setter Property="HeightRequest" Value="280" />
+                <Setter Property="WidthRequest" Value="280" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
