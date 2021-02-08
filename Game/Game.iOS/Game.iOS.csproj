@@ -213,4 +213,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\mushroom.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kitchen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\kitchen2.png" />
+  </ItemGroup>
 </Project>
