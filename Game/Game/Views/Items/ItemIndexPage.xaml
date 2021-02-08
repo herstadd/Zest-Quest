@@ -49,7 +49,7 @@
 
                                 <Label Grid.Column="1" Grid.Row="0"
                                        Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                                       Style="{StaticResource HeaderStyle}"/>
 
                                 <StackLayout Grid.Column="1" Grid.Row="1"
                                     Orientation="Horizontal">
