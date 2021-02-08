@@ -23,12 +23,12 @@
                 ItemSelected="OnItemSelected"
                 HasUnevenRows="true"
                 Margin="5,0,5,0"
-                RowHeight="80">
+                RowHeight="90">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="15" RowSpacing="10">
+                            <Grid ColumnSpacing="15" RowSpacing="5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
@@ -37,16 +37,25 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
-                                <Image  Grid.Column="0" Grid.Row="0" 
+                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                         Source="{Binding ImageURI}"
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"/>
 
                                 <Label Grid.Column="1" Grid.Row="0"
                                        Text="{Binding Name}" 
+                                       Style="{StaticResource HeaderStyle}"/>
+
+                                <Label Grid.Column="1" Grid.Row="1"
+                                       Text="{Binding MonsterType}"
                                        Style="{StaticResource ListStyle}"/>
+
+                                <Label Grid.Column="1" Grid.Row="2"
+                                       Text="{Binding Description}"
+                                       Style="{StaticResource LabelStyle}"/>
 
                             </Grid>
                         </ViewCell>
