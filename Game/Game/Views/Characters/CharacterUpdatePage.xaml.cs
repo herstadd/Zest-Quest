@@ -79,7 +79,7 @@ namespace Game.Views
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
             int MaxHealth = Int32.Parse(MaxHealthValue.Text);
-            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true).ToString();
+            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, false).ToString();
             MaxHealthValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true, MaxHealth).ToString();
         }
 
