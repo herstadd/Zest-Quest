@@ -17,7 +17,7 @@
 
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
-                <Image Source="teamtelephone2.png" Style="{StaticResource ImageMediumStyle}"/>
+                <Image Source="teamtelephone2.png" Style="{StaticResource ImageLargerStyle}"/>
                 <Label Text="Zest Quest" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Team Telephone" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Doug Herstad" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
