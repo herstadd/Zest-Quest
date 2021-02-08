@@ -222,4 +222,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\auto_battle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\teamtelephone.png" />
+  </ItemGroup>
 </Project>
