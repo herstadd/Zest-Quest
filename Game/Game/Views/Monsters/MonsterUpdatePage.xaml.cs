@@ -90,6 +90,21 @@ namespace Game.Views
         public void NameChanged(object sender, EventArgs e)
         {
             ViewModel.Data.Name = MonsterName.Text;
+
+            // setting Name Entry Box background color
+            MonsterName.BackgroundColor = Color.FromRgb(255, 179, 0);
+
+            // If the Name in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                MonsterName.BackgroundColor = Color.DarkRed;
+            }
+
+            // If the Name in the data box is just white spaces changes the Entry background color
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                MonsterName.BackgroundColor = Color.DarkRed;
+            }
         }
 
 
