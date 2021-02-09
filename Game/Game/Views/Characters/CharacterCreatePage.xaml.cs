@@ -77,10 +77,20 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            // If the Name in the data box is empty, use the default one..
+            // If the Name in the data box is empty then data won't save 
             if (string.IsNullOrEmpty(ViewModel.Data.Name))
             {
-                ViewModel.Data.Name = "New Character";
+                // pop message appears when name box is empty
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
+            }
+
+            // If the Name in the data box is just white space then data won't save 
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
             }
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
