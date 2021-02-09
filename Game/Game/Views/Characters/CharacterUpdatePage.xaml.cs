@@ -38,6 +38,33 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Changes the name of the Character when updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void NameChanged(object sender, EventArgs e)
+        {
+            ViewModel.Data.Name = CharacterName.Text;
+
+            // Setting Name Entry Box background color
+            CharacterName.BackgroundColor = Color.FromRgb(255, 179, 0);
+
+            // If the Name in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                CharacterName.BackgroundColor = Color.DarkRed;
+            }
+
+            // If the Name in the data box is just white spaces changes the Entry background color
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                CharacterName.BackgroundColor = Color.DarkRed;
+            }
+        }
+
+
+
+        /// <summary>
         /// Save calls to Update
         /// </summary>
         /// <param name="sender"></param>
