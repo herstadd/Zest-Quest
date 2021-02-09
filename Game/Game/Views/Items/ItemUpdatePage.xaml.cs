@@ -76,6 +76,22 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
+            // If the Name in the data box is empty then data won't update 
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is empty
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
+            }
+
+            // If the Name in the data box is just white space then data won't update 
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
+            }
+
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
