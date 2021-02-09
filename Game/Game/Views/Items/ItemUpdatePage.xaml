@@ -48,7 +48,9 @@
 
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        TextChanged="NameChanged"
+                        x:Name="ItemName"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Description" 

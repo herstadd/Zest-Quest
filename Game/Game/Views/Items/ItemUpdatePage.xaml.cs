@@ -38,6 +38,32 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Changes the name of the Item when updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void NameChanged(object sender, EventArgs e)
+        {
+            ViewModel.Data.Name = ItemName.Text;
+
+            // Setting Name Entry Box background color
+            ItemName.BackgroundColor = Color.FromRgb(255, 179, 0);
+
+            // If the Name in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                ItemName.BackgroundColor = Color.DarkRed;
+            }
+
+            // If the Name in the data box is just white spaces changes the Entry background color
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                ItemName.BackgroundColor = Color.DarkRed;
+            }
+        }
+
+
+        /// <summary>
         /// Save calls to Update
         /// </summary>
         /// <param name="sender"></param>
