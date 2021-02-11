@@ -16,7 +16,7 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "Chef Hat",
+                    Name = ItemModelEnum.ChefHat.ToMessage(),
                     Description = "I1",
                     ImageURI = "mushroom.png",
                     Range = 3,
@@ -26,7 +26,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "Bandana",
+                    Name = ItemModelEnum.Bandana.ToMessage(),
                     Description = "I2",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -36,7 +36,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "Roasted Turkey Hat",
+                    Name = ItemModelEnum.RoastedTurkeyHat.ToMessage(),
                     Description = "I3",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -46,7 +46,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "Butcher Knife Necklace",
+                    Name = ItemModelEnum.ButcherKnifeNecklace.ToMessage(),
                     Description = "I4",
                     ImageURI = "mushroom.png",
                     Range = 2,
@@ -56,7 +56,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "Timer",
+                    Name = ItemModelEnum.Timer.ToMessage(),
                     Description = "I5",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -66,7 +66,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "Apron",
+                    Name = ItemModelEnum.Apron.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -76,7 +76,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "Refrigerator",
+                    Name = ItemModelEnum.Refrigerator.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 5,
@@ -86,7 +86,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "Pan",
+                    Name = ItemModelEnum.Pan.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -96,7 +96,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "Knife",
+                    Name = ItemModelEnum.Knife.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 2,
@@ -106,7 +106,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "Cutting Board",
+                    Name = ItemModelEnum.CuttingBoard.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 2,
@@ -116,7 +116,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "Ring pop",
+                    Name = ItemModelEnum.RingPop.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -126,7 +126,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "Scream Ring",
+                    Name = ItemModelEnum.ScreamRing.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -136,7 +136,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "Onion Ring",
+                    Name = ItemModelEnum.OnionRing.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -146,7 +146,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "Flipflop",
+                    Name = ItemModelEnum.FlipFlop.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 4,
@@ -156,7 +156,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "Crocs",
+                    Name = ItemModelEnum.Crocs.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -166,7 +166,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "Wookie Boots",
+                    Name = ItemModelEnum.WookieBoots.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
@@ -176,7 +176,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "Santa shoes",
+                    Name = ItemModelEnum.SantaShoes.ToMessage(),
                     Description = "I6",
                     ImageURI = "mushroom.png",
                     Range = 0,
