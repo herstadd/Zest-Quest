@@ -160,6 +160,14 @@
                             Clicked="DamageValueChanged"/>
                         
                     </StackLayout>
+
+                    <StackLayout 
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                        <Button Text="Confirm" Clicked="Save_Clicked"/>
+                        <Button Text="Cancel" Clicked="Cancel_Clicked"/>
+                    </StackLayout>
+                    
                 </StackLayout>
             </StackLayout>
         </ScrollView>
