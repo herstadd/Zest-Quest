@@ -39,11 +39,11 @@
                         Text="Name" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"
-                        TextChanged="NameChanged"
-                        x:Name="ItemName"/>
+                    <Picker Grid.Row="0" Grid.Column="1"
+                        ItemsSource="{x:Static local:MonsterJobEnumHelper.GetListMonster}" 
+                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedIndexChanged="Name_Changed"
+                        x:Name="ItemNameEntry"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Description" 

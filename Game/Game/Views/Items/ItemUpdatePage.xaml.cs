@@ -44,28 +44,15 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Changes the name of the Item when updated
+        /// Change based on the Name of an Item that is selected
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void NameChanged(object sender, EventArgs e)
+        public async void Name_Changed(object sender, EventArgs e)
         {
-            ViewModel.Data.Name = ItemName.Text;
-
-            // Setting Name Entry Box background color
-            ItemName.BackgroundColor = Color.FromRgb(255, 179, 0);
-
-            // If the Name in the data box is empty changes the Entry background color
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
-            {
-                ItemName.BackgroundColor = Color.DarkRed;
-            }
-
-            // If the Name in the data box is just white spaces changes the Entry background color
-            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
-            {
-                ItemName.BackgroundColor = Color.DarkRed;
-            }
+            // Change bellow according to our upcoming Item name Enum
+            var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
+            ViewModel.Data.Name = MonsterJobEnumExtensions.GetSpecialDrop(selected);
         }
 
 
