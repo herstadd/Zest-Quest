@@ -18,6 +18,9 @@ namespace Game.Views
         // View Model for Monster
         public readonly GenericViewModel<MonsterModel> ViewModel;
 
+        // Hold a copy of the original data for Cancel to use
+        public MonsterModel DataCopy;
+
         // Current Monster Name
         public String CurrentName { set; get; }
 
@@ -56,6 +59,9 @@ namespace Game.Views
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
+
+            // Make a copy of the Monster for cancel to restore
+            DataCopy = new MonsterModel(data.Data);
 
             // Storing all current values to use them if user decide to cancel
             CurrentName = ViewModel.Data.Name;
@@ -148,6 +154,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Put the copy back
+            ViewModel.Data.Update(DataCopy);
+
             // Restore all values to what they were 
             ViewModel.Data.Name = CurrentName;
             ViewModel.Data.MonsterType = CurrentType;
