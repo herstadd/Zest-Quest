@@ -65,6 +65,18 @@ namespace Game.Views
 
 
         /// <summary>
+        /// Change based on the Name of an Item that is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void Name_Changed(object sender, EventArgs e)
+        {
+            // Change bellow according to our upcoming Item name Enum
+            var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
+            ViewModel.Data.Name = MonsterJobEnumExtensions.GetSpecialDrop(selected);
+        }
+
+        /// <summary>
         /// Save by calling for Create
         /// </summary>
         /// <param name="sender"></param>
