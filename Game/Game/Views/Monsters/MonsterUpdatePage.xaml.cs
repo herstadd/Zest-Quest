@@ -21,28 +21,6 @@ namespace Game.Views
         // Hold a copy of the original data for Cancel to use
         public MonsterModel DataCopy;
 
-        // Current Monster Name
-        public String CurrentName { set; get; }
-
-        // Current Monster Type
-        public MonsterTypeEnum CurrentType { set; get; }
-
-        // Current Monster Description
-        public String CurrentDescription { set; get; }
-
-        // Current Mosnter Unique Drop
-        public SpecialDropEnum CurrentUiqueDrop { set; get; }
-
-        // Current Monster Class (Boss or Standard)
-        public String CurrentClass { set; get; }
-
-        // Current Monster Image
-        public String CurrentImage { set; get; }
-
-        // Current Monster PictureSource
-        public ImageSource CurrentPictureSource { set; get; }
-
-
         // Empty Constructor for Tests
         public MonsterUpdatePage(bool UnitTest){ }
 
@@ -61,15 +39,7 @@ namespace Game.Views
             JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
 
             // Make a copy of the Monster for cancel to restore
-            DataCopy = new MonsterModel(data.Data);
-
-            // Storing all current values to use them if user decide to cancel
-            CurrentName = ViewModel.Data.Name;
-            CurrentType = ViewModel.Data.MonsterType;
-            CurrentDescription = ViewModel.Data.Description;
-            CurrentUiqueDrop = ViewModel.Data.SpecialDrop;
-            CurrentPictureSource = PictureSource.Source;
-            CurrentImage = ViewModel.Data.ImageURI;
+            DataCopy = new MonsterModel(data.Data);         
         }
 
 
@@ -155,15 +125,7 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             // Put the copy back
-            ViewModel.Data.Update(DataCopy);
-
-            // Restore all values to what they were 
-            ViewModel.Data.Name = CurrentName;
-            ViewModel.Data.MonsterType = CurrentType;
-            ViewModel.Data.Description = CurrentDescription;
-            ViewModel.Data.SpecialDrop = CurrentUiqueDrop;
-            PictureSource.Source = CurrentPictureSource;
-            ViewModel.Data.ImageURI = CurrentImage;
+            ViewModel.Data.Update(DataCopy);          
 
             await Navigation.PopModalAsync();
         }
