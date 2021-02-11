@@ -85,6 +85,70 @@ namespace Game.Models
                     Message = "Apron";
                     break;
 
+                case ItemModelEnum.Bandana:
+                    Message = "Bandana";
+                    break;
+
+                case ItemModelEnum.ChefHat:
+                    Message = "Chef Hat";
+                    break;
+
+                case ItemModelEnum.RoastedTurkeyHat:
+                    Message = "Roasted Turkey Hat";
+                    break;
+
+                case ItemModelEnum.ButcherKnifeNecklace:
+                    Message = "Butcher Knife Necklace";
+                    break;
+
+                case ItemModelEnum.Timer:
+                    Message = "Timer";
+                    break;
+
+                case ItemModelEnum.Refrigerator:
+                    Message = "Refrigerator";
+                    break;
+
+                case ItemModelEnum.Pan:
+                    Message = "Pan";
+                    break;
+
+                case ItemModelEnum.Knife:
+                    Message = "Knife";
+                    break;
+
+                case ItemModelEnum.CuttingBoard:
+                    Message = "Cutting Board";
+                    break;
+
+                case ItemModelEnum.RingPop:
+                    Message = "Ring Pop";
+                    break;
+
+                case ItemModelEnum.ScreamRing:
+                    Message = "Scream Ring";
+                    break;
+
+                case ItemModelEnum.OnionRing:
+                    Message = "Onion Ring";
+                    break;
+
+                case ItemModelEnum.FlipFlop:
+                    Message = "Flip Flop";
+                    break;
+
+                case ItemModelEnum.Crocs:
+                    Message = "Crocs";
+                    break;
+
+                case ItemModelEnum.WookieBoots:
+                    Message = "Wookie Boots";
+                    break;
+
+                case ItemModelEnum.SantaShoes:
+                    Message = "Santa shoes";
+                    break;
+
                 case ItemModelEnum.Unknown:
                 default:
                     break;
