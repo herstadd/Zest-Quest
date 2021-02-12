@@ -90,15 +90,15 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.ChefHat:
-                    Message = "Chef Hat";
+                    Message = "ChefHat";
                     break;
 
                 case ItemModelEnum.RoastedTurkeyHat:
-                    Message = "Roasted Turkey Hat";
+                    Message = "RoastedTurkeyHat";
                     break;
 
                 case ItemModelEnum.ButcherKnifeNecklace:
-                    Message = "Butcher Knife Necklace";
+                    Message = "ButcherKnifeNecklace";
                     break;
 
                 case ItemModelEnum.Timer:
@@ -118,23 +118,23 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.CuttingBoard:
-                    Message = "Cutting Board";
+                    Message = "CuttingBoard";
                     break;
 
                 case ItemModelEnum.RingPop:
-                    Message = "Ring Pop";
+                    Message = "RingPop";
                     break;
 
                 case ItemModelEnum.ScreamRing:
-                    Message = "Scream Ring";
+                    Message = "ScreamRing";
                     break;
 
                 case ItemModelEnum.OnionRing:
-                    Message = "Onion Ring";
+                    Message = "OnionRing";
                     break;
 
                 case ItemModelEnum.FlipFlop:
-                    Message = "Flip Flop";
+                    Message = "FlipFlop";
                     break;
 
                 case ItemModelEnum.Crocs:
@@ -142,11 +142,11 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.WookieBoots:
-                    Message = "Wookie Boots";
+                    Message = "WookieBoots";
                     break;
 
                 case ItemModelEnum.SantaShoes:
-                    Message = "Santa shoes";
+                    Message = "Santashoes";
                     break;
 
                 case ItemModelEnum.Unknown:
