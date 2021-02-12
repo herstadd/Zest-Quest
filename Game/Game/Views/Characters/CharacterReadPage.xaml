@@ -88,7 +88,7 @@
 
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Image Source="{Binding Data.Head}" Style="{StaticResource ImageLargeStyle}"/>
                     <Label Text="Item Name" 
                            HorizontalOptions="Center"
                            />
