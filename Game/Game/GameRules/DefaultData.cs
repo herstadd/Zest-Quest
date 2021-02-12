@@ -200,12 +200,12 @@ namespace Game.GameRules
         var datalist = new List<ScoreModel>()
             {
                 new ScoreModel {
-                    Name = "First Score",
+                    Name = "First Time Playing",
                     Description = "Test Data",
                 },
 
                 new ScoreModel {
-                    Name = "Second Score",
+                    Name = "Trying Again",
                     Description = "Test Data",
                 }
             };

@@ -17,8 +17,6 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
-
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
