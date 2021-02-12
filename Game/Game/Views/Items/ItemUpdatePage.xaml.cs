@@ -49,7 +49,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Name_Changed(object sender, EventArgs e)
+        public void Type_Changed(object sender, EventArgs e)
         {
             // Change bellow according to our upcoming Item name Enum
             var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
