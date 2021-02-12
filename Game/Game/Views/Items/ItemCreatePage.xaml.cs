@@ -38,6 +38,7 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
+            ItemNameEntry.SelectedItem = ViewModel.Data.Name.ToString();
         }
 
         /// <summary>
@@ -48,8 +49,8 @@ namespace Game.Views
         public void Name_Changed(object sender, EventArgs e)
         {
             // Change bellow according to our upcoming Item name Enum
-            var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
-            ViewModel.Data.Name = MonsterJobEnumExtensions.ToMessage(selected);
+            var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
+            ViewModel.Data.Name = ItemModelEnumExtensions.ToMessage(selected);
         }
 
         /// <summary>
