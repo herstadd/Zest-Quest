@@ -14,7 +14,7 @@
                         Clicked="AutobattleButton_Clicked"/>
 
                 <Label 
-                        Text="Begin Battle"
+                        Text="Cook Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
             </StackLayout>
 
