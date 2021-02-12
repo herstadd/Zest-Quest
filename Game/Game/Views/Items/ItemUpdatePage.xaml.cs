@@ -41,7 +41,7 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
-            ItemNameEntry.SelectedItem = ViewModel.Data.Name.ToString();
+            ItemTypeEntry.SelectedItem = ViewModel.Data.Type.ToString();
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace Game.Views
         public void Type_Changed(object sender, EventArgs e)
         {
             // Change bellow according to our upcoming Item name Enum
-            var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
-            ViewModel.Data.Name = ItemModelEnumExtensions.ToMessage(selected);
+            var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemTypeEntry.SelectedItem);
+            ViewModel.Data.Type = selected;
         }
 
         /// <summary>
