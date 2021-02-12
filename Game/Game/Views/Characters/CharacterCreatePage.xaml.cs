@@ -116,8 +116,8 @@ namespace Game.Views
         {
             int NewLevelValue = Int32.Parse(LevelValue.Text);
             int MaxHealth = Int32.Parse(MaxHealthValue.Text);
-            LevelValue.Text = ValueChange((sender as Button).Text, NewLevelValue, false).ToString();
-            MaxHealthValue.Text = ValueChange((sender as Button).Text, NewLevelValue, true, MaxHealth).ToString();
+            LevelValue.Text = ButtonClickedHelper.ValueChange((sender as Button).Text, NewLevelValue, false).ToString();
+            MaxHealthValue.Text = ButtonClickedHelper.ValueChange((sender as Button).Text, NewLevelValue, true, MaxHealth).ToString();
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Game.Views
         public void AttackValueChanged(object sender, EventArgs e)
         {
             int NewAttackValue = Int32.Parse(AttackValue.Text);
-            AttackValue.Text = ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
+            AttackValue.Text = ButtonClickedHelper.ValueChange((sender as Button).Text, NewAttackValue, false).ToString();
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace Game.Views
         public void DefenseValueChanged(object sender, EventArgs e)
         {
             int NewDefenseValue = Int32.Parse(DefenseValue.Text);
-            DefenseValue.Text = ValueChange((sender as Button).Text, NewDefenseValue, false).ToString();
+            DefenseValue.Text = ButtonClickedHelper.ValueChange((sender as Button).Text, NewDefenseValue, false).ToString();
         }
 
         /// <summary>
@@ -150,37 +150,7 @@ namespace Game.Views
         public void SpeedValueChanged(object sender, EventArgs e)
         {
             int NewSpeedValue = Int32.Parse(SpeedValue.Text);
-            SpeedValue.Text = ValueChange((sender as Button).Text, NewSpeedValue, false).ToString();
-        }
-
-        /// <summary>
-        /// Change Stat value
-        /// </summary>
-        /// <param name="ButtonText"></param>
-        /// <param name="num"></param>
-        /// <param name="IsMaxHealth"></param>
-        /// <param name="maxHealth"></param>
-        /// <returns></returns>
-        private int ValueChange(String ButtonText, int num, bool IsMaxHealth, int maxHealth=0) 
-        {
-            if (ButtonText.Equals("-"))
-            {
-                if (IsMaxHealth)
-                {
-                    num--;
-                    return num < 1 ? maxHealth : DiceHelper.RollDice(num, 10);
-                }
-                num--;
-                return num < 1 ? 1 : num;
-            }
-            else 
-            {
-                if (IsMaxHealth)
-                {
-                    return DiceHelper.RollDice(num + 1, 10);
-                }
-                return num + 1;
-            }
+            SpeedValue.Text = ButtonClickedHelper.ValueChange((sender as Button).Text, NewSpeedValue, false).ToString();
         }
 
         /// <summary>
