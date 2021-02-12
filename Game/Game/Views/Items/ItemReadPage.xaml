@@ -30,6 +30,15 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
+                   Text="Type : " 
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Type}" 
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource HorizontalStack}">
+                <Label 
                     Text="Description : " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
