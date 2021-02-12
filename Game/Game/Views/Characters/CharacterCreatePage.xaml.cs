@@ -154,13 +154,13 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Change Stat value
+        /// Change Stat value when the picker is clicked
         /// </summary>
-        /// <param name="ButtonText"></param>
-        /// <param name="num"></param>
-        /// <param name="IsMaxHealth"></param>
-        /// <param name="maxHealth"></param>
-        /// <returns></returns>
+        /// <param name="ButtonText">Whether the + or - button was clicked</param>
+        /// <param name="num">Current value being passed in to be altered</param>
+        /// <param name="IsMaxHealth">Indicates if update will affect max health</param>
+        /// <param name="maxHealth">Only passed in if for new max health calculation, otherwise default 0</param>
+        /// <returns>The resulting value to replace stat value with</returns>
         private int ValueChange(String ButtonText, int num, bool IsMaxHealth, int maxHealth=0) 
         {
             if (ButtonText.Equals("-"))
