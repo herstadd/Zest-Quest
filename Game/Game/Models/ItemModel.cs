@@ -25,6 +25,9 @@ namespace Game.Models
         public int Damage { get; set; } = 0;
 
         // Enum of the different attributes that the item modifies, Items can only modify one item
+        public ItemModelEnum Type { get; set; } = ItemModelEnum.Unknown;
+
+        // Enum of the different attributes that the item modifies, Items can only modify one item
         public AttributeEnum Attribute { get; set; } = AttributeEnum.Unknown;
 
         // Where the Item goes on the character.  Head, Foot etc.
@@ -75,6 +78,7 @@ namespace Game.Models
 
             // Update all the fields in the Data, except for the Id and guid
             Name = newData.Name;
+            Type = newData.Type;
             Description = newData.Description;
             Value = newData.Value;
             Attribute = newData.Attribute;
