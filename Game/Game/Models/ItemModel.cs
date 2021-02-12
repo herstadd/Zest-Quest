@@ -83,8 +83,6 @@ namespace Game.Models
             Value = newData.Value;
             Attribute = newData.Attribute;
             Location = newData.Location;
-            Name = newData.Name;
-            Description = newData.Description;
             ImageURI = newData.ImageURI;
             Range = newData.Range;
             Damage = newData.Damage;
