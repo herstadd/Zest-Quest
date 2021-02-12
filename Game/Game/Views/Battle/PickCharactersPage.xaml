@@ -71,7 +71,7 @@
                         <Button 
                             x:Name="BeginBattleButton"
                             Clicked="BattleButton_Clicked" 
-                            Text="Begin"
+                            Text="Cook"
                             IsEnabled="False"/>
 
                     </StackLayout>
