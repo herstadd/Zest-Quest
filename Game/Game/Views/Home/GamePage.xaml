@@ -21,7 +21,7 @@
                         Clicked="VillageButton_Clicked"/>
 
                     <Label 
-                        Text="Village"
+                        Text="Restaurant"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -33,7 +33,7 @@
                         Clicked="DungeonButton_Clicked"/>
 
                     <Label 
-                        Text="Dungeon"
+                        Text="Kitchen"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -45,7 +45,7 @@
                         Clicked="AutobattleButton_Clicked"/>
 
                     <Label 
-                        Text="Auto Battle"
+                        Text="Auto Cook"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
             </FlexLayout>
