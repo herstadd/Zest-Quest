@@ -169,7 +169,7 @@ namespace Game.Views
             {
                 if (IsMaxHealth)
                 {
-                    return DiceHelper.RollDice(num + 1, 10);
+                    return maxHealth + DiceHelper.RollDice(num, 10);
                 }
                 return num + 1;
             }
