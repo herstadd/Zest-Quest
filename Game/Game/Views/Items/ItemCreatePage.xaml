@@ -53,7 +53,7 @@
                         ItemsSource="{x:Static local:ItemModelEnumHelper.GetListItem}" 
                         SelectedItem="{Binding Data.ItemModel, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         SelectedIndexChanged="Type_Changed"
-                        x:Name="ItemNameEntry"/>
+                        x:Name="ItemTypeEntry"/>
 
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
