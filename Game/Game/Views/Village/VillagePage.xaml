@@ -21,7 +21,7 @@
                                 Clicked="CharactersButton_Clicked"/>
 
                     <Label 
-                                Text="Characters"
+                                Text="Chefs"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
                 </StackLayout>
@@ -34,7 +34,7 @@
                                 Clicked="MonstersButton_Clicked"/>
 
                     <Label 
-                                Text="Monsters"
+                                Text="Appliances"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
                 </StackLayout>
@@ -48,7 +48,7 @@
                                 Clicked="ItemsButton_Clicked"/>
 
                     <Label 
-                                Text="Items"
+                                Text="Gadgets"
                                 Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
