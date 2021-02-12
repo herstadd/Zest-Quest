@@ -180,5 +180,27 @@ namespace Game.Views
                 return num > 9 ? 9 : num;
             }
         }
+
+        /// <summary>
+        /// Checks if the user enter empty Entry Box for the Name then changes the box color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CheckNullEntry(object sender, EventArgs e)
+        {
+            ItemNameEntry.BackgroundColor = Color.FromRgb(255, 179, 0);
+
+            // If the Name in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                ItemNameEntry.BackgroundColor = Color.DarkRed;
+            }
+
+            // If the Name in the data box is just white spaces changes the Entry background color
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                ItemNameEntry.BackgroundColor = Color.DarkRed;
+            }
+        }
     }
 }
