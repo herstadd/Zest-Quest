@@ -45,11 +45,11 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void Name_Changed(object sender, EventArgs e)
+        public void Name_Changed(object sender, EventArgs e)
         {
             // Change bellow according to our upcoming Item name Enum
             var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
-            ViewModel.Data.Name = MonsterJobEnumExtensions.GetSpecialDrop(selected);
+            ViewModel.Data.Name = MonsterJobEnumExtensions.ToMessage(selected);
         }
 
         /// <summary>
