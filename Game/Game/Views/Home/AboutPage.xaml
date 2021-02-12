@@ -14,19 +14,25 @@
       Orientation="Vertical">
 
         <StackLayout Style="{StaticResource VerticalStack}">
+            
             <Grid RowSpacing="1" ColumnSpacing="2" VerticalOptions="Center">
+                
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
 
                     <Label Text="Zest Quest" Style="{StaticResource BigHeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     <Label Text="presented by..." Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Text="Team Telephone" Style="{StaticResource BigHeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Text="Doug Herstad" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Text="JungBok Cho" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Label Text="Team Telephone" Style="{StaticResource BigHeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center"/>
+                    <Label Text="Alexander Whitehead" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center"/>
+                    <Label Text="Doug Herstad" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center"/>
                     <Label Text="Ruifeng Wang" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Label Text="JungBok Cho" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     <Label Text="Sam Borhan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     <Label x:Name="CurrentDateTime" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                
                 </StackLayout>
+                
                 <Image Source="teamtelephone2.png" Style="{StaticResource ImageLargerStyle}" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
+            
             </Grid>
             <!--Database Settings Frame-->
 
