@@ -69,11 +69,19 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            // If the Description in the data box is empty changes the Entry background color
-            if (string.IsNullOrEmpty(ViewModel.Data.Description))
+            // If the Name in the data box is empty then data won't save 
+            if (ItemTypeEntry.SelectedIndex == -1)
             {
                 // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Description is Empty!", "OK");
+                await DisplayAlert("Alert", "Type is Empty!", "OK");
+                return;
+            }
+
+            // If the Description in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is empty
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
 
@@ -82,6 +90,22 @@ namespace Game.Views
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Description is Empty!", "OK");
+                return;
+            }
+
+            // If the Location in the data box is just white space then data won't save 
+            if (LocationPicker.SelectedIndex == -1)
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Location is Empty!", "OK");
+                return;
+            }
+
+            // If the Attribute in the data box is just white space then data won't save 
+            if (AttributePicker.SelectedIndex == -1)
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Attribute is Empty!", "OK");
                 return;
             }
 
