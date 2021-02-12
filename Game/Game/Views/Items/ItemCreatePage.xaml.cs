@@ -90,18 +90,26 @@ namespace Game.Views
             }
 
             // If the Name in the data box is empty then data won't save 
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            if (ItemNameEntry.SelectedIndex == -1)
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
 
-            // If the Name in the data box is just white space then data won't save 
-            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            // If the Location in the data box is just white space then data won't save 
+            if (LocationPicker.SelectedIndex == -1)
             {
                 // pop message appears when name box is just white spaces
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                await DisplayAlert("Alert", "Location is Empty!", "OK");
+                return;
+            }
+
+            // If the Attribute in the data box is just white space then data won't save 
+            if (AttributePicker.SelectedIndex == -1)
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Attribute is Empty!", "OK");
                 return;
             }
 
