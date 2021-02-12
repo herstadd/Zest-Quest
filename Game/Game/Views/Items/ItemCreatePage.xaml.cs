@@ -38,7 +38,7 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
-            ItemNameEntry.SelectedItem = ViewModel.Data.Type.ToString();
+            ItemTypeEntry.SelectedItem = ViewModel.Data.Type.ToString();
         }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace Game.Views
         public void Type_Changed(object sender, EventArgs e)
         {
             // Change bellow according to our upcoming Item name Enum
-            var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemNameEntry.SelectedItem);
-            ViewModel.Data.Name = ItemModelEnumExtensions.ToMessage(selected);
+            var selected = ItemModelEnumHelper.ConvertStringToEnum((String)ItemTypeEntry.SelectedItem);
+            ViewModel.Data.Type = selected;
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Game.Views
             }
 
             // If the Name in the data box is empty then data won't save 
-            if (ItemNameEntry.SelectedIndex == -1)
+            if (ItemTypeEntry.SelectedIndex == -1)
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
