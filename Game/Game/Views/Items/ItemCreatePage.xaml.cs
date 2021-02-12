@@ -70,15 +70,15 @@ namespace Game.Views
             if (ItemTypeEntry.SelectedIndex == -1)
             {
                 // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                await DisplayAlert("Alert", "Type is Empty!", "OK");
                 return;
             }
 
             // If the Description in the data box is empty changes the Entry background color
-            if (string.IsNullOrEmpty(ViewModel.Data.Description))
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
             {
                 // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Description is Empty!", "OK");
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
 
