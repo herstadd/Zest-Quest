@@ -12,7 +12,7 @@
         <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Cook Time" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
