@@ -8,7 +8,7 @@
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local_enum="clr-namespace:Game.Models"
              x:Class="Game.Views.MonsterCreatePage"
-             Title="{Binding Title}">
+             Title="Create Appliance">
 
     <ContentPage.Resources>
         <ResourceDictionary>
