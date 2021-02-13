@@ -1,5 +1,6 @@
 ﻿using Game.GameRules;
 using Game.Helpers;
+using System;
 
 namespace Game.Models
 {
@@ -9,7 +10,22 @@ namespace Game.Models
     /// Derive from BasePlayerModel
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
-    {
+    {   
+        /// <summary>
+        /// Tracks the turn number this character is on
+        /// </summary>
+        public int TurnNumber { get; set; }
+        
+        /// <summary>
+        /// Tracks if the character currently has a buff
+        /// </summary>
+        public bool IsBuffGranted { get; set; }
+
+        /// <summary>
+        /// Tracks the number of lives
+        /// </summary>
+        public int NumLives { get; set; }
+
         /// <summary>
         /// Default character
         /// 
