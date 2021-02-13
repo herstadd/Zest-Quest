@@ -156,6 +156,94 @@ namespace Game.Models
 
             return Message;
         }
+
+        /// <summary>
+        /// Display a String for the Enums
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string GetPicture(this ItemModelEnum value)
+        {
+            // Default String
+            var ReturnPicture = "None";
+
+            switch (value)
+            {
+                case ItemModelEnum.Apron:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Bandana:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.ChefHat:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.RoastedTurkeyHat:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.ButcherKnifeNecklace:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Timer:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Refrigerator:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Pan:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Knife:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.CuttingBoard:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.RingPop:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.ScreamRing:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.OnionRing:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.FlipFlop:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Crocs:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.WookieBoots:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.SantaShoes:
+                    ReturnPicture = "SuperFlower.png";
+                    break;
+
+                case ItemModelEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return ReturnPicture;
+        }
     }
 
     /// <summary>
