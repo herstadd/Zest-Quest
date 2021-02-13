@@ -42,6 +42,7 @@
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
+                        TextChanged="CheckNullEntry"
                         x:Name="NameEntry"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
@@ -50,7 +51,9 @@
 
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.ScoreTotal}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        TextChanged="CheckNullEntry"
+                        Style="{StaticResource EntryStyle}"
+                        x:Name="ScoreEntry"/>
                 </Grid>
 
                 <StackLayout 
