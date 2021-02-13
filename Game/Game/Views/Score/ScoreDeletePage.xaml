@@ -6,23 +6,21 @@
              mc:Ignorable="d"
              x:Class="Game.Views.ScoreDeletePage"
              Title="{Binding Title}">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+        <StackLayout 
+            Style="{StaticResource OuterBoxStack}"
+            Spacing="10">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
-
-            <StackLayout>
+            <StackLayout 
+                HorizontalOptions="Center" 
+                Padding="10, 20, 10, 10">
+                
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                       Text="Name : " 
+                        Text="Name: " 
                         Style="{StaticResource LabelStyle}"/>
+                    
                     <Label 
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource ValueStyle}"/>
@@ -30,9 +28,9 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Game Date:"
+                        Text="Game Date: "
                         Style="{StaticResource LabelStyle}"/>
-
+                    
                     <Label 
                         Text="{Binding Data.GameDate}"
                         Style="{StaticResource ValueStyle}"/>
@@ -40,7 +38,7 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="AutoBattle:"                      
+                        Text="AutoBattle: "                      
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
@@ -50,8 +48,9 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Score:" 
+                        Text="Score: " 
                         Style="{StaticResource LabelStyle}"/>
+                    
                     <Label 
                         Text="{Binding Data.ScoreTotal}"
                         Style="{StaticResource ValueStyle}"/>
@@ -59,47 +58,41 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Number of Rounds:"                      
+                        Text="Number of Rounds: "                      
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.RoundCount}"
                         Style="{StaticResource ValueStyle}"/>
                 </StackLayout>
-   
             </StackLayout>
 
             <StackLayout 
                 HorizontalOptions="Center" 
-                Padding="20">
+                Padding="10, 0, 10, 10">
 
                 <StackLayout 
-                HorizontalOptions="Center" 
-                Padding="10">
-                    <StackLayout 
-                 Orientation="Vertical">
+                    HorizontalOptions="Center" 
+                    Padding="10">   
+                    <StackLayout Orientation="Vertical">
                         <Label Style="{StaticResource DeleteMessageStyle1}" />
                         <Label Style="{StaticResource DeleteMessageStyle2}" />
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal">
+                    <ImageButton 
+                        Clicked="Delete_Clicked" 
+                        HorizontalOptions="Start"
+                        Source="icon_delete.png"
+                        HeightRequest="40" />
 
                     <ImageButton 
-                    Clicked="Delete_Clicked" 
-                    HorizontalOptions="Start"
-                    Source="icon_delete.png"
-                    HeightRequest="40" />
-
-                    <ImageButton 
-                    Clicked="Cancel_Clicked" 
-                    HorizontalOptions="Start"
-                    Source="icon_cancel.png"
-                    HeightRequest="40" />
-
+                        Clicked="Cancel_Clicked" 
+                        HorizontalOptions="Start"
+                        Source="icon_cancel.png"
+                        HeightRequest="40" />
                 </StackLayout>
-
-
             </StackLayout>
         </StackLayout>
     </ScrollView>
