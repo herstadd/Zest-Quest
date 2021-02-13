@@ -50,15 +50,17 @@ namespace Game.Views
         {
             // Change bellow according to our upcoming Item name Enum
             var selected = (String) ItemTypeEntry.SelectedItem;
+
             Description.Text = ItemIndexViewModel.Instance.GetDescription(selected);
             this.ViewModel.Data.Description = ItemIndexViewModel.Instance.GetDescription(selected);
             PictureSource.Source = ItemIndexViewModel.Instance.GetImage(selected);
-            
+            this.ViewModel.Data.Type = ItemIndexViewModel.Instance.GetType(selected);
+
             // Location
             //LocationPicker.SelectedItem = ItemIndexViewModel.Instance.GetLocation(selected);
             // Attribute
             //AttributePicker.SelectedItem = ItemIndexViewModel.Instance.GetAttribute(selected);
-            
+
             RangeValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Range").ToString();
             DamageValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Damage").ToString();
             ValueValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Value").ToString();
