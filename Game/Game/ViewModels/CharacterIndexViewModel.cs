@@ -158,8 +158,10 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
-        public void InitializeDefaultCharacter(CharacterJobEnum character)
+        public void InitializeDefaultCharacter(string target)
         {
+            CharacterJobEnum character = CharacterJobEnumHelper.ConvertStringToEnum(target);
+
             if (DefaultCharacter == null)
             {
                 DefaultCharacter = DefaultDataHelper.GetCharacter(character);
@@ -173,9 +175,9 @@ namespace Game.ViewModels
             }
         }
 
-        public string GetSpecialty(CharacterJobEnum character)
+        public string GetSpecialty(string target)
         {
-            InitializeDefaultCharacter(character);
+            InitializeDefaultCharacter(target);
 
             if (DefaultCharacter == null)
             {
@@ -185,9 +187,9 @@ namespace Game.ViewModels
             return DefaultCharacter.Description;
         }
 
-        public string GetImage(CharacterJobEnum character)
+        public string GetImage(string target)
         {
-            InitializeDefaultCharacter(character);
+            InitializeDefaultCharacter(target);
 
             if (DefaultCharacter == null)
             {
@@ -197,9 +199,9 @@ namespace Game.ViewModels
             return DefaultCharacter.ImageURI;
         }
 
-        public int GetLevel(CharacterJobEnum character)
+        public int GetLevel(string target)
         {
-            InitializeDefaultCharacter(character);
+            InitializeDefaultCharacter(target);
 
             if (DefaultCharacter == null)
             {
@@ -214,8 +216,10 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public int GetMaxHealth(CharacterJobEnum character)
+        public int GetMaxHealth(string target)
         {
+            CharacterJobEnum character = CharacterJobEnumHelper.ConvertStringToEnum(target);
+
             int DefaultHealth = 0;
 
             switch (character)
