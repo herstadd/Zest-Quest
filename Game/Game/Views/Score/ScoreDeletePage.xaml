@@ -14,12 +14,12 @@
 
             <StackLayout 
                 HorizontalOptions="Center" 
-                Padding="10, 20, 10, 10">
+                Padding="10, 20, 10, 0">
                 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Name: " 
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="Name:" 
+                        Style="{StaticResource ScoreLabelStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.Name}" 
@@ -28,8 +28,8 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Game Date: "
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="Game Date:"
+                        Style="{StaticResource ScoreLabelStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.GameDate}"
@@ -38,8 +38,8 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="AutoBattle: "                      
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="AutoBattle:"                      
+                        Style="{StaticResource ScoreLabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.AutoBattle}"
@@ -48,8 +48,8 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Score: " 
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="Score:" 
+                        Style="{StaticResource ScoreLabelStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.ScoreTotal}"
@@ -58,8 +58,8 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
-                        Text="Number of Rounds: "                      
-                        Style="{StaticResource LabelStyle}"/>
+                        Text="Number of Rounds:"                      
+                        Style="{StaticResource ScoreLabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.RoundCount}"
