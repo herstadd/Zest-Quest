@@ -34,14 +34,16 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-
+                 
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
                         Style="{StaticResource ScoreLabelStyle}"/>
 
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        TextChanged="CheckNullEntry"
+                        x:Name="NameEntry"/>
                 </Grid>
 
 

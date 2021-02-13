@@ -47,6 +47,22 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+            // If the Name in the data box is empty then data won't save 
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is empty
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
+            }
+
+            // If the Name in the data box is just white space then data won't save 
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                // pop message appears when name box is just white spaces
+                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                return;
+            }
+
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
@@ -62,6 +78,28 @@ namespace Game.Views
             ViewModel.Data.Update(DataCopy);
 
             await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// Checks if the user enter empty Entry Box for the Name then changes the box color
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void CheckNullEntry(object sender, EventArgs e)
+        {
+            NameEntry.BackgroundColor = Color.FromRgb(255, 179, 0);
+
+            // If the Name in the data box is empty changes the Entry background color
+            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            {
+                NameEntry.BackgroundColor = Color.DarkRed;
+            }
+
+            // If the Name in the data box is just white spaces changes the Entry background color
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                NameEntry.BackgroundColor = Color.DarkRed;
+            }
         }
     }
 }
