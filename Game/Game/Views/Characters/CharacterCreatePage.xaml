@@ -90,6 +90,7 @@
                     <Entry Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"
+                        IsReadOnly="true"
                         x:Name="Description"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
