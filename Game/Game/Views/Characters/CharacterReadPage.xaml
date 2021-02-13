@@ -17,128 +17,118 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
-
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Name: "
+            <Grid
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                    Text="Name"
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="0" Grid.Column="1"
                     Text="{Binding Data.Name}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="LV: "
+
+                <Label Grid.Row="1" Grid.Column="0"
+                    Text="LV"
                     Style="{StaticResource LabelStyle}"/>
-                <Label
+                <Label Grid.Row="1" Grid.Column="1"
                     Text="{Binding Data.Level}"
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label 
-                    Text="Type: " 
+
+                <Label Grid.Row="2" Grid.Column="0"
+                    Text="Type" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="2" Grid.Column="1"
                     Text="{Binding Data.Job}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label 
-                    Text="Specialty: " 
+
+                <Label Grid.Row="3" Grid.Column="0"
+                    Text="Specialty" 
+                    VerticalOptions="Start"
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="3" Grid.Column="1" 
+                    LineBreakMode="WordWrap"
                     Text="{Binding Data.Description}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Attack: "
+
+                <Label Grid.Row="4" Grid.Column="0"
+                    Text="Attack"
                     Style="{StaticResource LabelStyle}"/>
-                <Label
+                <Label Grid.Row="4" Grid.Column="1"
                     Text="{Binding Data.Attack}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Defense: "
+
+                <Label Grid.Row="5" Grid.Column="0"
+                    Text="Defense"
                     Style="{StaticResource LabelStyle}"/>
-                <Label
+                <Label Grid.Row="5" Grid.Column="1"
                     Text="{Binding Data.Defense}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Speed: "
+
+                <Label Grid.Row="6" Grid.Column="0"
+                    Text="Speed"
                     Style="{StaticResource LabelStyle}"/>
-                <Label
+                <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.Speed}" 
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label
-                    Text="Health: "
+
+                <Label Grid.Row="7" Grid.Column="0"
+                    Text="Health"
                     Style="{StaticResource LabelStyle}"/>
-                <Label
+                <Label Grid.Row="7" Grid.Column="1"
                     Text="{Binding Data.MaxHealth}"
                     Style="{StaticResource ValueStyle}"/>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.Head}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
+                </StackLayout>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.Head}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                    <Label Text="Item Name" HorizontalOptions="Center" />
                 </StackLayout>
             </StackLayout>
-            
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
 
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-                    <Label Text="Item Name" 
-                           HorizontalOptions="Center"
-                           />
-                </StackLayout>
-            </StackLayout>
-        
         </StackLayout>
     </ScrollView>
 </ContentPage>
