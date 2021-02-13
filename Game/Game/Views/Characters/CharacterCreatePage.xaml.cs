@@ -1,6 +1,7 @@
 ﻿using Game.Helpers;
 using Game.Models;
 using Game.ViewModels;
+using System.Diagnostics;
 
 using System;
 using System.ComponentModel;
@@ -162,15 +163,11 @@ namespace Game.Views
         {
             var selected = (string)JobPicker.SelectedItem;
 
-            DescriptionEnum Type = DescriptionEnumExtensions.ToEnum(selected);
-
-            Description.Text = DescriptionEnumExtensions.ToMessage(Type);
-
-            PictureSource.Source = DescriptionEnumExtensions.GetPicture(Type);
-            ChangeImage.Text = DescriptionEnumExtensions.GetPicture(Type);
-            LevelValue.Text = DescriptionEnumExtensions.GetDefaultLevel(Type);
-
-            MaxHealthValue.Text = DescriptionEnumExtensions.CalcMaxHealth(Type).ToString();
+            Description.Text = CharacterIndexViewModel.Instance.GetSpecialty(selected); 
+            PictureSource.Source = CharacterIndexViewModel.Instance.GetImage(selected); 
+            ChangeImage.Text = CharacterIndexViewModel.Instance.GetImage(selected);
+            LevelValue.Text = CharacterIndexViewModel.Instance.GetLevel(selected).ToString();
+            MaxHealthValue.Text = CharacterIndexViewModel.Instance.GetMaxHealth(selected).ToString();
         }
     }
 }
