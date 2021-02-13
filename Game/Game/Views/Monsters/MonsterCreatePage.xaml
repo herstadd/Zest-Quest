@@ -71,6 +71,7 @@
 
                     <Entry Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
+                        IsEnabled="False"
                         Style="{StaticResource EntryStyle}"
                         x:Name="Description"/>
 
