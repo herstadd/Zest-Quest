@@ -21,7 +21,11 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <Image 
+                    Source="{Binding Data.ImageURI}" 
+                    Style="{StaticResource ImageLargeStyle}" 
+                    HorizontalOptions="CenterAndExpand"
+                    x:Name="PictureSource"/>
 
                 <Grid
                     RowSpacing="1"
@@ -64,8 +68,9 @@
                                  Style="{StaticResource VerticalStack}" >
 
                         <Label Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource DescriptionStatStyle}"/>
+                            Text="{Binding Data.Description}" 
+                            Style="{StaticResource DescriptionStatStyle}"
+                            x:Name="Description"/>
 
                     </StackLayout>
 
