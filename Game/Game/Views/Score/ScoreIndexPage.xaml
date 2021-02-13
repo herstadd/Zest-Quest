@@ -28,7 +28,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="1" RowSpacing="1">
+                            <Grid ColumnSpacing="1" RowSpacing="1"
+                                  Padding="0, 0, 0, 10">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width=".5*"/>
                                 </Grid.ColumnDefinitions>
