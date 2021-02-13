@@ -17,80 +17,77 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
+            <Grid
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                   Text="Name" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="0" Grid.Column="1"
                     Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Type : " 
+                <Label Grid.Row="1" Grid.Column="0"
+                   Text="Type" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="1" Grid.Column="1"
                     Text="{Binding Data.Type}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
+                <Label Grid.Row="2" Grid.Column="0"
+                    Text="Description" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="2" Grid.Column="1"
                     Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Location : " 
+                <Label Grid.Row="3" Grid.Column="0"
+                    Text="Location" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="3" Grid.Column="1"
                     Text="{Binding Data.Location}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attribute : " 
+                <Label Grid.Row="4" Grid.Column="0"
+                    Text="Attribute" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="4" Grid.Column="1"
                     Text="{Binding Data.Attribute}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
+                <Label Grid.Row="5" Grid.Column="0"
+                    Text="Range" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="5" Grid.Column="1"
                     Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Value : " 
+                <Label Grid.Row="6" Grid.Column="0"
+                    Text="Value" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.Value}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource MonsterValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Damage : " 
+                <Label Grid.Row="7" Grid.Column="0"
+                    Text="Damage" 
                     Style="{StaticResource LabelStyle}"/>
-                <Label 
+                <Label Grid.Row="7" Grid.Column="1"
                     Text="{Binding Data.Damage}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
+                    Style="{StaticResource MonsterValueStyle}"/>
+            </Grid>
         </StackLayout>
     </ScrollView>
 </ContentPage>
