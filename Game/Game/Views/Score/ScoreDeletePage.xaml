@@ -73,16 +73,32 @@
                 HorizontalOptions="Center" 
                 Padding="20">
 
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+                <StackLayout 
+                HorizontalOptions="Center" 
+                Padding="10">
+                    <StackLayout 
+                 Orientation="Vertical">
+                        <Label Style="{StaticResource DeleteMessageStyle1}" />
+                        <Label Style="{StaticResource DeleteMessageStyle2}" />
+                    </StackLayout>
+                </StackLayout>
 
-                <Button 
-                    Text="Yes" 
+                <StackLayout Orientation="Horizontal">
+
+                    <ImageButton 
                     Clicked="Delete_Clicked" 
-                    HorizontalOptions="Center"
-                    FontSize="Medium"
-                    BorderWidth="1" 
-                    BorderColor="black">
-                </Button>
+                    HorizontalOptions="Start"
+                    Source="icon_delete.png"
+                    HeightRequest="40" />
+
+                    <ImageButton 
+                    Clicked="Cancel_Clicked" 
+                    HorizontalOptions="Start"
+                    Source="icon_cancel.png"
+                    HeightRequest="40" />
+
+                </StackLayout>
+
 
             </StackLayout>
         </StackLayout>
