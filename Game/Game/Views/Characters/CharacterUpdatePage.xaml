@@ -92,8 +92,7 @@
 
                         <Label Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Description}" 
-                        Style="{StaticResource CharacterStatStyle}"
-                        Padding="10,10,0,0" 
+                        Style="{StaticResource DescriptionStatStyle}"
                         x:Name="Description"/>
                     </StackLayout>
 
