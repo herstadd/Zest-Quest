@@ -360,8 +360,8 @@ namespace Game.GameRules
             {
                 new MonsterModel {
                     Name = "Evil Refrigerator",
-                    Description = "Boss",
                     MonsterType = MonsterTypeEnum.EvilRefrigerator,
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilRefrigerator),
                     ImageURI = "monster2.png",
                     SpecialDrop = SpecialDropEnum.Refrigerator,
                 },
@@ -369,7 +369,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Toaster",
                     MonsterType = MonsterTypeEnum.EvilToaster,
-                    Description = "Boss",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilToaster),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.OnionRing,
 
@@ -378,7 +378,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Blender",
                     MonsterType = MonsterTypeEnum.EvilBlender,
-                    Description = "Boss",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilBlender),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.ButcherKnife,
                 },
@@ -386,7 +386,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Dishwasher",
                     MonsterType = MonsterTypeEnum.EvilDishwasher,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilDishwasher),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
                 },
@@ -394,7 +394,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Stove",
                     MonsterType = MonsterTypeEnum.EvilStove,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilStove),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
                 },
@@ -402,7 +402,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Kitchen Sink",
                     MonsterType = MonsterTypeEnum.EvilKitchenSink,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilKitchenSink),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
 
@@ -411,7 +411,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Rice Cooker",
                     MonsterType = MonsterTypeEnum.EvilRiceCooker,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilRiceCooker),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
                 },
@@ -419,7 +419,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Crock pot",
                     MonsterType = MonsterTypeEnum.EvilCrockpot,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilCrockpot),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
                 },
@@ -427,7 +427,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Can Opener",
                     MonsterType = MonsterTypeEnum.EvilCanOpener,
-                    Description = "Standard",
+                    Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterTypeEnum.EvilCanOpener),
                     ImageURI = "crock_pot.png",
                     SpecialDrop = SpecialDropEnum.Unknown,
                 },

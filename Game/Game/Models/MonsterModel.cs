@@ -26,7 +26,6 @@ namespace Game.Models
             PlayerType = PlayerTypeEnum.Monster;
             Guid = Id;
             Name = "New Monster";
-            Description = "New Monster Description";
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
@@ -34,6 +33,7 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             MonsterType = MonsterTypeEnum.EvilStove;
+            Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterType);
 
             // Default to unknown, which is no special job
             //MonsterType = MonsterTypeEnum.Unknown;

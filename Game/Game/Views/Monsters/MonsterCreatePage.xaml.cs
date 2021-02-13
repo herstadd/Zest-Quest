@@ -112,6 +112,8 @@ namespace Game.Views
         public void TypeChanged(object sender, EventArgs e)
         {
             var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)JobPicker.SelectedItem);
+            ViewModel.Data.Description = MonsterJobEnumExtensions.GetMonsterDescription(selected);
+            Description.Text = MonsterJobEnumExtensions.GetMonsterDescription(selected);
             UniqueDrop.Text  = MonsterJobEnumExtensions.GetSpecialDrop(selected);
             ViewModel.Data.SpecialDrop = SpecialDropEnumHelper.ConvertStringToEnum(UniqueDrop.Text);
             PictureSource.Source = MonsterJobEnumExtensions.GetPicture(selected);

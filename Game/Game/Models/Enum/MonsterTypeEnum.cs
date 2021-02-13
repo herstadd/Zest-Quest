@@ -192,6 +192,38 @@ namespace Game.Models
         }
 
         /// <summary>
+        /// Displays a Description for a Enum type monster
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>String value of Discription</returns>
+        public static string GetMonsterDescription(this MonsterTypeEnum value)
+        {
+            // Default String
+            var Message = "This is a basic Monster";
+
+            switch (value)
+            {
+                case MonsterTypeEnum.EvilRefrigerator:
+                    Message = "This is a special Monster and holds a Refrigerator";
+                    break;
+
+                case MonsterTypeEnum.EvilToaster:
+                    Message = "This is a special Monster and holds a OnionRing";
+                    break;
+
+                case MonsterTypeEnum.EvilBlender:
+                    Message = "This is a special Monster and holds a ButcherKnife";
+                    break;
+
+                case MonsterTypeEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return Message;
+        }
+
+        /// <summary>
         /// Displays The Class of a Enum type monster
         /// </summary>
         /// <param name="value"></param>
