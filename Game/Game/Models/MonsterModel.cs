@@ -15,6 +15,8 @@ namespace Game.Models
         // The special drop item for Monster
         public SpecialDropEnum SpecialDrop { get; set; }
 
+        public string MonsterClass { get; set; }
+
 
         /// <summary>
         /// Set Type to Monster
@@ -69,6 +71,7 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
+            MonsterClass = newData.MonsterClass;
 
             Difficulty = newData.Difficulty;
 
@@ -80,17 +83,7 @@ namespace Game.Models
             ExperienceRemaining = newData.ExperienceRemaining;
             CurrentHealth = newData.CurrentHealth;
             MaxHealth = newData.MaxHealth;
-
-            Head = newData.Head;
-            Necklass = newData.Necklass;
-            PrimaryHand = newData.PrimaryHand;
-            OffHand = newData.OffHand;
-            RightFinger = newData.RightFinger;
-            LeftFinger = newData.LeftFinger;
-            Feet = newData.Feet;
             UniqueItem = newData.UniqueItem;
-
-            Job = newData.Job;
 
             return true;
         }
