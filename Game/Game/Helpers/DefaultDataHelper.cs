@@ -51,7 +51,7 @@ namespace Game.Helpers
             return null;
         }
 
-        public static ItemModel GetCharacter(ItemModelEnum Target)
+        public static ItemModel GetItem(ItemModelEnum Target)
         {
             foreach (ItemModel item in ItemList)
             {
