@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Game.Models;
 using Game.Views;
 using Game.GameRules;
+using Game.Helpers;
 
 namespace Game.ViewModels
 {
@@ -16,6 +17,8 @@ namespace Game.ViewModels
     /// </summary>
     public class ItemIndexViewModel : BaseViewModel<ItemModel>
     {
+        private static ItemModel DefaultItem = null;
+
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -242,6 +245,94 @@ namespace Game.ViewModels
             data = Dataset.Where(m => m.Location == location).ToList();
 
             return data;
+        }
+
+        public void InitializeDefaultItem(ItemModelEnum item)
+        {
+            if (DefaultItem == null)
+            {
+                DefaultItem = DefaultDataHelper.GetItem(item);
+            }
+            else
+            {
+                if (item != DefaultItem.Type)
+                {
+                    DefaultItem = DefaultDataHelper.GetItem(item);
+                }
+            }
+        }
+
+        public string GetDescription(ItemModelEnum item)
+        {
+            InitializeDefaultItem(item);
+
+            if (DefaultItem == null)
+            {
+                return "";
+            }
+
+            return DefaultItem.Description;
+        }
+
+        public string GetImage(ItemModelEnum item)
+        {
+            InitializeDefaultItem(item);
+
+            if (DefaultItem == null)
+            {
+                return "item.png";
+            }
+
+            return DefaultItem.ImageURI;
+        }
+
+        public int GetValues(ItemModelEnum item, string command)
+        {
+            InitializeDefaultItem(item);
+
+            if (DefaultItem == null)
+            {
+                return 0;
+            }
+
+            if(command.Equals("Range"))
+            {
+                return DefaultItem.Range;
+            } 
+            else if (command.Equals("Damage"))
+            {
+                return DefaultItem.Damage;
+            }
+            else if(command.Equals("Value"))
+            {
+                return DefaultItem.Value;
+            }
+
+            return 0;
+        }
+
+        public ItemLocationEnum GetLocation(ItemModelEnum item)
+        {
+            InitializeDefaultItem(item);
+
+            if (DefaultItem == null)
+            {
+                return ItemLocationEnum.Unknown;
+            }
+
+            return DefaultItem.Location;
+        }
+
+        public AttributeEnum GetAttribute(ItemModelEnum item)
+        {
+            InitializeDefaultItem(item);
+
+            if (DefaultItem == null)
+            {
+                return AttributeEnum.Unknown;
+            }
+
+            return DefaultItem.Attribute;
         }
     }
 }
