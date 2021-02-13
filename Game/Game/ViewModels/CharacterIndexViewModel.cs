@@ -158,7 +158,7 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
-        public void InitializeDefaultCharacter(string target)
+        private void InitializeDefaultCharacter(string target)
         {
             CharacterJobEnum character = CharacterJobEnumHelper.ConvertStringToEnum(target);
 
