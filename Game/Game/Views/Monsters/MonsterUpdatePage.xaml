@@ -7,7 +7,7 @@
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local="using:Game.Models"
              x:Class="Game.Views.MonsterUpdatePage"
-             Title="Monster Update">
+             Title="Update Appliance">
 
  
     <ContentPage.Resources>
