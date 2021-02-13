@@ -241,7 +241,15 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
+
+            <Style TargetType="Label"
+                x:Key="DescriptionStatStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="Padding" Value="10,10,0,0" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
