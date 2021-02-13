@@ -22,8 +22,6 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
-
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
@@ -115,25 +113,25 @@
                 </StackLayout>
 
                 <Label 
-                Text="Characters at Death:"
-                Style="{StaticResource LabelStyle}"/>
+                    Text="Characters at Death:"
+                    Style="{StaticResource LabelStyle}"/>
                 <Label 
-                Text="{Binding Data.CharacterAtDeathList}" 
-                Style="{StaticResource ValueStyle}"/>
+                    Text="{Binding Data.CharacterAtDeathList}" 
+                    Style="{StaticResource ValueStyle}"/>
 
                 <Label 
-                Text="Monsters Killed:"
-                Style="{StaticResource LabelStyle}"/>
+                    Text="Monsters Killed:"
+                    Style="{StaticResource LabelStyle}"/>
                 <Label 
-                Text="{Binding Data.MonstersKilledList}" 
-                Style="{StaticResource ValueStyle}"/>
+                    Text="{Binding Data.MonstersKilledList}" 
+                    Style="{StaticResource ValueStyle}"/>
 
                 <Label 
-                Text="Items Dropped:"
-                Style="{StaticResource LabelStyle}"/>
+                    Text="Items Dropped:"
+                    Style="{StaticResource LabelStyle}"/>
                 <Label 
-                Text="{Binding Data.ItemsDroppedList}"
-                Style="{StaticResource ValueStyle}"/>
+                    Text="{Binding Data.ItemsDroppedList}"
+                    Style="{StaticResource ValueStyle}"/>
 
                 <StackLayout 
                     Orientation="Horizontal"
