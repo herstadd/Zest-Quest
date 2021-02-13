@@ -68,9 +68,10 @@
                         Text="Description" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Label Grid.Row="2" Grid.Column="1"
+                    <Entry Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource EntryStyle}"
+                        IsEnabled="False"
                         x:Name="MonsterDescription"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
