@@ -86,10 +86,15 @@
                         Text="Specialty" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="3" Grid.Column="1"
+                    <StackLayout Grid.Row="3" Grid.Column="1"
+                                 Orientation="Horizontal"
+                                 Style="{StaticResource VerticalStack}" >
+
+                        <Label Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"
+                        Style="{StaticResource DescriptionStatStyle}"
                         x:Name="Description"/>
+                    </StackLayout>
 
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Attack" 
