@@ -10,11 +10,6 @@
              x:Class="Game.Views.ScoreUpdatePage"
              Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
@@ -140,6 +135,12 @@
                 Text="{Binding Data.ItemsDroppedList}"
                 Style="{StaticResource ValueStyle}"/>
 
+                <StackLayout 
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                    <Button Text="Update" Clicked="Save_Clicked"/>
+                    <Button Text="Cancel" Clicked="Cancel_Clicked"/>
+                </StackLayout>
 
             </StackLayout>
         </ScrollView>
