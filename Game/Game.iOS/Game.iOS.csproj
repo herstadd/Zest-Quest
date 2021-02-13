@@ -228,4 +228,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\teamtelephone2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SuperFlower.png" />
+  </ItemGroup>
 </Project>
