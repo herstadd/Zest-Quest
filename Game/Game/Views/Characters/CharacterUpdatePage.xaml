@@ -149,7 +149,7 @@
                     </StackLayout>
 
                     <Label Grid.Row="7" Grid.Column="0"
-                        Text="Health: "
+                        Text="Health "
                         Style="{StaticResource LabelStyle}"/>
 
                     <StackLayout Grid.Row="7" Grid.Column="1"
