@@ -158,8 +158,10 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
-        public void InitializeDefaultMonster(MonsterTypeEnum monster)
+        private void InitializeDefaultMonster(string target)
         {
+            MonsterTypeEnum monster = MonsterJobEnumHelper.ConvertStringToEnum(target);
+
             if (DefaultMonster == null)
             {
                 DefaultMonster = DefaultDataHelper.GetMonster(monster);
@@ -173,7 +175,7 @@ namespace Game.ViewModels
             }
         }
 
-        public string GetDescription(MonsterTypeEnum monster)
+        public string GetDescription(string monster)
         {
             InitializeDefaultMonster(monster);
 
@@ -185,7 +187,7 @@ namespace Game.ViewModels
             return DefaultMonster.Description;
         }
 
-        public string GetImage(MonsterTypeEnum monster)
+        public string GetImage(string monster)
         {
             InitializeDefaultMonster(monster);
 
@@ -197,19 +199,19 @@ namespace Game.ViewModels
             return DefaultMonster.ImageURI;
         }
 
-        public SpecialDropEnum GetSpecialDrop(MonsterTypeEnum monster)
+        public ItemModelEnum GetUniqueDrop(string monster)
         {
             InitializeDefaultMonster(monster);
 
             if (DefaultMonster == null)
             {
-                return SpecialDropEnum.Unknown;
+                return ItemModelEnum.Unknown;
             }
 
-            return DefaultMonster.SpecialDrop;
+            return DefaultMonster.UniqueDrop;
         }
 
-        public string GetMonsterClass(MonsterTypeEnum monster)
+        public string GetMonsterClass(string monster)
         {
             InitializeDefaultMonster(monster);
 
