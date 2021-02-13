@@ -52,9 +52,10 @@ namespace Game.Views
         {
             var selected = (String)JobPicker.SelectedItem;
 
+            this.ViewModel.Data.Description = MonsterIndexViewModel.Instance.GetDescription(selected);
             MonsterDescription.Text = MonsterIndexViewModel.Instance.GetDescription(selected);
-            ViewModel.Data.UniqueDrop = MonsterIndexViewModel.Instance.GetUniqueDrop(selected); //SpecialDropEnumHelper.ConvertStringToEnum(UniqueDrop.Text);
-            UniqueDrop.Text = ItemModelEnumExtensions.ToMessage(ViewModel.Data.UniqueDrop); //MonsterJobEnumExtensions.GetSpecialDrop(selected);
+            ViewModel.Data.UniqueDrop = MonsterIndexViewModel.Instance.GetUniqueDrop(selected); 
+            UniqueDrop.Text = ItemModelEnumExtensions.ToMessage(ViewModel.Data.UniqueDrop); 
             MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(selected);
             PictureSource.Source = MonsterIndexViewModel.Instance.GetImage(selected);
             ChangeImage.Text = MonsterIndexViewModel.Instance.GetImage(selected);
