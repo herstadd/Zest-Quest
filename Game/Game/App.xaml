@@ -148,6 +148,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="MonsterValueStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ValueStyleMicro"
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="FontSize" Value="Micro" />
