@@ -85,8 +85,7 @@
 
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Class" 
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Style="{StaticResource LabelStyle}" />
 
                     <Entry Grid.Row="4" Grid.Column="1"
                         Text="Standard" 
