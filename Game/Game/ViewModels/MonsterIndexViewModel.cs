@@ -208,5 +208,17 @@ namespace Game.ViewModels
 
             return DefaultMonster.SpecialDrop;
         }
+
+        public string GetMonsterClass(MonsterTypeEnum monster)
+        {
+            InitializeDefaultMonster(monster);
+
+            if (DefaultMonster == null)
+            {
+                return "Standard";
+            }
+
+            return DefaultMonster.MonsterClass;
+        }
     }
 }
