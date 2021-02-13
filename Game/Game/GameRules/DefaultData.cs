@@ -254,8 +254,6 @@ namespace Game.GameRules
                     Job = CharacterJobEnum.HeadChef,
                     MaxHealth = DiceHelper.RollDice(10, 10),
                     ImageURI = "headchef.png",
-                    //Head = HeadString,
-                    //Head = ItemModelEnum.ChefHat
                     Head = "mushroom.png",
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
