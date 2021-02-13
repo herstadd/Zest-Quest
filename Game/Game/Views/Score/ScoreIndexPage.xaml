@@ -15,8 +15,6 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Score List Page" Style="{StaticResource HeaderStyle}"/>
-
             <ListView x:Name="DataListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -33,7 +31,7 @@
                         <ViewCell>
                             <Grid ColumnSpacing="1" RowSpacing="1">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width=".5*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>
@@ -41,6 +39,7 @@
 
                                 <Label Grid.Column="0" Grid.Row="0"
                                        Text="{Binding Name}" 
+                                       FontAttributes="Bold"
                                        Style="{StaticResource ListStyle}"/>
 
                                 <Label Grid.Column="0" Grid.Row="1"
