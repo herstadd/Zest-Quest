@@ -13,7 +13,7 @@ namespace Game.Models
         public MonsterTypeEnum MonsterType { get; set; } = MonsterTypeEnum.Unknown;
         
         // The special drop item for Monster
-        public SpecialDropEnum SpecialDrop { get; set; }
+        public ItemModelEnum UniqueDrop { get; set; }
 
         public string MonsterClass { get; set; }
 
@@ -35,13 +35,13 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             MonsterType = MonsterTypeEnum.EvilStove;
-            Description = MonsterJobEnumExtensions.GetMonsterDescription(MonsterType);
+            Description = "This is a basic Monster";
 
             // Default to unknown, which is no special job
             //MonsterType = MonsterTypeEnum.Unknown;
 
             // Default to unknown, which hasno special drop
-            SpecialDrop = SpecialDropEnum.Unknown;
+            UniqueDrop = ItemModelEnum.Unknown;
         }
 
         /// <summary>
@@ -72,7 +72,6 @@ namespace Game.Models
             Level = newData.Level;
             ImageURI = newData.ImageURI;
             MonsterClass = newData.MonsterClass;
-
             Difficulty = newData.Difficulty;
 
             Speed = newData.Speed;
