@@ -247,8 +247,10 @@ namespace Game.ViewModels
             return data;
         }
 
-        public void InitializeDefaultItem(ItemModelEnum item)
+        public void InitializeDefaultItem(string target)
         {
+            ItemModelEnum item = ItemModelEnumHelper.ConvertStringToEnum(target);
+
             if (DefaultItem == null)
             {
                 DefaultItem = DefaultDataHelper.GetItem(item);
@@ -262,7 +264,7 @@ namespace Game.ViewModels
             }
         }
 
-        public string GetDescription(ItemModelEnum item)
+        public string GetDescription(string item)
         {
             InitializeDefaultItem(item);
 
@@ -274,7 +276,7 @@ namespace Game.ViewModels
             return DefaultItem.Description;
         }
 
-        public string GetImage(ItemModelEnum item)
+        public string GetImage(string item)
         {
             InitializeDefaultItem(item);
 
@@ -286,7 +288,7 @@ namespace Game.ViewModels
             return DefaultItem.ImageURI;
         }
 
-        public int GetValues(ItemModelEnum item, string command)
+        public int GetValues(string item, string command)
         {
             InitializeDefaultItem(item);
 
@@ -311,7 +313,7 @@ namespace Game.ViewModels
             return 0;
         }
 
-        public ItemLocationEnum GetLocation(ItemModelEnum item)
+        public ItemLocationEnum GetLocation(string item)
         {
             InitializeDefaultItem(item);
 
@@ -323,7 +325,7 @@ namespace Game.ViewModels
             return DefaultItem.Location;
         }
 
-        public AttributeEnum GetAttribute(ItemModelEnum item)
+        public AttributeEnum GetAttribute(string item)
         {
             InitializeDefaultItem(item);
 
