@@ -36,21 +36,21 @@
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="0" Grid.Column="1"
                     Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="1" Grid.Column="0"
                     Text="LV"
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="1" Grid.Column="1"
                     Text="{Binding Data.Level}"
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="2" Grid.Column="0"
                     Text="Type" 
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="2" Grid.Column="1"
                     Text="{Binding Data.Job}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="3" Grid.Column="0"
                     Text="Specialty" 
@@ -59,35 +59,35 @@
                 <Label Grid.Row="3" Grid.Column="1" 
                     LineBreakMode="WordWrap"
                     Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="4" Grid.Column="0"
                     Text="Attack"
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="4" Grid.Column="1"
                     Text="{Binding Data.Attack}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="5" Grid.Column="0"
                     Text="Defense"
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="5" Grid.Column="1"
                     Text="{Binding Data.Defense}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="6" Grid.Column="0"
                     Text="Speed"
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.Speed}" 
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
 
                 <Label Grid.Row="7" Grid.Column="0"
                     Text="Health"
                     Style="{StaticResource LabelStyle}"/>
                 <Label Grid.Row="7" Grid.Column="1"
                     Text="{Binding Data.MaxHealth}"
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource CharacterValueStyle}"/>
             </Grid>
 
             <StackLayout Orientation="Horizontal">
