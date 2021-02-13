@@ -6,7 +6,7 @@
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d"
              x:Class="Game.Views.MonsterReadPage"
-             Title="Monster Read">
+             Title="Read Appliance">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
