@@ -41,6 +41,9 @@ namespace Game.Views
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
+
+            // Restores previous max health instead of recalculating
+            MaxHealthValue.Text = DataCopy.MaxHealth.ToString();
         }
 
         /// <summary>
