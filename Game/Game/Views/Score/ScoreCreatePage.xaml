@@ -37,7 +37,7 @@
 
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource ScoreLabelStyle}"/>
                     
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
@@ -46,16 +46,11 @@
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Score" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
+                        Style="{StaticResource ScoreLabelStyle}"/>
+
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.ScoreTotal}" 
                         Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Score" 
-                        Style="{StaticResource LabelStyle}"/>
-
                 </Grid>
 
                 <StackLayout 
