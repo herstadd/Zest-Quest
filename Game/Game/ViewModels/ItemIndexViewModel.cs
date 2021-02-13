@@ -276,6 +276,11 @@ namespace Game.ViewModels
             return DefaultItem.Description;
         }
 
+        public ItemModelEnum GetType(string item)
+        {
+            return ItemModelEnumHelper.ConvertStringToEnum(item);
+        }
+
         public string GetImage(string item)
         {
             InitializeDefaultItem(item);
