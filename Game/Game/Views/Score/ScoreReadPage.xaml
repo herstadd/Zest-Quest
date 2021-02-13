@@ -15,11 +15,12 @@
 
     <ScrollView>
         <StackLayout Style="{StaticResource OuterBoxStack}"
+            Padding="10, 15, 10, 10"
             Spacing="10">
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                   Text="Name : " 
+                   Text="Name: " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Name}" 
@@ -28,7 +29,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Game Date:"
+                    Text="Game Date: "
                     Style="{StaticResource LabelStyle}"/>
 
                 <Label 
@@ -38,7 +39,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="AutoBattle:"                      
+                    Text="AutoBattle: "                      
                     Style="{StaticResource LabelStyle}"/>
 
                 <Label 
@@ -48,7 +49,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Score:" 
+                    Text="Score: " 
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.ScoreTotal}"
@@ -57,7 +58,7 @@
             
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Number of Rounds:"                      
+                    Text="Number of Rounds: "                      
                     Style="{StaticResource LabelStyle}"/>
 
                 <Label 
@@ -67,7 +68,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Number of Turns:"  
+                    Text="Number of Turns: "  
                     Style="{StaticResource LabelStyle}"/>
 
                 <Label 
@@ -77,7 +78,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Number of Monsters Slain:"
+                    Text="Number of Monsters Slain: "
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.MonsterSlainNumber}"
@@ -86,7 +87,7 @@
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Total Experience Gained:"
+                    Text="Total Experience Gained: "
                     Style="{StaticResource LabelStyle}"/>
 
                 <Label 
@@ -95,21 +96,21 @@
             </StackLayout>
 
             <Label 
-                Text="Characters at Death:"
+                Text="Characters at Death: "
                 Style="{StaticResource LabelStyle}"/>
             <Label 
                 Text="{Binding Data.CharacterAtDeathList}" 
                 Style="{StaticResource ValueStyle}"/>
 
             <Label 
-                Text="Monsters Killed:"
+                Text="Monsters Killed: "
                 Style="{StaticResource LabelStyle}"/>
             <Label 
                 Text="{Binding Data.MonstersKilledList}" 
                 Style="{StaticResource ValueStyle}"/>
 
             <Label 
-                Text="Items Dropped:"
+                Text="Items Dropped: "
                 Style="{StaticResource LabelStyle}"/>
             <Label 
                 Text="{Binding Data.ItemsDroppedList}"
