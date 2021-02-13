@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Game.Models;
 using Game.Views;
 using Game.GameRules;
+using Game.Helpers;
 
 namespace Game.ViewModels
 {
@@ -16,6 +17,8 @@ namespace Game.ViewModels
     /// </summary>
     public class CharacterIndexViewModel : BaseViewModel<CharacterModel>
     {
+        private static CharacterModel DefaultCharacter = null;
+
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -154,5 +157,90 @@ namespace Game.ViewModels
         }
 
         #endregion SortDataSet
+
+        public void InitializeDefaultCharacter(CharacterJobEnum character)
+        {
+            if (DefaultCharacter == null)
+            {
+                DefaultCharacter = DefaultDataHelper.GetCharacter(character);
+            }
+            else
+            {
+                if (character != DefaultCharacter.Job)
+                {
+                    DefaultCharacter = DefaultDataHelper.GetCharacter(character);
+                }
+            }
+        }
+
+        public string GetSpecialty(CharacterJobEnum character)
+        {
+            InitializeDefaultCharacter(character);
+
+            if (DefaultCharacter == null)
+            {
+                return "";
+            }
+
+            return DefaultCharacter.Description;
+        }
+
+        public string GetImage(CharacterJobEnum character)
+        {
+            InitializeDefaultCharacter(character);
+
+            if (DefaultCharacter == null)
+            {
+                return "item.png";
+            }
+
+            return DefaultCharacter.ImageURI;
+        }
+
+        public int GetLevel(CharacterJobEnum character)
+        {
+            InitializeDefaultCharacter(character);
+
+            if (DefaultCharacter == null)
+            {
+                return 1;
+            }
+
+            return DefaultCharacter.Level;
+        }
+
+        /// <summary>
+        /// Calculates a new max health value based on which chef type was selected
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public int GetMaxHealth(CharacterJobEnum character)
+        {
+            int DefaultHealth = 0;
+
+            switch (character)
+            {
+                case CharacterJobEnum.HeadChef:
+                case CharacterJobEnum.HomeCook:
+                    DefaultHealth = DiceHelper.RollDice(10, 10);
+                    break;
+
+                case CharacterJobEnum.SchoolChef:
+                    DefaultHealth = DiceHelper.RollDice(5, 10);
+                    break;
+
+                case CharacterJobEnum.SousChef:
+                case CharacterJobEnum.SushiChef:
+                case CharacterJobEnum.CatChef:
+                    DefaultHealth = DiceHelper.RollDice(1, 10);
+                    break;
+
+                case CharacterJobEnum.Unknown:
+                default:
+                    break;
+            }
+
+            return DefaultHealth;
+        }
     }
 }
