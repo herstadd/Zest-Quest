@@ -25,7 +25,8 @@
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    VerticalOptions="Center"
+                    Padding="10, 15, 10, 10">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -60,6 +61,7 @@
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
+                    
                     <Button Text="Confirm" Clicked="Save_Clicked"/>
                     <Button Text="Cancel" Clicked="Cancel_Clicked"/>
                 </StackLayout>
