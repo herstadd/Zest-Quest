@@ -363,25 +363,25 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilRefrigerator,
                     Description = "This is a special Monster and holds a Refrigerator",
                     ImageURI = "monster2.png",
-                    SpecialDrop = SpecialDropEnum.Refrigerator,
+                    UniqueDrop = ItemModelEnum.Refrigerator,
                     MonsterClass = "Boss"
                 },
 
                 new MonsterModel {
                     Name = "Evil Toaster",
                     MonsterType = MonsterTypeEnum.EvilToaster,
-                    Description = "This is a special Monster and holds a OnionRing",
+                    Description = "This is a special Monster and holds a Onion Ring",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.OnionRing,
+                    UniqueDrop = ItemModelEnum.OnionRing,
                     MonsterClass = "Boss"
                 },
 
                 new MonsterModel {
                     Name = "Evil Blender",
                     MonsterType = MonsterTypeEnum.EvilBlender,
-                    Description = "This is a special Monster and holds a ButcherKnife",
+                    Description = "This is a special Monster and holds a Butcher Knife Necklace",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.ButcherKnife,
+                    UniqueDrop = ItemModelEnum.ButcherKnifeNecklace,
                     MonsterClass = "Boss"
                 },
 
@@ -390,7 +390,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilDishwasher,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
                 },
 
@@ -399,7 +399,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilStove,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
                 },
 
@@ -408,7 +408,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilKitchenSink,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
 
                 },
@@ -418,7 +418,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilRiceCooker,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
                 },
 
@@ -427,7 +427,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilCrockpot,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
                 },
 
@@ -436,7 +436,7 @@ namespace Game.GameRules
                     MonsterType = MonsterTypeEnum.EvilCanOpener,
                     Description = "This is a basic Monster",
                     ImageURI = "crock_pot.png",
-                    SpecialDrop = SpecialDropEnum.Unknown,
+                    UniqueDrop = ItemModelEnum.Unknown,
                     MonsterClass = "Standard"
                 },
             };
