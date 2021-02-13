@@ -111,14 +111,14 @@ namespace Game.Views
         /// <param name="e"></param>
         public void TypeChanged(object sender, EventArgs e)
         {
-            var selected = MonsterJobEnumHelper.ConvertStringToEnum((String)JobPicker.SelectedItem);
-            ViewModel.Data.Description = MonsterJobEnumExtensions.GetMonsterDescription(selected);
-            Description.Text = MonsterJobEnumExtensions.GetMonsterDescription(selected);
-            UniqueDrop.Text  = MonsterJobEnumExtensions.GetSpecialDrop(selected);
-            ViewModel.Data.SpecialDrop = SpecialDropEnumHelper.ConvertStringToEnum(UniqueDrop.Text);
-            PictureSource.Source = MonsterJobEnumExtensions.GetPicture(selected);
-            ChangeImage.Text = MonsterJobEnumExtensions.GetPicture(selected);
-            MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(selected);
+            var selected = (String) JobPicker.SelectedItem;
+
+            Description.Text = MonsterIndexViewModel.Instance.GetDescription(selected); 
+            ViewModel.Data.UniqueDrop = MonsterIndexViewModel.Instance.GetUniqueDrop(selected); 
+            UniqueDrop.Text  = ItemModelEnumExtensions.ToMessage(ViewModel.Data.UniqueDrop);
+            PictureSource.Source = MonsterIndexViewModel.Instance.GetImage(selected);
+            ChangeImage.Text = MonsterIndexViewModel.Instance.GetImage(selected);
+            MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(selected);
         }
     }
 }
