@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Game.Models;
 using Game.Views;
 using Game.GameRules;
+using Game.Helpers;
 
 namespace Game.ViewModels
 {
@@ -16,6 +17,8 @@ namespace Game.ViewModels
     /// </summary>
     public class MonsterIndexViewModel : BaseViewModel<MonsterModel>
     {
+        private static MonsterModel DefaultMonster = null;
+
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -154,5 +157,56 @@ namespace Game.ViewModels
         }
 
         #endregion SortDataSet
+
+        public void InitializeDefaultMonster(MonsterTypeEnum monster)
+        {
+            if (DefaultMonster == null)
+            {
+                DefaultMonster = DefaultDataHelper.GetMonster(monster);
+            }
+            else
+            {
+                if (monster != DefaultMonster.MonsterType)
+                {
+                    DefaultMonster = DefaultDataHelper.GetMonster(monster);
+                }
+            }
+        }
+
+        public string GetDescription(MonsterTypeEnum monster)
+        {
+            InitializeDefaultMonster(monster);
+
+            if (DefaultMonster == null)
+            {
+                return "";
+            }
+
+            return DefaultMonster.Description;
+        }
+
+        public string GetImage(MonsterTypeEnum monster)
+        {
+            InitializeDefaultMonster(monster);
+
+            if (DefaultMonster == null)
+            {
+                return "item.png";
+            }
+
+            return DefaultMonster.ImageURI;
+        }
+
+        public SpecialDropEnum GetSpecialDrop(MonsterTypeEnum monster)
+        {
+            InitializeDefaultMonster(monster);
+
+            if (DefaultMonster == null)
+            {
+                return SpecialDropEnum.Unknown;
+            }
+
+            return DefaultMonster.SpecialDrop;
+        }
     }
 }
