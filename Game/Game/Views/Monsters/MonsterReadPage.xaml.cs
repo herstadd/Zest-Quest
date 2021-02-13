@@ -33,7 +33,7 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
-            MonsterClass.Text = MonsterJobEnumExtensions.GetMonsterClass(ViewModel.Data.MonsterType);
+            MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(ViewModel.Data.MonsterType.ToString());
         }
 
         /// <summary>
