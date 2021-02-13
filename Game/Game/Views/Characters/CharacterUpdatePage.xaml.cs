@@ -141,6 +141,7 @@ namespace Game.Views
         {
             var selected = (string)JobPicker.SelectedItem;
 
+            this.ViewModel.Data.Description = CharacterIndexViewModel.Instance.GetSpecialty(selected);
             Description.Text = CharacterIndexViewModel.Instance.GetSpecialty(selected);
             PictureSource.Source = CharacterIndexViewModel.Instance.GetImage(selected);
             ChangeImage.Text = CharacterIndexViewModel.Instance.GetImage(selected);
