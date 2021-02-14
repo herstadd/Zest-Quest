@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Game.Helpers
 {
+    /// <summary>
+    /// Gives action based on if + / - button was clicked
+    /// </summary>
     public static class ButtonClickedHelper
     {
 
