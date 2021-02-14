@@ -19,7 +19,7 @@ namespace Game.GameRules
                     Name = "ChefHat",
                     Type = ItemModelEnum.ChefHat,
                     Description = "A basic toque blanche worn by chefs worldwide",
-                    ImageURI = "mushroom.png",
+                    ImageURI = "superflower.png",
                     Range = 3,
                     Damage = 9,
                     Value = 4,
