@@ -99,11 +99,11 @@
                     Style="{StaticResource CharacterValueStyle}"/>
             </Grid>
 
-            <Label Text="Items" HeightRequest="0"
+            <Label Text="Gadgets" HeightRequest="0"
                    x:Name="ItemLabel"
                    Style="{StaticResource BigHeaderStyle}"/>
 
-            <Label Text="Character has no Items" HeightRequest="30"
+            <Label Text="Character has no Gadgets" HeightRequest="30"
                    x:Name="NoItemLabel"
                    Style="{StaticResource BigHeaderStyle}"/>
 
