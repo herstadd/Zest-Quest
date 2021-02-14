@@ -55,7 +55,6 @@ namespace Game.Views
             this.ViewModel.Data.Description = MonsterIndexViewModel.Instance.GetDescription(selected);
             Description.Text = MonsterIndexViewModel.Instance.GetDescription(selected);
             ViewModel.Data.UniqueDrop = MonsterIndexViewModel.Instance.GetUniqueDrop(selected); 
-            UniqueDrop.Text = ItemModelEnumExtensions.ToMessage(ViewModel.Data.UniqueDrop); 
             MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(selected);
             PictureSource.Source = MonsterIndexViewModel.Instance.GetImage(selected);
             ChangeImage.Text = MonsterIndexViewModel.Instance.GetImage(selected);

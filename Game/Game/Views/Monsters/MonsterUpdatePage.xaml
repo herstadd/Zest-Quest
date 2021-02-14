@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
+             xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:local="using:Game.Models"
              x:Class="Game.Views.MonsterUpdatePage"
              Title="Update Appliance">
@@ -87,10 +88,10 @@
                         Padding="0,0,5,10"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Label Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.SpecialDrop}" 
-                        Style="{StaticResource DescriptionStatStyle}"
-                        Padding="0,0,0,10"
+                    <Picker Grid.Row="3" Grid.Column="1"                   
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}" 
+                        SelectedItem="{Binding Data.UniqueDrop, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedIndexChanged="TypeChanged"
                         x:Name="UniqueDrop"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
