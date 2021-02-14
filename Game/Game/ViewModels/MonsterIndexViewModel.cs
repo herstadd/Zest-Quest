@@ -159,6 +159,10 @@ namespace Game.ViewModels
         #endregion SortDataSet
 
         #region GetFromDefaultData
+        /// <summary>
+        /// Initializes the default monster based on the target passed in
+        /// </summary>
+        /// <param name="target"></param>
         private void InitializeDefaultMonster(string target)
         {
             MonsterTypeEnum monster = MonsterJobEnumHelper.ConvertStringToEnum(target);
@@ -176,6 +180,11 @@ namespace Game.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the description for a specific monster type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetDescription(string monster)
         {
             InitializeDefaultMonster(monster);
@@ -188,6 +197,11 @@ namespace Game.ViewModels
             return DefaultMonster.Description;
         }
 
+        /// <summary>
+        /// Gets the image URI for a specific character type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetImage(string monster)
         {
             InitializeDefaultMonster(monster);
@@ -200,6 +214,11 @@ namespace Game.ViewModels
             return DefaultMonster.ImageURI;
         }
 
+        /// <summary>
+        /// Gets the unique drop for a specific monster type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public ItemModelEnum GetUniqueDrop(string monster)
         {
             InitializeDefaultMonster(monster);
@@ -212,6 +231,11 @@ namespace Game.ViewModels
             return DefaultMonster.UniqueDrop;
         }
 
+        /// <summary>
+        /// Gets the class (standard/boss) for a specific monster type
+        /// </summary>
+        /// <param name="monster"></param>
+        /// <returns></returns>
         public string GetMonsterClass(string monster)
         {
             InitializeDefaultMonster(monster);

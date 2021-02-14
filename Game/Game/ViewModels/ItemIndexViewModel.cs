@@ -255,6 +255,10 @@ namespace Game.ViewModels
         }
 
         #region GetFromDefaultData
+        /// <summary>
+        /// Initializes the default item based on the target passed in
+        /// </summary>
+        /// <param name="target"></param>
         public void InitializeDefaultItem(string target)
         {
             ItemModelEnum item = ItemModelEnumHelper.ConvertStringToEnum(target);
@@ -272,6 +276,11 @@ namespace Game.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the description for a specific item type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetDescription(string item)
         {
             InitializeDefaultItem(item);
@@ -284,11 +293,21 @@ namespace Game.ViewModels
             return DefaultItem.Description;
         }
 
+        /// <summary>
+        /// Converts item string to enum
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public ItemModelEnum GetType(string item)
         {
             return ItemModelEnumHelper.ConvertStringToEnum(item);
         }
 
+        /// <summary>
+        /// Gets the image URI for a specific item
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetImage(string item)
         {
             InitializeDefaultItem(item);
@@ -301,6 +320,12 @@ namespace Game.ViewModels
             return DefaultItem.ImageURI;
         }
 
+        /// <summary>
+        /// Returns the passed in item's command (range, damage, value)
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="command"></param>
+        /// <returns></returns>
         public int GetValues(string item, string command)
         {
             InitializeDefaultItem(item);
@@ -326,6 +351,11 @@ namespace Game.ViewModels
             return 0;
         }
 
+        /// <summary>
+        /// Gets the default location for a specific item
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public ItemLocationEnum GetLocation(string item)
         {
             InitializeDefaultItem(item);
@@ -338,6 +368,11 @@ namespace Game.ViewModels
             return DefaultItem.Location;
         }
 
+        /// <summary>
+        /// Gets the default attribute for a specific item
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public AttributeEnum GetAttribute(string item)
         {
             InitializeDefaultItem(item);
