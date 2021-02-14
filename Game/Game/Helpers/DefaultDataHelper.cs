@@ -1,9 +1,6 @@
 ﻿using Game.Models;
 using Game.GameRules;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Game.Helpers
 {
@@ -17,6 +14,9 @@ namespace Game.Helpers
         static List<ItemModel> ItemList = null;
         static List<ScoreModel> ScoreList = null;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         static DefaultDataHelper()
         {
             if(CharacterList == null || MonsterList == null ||
@@ -29,6 +29,11 @@ namespace Game.Helpers
             }
         }
 
+        /// <summary>
+        /// Gets the character from default data matching the passed in target enum 
+        /// </summary>
+        /// <param name="Target"></param>
+        /// <returns></returns>
         public static CharacterModel GetCharacter(CharacterJobEnum Target)
         {
 
@@ -42,6 +47,11 @@ namespace Game.Helpers
             return null;
         }
 
+        /// <summary>
+        /// Gets the monster from default data matching the passed in target enum
+        /// </summary>
+        /// <param name="Target"></param>
+        /// <returns></returns>
         public static MonsterModel GetMonster(MonsterTypeEnum Target)
         {
             foreach (MonsterModel monster in MonsterList)
@@ -54,6 +64,11 @@ namespace Game.Helpers
             return null;
         }
 
+        /// <summary>
+        /// Gets the item from default data matching the passed in target enum
+        /// </summary>
+        /// <param name="Target"></param>
+        /// <returns></returns>
         public static ItemModel GetItem(ItemModelEnum Target)
         {
             foreach (ItemModel item in ItemList)
