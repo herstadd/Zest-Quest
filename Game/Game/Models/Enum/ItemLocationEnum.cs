@@ -121,6 +121,21 @@ namespace Game.Models
             }
         }
 
+        public static List<string> GetAllListItems
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
+                var myReturn = myList.Where(a =>
+                                            a.ToString() != ItemLocationEnum.Unknown.ToString() &&
+                                            a.ToString() != ItemLocationEnum.Finger.ToString()
+                                            )
+                                            .OrderBy(a => a)
+                                            .ToList();
+                return myReturn;
+            }
+        }
+
         /// <summary>
         ///  Gets the list of locations a character can use
         ///  Removes Finger for example, and allows for left and right finger
