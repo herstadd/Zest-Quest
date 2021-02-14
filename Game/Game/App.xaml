@@ -33,7 +33,7 @@
 
             <Color x:Key="PrimaryTextColor">black</Color>
             <Color x:Key="SecondaryTextColor">#542A00</Color>
-            <Color x:Key="TriciaryTextColor">darkgreen</Color>
+            <Color x:Key="TriciaryTextColor">#4D3600</Color>
 
             <Color x:Key="TransparentColor">Transparent</Color>
 
