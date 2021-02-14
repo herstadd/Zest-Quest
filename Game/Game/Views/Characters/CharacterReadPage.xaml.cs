@@ -72,42 +72,49 @@ namespace Game.Views
                     head.Source = FoundItem.ImageURI;
                     headName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "Necklass":
                     necklassFrame.WidthRequest = 120;
                     necklass.Source = FoundItem.ImageURI;
                     necklassName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "PrimaryHand":
                     primaryhandFrame.WidthRequest = 120;
                     primaryhand.Source = FoundItem.ImageURI;
                     primaryhandName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "OffHand":
                     offhandFrame.WidthRequest = 120;
                     offhand.Source = FoundItem.ImageURI;
                     offhandName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "RightFinger":
                     rightfingerFrame.WidthRequest = 120;
                     rightfinger.Source = FoundItem.ImageURI;
                     rightfingerName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "LeftFinger":
                     leftfingerFrame.WidthRequest = 120;
                     leftfinger.Source = FoundItem.ImageURI;
                     leftfingerName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 case "Feet":
                     feetFrame.WidthRequest = 120;
                     feet.Source = FoundItem.ImageURI;
                     feetName.Text = FoundItem.Name;
                     ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
                     break;
                 default:
                     break;

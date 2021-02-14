@@ -103,6 +103,10 @@
                    x:Name="ItemLabel"
                    Style="{StaticResource BigHeaderStyle}"/>
 
+            <Label Text="Character has no Items" HeightRequest="30"
+                   x:Name="NoItemLabel"
+                   Style="{StaticResource BigHeaderStyle}"/>
+
             <FlexLayout Direction="Row"
                         AlignItems="Start"
                         JustifyContent="Start">
