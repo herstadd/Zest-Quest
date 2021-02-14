@@ -159,6 +159,10 @@ namespace Game.ViewModels
         #endregion SortDataSet
 
         #region GetFromDefaultData
+        /// <summary>
+        /// Initializes the default character based on the target passed in
+        /// </summary>
+        /// <param name="target"></param>
         private void InitializeDefaultCharacter(string target)
         {
             CharacterJobEnum character = CharacterJobEnumHelper.ConvertStringToEnum(target);
@@ -176,6 +180,11 @@ namespace Game.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the description for a specific character type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetSpecialty(string target)
         {
             InitializeDefaultCharacter(target);
@@ -188,6 +197,11 @@ namespace Game.ViewModels
             return DefaultCharacter.Description;
         }
 
+        /// <summary>
+        /// Gets the image URI for a specific character type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetImage(string target)
         {
             InitializeDefaultCharacter(target);
@@ -200,6 +214,11 @@ namespace Game.ViewModels
             return DefaultCharacter.ImageURI;
         }
 
+        /// <summary>
+        /// Gets the default level for a specific character type
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public int GetLevel(string target)
         {
             InitializeDefaultCharacter(target);
@@ -212,6 +231,12 @@ namespace Game.ViewModels
             return DefaultCharacter.Level;
         }
 
+        /// <summary>
+        /// Gets default item for a specific character and location
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="ItemLocation"></param>
+        /// <returns></returns>
         public string GetItemForLocation(string target, string ItemLocation)
         {
             InitializeDefaultCharacter(target);
@@ -223,7 +248,7 @@ namespace Game.ViewModels
             switch(ItemLocation)
             {
                 case "Head":
-                    return DefaultCharacter.Head; // ""
+                    return DefaultCharacter.Head;
                 case "Feet":
                     return DefaultCharacter.Feet;
                 case "Necklass":
