@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Game.Helpers
 {
+    /// <summary>
+    /// Helper class to get the list of data from default data for all types available
+    /// </summary>
     public static class DefaultDataHelper
     {
         static List<CharacterModel> CharacterList = null;
