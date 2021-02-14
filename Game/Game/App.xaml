@@ -26,7 +26,7 @@
             <Color x:Key="ViewBackgroundColor">#b87400</Color>
             <Color x:Key="NavigationBarColor">#c74c00</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">red</Color>
+            <Color x:Key="PrimaryBackgroundColor">#FFC642</Color>
             <Color x:Key="SecondaryBackgroundColor">#C79112</Color>
             <Color x:Key="TriciaryBackgroundColor">#FFDD8F</Color>
             <Color x:Key="LightBackgroundColor">#ffb300</Color>
