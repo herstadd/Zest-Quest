@@ -248,7 +248,7 @@
                 <Setter Property="Padding" Value="10,10,0,0" />
                 <Setter Property="HorizontalOptions" Value="End" />
                 <Setter Property="LineBreakMode" Value="WordWrap"/>
-                <Setter Property="HorizontalTextAlignment" Value="End" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
             </Style>
 
             <!-- Image -->
