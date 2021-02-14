@@ -26,7 +26,9 @@
                 Spacing="10"
                 Padding="10">
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <Image Source="{Binding Data.ImageURI}" 
+                       Style="{StaticResource ImageLargeStyle}" 
+                       HorizontalOptions="CenterAndExpand"/>
 
                 <Grid
                     RowSpacing="1"
