@@ -55,7 +55,7 @@
                     Style="{StaticResource ScoreValueStyle}"/>
 
                 <Label Grid.Row="2" Grid.Column="0"
-                    Text="AutoBattle" 
+                    Text="Auto-Cook" 
                     Style="{StaticResource ScoreLabelStyle}"/>
                 <Label Grid.Row="2" Grid.Column="1"
                     Text="{Binding Data.AutoBattle}"
@@ -83,7 +83,7 @@
                     Style="{StaticResource ScoreValueStyle}"/>
 
                 <Label Grid.Row="6" Grid.Column="0"
-                    Text="Number of Monsters Slain"
+                    Text="Number of Appliances Slain"
                     Style="{StaticResource ScoreLabelStyle}"/>
                 <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.MonsterSlainNumber}"
@@ -98,21 +98,21 @@
             </Grid>
 
             <Label 
-                Text="Characters at Death"
+                Text="Chefs at Death"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.CharacterAtDeathList}" 
                 Style="{StaticResource ScoreValueStyle}"/>
 
             <Label 
-                Text="Monsters Killed"
+                Text="Appliances Killed"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.MonstersKilledList}" 
                 Style="{StaticResource ScoreValueStyle}"/>
 
             <Label 
-                Text="Items Dropped"
+                Text="Gadgets Dropped"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.ItemsDroppedList}"
