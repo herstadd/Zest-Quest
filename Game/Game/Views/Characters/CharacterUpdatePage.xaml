@@ -38,8 +38,16 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
@@ -83,18 +91,17 @@
                         SelectedIndexChanged="TypeChanged"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
+                        Padding="0,10,5,10"
                         Text="Specialty" 
+                        VerticalOptions="Start"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="3" Grid.Column="1"
-                                 Orientation="Horizontal"
-                                 Style="{StaticResource VerticalStack}" >
-
-                        <Label Grid.Row="3" Grid.Column="1"
+                    <Label Grid.Row="3" Grid.Column="1"
+                        Padding="0,10,0,10"
+                        HorizontalOptions="Center"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource DescriptionStatStyle}"
                         x:Name="Description"/>
-                    </StackLayout>
 
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Attack" 
@@ -155,17 +162,14 @@
 
                     <Label Grid.Row="7" Grid.Column="0"
                         Text="Health "
+                        Padding="0,7,0,0"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="7" Grid.Column="1"
-                                 Orientation="Horizontal"
-                        Style="{StaticResource VerticalStack}" >
-                        <Label 
-                            Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
-                            x:Name="MaxHealthValue"
-                            Style="{StaticResource CharacterStatStyle}"
-                            Padding="0,10,0,0" />
-                    </StackLayout>
+                    <Label Grid.Row="7" Grid.Column="1"
+                        Text="{Binding Data.MaxHealth, Mode=TwoWay}" 
+                        x:Name="MaxHealthValue"
+                        Padding="0,7,0,0"
+                        Style="{StaticResource CharacterStatStyle}"/>
                 </Grid>
                 
                 <StackLayout 
