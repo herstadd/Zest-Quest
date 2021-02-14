@@ -39,7 +39,7 @@
                 </StackLayout>
 
                 <Button
-                    Text="Begin"
+                    Text="Cook!"
                     Clicked="GameButton_Clicked"/>
 
             </StackLayout>
