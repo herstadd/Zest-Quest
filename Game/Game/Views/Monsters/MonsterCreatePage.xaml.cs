@@ -37,6 +37,9 @@ namespace Game.Views
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
+
+            // Initialize the Monster Class Box Picker according to the default Monster type 
+            MonsterClassPicker.SelectedItem = MonsterIndexViewModel.Instance.GetMonsterClass(ViewModel.Data.MonsterType.ToString());
         }
 
         /// <summary>
@@ -118,7 +121,6 @@ namespace Game.Views
             ViewModel.Data.UniqueDrop = MonsterIndexViewModel.Instance.GetUniqueDrop(selected); 
             PictureSource.Source = MonsterIndexViewModel.Instance.GetImage(selected);
             ChangeImage.Text = MonsterIndexViewModel.Instance.GetImage(selected);
-            MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(selected);
         }
     }
 }
