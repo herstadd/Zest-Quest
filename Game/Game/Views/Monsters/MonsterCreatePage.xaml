@@ -39,13 +39,19 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
+                        Padding="0,0,5,0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="0" Grid.Column="1"
@@ -56,6 +62,7 @@
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Type" 
+                        Padding="0,0,5,0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="1" Grid.Column="1"
@@ -66,56 +73,42 @@
 
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Padding="0,10,5,0"
+                        Style="{StaticResource LabelStyle}" />
 
-                    <StackLayout Grid.Row="2" Grid.Column="1"
-                                 Orientation="Horizontal"
-                                 Style="{StaticResource VerticalStack}" >
-
-                        <Label Grid.Row="2" Grid.Column="1"
+                    <Label Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
-                        Style="{StaticResource DescriptionStatStyle}"                      
+                        Style="{StaticResource DescriptionStatStyle}"      
+                        Padding="0,10,0,0"
                         x:Name="Description"/>
-                        
-                    </StackLayout>
 
                     <Label Grid.Row="3" Grid.Column="0"
                         Text="Unique Drop" 
+                        Padding="0,10,5,0"
                         Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Grid.Row="3" Grid.Column="1"
-                                 Orientation="Horizontal"
-                                 Style="{StaticResource VerticalStack}" >
-
-                        <Label Grid.Row="3" Grid.Column="1"
+                    
+                    <Label Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.SpecialDrop}" 
                         Style="{StaticResource DescriptionStatStyle}"
+                        Padding="0,10,0,0"
                         x:Name="UniqueDrop"/>
                         
-                    </StackLayout>
-
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Class" 
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Padding="0,10,5,0"
+                        Style="{StaticResource LabelStyle}" />
 
-                    <StackLayout Grid.Row="4" Grid.Column="1"
-                                 Orientation="Horizontal"
-                                 Style="{StaticResource VerticalStack}" >
-
-                        <Label Grid.Row="4" Grid.Column="1"
+                    <Label Grid.Row="4" Grid.Column="1"
                         Text="Standard" 
                         Style="{StaticResource DescriptionStatStyle}"
+                        Padding="0,10,0,0"
                         x:Name="MonsterClass"/>
-                        
-                    </StackLayout>
-
                 </Grid>
 
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
+                    
                     <Button Text="Confirm" Clicked="Save_Clicked"/>
                     <Button Text="Cancel" Clicked="Cancel_Clicked"/>
                 </StackLayout>
