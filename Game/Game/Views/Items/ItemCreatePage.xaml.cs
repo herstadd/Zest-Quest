@@ -51,9 +51,19 @@ namespace Game.Views
             // Change bellow according to our upcoming Item name Enum
             var selected = (String) ItemTypeEntry.SelectedItem;
 
+            // change Description according to the selected Item type
             Description.Text = ItemIndexViewModel.Instance.GetDescription(selected);
+
+            // change Item data Description value according to the selected Item type
             this.ViewModel.Data.Description = ItemIndexViewModel.Instance.GetDescription(selected);
+
+            // change Item Picture source according to the selected Item type
             PictureSource.Source = ItemIndexViewModel.Instance.GetImage(selected);
+
+            // change Item Image according to the selected Item type
+            this.ViewModel.Data.ImageURI = ItemIndexViewModel.Instance.GetImage(selected);
+
+            // change Item Type according to the selected Item type
             this.ViewModel.Data.Type = ItemIndexViewModel.Instance.GetType(selected);
 
             // Location
@@ -61,8 +71,13 @@ namespace Game.Views
             // Attribute
             //AttributePicker.SelectedItem = ItemIndexViewModel.Instance.GetAttribute(selected);
 
+            // change Item Range value text according to the selected Item type in the Create Page
             RangeValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Range").ToString();
+
+            // change Item Damage value text according to the selected Item type in the Create Page
             DamageValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Damage").ToString();
+
+            // change Item value text according to the selected Item type in the Create Page
             ValueValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Value").ToString();
         }
 
