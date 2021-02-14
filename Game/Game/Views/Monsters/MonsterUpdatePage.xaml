@@ -20,6 +20,7 @@
 
         <ScrollView>
             <StackLayout Style="{StaticResource OuterBoxStack}"
+                Padding="10"
                 Spacing="10">
 
                 <Image Source="{Binding Data.ImageURI}" 
@@ -51,7 +52,6 @@
 
                     <Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
-                        Padding="0,0,5,0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="0" Grid.Column="1"
@@ -62,46 +62,46 @@
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Type" 
-                        Padding="0,0,5,0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="1" Grid.Column="1"
                         ItemsSource="{x:Static local:MonsterJobEnumHelper.GetListMonster}" 
-                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}"
                         SelectedIndexChanged="TypeChanged"
                         x:Name="JobPicker"/>
 
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
-                        Padding="0,10,5,0"
+                        VerticalOptions="Start"
+                        Padding="0,10,5,10"
                         Style="{StaticResource LabelStyle}" />
 
                     <Label Grid.Row="2" Grid.Column="1"
                         Text="{Binding Data.Description}" 
                         Style="{StaticResource DescriptionStatStyle}"      
-                        Padding="0,10,0,0"
+                        Padding="0,10,0,10"
                         x:Name="Description"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
                         Text="Unique Drop" 
-                        Padding="0,10,5,0"
+                        Padding="0,0,5,10"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.SpecialDrop}" 
                         Style="{StaticResource DescriptionStatStyle}"
-                        Padding="0,10,0,0"
+                        Padding="0,0,0,10"
                         x:Name="UniqueDrop"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Class" 
-                        Padding="0,10,5,0"
+                        Padding="0,0,5,10"
                         Style="{StaticResource LabelStyle}" />
 
                     <Label Grid.Row="4" Grid.Column="1"
                         Text="Standard" 
                         Style="{StaticResource DescriptionStatStyle}"
-                        Padding="0,10,0,0"
+                        Padding="0,0,0,10"
                         x:Name="MonsterClass"/>
                 </Grid>
 
