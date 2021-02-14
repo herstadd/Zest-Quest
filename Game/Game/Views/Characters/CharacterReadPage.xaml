@@ -101,7 +101,7 @@
 
             <Label Text="Items" HeightRequest="0"
                    x:Name="ItemLabel"
-                    Style="{StaticResource BigHeaderStyle}"/>
+                   Style="{StaticResource BigHeaderStyle}"/>
 
             <FlexLayout Direction="Row"
                         AlignItems="Start"
