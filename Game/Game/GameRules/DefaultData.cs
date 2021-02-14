@@ -243,7 +243,7 @@ namespace Game.GameRules
         {
             new CharacterModel {
                 Name = "Head Chef",
-                Description = "Each item grants this character double the normal stat modifier",
+                Description = "Each gadget grants this character double the normal stat modifier",
                 Level = 10,
                 Job = CharacterJobEnum.HeadChef,
                 MaxHealth = DiceHelper.RollDice(10, 10),
@@ -291,7 +291,7 @@ namespace Game.GameRules
 
             new CharacterModel {
                 Name = "Sushi Chef ",
-                Description = "Has the ability to attack from anywhere on the map with any item ",
+                Description = "Has the ability to attack from anywhere on the map with any gadget ",
                 Level = 1,
                 Job = CharacterJobEnum.SushiChef,
                 MaxHealth = DiceHelper.RollDice(1, 10),
@@ -307,7 +307,7 @@ namespace Game.GameRules
 
             new CharacterModel {
                 Name = "Cat Chef ",
-                Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time",
+                Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one gadget at a time",
                 Level = 1,
                 Job = CharacterJobEnum.CatChef,
                 MaxHealth = DiceHelper.RollDice(1, 10),
