@@ -27,6 +27,13 @@
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -34,59 +41,61 @@
 
                 <Label Grid.Row="0" Grid.Column="0"
                    Text="Name" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="0" Grid.Column="1"
                     Text="{Binding Data.Name}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="1" Grid.Column="0"
                    Text="Type" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="1" Grid.Column="1"
                     Text="{Binding Data.Type}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="2" Grid.Column="0"
                     Text="Description" 
-                    Style="{StaticResource LabelStyle}"/>
+                    VerticalOptions="Start"
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="2" Grid.Column="1"
+                    LineBreakMode="WordWrap"
                     Text="{Binding Data.Description}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="3" Grid.Column="0"
                     Text="Location" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="3" Grid.Column="1"
                     Text="{Binding Data.Location}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="4" Grid.Column="0"
                     Text="Attribute" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="4" Grid.Column="1"
                     Text="{Binding Data.Attribute}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="5" Grid.Column="0"
                     Text="Range" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="5" Grid.Column="1"
                     Text="{Binding Data.Range}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="6" Grid.Column="0"
                     Text="Value" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.Value}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="7" Grid.Column="0"
                     Text="Damage" 
-                    Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="7" Grid.Column="1"
                     Text="{Binding Data.Damage}" 
-                    Style="{StaticResource MonsterValueStyle}"/>
+                    Style="{StaticResource ItemValueStyle}"/>
             </Grid>
         </StackLayout>
     </ScrollView>
