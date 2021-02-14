@@ -134,6 +134,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="ItemLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="Padding" Value="0, 0, 5, 7" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ScoreLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
@@ -162,6 +169,12 @@
 
             <Style TargetType="Label"
                 x:Key="MonsterValueStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="Padding" Value="0,0,0,7" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ItemValueStyle"
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="Padding" Value="0,0,0,7" />
             </Style>
