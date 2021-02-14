@@ -237,112 +237,113 @@ namespace Game.GameRules
     /// <returns></returns>
     public static List<CharacterModel> LoadData(CharacterModel temp)
     {
-        var HeadString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
-        var NecklassString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Necklass);
-        var PrimaryHandString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.PrimaryHand);
-        var OffHandString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.OffHand);
-        var FeetString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Feet);
-        var RightFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
-        var LeftFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
+            //var HeadString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
+            //var NecklassString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Necklass);
+            //var PrimaryHandString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.PrimaryHand);
+            //var OffHandString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.OffHand);
+            //var FeetString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Feet);
+            //var RightFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
+            //var LeftFingerString = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Finger);
+        string NoItem = null;
 
-            var datalist = new List<CharacterModel>()
-            {
-                new CharacterModel {
-                    Name = "Head Chef",
-                    Description = "Each item grants this character double the normal stat modifier",
-                    Level = 10,
-                    Job = CharacterJobEnum.HeadChef,
-                    MaxHealth = DiceHelper.RollDice(10, 10),
-                    ImageURI = "headchef.png",
-                    Head = "mushroom.png",
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+        var datalist = new List<CharacterModel>()
+        {
+            new CharacterModel {
+                Name = "Head Chef",
+                Description = "Each item grants this character double the normal stat modifier",
+                Level = 10,
+                Job = CharacterJobEnum.HeadChef,
+                MaxHealth = DiceHelper.RollDice(10, 10),
+                ImageURI = "headchef.png",
+                Head = ItemIndexViewModel.Instance.GetItem("ChefHat", true).Id,
+                Necklass = NoItem,
+                PrimaryHand = ItemIndexViewModel.Instance.GetItem("Refrigerator", true).Id,
+                OffHand = NoItem,
+                Feet = NoItem,
+                RightFinger = ItemIndexViewModel.Instance.GetItem("OnionRing", true).Id,
+                LeftFinger = NoItem,
+            },
 
-                new CharacterModel {
-                    Name = "Sous Chef ",
-                    Description = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round",
-                    Level = 1,
-                    Job = CharacterJobEnum.SousChef,
-                    MaxHealth = DiceHelper.RollDice(1, 10),
-                    ImageURI = "souschef.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+            new CharacterModel {
+                Name = "Sous Chef ",
+                Description = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round",
+                Level = 1,
+                Job = CharacterJobEnum.SousChef,
+                MaxHealth = DiceHelper.RollDice(1, 10),
+                ImageURI = "souschef.png",
+                Head = NoItem,
+                Necklass = NoItem,
+                PrimaryHand = NoItem,
+                OffHand = NoItem,
+                Feet = NoItem,
+                RightFinger = NoItem,
+                LeftFinger = NoItem,
+            },
 
-                new CharacterModel {
-                    Name = "School Chef ",
-                    Description = "Provide a 20% attack buff to the rest of team if the school chef dies in a battle",
-                    Level = 5,
-                    Job = CharacterJobEnum.SchoolChef,
-                    MaxHealth = DiceHelper.RollDice(5, 10),
-                    ImageURI = "schoolchef.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+            new CharacterModel {
+                Name = "School Chef ",
+                Description = "Provide a 20% attack buff to the rest of team if the school chef dies in a battle",
+                Level = 5,
+                Job = CharacterJobEnum.SchoolChef,
+                MaxHealth = DiceHelper.RollDice(5, 10),
+                ImageURI = "schoolchef.png",
+                Head = NoItem,
+                Necklass = NoItem,
+                PrimaryHand = ItemIndexViewModel.Instance.GetItem("Pan", true).Id,
+                OffHand = NoItem,
+                Feet = NoItem,
+                RightFinger = NoItem,
+                LeftFinger = NoItem,
+            },
 
-                new CharacterModel {
-                    Name = "Sushi Chef ",
-                    Description = "Has the ability to attack from anywhere on the map with any item ",
-                    Level = 1,
-                    Job = CharacterJobEnum.SushiChef,
-                    MaxHealth = DiceHelper.RollDice(1, 10),
-                    ImageURI = "sushichef.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+            new CharacterModel {
+                Name = "Sushi Chef ",
+                Description = "Has the ability to attack from anywhere on the map with any item ",
+                Level = 1,
+                Job = CharacterJobEnum.SushiChef,
+                MaxHealth = DiceHelper.RollDice(1, 10),
+                ImageURI = "sushichef.png",
+                Head = NoItem,
+                Necklass = NoItem,
+                PrimaryHand = NoItem,
+                OffHand = NoItem,
+                Feet = NoItem,
+                RightFinger = NoItem,
+                LeftFinger = NoItem,
+            },
 
-                new CharacterModel {
-                    Name = "Cat Chef ",
-                    Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time",
-                    Level = 1,
-                    Job = CharacterJobEnum.CatChef,
-                    MaxHealth = DiceHelper.RollDice(1, 10),
-                    ImageURI = "catchef.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
+            new CharacterModel {
+                Name = "Cat Chef ",
+                Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one item at a time",
+                Level = 1,
+                Job = CharacterJobEnum.CatChef,
+                MaxHealth = DiceHelper.RollDice(1, 10),
+                ImageURI = "catchef.png",
+                Head = NoItem,
+                Necklass = NoItem,
+                PrimaryHand = NoItem,
+                OffHand = NoItem,
+                Feet = ItemIndexViewModel.Instance.GetItem("WookieBoots", true).Id,
+                RightFinger = NoItem,
+                LeftFinger = NoItem,
+            },
 
-                new CharacterModel {
-                    Name = "Home Cook",
-                    Description = "After winning a battle their current health will be recovered by 10% of original max health up to max health",
-                    Level = 10,
-                    Job = CharacterJobEnum.HomeCook,
-                    MaxHealth = DiceHelper.RollDice(10, 10),
-                    ImageURI = "homechef.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
-            };
+            new CharacterModel {
+                Name = "Home Cook",
+                Description = "After winning a battle their current health will be recovered by 10% of original max health up to max health",
+                Level = 10,
+                Job = CharacterJobEnum.HomeCook,
+                MaxHealth = DiceHelper.RollDice(10, 10),
+                ImageURI = "homechef.png",
+                Head = NoItem,
+                Necklass = NoItem,
+                PrimaryHand = NoItem,
+                OffHand = NoItem,
+                Feet = NoItem,
+                RightFinger = NoItem,
+                LeftFinger = NoItem,
+            },
+        };
 
         return datalist;
     }
