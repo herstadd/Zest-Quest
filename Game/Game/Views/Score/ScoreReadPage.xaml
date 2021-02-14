@@ -15,107 +15,108 @@
 
     <ScrollView>
         <StackLayout Style="{StaticResource OuterBoxStack}"
-            Padding="10, 10, 10, 10"
+            Padding="10"
             Spacing="10">
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Name:" 
+            <Grid
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0"
+                    Text="Name" 
+                    VerticalOptions="Start"
                     Style="{StaticResource ScoreLabelStyle}"/>
-                
-                <Label 
+                <Label Grid.Row="0" Grid.Column="1"
+                    LineBreakMode="WordWrap"
                     Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Game Date:"
+                <Label Grid.Row="1" Grid.Column="0"
+                    Text="Game Date"
                     Style="{StaticResource ScoreLabelStyle}"/>
-                
-                <Label 
+                <Label Grid.Row="1" Grid.Column="1"
                     Text="{Binding Data.GameDate}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="AutoBattle:" 
+                <Label Grid.Row="2" Grid.Column="0"
+                    Text="AutoBattle" 
                     Style="{StaticResource ScoreLabelStyle}"/>
-
-                <Label 
+                <Label Grid.Row="2" Grid.Column="1"
                     Text="{Binding Data.AutoBattle}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Score:"
+                <Label Grid.Row="3" Grid.Column="0"
+                    Text="Score"
                     Style="{StaticResource ScoreLabelStyle}"/>
-                <Label 
+                <Label Grid.Row="3" Grid.Column="1"
                     Text="{Binding Data.ScoreTotal}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-            
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Number of Rounds:" 
-                    Style="{StaticResource ScoreLabelStyle}"/>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-                <Label 
+                <Label Grid.Row="4" Grid.Column="0"
+                    Text="Number of Rounds" 
+                    Style="{StaticResource ScoreLabelStyle}"/>
+                <Label Grid.Row="4" Grid.Column="1"
                     Text="{Binding Data.RoundCount}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Number of Turns:"
+                <Label Grid.Row="5" Grid.Column="0"
+                    Text="Number of Turns"
                     Style="{StaticResource ScoreLabelStyle}"/>
-
-                <Label 
+                <Label Grid.Row="5" Grid.Column="1"
                     Text="{Binding Data.TurnCount}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Number of Monsters Slain:"
+                <Label Grid.Row="6" Grid.Column="0"
+                    Text="Number of Monsters Slain"
                     Style="{StaticResource ScoreLabelStyle}"/>
-                <Label 
+                <Label Grid.Row="6" Grid.Column="1"
                     Text="{Binding Data.MonsterSlainNumber}"
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Total Experience Gained:"
+                <Label Grid.Row="7" Grid.Column="0"
+                    Text="Total Experience Gained"
                     Style="{StaticResource ScoreLabelStyle}"/>
-
-                <Label 
+                <Label Grid.Row="7" Grid.Column="1"
                     Text="{Binding Data.ExperienceGainedTotal}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Style="{StaticResource ScoreValueStyle}"/>
+            </Grid>
 
             <Label 
-                Text="Characters at Death:"
+                Text="Characters at Death"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.CharacterAtDeathList}" 
-                Style="{StaticResource ValueStyle}"/>
+                Style="{StaticResource ScoreValueStyle}"/>
 
             <Label 
-                Text="Monsters Killed:"
+                Text="Monsters Killed"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.MonstersKilledList}" 
-                Style="{StaticResource ValueStyle}"/>
+                Style="{StaticResource ScoreValueStyle}"/>
 
             <Label 
-                Text="Items Dropped:"
+                Text="Items Dropped"
                 Style="{StaticResource ScoreLabelStyle}"/>
             <Label 
                 Text="{Binding Data.ItemsDroppedList}"
-                Style="{StaticResource ValueStyle}"/>
+                Style="{StaticResource ScoreValueStyle}"/>
 
         </StackLayout>
     </ScrollView>
