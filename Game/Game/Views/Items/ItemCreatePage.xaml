@@ -35,9 +35,17 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
@@ -62,18 +70,15 @@
 
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Description" 
+                        Padding="0,10,5,10"
+                        VerticalOptions="Start"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="2" Grid.Column="1"
-                                 Orientation="Horizontal"
-                                 Style="{StaticResource VerticalStack}" >
-
-                        <Label Grid.Row="2" Grid.Column="1"
-                            Text="{Binding Data.Description}" 
-                            Style="{StaticResource DescriptionStatStyle}"
-                            x:Name="Description"/>
-
-                    </StackLayout>
+                    <Label Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource DescriptionStatStyle}"
+                        Padding="0,10,0,10"
+                        x:Name="Description"/>
 
                     <Label Grid.Row="3" Grid.Column="0"
                         Text="Location" 
@@ -93,14 +98,34 @@
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="AttributePicker"/>
 
-                </Grid>
+                    <Label Grid.Row="5" Grid.Column="0"
+                        Text="Value"
+                        Style="{StaticResource LabelStyle}"/>
 
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-                    <Label 
+                    <StackLayout Grid.Row="5" Grid.Column="1"
+                        Style="{StaticResource HorizontalStack}" >
+                        
+                        <Label 
+                            Text="{Binding Data.Value, Mode=TwoWay}" 
+                            x:Name="ValueValue"
+                            Style="{StaticResource ValueStyle}"
+                            Padding="0,0,10,0"
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+                        <Button
+                            Text="-"
+                            Clicked="ValueValueChanged"/>
+                        <Button
+                            Text="+"
+                            Clicked="ValueValueChanged"/>
+                    </StackLayout>
+
+                    <Label Grid.Row="6" Grid.Column="0"
                         Text="Range" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                    <StackLayout Grid.Row="6" Grid.Column="1"
+                        Style="{StaticResource HorizontalStack}" >
 
                         <Label 
                             Text="{Binding Data.Range, Mode=TwoWay}" 
@@ -116,37 +141,14 @@
                         <Button
                             Text="+"
                             Clicked="RangeValueChanged"/>
-                        
                     </StackLayout>
 
-                    <Label 
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
-                        <Label 
-                            Text="{Binding Data.Value, Mode=TwoWay}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Button
-                            Text="-"
-                            Clicked="ValueValueChanged"/>
-                        <Button
-                            Text="+"
-                            Clicked="ValueValueChanged"/>
-                        
-                    </StackLayout>
-
-                    <Label 
+                    <Label Grid.Row="7" Grid.Column="0"
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+
+                    <StackLayout Grid.Row="7" Grid.Column="1"
+                        Style="{StaticResource HorizontalStack}" >
 
                         <Label 
                             Text="{Binding Data.Damage, Mode=TwoWay}" 
@@ -162,16 +164,15 @@
                         <Button
                             Text="+"
                             Clicked="DamageValueChanged"/>
-                        
                     </StackLayout>
+                </Grid>
 
-                    <StackLayout 
+                <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
-                        <Button Text="Confirm" Clicked="Save_Clicked"/>
-                        <Button Text="Cancel" Clicked="Cancel_Clicked"/>
-                    </StackLayout>
-                    
+
+                    <Button Text="Confirm" Clicked="Save_Clicked"/>
+                    <Button Text="Cancel" Clicked="Cancel_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
