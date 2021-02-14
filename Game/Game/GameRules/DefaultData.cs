@@ -151,7 +151,7 @@ namespace Game.GameRules
                     Name = "OnionRing",
                     Type = ItemModelEnum.OnionRing,
                     Description = "Tasty, fashionable, and practical",
-                    ImageURI = "mushroom.png",
+                    ImageURI = "oscar.png",
                     Range = 0,
                     Damage = 0,
                     Value = 4,
