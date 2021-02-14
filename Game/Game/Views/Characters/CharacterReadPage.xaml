@@ -100,40 +100,54 @@
 
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.Head}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="head"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="headName"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="necklass"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="necklassName"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="primaryhand"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="primaryhandName"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="offhand"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="offhandName"/>
                 </StackLayout>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="feet"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="feetName"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="rightfinger"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="rightfingerName"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                    <Label Text="Item Name" HorizontalOptions="Center" />
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                           x:Name="leftfinger"/>
+                    <Label HorizontalOptions="Center" 
+                           x:Name="leftfingerName"/>
                 </StackLayout>
             </StackLayout>
 
