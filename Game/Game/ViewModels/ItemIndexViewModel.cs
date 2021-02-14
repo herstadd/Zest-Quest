@@ -169,15 +169,22 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="ItemID"></param>
         /// <returns></returns>
-        public ItemModel GetItem(string id)
+        public ItemModel GetItem(string id, bool IsName=false)
         {
             if (string.IsNullOrEmpty(id))
             {
                 return null;
             }
-
+            ItemModel myData;
+            if (IsName)
+            {
+                myData = Dataset.Where(a => a.Name.Equals(id)).FirstOrDefault();
+            }
+            else
+            {
+                myData = Dataset.Where(a => a.Id.Equals(id)).FirstOrDefault();
+            }
             // Item myData = DataStore.GetAsync_Item(ItemID).GetAwaiter().GetResult();
-            ItemModel myData = Dataset.Where(a => a.Id.Equals(id)).FirstOrDefault();
             if (myData == null)
             {
                 return null;
