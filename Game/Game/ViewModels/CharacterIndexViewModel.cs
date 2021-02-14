@@ -212,6 +212,35 @@ namespace Game.ViewModels
             return DefaultCharacter.Level;
         }
 
+        public string GetItemForLocation(string target, string ItemLocation)
+        {
+            InitializeDefaultCharacter(target);
+
+            if (DefaultCharacter == null)
+            {
+                return "No Item";
+            }
+            switch(ItemLocation)
+            {
+                case "Head":
+                    return DefaultCharacter.Head; // ""
+                case "Feet":
+                    return DefaultCharacter.Feet;
+                case "Necklass":
+                    return DefaultCharacter.Necklass;
+                case "PrimaryHand":
+                    return DefaultCharacter.PrimaryHand;
+                case "OffHand":
+                    return DefaultCharacter.OffHand;
+                case "RightFinger":
+                    return DefaultCharacter.RightFinger;
+                case "LeftFinger":
+                    return DefaultCharacter.LeftFinger;
+                default:
+                    return "No Item";
+            }
+        }
+
         /// <summary>
         /// Calculates a new max health value based on which chef type was selected
         /// </summary>
