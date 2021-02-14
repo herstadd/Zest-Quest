@@ -18,7 +18,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "ChefHat",
                     Type = ItemModelEnum.ChefHat,
-                    Description = "I1",
+                    Description = "A basic toque blanche worn by chefs worldwide",
                     ImageURI = "mushroom.png",
                     Range = 3,
                     Damage = 9,
@@ -29,7 +29,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bandana",
                     Type = ItemModelEnum.Bandana,
-                    Description = "I2",
+                    Description = "The headgear of choice for more rebellious chefs",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 5,
@@ -40,7 +40,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "RoastedTurkeyHat",
                     Type = ItemModelEnum.RoastedTurkeyHat,
-                    Description = "I3",
+                    Description = "It might smell delicious, but this is for wearing, not eating",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 1,
@@ -51,7 +51,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "ButcherKnifeNecklace",
                     Type = ItemModelEnum.ButcherKnifeNecklace,
-                    Description = "I4",
+                    Description = "Perfect for chefs living life on the edge",
                     ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 5,
@@ -62,7 +62,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Timer",
                     Type = ItemModelEnum.Timer,
-                    Description = "I5",
+                    Description = "Crucial equipment that all chefs should have",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -73,7 +73,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Apron",
                     Type = ItemModelEnum.Apron,
-                    Description = "I6",
+                    Description = "Helps keep your clothing clean when the kitchen gets messy",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -84,7 +84,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Refrigerator",
                     Type = ItemModelEnum.Refrigerator,
-                    Description = "I6",
+                    Description = "Only the strongest of chefs can weild a refrigerator",
                     ImageURI = "mushroom.png",
                     Range = 5,
                     Damage = 9,
@@ -95,7 +95,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Pan",
                     Type = ItemModelEnum.Pan,
-                    Description = "I6",
+                    Description = "Good for frying up some eggs or whacking an appliance gone evil",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 6,
@@ -106,7 +106,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Knife",
                     Type = ItemModelEnum.Knife,
-                    Description = "I6",
+                    Description = "Dice and slice. Just don't cut yourself!",
                     ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 4,
@@ -117,7 +117,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "CuttingBoard",
                     Type = ItemModelEnum.CuttingBoard,
-                    Description = "I6",
+                    Description = "Multipurpose: Can be used to cut on or as a weapon!",
                     ImageURI = "mushroom.png",
                     Range = 2,
                     Damage = 7,
@@ -128,7 +128,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "RingPop",
                     Type = ItemModelEnum.RingPop,
-                    Description = "I6",
+                    Description = "A sweet treat that also gives some stats",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -139,7 +139,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "ScreamRing",
                     Type = ItemModelEnum.ScreamRing,
-                    Description = "I6",
+                    Description = "Hopefully the monsters are scared of loud noises!",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -150,7 +150,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "OnionRing",
                     Type = ItemModelEnum.OnionRing,
-                    Description = "I6",
+                    Description = "Tasty, fashionable, and practical",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -161,7 +161,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "FlipFlop",
                     Type = ItemModelEnum.FlipFlop,
-                    Description = "I6",
+                    Description = "Why are you wearing open toed shoes while cooking?",
                     ImageURI = "mushroom.png",
                     Range = 4,
                     Damage = 0,
@@ -172,7 +172,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Crocs",
                     Type = ItemModelEnum.Crocs,
-                    Description = "I6",
+                    Description = "So comfortable!",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -183,7 +183,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "WookieBoots",
                     Type = ItemModelEnum.WookieBoots,
-                    Description = "I6",
+                    Description = "IF you find hair in your food, don't look at me",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
@@ -194,7 +194,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "SantaShoes",
                     Type = ItemModelEnum.SantaShoes,
-                    Description = "I6",
+                    Description = "What food would you like for Christmas this year?",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
