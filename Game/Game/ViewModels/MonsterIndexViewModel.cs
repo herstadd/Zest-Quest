@@ -158,6 +158,7 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
+        #region GetFromDefaultData
         private void InitializeDefaultMonster(string target)
         {
             MonsterTypeEnum monster = MonsterJobEnumHelper.ConvertStringToEnum(target);
@@ -222,5 +223,6 @@ namespace Game.ViewModels
 
             return DefaultMonster.MonsterClass;
         }
+        #endregion GetFromDefaultData
     }
 }
