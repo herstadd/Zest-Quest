@@ -90,7 +90,7 @@
                         Style="{StaticResource LabelStyle}"/>
                     
                     <Picker Grid.Row="3" Grid.Column="1"                   
-                        ItemsSource="{x:Static local_enum:MonsterJobEnumHelper.GetListItem}" 
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}" 
                         SelectedItem="{Binding Data.UniqueDrop, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         SelectedIndexChanged="TypeChanged"
                         x:Name="UniqueDrop"/>
