@@ -158,6 +158,7 @@ namespace Game.ViewModels
 
         #endregion SortDataSet
 
+        #region GetFromDefaultData
         private void InitializeDefaultCharacter(string target)
         {
             CharacterJobEnum character = CharacterJobEnumHelper.ConvertStringToEnum(target);
@@ -246,5 +247,6 @@ namespace Game.ViewModels
 
             return DefaultHealth;
         }
+        #endregion GetFromDefaultData
     }
 }
