@@ -89,10 +89,10 @@
                         Padding="0,10,5,0"
                         Style="{StaticResource LabelStyle}"/>
                     
-                    <Label Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.SpecialDrop}" 
-                        Style="{StaticResource DescriptionStatStyle}"
-                        Padding="0,10,0,0"
+                    <Picker Grid.Row="3" Grid.Column="1"                   
+                        ItemsSource="{x:Static local_enum:MonsterJobEnumHelper.GetListItem}" 
+                        SelectedItem="{Binding Data.UniqueDrop, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        SelectedIndexChanged="TypeChanged"
                         x:Name="UniqueDrop"/>
                         
                     <Label Grid.Row="4" Grid.Column="0"
