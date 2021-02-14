@@ -13,9 +13,10 @@
                 HorizontalOptions="Center">
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                    <Image
-                         Source="headchef.png"
-                         Style="{StaticResource ImageLargeStyle}"/>
+                    <ImageButton
+                        Source="headchef.png"
+                        Clicked="GameButton_Clicked"
+                        Style="{StaticResource ImageLargeStyle}"/>
                 
                 </StackLayout>
                 
