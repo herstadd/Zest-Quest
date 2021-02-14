@@ -99,11 +99,13 @@
                         Padding="0,0,5,10"
                         Style="{StaticResource LabelStyle}" />
 
-                    <Label Grid.Row="4" Grid.Column="1"
-                        Text="Standard" 
-                        Style="{StaticResource DescriptionStatStyle}"
-                        Padding="0,0,0,10"
-                        x:Name="MonsterClass"/>
+                    <Picker Grid.Row="4" Grid.Column="1"
+                            x:Name="MonsterClassPicker">
+                        <Picker.Items>
+                            <x:String>Boss</x:String>
+                            <x:String>Standard</x:String>
+                        </Picker.Items>
+                    </Picker>
                 </Grid>
 
                 <StackLayout 
