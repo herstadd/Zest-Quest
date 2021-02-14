@@ -44,6 +44,12 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Gets the images to populate the default items characters hold upon creation
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="location"></param>
+        /// <returns></returns>
         public bool CallProperImages(GenericViewModel<CharacterModel> data, string location)
         {
             if(data == null)
