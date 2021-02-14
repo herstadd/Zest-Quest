@@ -247,6 +247,7 @@ namespace Game.ViewModels
             return data;
         }
 
+        #region GetFromDefaultData
         public void InitializeDefaultItem(string target)
         {
             ItemModelEnum item = ItemModelEnumHelper.ConvertStringToEnum(target);
@@ -341,5 +342,6 @@ namespace Game.ViewModels
 
             return DefaultItem.Attribute;
         }
+        #endregion GetFromDefaultData
     }
 }
