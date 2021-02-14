@@ -122,6 +122,7 @@ namespace Game.Models
         /// <returns></returns>
         public static CharacterJobEnum ConvertStringToEnum(string value)
         {
+            value = value.Replace(" ", "");
             return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
         }
     }

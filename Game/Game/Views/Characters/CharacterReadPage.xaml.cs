@@ -5,6 +5,8 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Game.Views
 {
@@ -29,9 +31,68 @@ namespace Game.Views
         /// <param name="viewModel"></param>
         public CharacterReadPage(GenericViewModel<CharacterModel> data)
         {
+
+            List<string> locations = ItemLocationEnumHelper.GetAllListItems;
+
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            foreach(string location in locations)
+            {
+                CallProperImages(data, location);
+            }
+        }
+
+        public bool CallProperImages(GenericViewModel<CharacterModel> data, string location)
+        {
+            if(data == null)
+            {
+                return false;
+            }
+            
+            string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(data.Data.Name, location);
+            ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(ItemAtLocation);
+            
+            if(FoundItem == null)
+            {
+                return false;
+            }
+
+            switch(location)
+            {
+                case "Head":
+                    head.Source = FoundItem.ImageURI;
+                    headName.Text = FoundItem.Name;
+                    break;
+                case "Necklass":
+                    necklass.Source = FoundItem.ImageURI;
+                    necklassName.Text = FoundItem.Name;
+                    break;
+                case "PrimaryHand":
+                    primaryhand.Source = FoundItem.ImageURI;
+                    primaryhandName.Text = FoundItem.Name;
+                    break;
+                case "OffHand":
+                    offhand.Source = FoundItem.ImageURI;
+                    offhandName.Text = FoundItem.Name;
+                    break;
+                case "RightFinger":
+                    rightfinger.Source = FoundItem.ImageURI;
+                    rightfingerName.Text = FoundItem.Name;
+                    break;
+                case "LeftFinger":
+                    leftfinger.Source = FoundItem.ImageURI;
+                    leftfingerName.Text = FoundItem.Name;
+                    break;
+                case "Feet":
+                    feet.Source = FoundItem.ImageURI;
+                    feetName.Text = FoundItem.Name;
+                    break;
+                default:
+                    break;
+            }
+            return true;
         }
 
         /// <summary>
