@@ -62,30 +62,37 @@ namespace Game.Views
             switch(location)
             {
                 case "Head":
+                    headFrame.WidthRequest = 120;
                     head.Source = FoundItem.ImageURI;
                     headName.Text = FoundItem.Name;
                     break;
                 case "Necklass":
+                    necklassFrame.WidthRequest = 120;
                     necklass.Source = FoundItem.ImageURI;
                     necklassName.Text = FoundItem.Name;
                     break;
                 case "PrimaryHand":
+                    primaryhandFrame.WidthRequest = 120;
                     primaryhand.Source = FoundItem.ImageURI;
                     primaryhandName.Text = FoundItem.Name;
                     break;
                 case "OffHand":
+                    offhandFrame.WidthRequest = 120;
                     offhand.Source = FoundItem.ImageURI;
                     offhandName.Text = FoundItem.Name;
                     break;
                 case "RightFinger":
+                    rightfingerFrame.WidthRequest = 120;
                     rightfinger.Source = FoundItem.ImageURI;
                     rightfingerName.Text = FoundItem.Name;
                     break;
                 case "LeftFinger":
+                    leftfingerFrame.WidthRequest = 120;
                     leftfinger.Source = FoundItem.ImageURI;
                     leftfingerName.Text = FoundItem.Name;
                     break;
                 case "Feet":
+                    feetFrame.WidthRequest = 120;
                     feet.Source = FoundItem.ImageURI;
                     feetName.Text = FoundItem.Name;
                     break;

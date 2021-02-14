@@ -99,58 +99,67 @@
                     Style="{StaticResource CharacterValueStyle}"/>
             </Grid>
 
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="head"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="headName"/>
-                </StackLayout>
+            <FlexLayout Direction="Row"
+                        AlignItems="Start"
+                        JustifyContent="Start">
+                <Frame WidthRequest="0"  x:Name="headFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="head"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="headName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="necklassFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="necklass"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="necklassName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="primaryhandFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="primaryhand"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="primaryhandName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="offhandFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="offhand"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="offhandName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="feetFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="feet"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="feetName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="rightfingerFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="rightfinger"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="rightfingerName"/>
+                    </StackLayout>
+                </Frame>
+                <Frame WidthRequest="0" x:Name="leftfingerFrame">
+                    <StackLayout Orientation="Vertical">
+                        <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="leftfinger"/>
+                        <Label HorizontalOptions="Center" 
+                               x:Name="leftfingerName"/>
+                    </StackLayout>
+                </Frame>
+            </FlexLayout>
 
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="necklass"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="necklassName"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="primaryhand"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="primaryhandName"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="offhand"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="offhandName"/>
-                </StackLayout>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="feet"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="feetName"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="rightfinger"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="rightfingerName"/>
-                </StackLayout>
-
-                <StackLayout Orientation="Vertical">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                           x:Name="leftfinger"/>
-                    <Label HorizontalOptions="Center" 
-                           x:Name="leftfingerName"/>
-                </StackLayout>
-            </StackLayout>
 
         </StackLayout>
     </ScrollView>
