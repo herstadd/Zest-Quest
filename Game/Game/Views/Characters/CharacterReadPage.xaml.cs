@@ -51,7 +51,7 @@ namespace Game.Views
                 return false;
             }
             
-            string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(data.Data.Name, location);
+            string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(data.Data.Job.ToString(), location);
             ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(ItemAtLocation);
             
             if(FoundItem == null)
