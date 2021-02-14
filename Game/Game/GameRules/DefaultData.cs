@@ -183,7 +183,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "WookieBoots",
                     Type = ItemModelEnum.WookieBoots,
-                    Description = "IF you find hair in your food, don't look at me",
+                    Description = "If you find hair in your food, don't look at me",
                     ImageURI = "mushroom.png",
                     Range = 0,
                     Damage = 0,
