@@ -106,7 +106,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="head"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="headName"/>
                     </StackLayout>
                 </Frame>
@@ -114,7 +114,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="necklass"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="necklassName"/>
                     </StackLayout>
                 </Frame>
@@ -122,7 +122,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="primaryhand"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="primaryhandName"/>
                     </StackLayout>
                 </Frame>
@@ -130,7 +130,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="offhand"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="offhandName"/>
                     </StackLayout>
                 </Frame>
@@ -138,7 +138,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="feet"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="feetName"/>
                     </StackLayout>
                 </Frame>
@@ -146,7 +146,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="rightfinger"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="rightfingerName"/>
                     </StackLayout>
                 </Frame>
@@ -154,7 +154,7 @@
                     <StackLayout Orientation="Vertical">
                         <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="leftfinger"/>
-                        <Label HorizontalOptions="Center" 
+                        <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="leftfingerName"/>
                     </StackLayout>
                 </Frame>
