@@ -127,6 +127,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="MonsterLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="Padding" Value="0, 0, 5, 7" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ScoreLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
@@ -143,7 +150,7 @@
                 x:Key="CharacterStatStyle"
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="Padding" Value="0,0,10,0" />
-                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="HorizontalTextAlignment" Value="End" />
             </Style>
 
@@ -156,7 +163,7 @@
             <Style TargetType="Label"
                 x:Key="MonsterValueStyle"
                 BasedOn="{StaticResource ValueStyle}">
-                <Setter Property="Padding" Value="5" />
+                <Setter Property="Padding" Value="0,0,0,7" />
             </Style>
 
             <Style TargetType="Label"
@@ -245,10 +252,8 @@
             <Style TargetType="Label"
                 x:Key="DescriptionStatStyle"
                 BasedOn="{StaticResource ValueStyle}">
-                <Setter Property="Padding" Value="10,10,0,0" />
-                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Padding" Value="10, 0, 0, 0" />
                 <Setter Property="LineBreakMode" Value="WordWrap"/>
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
             </Style>
 
             <!-- Image -->
