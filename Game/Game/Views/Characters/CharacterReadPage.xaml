@@ -99,6 +99,10 @@
                     Style="{StaticResource CharacterValueStyle}"/>
             </Grid>
 
+            <Label Text="Items" HeightRequest="30"
+                   x:Name="ItemLabel"
+                    Style="{StaticResource BigHeaderStyle}"/>
+
             <FlexLayout Direction="Row"
                         AlignItems="Start"
                         JustifyContent="Start">
