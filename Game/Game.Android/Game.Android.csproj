@@ -178,7 +178,7 @@
     <AndroidResource Include="Resources\drawable\teamtelephone2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\SuperFlower.png" />
+    <AndroidResource Include="Resources\drawable\superflower.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
