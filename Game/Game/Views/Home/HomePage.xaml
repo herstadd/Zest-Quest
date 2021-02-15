@@ -16,7 +16,7 @@
                     <ImageButton
                         Source="headchef.png"
                         Clicked="GameButton_Clicked"
-                        Style="{StaticResource ImageLargeStyle}"/>
+                        Style="{StaticResource ImageLargerStyle}"/>
                 
                 </StackLayout>
                 
