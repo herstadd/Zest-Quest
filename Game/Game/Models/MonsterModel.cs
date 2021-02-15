@@ -41,7 +41,7 @@ namespace Game.Models
             //MonsterType = MonsterTypeEnum.Unknown;
 
             // Default to unknown, which hasno special drop
-            UniqueDrop = ItemModelEnum.Unknown;
+            UniqueDrop = ItemModelEnum.None;
         }
 
         /// <summary>
