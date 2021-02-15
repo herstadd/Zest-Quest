@@ -90,15 +90,15 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.ChefHat:
-                    Message = "ChefHat";
+                    Message = "Chef Hat";
                     break;
 
                 case ItemModelEnum.RoastedTurkeyHat:
-                    Message = "RoastedTurkeyHat";
+                    Message = "Roasted Turkey Hat";
                     break;
 
                 case ItemModelEnum.ButcherKnifeNecklace:
-                    Message = "ButcherKnifeNecklace";
+                    Message = "Butcher Knife Necklace";
                     break;
 
                 case ItemModelEnum.Timer:
@@ -118,19 +118,19 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.CuttingBoard:
-                    Message = "CuttingBoard";
+                    Message = "Cutting Board";
                     break;
 
                 case ItemModelEnum.RingPop:
-                    Message = "RingPop";
+                    Message = "Ring Pop";
                     break;
 
                 case ItemModelEnum.ScreamRing:
-                    Message = "ScreamRing";
+                    Message = "Scream Ring";
                     break;
 
                 case ItemModelEnum.OnionRing:
-                    Message = "OnionRing";
+                    Message = "Onion Ring";
                     break;
 
                 case ItemModelEnum.FlipFlop:
@@ -142,11 +142,11 @@ namespace Game.Models
                     break;
 
                 case ItemModelEnum.WookieBoots:
-                    Message = "WookieBoots";
+                    Message = "Wookie Boots";
                     break;
 
                 case ItemModelEnum.SantaShoes:
-                    Message = "Santashoes";
+                    Message = "Santa Shoes";
                     break;
 
                 case ItemModelEnum.Unknown:
