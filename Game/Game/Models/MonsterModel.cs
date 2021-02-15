@@ -36,11 +36,12 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             MonsterType = MonsterTypeEnum.EvilStove;
             Description = "This is a basic Monster";
+            MonsterClass = "Standard";
 
             // Default to unknown, which is no special job
             //MonsterType = MonsterTypeEnum.Unknown;
 
-            // Default to unknown, which hasno special drop
+            // Default to none, which has no special drop
             UniqueDrop = ItemModelEnum.None;
         }
 
