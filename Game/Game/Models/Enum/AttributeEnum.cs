@@ -51,7 +51,7 @@ namespace Game.Models
                     break;
 
                 case AttributeEnum.CurrentHealth:
-                    Message = "Current Health";
+                    Message = "CurrentHealth";
                     break;
 
                 case AttributeEnum.Defense:
@@ -59,7 +59,7 @@ namespace Game.Models
                     break;
 
                 case AttributeEnum.MaxHealth:
-                    Message = "Max Health";
+                    Message = "MaxHealth";
                     break;
 
                 case AttributeEnum.Speed:
