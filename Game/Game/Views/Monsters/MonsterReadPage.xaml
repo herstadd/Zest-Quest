@@ -82,7 +82,7 @@
                         Text="Class" 
                         Style="{StaticResource MonsterLabelStyle}"/>
                     <Label Grid.Row="4" Grid.Column="1"
-                        Text="Standard" 
+                        Text="{Binding Data.MonsterClass}"
                         Style="{StaticResource MonsterValueStyle}"
                         x:Name="MonsterClass"/>
                 </Grid>
