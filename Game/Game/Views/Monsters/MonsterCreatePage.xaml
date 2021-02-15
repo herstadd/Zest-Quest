@@ -100,7 +100,8 @@
                         Style="{StaticResource LabelStyle}" />
 
                     <Picker Grid.Row="4" Grid.Column="1"
-                            x:Name="MonsterClassPicker">
+                        SelectedItem="{Binding Data.MonsterClass, Mode=TwoWay}"
+                        x:Name="MonsterClassPicker">
                         <Picker.Items>
                             <x:String>Boss</x:String>
                             <x:String>Standard</x:String>
