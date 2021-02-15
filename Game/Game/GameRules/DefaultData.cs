@@ -353,7 +353,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Refrigerator",
                     MonsterType = MonsterTypeEnum.EvilRefrigerator,
-                    Description = "This is a special Monster and holds a Refrigerator",
+                    Description = "This fridge is sick of storing expired fruits, vegetables, and sauces. Watch out for its teeth!",
                     ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.Refrigerator,
                     MonsterClass = "Boss"
@@ -362,7 +362,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Toaster",
                     MonsterType = MonsterTypeEnum.EvilToaster,
-                    Description = "This is a special Monster and holds a Onion Ring",
+                    Description = "Maybe if you cleaned out the crumbs every once in a while, this toaster wouldn't be so evil",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.OnionRing,
                     MonsterClass = "Boss"
@@ -371,7 +371,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Blender",
                     MonsterType = MonsterTypeEnum.EvilBlender,
-                    Description = "This is a special Monster and holds a Butcher Knife Necklace",
+                    Description = "Someone made one too many kale smoothies in this blender",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.ButcherKnifeNecklace,
                     MonsterClass = "Boss"
@@ -380,7 +380,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Dishwasher",
                     MonsterType = MonsterTypeEnum.EvilDishwasher,
-                    Description = "This is a basic Monster",
+                    Description = "This dishwasher will not clean your dishes",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
@@ -389,7 +389,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Stove",
                     MonsterType = MonsterTypeEnum.EvilStove,
-                    Description = "This is a basic Monster",
+                    Description = "One hot oil splash too many sent the stove to the dark side",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
@@ -398,7 +398,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Kitchen Sink",
                     MonsterType = MonsterTypeEnum.EvilKitchenSink,
-                    Description = "This is a basic Monster",
+                    Description = "Brings a whole new meaning to throwing the kitchen sink",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
@@ -408,7 +408,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Rice Cooker",
                     MonsterType = MonsterTypeEnum.EvilRiceCooker,
-                    Description = "This is a basic Monster",
+                    Description = "Good for cooking rice, porridge, oatmeal and its enemies",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
@@ -417,7 +417,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Crock pot",
                     MonsterType = MonsterTypeEnum.EvilCrockpot,
-                    Description = "This is a basic Monster",
+                    Description = "Ready to slowly take revenge",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
@@ -426,7 +426,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Evil Can Opener",
                     MonsterType = MonsterTypeEnum.EvilCanOpener,
-                    Description = "This is a basic Monster",
+                    Description = "Kinda rusty...kinda evil",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
