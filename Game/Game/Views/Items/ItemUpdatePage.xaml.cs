@@ -70,7 +70,7 @@ namespace Game.Views
             this.ViewModel.Data.Type = ItemIndexViewModel.Instance.GetType(selected);
 
             // Location
-            //LocationPicker.SelectedItem = ItemIndexViewModel.Instance.GetLocation(selected);
+            LocationPicker.SelectedItem = ItemIndexViewModel.Instance.GetLocation(selected).ToMessage();
             // Attribute
             //AttributePicker.SelectedItem = ItemIndexViewModel.Instance.GetAttribute(selected);
 
