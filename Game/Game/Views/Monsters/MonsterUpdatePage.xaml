@@ -78,7 +78,7 @@
                         Style="{StaticResource LabelStyle}" />
 
                     <Label Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
+                        Text="{Binding Data.Description, Mode=TwoWay}" 
                         Style="{StaticResource DescriptionStatStyle}"      
                         Padding="0,10,0,10"
                         x:Name="Description"/>
