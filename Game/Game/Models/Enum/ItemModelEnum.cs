@@ -76,84 +76,27 @@ namespace Game.Models
         /// <returns></returns>
         public static string ToMessage(this ItemModelEnum value)
         {
-            // Default String
-            var Message = "None";
-
-            switch (value)
+            string Message = value switch
             {
-                case ItemModelEnum.Apron:
-                    Message = "Apron";
-                    break;
-
-                case ItemModelEnum.Bandana:
-                    Message = "Bandana";
-                    break;
-
-                case ItemModelEnum.ChefHat:
-                    Message = "Chef Hat";
-                    break;
-
-                case ItemModelEnum.RoastedTurkeyHat:
-                    Message = "Roasted Turkey Hat";
-                    break;
-
-                case ItemModelEnum.ButcherKnifeNecklace:
-                    Message = "Butcher Knife Necklace";
-                    break;
-
-                case ItemModelEnum.Timer:
-                    Message = "Timer";
-                    break;
-
-                case ItemModelEnum.Refrigerator:
-                    Message = "Refrigerator";
-                    break;
-
-                case ItemModelEnum.Pan:
-                    Message = "Pan";
-                    break;
-
-                case ItemModelEnum.Knife:
-                    Message = "Knife";
-                    break;
-
-                case ItemModelEnum.CuttingBoard:
-                    Message = "Cutting Board";
-                    break;
-
-                case ItemModelEnum.RingPop:
-                    Message = "Ring Pop";
-                    break;
-
-                case ItemModelEnum.ScreamRing:
-                    Message = "Scream Ring";
-                    break;
-
-                case ItemModelEnum.OnionRing:
-                    Message = "Onion Ring";
-                    break;
-
-                case ItemModelEnum.FlipFlop:
-                    Message = "FlipFlop";
-                    break;
-
-                case ItemModelEnum.Crocs:
-                    Message = "Crocs";
-                    break;
-
-                case ItemModelEnum.WookieBoots:
-                    Message = "Wookie Boots";
-                    break;
-
-                case ItemModelEnum.SantaShoes:
-                    Message = "Santa Shoes";
-                    break;
-
-                case ItemModelEnum.Unknown:
-                default:
-                    break;
-            }
-
+                ItemModelEnum.Apron => "Apron",
+                ItemModelEnum.Bandana => "Bandana",
+                ItemModelEnum.ChefHat => "ChefHat",
+                ItemModelEnum.RoastedTurkeyHat => "RoastedTurkeyHat",
+                ItemModelEnum.ButcherKnifeNecklace => "ButcherKnifeNecklace",
+                ItemModelEnum.Timer => "Timer",
+                ItemModelEnum.Refrigerator => "Refrigerator",
+                ItemModelEnum.Pan => "Pan",
+                ItemModelEnum.Knife => "Knife",
+                ItemModelEnum.CuttingBoard => "CuttingBoard",
+                ItemModelEnum.RingPop => "RingPop",
+                ItemModelEnum.ScreamRing => "ScreamRing",
+                ItemModelEnum.OnionRing => "OnionRing",
+                ItemModelEnum.FlipFlop => "FlipFlop",
+                ItemModelEnum.Crocs => "Crocs",
+                ItemModelEnum.WookieBoots => "WookieBoots",
+                ItemModelEnum.SantaShoes => "SantaShoes",
+                _ => "Unknown",
+            };
             return Message;
         }
     }
