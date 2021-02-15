@@ -19,7 +19,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
                         Text="Name:" 
-                        Style="{StaticResource ScoreLabelStyle}"/>
+                        Style="{StaticResource ScoreDeleteStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.Name}" 
@@ -29,7 +29,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
                         Text="Game Date:"
-                        Style="{StaticResource ScoreLabelStyle}"/>
+                        Style="{StaticResource ScoreDeleteStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.GameDate}"
@@ -39,7 +39,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
                         Text="AutoBattle:"                      
-                        Style="{StaticResource ScoreLabelStyle}"/>
+                        Style="{StaticResource ScoreDeleteStyle}"/>
 
                     <Label 
                         Text="{Binding Data.AutoBattle}"
@@ -49,7 +49,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
                         Text="Score:" 
-                        Style="{StaticResource ScoreLabelStyle}"/>
+                        Style="{StaticResource ScoreDeleteStyle}"/>
                     
                     <Label 
                         Text="{Binding Data.ScoreTotal}"
@@ -59,7 +59,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}">
                     <Label 
                         Text="Number of Rounds:"                      
-                        Style="{StaticResource ScoreLabelStyle}"/>
+                        Style="{StaticResource ScoreDeleteStyle}"/>
 
                     <Label 
                         Text="{Binding Data.RoundCount}"
