@@ -259,6 +259,14 @@
                 </FlexLayout>
                 <StackLayout 
                     Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand">
+                    <Picker
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
+                        x:Name="NewItemPicker"/>
+                    <Button Text="Add Item" />
+                </StackLayout>
+                <StackLayout 
+                    Orientation="Horizontal"
                     HorizontalOptions="Center">
                     <Button Text="Confirm" Clicked="Save_Clicked"/>
                     <Button Text="Cancel" Clicked="Cancel_Clicked"/>
