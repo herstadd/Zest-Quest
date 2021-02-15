@@ -12,6 +12,9 @@ namespace Game.Models
         // Not specified
         Unknown = 0,
 
+        // No special drop
+        None = 5,
+
         // Chef Hat
         ChefHat = 10,
 
@@ -78,6 +81,7 @@ namespace Game.Models
         {
             string Message = value switch
             {
+                ItemModelEnum.None => "None",
                 ItemModelEnum.Apron => "Apron",
                 ItemModelEnum.Bandana => "Bandana",
                 ItemModelEnum.ChefHat => "ChefHat",
