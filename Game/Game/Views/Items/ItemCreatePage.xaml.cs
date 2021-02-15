@@ -68,8 +68,9 @@ namespace Game.Views
 
             // Location
             LocationPicker.SelectedItem = ItemIndexViewModel.Instance.GetLocation(selected).ToMessage();
+            
             // Attribute
-            //AttributePicker.SelectedItem = ItemIndexViewModel.Instance.GetAttribute(selected);
+            AttributePicker.SelectedItem = ItemIndexViewModel.Instance.GetAttribute(selected).ToMessage();
 
             // change Item Range value text according to the selected Item type in the Create Page
             RangeValue.Text = ItemIndexViewModel.Instance.GetValues(selected, "Range").ToString();
