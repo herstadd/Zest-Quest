@@ -190,6 +190,10 @@ namespace Game.Views
             if(AnyItems == 0)
             {
                 NoItemLabel.HeightRequest = 30;
+                ItemLabel.HeightRequest = 0;
+            } else
+            {
+                ItemLabel.HeightRequest = 30;
             }
         }
 
@@ -209,32 +213,25 @@ namespace Game.Views
                 switch (location)
                 {
                     case "Head":
-                        headFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        headFrame.IsVisible = false;
                         break;
                     case "Necklass":
-                        necklassFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        necklassFrame.IsVisible = false;
                         break;
                     case "PrimaryHand":
-                        primaryhandFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        primaryhandFrame.IsVisible = false;
                         break;
                     case "OffHand":
-                        offhandFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        offhandFrame.IsVisible = false;
                         break;
                     case "RightFinger":
-                        rightfingerFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        rightfingerFrame.IsVisible = false;
                         break;
                     case "LeftFinger":
-                        leftfingerFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        leftfingerFrame.IsVisible = false;
                         break;
                     case "Feet":
-                        feetFrame.WidthRequest = 0;
-                        ItemLabel.HeightRequest = 0;
+                        feetFrame.IsVisible = false;
                         break;
                     default:
                         break;
@@ -245,6 +242,7 @@ namespace Game.Views
             switch (location)
             {
                 case "Head":
+                    headFrame.IsVisible = true;
                     headFrame.WidthRequest = 120;
                     head.Source = FoundItem.ImageURI;
                     headName.Text = FoundItem.Type.ToMessage();
@@ -252,6 +250,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Necklass":
+                    necklassFrame.IsVisible = true;
                     necklassFrame.WidthRequest = 120;
                     necklass.Source = FoundItem.ImageURI;
                     necklassName.Text = FoundItem.Type.ToMessage();
@@ -259,6 +258,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "PrimaryHand":
+                    primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
                     primaryhand.Source = FoundItem.ImageURI;
                     primaryhandName.Text = FoundItem.Type.ToMessage();
@@ -266,6 +266,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "OffHand":
+                    offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
                     offhand.Source = FoundItem.ImageURI;
                     offhandName.Text = FoundItem.Type.ToMessage();
@@ -273,6 +274,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "RightFinger":
+                    rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
                     rightfinger.Source = FoundItem.ImageURI;
                     rightfingerName.Text = FoundItem.Type.ToMessage();
@@ -280,6 +282,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "LeftFinger":
+                    leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
                     leftfinger.Source = FoundItem.ImageURI;
                     leftfingerName.Text = FoundItem.Type.ToMessage();
@@ -287,6 +290,7 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Feet":
+                    feetFrame.IsVisible = true;
                     feetFrame.WidthRequest = 120;
                     feet.Source = FoundItem.ImageURI;
                     feetName.Text = FoundItem.Type.ToMessage();
