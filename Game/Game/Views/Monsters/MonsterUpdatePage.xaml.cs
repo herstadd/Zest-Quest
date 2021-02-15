@@ -39,7 +39,6 @@ namespace Game.Views
             JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
 
             // Initialize the Monster Class Box Picker according to the default Monster type 
-            MonsterClassPicker.SelectedItem = MonsterIndexViewModel.Instance.GetMonsterClass(ViewModel.Data.MonsterType.ToString());
             UniqueDrop.SelectedItem = data.Data.UniqueDrop.ToMessage();
 
             // Make a copy of the Monster for cancel to restore
