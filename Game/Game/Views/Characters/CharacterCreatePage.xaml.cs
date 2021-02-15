@@ -5,9 +5,10 @@ using System.Diagnostics;
 
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
 
 namespace Game.Views
 {
@@ -29,6 +30,8 @@ namespace Game.Views
         /// </summary>
         public CharacterCreatePage()
         {
+            List<string> locations = ItemLocationEnumHelper.GetAllListItems;
+
             InitializeComponent();
 
             this.ViewModel.Data = new CharacterModel();
@@ -39,6 +42,11 @@ namespace Game.Views
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
+
+            foreach (string location in locations)
+            {
+                CallProperImages(ViewModel.Data.Job.ToMessage(), location);
+            }
         }
 
         /// <summary>
@@ -162,6 +170,8 @@ namespace Game.Views
         public void TypeChanged(object sender, EventArgs e)
         {
             var selected = (string)JobPicker.SelectedItem;
+            List<string> locations = ItemLocationEnumHelper.GetAllListItems;
+            int AnyItems = 0;
 
             Description.Text = CharacterIndexViewModel.Instance.GetSpecialty(selected);
             this.ViewModel.Data.Description = CharacterIndexViewModel.Instance.GetSpecialty(selected);
@@ -169,6 +179,124 @@ namespace Game.Views
             ChangeImage.Text = CharacterIndexViewModel.Instance.GetImage(selected);
             LevelValue.Text = CharacterIndexViewModel.Instance.GetLevel(selected).ToString();
             MaxHealthValue.Text = CharacterIndexViewModel.Instance.GetMaxHealth(selected).ToString();
+            
+            foreach (string location in locations)
+            {
+                if(CallProperImages(selected, location))
+                {
+                    AnyItems++;
+                }
+            }
+            if(AnyItems == 0)
+            {
+                NoItemLabel.HeightRequest = 30;
+            }
+        }
+
+        /// <summary>
+        /// Gets the images to populate the default items characters hold upon creation
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public bool CallProperImages(string job, string location)
+        {
+            string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(job, location);
+            ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(ItemAtLocation);
+
+            if (FoundItem == null)
+            {
+                switch (location)
+                {
+                    case "Head":
+                        headFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "Necklass":
+                        necklassFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "PrimaryHand":
+                        primaryhandFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "OffHand":
+                        offhandFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "RightFinger":
+                        rightfingerFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "LeftFinger":
+                        leftfingerFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    case "Feet":
+                        feetFrame.WidthRequest = 0;
+                        ItemLabel.HeightRequest = 0;
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+
+            switch (location)
+            {
+                case "Head":
+                    headFrame.WidthRequest = 120;
+                    head.Source = FoundItem.ImageURI;
+                    headName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "Necklass":
+                    necklassFrame.WidthRequest = 120;
+                    necklass.Source = FoundItem.ImageURI;
+                    necklassName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "PrimaryHand":
+                    primaryhandFrame.WidthRequest = 120;
+                    primaryhand.Source = FoundItem.ImageURI;
+                    primaryhandName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "OffHand":
+                    offhandFrame.WidthRequest = 120;
+                    offhand.Source = FoundItem.ImageURI;
+                    offhandName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "RightFinger":
+                    rightfingerFrame.WidthRequest = 120;
+                    rightfinger.Source = FoundItem.ImageURI;
+                    rightfingerName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "LeftFinger":
+                    leftfingerFrame.WidthRequest = 120;
+                    leftfinger.Source = FoundItem.ImageURI;
+                    leftfingerName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "Feet":
+                    feetFrame.WidthRequest = 120;
+                    feet.Source = FoundItem.ImageURI;
+                    feetName.Text = FoundItem.Type.ToMessage();
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                default:
+                    break;
+            }
+            return true;
         }
     }
 }

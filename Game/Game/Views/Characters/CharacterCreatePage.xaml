@@ -174,7 +174,89 @@
                         Padding="0,7,0,0"/>
 
                 </Grid>
+                
+                <Label Text="Gadgets" HeightRequest="0"
+                   x:Name="ItemLabel"
+                   Style="{StaticResource BigHeaderStyle}"/>
 
+                <Label Text="Character has no Gadgets" HeightRequest="30"
+                   x:Name="NoItemLabel"
+                   Style="{StaticResource BigHeaderStyle}"/>
+
+                <FlexLayout Direction="Row"
+                        AlignItems="Start"
+                        JustifyContent="Start">
+                    <Frame WidthRequest="0"  x:Name="headFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="head"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="headName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Head"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="necklassFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="necklass"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="necklassName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Necklass"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="primaryhandFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="primaryhand"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="primaryhandName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Primary Hand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="offhandFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="offhand"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="offhandName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Off Hand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="feetFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="feet"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="feetName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Feet"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="rightfingerFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="rightfinger"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="rightfingerName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Right Finger"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="0" x:Name="leftfingerFrame">
+                        <StackLayout Orientation="Vertical">
+                            <Image Style="{StaticResource ImageLargeStyle}" 
+                               x:Name="leftfinger"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
+                               x:Name="leftfingerName"/>
+                            <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
+                               Text ="Left Finger"/>
+                        </StackLayout>
+                    </Frame>
+                </FlexLayout>
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
