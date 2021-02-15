@@ -32,8 +32,6 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
-
-            MonsterClass.Text = MonsterIndexViewModel.Instance.GetMonsterClass(ViewModel.Data.MonsterType.ToString());
         }
 
         /// <summary>
