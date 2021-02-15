@@ -120,6 +120,7 @@ namespace Game.Views
             PictureSource.Source = MonsterIndexViewModel.Instance.GetImage(selected);
             ChangeImage.Text = MonsterIndexViewModel.Instance.GetImage(selected);
             UniqueDrop.SelectedItem = MonsterIndexViewModel.Instance.GetUniqueDrop(selected).ToMessage();
+            MonsterClassPicker.SelectedItem = MonsterIndexViewModel.Instance.GetMonsterClass(selected);
         }
     }
 }
