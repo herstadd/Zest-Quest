@@ -255,7 +255,10 @@ namespace Game.GameRules
                 Feet = NoItem,
                 RightFinger = ItemIndexViewModel.Instance.GetItem("OnionRing", true).Id,
                 LeftFinger = NoItem,
-            },
+                NumLives = 1,
+                IsBuffGranted = false,
+                TurnNumber = 0,
+        },
 
             new CharacterModel {
                 Name = "Sous Chef ",
@@ -271,6 +274,9 @@ namespace Game.GameRules
                 Feet = NoItem,
                 RightFinger = NoItem,
                 LeftFinger = NoItem,
+                NumLives = 1,
+                IsBuffGranted = false,
+                TurnNumber = 0,
             },
 
             new CharacterModel {
@@ -287,6 +293,9 @@ namespace Game.GameRules
                 Feet = NoItem,
                 RightFinger = NoItem,
                 LeftFinger = NoItem,
+                NumLives = 1,
+                IsBuffGranted = false,
+                TurnNumber = 0,
             },
 
             new CharacterModel {
@@ -303,6 +312,9 @@ namespace Game.GameRules
                 Feet = NoItem,
                 RightFinger = NoItem,
                 LeftFinger = NoItem,
+                NumLives = 1,
+                IsBuffGranted = false,
+                TurnNumber = 0,
             },
 
             new CharacterModel {
@@ -319,6 +331,9 @@ namespace Game.GameRules
                 Feet = ItemIndexViewModel.Instance.GetItem("WookieBoots", true).Id,
                 RightFinger = NoItem,
                 LeftFinger = NoItem,
+                NumLives = 9,
+                IsBuffGranted = false,
+                TurnNumber = 0,
             },
 
             new CharacterModel {
@@ -335,6 +350,9 @@ namespace Game.GameRules
                 Feet = NoItem,
                 RightFinger = NoItem,
                 LeftFinger = NoItem,
+                NumLives = 1,
+                IsBuffGranted = false,
+                TurnNumber = 0,
             },
         };
 
