@@ -16,7 +16,7 @@
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
-                                Source="headchef.png"
+                                Source="village_chef.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"/>
 
@@ -29,7 +29,7 @@
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
-                                Source="monster2.png"
+                                Source="village_monster.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="MonstersButton_Clicked"/>
 
@@ -43,7 +43,7 @@
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
-                                Source="zelda_items.png"
+                                Source="village_items.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ItemsButton_Clicked"/>
 
