@@ -303,26 +303,87 @@ namespace Game.Views
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickedOnItemSelection(object sender, EventArgs e)
         {
             if((sender as Button).Text.Equals("Confirm"))
             {
-                if ((sender as Button).BindingContext.Equals("Head"))
+                switch((sender as Button).BindingContext)
                 {
-                    headFrame.IsVisible = false;
-                    headName.Text = null;
+                    case "Head":
+                        headFrame.IsVisible = false;
+                        headName.Text = null;
+                        break;
+                    case "Necklass":
+                        necklassFrame.IsVisible = false;
+                        necklassName.Text = null;
+                        break;
+                    case "PrimaryHand":
+                        primaryhandFrame.IsVisible = false;
+                        primaryhandName.Text = null;
+                        break;
+                    case "OffHand":
+                        offhandFrame.IsVisible = false;
+                        offhandName.Text = null;
+                        break;
+                    case "Feet":
+                        feetFrame.IsVisible = false;
+                        feetName.Text = null;
+                        break;
+                    case "RightFinger":
+                        rightfingerFrame.IsVisible = false;
+                        rightfingerName.Text = null;
+                        break;
+                    case "LeftFinger":
+                        leftfingerFrame.IsVisible = false;
+                        leftfingerName.Text = null;
+                        break;
+                    default:
+                        break;
                 }
             }
             
             ItemConfirmBox.IsVisible = false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickedOnItem(object sender, EventArgs e)
         {
             ItemConfirmBox.IsVisible = true;
-            if((sender as Button).BindingContext.Equals("Head"))
+
+            switch((sender as Button).BindingContext)
             {
-                ConfirmButton.BindingContext = "Head";
+                case "Head":
+                    ConfirmButton.BindingContext = "Head";
+                    break;
+                case "Necklass":
+                    ConfirmButton.BindingContext = "Necklass";
+                    break;
+                case "PrimaryHand":
+                    ConfirmButton.BindingContext = "PrimaryHand";
+                    break;
+                case "OffHand":
+                    ConfirmButton.BindingContext = "OffHand";
+                    break;
+                case "Feet":
+                    ConfirmButton.BindingContext = "Feet";
+                    break;
+                case "RightFinger":
+                    ConfirmButton.BindingContext = "RightFinger";
+                    break;
+                case "LeftFinger":
+                    ConfirmButton.BindingContext = "LeftFinger";
+                    break;
+                default:
+                    break;
             }
         }
     }
