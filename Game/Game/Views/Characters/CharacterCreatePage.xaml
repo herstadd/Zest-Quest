@@ -173,6 +173,34 @@
                         x:Name="MaxHealthValue"
                         Padding="0,7,0,0"/>
 
+                    <StackLayout 
+                        Grid.Row="3"
+                        Grid.RowSpan="5" 
+                        Grid.Column="1"
+                        Orientation="Vertical"
+                        IsVisible="False"
+                        x:Name="ItemConfirmBox"
+                        BackgroundColor="LightBlue">
+                        <Label 
+                            Text="Would you like to remove this item?"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontSize="Medium"/>
+                        <StackLayout 
+                            Orientation="Horizontal"
+                            HorizontalOptions="Center">
+                            <Button
+                                Text="Confirm"
+                                Clicked="ClickedOnItemSelection"
+                                VerticalOptions="Center"
+                                x:Name="ConfirmButton"/>
+                            <Button
+                                Text="Cancel"
+                                Clicked="ClickedOnItemSelection"
+                                VerticalOptions="Center"
+                                x:Name="CancelButton"/>
+                        </StackLayout>
+                    </StackLayout>
                 </Grid>
                 
                 <Label Text="Gadgets" HeightRequest="0"
@@ -190,10 +218,15 @@
                         <StackLayout Orientation="Vertical">
                             <Image Style="{StaticResource ImageLargeStyle}" 
                                x:Name="head"/>
-                            <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
-                               x:Name="headName"/>
+                            <Label HorizontalOptions="Center" 
+                                Style="{StaticResource HeaderStyle}"
+                                Text="{Binding Data.Head, Mode=TwoWay}"
+                                x:Name="headName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Head"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"
+                                   BindingContext="Head"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="necklassFrame">
@@ -204,6 +237,8 @@
                                x:Name="necklassName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Necklass"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="primaryhandFrame">
@@ -214,6 +249,8 @@
                                x:Name="primaryhandName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Primary Hand"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="offhandFrame">
@@ -224,6 +261,8 @@
                                x:Name="offhandName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Off Hand"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="feetFrame">
@@ -234,16 +273,20 @@
                                x:Name="feetName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Feet"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="rightfingerFrame">
                         <StackLayout Orientation="Vertical">
-                            <Image Style="{StaticResource ImageLargeStyle}" 
+                            <Image Style="{StaticResource ImageLargeStyle}"
                                x:Name="rightfinger"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource HeaderStyle}"
                                x:Name="rightfingerName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Right Finger"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="leftfingerFrame">
@@ -254,17 +297,19 @@
                                x:Name="leftfingerName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Left Finger"/>
+                            <Button Text="Delete Item"
+                                   Clicked="ClickedOnItem"/>
                         </StackLayout>
                     </Frame>
                 </FlexLayout>
-                <StackLayout 
+                <!--<StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="FillAndExpand">
                     <Picker
                         ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
                         x:Name="NewItemPicker"/>
                     <Button Text="Add Item" />
-                </StackLayout>
+                </StackLayout>-->
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
