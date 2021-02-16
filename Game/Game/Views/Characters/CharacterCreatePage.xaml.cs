@@ -206,9 +206,8 @@ namespace Game.Views
         public bool CallProperImages(string job, string location)
         {
             string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(job, location);
-            ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(ItemAtLocation);
 
-            if (FoundItem == null)
+            if (ItemAtLocation == null)
             {
                 switch (location)
                 {
@@ -239,72 +238,70 @@ namespace Game.Views
                 return false;
             }
 
-            string ItemName = FoundItem.Type.ToMessage();
-
             switch (location)
             {
                 case "Head":
                     headFrame.IsVisible = true;
                     headFrame.WidthRequest = 120;
-                    head.Source = FoundItem.ImageURI;
-                    headName.Text = ItemName;
+                    head.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    headName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.Head, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Head, ItemAtLocation);
                     break;
                 case "Necklass":
                     necklassFrame.IsVisible = true;
                     necklassFrame.WidthRequest = 120;
-                    necklass.Source = FoundItem.ImageURI;
-                    necklassName.Text = ItemName;
+                    necklass.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    necklassName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.Necklass, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Necklass, ItemAtLocation);
                     break;
                 case "PrimaryHand":
                     primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
-                    primaryhand.Source = FoundItem.ImageURI;
-                    primaryhandName.Text = ItemName;
+                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    primaryhandName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, ItemAtLocation);
                     break;
                 case "OffHand":
                     offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
-                    offhand.Source = FoundItem.ImageURI;
-                    offhandName.Text = ItemName;
+                    offhand.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    offhandName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.OffHand, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.OffHand, ItemAtLocation);
                     break;
                 case "RightFinger":
                     rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
-                    rightfinger.Source = FoundItem.ImageURI;
-                    rightfingerName.Text = ItemName;
+                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    rightfingerName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, ItemAtLocation);
                     break;
                 case "LeftFinger":
                     leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
-                    leftfinger.Source = FoundItem.ImageURI;
-                    leftfingerName.Text = ItemName;
+                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    leftfingerName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.LeftFinger, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.LeftFinger, ItemAtLocation);
                     break;
                 case "Feet":
                     feetFrame.IsVisible = true;
                     feetFrame.WidthRequest = 120;
-                    feet.Source = FoundItem.ImageURI;
-                    feetName.Text = ItemName;
+                    feet.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
+                    feetName.Text = ItemAtLocation;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
-                    ViewModel.Data.AddItem(ItemLocationEnum.Feet, ItemName);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Feet, ItemAtLocation);
                     break;
                 default:
                     break;
