@@ -213,24 +213,31 @@ namespace Game.Views
                 {
                     case "Head":
                         headFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
                         break;
                     case "Necklass":
                         necklassFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
                         break;
                     case "PrimaryHand":
                         primaryhandFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
                         break;
                     case "OffHand":
                         offhandFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
                         break;
                     case "RightFinger":
                         rightfingerFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
                         break;
                     case "LeftFinger":
                         leftfingerFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
                         break;
                     case "Feet":
                         feetFrame.IsVisible = false;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                         break;
                     default:
                         break;
