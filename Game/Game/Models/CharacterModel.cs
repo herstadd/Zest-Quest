@@ -43,6 +43,9 @@ namespace Game.Models
             MaxHealth = DiceHelper.RollDice(10, 10);
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
+            NumLives = 1;
+            IsBuffGranted = false;
+            TurnNumber = 0;
 
             // Default to unknown, which is no special job
             // Job = CharacterJobEnum.Unknown;
@@ -68,6 +71,10 @@ namespace Game.Models
             {
                 return false;
             }
+
+            NumLives = newData.NumLives;
+            IsBuffGranted = newData.IsBuffGranted;
+            TurnNumber = newData.TurnNumber;
 
             PlayerType = newData.PlayerType;
             Guid = newData.Guid;
