@@ -14,9 +14,9 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     <ImageButton
-                        Source="headchef.png"
+                        Source="zestquest.jpg"
                         Clicked="GameButton_Clicked"
-                        Style="{StaticResource ImageLargerStyle}"/>
+                        Style="{StaticResource ImageZestQuestLargerStyle}"/>
                 
                 </StackLayout>
                 
