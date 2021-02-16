@@ -310,6 +310,16 @@
             </Style>
 
             <Style TargetType="Image"
+                x:Key="ImageZestQuestLargerStyle">
+                <Setter Property="HeightRequest" Value="498" />
+                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Aspect" Value="Fill" />
+            </Style>
+
+            <Style TargetType="Image"
                 x:Key="ImageMediumStyle"
                 BasedOn="{StaticResource ImageLargeStyle}">
                 <Setter Property="HeightRequest" Value="50" />
