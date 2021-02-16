@@ -220,7 +220,6 @@
                                x:Name="head"/>
                             <Label HorizontalOptions="Center" 
                                 Style="{StaticResource HeaderStyle}"
-                                Text="{Binding Data.Head, Mode=TwoWay}"
                                 x:Name="headName"/>
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Head"/>
@@ -238,7 +237,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Necklass"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="Necklass"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="primaryhandFrame">
@@ -250,7 +250,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Primary Hand"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="PrimaryHand"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="offhandFrame">
@@ -262,7 +263,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Off Hand"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="OffHand"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="feetFrame">
@@ -274,7 +276,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Feet"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="Feet"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="rightfingerFrame">
@@ -286,7 +289,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Right Finger"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="RightFinger"/>
                         </StackLayout>
                     </Frame>
                     <Frame WidthRequest="0" x:Name="leftfingerFrame">
@@ -298,7 +302,8 @@
                             <Label HorizontalOptions="Center" Style="{StaticResource ListStyle}"
                                Text ="Left Finger"/>
                             <Button Text="Delete Item"
-                                   Clicked="ClickedOnItem"/>
+                                    Clicked="ClickedOnItem"
+                                    BindingContext="LeftFinger"/>
                         </StackLayout>
                     </Frame>
                 </FlexLayout>
