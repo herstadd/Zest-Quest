@@ -239,63 +239,72 @@ namespace Game.Views
                 return false;
             }
 
+            string ItemName = FoundItem.Type.ToMessage();
+
             switch (location)
             {
                 case "Head":
                     headFrame.IsVisible = true;
                     headFrame.WidthRequest = 120;
                     head.Source = FoundItem.ImageURI;
-                    headName.Text = FoundItem.Type.ToMessage();
+                    headName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.Head, ItemName);
                     break;
                 case "Necklass":
                     necklassFrame.IsVisible = true;
                     necklassFrame.WidthRequest = 120;
                     necklass.Source = FoundItem.ImageURI;
-                    necklassName.Text = FoundItem.Type.ToMessage();
+                    necklassName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.Necklass, ItemName);
                     break;
                 case "PrimaryHand":
                     primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
                     primaryhand.Source = FoundItem.ImageURI;
-                    primaryhandName.Text = FoundItem.Type.ToMessage();
+                    primaryhandName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, ItemName);
                     break;
                 case "OffHand":
                     offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
                     offhand.Source = FoundItem.ImageURI;
-                    offhandName.Text = FoundItem.Type.ToMessage();
+                    offhandName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.OffHand, ItemName);
                     break;
                 case "RightFinger":
                     rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
                     rightfinger.Source = FoundItem.ImageURI;
-                    rightfingerName.Text = FoundItem.Type.ToMessage();
+                    rightfingerName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, ItemName);
                     break;
                 case "LeftFinger":
                     leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
                     leftfinger.Source = FoundItem.ImageURI;
-                    leftfingerName.Text = FoundItem.Type.ToMessage();
+                    leftfingerName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.LeftFinger, ItemName);
                     break;
                 case "Feet":
                     feetFrame.IsVisible = true;
                     feetFrame.WidthRequest = 120;
                     feet.Source = FoundItem.ImageURI;
-                    feetName.Text = FoundItem.Type.ToMessage();
+                    feetName.Text = ItemName;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.AddItem(ItemLocationEnum.Feet, ItemName);
                     break;
                 default:
                     break;
@@ -316,31 +325,31 @@ namespace Game.Views
                 {
                     case "Head":
                         headFrame.IsVisible = false;
-                        headName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
                         break;
                     case "Necklass":
                         necklassFrame.IsVisible = false;
-                        necklassName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
                         break;
                     case "PrimaryHand":
                         primaryhandFrame.IsVisible = false;
-                        primaryhandName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
                         break;
                     case "OffHand":
                         offhandFrame.IsVisible = false;
-                        offhandName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
                         break;
                     case "Feet":
                         feetFrame.IsVisible = false;
-                        feetName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                         break;
                     case "RightFinger":
                         rightfingerFrame.IsVisible = false;
-                        rightfingerName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
                         break;
                     case "LeftFinger":
                         leftfingerFrame.IsVisible = false;
-                        leftfingerName.Text = null;
+                        ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
                         break;
                     default:
                         break;
