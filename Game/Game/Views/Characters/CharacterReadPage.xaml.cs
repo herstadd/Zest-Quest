@@ -52,67 +52,82 @@ namespace Game.Views
         /// <returns></returns>
         public bool CallProperImages(GenericViewModel<CharacterModel> data, string location)
         {
-            if(data == null)
-            {
-                return false;
-            }
-            
-            string ItemAtLocation = CharacterIndexViewModel.Instance.GetItemForLocation(data.Data.Job.ToString(), location);
-            ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(ItemAtLocation);
-            
-            if(FoundItem == null)
-            {
-                return false;
-            }
-
             switch(location)
             {
                 case "Head":
+                    if(data.Data.Head is null)
+                    {
+                        break;
+                    }
                     headFrame.WidthRequest = 120;
-                    head.Source = FoundItem.ImageURI;
-                    headName.Text = FoundItem.Type.ToMessage();
+                    head.Source = ItemIndexViewModel.Instance.GetImage(data.Data.Head);
+                    headName.Text = data.Data.Head;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Necklass":
+                    if (data.Data.Necklass is null)
+                    {
+                        break;
+                    }
                     necklassFrame.WidthRequest = 120;
-                    necklass.Source = FoundItem.ImageURI;
-                    necklassName.Text = FoundItem.Type.ToMessage();
+                    necklass.Source = ItemIndexViewModel.Instance.GetImage(data.Data.Necklass);
+                    necklassName.Text = data.Data.Necklass;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "PrimaryHand":
+                    if (data.Data.PrimaryHand is null)
+                    {
+                        break;
+                    }
                     primaryhandFrame.WidthRequest = 120;
-                    primaryhand.Source = FoundItem.ImageURI;
-                    primaryhandName.Text = FoundItem.Type.ToMessage();
+                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(data.Data.PrimaryHand);
+                    primaryhandName.Text = data.Data.PrimaryHand;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "OffHand":
+                    if (data.Data.OffHand is null)
+                    {
+                        break;
+                    }
                     offhandFrame.WidthRequest = 120;
-                    offhand.Source = FoundItem.ImageURI;
-                    offhandName.Text = FoundItem.Type.ToMessage();
+                    offhand.Source = ItemIndexViewModel.Instance.GetImage(data.Data.OffHand);
+                    offhandName.Text = data.Data.OffHand;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "RightFinger":
+                    if (data.Data.RightFinger is null)
+                    {
+                        break;
+                    }
                     rightfingerFrame.WidthRequest = 120;
-                    rightfinger.Source = FoundItem.ImageURI;
-                    rightfingerName.Text = FoundItem.Type.ToMessage();
+                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(data.Data.RightFinger);
+                    rightfingerName.Text = data.Data.RightFinger;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "LeftFinger":
+                    if (data.Data.LeftFinger is null)
+                    {
+                        break;
+                    }
                     leftfingerFrame.WidthRequest = 120;
-                    leftfinger.Source = FoundItem.ImageURI;
-                    leftfingerName.Text = FoundItem.Type.ToMessage();
+                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(data.Data.LeftFinger);
+                    leftfingerName.Text = data.Data.LeftFinger;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Feet":
+                    if (data.Data.Feet is null)
+                    {
+                        break;
+                    }
                     feetFrame.WidthRequest = 120;
-                    feet.Source = FoundItem.ImageURI;
-                    feetName.Text = FoundItem.Type.ToMessage();
+                    feet.Source = ItemIndexViewModel.Instance.GetImage(data.Data.Feet);
+                    feetName.Text = data.Data.Feet;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
