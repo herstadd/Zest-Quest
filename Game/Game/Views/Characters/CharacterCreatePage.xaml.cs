@@ -302,5 +302,28 @@ namespace Game.Views
             }
             return true;
         }
+
+        private void ClickedOnItemSelection(object sender, EventArgs e)
+        {
+            if((sender as Button).Text.Equals("Confirm"))
+            {
+                if ((sender as Button).BindingContext.Equals("Head"))
+                {
+                    headFrame.IsVisible = false;
+                    headName.Text = null;
+                }
+            }
+            
+            ItemConfirmBox.IsVisible = false;
+        }
+
+        private void ClickedOnItem(object sender, EventArgs e)
+        {
+            ItemConfirmBox.IsVisible = true;
+            if((sender as Button).BindingContext.Equals("Head"))
+            {
+                ConfirmButton.BindingContext = "Head";
+            }
+        }
     }
 }
