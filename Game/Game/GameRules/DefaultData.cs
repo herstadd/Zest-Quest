@@ -372,7 +372,7 @@ namespace Game.GameRules
                     Name = "Evil Refrigerator",
                     MonsterType = MonsterTypeEnum.EvilRefrigerator,
                     Description = "This fridge is sick of storing expired fruits, vegetables, and sauces. Watch out for its teeth!",
-                    ImageURI = "monster2.png",
+                    ImageURI = "monster_refrigerator.png",
                     UniqueDrop = ItemModelEnum.Refrigerator,
                     MonsterClass = "Boss"
                 },
@@ -381,7 +381,7 @@ namespace Game.GameRules
                     Name = "Evil Toaster",
                     MonsterType = MonsterTypeEnum.EvilToaster,
                     Description = "Maybe if you cleaned out the crumbs every once in a while, this toaster wouldn't be so evil",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "monster_toaster.png",
                     UniqueDrop = ItemModelEnum.OnionRing,
                     MonsterClass = "Boss"
                 },
@@ -390,7 +390,7 @@ namespace Game.GameRules
                     Name = "Evil Blender",
                     MonsterType = MonsterTypeEnum.EvilBlender,
                     Description = "Someone made one too many kale smoothies in this blender",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.ButcherKnifeNecklace,
                     MonsterClass = "Boss"
                 },
