@@ -154,6 +154,8 @@
     <Content Include="kitchen2.png" />
     <Content Include="mapcell.png" />
     <Content Include="monster2.png" />
+    <Content Include="monster_refrigerator.png" />
+    <Content Include="monster_toaster.png" />
     <Content Include="mushroom.png" />
     <Content Include="oscar.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -191,7 +193,12 @@
     <Content Include="sushichef.png" />
     <Content Include="teamtelephone.png" />
     <Content Include="teamtelephone2.png" />
+    <Content Include="village_battle.png" />
+    <Content Include="village_chef.png" />
+    <Content Include="village_items.png" />
+    <Content Include="village_monster.png" />
     <Content Include="zelda_items.png" />
+    <Content Include="zestquest.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

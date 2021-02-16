@@ -231,4 +231,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\superflower.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_refrigerator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_toaster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\village_battle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\village_chef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\village_items.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\village_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zestquest.jpg" />
+  </ItemGroup>
 </Project>
