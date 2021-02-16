@@ -399,7 +399,7 @@ namespace Game.GameRules
                     Name = "Evil Dishwasher",
                     MonsterType = MonsterTypeEnum.EvilDishwasher,
                     Description = "This dishwasher will not clean your dishes",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
                 },
@@ -427,7 +427,7 @@ namespace Game.GameRules
                     Name = "Evil Rice Cooker",
                     MonsterType = MonsterTypeEnum.EvilRiceCooker,
                     Description = "Good for cooking rice, porridge, oatmeal and its enemies",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = "Standard"
                 },
