@@ -317,7 +317,8 @@
                         ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
                         x:Name="NewItemPicker"/>
                     <Button Grid.Row="0" Grid.Column="1" 
-                        Text="Add Item" />
+                        Text="Add Item" 
+                        Clicked="AddItemButtonClicked"/>
                 </Grid>
                 
                 <StackLayout 
