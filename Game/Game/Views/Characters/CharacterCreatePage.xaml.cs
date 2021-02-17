@@ -407,8 +407,9 @@ namespace Game.Views
             {
                 return;
             }
-            //Debug.Print(selected);
+
             ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(selected, true);
+            
             switch (FoundItem.Location.ToMessage())
             {
                 case "Head":
