@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
              xmlns:local="using:Game.Models"
+             xmlns:local_enum="clr-namespace:Game.Models"
              x:Class="Game.Views.CharacterUpdatePage"
              Title="{Binding Title}">
 
@@ -306,6 +307,18 @@
                     </Frame>
                 </FlexLayout>
 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Row="0" Grid.Column="0"
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
+                        x:Name="NewItemPicker"/>
+                    <Button Grid.Row="0" Grid.Column="1" 
+                        Text="Add Item" />
+                </Grid>
+                
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
