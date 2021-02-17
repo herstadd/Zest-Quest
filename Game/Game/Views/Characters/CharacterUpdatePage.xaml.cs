@@ -512,5 +512,92 @@ namespace Game.Views
                     break;
             }
         }
+
+        private void AddItemButtonClicked(object sender, EventArgs e)
+        {
+            string selected = (string)NewItemPicker.SelectedItem;
+            if (selected is null)
+            {
+                return;
+            }
+
+            ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(selected, true);
+
+            switch (FoundItem.Location.ToMessage())
+            {
+                case "Head":
+                    headFrame.IsVisible = true;
+                    headFrame.WidthRequest = 120;
+                    head.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    headName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Head, selected);
+                    break;
+                case "Necklass":
+                    necklassFrame.IsVisible = true;
+                    necklassFrame.WidthRequest = 120;
+                    necklass.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    necklassName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Necklass, selected);
+                    break;
+                case "PrimaryHand":
+                    primaryhandFrame.IsVisible = true;
+                    primaryhandFrame.WidthRequest = 120;
+                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    primaryhandName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
+                    ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, selected);
+                    break;
+                case "OffHand":
+                    offhandFrame.IsVisible = true;
+                    offhandFrame.WidthRequest = 120;
+                    offhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    offhandName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
+                    ViewModel.Data.AddItem(ItemLocationEnum.OffHand, selected);
+                    break;
+                case "RightFinger":
+                    rightfingerFrame.IsVisible = true;
+                    rightfingerFrame.WidthRequest = 120;
+                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    rightfingerName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
+                    ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, selected);
+                    break;
+                case "LeftFinger":
+                    leftfingerFrame.IsVisible = true;
+                    leftfingerFrame.WidthRequest = 120;
+                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    leftfingerName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
+                    ViewModel.Data.AddItem(ItemLocationEnum.LeftFinger, selected);
+                    break;
+                case "Feet":
+                    feetFrame.IsVisible = true;
+                    feetFrame.WidthRequest = 120;
+                    feet.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    feetName.Text = selected;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
+                    ViewModel.Data.AddItem(ItemLocationEnum.Feet, selected);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
