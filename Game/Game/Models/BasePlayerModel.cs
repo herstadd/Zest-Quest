@@ -746,7 +746,7 @@ namespace Game.Models
         /// <returns></returns>
         public ItemModel GetItem(string itemString)
         {
-            return ItemIndexViewModel.Instance.GetItem(itemString);
+            return ItemIndexViewModel.Instance.GetItem(itemString, true);
         }
 
         // Drop All Items
