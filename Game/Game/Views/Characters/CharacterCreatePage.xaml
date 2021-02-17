@@ -307,14 +307,19 @@
                         </StackLayout>
                     </Frame>
                 </FlexLayout>
-                <!--<StackLayout 
-                    Orientation="Horizontal"
-                    HorizontalOptions="FillAndExpand">
-                    <Picker
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker Grid.Row="0" Grid.Column="0"
                         ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
                         x:Name="NewItemPicker"/>
-                    <Button Text="Add Item" />
-                </StackLayout>-->
+                    <Button Grid.Row="0" Grid.Column="1" 
+                        Text="Add Item" />
+                </Grid>
+                
                 <StackLayout 
                     Orientation="Horizontal"
                     HorizontalOptions="Center">
