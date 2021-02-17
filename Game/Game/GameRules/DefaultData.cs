@@ -111,7 +111,7 @@ namespace Game.GameRules
                     Range = 2,
                     Damage = 4,
                     Value = 4,
-                    Location = ItemLocationEnum.PrimaryHand,
+                    Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
@@ -122,7 +122,7 @@ namespace Game.GameRules
                     Range = 2,
                     Damage = 7,
                     Value = 5,
-                    Location = ItemLocationEnum.PrimaryHand,
+                    Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
@@ -133,7 +133,7 @@ namespace Game.GameRules
                     Range = 0,
                     Damage = 0,
                     Value = 2,
-                    Location = ItemLocationEnum.OffHand,
+                    Location = ItemLocationEnum.LeftFinger,
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
@@ -144,7 +144,7 @@ namespace Game.GameRules
                     Range = 0,
                     Damage = 0,
                     Value = 5,
-                    Location = ItemLocationEnum.OffHand,
+                    Location = ItemLocationEnum.RightFinger,
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
@@ -155,7 +155,7 @@ namespace Game.GameRules
                     Range = 0,
                     Damage = 0,
                     Value = 4,
-                    Location = ItemLocationEnum.OffHand,
+                    Location = ItemLocationEnum.RightFinger,
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
