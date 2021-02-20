@@ -307,20 +307,20 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
 
-        [Test]
-        public void CharacterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.ImageURI = null;
+        //[Test]
+        //public void CharacterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.ImageURI = null;
 
-            // Act
-            page.RandomButton_Clicked(null, null);
+        //    // Act
+        //    page.RandomButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
     }
 }
