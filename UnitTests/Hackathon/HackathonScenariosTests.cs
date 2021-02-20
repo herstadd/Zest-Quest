@@ -12,24 +12,24 @@ namespace Scenario
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
 
-        [SetUp]
-        public void Setup()
-        {
-            // Choose which engine to run
-            EngineViewModel.SetBattleEngineToKoenig();
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    // Choose which engine to run
+        //    EngineViewModel.SetBattleEngineToKoenig();
 
-            // Put seed data into the system for all tests
-            EngineViewModel.Engine.Round.ClearLists();
+        //    // Put seed data into the system for all tests
+        //    EngineViewModel.Engine.Round.ClearLists();
 
-            //Start the Engine in AutoBattle Mode
-            EngineViewModel.Engine.StartBattle(false);
+        //    //Start the Engine in AutoBattle Mode
+        //    EngineViewModel.Engine.StartBattle(false);
 
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum= HitStatusEnum.Default;
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum= HitStatusEnum.Default;
 
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
-        }
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
+        //}
 
         [TearDown]
         public void TearDown()
