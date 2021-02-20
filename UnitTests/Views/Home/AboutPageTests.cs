@@ -313,6 +313,8 @@ namespace UnitTests.Views
         public async Task AboutPage_GetItemsPost_Neg_Should_Fail()
         {
             // Arrange
+            var hold = WebGlobalsModel.WebSiteAPIURL;
+            WebGlobalsModel.WebSiteAPIURL = "https://bogusurl";
 
             page.SetServerItemValue("-100");
 
@@ -320,6 +322,7 @@ namespace UnitTests.Views
             var result = await page.GetItemsPost();
 
             // Reset
+            WebGlobalsModel.WebSiteAPIURL = hold;
 
             // Assert
             Assert.AreEqual("No Results", result); // Got to here, so it happened...

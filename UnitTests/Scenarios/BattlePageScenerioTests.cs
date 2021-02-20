@@ -1,16 +1,10 @@
-﻿using System.Threading.Tasks;
-using System.Linq;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
 
 using NUnit.Framework;
 
-using Game.Helpers;
 using Game.ViewModels;
 using Game.Views;
-using Game.Engine;
-using Game.Models;
 using Game;
 
 namespace Scenario
@@ -30,6 +24,9 @@ namespace Scenario
             //This is your App.xaml and App.xaml.cs, which can have resources, etc.
             app = new App();
             Application.Current = app;
+
+            // Choose which engine to run
+            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
 
             page = new BattlePage();
         }
