@@ -114,70 +114,70 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void ItemUpdatePage_Value_OnStepperValueChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new ItemModel();
-            var ViewModel = new GenericViewModel<ItemModel>(data);
+        //[Test]
+        //public void ItemUpdatePage_Value_OnStepperValueChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new ItemModel();
+        //    var ViewModel = new GenericViewModel<ItemModel>(data);
 
-            page = new ItemUpdatePage(ViewModel);
-            double oldValue = 0.0;
-            double newValue = 1.0;
+        //    page = new ItemUpdatePage(ViewModel);
+        //    double oldValue = 0.0;
+        //    double newValue = 1.0;
 
-            var args = new ValueChangedEventArgs(oldValue, newValue);
+        //    var args = new ValueChangedEventArgs(oldValue, newValue);
 
-            // Act
-            page.Value_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Value_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
         
-        [Test]
-        public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new ItemModel();
-            var ViewModel = new GenericViewModel<ItemModel>(data);
+        //[Test]
+        //public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new ItemModel();
+        //    var ViewModel = new GenericViewModel<ItemModel>(data);
 
-            page = new ItemUpdatePage(ViewModel);
-            double oldRange = 0.0;
-            double newRange = 1.0;
+        //    page = new ItemUpdatePage(ViewModel);
+        //    double oldRange = 0.0;
+        //    double newRange = 1.0;
 
-            var args = new ValueChangedEventArgs(oldRange, newRange);
+        //    var args = new ValueChangedEventArgs(oldRange, newRange);
 
-            // Act
-            page.Range_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Range_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void ItemUpdatePage_Damage_OnStepperDamageChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new ItemModel();
-            var ViewModel = new GenericViewModel<ItemModel>(data);
+        //[Test]
+        //public void ItemUpdatePage_Damage_OnStepperDamageChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new ItemModel();
+        //    var ViewModel = new GenericViewModel<ItemModel>(data);
 
-            page = new ItemUpdatePage(ViewModel);
-            double oldDamage = 0.0;
-            double newDamage = 1.0;
+        //    page = new ItemUpdatePage(ViewModel);
+        //    double oldDamage = 0.0;
+        //    double newDamage = 1.0;
 
-            var args = new ValueChangedEventArgs(oldDamage, newDamage);
+        //    var args = new ValueChangedEventArgs(oldDamage, newDamage);
 
-            // Act
-            page.Damage_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Damage_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
     }
 }
