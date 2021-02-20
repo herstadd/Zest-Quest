@@ -67,14 +67,7 @@ namespace Game.Views
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
-
-            // If the Name in the data box is just white spaces changes the Entry background color
-            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
-            {
-                // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
-            }
+        
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
