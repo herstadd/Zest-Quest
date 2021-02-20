@@ -66,34 +66,34 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.Save_Clicked(null, null);
+        //    // Act
+        //    page.Save_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.ImageURI = null;
+        //[Test]
+        //public void CharacterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.ImageURI = null;
 
-            // Act
-            page.Save_Clicked(null, null);
+        //    // Act
+        //    page.Save_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         [Test]
         public void CharacterUpdatePage_OnBackButtonPressed_Valid_Should_Pass()
@@ -311,295 +311,295 @@ namespace UnitTests.Views
 
 
         #region ButtonUpDown
-        [Test]
-        public void CharacterUpdatePage_AttackDownButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Attack = 1;
+        //[Test]
+        //public void CharacterUpdatePage_AttackDownButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Attack = 1;
 
-            // Act
-            page.AttackDownButton_Clicked(null, null);
+        //    // Act
+        //    page.AttackDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_AttackUpButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Attack = 1;
+        //[Test]
+        //public void CharacterUpdatePage_AttackUpButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Attack = 1;
 
-            // Act
-            page.AttackUpButton_Clicked(null, null);
+        //    // Act
+        //    page.AttackUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_DefenseDownButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Defense = 1;
+        //[Test]
+        //public void CharacterUpdatePage_DefenseDownButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Defense = 1;
 
-            // Act
-            page.DefenseDownButton_Clicked(null, null);
+        //    // Act
+        //    page.DefenseDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_DefenseUpButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Defense = 1;
+        //[Test]
+        //public void CharacterUpdatePage_DefenseUpButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Defense = 1;
 
-            // Act
-            page.DefenseUpButton_Clicked(null, null);
+        //    // Act
+        //    page.DefenseUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_SpeedDownButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Speed = 1;
+        //[Test]
+        //public void CharacterUpdatePage_SpeedDownButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Speed = 1;
 
-            // Act
-            page.SpeedDownButton_Clicked(null, null);
+        //    // Act
+        //    page.SpeedDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_SpeedUpButton_Clicked_Valid_1_Should_Pass()
-        {
-            // Arrange
-            page.ViewModel.Data.Speed = 1;
+        //[Test]
+        //public void CharacterUpdatePage_SpeedUpButton_Clicked_Valid_1_Should_Pass()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Speed = 1;
 
-            // Act
-            page.SpeedUpButton_Clicked(null, null);
+        //    // Act
+        //    page.SpeedUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_AttackDownButton_Clicked_Invalid_0_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Attack = 0;
+        //[Test]
+        //public void CharacterUpdatePage_AttackDownButton_Clicked_Invalid_0_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Attack = 0;
 
-            // Act
-            page.AttackDownButton_Clicked(null, null);
+        //    // Act
+        //    page.AttackDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_AttackUpButton_Clicked_Invalid_10_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Attack = 10;
+        //[Test]
+        //public void CharacterUpdatePage_AttackUpButton_Clicked_Invalid_10_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Attack = 10;
 
-            // Act
-            page.AttackUpButton_Clicked(null, null);
+        //    // Act
+        //    page.AttackUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_DefenseDownButton_Clicked_Invalid_0_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Defense = 0;
+        //[Test]
+        //public void CharacterUpdatePage_DefenseDownButton_Clicked_Invalid_0_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Defense = 0;
 
-            // Act
-            page.DefenseDownButton_Clicked(null, null);
+        //    // Act
+        //    page.DefenseDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_DefenseUpButton_Clicked_Invalid_10_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Defense = 10;
+        //[Test]
+        //public void CharacterUpdatePage_DefenseUpButton_Clicked_Invalid_10_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Defense = 10;
 
-            // Act
-            page.DefenseUpButton_Clicked(null, null);
+        //    // Act
+        //    page.DefenseUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_SpeedDownButton_Clicked_Invalid_0_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Speed = 0;
+        //[Test]
+        //public void CharacterUpdatePage_SpeedDownButton_Clicked_Invalid_0_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Speed = 0;
 
-            // Act
-            page.SpeedDownButton_Clicked(null, null);
+        //    // Act
+        //    page.SpeedDownButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_SpeedUpButton_Clicked_Invalid_10_Should_Fail()
-        {
-            // Arrange
-            page.ViewModel.Data.Speed = 10;
+        //[Test]
+        //public void CharacterUpdatePage_SpeedUpButton_Clicked_Invalid_10_Should_Fail()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.Speed = 10;
 
-            // Act
-            page.SpeedUpButton_Clicked(null, null);
+        //    // Act
+        //    page.SpeedUpButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
         #endregion ButtonUpDown
 
         #region UpdateHealth
-        [Test]
-        public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
-        {
-            // Arrange
-            // Act
-            page.UpdateHealthValue();
+        //[Test]
+        //public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    // Act
+        //    page.UpdateHealthValue();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         #endregion UpdateHealth
 
         #region RandomButton_Clicked
-        [Test]
-        public void CharacterUpdatePage_RandomButton_Clicked_Valid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_RandomButton_Clicked_Valid_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.RandomButton_Clicked(null, null);
+        //    // Act
+        //    page.RandomButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
         #endregion RandomButton_Clicked
 
         #region LevelPicker_Changed
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_Neg1_Should_Return_Level()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_Neg1_Should_Return_Level()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 10
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 10
+        //    };
             
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = -1;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = -1;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(10, result+1); 
-        }
+        //    // Assert
+        //    Assert.AreEqual(10, result+1); 
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_No_Change_Should_Skip()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_No_Change_Should_Skip()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 10
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 10
+        //    };
 
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = 10-1;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = 10-1;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(10, result + 1);
-        }
+        //    // Assert
+        //    Assert.AreEqual(10, result + 1);
+        //}
 
 
-        [Test]
-        public void CharacterUpdatePage_LevelPicker_SelectedIndex_Change_Should_Update_Picker_To_Level()
-        {
-            // Arrange
+        //[Test]
+        //public void CharacterUpdatePage_LevelPicker_SelectedIndex_Change_Should_Update_Picker_To_Level()
+        //{
+        //    // Arrange
 
-            // Make a new Character to use for the Picker Tests
-            page.ViewModel.Data = new CharacterModel()
-            {
-                Id = "test",
-                Level = 1
-            };
+        //    // Make a new Character to use for the Picker Tests
+        //    page.ViewModel.Data = new CharacterModel()
+        //    {
+        //        Id = "test",
+        //        Level = 1
+        //    };
 
-            var control = (Picker)page.FindByName("LevelPicker");
-            control.SelectedIndex = 15;
+        //    var control = (Picker)page.FindByName("LevelPicker");
+        //    control.SelectedIndex = 15;
 
-            // Act
-            page.LevelPicker_Changed(null, null);
-            var result = control.SelectedIndex;
+        //    // Act
+        //    page.LevelPicker_Changed(null, null);
+        //    var result = control.SelectedIndex;
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(16, result + 1);
-        }
+        //    // Assert
+        //    Assert.AreEqual(16, result + 1);
+        //}
         #endregion LevelPicker_Changed
     }
 }
