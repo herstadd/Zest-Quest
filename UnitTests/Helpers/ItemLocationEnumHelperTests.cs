@@ -267,41 +267,41 @@ namespace UnitTests.Helpers
 
         #region ItemLocationEnumConverter
 
-        [Test]
-        public void ItemLocationEnumConvert_String_Should_Pass()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvert_String_Should_Pass()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = "Feet";
-            var Result = myConverter.Convert(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = ItemLocationEnum.Feet.ToMessage();
+        //    var myObject = "Feet";
+        //    var Result = myConverter.Convert(myObject, typeof(ItemLocationEnum), null, null);
+        //    var Expected = ItemLocationEnum.Feet.ToMessage();
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
-        [Test]
-        public void ItemLocationEnumConvert_Enum_Should_Pass()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvert_Enum_Should_Pass()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = ItemLocationEnum.Feet;
-            var Result = myConverter.Convert(myObject, null, null, null);
-            var Expected = "Feet";
+        //    var myObject = ItemLocationEnum.Feet;
+        //    var Result = myConverter.Convert(myObject, null, null, null);
+        //    var Expected = "Feet";
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
-        [Test]
-        public void ItemLocationEnumConvert_Other_Should_Skip()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvert_Other_Should_Skip()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = new ItemModel();
-            var Result = myConverter.Convert(myObject, null, null, null);
-            var Expected = 0;
+        //    var myObject = new ItemModel();
+        //    var Result = myConverter.Convert(myObject, null, null, null);
+        //    var Expected = 0;
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
         // Convert Back
         [Test]
@@ -329,95 +329,95 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
-        [Test]
-        public void ItemLocationEnumConvertBack_String_Should_Pass()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvertBack_String_Should_Pass()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = "Feet";
-            var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = ItemLocationEnum.Feet;
+        //    var myObject = "Feet";
+        //    var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
+        //    var Expected = ItemLocationEnum.Feet;
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
-        [Test]
-        public void ItemLocationEnumConvertBack_Enum_Should_Skip()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvertBack_Enum_Should_Skip()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = ItemLocationEnum.Feet;
-            var Result = myConverter.ConvertBack(myObject, null, null, null);
-            var Expected = 0;
+        //    var myObject = ItemLocationEnum.Feet;
+        //    var Result = myConverter.ConvertBack(myObject, null, null, null);
+        //    var Expected = 0;
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
-        [Test]
-        public void ItemLocationEnumConvertBack_Other_Should_Skip()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvertBack_Other_Should_Skip()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            var myObject = new ItemModel();
-            var Result = myConverter.ConvertBack(myObject, null, null, null);
-            var Expected = 0;
+        //    var myObject = new ItemModel();
+        //    var Result = myConverter.ConvertBack(myObject, null, null, null);
+        //    var Expected = 0;
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
 
-        [Test]
-        public void ItemLocationEnumConvertBack_Int_Should_Pass()
-        {
-            var myConverter = new ItemLocationEnumConverter();
+        //[Test]
+        //public void ItemLocationEnumConvertBack_Int_Should_Pass()
+        //{
+        //    var myConverter = new ItemLocationEnumConverter();
 
-            int myObject = 40;
-            var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
-            var Expected = "Feet";
+        //    int myObject = 40;
+        //    var Result = myConverter.ConvertBack(myObject, typeof(ItemLocationEnum), null, null);
+        //    var Expected = "Feet";
 
-            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
-        }
+        //    Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        //}
         #endregion ItemLocationEnumConverter
 
         #region ConvertMessageToEnum
-        [Test]
-        public void ConvertMessageToEnum_Valid_Feet_Should_Return_Enum()
-        {
+        //[Test]
+        //public void ConvertMessageToEnum_Valid_Feet_Should_Return_Enum()
+        //{
 
-            // Arrange
+        //    // Arrange
 
-            // Act
-            var result = ItemLocationEnumHelper.ConvertMessageToEnum("Feet");
+        //    // Act
+        //    var result = ItemLocationEnumHelper.ConvertMessageToEnum("Feet");
 
-            // Assert
-            Assert.AreEqual(ItemLocationEnum.Feet, result);
-        }
+        //    // Assert
+        //    Assert.AreEqual(ItemLocationEnum.Feet, result);
+        //}
 
-        [Test]
-        public void ConvertMessageToEnum_InValid_Bogus_Should_Return_Unknown()
-        {
-            // Arrange
+        //[Test]
+        //public void ConvertMessageToEnum_InValid_Bogus_Should_Return_Unknown()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
+        //    // Act
+        //    var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
 
-            // Assert
-            Assert.AreEqual(ItemLocationEnum.Unknown, result);
-        }
+        //    // Assert
+        //    Assert.AreEqual(ItemLocationEnum.Unknown, result);
+        //}
 
         #endregion ConvertMessageToEnum
 
         #region GetListMessageCharacter
-        [Test]
-        public void GetListMessageCharacter_Valid_Default_Should_Return_List()
-        {
-            // Arrange
+        //[Test]
+        //public void GetListMessageCharacter_Valid_Default_Should_Return_List()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = ItemLocationEnumHelper.GetListMessageCharacter;
+        //    // Act
+        //    var result = ItemLocationEnumHelper.GetListMessageCharacter;
 
-            // Assert
-            Assert.AreEqual(7, result.Count());
-        }
+        //    // Assert
+        //    Assert.AreEqual(7, result.Count());
+        //}
         #endregion GetListMessageCharacter
     }
 }
