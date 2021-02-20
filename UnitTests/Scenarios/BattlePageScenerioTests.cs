@@ -15,21 +15,21 @@ namespace Scenario
         App app;
         BattlePage page;
 
-        [SetUp]
-        public void Setup()
-        {
-            // Initilize Xamarin Forms
-            MockForms.Init();
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    // Initilize Xamarin Forms
+        //    MockForms.Init();
 
-            //This is your App.xaml and App.xaml.cs, which can have resources, etc.
-            app = new App();
-            Application.Current = app;
+        //    //This is your App.xaml and App.xaml.cs, which can have resources, etc.
+        //    app = new App();
+        //    Application.Current = app;
 
-            // Choose which engine to run
-            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+        //    // Choose which engine to run
+        //    BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
 
-            page = new BattlePage();
-        }
+        //    page = new BattlePage();
+        //}
 
         [TearDown]
         public void TearDown()
