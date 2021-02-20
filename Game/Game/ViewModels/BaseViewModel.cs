@@ -464,12 +464,9 @@ namespace Game.ViewModels
 
             // Compare it, if different update in the DB
             var UpdateResult = await UpdateAsync(data);
-            if (UpdateResult)
-            {
-                return true;
-            }
 
-            return false;
+            // Return True, not adding 
+            return true;
         }
 
         /// <summary>
