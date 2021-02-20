@@ -95,161 +95,161 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.GetItemToDisplay();
+        //    // Act
+        //    page.GetItemToDisplay();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Popup_Should_Have_Clickable_Button()
-        {
-            // Arrange
-            page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Popup_Should_Have_Clickable_Button()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
 
-            // Act
-            page.GetItemToDisplay();
+        //    // Act
+        //    page.GetItemToDisplay();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Valid_Click_Button_Should_Open_Popup()
-        {
-            // Arrange
-            page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Valid_Click_Button_Should_Open_Popup()
+        //{
+        //    // Arrange
+        //    page.ViewModel.Data.UniqueItem = ItemIndexViewModel.Instance.GetDefaultItemId(ItemLocationEnum.Head);
 
-            var stackView = page.GetItemToDisplay();
+        //    var stackView = page.GetItemToDisplay();
 
-            ImageButton imageButtonView = new ImageButton();
+        //    ImageButton imageButtonView = new ImageButton();
 
-            foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton))) 
-            {
-                imageButtonView = (ImageButton)i;
-            }
+        //    foreach (View i in ((StackLayout)stackView).Children.Where(x => x.GetType() == typeof(ImageButton))) 
+        //    {
+        //        imageButtonView = (ImageButton)i;
+        //    }
 
-            // Act
-            imageButtonView.PerformClick();
+        //    // Act
+        //    imageButtonView.PerformClick();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_ShowPopup_Valid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void MonsterReadPage_ShowPopup_Valid_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.ShowPopup(new ItemModel());
+        //    // Act
+        //    page.ShowPopup(new ItemModel());
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_ClosePopup_Clicked_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void MonsterReadPage_ClosePopup_Clicked_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.ClosePopup_Clicked(null, null);
+        //    // Act
+        //    page.ClosePopup_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_AddItemsToDisplay_With_Data_Should_Remove_And_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void MonsterReadPage_AddItemsToDisplay_With_Data_Should_Remove_And_Pass()
+        //{
+        //    // Arrange
 
-            // Put some data into the box so it can be removed
-            FlexLayout itemBox = (FlexLayout)page.Content.FindByName("ItemBox");
+        //    // Put some data into the box so it can be removed
+        //    FlexLayout itemBox = (FlexLayout)page.Content.FindByName("ItemBox");
 
-            itemBox.Children.Add(new Label());
-            itemBox.Children.Add(new Label());
+        //    itemBox.Children.Add(new Label());
+        //    itemBox.Children.Add(new Label());
 
-            // Act
-            page.AddItemsToDisplay();
+        //    // Act
+        //    page.AddItemsToDisplay();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(1, itemBox.Children.Count()); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(1, itemBox.Children.Count()); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public async Task MonsterReadPage_GetItemToDisplay_With_Item_Should_Pass()
-        {
-            // Arrange
-            ItemIndexViewModel.Instance.Dataset.Clear();
+        //[Test]
+        //public async Task MonsterReadPage_GetItemToDisplay_With_Item_Should_Pass()
+        //{
+        //    // Arrange
+        //    ItemIndexViewModel.Instance.Dataset.Clear();
 
-            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
+        //    await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
 
-            var Monster = new MonsterModel();
-            Monster.Head = ItemIndexViewModel.Instance.GetLocationItems(ItemLocationEnum.Head).First().Id;
-            page.ViewModel.Data = Monster;
+        //    var Monster = new MonsterModel();
+        //    Monster.Head = ItemIndexViewModel.Instance.GetLocationItems(ItemLocationEnum.Head).First().Id;
+        //    page.ViewModel.Data = Monster;
 
-            // Act
-            var result = page.GetItemToDisplay();
+        //    // Act
+        //    var result = page.GetItemToDisplay();
 
-            // Reset
-            ItemIndexViewModel.Instance.ForceDataRefresh();
+        //    // Reset
+        //    ItemIndexViewModel.Instance.ForceDataRefresh();
 
-            // Assert
-            Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public async Task MonsterReadPage_GetItemToDisplay_With_NoItem_Should_Pass()
-        {
-            // Arrange
-            ItemIndexViewModel.Instance.Dataset.Clear();
-            await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
+        //[Test]
+        //public async Task MonsterReadPage_GetItemToDisplay_With_NoItem_Should_Pass()
+        //{
+        //    // Arrange
+        //    ItemIndexViewModel.Instance.Dataset.Clear();
+        //    await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.Head });
 
-            // Act
-            var result = page.GetItemToDisplay();
+        //    // Act
+        //    var result = page.GetItemToDisplay();
 
-            // Reset
-            ItemIndexViewModel.Instance.ForceDataRefresh();
+        //    // Reset
+        //    ItemIndexViewModel.Instance.ForceDataRefresh();
 
-            // Assert
-            Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(2, result.Children.Count()); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void MonsterReadPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
-        {
-            // Arrange
-            var StackItem = page.GetItemToDisplay();
-            var dataImage = StackItem.Children[0];
+        //[Test]
+        //public void MonsterReadPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
+        //{
+        //    // Arrange
+        //    var StackItem = page.GetItemToDisplay();
+        //    var dataImage = StackItem.Children[0];
 
-            // Act
-            ((ImageButton)dataImage).PropagateUpClicked();
+        //    // Act
+        //    ((ImageButton)dataImage).PropagateUpClicked();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
     }
 }
