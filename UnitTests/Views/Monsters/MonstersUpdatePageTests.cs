@@ -66,6 +66,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void MonsterCreatePage_NameChanged_Null_Name_Should_Pass()
+        {
+            // Arrange
+            var ViewModel = new GenericViewModel<MonsterModel>(new MonsterModel());
+            ViewModel.Data.Name = null;
+            var NewPage = new MonsterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.NameChanged(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void MonsterUpdatePage_Save_Clicked_Default_Should_Pass()
         //{
