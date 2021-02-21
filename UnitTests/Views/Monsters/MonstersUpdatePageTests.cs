@@ -66,34 +66,81 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void MonsterUpdatePage_Save_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void MonsterCreatePage_NameChanged_Null_Name_Should_Pass()
+        {
+            // Arrange
+            var ViewModel = new GenericViewModel<MonsterModel>(new MonsterModel());
+            ViewModel.Data.Name = null;
+            var NewPage = new MonsterUpdatePage(ViewModel);
 
-        //    // Act
-        //    page.Save_Clicked(null, null);
+            // Act
+            NewPage.NameChanged(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void MonsterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
-        //{
-        //    // Arrange
-        //    page.ViewModel.Data.ImageURI = null;
+        [Test]
+        public void MonsterUpdatePage_Update_Clicked_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    page.Save_Clicked(null, null);
+            // Act
+            page.Update_Clicked(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void MonsterUpdatePage_Update_Clicked_Null_Image_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.ImageURI = null;
+
+            // Act
+            page.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void MonsterUpdatePage_Update_Clicked_WhiteSpace_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = " ";
+
+            // Act
+            page.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void MonsterUpdatePage_Update_Clicked_Null_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = null;
+
+            // Act
+            page.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void MonsterUpdatePage_OnBackButtonPressed_Valid_Should_Pass()
