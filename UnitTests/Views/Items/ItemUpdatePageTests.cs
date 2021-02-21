@@ -214,7 +214,28 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-       
+
+        [Test]
+        public void ItemUpdatePage_DamageValueChanged_Valid_Data_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            var ViewModel = new GenericViewModel<ItemModel>(data);
+            ViewModel.Data.Type = ItemModelEnum.Knife;
+            var NewPage = new ItemUpdatePage(ViewModel);
+
+            Button button = new Button();
+            button.Text = "-";
+
+            // Act
+            NewPage.DamageValueChanged(button, System.EventArgs.Empty);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
 
         [Test]
         public void ItemUpdatePage_OnBackButtonPressed_Valid_Should_Pass()
