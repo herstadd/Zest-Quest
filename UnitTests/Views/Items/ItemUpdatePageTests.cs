@@ -267,6 +267,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemUpdatePage_ValueChange_Invalid_Level_Value_1_To_0_Should_Return_1()
+        {
+            // Arrange
+            var CurrentLevelValue = 1;
+
+            // Act
+            var Result = page.ValueChange("-", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, Result); // Got to here, so it happened...
+        }
+
+        [Test]
         public void ItemUpdatePage_OnBackButtonPressed_Valid_Should_Pass()
         {
             // Arrange
