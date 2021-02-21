@@ -122,21 +122,25 @@ namespace Game.Views
                 return;
             }
 
-            // If the Location in the data box is just white space then data won't save 
-            if (LocationPicker.SelectedIndex == -1)
-            {
-                // pop message appears when name box is just white spaces
-                await DisplayAlert("Alert", "Location is Empty!", "OK");
-                return;
-            }
+            //Comment out bellow if condititions cause 
+            //It is Not possible to leave Location and Attribute blank and save the update because
+            // Description alart pop-up (needs to set type to get Description and type and Attribtuion)
 
-            // If the Attribute in the data box is just white space then data won't save 
-            if (AttributePicker.SelectedIndex == -1)
-            {
-                // pop message appears when name box is just white spaces
-                await DisplayAlert("Alert", "Attribute is Empty!", "OK");
-                return;
-            }
+            //If the Location in the data box is just white space then data won't save 
+            //if (LocationPicker.SelectedIndex == -1)
+            //{
+            //    pop message appears when name box is just white spaces
+            //   await DisplayAlert("Alert", "Location is Empty!", "OK");
+            //    return;
+            //}
+
+            //If the Attribute in the data box is just white space then data won't save 
+            //if (AttributePicker.SelectedIndex == -1)
+            //{
+            //    pop message appears when name box is just white spaces
+            //   await DisplayAlert("Alert", "Attribute is Empty!", "OK");
+            //    return;
+            //}
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
