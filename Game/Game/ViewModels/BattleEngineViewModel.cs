@@ -42,11 +42,26 @@ namespace Game.ViewModels
 
         #endregion Singleton
 
+        #region BattleEngineSelection
         // The Battle Engine
-        public IBattleEngineInterface Engine = new Engine.EngineKoenig.BattleEngine();
+        public IBattleEngineInterface EngineKoenig = new Engine.EngineKoenig.BattleEngine();
 
         // Auto Battle Engine (used for scneario testing)
-        public IAutoBattleInterface AutoBattleEngine = new Engine.EngineKoenig.AutoBattleEngine();
+        public IAutoBattleInterface AutoBattleEngineKoenig = new Engine.EngineKoenig.AutoBattleEngine();
+
+        // The Battle Engine
+        public IBattleEngineInterface EngineGame = new Engine.EngineGame.BattleEngine();
+
+        // Auto Battle Engine (used for scneario testing)
+        public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineGame.AutoBattleEngine();
+
+        // Set the Battle Engine
+        public IBattleEngineInterface Engine;
+
+        // Auto Battle Engine (used for scneario testing)
+        public IAutoBattleInterface AutoBattleEngine;
+
+        #endregion BattleEngineSelection
 
         // Hold the Proposed List of Characters for the Battle to Use
         public ObservableCollection<CharacterModel> PartyCharacterList { get; set; } = new ObservableCollection<CharacterModel>();
@@ -65,6 +80,29 @@ namespace Game.ViewModels
         /// </summary>
         public BattleEngineViewModel()
         {
+            SetBattleEngineToGame();
+        }
+
+        /// <summary>
+        /// Set the Battle Engine to the Game Version for actual use
+        /// </summary>
+        /// <returns></returns>
+        public bool SetBattleEngineToGame()
+        {
+            Engine = EngineGame;
+            AutoBattleEngine = AutoBattleEngineGame;
+            return true;
+        }
+
+        /// <summary>
+        /// Set the Battle Engine to the Koenig Version for Testing
+        /// </summary>
+        /// <returns></returns>
+        public bool SetBattleEngineToKoenig()
+        {
+            Engine = EngineKoenig;
+            AutoBattleEngine = AutoBattleEngineKoenig;
+            return true;
         }
 
         #endregion Constructor
