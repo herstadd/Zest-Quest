@@ -100,6 +100,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemUpdatePage_Save_Clicked_Valid_Data_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            var ViewModel = new GenericViewModel<ItemModel>(data);
+            ViewModel.Data.Type = ItemModelEnum.Bandana;
+            var NewPage = new ItemUpdatePage(ViewModel);
+
+
+            // Act
+            NewPage.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void ItemUpdatePage_Save_Clicked_Null_Image_Should_Pass()
         {
             // Arrange
