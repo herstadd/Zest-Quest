@@ -113,6 +113,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void MonsterUpdatePage_Update_Clicked_WhiteSpace_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = " ";
+
+            // Act
+            page.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void MonsterUpdatePage_Update_Clicked_Null_Name_Should_Pass()
         {
             // Arrange
