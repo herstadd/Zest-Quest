@@ -195,6 +195,28 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemUpdatePage_ValueValueChanged_Valid_Data_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            var ViewModel = new GenericViewModel<ItemModel>(data);
+            ViewModel.Data.Type = ItemModelEnum.Knife;
+            var NewPage = new ItemUpdatePage(ViewModel);
+
+            Button button = new Button();
+            button.Text = "-";
+
+            // Act
+            NewPage.ValueValueChanged(button, System.EventArgs.Empty);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+       
+
+        [Test]
         public void ItemUpdatePage_OnBackButtonPressed_Valid_Should_Pass()
         {
             // Arrange
