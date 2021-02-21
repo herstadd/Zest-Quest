@@ -68,6 +68,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void MonstreCreatePage_CheckNullEntry_Null_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = null;
+
+            // Act
+            page.CheckNullEntry(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void MonsterCreatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
