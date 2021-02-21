@@ -252,6 +252,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemUpdatePage_ValueChange_Invalid_Attribute_Value_9_To_10_Should_Return_9()
+        {
+            // Arrange
+            var CurrentLevelValue = 9;
+
+            // Act
+            var Result = page.ValueChange("+", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(9, Result); // Got to here, so it happened...
+        }
+
+        [Test]
         public void ItemUpdatePage_ValueChange_Valid_Level_Value_8_To_7_Should_Return_7()
         {
             // Arrange
