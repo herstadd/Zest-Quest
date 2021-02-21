@@ -127,6 +127,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void MonsterCreatePage_Save_Clicked_WhiteSpace_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = " ";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void MonsterCreatePage_OnBackButtonPressed_Valid_Should_Pass()
         {
             // Arrange
