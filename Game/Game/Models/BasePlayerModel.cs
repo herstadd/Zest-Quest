@@ -746,7 +746,7 @@ namespace Game.Models
         /// <returns></returns>
         public ItemModel GetItem(string itemString)
         {
-            return ItemIndexViewModel.Instance.GetItem(itemString, true);
+            return ItemIndexViewModel.Instance.GetItem(itemString);
         }
 
         // Drop All Items
@@ -817,7 +817,7 @@ namespace Game.Models
         }
 
         // Get the ItemModel at a known string location (head, foot etc.)
-        public ItemModel GetItemByLocation(ItemLocationEnum itemLocation)
+        public ItemModel GetItemByLocation(ItemLocationEnum itemLocation, bool UpdatePage=false)
         {
             switch (itemLocation)
             {
