@@ -132,5 +132,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Evil Crock pot", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_EvilCanOpener_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterTypeEnum.EvilCanOpener.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Evil Can Opener", result);
+        }
     }
 }
