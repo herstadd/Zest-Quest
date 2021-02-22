@@ -91,54 +91,19 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            //var test = (sender as Picker).SelectedItem;
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
-
-            // If the Name in the data box is empty then data won't save 
-            //if (ItemTypeEntry.SelectedIndex == -1)
-            //Picker picker = sender;
-            //if ((Button)sender == null)
-            //{
-            //    // pop message appears when name box is empty
-            //    await DisplayAlert("Alert", "Type is Empty!", "OK");
-            //    return;
-            //}
-
-            // If the Description in the data box is empty changes the Entry background color
+            
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
-
-            // If the Description in the data box is just white spaces changes the Entry background color
-            //if (string.IsNullOrWhiteSpace(ViewModel.Data.Description))
-            //{
-            //    // pop message appears when name box is empty
-            //    await DisplayAlert("Alert", "Description is Empty!", "OK");
-            //    return;
-            //}
-
-            //// If the Location in the data box is just white space then data won't save 
-            //if (LocationPicker.SelectedIndex == -1)
-            //{
-            //    // pop message appears when name box is just white spaces
-            //    await DisplayAlert("Alert", "Location is Empty!", "OK");
-            //    return;
-            //}
-
-            //// If the Attribute in the data box is just white space then data won't save 
-            //if (AttributePicker.SelectedIndex == -1)
-            //{
-            //    // pop message appears when name box is just white spaces
-            //    await DisplayAlert("Alert", "Attribute is Empty!", "OK");
-            //    return;
-            //}
+    
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
