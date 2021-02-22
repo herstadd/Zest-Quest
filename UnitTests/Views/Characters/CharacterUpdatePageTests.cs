@@ -362,6 +362,27 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterUpdatePage_ClickedOnItemSelection_default_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.Text = "Confirm";
+            button.BindingContext = "";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.ClickedOnItemSelection(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()
