@@ -217,6 +217,24 @@ namespace UnitTests.Views
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void CharacterReadPage_CallProperImages_Location_Feet_Valid_Should_Pass()
+        {
+            // Arrange
+            var NewCharacterModel = new CharacterModel();
+            NewCharacterModel.Feet = "FlipFlop";
+            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>(NewCharacterModel);
+            CharacterReadPage ReadPage = new CharacterReadPage(data);
+
+            // Act
+            var result = ReadPage.CallProperImages(data, "Feet");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
         //[Test]
         //public void CharacterReadPage_GetItemToDisplay_Valid_Should_Pass()
         //{
