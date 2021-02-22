@@ -119,6 +119,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Refrigerator", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Pan_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Pan.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Pan", result);
+        }
+
 
     }
 }
