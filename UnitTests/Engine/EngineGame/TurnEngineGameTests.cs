@@ -469,6 +469,32 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion RemoveIfDeadTest
 
+        #region TargetDiedTest
+
+        [Test]
+        public void TurnEngine_TargetDied_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.TargetDied(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion TargetDiedTest
+
+
     }
 
 
