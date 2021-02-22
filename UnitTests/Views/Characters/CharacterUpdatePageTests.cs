@@ -388,7 +388,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Head";
 
             var data = new CharacterModel();
@@ -409,7 +408,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Necklass";
 
             var data = new CharacterModel();
@@ -430,7 +428,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "PrimaryHand";
 
             var data = new CharacterModel();
@@ -451,7 +448,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "OffHand";
 
             var data = new CharacterModel();
@@ -472,7 +468,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Feet";
 
             var data = new CharacterModel();
@@ -493,7 +488,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "RightFinger";
 
             var data = new CharacterModel();
@@ -514,7 +508,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "LeftFinger";
 
             var data = new CharacterModel();
@@ -535,7 +528,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "";
 
             var data = new CharacterModel();
@@ -617,6 +609,66 @@ namespace UnitTests.Views
             // Arrange
             Button button = new Button();
             button.BindingContext = "Timer";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_AddItemButtonClicked_Selected_Refrigerator_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Refrigerator";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_AddItemButtonClicked_Selected_CuttingBoard_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "CuttingBoard";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_AddItemButtonClicked_Selected_WookieBoots_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "WookieBoots";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
