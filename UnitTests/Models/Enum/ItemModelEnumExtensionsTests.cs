@@ -105,6 +105,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Timer", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Refrigerator_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Refrigerator.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Refrigerator", result);
+        }
+
 
     }
 }
