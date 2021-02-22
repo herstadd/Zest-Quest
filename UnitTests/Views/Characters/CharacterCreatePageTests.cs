@@ -620,6 +620,25 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_Pan_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Pan";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
