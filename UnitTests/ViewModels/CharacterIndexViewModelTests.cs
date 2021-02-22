@@ -298,5 +298,19 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.IsTrue(result < 51);
         }
+
+        [Test]
+        public void CharacterIndexViewModel_GetMaxHealth_Unknown_MaxHealth_Equal_0_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetMaxHealth("Unknown");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
