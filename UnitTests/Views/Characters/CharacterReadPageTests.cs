@@ -113,18 +113,18 @@ namespace UnitTests.Views
         public void CharacterReadPage_CallProperImages_Location_Head_Valid_Should_Pass()
         {
             // Arrange
-            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>();
-            data.Data = new CharacterModel();
-            data.Data.Head = "ChefHat";
+            var NewCharacterModel = new CharacterModel();
+            NewCharacterModel.Head = "ChefHat";
+            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>(NewCharacterModel);
+            CharacterReadPage ReadPage = new CharacterReadPage(data);
 
             // Act
-            CharacterReadPage ReadPage = new CharacterReadPage(data);
-            var result = CallProperImages(data, "Head");
+            var result = ReadPage.CallProperImages(data, "Head");
 
             // Reset
 
             // Assert
-            Assert.Equals(result, true);
+            Assert.IsTrue(result);
         }
 
         //[Test]
