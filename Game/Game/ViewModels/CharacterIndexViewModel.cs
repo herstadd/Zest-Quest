@@ -189,10 +189,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultCharacter(target);
 
-            if (DefaultCharacter == null)
-            {
-                return "";
-            }
+            // DeafaultCharacter can never be null
+            //if (DefaultCharacter == null)
+            //{
+            //    return "";
+            //}
 
             return DefaultCharacter.Description;
         }
@@ -206,10 +207,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultCharacter(target);
 
-            if (DefaultCharacter == null)
-            {
-                return "item.png";
-            }
+            // DeafaultCharacter can never be null
+            //if (DefaultCharacter == null)
+            //{
+            //    return "item.png";
+            //}
 
             return DefaultCharacter.ImageURI;
         }
@@ -223,10 +225,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultCharacter(target);
 
-            if (DefaultCharacter == null)
-            {
-                return 1;
-            }
+            // DeafaultCharacter can never be null
+            //if (DefaultCharacter == null)
+            //{
+            //    return 1;
+            //}
 
             return DefaultCharacter.Level;
         }
@@ -241,10 +244,12 @@ namespace Game.ViewModels
         {
             InitializeDefaultCharacter(target);
 
-            if (DefaultCharacter == null)
-            {
-                return "No Item";
-            }
+            // DeafaultCharacter can never be null
+            //if (DefaultCharacter == null)
+            //{
+            //    return "No Item";
+            //}
+
             switch(ItemLocation)
             {
                 case "Head":
