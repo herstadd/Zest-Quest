@@ -249,6 +249,24 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_TypeChanged_No_Items_Should_Pass()
+        {
+            // Arrange
+            Picker picker = new Picker();
+            picker.SelectedItem = "SousChef"; 
+            
+            var NewPage = new CharacterCreatePage();
+
+            // Act
+            NewPage.TypeChanged(picker, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
