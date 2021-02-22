@@ -256,5 +256,19 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual(2, countAfter); // Count of 0 for the load was skipped
         }
+
+        [Test]
+        public void CharacterIndexViewModel_GetItemForLocation_Unexisting_Location_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetItemForLocation("HeadChef", "Test");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("No Item", result); // Count of 0 for the load was skipped
+        }
     }
 }

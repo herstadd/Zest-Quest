@@ -1399,6 +1399,7 @@ namespace UnitTests.Engine.EngineBase
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
+            CharacterPlayer.CurrentHealth = 30;
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
