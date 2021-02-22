@@ -266,5 +266,32 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion SelectCharacterToAttackTest
 
+        #region SelectMonsterToAttackTest
+
+        [Test]
+        public void TurnEngine_SelectMonsterToAttack_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.SelectMonsterToAttack();
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion SelectMonsterToAttackTest
+
     }
+
+
 }
