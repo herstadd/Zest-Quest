@@ -215,5 +215,31 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion AttackTest
 
+
+        #region AttackChoiceTest
+
+        [Test]
+        public void TurnEngine_AttackChoice_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.AttackChoice(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion AttackChoiceTest
+
     }
 }
