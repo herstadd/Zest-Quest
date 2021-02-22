@@ -490,18 +490,21 @@ namespace UnitTests.Views
         #endregion ButtonUpDown
 
         #region UpdateHealth
-        //[Test]
-        //public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    // Act
-        //    page.UpdateHealthValue();
+        [Test]
+        public void CharacterUpdatePage_UpdateHealthValue_Valid_Default_Should_Pass()
+        {
+            // Arrange
+            var NewButton = new Button();
+            NewButton.Text = "5";
 
-        //    // Reset
+            // Act
+            page.MaxHealthValueChanged(NewButton, null);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         #endregion UpdateHealth
 
