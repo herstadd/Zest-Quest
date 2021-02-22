@@ -163,7 +163,7 @@ namespace Game.ViewModels
         /// Initializes the default monster based on the target passed in
         /// </summary>
         /// <param name="target"></param>
-        private void InitializeDefaultMonster(string target)
+        public void InitializeDefaultMonster(string target)
         {
             MonsterTypeEnum monster = MonsterJobEnumHelper.ConvertStringToEnum(target);
 
