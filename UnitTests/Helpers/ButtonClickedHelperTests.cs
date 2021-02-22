@@ -19,5 +19,17 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(2, result);
         }
+
+        [Test]
+        public void ButtonClicked_Minus_IsNotMaxHealth_Should_Return_1()
+        {
+            // Arrange
+
+            // Act
+            var result = ButtonClickedHelper.ValueChange("-", 1, false);
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
     }
 }
