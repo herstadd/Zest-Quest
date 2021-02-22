@@ -119,6 +119,7 @@ namespace Game.Models
             get
             {
                 var myList = Enum.GetNames(typeof(ItemModelEnum)).ToList().Where(m => m.ToString().Equals("Unknown") == false).ToList();
+                myList.Remove("None");
                 return myList;
             }
         }
