@@ -76,5 +76,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Sushi Chef", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_CatChef_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.CatChef.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Cat Chef", result);
+        }
     }
 }
