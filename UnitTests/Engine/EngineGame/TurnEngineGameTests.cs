@@ -317,6 +317,30 @@ namespace UnitTests.Engine.EngineGame
 
         #endregion TurnAsAttackTest
 
+        #region BattleSettingsOverrideTest
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverride_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.BattleSettingsOverride(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion BattleSettingsOverrideTest
 
     }
 
