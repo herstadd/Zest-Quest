@@ -444,6 +444,31 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion CalculateExperienceTest
 
+        #region RemoveIfDeadTest
+
+        [Test]
+        public void TurnEngine_RemoveIfDead_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.RemoveIfDead(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion RemoveIfDeadTest
+
     }
 
 
