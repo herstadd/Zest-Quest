@@ -231,6 +231,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Crocs", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_WookieBoots_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.WookieBoots.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("WookieBoots", result);
+        }
+
 
     }
 }
