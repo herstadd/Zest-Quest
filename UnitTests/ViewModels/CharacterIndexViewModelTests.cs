@@ -270,5 +270,47 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual("No Item", result); // Count of 0 for the load was skipped
         }
+
+        [Test]
+        public void CharacterIndexViewModel_GetMaxHealth_SchoolChef_MaxHealth_GreaterThan_4_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetMaxHealth("SchoolChef");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result > 4);
+        }
+
+        [Test]
+        public void CharacterIndexViewModel_GetMaxHealth_SchoolChef_MaxHealth_lessThan_51_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetMaxHealth("SchoolChef");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result < 51);
+        }
+
+        [Test]
+        public void CharacterIndexViewModel_GetMaxHealth_Unknown_MaxHealth_Equal_0_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetMaxHealth("Unknown");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
     }
 }
