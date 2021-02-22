@@ -118,9 +118,11 @@ namespace UnitTests.Views
         public void ItemCreatePage_Type_Changed_Default_Should_Pass()
         {
             // Arrange
+            Picker picker = new Picker();
+            picker.SelectedItem = ItemModelEnum.Apron;
 
             // Act
-            page.Type_Changed(null, null);
+            page.Type_Changed(picker, EventArgs.Empty);
 
             // Reset
 
