@@ -74,5 +74,30 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion AttackTest
 
+        #region DetermineActionChoiceTest
+
+        [Test]
+        public void TurnEngine_DetermineActionChoice_should_throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.DetermineActionChoice(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion DetermineActionChoiceTest
+
     }
 }
