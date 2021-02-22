@@ -232,6 +232,21 @@ namespace UnitTests.Views
             Assert.AreEqual(0, Result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_ValueChange_Invalid_Attribute_Value_9_To_10_Should_Return_9()
+        {
+            // Arrange
+            var CurrentLevelValue = 9;
+
+            // Act
+            var Result = page.ValueChange("+", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(9, Result); // Got to here, so it happened...
+        }
+
 
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
