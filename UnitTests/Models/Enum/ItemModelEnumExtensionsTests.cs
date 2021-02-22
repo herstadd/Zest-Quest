@@ -203,6 +203,20 @@ namespace UnitTests.Models
             Assert.AreEqual("OnionRing", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_FlipFlop_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.FlipFlop.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("FlipFlop", result);
+        }
+
 
     }
 }
