@@ -62,5 +62,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Evil Blender", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_EvilDishwasher_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterTypeEnum.EvilDishwasher.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Evil Dishwasher", result);
+        }
     }
 }
