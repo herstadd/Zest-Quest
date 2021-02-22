@@ -115,71 +115,80 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldAttack = 0.0;
-        //    double newAttack = 1.0;
+            page = new CharacterCreatePage();
+            double oldAttack = 0.0;
+            double newAttack = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldAttack, newAttack);
+            var args = new ValueChangedEventArgs(oldAttack, newAttack);
 
-        //    // Act
-        //    page.Attack_OnStepperValueChanged(null, args);
+            Button button = new Button();
+            button.Text = "+";
 
-        //    // Reset
+            // Act
+            page.AttackValueChanged(button, args);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
 
-        //[Test]
-        //public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // ArSpeed
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldSpeed = 0.0;
-        //    double newSpeed = 1.0;
+        [Test]
+        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // ArSpeed
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
+            page = new CharacterCreatePage();
+            double oldSpeed = 0.0;
+            double newSpeed = 1.0;
 
-        //    // Act
-        //    page.Speed_OnStepperValueChanged(null, args);
+            var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
 
-        //    // Reset
+            Button button = new Button();
+            button.Text = "+";
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Act
+            page.SpeedValueChanged(button, args);
 
-        //[Test]
-        //public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+            // Reset
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    double oldDefense = 0.0;
-        //    double newDefense = 1.0;
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //    var args = new ValueChangedEventArgs(oldDefense, newDefense);
+        [Test]
+        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    // Act
-        //    page.Defense_OnStepperValueChanged(null, args);
+            page = new CharacterCreatePage();
+            double oldDefense = 0.0;
+            double newDefense = 1.0;
 
-        //    // Reset
+            var args = new ValueChangedEventArgs(oldDefense, newDefense);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            Button button = new Button();
+            button.Text = "+";
+
+            // Act
+            page.DefenseValueChanged(button, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()

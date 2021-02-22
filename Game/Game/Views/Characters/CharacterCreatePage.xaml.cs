@@ -321,7 +321,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ClickedOnItemSelection(object sender, EventArgs e)
+        public void ClickedOnItemSelection(object sender, EventArgs e)
         {
             if((sender as Button).Text.Equals("Confirm"))
             {
@@ -368,7 +368,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ClickedOnItem(object sender, EventArgs e)
+        public void ClickedOnItem(object sender, EventArgs e)
         {
             ItemConfirmBox.IsVisible = true;
 
@@ -400,7 +400,7 @@ namespace Game.Views
             }
         }
 
-        private void AddItemButtonClicked(object sender, EventArgs e)
+        public void AddItemButtonClicked(object sender, EventArgs e)
         {
             string selected = (string)NewItemPicker.SelectedItem;
             if (selected is null)
