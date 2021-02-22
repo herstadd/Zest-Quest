@@ -164,5 +164,30 @@ namespace UnitTests.Engine.EngineGame
             }
         }
         #endregion ChooseToUseAbilityTest
+
+        #region UseAbilityTest
+
+        [Test]
+        public void TurnEngine_UseAbility_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.UseAbility(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion UseAbilityTest
     }
 }
