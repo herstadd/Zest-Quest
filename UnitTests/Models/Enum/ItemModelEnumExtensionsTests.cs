@@ -21,6 +21,20 @@ namespace UnitTests.Models
             Assert.AreEqual("None", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Apron_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Apron.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Apron", result);
+        }
+
 
     }
 }
