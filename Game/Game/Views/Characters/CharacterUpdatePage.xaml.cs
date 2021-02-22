@@ -515,7 +515,7 @@ namespace Game.Views
 
         public void AddItemButtonClicked(object sender, EventArgs e)
         {
-            string selected = (string)NewItemPicker.SelectedItem;
+            string selected = (string)((Button)sender).BindingContext;
             if (selected is null)
             {
                 return;
@@ -598,6 +598,11 @@ namespace Game.Views
                 default:
                     break;
             }
+        }
+        public void ItemSelected(object sender, EventArgs e)
+        {
+            string picked = (string)((Picker)sender).SelectedItem;
+            AddItemButton.BindingContext = picked;
         }
     }
 }
