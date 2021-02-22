@@ -573,6 +573,33 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion GetRandomMonsterItemDropsTest
 
+        #region DetermineCriticalMissProblemTest
+
+        [Test]
+        public void TurnEngine_DetermineCriticalMissProblem_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.DetermineCriticalMissProblem(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion DetermineCriticalMissProblemTest
+
+
+
     }
 
 
