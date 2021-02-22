@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Max Health", result);
+            Assert.AreEqual("MaxHealth", result);
         }
 
         [Test]
