@@ -53,7 +53,8 @@ namespace Game.ViewModels
         public IBattleEngineInterface EngineGame = new Engine.EngineGame.BattleEngine();
 
         // Auto Battle Engine (used for scneario testing)
-        public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineGame.AutoBattleEngine();
+        //public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineGame.AutoBattleEngine();
+        public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineKoenig.AutoBattleEngine();
 
         // Set the Battle Engine
         public IBattleEngineInterface Engine;
