@@ -217,6 +217,22 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_ValueChange_Attribute_Value_To_Less_Than_Zero_Should_Return_Zero()
+        {
+            // Arrange
+            var NewAttributeValue = -1;
+
+            // Act
+            var Result = page.ValueChange("-", NewAttributeValue, false);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, Result); // Got to here, so it happened...
+        }
+
+
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
         //{
