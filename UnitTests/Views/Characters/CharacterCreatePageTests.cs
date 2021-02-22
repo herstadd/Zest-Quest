@@ -190,6 +190,46 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_Level_OnStepperDefenseChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+
+            page = new CharacterCreatePage();
+            int oldLevel = 1;
+            int newLevel = 2;
+
+            var args = new ValueChangedEventArgs(oldLevel, newLevel);
+
+            Button button = new Button();
+            button.Text = "+";
+
+            // Act
+            page.LevelValueChanged(button, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_CheckNullEntry_Null_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = null;
+
+            // Act
+            page.CheckNullEntry(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
