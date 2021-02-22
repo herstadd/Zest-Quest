@@ -35,6 +35,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Apron", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Bandana_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Bandana.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Bandana", result);
+        }
+
 
     }
 }
