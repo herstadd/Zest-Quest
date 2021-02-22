@@ -709,6 +709,22 @@ namespace UnitTests.Models
             Assert.AreEqual(-1, result);
         }
 
+        [Test]
+        public void BasePlayerModel_GetSpeedJobBonus_SousChef_Should_Return_One()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SousChef;
+
+            // Act
+            var result = data.GetSpeedJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+
 
 
         [Test]
