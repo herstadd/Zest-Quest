@@ -181,6 +181,103 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_ValueValueChanged_Valid_Data_Should_Pass()
+        {
+            // Arrange         
+            var NewPage = new ItemCreatePage();
+
+            Button button = new Button();
+            button.Text = "-";
+
+            // Act
+            NewPage.ValueValueChanged(button, System.EventArgs.Empty);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemCreatePage_DamageValueChanged_Valid_Data_Should_Pass()
+        {
+            // Arrange          
+            var NewPage = new ItemCreatePage();
+
+            Button button = new Button();
+            button.Text = "-";
+
+            // Act
+            NewPage.DamageValueChanged(button, System.EventArgs.Empty);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemCreatePage_ValueChange_Attribute_Value_To_Less_Than_Zero_Should_Return_Zero()
+        {
+            // Arrange
+            var NewAttributeValue = -1;
+
+            // Act
+            var Result = page.ValueChange("-", NewAttributeValue, false);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, Result); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemCreatePage_ValueChange_Invalid_Attribute_Value_9_To_10_Should_Return_9()
+        {
+            // Arrange
+            var CurrentLevelValue = 9;
+
+            // Act
+            var Result = page.ValueChange("+", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(9, Result); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemCreatePage_ValueChange_Valid_Level_Value_8_To_7_Should_Return_7()
+        {
+            // Arrange
+            var CurrentLevelValue = 8;
+
+            // Act
+            var Result = page.ValueChange("-", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(7, Result); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ItemCreatePage_ValueChange_Invalid_Level_Value_1_To_0_Should_Return_1()
+        {
+            // Arrange
+            var CurrentLevelValue = 1;
+
+            // Act
+            var Result = page.ValueChange("-", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, Result); // Got to here, so it happened...
+        }
+
+
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
         //{

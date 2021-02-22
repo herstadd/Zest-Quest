@@ -161,7 +161,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void TypeChanged(object sender, EventArgs e)
         {
-            var selected = (string)JobPicker.SelectedItem;
+            var selected = (string)((Picker)sender).SelectedItem;
             List<string> locations = ItemLocationEnumHelper.GetAllListItems;
             int AnyItems = 0;
 
