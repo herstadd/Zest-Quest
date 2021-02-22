@@ -133,6 +133,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Pan", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Knife_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Knife.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Knife", result);
+        }
+
 
     }
 }
