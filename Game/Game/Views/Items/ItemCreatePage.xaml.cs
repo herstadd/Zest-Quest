@@ -159,7 +159,7 @@ namespace Game.Views
         /// <param name="num"></param>
         /// <param name="IsLevel"></param>
         /// <returns></returns>
-        private int ValueChange(String ButtonText, int num, bool IsLevel)
+        public int ValueChange(String ButtonText, int num, bool IsLevel)
         {
             if (ButtonText.Equals("-"))
             {
