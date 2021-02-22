@@ -95,6 +95,21 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterReadPage_CallProperImages_Location_Unknown_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CallProperImages(page.ViewModel, "Unknown");
+
+            // Reset
+
+            // Assert
+            Assert.Equals(result, true);
+        }
+       
+
         //[Test]
         //public void CharacterReadPage_GetItemToDisplay_Valid_Should_Pass()
         //{
