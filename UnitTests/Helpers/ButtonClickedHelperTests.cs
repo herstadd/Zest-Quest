@@ -31,5 +31,17 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(1, result);
         }
+
+        [Test]
+        public void ButtonClicked_Minus_IsMaxHealth_Should_Return_50()
+        {
+            // Arrange
+
+            // Act
+            var result = ButtonClickedHelper.ValueChange("-", 1, true, 50);
+
+            // Assert
+            Assert.AreEqual(50, result);
+        }
     }
 }
