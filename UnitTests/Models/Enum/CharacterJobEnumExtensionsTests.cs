@@ -48,5 +48,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Sous Chef", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_SchoolChef_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.SchoolChef.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("School Chef", result);
+        }
     }
 }
