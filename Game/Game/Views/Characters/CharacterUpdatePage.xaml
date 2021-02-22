@@ -314,10 +314,12 @@
                     </Grid.ColumnDefinitions>
                     <Picker Grid.Row="0" Grid.Column="0"
                         ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
-                        x:Name="NewItemPicker"/>
+                        x:Name="NewItemPicker"
+                        SelectedIndexChanged="ItemSelected"/>
                     <Button Grid.Row="0" Grid.Column="1" 
                         Text="Add Item"
-                        Clicked="AddItemButtonClicked"/>
+                        Clicked="AddItemButtonClicked"
+                        x:Name="AddItemButton"/>
                 </Grid>
                 
                 <StackLayout 
