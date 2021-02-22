@@ -419,6 +419,31 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion CalculateAttackStatusTest
 
+        #region CalculateExperienceTest
+
+        [Test]
+        public void TurnEngine_CalculateExperience_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.CalculateExperience(new PlayerInfoModel(), new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion CalculateExperienceTest
+
     }
 
 
