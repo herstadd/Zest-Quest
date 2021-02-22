@@ -388,7 +388,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Head";
 
             var data = new CharacterModel();
@@ -409,7 +408,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Necklass";
 
             var data = new CharacterModel();
@@ -430,7 +428,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "PrimaryHand";
 
             var data = new CharacterModel();
@@ -451,7 +448,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "OffHand";
 
             var data = new CharacterModel();
@@ -472,7 +468,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "Feet";
 
             var data = new CharacterModel();
@@ -493,7 +488,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "RightFinger";
 
             var data = new CharacterModel();
@@ -514,7 +508,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "LeftFinger";
 
             var data = new CharacterModel();
@@ -535,7 +528,6 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            //button.Text = "Confirm";
             button.BindingContext = "";
 
             var data = new CharacterModel();
