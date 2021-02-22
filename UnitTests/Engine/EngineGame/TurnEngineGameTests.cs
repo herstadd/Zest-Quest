@@ -394,6 +394,31 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion ApplyDamageTest
 
+        #region CalculateAttackStatusTest
+
+        [Test]
+        public void TurnEngine_CalculateAttackStatus_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.CalculateAttackStatus(new PlayerInfoModel(), new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion CalculateAttackStatusTest
+
     }
 
 
