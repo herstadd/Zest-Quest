@@ -188,27 +188,21 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterUpdatePage_Level_Changed_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterUpdatePage_Level_Changed_Default_Should_Pass()
+        {
+            // Arrange
+            var NewButton = new Button();
+            NewButton.Text = "5";
 
-        //    page = new CharacterUpdatePage(ViewModel);
-        //    double oldDamage = 0.0;
-        //    double newDamage = 1.0;
+            // Act
+            page.LevelValueChanged(NewButton, null);
 
-        //    var args = new ValueChangedEventArgs(oldDamage, newDamage);
+            // Reset
 
-        //    // Act
-        //    page.Level_Changed(null, args);
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()
