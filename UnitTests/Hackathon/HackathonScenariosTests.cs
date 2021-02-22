@@ -83,74 +83,74 @@ namespace Scenario
 
         #region Scenario1
         [Test]
-        public async Task HackathonScenario_Scenario_1_Valid_Default_Should_Pass()
-        {
-            /* 
-            * Scenario Number:  
-            *      1
-            *      
-            * Description: 
-            *      Make a Character called Mike, who dies in the first round
-            * 
-            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      No Code changes requied 
-            * 
-            * Test Algrorithm:
-            *      Create Character named Mike
-            *      Set speed to -1 so he is really slow
-            *      Set Max health to 1 so he is weak
-            *      Set Current Health to 1 so he is weak
-            *  
-            *      Startup Battle
-            *      Run Auto Battle
-            * 
-            * Test Conditions:
-            *      Default condition is sufficient
-            * 
-            * Validation:
-            *      Verify Battle Returned True
-            *      Verify Mike is not in the Player List
-            *      Verify Round Count is 1
-            *  
-            */
+        //public async Task HackathonScenario_Scenario_1_Valid_Default_Should_Pass()
+        //{
+        //    /* 
+        //    * Scenario Number:  
+        //    *      1
+        //    *      
+        //    * Description: 
+        //    *      Make a Character called Mike, who dies in the first round
+        //    * 
+        //    * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+        //    *      No Code changes requied 
+        //    * 
+        //    * Test Algrorithm:
+        //    *      Create Character named Mike
+        //    *      Set speed to -1 so he is really slow
+        //    *      Set Max health to 1 so he is weak
+        //    *      Set Current Health to 1 so he is weak
+        //    *  
+        //    *      Startup Battle
+        //    *      Run Auto Battle
+        //    * 
+        //    * Test Conditions:
+        //    *      Default condition is sufficient
+        //    * 
+        //    * Validation:
+        //    *      Verify Battle Returned True
+        //    *      Verify Mike is not in the Player List
+        //    *      Verify Round Count is 1
+        //    *  
+        //    */
 
-            //Arrange
+        //    //Arrange
 
-            // Set Character Conditions
+        //    // Set Character Conditions
 
-            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+        //    EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
 
-            var CharacterPlayerMike = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = -1, // Will go last...
-                                Level = 1,
-                                CurrentHealth = 1,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                            });
+        //    var CharacterPlayerMike = new PlayerInfoModel(
+        //                    new CharacterModel
+        //                    {
+        //                        Speed = -1, // Will go last...
+        //                        Level = 1,
+        //                        CurrentHealth = 1,
+        //                        ExperienceTotal = 1,
+        //                        ExperienceRemaining = 1,
+        //                        Name = "Mike",
+        //                    });
 
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+        //    EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
-            // Set Monster Conditions
+        //    // Set Monster Conditions
 
-            // Auto Battle will add the monsters
+        //    // Auto Battle will add the monsters
 
-            // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+        //    // Monsters always hit
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
 
-            //Act
-            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+        //    //Act
+        //    var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
 
-            //Reset
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+        //    //Reset
+        //    EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
-            //Assert
-            Assert.AreEqual(true, result);
-            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Mike")));
-            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
-        }
+        //    //Assert
+        //    Assert.AreEqual(true, result);
+        //    Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Mike")));
+        //    Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
+        //}
         #endregion Scenario1
     }
 }
