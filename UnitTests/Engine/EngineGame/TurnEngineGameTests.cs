@@ -342,6 +342,32 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion BattleSettingsOverrideTest
 
+
+        #region BattleSettingsOverrideHitStatusEnumTest
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Hit);
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion BattleSettingsOverrideHitStatusEnumTest
+
     }
 
 
