@@ -163,6 +163,24 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_RangeValueChanged_Valid_Data_Should_Pass()
+        {
+            // Arrange            
+            var NewPage = new ItemCreatePage();
+
+            Button button = new Button();
+            button.Text = "+";
+
+            // Act
+            NewPage.RangeValueChanged(button, System.EventArgs.Empty);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
         //{
