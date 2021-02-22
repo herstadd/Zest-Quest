@@ -167,27 +167,26 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterUpdatePage(ViewModel);
-        //    double oldDamage = 0.0;
-        //    double newDamage = 1.0;
+            var NewPage = new CharacterUpdatePage(ViewModel);
 
-        //    var args = new ValueChangedEventArgs(oldDamage, newDamage);
+            var NewButton = new Button();
+            NewButton.Text = "5";
 
-        //    // Act
-        //    page.Speed_OnStepperValueChanged(null, args);
+            // Act
+            page.SpeedValueChanged(NewButton, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterUpdatePage_Level_Changed_Default_Should_Pass()
