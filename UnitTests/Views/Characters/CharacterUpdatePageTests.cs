@@ -198,9 +198,15 @@ namespace UnitTests.Views
         public void CharacterUpdatePage_Type_TypeChanged_Default_Should_Pass()
         {
             // Arrange
-  
+            Picker picker = new Picker();
+            picker.SelectedItem = "SousChef";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
             // Act
-            page.TypeChanged(null, null);
+            NewPage.TypeChanged(picker, null);
 
             // Reset
 
