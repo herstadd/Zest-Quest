@@ -76,6 +76,7 @@ namespace UnitTests.Models
             result.Attack = 6;
             result.Defense = 7;
             result.Speed = 8;
+            result.MaxHealth = 0;
 
             // Reset
 
@@ -109,7 +110,7 @@ namespace UnitTests.Models
 
             Assert.AreEqual(DifficultyEnum.Unknown, result.Difficulty);
 
-            Assert.AreEqual(CharacterJobEnum.Unknown, result.Job);
+            Assert.AreEqual(CharacterJobEnum.HeadChef, result.Job);
         }
 
         [Test]
