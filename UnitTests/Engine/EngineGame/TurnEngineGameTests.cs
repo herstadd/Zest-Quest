@@ -8,6 +8,7 @@ using Game.Helpers;
 using Game.ViewModels;
 using Game.Engine.EngineGame;
 using Game.Engine.EngineModels;
+using System;
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -47,6 +48,31 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
         #endregion Constructor
+
+        #region AttackTest
+
+        [Test]
+        public void TurnEngine_AttackTest_should_throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.TakeTurn(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)   
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion AttackTest
 
     }
 }
