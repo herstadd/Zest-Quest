@@ -8,19 +8,19 @@ namespace UnitTests.Helpers
 {
     [TestFixture]
     class CharacterJobEnumHelperTests
-    {
-        //[Test]
-        //public void CharacterJobEnumHelper_GetJobList_Should_Pass()
-        //{
-        //    // Arrange
+    { 
+        [Test]
+        public void CharacterJobEnumHelper_GetListItem__Valid_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = CharacterJobEnumHelper.GetJobList;
+            // Act
+            var result = CharacterJobEnumHelper.GetListItem;
 
-        //    // Assert
-        //    Assert.AreEqual(2,result.Count());
+            // Reset
 
-        //    // Assert
-        //}
+            // Assert
+            Assert.AreEqual(7, result.Count());
+        }
     }
 }
