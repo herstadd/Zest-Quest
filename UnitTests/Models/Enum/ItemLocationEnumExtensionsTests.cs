@@ -60,7 +60,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Primary Hand", result);
+            Assert.AreEqual("PrimaryHand", result);
         }
 
         [Test]
