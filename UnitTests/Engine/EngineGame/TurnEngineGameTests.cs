@@ -547,6 +547,32 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion RollToHitTargetTest
 
+        #region GetRandomMonsterItemDropsTest
+
+        [Test]
+        public void TurnEngine_GetRandomMonsterItemDrops_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+            var round = 2;        
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.GetRandomMonsterItemDrops(round);
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion GetRandomMonsterItemDropsTest
+
     }
 
 
