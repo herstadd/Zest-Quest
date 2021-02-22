@@ -63,6 +63,20 @@ namespace UnitTests.Models
             Assert.AreEqual("ChefHat", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_RoastedTurkeyHat_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.RoastedTurkeyHat.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("RoastedTurkeyHat", result);
+        }
+
 
     }
 }
