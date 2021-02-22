@@ -277,6 +277,20 @@ namespace UnitTests.Views
             Assert.AreEqual(1, Result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_CheckNullEntry_Null_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = null;
+
+            // Act
+            page.CheckNullEntry(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
