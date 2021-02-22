@@ -49,6 +49,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Bandana", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_ChefHat_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.ChefHat.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("ChefHat", result);
+        }
+
 
     }
 }
