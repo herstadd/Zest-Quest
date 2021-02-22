@@ -104,5 +104,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Evil Kitchen Sink", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_EvilRiceCooker_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterTypeEnum.EvilRiceCooker.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Evil Rice Cooker", result);
+        }
     }
 }
