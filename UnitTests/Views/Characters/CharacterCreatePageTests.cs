@@ -387,7 +387,7 @@ namespace UnitTests.Views
             // Arrange
             Button button = new Button();
             button.Text = "Confirm";
-            button.BindingContext = "Left";
+            button.BindingContext = "LeftFinger";
 
             var NewPage = new CharacterCreatePage();
 
