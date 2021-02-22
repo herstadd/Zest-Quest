@@ -286,6 +286,25 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_ClickedOnItemSelection_Necklass_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.Text = "Confirm";
+            button.BindingContext = "Necklass";
+
+            var NewPage = new CharacterCreatePage();
+
+            // Act
+            NewPage.ClickedOnItemSelection(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
