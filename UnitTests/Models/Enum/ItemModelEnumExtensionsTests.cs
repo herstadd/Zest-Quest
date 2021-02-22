@@ -217,6 +217,20 @@ namespace UnitTests.Models
             Assert.AreEqual("FlipFlop", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Crocs_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Crocs.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Crocs", result);
+        }
+
 
     }
 }
