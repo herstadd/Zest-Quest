@@ -21,32 +21,18 @@ namespace UnitTests.Models
             Assert.AreEqual("Player", result);
         }
 
-        //[Test]
-        //public void CharacterJobEnumExtensionsTests_Fighter_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterJobEnumExtensionsTests_HeadChef_ToMessage_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = CharacterJobEnum.Fighter.ToMessage();
+            // Act
+            var result = CharacterJobEnum.HeadChef.ToMessage();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual("Fighter", result);
-        //}
-
-        //[Test]
-        //public void CharacterJobEnumExtensionsTests_Cleric_Default_Should_Pass()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    var result = CharacterJobEnum.Cleric.ToMessage();
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreEqual("Cleric", result);
-        //}
+            // Assert
+            Assert.AreEqual("Head Chef", result);
+        }
     }
 }
