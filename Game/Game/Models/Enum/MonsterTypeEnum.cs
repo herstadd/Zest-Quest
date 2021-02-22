@@ -111,19 +111,6 @@ namespace Game.Models
     {
         /// <summary>
         /// Returns a list of strings of the enum for Attribute
-        /// Removes the attributes that are not changable by Items such as Unknown
-        /// </summary>
-        public static List<string> GetListItem
-        {
-            get
-            {
-                var myList = Enum.GetNames(typeof(MonsterTypeEnum)).ToList();
-                return myList;
-            }
-        }
-
-        /// <summary>
-        /// Returns a list of strings of the enum for Attribute
         /// Removes the unknown
         /// </summary>
         public static List<string> GetListMonster
