@@ -114,6 +114,30 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, Result);
         }
+
+        [Test]
+        public void TurnEngine_MoveAsTurn_Monster_PlayerTypeEnum_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+            PlayerInfoModel player = new PlayerInfoModel();
+            player.PlayerType = PlayerTypeEnum.Monster;
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.MoveAsTurn(player);
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
         #endregion MoveAsTurnTest
 
     }
