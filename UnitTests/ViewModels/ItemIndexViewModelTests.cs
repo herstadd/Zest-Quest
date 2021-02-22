@@ -670,5 +670,22 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreNotEqual(null, result);  // Update returned Pass
         }
+
+        [Test]
+        public void ItemIndexViewModel_GetValues_Invalid_Command_Should_Return_Zero()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetValues("Bandana", "InvalidCommand");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result);  // Update returned Pass
+        }
+
+        // GeValues(string item, string command)
     }
+
 }
