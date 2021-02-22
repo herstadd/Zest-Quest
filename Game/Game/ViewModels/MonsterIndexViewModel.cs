@@ -189,10 +189,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultMonster(monster);
 
-            if (DefaultMonster == null)
-            {
-                return "";
-            }
+            // Can never become null
+            //if (DefaultMonster == null)
+            //{
+            //    return "";
+            //}
 
             return DefaultMonster.Description;
         }
@@ -206,10 +207,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultMonster(monster);
 
-            if (DefaultMonster == null)
-            {
-                return "item.png";
-            }
+            // Can never become null
+            //if (DefaultMonster == null)
+            //{
+            //    return "item.png";
+            //}
 
             return DefaultMonster.ImageURI;
         }
@@ -223,10 +225,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultMonster(monster);
 
-            if (DefaultMonster == null)
-            {
-                return ItemModelEnum.Unknown;
-            }
+            // Can never become null
+            //if (DefaultMonster == null)
+            //{
+            //    return ItemModelEnum.Unknown;
+            //}
 
             return DefaultMonster.UniqueDrop;
         }
@@ -240,10 +243,11 @@ namespace Game.ViewModels
         {
             InitializeDefaultMonster(monster);
 
-            if (DefaultMonster == null)
-            {
-                return "Standard";
-            }
+            // Can never become null
+            //if (DefaultMonster == null)
+            //{
+            //    return "Standard";
+            //}
 
             return DefaultMonster.MonsterClass;
         }
