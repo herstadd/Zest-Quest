@@ -66,19 +66,19 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    page.Save_Clicked(null, null);
+            // Act
+            page.Update_Clicked(null, null);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
