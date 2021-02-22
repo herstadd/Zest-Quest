@@ -241,5 +241,30 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion AttackChoiceTest
 
+        #region SelectCharacterToAttackTest
+
+        [Test]
+        public void TurnEngine_SelectCharacterToAttack_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.SelectCharacterToAttack();
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion SelectCharacterToAttackTest
+
     }
 }
