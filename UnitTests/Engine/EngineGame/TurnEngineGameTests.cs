@@ -291,6 +291,33 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion SelectMonsterToAttackTest
 
+        #region TurnAsAttackTest
+
+        [Test]
+        public void TurnEngine_TurnAsAttack_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.TurnAsAttack(new PlayerInfoModel(), new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+
+        #endregion TurnAsAttackTest
+
+
     }
 
 
