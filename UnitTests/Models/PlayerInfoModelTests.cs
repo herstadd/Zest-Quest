@@ -127,6 +127,21 @@ namespace UnitTests.Models
             Assert.IsNotNull(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_Constructor_Character_SchoolChef_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel { Job = CharacterJobEnum.SchoolChef };
+
+            // Act
+            var result = new PlayerInfoModel(data);
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
         //[Test]
         //public void PlayerInfoModel_IsAbilityAvailable_Available_Should_Pass()
         //{
