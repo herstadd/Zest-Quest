@@ -678,6 +678,24 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void BasePlayerModel_GetAttackJobBonus_SousChef_Should_Return_2()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SousChef;
+          
+            // Act
+            var result = data.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
+
+
+
+        [Test]
         public async Task BasePlayerModel_GetDefenseTotal_Default_Defense_Should_Pass()
         {
             // Arrange
