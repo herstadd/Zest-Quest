@@ -109,27 +109,42 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterUpdatePage_NameChanged_Null_Name_Should_Pass()
+        {
+            // Arrange
+            var ViewModel = new GenericViewModel<CharacterModel>(new CharacterModel());
+            ViewModel.Data.Name = null;
+            var NewPage = new CharacterUpdatePage(ViewModel);
 
-        //    page = new CharacterUpdatePage(ViewModel);
-        //    double oldValue = 0.0;
-        //    double newValue = 1.0;
+            // Act
+            NewPage.NameChanged(null, null);
 
-        //    var args = new ValueChangedEventArgs(oldValue, newValue);
+            // Reset
 
-        //    // Act
-        //    page.Attack_OnStepperValueChanged(null, args);
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //    // Reset
+        [Test]
+        public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            var NewButton = new Button();
+            NewButton.Text = "5";
+            
+            // Act
+            NewPage.AttackValueChanged(NewButton, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
@@ -536,7 +551,7 @@ namespace UnitTests.Views
         //        Id = "test",
         //        Level = 10
         //    };
-            
+
         //    var control = (Picker)page.FindByName("LevelPicker");
         //    control.SelectedIndex = -1;
 
