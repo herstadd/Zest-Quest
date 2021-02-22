@@ -46,7 +46,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Current Health", result);
+            Assert.AreEqual("CurrentHealth", result);
         }
 
         [Test]
