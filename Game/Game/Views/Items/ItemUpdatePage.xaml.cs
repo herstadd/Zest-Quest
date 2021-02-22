@@ -107,7 +107,7 @@ namespace Game.Views
             }
 
             // If the Description in the data box is empty changes the Entry background color
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
