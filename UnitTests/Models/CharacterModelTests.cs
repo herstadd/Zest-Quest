@@ -162,7 +162,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(true, result.Contains("Elf"));
+            Assert.AreEqual(true, result.Contains("Chef"));
         }
 
         [Test]
@@ -415,7 +415,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result.Contains("Elf"));
+            Assert.AreEqual(true, result.Contains("Chef"));
         }
 
         [Test]
