@@ -181,7 +181,23 @@ namespace UnitTests.Views
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void CharacterReadPage_CallProperImages_Location_RightFinger_Valid_Should_Pass()
+        {
+            // Arrange
+            var NewCharacterModel = new CharacterModel();
+            NewCharacterModel.RightFinger = "ScreamRing";
+            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>(NewCharacterModel);
+            CharacterReadPage ReadPage = new CharacterReadPage(data);
 
+            // Act
+            var result = ReadPage.CallProperImages(data, "RightFinger");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
 
         //[Test]
         //public void CharacterReadPage_GetItemToDisplay_Valid_Should_Pass()
