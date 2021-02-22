@@ -256,5 +256,22 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual(2, countAfter); // Count of 0 for the load was skipped
         }
+
+        [Test]
+        public void MonsterIndexViewModel_InitializeDefaultMonster_Valid_Should_Pass()
+        {
+            // Arrange
+            MonsterIndexViewModel.DefaultMonster = new MonsterModel();
+            MonsterIndexViewModel.DefaultMonster.MonsterType = MonsterTypeEnum.EvilRefrigerator;
+
+            // Act
+            ViewModel.InitializeDefaultMonster("EvilToaster");
+
+            // Reset
+            MonsterIndexViewModel.DefaultMonster = null;
+
+            // Assert
+            Assert.IsTrue(true); // Count of 0 for the load was skipped
+        }
     }
 }
