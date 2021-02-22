@@ -118,9 +118,11 @@ namespace UnitTests.Views
         public void ItemCreatePage_Type_Changed_Default_Should_Pass()
         {
             // Arrange
+            Picker picker = new Picker();
+            picker.SelectedItem = ItemModelEnum.Apron;
 
             // Act
-            page.Type_Changed(null, null);
+            page.Type_Changed(picker, EventArgs.Empty);
 
             // Reset
 
@@ -131,17 +133,11 @@ namespace UnitTests.Views
         [Test]
         public void ItemCreatePage_Save_Clicked_Valid_Data_Should_Pass()
         {
-            //// Arrange
+            // Arrange
             var NewPage = new ItemCreatePage();
             
 
-            //Button button = new Button();
-            //button.Text = ItemModelEnum.Apron.ToString();
-            ////picker.SelectedItem = ItemModelEnum.ButcherKnifeNecklace;
-
-
             // Act
-            // NewPage.Type_Changed(picker, EventArgs.Empty);
             NewPage.Save_Clicked(null, null);
 
             // Reset
