@@ -491,6 +491,24 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_ClickedOnItem_Feet_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Feet";
+
+            var NewPage = new CharacterCreatePage();
+
+            // Act
+            NewPage.ClickedOnItem(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
