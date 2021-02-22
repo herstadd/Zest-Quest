@@ -150,11 +150,6 @@ namespace UnitTests.Views
         public void CharacterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
         {
             // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
-
-            var NewPage = new CharacterUpdatePage(ViewModel);
-
             var NewButton = new Button();
             NewButton.Text = "5";
 
