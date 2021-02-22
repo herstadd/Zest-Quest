@@ -1479,6 +1479,37 @@ namespace UnitTests.Engine.EngineKoenig
             Assert.AreEqual(true, result);
         }
 
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Ability_Should_Return_True()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HomeCook });
+            CharacterPlayer.MaxHealth = 100;
+            CharacterPlayer.CurrentHealth = 100;
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion ChooseToUseAbility
 
         #region MoveAsTurn
