@@ -99,7 +99,7 @@ namespace Game.Models
                 ItemModelEnum.Crocs => "Crocs",
                 ItemModelEnum.WookieBoots => "WookieBoots",
                 ItemModelEnum.SantaShoes => "SantaShoes",
-                _ => "Unknown",
+                ItemModelEnum.Unknown => "Unknown",
             };
             return Message;
         }
