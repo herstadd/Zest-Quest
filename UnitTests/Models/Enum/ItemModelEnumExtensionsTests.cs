@@ -189,6 +189,20 @@ namespace UnitTests.Models
             Assert.AreEqual("ScreamRing", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_OnionRing_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.OnionRing.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("OnionRing", result);
+        }
+
 
     }
 }
