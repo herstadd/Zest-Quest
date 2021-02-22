@@ -495,6 +495,31 @@ namespace UnitTests.Engine.EngineGame
         #endregion TargetDiedTest
 
 
+        #region DropItemsTest
+
+        [Test]
+        public void TurnEngine_DropItems_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.DropItems(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion DropItemsTest
+
     }
 
 
