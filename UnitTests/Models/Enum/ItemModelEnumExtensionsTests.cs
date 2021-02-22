@@ -245,6 +245,20 @@ namespace UnitTests.Models
             Assert.AreEqual("WookieBoots", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_SantaShoes_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.SantaShoes.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("SantaShoes", result);
+        }
+
 
     }
 }
