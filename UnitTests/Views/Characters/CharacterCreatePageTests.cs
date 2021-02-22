@@ -715,6 +715,24 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_ItemSelected_Should_Pass()
+        {
+            // Arrange
+            Picker button = new Picker();
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.ItemSelected(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
