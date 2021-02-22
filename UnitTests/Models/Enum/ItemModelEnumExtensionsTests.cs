@@ -259,6 +259,18 @@ namespace UnitTests.Models
             Assert.AreEqual("SantaShoes", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
+        {
+            // Arrange
 
+            // Act
+            var result = ItemModelEnum.Unknown.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Unknown", result);
+        }
     }
 }
