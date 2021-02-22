@@ -8,17 +8,19 @@ namespace UnitTests.Models
     public class ItemModelEnumExtensionsTests
     {
         [Test]
-        public void ItemModelEnumExtensionsTests_Unknown_Default_Should_Pass()
+        public void ItemModelEnumExtensionsTests_ToMessage_None_Should_Pass()
         {
             // Arrange
 
             // Act
-            var result = ItemLocationEnum.Unknown.ToMessage();
+            var result = ItemModelEnum.None.ToMessage();
 
             // Reset
 
             // Assert
-            Assert.AreEqual("Unknown", result);
+            Assert.AreEqual("None", result);
         }
+
+
     }
 }
