@@ -48,5 +48,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Evil Toaster", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_EvilBlender_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterTypeEnum.EvilBlender.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Evil Blender", result);
+        }
     }
 }
