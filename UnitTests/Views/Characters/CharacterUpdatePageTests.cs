@@ -214,6 +214,25 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterUpdatePage_ItemSelected_Item_Should_Pass()
+        {
+            // Arrange
+            Picker picker = new Picker();
+            picker.SelectedItem = "Refrigerator";
+
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.ItemSelected(picker, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void CharacterUpdatePage_ClickedOnItemSelection_Head_Should_Pass()
