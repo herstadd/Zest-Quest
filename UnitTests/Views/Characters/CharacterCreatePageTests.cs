@@ -563,6 +563,176 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_Null_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = null;
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_ChefHat_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "ChefHat";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_Apron_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Apron";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_Pan_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Pan";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_Knife_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "Knife";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_ScreamRing_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "ScreamRing";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_RingPop_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "RingPop";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_AddItemButtonClicked_Selected_FlipFlop_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = "FlipFlop";
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_ItemSelected_Should_Pass()
+        {
+            // Arrange
+            Picker button = new Picker();
+
+            var NewPage = new CharacterCreatePage();
+
+
+            // Act
+            NewPage.ItemSelected(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         //{
