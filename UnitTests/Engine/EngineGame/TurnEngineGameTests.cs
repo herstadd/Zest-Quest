@@ -520,6 +520,33 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion DropItemsTest
 
+        #region RollToHitTargetTest
+
+        [Test]
+        public void TurnEngine_RollToHitTarget_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+            var AttackScore = 2;
+            var DefenseScore = 2;
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion RollToHitTargetTest
+
     }
 
 
