@@ -99,5 +99,22 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion DetermineActionChoiceTest
 
+        #region MoveAsTurnTest
+
+        [Test]
+        public void TurnEngine_MoveAsTurn_Valid_PlayerInfoModel_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var Result = Engine.Round.Turn.MoveAsTurn(new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, Result);
+        }
+        #endregion MoveAsTurnTest
+
     }
 }
