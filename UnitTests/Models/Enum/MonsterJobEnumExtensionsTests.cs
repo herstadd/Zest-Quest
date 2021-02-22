@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Evil KitchenSink", result);
+            Assert.AreEqual("Evil Kitchen Sink", result);
         }
     }
 }
