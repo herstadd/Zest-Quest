@@ -355,7 +355,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(4, result);
         }
 
         [Test]
@@ -380,6 +380,7 @@ namespace UnitTests.Models
             var data = new CharacterModel();
 
             // Act
+            data.MaxHealth = 0;
             var result = data.GetMaxHealthTotal;
 
             // Reset

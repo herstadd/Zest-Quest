@@ -41,7 +41,7 @@ namespace UnitTests.Helpers
         //}
 
         [Test]
-        public void RollDiceHelper_SetForcedRollValue_InValid_Dice_neg1_Should_Return_0()
+        public void RollDiceHelper_SetForcedRollValue_InValid_Dice_neg1_Should_Return_neg1()
         {
             // Arrange
             DiceHelper.EnableForcedRolls();
@@ -54,7 +54,7 @@ namespace UnitTests.Helpers
             DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(-1, result);
         }
 
         [Test]
