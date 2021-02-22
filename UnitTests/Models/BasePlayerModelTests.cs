@@ -693,6 +693,22 @@ namespace UnitTests.Models
             Assert.AreEqual(2, result);
         }
 
+        [Test]
+        public void BasePlayerModel_GetDefenseJobBonus_SousChef_Should_Return_Negative_One()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SousChef;
+
+            // Act
+            var result = data.GetDefenseJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(-1, result);
+        }
+
 
 
         [Test]
