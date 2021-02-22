@@ -106,7 +106,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.Equals(result, true);
+            Assert.IsTrue(result);
         }
 
         [Test]
