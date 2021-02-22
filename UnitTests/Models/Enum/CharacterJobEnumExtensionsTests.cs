@@ -90,5 +90,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Cat Chef", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_HomeCook_ToMessage_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.HomeCook.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Home Cook", result);
+        }
     }
 }
