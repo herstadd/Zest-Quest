@@ -175,6 +175,20 @@ namespace UnitTests.Models
             Assert.AreEqual("RingPop", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_ScreamRing_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.ScreamRing.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("ScreamRing", result);
+        }
+
 
     }
 }
