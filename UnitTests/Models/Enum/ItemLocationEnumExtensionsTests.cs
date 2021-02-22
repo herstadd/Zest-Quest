@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Left Finger", result);
+            Assert.AreEqual("LeftFinger", result);
         }
 
         [Test]
