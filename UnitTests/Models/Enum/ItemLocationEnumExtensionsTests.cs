@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Off Hand", result);
+            Assert.AreEqual("OffHand", result);
         }
 
         [Test]
