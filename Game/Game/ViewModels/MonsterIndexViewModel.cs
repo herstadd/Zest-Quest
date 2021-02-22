@@ -17,7 +17,7 @@ namespace Game.ViewModels
     /// </summary>
     public class MonsterIndexViewModel : BaseViewModel<MonsterModel>
     {
-        private static MonsterModel DefaultMonster = null;
+        public static MonsterModel DefaultMonster = null;
 
         #region Singleton
 
