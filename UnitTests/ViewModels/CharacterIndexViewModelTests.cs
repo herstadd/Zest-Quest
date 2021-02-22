@@ -284,5 +284,19 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.IsTrue(result > 4);
         }
+
+        [Test]
+        public void CharacterIndexViewModel_GetMaxHealth_SchoolChef_MaxHealth_lessThan_51_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetMaxHealth("SchoolChef");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result < 51);
+        }
     }
 }
