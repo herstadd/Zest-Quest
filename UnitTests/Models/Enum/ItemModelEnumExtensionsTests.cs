@@ -91,6 +91,20 @@ namespace UnitTests.Models
             Assert.AreEqual("ButcherKnifeNecklace", result);
         }
 
+        [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Timer_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Timer.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Timer", result);
+        }
+
 
     }
 }
