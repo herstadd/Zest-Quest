@@ -368,6 +368,32 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion BattleSettingsOverrideHitStatusEnumTest
 
+
+        #region ApplyDamageTest
+
+        [Test]
+        public void TurnEngine_ApplyDamage_Should_Throw_NotImplementedException()
+        {
+            // Arrange
+
+            // Act
+
+
+            // Reset
+
+            // Assert
+            try
+            {
+                Engine.Round.Turn.ApplyDamage(new PlayerInfoModel());
+                Assert.Fail();
+            }
+            catch (NotImplementedException ex)
+            {
+                Assert.IsTrue(true);
+            }
+        }
+        #endregion ApplyDamageTest
+
     }
 
 
