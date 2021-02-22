@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Right Finger", result);
+            Assert.AreEqual("RightFinger", result);
         }
 
         [Test]
