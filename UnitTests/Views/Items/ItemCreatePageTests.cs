@@ -247,6 +247,20 @@ namespace UnitTests.Views
             Assert.AreEqual(9, Result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void ItemCreatePage_ValueChange_Valid_Level_Value_8_To_7_Should_Return_7()
+        {
+            // Arrange
+            var CurrentLevelValue = 8;
+
+            // Act
+            var Result = page.ValueChange("-", CurrentLevelValue, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(7, Result); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void ItemCreatePage_Value_OnStepperValueChanged_Default_Should_Pass()
