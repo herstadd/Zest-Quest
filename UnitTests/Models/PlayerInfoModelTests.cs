@@ -218,24 +218,24 @@ namespace UnitTests.Models
         //    Assert.AreEqual(false, result);
         //}
 
-        //[Test]
-        //public void PlayerInfoModel_SelectHealingAbility_Cleric_Heal_Avaiable_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
-        //    data.AbilityTracker[AbilityEnum.Heal] = 1;
+        [Test]
+        public void PlayerInfoModel_SelectHealingAbility_SousChef_Heal_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SousChef });
+            data.AbilityTracker[AbilityEnum.Heal] = 1;
 
-        //    data.CurrentHealth = 1;
-        //    data.MaxHealth = 100;
+            data.CurrentHealth = 1;
+            data.MaxHealth = 100;
 
-        //    // Act
-        //    var result = data.SelectHealingAbility();
+            // Act
+            var result = data.SelectHealingAbility();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(AbilityEnum.Heal, result);
-        //}
+            // Assert
+            Assert.AreEqual(AbilityEnum.Heal, result);
+        }
 
         //[Test]
         //public void PlayerInfoModel_SelectHealingAbility_Cleric_Heal_Not_Needed_Should_Pass()
