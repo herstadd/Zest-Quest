@@ -341,22 +341,22 @@ namespace UnitTests.Models
             Assert.AreEqual(AbilityEnum.Unknown, result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_SelectAbilityToUse_Cleric_Heal_Should_Skip()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
-        //    data.AbilityTracker[AbilityEnum.Quick] = 0;
-        //    data.AbilityTracker[AbilityEnum.Barrier] = 0;
-        //    data.AbilityTracker[AbilityEnum.Curse] = 0;
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_SousChef_Heal_Should_Skip()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SousChef });
+            data.AbilityTracker[AbilityEnum.Quick] = 0;
+            data.AbilityTracker[AbilityEnum.Barrier] = 0;
+            data.AbilityTracker[AbilityEnum.Curse] = 0;
 
-        //    // Act
-        //    var result = data.SelectAbilityToUse();
+            // Act
+            var result = data.SelectAbilityToUse();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(AbilityEnum.Unknown, result);
-        //}
+            // Assert
+            Assert.AreEqual(AbilityEnum.Unknown, result);
+        }
     }
 }
