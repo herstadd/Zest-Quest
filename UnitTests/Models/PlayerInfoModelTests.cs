@@ -295,21 +295,21 @@ namespace UnitTests.Models
             Assert.AreEqual(AbilityEnum.Bandage, result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_SelectAbilityToUse_Fighter_Avaiable_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Fighter });
-        //    data.AbilityTracker[AbilityEnum.Nimble] = 1;
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_CatChef_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.CatChef });
+            data.AbilityTracker[AbilityEnum.Nimble] = 1;
 
-        //    // Act
-        //    var result = data.SelectAbilityToUse();
+            // Act
+            var result = data.SelectAbilityToUse();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(AbilityEnum.Nimble, result);
-        //}
+            // Assert
+            Assert.AreEqual(AbilityEnum.Nimble, result);
+        }
 
         //[Test]
         //public void PlayerInfoModel_SelectAbilityToUse_Cleric_Avaiable_Should_Pass()
