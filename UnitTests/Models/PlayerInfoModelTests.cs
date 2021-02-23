@@ -311,20 +311,20 @@ namespace UnitTests.Models
             Assert.AreEqual(AbilityEnum.Nimble, result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_SelectAbilityToUse_Cleric_Avaiable_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
-        //    data.AbilityTracker[AbilityEnum.Quick] = 1;
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_SousChef_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SousChef });
+            data.AbilityTracker[AbilityEnum.Quick] = 1;
 
-        //    // Act
-        //    var result = data.SelectAbilityToUse();
+            // Act
+            var result = data.SelectAbilityToUse();
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //}
+            // Assert
+        }
 
         [Test]
         public void PlayerInfoModel_SelectAbilityToUse_Monster_Should_Return_False()
