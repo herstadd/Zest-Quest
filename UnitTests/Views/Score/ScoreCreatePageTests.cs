@@ -158,5 +158,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ScoreCreatePage_Save_Clicked_No_Score_Valid_Should_Pass()
+        {
+            // Arrange
+            page.ScoreTotalBool = true;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
