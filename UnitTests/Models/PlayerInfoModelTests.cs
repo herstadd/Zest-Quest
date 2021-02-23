@@ -67,20 +67,20 @@ namespace UnitTests.Models
             Assert.IsNotNull(result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_Constructor_Character_Cleric_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel { Job = CharacterJobEnum.Cleric};
+        [Test]
+        public void PlayerInfoModel_Constructor_Character_SousChef_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel { Job = CharacterJobEnum.SousChef };
 
-        //    // Act
-        //    var result = new PlayerInfoModel(data);
+            // Act
+            var result = new PlayerInfoModel(data);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
         [Test]
         public void PlayerInfoModel_Constructor_Character_Unknown_Default_Should_Pass()
