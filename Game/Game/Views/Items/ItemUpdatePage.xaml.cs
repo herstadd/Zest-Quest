@@ -99,28 +99,28 @@ namespace Game.Views
             }
 
             // If the Name in the data box is empty then data won't save 
-            if (ItemTypeEntry.SelectedIndex == -1)
-            {
-                // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Type is Empty!", "OK");
-                return;
-            }
+            //if (ItemTypeEntry.SelectedIndex == -1)
+            //{
+            //    // pop message appears when name box is empty
+            //    await DisplayAlert("Alert", "Type is Empty!", "OK");
+            //    return;
+            //}
 
-            // If the Description in the data box is empty changes the Entry background color
+            // If the Name in the data box is empty changes the Entry background color
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                //await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
 
             // If the Description in the data box is just white spaces changes the Entry background color
-            if (string.IsNullOrWhiteSpace(ViewModel.Data.Description))
-            {
-                // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Description is Empty!", "OK");
-                return;
-            }
+            //if (string.IsNullOrWhiteSpace(ViewModel.Data.Description))
+            //{
+            //    // pop message appears when name box is empty
+            //    await DisplayAlert("Alert", "Description is Empty!", "OK");
+            //    return;
+            //}
 
             //Comment out bellow if condititions cause 
             //It is Not possible to leave Location and Attribute blank and save the update because
