@@ -100,7 +100,7 @@ namespace Game.Views
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                //await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
     
