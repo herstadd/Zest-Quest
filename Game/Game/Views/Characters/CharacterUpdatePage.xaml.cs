@@ -189,7 +189,6 @@ namespace Game.Views
             {
                 // pop message appears when name box is empty
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
             }
 
             // If the Name in the data box is just white space then data won't update 
@@ -197,7 +196,6 @@ namespace Game.Views
             {
                 // pop message appears when name box is just white spaces
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
@@ -352,8 +350,6 @@ namespace Game.Views
                         feetFrame.IsVisible = false;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                         break;
-                    default:
-                        break;
                 }
                 return false;
             }
@@ -422,8 +418,6 @@ namespace Game.Views
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     ViewModel.Data.AddItem(ItemLocationEnum.Feet, ItemAtLocation);
-                    break;
-                default:
                     break;
             }
             return true;
@@ -594,8 +588,6 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                     ViewModel.Data.AddItem(ItemLocationEnum.Feet, selected);
-                    break;
-                default:
                     break;
             }
         }
