@@ -6,7 +6,6 @@ using Game.Helpers;
 using Game.Models;
 using Game.ViewModels;
 
-
 namespace Game.GameRules
 {
     public static class RandomPlayerHelper
@@ -29,8 +28,14 @@ namespace Game.GameRules
         public static string GetMonsterUniqueItem()
         {
             var itemIndex = DiceHelper.RollDice(1, ItemIndexViewModel.Instance.Dataset.Count()) - 1;
-            var result = ItemIndexViewModel.Instance.Dataset.ElementAt(itemIndex).Id;
 
+            // Check to see if there are enough items, if not, then just use the first one...
+            var result = ItemIndexViewModel.Instance.Dataset.First().Id;
+
+            if (itemIndex < ItemIndexViewModel.Instance.Dataset.Count)
+            {
+                result = ItemIndexViewModel.Instance.Dataset.ElementAt(itemIndex).Id;
+            }
             return result;
         }
 
@@ -56,9 +61,16 @@ namespace Game.GameRules
         public static string GetMonsterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "item.png", "item.png", "item.png", "item.png", "item.png", "item.png" };
+            List<String> StringList = new List<String> { "item.png", "item.png", "item.png", "item.png", "item.png", "item.png" };
 
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -70,9 +82,16 @@ namespace Game.GameRules
         public static string GetCharacterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "item.png", "item.png", "item.png", "item.png", "item.png", "item.png", "item.png" };
+            List<String> StringList = new List<String> { "item.png", "item.png", "item.png", "item.png", "item.png", "item.png", "item.png" };
 
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -86,9 +105,16 @@ namespace Game.GameRules
         public static string GetMonsterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Arg", "Deg", "Ase", "Xes", "Zez", "Klk", "Oi", "Oni", "Tanu" };
+            List<String> StringList = new List<String> { "Arg", "Deg", "Ase", "Xes", "Zez", "Klk", "Oi", "Oni", "Tanu" };
 
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -103,7 +129,14 @@ namespace Game.GameRules
         {
             List<String> StringList = new List<String> { "eats Elf", "the Elf hater", "Elf destoryer", "Elf Hunter", "Elf Killer", "Can't we all get along?" };
 
-            var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -117,9 +150,16 @@ namespace Game.GameRules
         public static string GetCharacterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Mike", "Doug", "Jea", "Sue", "Tim", "Daren", "Dani", "Mami", "Mari", "Ryu", "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
+            List<String> StringList = new List<String> { "Mike", "Doug", "Jea", "Sue", "Tim", "Daren", "Dani", "Mami", "Mari", "Ryu", "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
 
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -134,7 +174,14 @@ namespace Game.GameRules
         {
             List<String> StringList = new List<String> { "the terrible", "the awesome", "the lost", "the old", "the younger", "the quiet", "the loud", "the helpless", "the happy", "the sleepy", "the angry", "the clever" };
 
-            var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
+            var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
+
+            var result = StringList.First();
+
+            if (index < StringList.Count)
+            {
+                result = StringList.ElementAt(index);
+            }
 
             return result;
         }
@@ -177,7 +224,14 @@ namespace Game.GameRules
             // Add None to the list
             ItemList.Add(new ItemModel { Id = null, Name = "None" });
 
-            var result = ItemList.ElementAt(DiceHelper.RollDice(1, ItemList.Count()) - 1).Id;
+            var result = ItemList.First().Id;
+
+            var index = DiceHelper.RollDice(1, ItemList.Count()) - 1;
+            if (index < ItemList.Count)
+            {
+                result = ItemList.ElementAt(index).Id;
+            }
+
             return result;
         }
 
@@ -229,7 +283,7 @@ namespace Game.GameRules
         /// </summary>
         /// <param name="MaxLevel"></param>
         /// <returns></returns>
-        public static MonsterModel GetRandomMonster(int MaxLevel, bool Items= false)
+        public static MonsterModel GetRandomMonster(int MaxLevel, bool Items = false)
         {
             var result = new MonsterModel()
             {
@@ -287,7 +341,6 @@ namespace Game.GameRules
             }
 
             return result;
-            // return new MonsterModel();
         }
     }
 }
