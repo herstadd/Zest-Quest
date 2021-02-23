@@ -71,76 +71,101 @@ namespace Game.Views
 
         public void PopulateInitialItems(string location, CharacterModel data)
         {
-            string ItemAtLocation = null;
-            ItemLocationEnum loc = ItemLocationEnumHelper.ConvertStringToEnum(location);
-            ItemModel Item = data.GetItemByLocation(loc);
-            if (Item != null)
+            string Item;
+            
+            switch (location)
             {
-                ItemAtLocation = Item.Name;
-            }
-            if (ItemAtLocation != null)
-            {
-                switch (location)
-                {
-                    case "Head":
-                        headFrame.IsVisible = true;
-                        headFrame.WidthRequest = 120;
-                        head.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        headName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                case "Head":
+                    Item = data.Head;
+                    if(Item == null)
+                    {
                         break;
-                    case "Necklass":
-                        necklassFrame.IsVisible = true;
-                        necklassFrame.WidthRequest = 120;
-                        necklass.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        necklassName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    headFrame.IsVisible = true;
+                    headFrame.WidthRequest = 120;
+                    head.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    headName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "Necklass":
+                    Item = data.Necklass;
+                    if (Item == null)
+                    {
                         break;
-                    case "PrimaryHand":
-                        primaryhandFrame.IsVisible = true;
-                        primaryhandFrame.WidthRequest = 120;
-                        primaryhand.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        primaryhandName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    necklassFrame.IsVisible = true;
+                    necklassFrame.WidthRequest = 120;
+                    necklass.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    necklassName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "PrimaryHand":
+                    Item = data.PrimaryHand;
+                    if (Item == null)
+                    {
                         break;
-                    case "OffHand":
-                        offhandFrame.IsVisible = true;
-                        offhandFrame.WidthRequest = 120;
-                        offhand.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        offhandName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    primaryhandFrame.IsVisible = true;
+                    primaryhandFrame.WidthRequest = 120;
+                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    primaryhandName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "OffHand":
+                    Item = data.OffHand;
+                    if (Item == null)
+                    {
                         break;
-                    case "RightFinger":
-                        rightfingerFrame.IsVisible = true;
-                        rightfingerFrame.WidthRequest = 120;
-                        rightfinger.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        rightfingerName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    offhandFrame.IsVisible = true;
+                    offhandFrame.WidthRequest = 120;
+                    offhand.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    offhandName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "RightFinger":
+                    Item = data.RightFinger;
+                    if (Item == null)
+                    {
                         break;
-                    case "LeftFinger":
-                        leftfingerFrame.IsVisible = true;
-                        leftfingerFrame.WidthRequest = 120;
-                        leftfinger.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        leftfingerName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    rightfingerFrame.IsVisible = true;
+                    rightfingerFrame.WidthRequest = 120;
+                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    rightfingerName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "LeftFinger":
+                    Item = data.LeftFinger;
+                    if (Item == null)
+                    {
                         break;
-                    case "Feet":
-                        feetFrame.IsVisible = true;
-                        feetFrame.WidthRequest = 120;
-                        feet.Source = ItemIndexViewModel.Instance.GetImage(ItemAtLocation);
-                        feetName.Text = ItemAtLocation;
-                        ItemLabel.HeightRequest = 30;
-                        NoItemLabel.HeightRequest = 0;
+                    }
+                    leftfingerFrame.IsVisible = true;
+                    leftfingerFrame.WidthRequest = 120;
+                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    leftfingerName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
+                case "Feet":
+                    Item = data.Feet;
+                    if (Item == null)
+                    {
                         break;
-                    default:
-                        break;
-                }
+                    }
+                    feetFrame.IsVisible = true;
+                    feetFrame.WidthRequest = 120;
+                    feet.Source = ItemIndexViewModel.Instance.GetImage(Item);
+                    feetName.Text = Item;
+                    ItemLabel.HeightRequest = 30;
+                    NoItemLabel.HeightRequest = 0;
+                    break;
             }
         }
 
@@ -184,20 +209,11 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            // If the Name in the data box is empty then data won't update 
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
-            {
-                // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
-            }
-
             // If the Name in the data box is just white space then data won't update 
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is just white spaces
                 await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
             }
 
             MessagingCenter.Send(this, "Update", ViewModel.Data);
@@ -352,8 +368,6 @@ namespace Game.Views
                         feetFrame.IsVisible = false;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                         break;
-                    default:
-                        break;
                 }
                 return false;
             }
@@ -422,8 +436,6 @@ namespace Game.Views
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     ViewModel.Data.AddItem(ItemLocationEnum.Feet, ItemAtLocation);
-                    break;
-                default:
                     break;
             }
             return true;
@@ -594,8 +606,6 @@ namespace Game.Views
                     NoItemLabel.HeightRequest = 0;
                     ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                     ViewModel.Data.AddItem(ItemLocationEnum.Feet, selected);
-                    break;
-                default:
                     break;
             }
         }

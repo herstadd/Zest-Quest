@@ -81,6 +81,23 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterUpdatePage_Save_Clicked_Null_Name_Should_Pass()
+        {
+            // Arrange
+            var ViewModel = new GenericViewModel<CharacterModel>(new CharacterModel());
+            ViewModel.Data.Name = null;
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void CharacterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
         {
             // Arrange
@@ -643,6 +660,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterUpdatePage_AddItemButtonClicked_Selected_Null_Should_Pass()
+        {
+            // Arrange
+            Button button = new Button();
+            button.BindingContext = null;
+
+            var NewPage = new CharacterUpdatePage(true);
+
+
+            // Act
+            NewPage.AddItemButtonClicked(button, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void CharacterUpdatePage_AddItemButtonClicked_Selected_Refrigerator_Should_Pass()
         {
             // Arrange
@@ -700,6 +736,230 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_Head_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Head = null;
+
+            // Act
+            page.PopulateInitialItems("Head", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_Head_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Head = "ChefHat";
+
+            // Act
+            page.PopulateInitialItems("Head", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_Necklass_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Necklass = null;
+
+            // Act
+            page.PopulateInitialItems("Necklass", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_Necklass_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Necklass = "ButcherKnifeNecklace";
+
+            // Act
+            page.PopulateInitialItems("Necklass", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_PrimaryHand_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.PrimaryHand = null;
+
+            // Act
+            page.PopulateInitialItems("PrimaryHand", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_PrimaryHand_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.PrimaryHand = "Refrigerator";
+
+            // Act
+            page.PopulateInitialItems("PrimaryHand", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_OffHand_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.OffHand = null;
+
+            // Act
+            page.PopulateInitialItems("OffHand", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_OffHand_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.OffHand = "Knife";
+
+            // Act
+            page.PopulateInitialItems("OffHand", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_RightFinger_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.RightFinger = null;
+
+            // Act
+            page.PopulateInitialItems("RightFinger", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_RightFinger_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.RightFinger = "ScreamRing";
+
+            // Act
+            page.PopulateInitialItems("RightFinger", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_LeftFinger_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.LeftFinger = null;
+
+            // Act
+            page.PopulateInitialItems("LeftFinger", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_LeftFinger_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.LeftFinger = "RingPop";
+
+            // Act
+            page.PopulateInitialItems("LeftFinger", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_Feet_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Feet = null;
+
+            // Act
+            page.PopulateInitialItems("Feet", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_Feet_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Feet = "Crocs";
+
+            // Act
+            page.PopulateInitialItems("Feet", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
         }
 
 
