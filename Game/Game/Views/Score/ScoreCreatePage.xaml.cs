@@ -22,6 +22,8 @@ namespace Game.Views
         // Constructor for Unit Testing
         public ScoreCreatePage(bool UnitTest) { }
 
+        public bool ScoreTotalBool = false;
+
         /// <summary>
         /// Constructor for Create makes a new model
         /// </summary>
@@ -68,7 +70,7 @@ namespace Game.Views
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(ScoreEntry.Text))
+            if (ScoreTotalBool)
             {
                 return;
             }
@@ -107,7 +109,12 @@ namespace Game.Views
             if (string.IsNullOrWhiteSpace(ScoreEntry.Text))
             {
                 ScoreEntry.BackgroundColor = Color.DarkRed;
-            }         
+                ScoreTotalBool = true;
+            } 
+            else
+            {
+                ScoreTotalBool = false;
+            }
         }
     }
 }
