@@ -187,20 +187,20 @@ namespace UnitTests.Models
             Assert.IsNotNull(result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_IsAbilityAvailable_Available_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+        [Test]
+        public void PlayerInfoModel_IsAbilityAvailable_Available_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SousChef });
 
-        //    // Act
-        //    var result = data.IsAbilityAvailable(AbilityEnum.Heal);
+            // Act
+            var result = data.IsAbilityAvailable(AbilityEnum.Heal);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
 
         //[Test]
         //public void PlayerInfoModel_IsAbilityAvailable_Available_Zero_Should_Fail()
