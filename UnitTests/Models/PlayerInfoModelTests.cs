@@ -202,21 +202,21 @@ namespace UnitTests.Models
             Assert.AreEqual(true, result);
         }
 
-        //[Test]
-        //public void PlayerInfoModel_IsAbilityAvailable_Available_Zero_Should_Fail()
-        //{
-        //    // Arrange
-        //    var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
-        //    data.AbilityTracker[AbilityEnum.Heal] = 0;
+        [Test]
+        public void PlayerInfoModel_IsAbilityAvailable_Available_Zero_Should_Fail()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SousChef });
+            data.AbilityTracker[AbilityEnum.Heal] = 0;
 
-        //    // Act
-        //    var result = data.IsAbilityAvailable(AbilityEnum.Heal);
+            // Act
+            var result = data.IsAbilityAvailable(AbilityEnum.Heal);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(false, result);
+        }
 
         [Test]
         public void PlayerInfoModel_SelectHealingAbility_SousChef_Heal_Avaiable_Should_Pass()
