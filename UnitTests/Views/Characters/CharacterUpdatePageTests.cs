@@ -946,6 +946,22 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Valid_Feet_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.Feet = "Crocs";
+
+            // Act
+            page.PopulateInitialItems("Feet", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()
