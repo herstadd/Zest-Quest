@@ -42,6 +42,8 @@
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
+                        Placeholder="Name is Empty!"
+                        PlaceholderColor="Black"
                         TextChanged="CheckNullEntry"
                         x:Name="NameEntry"/>
 
@@ -51,6 +53,8 @@
 
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.ScoreTotal}" 
+                        Placeholder="Score is Empty!"
+                        PlaceholderColor="Black"
                         TextChanged="CheckNullEntry"
                         Style="{StaticResource EntryStyle}"
                         x:Name="ScoreEntry"/>
