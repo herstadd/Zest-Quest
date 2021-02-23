@@ -9,24 +9,36 @@ namespace Game.Helpers
     /// </summary>
     public static class DefaultDataHelper
     {
-        static List<CharacterModel> CharacterList = null;
-        static List<MonsterModel> MonsterList = null;
-        static List<ItemModel> ItemList = null;
-        static List<ScoreModel> ScoreList = null;
+        public static List<CharacterModel> CharacterList = null;
+        public static List<MonsterModel> MonsterList = null;
+        public static List<ItemModel> ItemList = null;
+        public static List<ScoreModel> ScoreList = null;
 
         /// <summary>
         /// Constructor
         /// </summary>
         static DefaultDataHelper()
         {
-            if(CharacterList == null || MonsterList == null ||
-                ItemList == null || ScoreList == null)
+            if(CharacterList == null )
             {
-                CharacterList = DefaultData.LoadData(new CharacterModel());
-                MonsterList = DefaultData.LoadData(new MonsterModel());
+                CharacterList = DefaultData.LoadData(new CharacterModel());               
+            }
+
+            if (MonsterList == null)
+            {
+                MonsterList = DefaultData.LoadData(new MonsterModel());           
+            }
+
+            if (ItemList == null)
+            {          
                 ItemList = DefaultData.LoadData(new ItemModel());
+            }
+
+            if (ScoreList == null)
+            {              
                 ScoreList = DefaultData.LoadData(new ScoreModel());
             }
+
         }
 
         /// <summary>
