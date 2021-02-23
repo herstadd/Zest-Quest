@@ -81,6 +81,23 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterUpdatePage_Save_Clicked_Null_Name_Should_Pass()
+        {
+            // Arrange
+            var ViewModel = new GenericViewModel<CharacterModel>(new CharacterModel());
+            ViewModel.Data.Name = null;
+            var NewPage = new CharacterUpdatePage(ViewModel);
+
+            // Act
+            NewPage.Update_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void CharacterUpdatePage_Save_Clicked_Null_Image_Should_Pass()
         {
             // Arrange
