@@ -834,6 +834,22 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void CharacterUpdatePage_PopulateInitialItems_Null_OffHand_Item_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            data.OffHand = null;
+
+            // Act
+            page.PopulateInitialItems("OffHand", data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()
