@@ -53,21 +53,26 @@ namespace Game.Views
             }
 
             // If the Name in the data box is empty then data won't save 
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
-            {
-                // pop message appears when name box is empty
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
-                return;
-            }
+            //if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            //{
+            //    // pop message appears when name box is empty
+            //    await DisplayAlert("Alert", "Name is Empty!", "OK");
+            //    return;
+            //}
 
             // If the Name in the data box is just white space then data won't save 
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 // pop message appears when name box is just white spaces
-                await DisplayAlert("Alert", "Name is Empty!", "OK");
+                //await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
-        
+
+            if (string.IsNullOrWhiteSpace(ScoreEntry.Text))
+            {
+                return;
+            }
+
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
@@ -93,15 +98,15 @@ namespace Game.Views
             ScoreEntry.BackgroundColor = Color.FromRgb(255, 179, 0);
 
             // If the Name in the data box is empty changes the Entry background color
-            if (string.IsNullOrEmpty(ViewModel.Data.Name))
+            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
                 NameEntry.BackgroundColor = Color.DarkRed;
             }
 
             // If the Name in the data box is just white spaces changes the Entry background color
-            if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            if (string.IsNullOrWhiteSpace(ScoreEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.DarkRed;
+                ScoreEntry.BackgroundColor = Color.DarkRed;
             }         
         }
     }
