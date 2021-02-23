@@ -58,6 +58,8 @@
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
+                        Placeholder="Name is Empty!"
+                        PlaceholderColor="Black"
                         TextChanged="NameChanged"
                         x:Name="MonsterName"/>
 
