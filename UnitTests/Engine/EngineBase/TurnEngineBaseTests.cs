@@ -1339,6 +1339,8 @@ namespace UnitTests.Engine.EngineBase
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            CharacterPlayer.MaxHealth = 100;
+            CharacterPlayer.CurrentHealth = 100;
 
             var Monster = new MonsterModel();
             Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
@@ -1355,7 +1357,7 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Attack, result);
         }
         #endregion DetermineActionChoice
 
