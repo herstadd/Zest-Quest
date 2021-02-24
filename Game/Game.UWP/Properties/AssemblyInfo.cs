@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Elves vs Trolls")]
-[assembly: AssemblyDescription("Mike's Cool Game")]
+[assembly: AssemblyTitle("Zest Quest")]
+[assembly: AssemblyDescription("Help the chefs survive!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SU")]
-[assembly: AssemblyProduct("Elves vs Trolls")]
+[assembly: AssemblyCompany("SeattleU 5250")]
+[assembly: AssemblyProduct("Zest Quest Game")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -24,6 +24,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: ComVisible(false)]
