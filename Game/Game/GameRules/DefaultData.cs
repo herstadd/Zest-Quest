@@ -374,7 +374,7 @@ namespace Game.GameRules
                     Description = "This fridge is sick of storing expired fruits, vegetables, and sauces. Watch out for its teeth!",
                     ImageURI = "monster_refrigerator.png",
                     UniqueDrop = ItemModelEnum.Refrigerator,
-                    MonsterClass = "Boss"
+                    MonsterClass = MonsterClassEnum.Boss
                 },
 
                 new MonsterModel {
@@ -383,7 +383,7 @@ namespace Game.GameRules
                     Description = "Maybe if you cleaned out the crumbs every once in a while, this toaster wouldn't be so evil",
                     ImageURI = "monster_toaster.png",
                     UniqueDrop = ItemModelEnum.OnionRing,
-                    MonsterClass = "Boss"
+                    MonsterClass = MonsterClassEnum.Boss
                 },
 
                 new MonsterModel {
@@ -392,7 +392,7 @@ namespace Game.GameRules
                     Description = "Someone made one too many kale smoothies in this blender",
                     ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.ButcherKnifeNecklace,
-                    MonsterClass = "Boss"
+                    MonsterClass = MonsterClassEnum.Boss
                 },
 
                 new MonsterModel {
@@ -401,7 +401,7 @@ namespace Game.GameRules
                     Description = "This dishwasher will not clean your dishes",
                     ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
                 },
 
                 new MonsterModel {
@@ -410,7 +410,7 @@ namespace Game.GameRules
                     Description = "One hot oil splash too many sent the stove to the dark side",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
                 },
 
                 new MonsterModel {
@@ -419,7 +419,7 @@ namespace Game.GameRules
                     Description = "Brings a whole new meaning to throwing the kitchen sink",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
 
                 },
 
@@ -429,7 +429,7 @@ namespace Game.GameRules
                     Description = "Good for cooking rice, porridge, oatmeal and its enemies",
                     ImageURI = "monster2.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
                 },
 
                 new MonsterModel {
@@ -438,7 +438,7 @@ namespace Game.GameRules
                     Description = "Ready to slowly take revenge",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
                 },
 
                 new MonsterModel {
@@ -447,7 +447,7 @@ namespace Game.GameRules
                     Description = "Kinda rusty...kinda evil",
                     ImageURI = "crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
-                    MonsterClass = "Standard"
+                    MonsterClass = MonsterClassEnum.Standard
                 },
             };
 
