@@ -249,7 +249,7 @@ namespace Game.ViewModels
             //    return "Standard";
             //}
 
-            return DefaultMonster.MonsterClass;
+            return MonsterClassEnumExtensions.ToMessage(DefaultMonster.MonsterClass);
         }
         #endregion GetFromDefaultData
     }
