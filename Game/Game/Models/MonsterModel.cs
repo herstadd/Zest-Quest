@@ -15,7 +15,7 @@ namespace Game.Models
         // The special drop item for Monster
         public ItemModelEnum UniqueDrop { get; set; }
 
-        public string MonsterClass { get; set; }
+        public MonsterClassEnum MonsterClass { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             MonsterType = MonsterTypeEnum.EvilStove;
             Description = "This is a basic Monster";
-            MonsterClass = "Standard";
+            MonsterClass = MonsterClassEnum.Standard;
 
             // Default to unknown, which is no special job
             //MonsterType = MonsterTypeEnum.Unknown;
