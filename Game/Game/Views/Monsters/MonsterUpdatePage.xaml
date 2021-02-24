@@ -10,7 +10,7 @@
              x:Class="Game.Views.MonsterUpdatePage"
              Title="Update Appliance">
 
- 
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
@@ -101,12 +101,9 @@
                         Style="{StaticResource LabelStyle}" />
 
                     <Picker Grid.Row="4" Grid.Column="1"
-                        SelectedItem="{Binding Data.MonsterClass, Mode=TwoWay}"
+                        ItemsSource="{x:Static local_enum:MonsterClassEnumHelper.GetListMonsterClass}" 
+                        SelectedItem="{Binding Data.MonsterClass, Converter={StaticResource StringEnum}, Mode=TwoWay}"
                         x:Name="MonsterClassPicker">
-                        <Picker.Items>
-                            <x:String>Boss</x:String>
-                            <x:String>Standard</x:String>
-                        </Picker.Items>
                     </Picker>
                 </Grid>
 
