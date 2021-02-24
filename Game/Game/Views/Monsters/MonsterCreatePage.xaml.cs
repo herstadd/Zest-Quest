@@ -39,7 +39,7 @@ namespace Game.Views
             JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
 
             // Initialize the Monster Class Box Picker according to the default Monster type 
-            MonsterClassPicker.SelectedItem = ViewModel.Data.MonsterClass;
+            MonsterClassPicker.SelectedItem = ViewModel.Data.MonsterClass.ToString();
         }
 
         /// <summary>
