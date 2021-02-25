@@ -12,7 +12,7 @@
         <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Cook Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Choose your Chefs" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
@@ -60,9 +60,9 @@
                         </ListView>
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="CenterAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
 
-                        <Label Text="Count" Style="{StaticResource CenterMessageStyle}"/>
+                        <Label Text="Chefs" Style="{StaticResource CenterMessageStyle}"/>
 
                         <Label Style="{StaticResource CenterMessageStyle}" 
                             x:Name="PartyCountLabel"
@@ -78,7 +78,7 @@
 
                     <StackLayout HorizontalOptions="End">
 
-                        <Label Text="Party" Style="{StaticResource CenterMessageStyle}"/>
+                        <Label Text="Chosen" Style="{StaticResource CenterMessageStyle}"/>
 
                         <ListView 
                                 x:Name="PartyListView" 
