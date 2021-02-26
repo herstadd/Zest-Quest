@@ -10,7 +10,7 @@ namespace UnitTests.Helpers
     class MonsterClassEnumHelperTests
     {
         [Test]
-        public void MonsterClassEnumHelperHelper_GetListMonsterClass__Valid_Should_Pass()
+        public void MonsterClassEnumHelperHelper_GetListMonsterClass_Valid_Should_Pass()
         {
             // Arrange
 
@@ -21,6 +21,20 @@ namespace UnitTests.Helpers
 
             // Assert
             Assert.AreEqual(2, result.Count());
+        }
+
+        [Test]
+        public void MonsterClassEnumHelperHelper_ConvertStringToEnum_Boss_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterClassEnumHelper.ConvertStringToEnum("Boss");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(MonsterClassEnum.Boss, result);
         }
     }
 }
