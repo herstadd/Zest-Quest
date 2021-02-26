@@ -13,9 +13,13 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <ListView x:Name="ItemsListView" 
+        <Grid>
+
+            <Image Source="normal_screen_2.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" ></Image>
+            <StackLayout Style="{StaticResource OuterBoxStack}">
+
+                <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
@@ -25,52 +29,53 @@
                     Margin="5,0,5,0"
                     RowHeight="80"
                     >
-                
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnSpacing="5" RowSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                         Source="{Binding ImageURI}"
                                         Style="{StaticResource ImageMediumStyle}"
                                         VerticalOptions="CenterAndExpand"/>
 
-                                <Label Grid.Column="1" Grid.Row="0"
+                                    <Label Grid.Column="1" Grid.Row="0"
                                        Text="{Binding Name}" 
                                        Style="{StaticResource HeaderStyle}"/>
 
-                                <StackLayout Grid.Column="1" Grid.Row="1"
+                                    <StackLayout Grid.Column="1" Grid.Row="1"
                                     Orientation="Horizontal">
-                                    
-                                    <Label 
+
+                                        <Label 
                                        Text="{Binding Attribute}" 
                                        Style="{StaticResource ListStyle}"/>
 
-                                    <Label Text="{Binding Value}" 
+                                        <Label Text="{Binding Value}" 
                                         Style="{StaticResource ListStyle}"/>
-                                
-                                </StackLayout>
 
-                                <Label Grid.Column="1" Grid.Row="2"
+                                    </StackLayout>
+
+                                    <Label Grid.Column="1" Grid.Row="2"
                                        Text="{Binding Description}" 
                                        Style="{StaticResource ListStyle}"
                                        FontSize="Micro"/>
 
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
