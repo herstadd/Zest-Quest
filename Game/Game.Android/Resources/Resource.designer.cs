@@ -11342,7 +11342,10 @@ namespace Game.Droid
 			public const int zestquest = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int ZestScreen = 2131165363;
+			public const int ZestQuest_transparent = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int ZestScreen = 2131165364;
 			
 			static Drawable()
 			{
