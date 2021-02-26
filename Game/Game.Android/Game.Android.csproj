@@ -214,7 +214,7 @@
     <AndroidResource Include="Resources\drawable\evil_stove.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\MicrosoftTeams-image.png" />
+    <AndroidResource Include="Resources\drawable\zest_quest_splash.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\normal_screen_1.jpg" />

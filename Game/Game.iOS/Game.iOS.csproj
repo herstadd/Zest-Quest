@@ -262,7 +262,7 @@
     <BundleResource Include="Resources\evil_stove.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\MicrosoftTeams-image.png" />
+    <BundleResource Include="Resources\zest_quest_splash.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\normal_screen_1.jpg" />
