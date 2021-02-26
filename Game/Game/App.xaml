@@ -239,6 +239,33 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
+            <Style TargetType="Label" 
+                x:Key="BeginGameMessageStyle1"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Text" Value="Sharpen your knives and" />
+            </Style>
+
+            <Style TargetType="Label" 
+                x:Key="BeginGameMessageStyle2"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Text" Value="get ready for" />
+            </Style>
+
+            <Style TargetType="Label" 
+                x:Key="BeginGameMessageStyle3"
+                BasedOn="{StaticResource HeaderStyle}">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Text" Value="Zest Quest" />
+            </Style>
+
             <Style TargetType="Label"
                 x:Key="MessageLargeStyle"
                 BasedOn="{StaticResource MessageStyle}">
