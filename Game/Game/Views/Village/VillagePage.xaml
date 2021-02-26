@@ -5,68 +5,71 @@
              >
 
     <ContentPage.Content>
+        <Grid>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
+            <Image Source="normal_screen_2.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" ></Image> 
+                <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10" Background="Transparent">
 
-            <FlexLayout x:Name="flexLayout"
+                    <FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround">
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                        <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
+                            <ImageButton
                                 Source="village_chef.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"/>
 
-                    <Label 
+                            <Label 
                                 Text="Chefs"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                        <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
+                            <ImageButton
                                 Source="village_monster.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="MonstersButton_Clicked"/>
 
-                    <Label 
+                            <Label 
                                 Text="Appliances"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                        <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
+                            <ImageButton
                                 Source="village_items.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ItemsButton_Clicked"/>
 
-                    <Label 
+                            <Label 
                                 Text="Gadgets"
                                 Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+                        </StackLayout>
 
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                        <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
+                            <ImageButton
                                 Source="scorecard.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ScoresButton_Clicked"/>
 
-                    <Label 
+                            <Label 
                                 Text="Scores"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
-                </StackLayout>
+                        </StackLayout>
 
-            </FlexLayout>
-        </ScrollView>
+                    </FlexLayout>
+                </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
