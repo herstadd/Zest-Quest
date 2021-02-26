@@ -390,7 +390,7 @@ namespace Game.GameRules
                     Name = "Evil Blender",
                     MonsterType = MonsterTypeEnum.EvilBlender,
                     Description = "Someone made one too many kale smoothies in this blender",
-                    ImageURI = "monster2.png",
+                    ImageURI = "evil_blender.png",
                     UniqueDrop = ItemModelEnum.ButcherKnifeNecklace,
                     MonsterClass = MonsterClassEnum.Boss
                 },
@@ -399,7 +399,7 @@ namespace Game.GameRules
                     Name = "Evil Dishwasher",
                     MonsterType = MonsterTypeEnum.EvilDishwasher,
                     Description = "This dishwasher will not clean your dishes",
-                    ImageURI = "monster2.png",
+                    ImageURI = "evil_dishwasher.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
                 },
@@ -408,7 +408,7 @@ namespace Game.GameRules
                     Name = "Evil Stove",
                     MonsterType = MonsterTypeEnum.EvilStove,
                     Description = "One hot oil splash too many sent the stove to the dark side",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "evil_stove.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
                 },
@@ -417,7 +417,7 @@ namespace Game.GameRules
                     Name = "Evil Kitchen Sink",
                     MonsterType = MonsterTypeEnum.EvilKitchenSink,
                     Description = "Brings a whole new meaning to throwing the kitchen sink",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "evil_kitchen_sink.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
 
@@ -427,7 +427,7 @@ namespace Game.GameRules
                     Name = "Evil Rice Cooker",
                     MonsterType = MonsterTypeEnum.EvilRiceCooker,
                     Description = "Good for cooking rice, porridge, oatmeal and its enemies",
-                    ImageURI = "monster2.png",
+                    ImageURI = "evil_rice_cooker.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
                 },
@@ -436,7 +436,7 @@ namespace Game.GameRules
                     Name = "Evil Crock pot",
                     MonsterType = MonsterTypeEnum.EvilCrockpot,
                     Description = "Ready to slowly take revenge",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "evil_crock_pot.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
                 },
@@ -445,7 +445,7 @@ namespace Game.GameRules
                     Name = "Evil Can Opener",
                     MonsterType = MonsterTypeEnum.EvilCanOpener,
                     Description = "Kinda rusty...kinda evil",
-                    ImageURI = "crock_pot.png",
+                    ImageURI = "evil_can_opener.png",
                     UniqueDrop = ItemModelEnum.None,
                     MonsterClass = MonsterClassEnum.Standard
                 },
