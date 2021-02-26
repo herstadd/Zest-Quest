@@ -36,5 +36,19 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(MonsterClassEnum.Boss, result);
         }
+
+        [Test]
+        public void MonsterClassEnumHelperHelper_ConvertStringToEnum_Standard_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterClassEnumHelper.ConvertStringToEnum("Standard");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(MonsterClassEnum.Standard, result);
+        }
     }
 }
