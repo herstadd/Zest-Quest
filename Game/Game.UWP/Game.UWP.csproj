@@ -137,7 +137,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
-    <Content Include="Assets\ZestQuest_transparent.png" />
+    <Content Include="ZestQuest_transparent.png" />
     <Content Include="auto_battle.png" />
     <Content Include="catchef.png" />
     <Content Include="crock_pot.png" />
