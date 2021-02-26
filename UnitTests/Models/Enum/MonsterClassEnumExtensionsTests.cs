@@ -21,6 +21,18 @@ namespace UnitTests.Models
             Assert.AreEqual("Standard", result);
         }
 
+        [Test]
+        public void MonsterClassEnumExtensionsTests_ToMessage_Boss_Should_Pass()
+        {
+            // Arrange
 
+            // Act
+            var result = MonsterClassEnumExtensions.ToMessage(MonsterClassEnum.Boss);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Boss", result);
+        }
     }
 }
