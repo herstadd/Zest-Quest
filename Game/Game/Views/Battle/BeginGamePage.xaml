@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.BeginGamePage">
+    <ContentPage.Content>
+
+      <ScrollView>
+            <StackLayout 
+            Style="{StaticResource OuterBoxStack}"
+            HorizontalOptions="Center" 
+            Spacing="20"
+            Padding="40">
+
+                <StackLayout 
+                VerticalOptions="Center" 
+                Padding="30">
+
+                <StackLayout Orientation="Vertical">
+                    <Label Style="{StaticResource BeginGameMessageStyle1}" />
+                    <Label Style="{StaticResource BeginGameMessageStyle2}"/>
+                    <Label Style="{StaticResource BeginGameMessageStyle3}" />
+                </StackLayout>
+            </StackLayout>
+
+                <StackLayout 
+                    HorizontalOptions="Center">
+                    <Button 
+                        Clicked="LunchRushButton_Clicked"
+                        Text="Lunch Rush"
+                        HeightRequest="60"
+                        WidthRequest="120"/>
+                </StackLayout>
+        </StackLayout>
+      </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
