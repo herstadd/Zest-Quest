@@ -205,7 +205,7 @@
     <AndroidResource Include="Resources\drawable\zestquest.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ZestQuest_transparent.png" />
+    <AndroidResource Include="Resources\drawable\zestquest_transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

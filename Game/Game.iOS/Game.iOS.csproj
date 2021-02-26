@@ -253,6 +253,6 @@
     <BundleResource Include="Resources\zestquest.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\ZestQuest_transparent.png" />
+    <BundleResource Include="Resources\zestquest_transparent.png" />
   </ItemGroup>
 </Project>
