@@ -255,4 +255,40 @@
   <ItemGroup>
     <BundleResource Include="Resources\zestquest_transparent.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_rice_cooker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_stove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MicrosoftTeams-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\normal_screen_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\normal_screen_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zest_quest_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\battle_grid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_blender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_can_opener.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_crock_pot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_dishwasher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\evil_kitchen_sink.png" />
+  </ItemGroup>
 </Project>
