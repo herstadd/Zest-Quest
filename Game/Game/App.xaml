@@ -65,8 +65,9 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
-                <Setter Property="Padding" Value="10,10,10,10" />
+                <Setter Property="Padding" Value="0,0,0,0" />
             </Style>
+
 
             <!--<Style TargetType="ContentPage"
                 x:Key="BlockingPanel">
