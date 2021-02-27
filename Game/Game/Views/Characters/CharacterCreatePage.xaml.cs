@@ -43,6 +43,8 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
 
+            NewItemPicker.SelectedItem = "ChefHat";
+
             foreach (string location in locations)
             {
                 CallProperImages(ViewModel.Data.Job.ToMessage(), location);
