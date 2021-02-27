@@ -58,7 +58,7 @@
                         <StackLayout Style="{StaticResource CardImageTextBox}">
 
                             <ImageButton
-                                Source="scorecard.png"
+                                Source="score_icon.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ScoresButton_Clicked"/>
 
