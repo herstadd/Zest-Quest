@@ -137,7 +137,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
-    <Content Include="auto_battle2.png" />
+    <Content Include="score_icon.png" />
     <Content Include="battle_grid.jpg" />
     <Content Include="evil_blender.png" />
     <Content Include="evil_can_opener.png" />

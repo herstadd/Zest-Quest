@@ -253,7 +253,7 @@
     <AndroidResource Include="Resources\drawable\zest_quest_icon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\auto_battle2.png" />
+    <AndroidResource Include="Resources\drawable\score_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\restaurant2.png" />

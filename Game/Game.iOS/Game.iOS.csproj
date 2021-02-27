@@ -301,7 +301,7 @@
     <BundleResource Include="Resources\zest_quest_icon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\auto_battle2.png" />
+    <BundleResource Include="Resources\score_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\restaurant2.png" />
