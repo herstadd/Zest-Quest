@@ -137,6 +137,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="auto_battle2.png" />
     <Content Include="battle_grid.jpg" />
     <Content Include="evil_blender.png" />
     <Content Include="evil_can_opener.png" />
@@ -145,6 +146,10 @@
     <Content Include="evil_kitchen_sink.png" />
     <Content Include="evil_rice_cooker.png" />
     <Content Include="evil_stove.png" />
+    <Content Include="restaurant2.png" />
+    <Content Include="robot_chef.png" />
+    <Content Include="tasty_dish.png" />
+    <Content Include="zest_quest_icon2.png" />
     <Content Include="zest_quest_splash.png" />
     <Content Include="normal_screen_1.jpg" />
     <Content Include="normal_screen_2.jpg" />
