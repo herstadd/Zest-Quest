@@ -52,6 +52,8 @@ namespace Game.Views
 
             MakeAllItemsInvisible();
 
+            NewItemPicker.SelectedItem = "ChefHat";
+
             foreach (string location in locations)
             {
                 PopulateInitialItems(location, ViewModel.Data);
