@@ -15,17 +15,26 @@ namespace Game.Engine.EngineGame
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
 
         // The Turn Engine
-        public new ITurnEngineInterface Turn
+        //public new ITurnEngineInterface Turn
+        //{
+        //    get
+        //    {
+        //        if (base.Turn == null)
+        //        {
+        //            base.Turn = new TurnEngine();
+        //        }
+        //        return base.Turn;
+        //    }
+        //    set { base.Turn = Turn; }
+        //}
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <returns></returns>
+        public RoundEngine()
         {
-            get
-            {
-                if (base.Turn == null)
-                {
-                    base.Turn = new TurnEngine();
-                }
-                return base.Turn;
-            }
-            set { base.Turn = Turn; }
+            Turn = new TurnEngine();
         }
 
         /// <summary>
@@ -33,6 +42,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ClearLists()
         {
+            return base.ClearLists();
+
             EngineSettings.ItemPool.Clear();
             EngineSettings.MonsterList.Clear();
             return true;
@@ -43,6 +54,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool NewRound()
         {
+            return base.NewRound();
+            
             // End the existing round
             EndRound();
 
@@ -86,7 +99,8 @@ namespace Game.Engine.EngineGame
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            throw new System.NotImplementedException();
+            return base.AddMonstersToRound();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -96,6 +110,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool EndRound()
         {
+            return base.EndRound();
             // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
             if (EngineSettings.BattleScore.AutoBattle)
             {
@@ -113,10 +128,12 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override void PickupItemsForAllCharacters()
         {
+            base.PickupItemsForAllCharacters();
+            return;
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -130,6 +147,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override RoundEnum RoundNextTurn()
         {
+            return base.RoundNextTurn();
             // No characters, game is over..
 
             // Check if round is over
@@ -138,7 +156,7 @@ namespace Game.Engine.EngineGame
 
             // Do the turn..
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -146,11 +164,12 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerTurn()
         {
+            return base.GetNextPlayerInList();
             // Remove the Dead
 
             // Get Next Player
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -158,7 +177,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            throw new System.NotImplementedException();
+            return base.RemoveDeadPlayersFromList();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -166,9 +186,10 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
+            return base.OrderPlayerListByTurnOrder();
             // TODO Teams: Implement the order
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -176,6 +197,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
+            return base.MakePlayerList();
             // Start from a clean list of players
 
             // Remember the Insert order, used for Sorting
@@ -184,7 +206,7 @@ namespace Game.Engine.EngineGame
 
             // Add the Monsters
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -192,6 +214,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel GetNextPlayerInList()
         {
+            return base.GetNextPlayerInList();
             // Walk the list from top to bottom
             // If Player is found, then see if next player exist, if so return that.
             // If not, return first player (looped)
@@ -206,7 +229,7 @@ namespace Game.Engine.EngineGame
 
             // Return the next element
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -214,12 +237,12 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsFromPool(PlayerInfoModel character)
         {
-
+            return base.PickupItemsFromPool(character);
             // TODO: Teams, You need to implement your own Logic if not using auto apply
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -229,7 +252,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            throw new System.NotImplementedException();
+            return base.GetItemFromPoolIfBetter(character, setLocation);
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -239,7 +263,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
-            throw new System.NotImplementedException();
+            return base.SwapCharacterItem(character, setLocation, PoolItem);
+            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -247,7 +272,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveCharacterBuffs()
         {
-            throw new System.NotImplementedException();
+            return base.RemoveCharacterBuffs();
+            //throw new System.NotImplementedException();
         }
     }
 }
