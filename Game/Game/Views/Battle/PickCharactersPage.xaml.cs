@@ -124,12 +124,12 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void BattleButton_Clicked(object sender, EventArgs e)
+        public async void CookButton_Clicked(object sender, EventArgs e)
         {
             CreateEngineCharacterList();
 
-            await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new PickMonstersPage());
+            
         }
 
         /// <summary>
