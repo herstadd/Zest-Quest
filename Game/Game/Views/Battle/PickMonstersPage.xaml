@@ -12,8 +12,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-          <StackLayout Orientation="Horizontal" Padding="150,100,0,0">
+        <StackLayout Orientation="Horizontal" Padding="150,100,0,0">
             <StackLayout Padding="1">
                 <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
@@ -48,12 +47,23 @@
                 </ListView>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical">
-                <Label Text="VS"
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Orientation="Vertical" Padding="0,100,0,0" >
+                    <Label Text="VS"
                        Font="Bold"
                        FontSize="Large"  
-                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Center"
                        />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0,300,0,0">
+                    <Button 
+                        HorizontalOptions= "Start"
+                        Text="round start"
+                        Clicked="RoundStartBUtton_CLicked"
+                        HeightRequest="60"
+                        WidthRequest="100"/>
+                </StackLayout>
+
             </StackLayout>
 
             <StackLayout Padding="1">
@@ -89,14 +99,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
-          </StackLayout>
-          <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-                <Button 
-                        Text="round start"
-                        Clicked="RoundStartBUtton_CLicked"
-                        HeightRequest="60"
-                        WidthRequest="120"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
