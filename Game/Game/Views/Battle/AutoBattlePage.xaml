@@ -9,7 +9,7 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="item.png"
+                        Source="robot_chef.png"
                         Style="{StaticResource ImageLargeStyle}"
                         Clicked="AutobattleButton_Clicked"/>
 
