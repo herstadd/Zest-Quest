@@ -38,7 +38,7 @@ namespace Game.Engine.EngineBase
         #endregion Algrorithm
 
         // The Turn Engine
-        public ITurnEngineInterface Turn = null;
+        // public ITurnEngineInterface Turn = null;
 
         // Hold the BaseEngine
         public EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
