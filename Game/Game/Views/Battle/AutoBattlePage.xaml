@@ -6,19 +6,26 @@
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout>
 
                 <ImageButton
                         Source="robot_chef.png"
                         Style="{StaticResource ImageLargeStyle}"
                         Clicked="AutobattleButton_Clicked"/>
 
-                <Label 
-                        Text="Cook Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
+                <Label></Label>
+                
+                <Button 
+                        Text="Auto-Cook"
+                        WidthRequest="200"
+                        HeightRequest="150"
+                        FontSize="Large"
+                        Clicked="AutobattleButton_Clicked"/>
+
+                <Label></Label>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout>
 
                 <Label 
                     x:Name="BattleMessageValue"
@@ -29,14 +36,16 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"
-                    Style="{StaticResource ListStyle}"
+                    FontSize="Medium"
                     />
 
-                <Image
+                <!--Mike had an image on the autobattle page here, but we don't currently have anything to add.
+                If we end up coming up with something, we can uncomment this block-->
+                <!--<Image
                         x:Name="AutobattleImage"
                         Source="elf1_a.gif"
                         IsAnimationPlaying="True"
-                        Style="{StaticResource ImageLargeStyle}"></Image>
+                        Style="{StaticResource ImageLargeStyle}"></Image>-->
 
             </StackLayout>
         </StackLayout>
