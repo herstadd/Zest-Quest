@@ -139,6 +139,11 @@
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
                     <Label Text="Thank you for Playing" Style="{StaticResource CenterMessageLargeStyle}"/>
 
+                    <FlexLayout x:Name="CharacterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
                     <Label Text="Check your score, or click Exit and return soon" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalTextAlignment="Center" MaxLines="5" Padding="20"/>
 
                     <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="50"/>
