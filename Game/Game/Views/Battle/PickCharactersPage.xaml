@@ -9,12 +9,11 @@
              Title="{Binding Title}">
 
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
                 <Label Text="Choose your Chefs" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
                     <StackLayout HorizontalOptions="Start">
 
@@ -27,7 +26,7 @@
                                 RefreshCommand="{Binding LoadItemsCommand}"
                                 CachingStrategy="RecycleElement"
                                 ItemSelected="OnDatabaseCharacterItemSelected"
-                                HasUnevenRows="true"
+                                HasUnevenRows="True"
                                 Margin="5,0,5,0"
                                 RowHeight="80">
 
@@ -60,21 +59,7 @@
                         </ListView>
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-
-                        <Label Text="Chefs" Style="{StaticResource CenterMessageStyle}"/>
-
-                        <Label Style="{StaticResource CenterMessageStyle}" 
-                            x:Name="PartyCountLabel"
-                            Text="0"/>
-
-                        <Button 
-                            x:Name="BeginBattleButton"
-                            Clicked="CookButton_Clicked" 
-                            Text="Cook"
-                            IsEnabled="False"/>
-
-                    </StackLayout>
+                    
 
                     <StackLayout HorizontalOptions="End">
 
@@ -87,7 +72,7 @@
                                 RefreshCommand="{Binding LoadItemsCommand}"
                                 CachingStrategy="RecycleElement"
                                 ItemSelected="OnPartyCharacterItemSelected"
-                                HasUnevenRows="true"
+                                HasUnevenRows="True"
                                 Margin="5,0,5,0"
                                 RowHeight="80">
 
@@ -120,7 +105,22 @@
                     </StackLayout>
                 </StackLayout>
 
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <Label Text="Chefs" Style="{StaticResource CenterMessageStyle}"/>
+
+                    <Label Style="{StaticResource CenterMessageStyle}" 
+                            x:Name="PartyCountLabel"
+                            Text="0"/>
+
+                    <Button 
+                            x:Name="BeginBattleButton"
+                            Clicked="CookButton_Clicked" 
+                            Text="Cook"
+                            IsEnabled="False"/>
+
+                </StackLayout>
+
             </StackLayout>
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
