@@ -23,7 +23,8 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     WidthRequest="60"
-                    RowHeight="100">
+                    RowHeight="100"
+                    VerticalScrollBarVisibility="Never">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -78,7 +79,8 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     WidthRequest="60"
-                    RowHeight="100">
+                    RowHeight="100"
+                    VerticalScrollBarVisibility="Never">
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
