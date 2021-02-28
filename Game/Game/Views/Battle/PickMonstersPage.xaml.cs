@@ -6,6 +6,9 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
+using Game.GameRules;
+using System.Collections.Generic;
 
 namespace Game.Views
 {
@@ -17,8 +20,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickMonstersPage : ContentPage
     {
-        // The view model, used for data binding
-        readonly CharacterIndexViewModel ViewModel = CharacterIndexViewModel.Instance;
+      
 
         // Empty Constructor for UTs
         public PickMonstersPage(bool UnitTest) { }
@@ -72,21 +74,42 @@ namespace Game.Views
         {
             base.OnAppearing();
 
-            BindingContext = null;
+            // Create a list of 6 Monsters and add to item source in listview
+            var monsterList = DefaultData.LoadData(new MonsterModel());
 
-            // If no data, then set it for needing refresh
-            if (ViewModel.Dataset.Count == 0)
+            List<MonsterModel> monsters = new List<MonsterModel>();
+
+            int counter = 1;
+            foreach(var monster in monsterList )
             {
-                ViewModel.SetNeedsRefresh(true);
+                if (counter > 6)
+                {
+                    break;
+                }
+                counter++;
+                monsters.Add(monster);
             }
 
-            // If the needs Refresh flag is set update it
-            if (ViewModel.NeedsRefresh())
+
+            // Create a list of 6 chefs and add to item source in listview
+            var ChefList = DefaultData.LoadData(new CharacterModel());
+
+            List<CharacterModel> chefs = new List<CharacterModel>();
+
+            counter = 1;
+            foreach (var chef in ChefList)
             {
-                ViewModel.LoadDatasetCommand.Execute(null);
+                if (counter > 6)
+                {
+                    break;
+                }
+                counter++;
+                chefs.Add(chef);
             }
 
-            BindingContext = ViewModel;
+            ItemsListView.ItemsSource = chefs;
+            ItemsListView2.ItemsSource = monsters;
+            
         }
 
         /// <summary>

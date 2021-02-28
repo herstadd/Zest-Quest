@@ -14,7 +14,8 @@
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" Padding="150,100,0,0">
             <StackLayout Padding="1">
-                <ListView x:Name="ItemsListView" 
+                <ListView x:Name="ItemsListView"
+                    BindingContext="Chefs"
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
@@ -69,6 +70,7 @@
             <StackLayout Padding="1">
 
                 <ListView x:Name="ItemsListView2" 
+                    BindingContext="Monsters"
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
