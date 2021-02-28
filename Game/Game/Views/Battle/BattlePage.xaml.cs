@@ -49,6 +49,8 @@ namespace Game.Views
             // Create and Draw the Map
             InitializeMapGrid();
 
+            SetCharacterList();
+
             // Start the Battle Engine
             BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
@@ -881,6 +883,51 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Set Character List for Game Over
+        /// </summary>
+        public void SetCharacterList() 
+        {
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+            {
+                CharacterListFrame.Children.Add(CreateCharacterDisplayBox(data));
+            }
+        }
+
+        /// <summary>
+        /// Return a stack layout for the Characters
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public StackLayout CreateCharacterDisplayBox(PlayerInfoModel data)
+        {
+            if (data == null)
+            {
+                data = new PlayerInfoModel();
+            }
+
+            // Hookup the image
+            var PlayerImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                Source = data.ImageURI
+            };
+
+            // Put the Image Button and Text inside a layout
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["ScoreCharacterInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+                Children = {
+                    PlayerImage,
+                },
+            };
+
+            return PlayerStack;
+        }
+
+        /// <summary>
         /// Control the UI Elements to display
         /// </summary>
         public void ShowBattleModeUIElements()
@@ -903,7 +950,7 @@ namespace Game.Views
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-
+                    
                     // Show the Game Over Display
                     GameOverDisplay.IsVisible = true;
                     break;
