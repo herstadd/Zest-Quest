@@ -45,11 +45,12 @@ namespace Game.Views
 
 			await AutoBattle.RunAutoBattle();
 			
-			var BattleMessage = string.Format("Done {0} Rounds", AutoBattle.Battle.EngineSettings.BattleScore.RoundCount);
+			var BattleMessage = string.Format("You cooked {0} Times", AutoBattle.Battle.EngineSettings.BattleScore.RoundCount);
 
 			BattleMessageValue.Text = BattleMessage;
 
-			AutobattleImage.Source = "troll6_d.gif";
-		}
-	}
+			// Mike had a gif here, we can add one back in if we get access to a gif
+            //AutobattleImage.Source = "troll6_d.gif";
+        }
+    }
 }
