@@ -150,6 +150,7 @@
     <Content Include="restaurant2.png" />
     <Content Include="robot_chef.png" />
     <Content Include="tasty_dish.png" />
+    <Content Include="tombstone.png" />
     <Content Include="zest_quest_icon2.png" />
     <Content Include="zest_quest_splash.png" />
     <Content Include="normal_screen_1.jpg" />
