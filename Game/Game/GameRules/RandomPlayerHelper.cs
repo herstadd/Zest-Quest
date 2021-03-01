@@ -61,7 +61,7 @@ namespace Game.GameRules
         public static string GetMonsterImage()
         {
 
-            List<String> StringList = new List<String> { "item.png", "item.png", "item.png", "item.png", "item.png", "item.png" };
+            List<String> StringList = new List<String> { "evil_blender.png", "evil_can_opener.png", "evil_crock_pot.png", "evil_dishwasher.png", "evil_kitchen_sink.png", "evil_rice_cooker.png", "evil_stove.png" };
 
             var index = DiceHelper.RollDice(1, StringList.Count()) - 1;
 
