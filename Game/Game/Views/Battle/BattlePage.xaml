@@ -53,40 +53,44 @@
                     </AbsoluteLayout>
                 </StackLayout>
 
-                <StackLayout 
-                            Style="{StaticResource VerticalStack}" 
+                <Frame x:Name="MessageDisplayOuterBox"
+                                Style="{StaticResource PlayerBattleMessageFrame}"
+                                IsVisible="False">
+                    <StackLayout 
+                                Style="{StaticResource VerticalStack}" 
+                                HeightRequest="100"
+                                HorizontalOptions="CenterAndExpand">
+
+                        <StackLayout x:Name="MessageDisplayBox"
+                                IsVisible="false"
+                                Style="{StaticResource VerticalStack}" 
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="CenterAndExpand">
+
+                            <Label x:Name="BattleMessages" 
+                                        HorizontalOptions="FillAndExpand" 
+                                        LineBreakMode="WordWrap" 
+                                        MaxLines="10"
+                                        LineHeight="1"
+                                        CharacterSpacing="1"
+                                        Style="{StaticResource LabelStyle}"
+                                        FontSize="Micro"/>
+
+                            <!--<WebView
+                            x:Name="HtmlBox"
+                            WidthRequest="100"
+                            MinimumWidthRequest="100"
                             HeightRequest="100"
-                            HorizontalOptions="CenterAndExpand">
-
-                    <StackLayout x:Name="MessageDisplayBox" 
+                            MinimumHeightRequest="100"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            BackgroundColor="Transparent"
                             IsVisible="false"
-                            Style="{StaticResource VerticalStack}" 
-                                    VerticalOptions="StartAndExpand"
-                                    HorizontalOptions="CenterAndExpand">
-
-                        <Label x:Name="BattleMessages" 
-                                    HorizontalOptions="FillAndExpand" 
-                                    LineBreakMode="WordWrap" 
-                                    MaxLines="10"
-                                    LineHeight="1"
-                                    CharacterSpacing="1"
-                                    Style="{StaticResource LabelStyle}"
-                                    FontSize="Micro"/>
-
-                        <!--<WebView
-                        x:Name="HtmlBox"
-                        WidthRequest="100"
-                        MinimumWidthRequest="100"
-                        HeightRequest="100"
-                        MinimumHeightRequest="100"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Start"
-                        BackgroundColor="Transparent"
-                        IsVisible="false"
-                        />-->
+                            />-->
+                        </StackLayout>
                     </StackLayout>
-                </StackLayout>
-                
+                </Frame>
+
                 <!--The Bottom of the Battle UI  Holds the Player to Player boxes, Buttons, and the Messages-->
                 <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}">
 
