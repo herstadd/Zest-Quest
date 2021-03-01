@@ -4,7 +4,7 @@
              x:Class="Game.Views.BeginGamePage">
     <ContentPage.Content>
 
-        <ScrollView>
+        <ScrollView HorizontalOptions="CenterAndExpand">
             <StackLayout 
                 Style="{StaticResource OuterBoxStack}"
                 HorizontalOptions="Center" 
