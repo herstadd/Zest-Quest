@@ -10,7 +10,7 @@ namespace Game.Models
     public class BattleSettingsModel
     {
         // The Battle Model (Simple, Map, etc.)
-        public BattleModeEnum BattleModeEnum = BattleModeEnum.SimpleNext;
+        public BattleModeEnum BattleModeEnum = BattleModeEnum.MapNext;
 
         // Monster always Hit or Miss or Default
         public HitStatusEnum MonsterHitEnum = HitStatusEnum.Default;
