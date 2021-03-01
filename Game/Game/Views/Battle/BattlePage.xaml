@@ -66,7 +66,12 @@
                                 Style="{StaticResource VerticalStack}" 
                                         VerticalOptions="StartAndExpand"
                                         HorizontalOptions="CenterAndExpand">
-
+                            
+                            <Label 
+                                Text="Battle Messages"
+                                FontSize="Large"
+                                HorizontalOptions="Center"/>
+                            
                             <Label x:Name="BattleMessages" 
                                         HorizontalOptions="FillAndExpand" 
                                         LineBreakMode="WordWrap" 
