@@ -128,7 +128,7 @@ namespace Game.Views
         {
             CreateEngineCharacterList();
 
-            await Navigation.PushAsync(new PickMonstersPage());
+            await Navigation.PushAsync(new BattlePage());
             
         }
 
