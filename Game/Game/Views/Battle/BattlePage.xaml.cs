@@ -917,6 +917,7 @@ namespace Game.Views
             {
                 Style = (Style)Application.Current.Resources["ScoreCharacterInfoBox"],
                 HorizontalOptions = LayoutOptions.Center,
+                HeightRequest = 80,
                 Padding = 0,
                 Spacing = 0,
                 Children = {
