@@ -164,8 +164,6 @@
 
                     <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="100"/>
 
-                    <Button x:Name="PlayAgainButton" Clicked="PlayAgain_Clicked" Text="Play Again" WidthRequest="100"></Button>
-
                     <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="100"></Button>
 
                 </StackLayout>
