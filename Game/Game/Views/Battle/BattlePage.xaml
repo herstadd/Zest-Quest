@@ -157,9 +157,11 @@
                     <Label Text="All Chefs have been defeated" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalOptions="Center" HorizontalTextAlignment="Center" MaxLines="5"/>
                     <Label Text="Thank you for playing!" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalOptions="Center" HorizontalTextAlignment="Center" MaxLines="5" Padding="0,0,0,15"/>
 
-                    <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="50"/>
+                    <Button x:Name="ShowScoreButton" Clicked="ShowScoreButton_Clicked" Text="Score" WidthRequest="100"/>
 
-                    <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="50"></Button>
+                    <Button x:Name="PlayAgainButton" Clicked="PlayAgain_Clicked" Text="Play Again" WidthRequest="100"></Button>
+
+                    <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="100"></Button>
 
                 </StackLayout>
             </StackLayout>
