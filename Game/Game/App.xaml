@@ -127,8 +127,8 @@
                 <Setter Property="FontSize" Value="Micro" />
             </Style>
 
-            <Style TargetType="LabelStyleCenter"
-                x:Key="LabelStyle"
+            <Style TargetType="Label"
+                x:Key="LabelStyleCenter"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="HorizontalOptions" Value="Center" />
