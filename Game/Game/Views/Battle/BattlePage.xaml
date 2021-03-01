@@ -150,9 +150,9 @@
                     <Label Text="GAME OVER" Style="{StaticResource CenterMessageLargeStyle}" Padding="0,0,0,15"/>
 
                     <FlexLayout x:Name="CharacterListFrame"
-                                    JustifyContent="Center"
-                                    AlignContent="Center"
-                                    Wrap="Wrap"/>
+                                JustifyContent="Center"
+                                AlignContent="Center"
+                                Wrap="Wrap"/>
 
                     <Label Text="All Chefs have been defeated" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalOptions="Center" HorizontalTextAlignment="Center" MaxLines="5"/>
                     <Label Text="Thank you for playing!" Style="{StaticResource MessageStyle}" LineBreakMode="WordWrap" HorizontalOptions="Center" HorizontalTextAlignment="Center" MaxLines="5" Padding="0,0,0,15"/>
