@@ -61,11 +61,11 @@
 
             <!--The Item Popup-->
             <StackLayout 
-                    x:Name="PopupLoadingView" 
+                    x:Name="PopupLoadingView"                     
                     BackgroundColor="{StaticResource PageBackgroundColor}" 
                     IsVisible="false" 
-                    AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
-                    AbsoluteLayout.LayoutFlags="All">
+                    AbsoluteLayout.LayoutBounds=".5, .5" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional">
 
                 <StackLayout 
                         VerticalOptions="CenterAndExpand" 
@@ -74,7 +74,7 @@
                         HeightRequest="300"
                         >
 
-                    <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                    <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                         
                         <Grid Margin="5,5,5,5">
 
@@ -89,6 +89,7 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="1" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
@@ -113,18 +114,18 @@
                                 Text="Close"
                                     Grid.Row="6" Grid.Column="0"/>
 
-                            <Label Text="Possible Item" Style="{StaticResource LabelStyleCenterBigger}" Grid.Row="0" Grid.Column="1"/>
-                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}" Grid.Row="1" Grid.Column="1"/>
+                            <Label Text="Possible Item" Style="{StaticResource LabelStyleCenterBigger}" Grid.Row="0" Grid.Column="2"/>
+                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}" Grid.Row="1" Grid.Column="2"/>
 
-                            <Label x:Name="PopupItemName" Style="{StaticResource LabelStyleCenter}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="1"/>
-                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="3" Grid.Column="1" />
+                            <Label x:Name="PopupItemName" Style="{StaticResource LabelStyleCenter}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="2" Grid.Column="2"/>
+                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="3" Grid.Column="2" />
 
-                            <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="4" Grid.Column="1">
+                            <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="4" Grid.Column="2">
                                 <Label Text="Location : " Style="{StaticResource LabelStyle}" />
                                 <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="5" Grid.Column="1">
+                            <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="5" Grid.Column="2">
                                 <Label x:Name="PopupItemAttribute" Style="{StaticResource LabelStyle}" />
                                 <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
@@ -132,7 +133,7 @@
                             <Button x:Name="PopupCloseButton" 
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Equip!"
-                                     Grid.Row="6" Grid.Column="1"/>
+                                     Grid.Row="6" Grid.Column="2"/>
 
                         </Grid>
                     </Frame>
