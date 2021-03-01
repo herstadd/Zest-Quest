@@ -5,14 +5,12 @@
 
     <NavigationPage.TitleView>
         <!--Menu Bar-->
-        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
-            <Frame Padding="10,0,0,0"/>
-            <Label Text="Elves vs Monsters" Style="{StaticResource CenterMessageLargeStyle}"/>
-            <Frame Padding="10,0,0,0"/>
+        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand">
+            <Frame Padding="250,0,0,0"/>
             <ImageButton Source="icon_edit.png" Clicked="Setttings_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
             <ImageButton Source="icon_cancel.png" Clicked="ExitButton_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
             <Frame Padding="10,0,0,0"/>
-            <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center"/>
+            <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
@@ -36,12 +34,16 @@
                         IsVisible="true" 
                         VerticalOptions="Start" 
                         HorizontalOptions="CenterAndExpand">
-
-                        <Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
-
-                        <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout Orientation="Horizontal" Padding="0,50,0,0">
+                            <StackLayout x:Name="CharacterBox" Style="{StaticResource VerticalStack}" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Vertical" Padding="30,250,30,0" >
+                                <Label Text="VS"
+                                       Font="Bold"
+                                       FontSize="Large"  
+                                       HorizontalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout x:Name="MonsterBox" Style="{StaticResource VerticalStack}" VerticalOptions="Center"/>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
 
@@ -130,8 +132,11 @@
 
                         <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Next Attack" IsVisible="False"/>
                         <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
-                        <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
-
+                        <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="round start" IsVisible="False"  
+                                HorizontalOptions= "Start"
+                                HeightRequest="60"
+                                WidthRequest="100"/>
+                     
                     </StackLayout>
 
                 </StackLayout>
