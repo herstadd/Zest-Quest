@@ -34,15 +34,15 @@
                         IsVisible="true" 
                         VerticalOptions="Start" 
                         HorizontalOptions="CenterAndExpand">
-                        <StackLayout Orientation="Horizontal" Padding="0,50,0,0">
-                            <StackLayout x:Name="CharacterBox" Style="{StaticResource VerticalStack}" VerticalOptions="Center"/>
-                            <StackLayout Orientation="Vertical" Padding="30,250,30,0" >
+                        <StackLayout Orientation="Vertical" Padding="0,50,0,0">
+                            <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center"/>
+                            <StackLayout Orientation="Vertical" Padding="30,50,30,50" >
                                 <Label Text="VS"
                                        Font="Bold"
                                        FontSize="Large"  
                                        HorizontalOptions="Center"/>
                             </StackLayout>
-                            <StackLayout x:Name="MonsterBox" Style="{StaticResource VerticalStack}" VerticalOptions="Center"/>
+                            <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center"/>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
