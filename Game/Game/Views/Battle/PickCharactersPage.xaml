@@ -105,7 +105,7 @@
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
 
                     <Label Text="Chefs" Style="{StaticResource CenterMessageStyle}"/>
 
@@ -116,7 +116,12 @@
                     <Button 
                             x:Name="BeginBattleButton"
                             Clicked="CookButton_Clicked" 
-                            Text="Cook"
+                            Text="Cook!"
+                            FontSize="Small"
+                            FontAttributes="Bold"
+                            HeightRequest="60"
+                            WidthRequest="100"
+                            Margin="5,5,5,5"
                             IsEnabled="False"/>
 
                 </StackLayout>
