@@ -130,6 +130,12 @@
             <Style TargetType="Label"
                 x:Key="LabelStyleCenter"
                 BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="LabelStyleCenterBigger"
+                BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
