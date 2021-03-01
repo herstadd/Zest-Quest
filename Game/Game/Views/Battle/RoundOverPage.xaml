@@ -76,8 +76,6 @@
 
                     <Frame BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
                         
-                        <!--<StackLayout Style="{StaticResource HorizontalStack}" VerticalOptions="CenterAndExpand">
-                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">-->
                         <Grid Margin="5,5,5,5">
 
                             <Grid.RowDefinitions>
@@ -114,8 +112,7 @@
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Close"
                                     Grid.Row="6" Grid.Column="0"/>
-                            <!--</StackLayout>
-                            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">-->
+
                             <Label Text="Possible Item" Style="{StaticResource LabelStyleCenterBigger}" Grid.Row="0" Grid.Column="1"/>
                             <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}" Grid.Row="1" Grid.Column="1"/>
 
@@ -136,8 +133,7 @@
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Equip!"
                                      Grid.Row="6" Grid.Column="1"/>
-                            <!--</StackLayout>
-                        </StackLayout>-->
+
                         </Grid>
                     </Frame>
                 </StackLayout>
