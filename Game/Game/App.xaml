@@ -577,6 +577,14 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="PlayerBattleMessageFrame"
+                BasedOn="{StaticResource PlayerBattleOuterFrame}">
+                <Setter Property="HeightRequest" Value="500" />
+                <Setter Property="WidthRequest" Value="500" />
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="BattleMapFrame">
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="WidthRequest" Value="60" />
