@@ -176,7 +176,7 @@ namespace Game.Views
             }
 
             // Hookup the image
-            var PlayerImage = new Image
+            var PlayerImage = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
                 Source = data.ImageURI
