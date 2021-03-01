@@ -773,7 +773,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void PlayAgain_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Navigation.PopAsync();
         }
 
         /// <summary>
