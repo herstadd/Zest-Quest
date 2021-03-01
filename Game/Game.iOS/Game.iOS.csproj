@@ -309,4 +309,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\emptyspace.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tombstone.png" />
+  </ItemGroup>
 </Project>
