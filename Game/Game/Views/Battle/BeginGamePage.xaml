@@ -4,23 +4,23 @@
              x:Class="Game.Views.BeginGamePage">
     <ContentPage.Content>
 
-      <ScrollView>
+        <ScrollView>
             <StackLayout 
-            Style="{StaticResource OuterBoxStack}"
-            HorizontalOptions="Center" 
-            Spacing="20"
-            Padding="40">
+                Style="{StaticResource OuterBoxStack}"
+                HorizontalOptions="Center" 
+                Spacing="20"
+                Padding="40">
 
                 <StackLayout 
-                VerticalOptions="Center" 
-                Padding="30">
+                    VerticalOptions="CenterAndExpand"
+                    Padding="30">
 
-                <StackLayout Orientation="Vertical">
-                    <Label Style="{StaticResource BeginGameMessageStyle1}" />
-                    <Label Style="{StaticResource BeginGameMessageStyle2}"/>
-                    <Label Style="{StaticResource BeginGameMessageStyle3}" />
+                    <StackLayout Orientation="Vertical">
+                        <Label Style="{StaticResource BeginGameMessageStyle1}" />
+                        <Label Style="{StaticResource BeginGameMessageStyle2}"/>
+                        <Label Style="{StaticResource BeginGameMessageStyle3}" />
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
 
                 <StackLayout 
                     HorizontalOptions="Center">
@@ -30,7 +30,7 @@
                         HeightRequest="60"
                         WidthRequest="120"/>
                 </StackLayout>
-        </StackLayout>
-      </ScrollView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
