@@ -14,9 +14,21 @@
       Orientation="Vertical">
 
         <StackLayout Style="{StaticResource VerticalStack}">
-            
+
             <Grid RowSpacing="1" ColumnSpacing="2" VerticalOptions="Center">
-                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
 
                     <Label Text="Zest Quest" Style="{StaticResource BigHeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
@@ -28,120 +40,123 @@
                     <Label Text="JungBok Cho" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     <Label Text="Sam Borhan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     <Label x:Name="CurrentDateTime" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                
+
                 </StackLayout>
-                
+
                 <Image Source="teamtelephone2.png" Style="{StaticResource ImageLargerStyle}" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"/>
-            
-            </Grid>
-            <!--Database Settings Frame-->
+                <Image Source="clapping_dogs.gif" Style="{StaticResource ImageLargerStyle}" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" IsAnimationPlaying="True" Grid.RowSpan="5" />
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
 
-                <Label
-                        Text="Database Settings"
-                        Style="{DynamicResource LabelStyle}"/>
+                <!--Database Settings Frame-->
 
-                <Switch
-                        x:Name="DatabaseSettingsSwitch"
-                        HorizontalOptions="EndAndExpand"
-                        Toggled="DatabaseSettingsSwitch_OnToggled"
-                        IsToggled="False"/>
-            </StackLayout>
+                <StackLayout Style="{StaticResource HorizontalStack}" Grid.Column="0" Grid.Row="2">
 
-            <StackLayout Style="{StaticResource VerticalStack}"
-                        x:Name="DatabaseSettingsFrame"
-                        IsVisible="False">
-
-                <!--Database Settings-->
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                                    Padding="50,0,0,0">
-
-                    <Label Text="SQL Data Source"
+                    <Label
+                            Text="Database Settings"
                             Style="{DynamicResource LabelStyle}"/>
 
                     <Switch
-                        HorizontalOptions="Start" 
-                        VerticalOptions="Center"
-                        x:Name="DataSourceValue"
-                        IsToggled="{Binding ItemIndexViewModel.Instance.CurrentDataSource}"
-                        Toggled="DataSource_Toggled" 
-                        />
-
+                            x:Name="DatabaseSettingsSwitch"
+                            HorizontalOptions="EndAndExpand"
+                            Toggled="DatabaseSettingsSwitch_OnToggled"
+                            IsToggled="False"/>
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                                    Padding="50,0,0,0">
+                <StackLayout Style="{StaticResource VerticalStack}"
+                            x:Name="DatabaseSettingsFrame"
+                            IsVisible="False"
+                             Grid.Column="0" Grid.Row="3">
 
-                    <Label Text="Wipe Data List"
-                           Style="{DynamicResource LabelStyle}"/>
+                    <!--Database Settings-->
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                        Padding="50,0,0,0">
 
-                    <Button
-                        Text="Wipe"
-                        Clicked="WipeDataList_Clicked"
-                        />
+                        <Label Text="SQL Data Source"
+                                Style="{DynamicResource LabelStyle}"/>
 
-                </StackLayout>
-            </StackLayout>
+                        <Switch
+                            HorizontalOptions="Start" 
+                            VerticalOptions="Center"
+                            x:Name="DataSourceValue"
+                            IsToggled="{Binding ItemIndexViewModel.Instance.CurrentDataSource}"
+                            Toggled="DataSource_Toggled" 
+                            />
 
-            <!--Debug Settings Frame-->
-            <StackLayout Style="{StaticResource HorizontalStack}">
+                    </StackLayout>
 
-                <Label
-                    Text="Debug Settings"
-                    Style="{DynamicResource LabelStyle}"
-                    />
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                        Padding="50,0,0,0">
 
-                <Switch
-                    x:Name="DebugSettingsSwitch"
-                    HorizontalOptions="EndAndExpand"
-                    Toggled="DebugSettingsSwitch_OnToggled"
-                    IsToggled="False"/>
-            </StackLayout>
+                        <Label Text="Wipe Data List"
+                               Style="{DynamicResource LabelStyle}"/>
 
-            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False">
-
-                <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0">
-
-                    <Label Text="More Debug Settings to come..." Style="{DynamicResource MessageStyle}"/>
-
-                    <StackLayout Style="{StaticResource VerticalStack}">
-
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-                            <Label
-                                Text="Number of Items "
-                                HorizontalTextAlignment="Start"
-                                HorizontalOptions="Start"
-                                Style="{DynamicResource LabelStyle}"
-                                />
-
-                            <Entry
-                                x:Name="ServerItemValue"
-                                Text="1" 
-                                FontSize="Micro"
-                                MaxLength="5"
-                                CursorPosition="0"
-                                SelectionLength = "5"
-                                Keyboard="Numeric"
-                                WidthRequest="50"
-                                HorizontalOptions="FillAndExpand"
-                                Style="{DynamicResource EntryStyle}"
-                                />
-                        </StackLayout>
-
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Button
-                                Text="Get"
-                                Clicked="GetItemsGet_Command"/>
-
-                            <Button
-                                Text="Post"
-                                Clicked="GetItemsPost_Command"/>
-                        </StackLayout>
+                        <Button
+                            Text="Wipe"
+                            Clicked="WipeDataList_Clicked"
+                            />
 
                     </StackLayout>
                 </StackLayout>
-            </StackLayout>
+
+                <!--Debug Settings Frame-->
+                <StackLayout Style="{StaticResource HorizontalStack}" Grid.Column="0" Grid.Row="4">
+
+                    <Label
+                        Text="Debug Settings"
+                        Style="{DynamicResource LabelStyle}"
+                        />
+
+                    <Switch
+                        x:Name="DebugSettingsSwitch"
+                        HorizontalOptions="EndAndExpand"
+                        Toggled="DebugSettingsSwitch_OnToggled"
+                        IsToggled="False"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False" Grid.Column="0" Grid.Row="5">
+
+                    <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0">
+
+                        <Label Text="More Debug Settings to come..." Style="{DynamicResource MessageStyle}"/>
+
+                        <StackLayout Style="{StaticResource VerticalStack}">
+
+                            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                                <Label
+                                    Text="Number of Items "
+                                    HorizontalTextAlignment="Start"
+                                    HorizontalOptions="Start"
+                                    Style="{DynamicResource LabelStyle}"
+                                    />
+
+                                <Entry
+                                    x:Name="ServerItemValue"
+                                    Text="1" 
+                                    FontSize="Micro"
+                                    MaxLength="5"
+                                    CursorPosition="0"
+                                    SelectionLength = "5"
+                                    Keyboard="Numeric"
+                                    WidthRequest="50"
+                                    HorizontalOptions="FillAndExpand"
+                                    Style="{DynamicResource EntryStyle}"
+                                    />
+                            </StackLayout>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}">
+                                <Button
+                                    Text="Get"
+                                    Clicked="GetItemsGet_Command"/>
+
+                                <Button
+                                    Text="Post"
+                                    Clicked="GetItemsPost_Command"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ScrollView>
 </ContentPage>
