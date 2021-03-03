@@ -137,6 +137,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="clapping_dogs.gif" />
     <Content Include="emptyspace.png" />
     <Content Include="score_icon.png" />
     <Content Include="battle_grid.jpg" />
@@ -149,6 +150,7 @@
     <Content Include="evil_stove.png" />
     <Content Include="restaurant2.png" />
     <Content Include="robot_chef.png" />
+    <Content Include="smiling_sun.png" />
     <Content Include="tasty_dish.png" />
     <Content Include="tombstone.png" />
     <Content Include="zest_quest_icon2.png" />

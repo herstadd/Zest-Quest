@@ -312,4 +312,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\tombstone.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\smiling_sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clapping_dogs.gif" />
+  </ItemGroup>
 </Project>
