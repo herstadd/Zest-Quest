@@ -38,7 +38,7 @@ namespace Game.Views
 
             BindingContext = this.ViewModel;
 
-            this.ViewModel.Title = "Create";
+            this.ViewModel.Title = "Create Chef";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
