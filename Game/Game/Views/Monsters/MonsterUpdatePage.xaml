@@ -8,7 +8,7 @@
              xmlns:local_enum="clr-namespace:Game.Models"
              xmlns:local="using:Game.Models"
              x:Class="Game.Views.MonsterUpdatePage"
-             Title="Update Appliance">
+             Title="{Binding Title}">
 
 
     <ContentPage.Resources>
