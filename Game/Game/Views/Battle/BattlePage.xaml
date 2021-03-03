@@ -166,6 +166,9 @@
 
                     <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Exit" WidthRequest="100"></Button>
 
+                    <Image Source="clapping_dogs.gif" IsAnimationPlaying="True"></Image>
+
+
                 </StackLayout>
             </StackLayout>
         </AbsoluteLayout>
