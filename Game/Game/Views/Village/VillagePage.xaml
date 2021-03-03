@@ -8,7 +8,7 @@
         <Grid>
 
             <Image Source="normal_screen_2.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" ></Image> 
-                <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10" Background="Transparent">
+                <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
 
                     <FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
