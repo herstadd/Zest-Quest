@@ -35,7 +35,7 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
-            this.ViewModel.Title = "Create";
+            this.ViewModel.Title = "Create Score";
 
             // Default Name When start to create a new Score
             NameEntry.Text = "Next Score";
