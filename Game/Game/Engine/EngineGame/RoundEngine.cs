@@ -14,24 +14,6 @@ namespace Game.Engine.EngineGame
         // Hold the BaseEngine
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
 
-        // The Turn Engine
-        //public new ITurnEngineInterface Turn
-        //{
-        //    get
-        //    {
-        //        if (base.Turn == null)
-        //        {
-        //            base.Turn = new TurnEngine();
-        //        }
-        //        return base.Turn;
-        //    }
-        //    set { base.Turn = Turn; }
-        //}
-
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <returns></returns>
         public RoundEngine()
         {
             Turn = new TurnEngine();
@@ -43,10 +25,6 @@ namespace Game.Engine.EngineGame
         public override bool ClearLists()
         {
             return base.ClearLists();
-
-            EngineSettings.ItemPool.Clear();
-            EngineSettings.MonsterList.Clear();
-            return true;
         }
 
         /// <summary>
@@ -55,29 +33,6 @@ namespace Game.Engine.EngineGame
         public override bool NewRound()
         {
             return base.NewRound();
-            
-            // End the existing round
-            EndRound();
-
-            // Remove Character Buffs
-            RemoveCharacterBuffs();
-
-            // Populate New Monsters..
-            AddMonstersToRound();
-
-            // Make the BaseEngine.PlayerList
-            MakePlayerList();
-
-            // Set Order for the Round
-            OrderPlayerListByTurnOrder();
-
-            // Populate BaseEngine.MapModel with Characters and Monsters
-            EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
-
-            // Update Score for the RoundCount
-            EngineSettings.BattleScore.RoundCount++;
-
-            return true;
         }
 
         /// <summary>
@@ -97,10 +52,8 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-
+            // INFO: Teams, work out your logic
             return base.AddMonstersToRound();
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -111,29 +64,15 @@ namespace Game.Engine.EngineGame
         public override bool EndRound()
         {
             return base.EndRound();
-            // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
-            if (EngineSettings.BattleScore.AutoBattle)
-            {
-                PickupItemsForAllCharacters();
-            }
-
-            // Reset Monster and Item Lists
-            ClearLists();
-
-            return true;
         }
 
         /// <summary>
         /// For each character pickup the items
         /// </summary>
-        public override void PickupItemsForAllCharacters()
+        public override bool PickupItemsForAllCharacters()
         {
-            base.PickupItemsForAllCharacters();
-            return;
-            // In Auto Battle this happens and the characters get their items
-            // When called manualy, make sure to do the character pickup before calling EndRound
-
-            //throw new System.NotImplementedException();
+            // INFO: Teams, work out your turn logic
+            return base.PickupItemsForAllCharacters();
         }
 
         /// <summary>
@@ -148,15 +87,6 @@ namespace Game.Engine.EngineGame
         public override RoundEnum RoundNextTurn()
         {
             return base.RoundNextTurn();
-            // No characters, game is over..
-
-            // Check if round is over
-
-            // If in Auto Battle pick the next attacker
-
-            // Do the turn..
-
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -165,11 +95,6 @@ namespace Game.Engine.EngineGame
         public override PlayerInfoModel GetNextPlayerTurn()
         {
             return base.GetNextPlayerInList();
-            // Remove the Dead
-
-            // Get Next Player
-
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -178,7 +103,6 @@ namespace Game.Engine.EngineGame
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
             return base.RemoveDeadPlayersFromList();
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -187,9 +111,6 @@ namespace Game.Engine.EngineGame
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
             return base.OrderPlayerListByTurnOrder();
-            // TODO Teams: Implement the order
-
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -197,81 +118,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
-            // return base.MakePlayerList();
-
-            // HomeCooks after winning each round their current health will be recovered           
-            foreach (var data in EngineSettings.PlayerList)
-            {
-                if (data.Alive)
-                {                 
-                    if (data.Job == CharacterJobEnum.HomeCook)
-                    {
-                        // hold HomeCook original health
-                        var HomeCookOrignalHealth = 0;
-
-                        // Find HomeCook original health
-                        foreach (var chef in EngineSettings.CharacterList)
-                        {
-                            if (chef.Job == CharacterJobEnum.HomeCook)
-                            {
-                                HomeCookOrignalHealth = chef.MaxHealth;
-                                break;
-                            }
-                        }
-
-                        //Health increases By 10% of the original health up to current max health
-                        var RecoverHealth = data.CurrentHealth + (10 * HomeCookOrignalHealth) / 100;
-                        if(RecoverHealth < data.MaxHealth)
-                        {
-                            data.CurrentHealth = RecoverHealth;
-                        }
-                    }
-                }
-            }
-
-            // Remember the Insert order, used for Sorting
-            var ListOrder = EngineSettings.PlayerList.Count;
-
-            // Adding Characters at the first round
-            if (EngineSettings.BattleScore.TurnCount == 0)
-            {
-
-                // Start from a clean list of players
-                EngineSettings.PlayerList.Clear();
-               
-                foreach (var data in EngineSettings.CharacterList)
-                {
-                    if (data.Alive)
-                    {
-                        EngineSettings.PlayerList.Add(
-                            new PlayerInfoModel(data)
-                            {
-                            // Remember the order
-                            ListOrder = ListOrder
-                            });
-
-                        ListOrder++;
-                    }
-                }
-            }
-
-            // Adding new Random Monsters at each round
-            foreach (var data in EngineSettings.MonsterList)
-            {
-                if (data.Alive)
-                {
-                    EngineSettings.PlayerList.Add(
-                        new PlayerInfoModel(data)
-                        {
-                            // Remember the order
-                            ListOrder = ListOrder
-                        });
-
-                    ListOrder++;
-                }
-            }
-
-            return EngineSettings.PlayerList;       
+            return base.MakePlayerList();
         }
 
         /// <summary>
@@ -280,21 +127,6 @@ namespace Game.Engine.EngineGame
         public override PlayerInfoModel GetNextPlayerInList()
         {
             return base.GetNextPlayerInList();
-            // Walk the list from top to bottom
-            // If Player is found, then see if next player exist, if so return that.
-            // If not, return first player (looped)
-
-            // If List is empty, return null
-
-            // No current player, so set the first one
-
-            // Find current player in the list
-
-            // If at the end of the list, return the first element
-
-            // Return the next element
-
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -302,12 +134,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsFromPool(PlayerInfoModel character)
         {
+            // INFO: Teams, work out your turn logic
             return base.PickupItemsFromPool(character);
-            // TODO: Teams, You need to implement your own Logic if not using auto apply
-
-            // I use the same logic for Auto Battle as I do for Manual Battle
-
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -317,8 +145,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
+            // INFO: Teams, work out your turn logic
             return base.GetItemFromPoolIfBetter(character, setLocation);
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -329,7 +157,6 @@ namespace Game.Engine.EngineGame
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
             return base.SwapCharacterItem(character, setLocation, PoolItem);
-            //throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -338,7 +165,6 @@ namespace Game.Engine.EngineGame
         public override bool RemoveCharacterBuffs()
         {
             return base.RemoveCharacterBuffs();
-            //throw new System.NotImplementedException();
         }
     }
 }

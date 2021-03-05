@@ -238,6 +238,44 @@ namespace Game.Models
         }
 
         /// <summary>
+        /// Returns a list of strings of the enum for Fighter
+        /// </summary>
+        public static List<string> GetListFighter
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Nimble.ToString(),
+                AbilityEnum.Toughness.ToString(),
+                AbilityEnum.Focus.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Cleric
+        /// </summary>
+        public static List<string> GetListCleric
+        {
+            get
+            {
+
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Quick.ToString(),
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Curse.ToString(),
+                AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+        /// <summary>
         /// Returns a list of strings of default chef
         /// </summary>
         public static List<string> GetListOthers

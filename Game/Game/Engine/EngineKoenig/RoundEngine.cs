@@ -134,7 +134,7 @@ namespace Game.Engine.EngineKoenig
         /// <summary>
         /// For each character pickup the items
         /// </summary>
-        public override void PickupItemsForAllCharacters()
+        public override bool PickupItemsForAllCharacters()
         {
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
@@ -144,6 +144,8 @@ namespace Game.Engine.EngineKoenig
             {
                 PickupItemsFromPool(character);
             }
+
+            return true;
         }
 
         /// <summary>

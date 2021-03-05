@@ -1332,7 +1332,9 @@ namespace UnitTests.Engine.EngineKoenig
             // Arrange
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-            
+            // Clear the abilities, so the attack is the choice.
+            CharacterPlayer.AbilityTracker.Clear();
+
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
@@ -1353,7 +1355,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Attack, result);
         }
         #endregion DetermineActionChoice
 
@@ -1392,12 +1394,11 @@ namespace UnitTests.Engine.EngineKoenig
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel() { MaxHealth = 100, CurrentHealth = 100 });
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
-            CharacterPlayer.CurrentHealth = 30;
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
@@ -1454,39 +1455,7 @@ namespace UnitTests.Engine.EngineKoenig
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HeadChef });
-
-            // Get the longest range weapon in stock.
-            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
-            CharacterPlayer.PrimaryHand = weapon.Id;
-
-            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
-
-            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
-
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
-
-            DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(2);
-            // Act
-            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
-
-            // Reset
-            DiceHelper.DisableForcedRolls();
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Ability_Should_Return_True()
-        {
-            // Arrange
-
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HomeCook });
-            CharacterPlayer.MaxHealth = 100;
-            CharacterPlayer.CurrentHealth = 100;
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric});
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1518,7 +1487,7 @@ namespace UnitTests.Engine.EngineKoenig
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HeadChef });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
@@ -1544,7 +1513,7 @@ namespace UnitTests.Engine.EngineKoenig
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
             Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HeadChef });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
@@ -1591,7 +1560,7 @@ namespace UnitTests.Engine.EngineKoenig
         public void TurnEngine_MoveAsTurn_Invalid_Monster_InValid_Defender_Not_On_Map_Should_Fail()
         {
             // Arrange
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HeadChef });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             // Not on map.... 
@@ -1624,7 +1593,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Add player after map is made, so player is not on the map
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.HeadChef });
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;

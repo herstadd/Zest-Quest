@@ -53,8 +53,7 @@ namespace Game.ViewModels
         public IBattleEngineInterface EngineGame = new Engine.EngineGame.BattleEngine();
 
         // Auto Battle Engine (used for scneario testing)
-        //public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineGame.AutoBattleEngine();
-        public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineKoenig.AutoBattleEngine();
+        public IAutoBattleInterface AutoBattleEngineGame = new Engine.EngineGame.AutoBattleEngine();
 
         // Set the Battle Engine
         public IBattleEngineInterface Engine;
@@ -68,7 +67,7 @@ namespace Game.ViewModels
         public ObservableCollection<CharacterModel> PartyCharacterList { get; set; } = new ObservableCollection<CharacterModel>();
 
         //// Hold the View Model to the CharacterIndexViewModel
-        //public CharacterIndexViewModel DatabaseCharacterViewModel = CharacterIndexViewModel.Instance;
+        public CharacterIndexViewModel DatabaseCharacterViewModel = CharacterIndexViewModel.Instance;
 
         //// Have the Database Character List point to the Character View Model List
         public ObservableCollection<CharacterModel> DatabaseCharacterList { get; set; } = CharacterIndexViewModel.Instance.Dataset;

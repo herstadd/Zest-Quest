@@ -143,7 +143,7 @@ namespace Game.Engine.EngineBase
         /// <summary>
         /// For each character pickup the items
         /// </summary>
-        public virtual void PickupItemsForAllCharacters()
+        public virtual bool PickupItemsForAllCharacters()
         {
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
@@ -153,6 +153,8 @@ namespace Game.Engine.EngineBase
             {
                 PickupItemsFromPool(character);
             }
+
+            return true;
         }
 
         /// <summary>
@@ -460,6 +462,16 @@ namespace Game.Engine.EngineBase
         /// <returns></returns>
         public virtual ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
+            if (character == null)
+            {
+                return null;
+            }
+
+            if (PoolItem == null)
+            {
+                return null;
+            }
+
             // Put on the new ItemModel, which drops the one back to the pool
             var droppedItem = character.AddItem(setLocation, PoolItem.Id);
 

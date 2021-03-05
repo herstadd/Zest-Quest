@@ -160,7 +160,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             //Assert
             Assert.AreEqual(6, count);
-            //Assert.AreEqual("6", name);
+            Assert.AreEqual("6", name);
         }
 
         [Test]

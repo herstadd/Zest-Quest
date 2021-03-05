@@ -15,8 +15,6 @@ namespace UnitTests.Engine.EngineGame
         public void Setup()
         {
             Engine = new BattleEngine();
-            Engine.Round = new RoundEngine();
-            Engine.Round.Turn = new TurnEngine();
         }
 
         [TearDown]
@@ -42,20 +40,20 @@ namespace UnitTests.Engine.EngineGame
         #endregion Constructor
 
         #region StartBattle
-        //[Test]
-        //public void BattleEngine_StartBattle_Valid_AutoModel_True_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void BattleEngine_StartBattle_Valid_AutoModel_True_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = Engine.StartBattle(true);
+            // Act
+            var result = Engine.StartBattle(true);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result);
-        //    Assert.AreEqual(true, Engine.EngineSettings.BattleScore.AutoBattle);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(true, Engine.EngineSettings.BattleScore.AutoBattle);
+        }
         #endregion StartBattle
 
         #region EndBattle

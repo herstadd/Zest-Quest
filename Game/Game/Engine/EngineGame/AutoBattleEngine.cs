@@ -51,14 +51,11 @@ namespace Game.Engine.EngineGame
         //    set { base.Battle = Battle; }
         //}
 
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <returns></returns>
         public AutoBattleEngine()
         {
             Battle = new BattleEngine();
         }
+
 
         /// <summary>
         /// Create character list and monster list

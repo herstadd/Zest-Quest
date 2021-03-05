@@ -10,27 +10,13 @@ namespace Game.Engine.EngineGame
     /// </summary>
     public class BattleEngine : BattleEngineBase, IBattleEngineInterface
     {
-        // The Round
-        //public new IRoundEngineInterface Round
-        //{
-        //    get
-        //    {
-        //        if (base.Round == null)
-        //        {
-        //            base.Round = new RoundEngine();
-        //        }
-        //        return base.Round;
-        //    }
-        //    set { base.Round = Round; }
-        //}
 
         // The BaseEngine
         public new EngineSettingsModel EngineSettings { get; } = EngineSettingsModel.Instance;
 
         /// <summary>
-        /// Default Constructor
+        /// Default Construtor
         /// </summary>
-        /// <returns></returns>
         public BattleEngine()
         {
             Round = new RoundEngine();
@@ -43,6 +29,7 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool PopulateCharacterList(CharacterModel data)
         {
+            // INFO: Teams, work out your turn logic
             return base.PopulateCharacterList(data);
         }
 

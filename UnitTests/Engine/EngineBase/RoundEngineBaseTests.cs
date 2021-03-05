@@ -1175,5 +1175,70 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(2, result.Count);
         }
         #endregion PlayerList
+
+        #region SwapCharacterItem
+
+        [Test]
+        public void RoundEngine_SwapCharacterItem_Base_InValid_Chracter_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Unknown, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void RoundEngine_SwapCharacterItem_Base_InValid_Item_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.SwapCharacterItem(new PlayerInfoModel(new CharacterModel()), ItemLocationEnum.Unknown, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsNull(result);
+        }
+        #endregion SwapCharacterItem
+
+        #region SetCurrentAttacker
+        [Test]
+        public void RoundEngine_SetCurrentAttacker_Valid_Should_Return_Attacker()
+        {
+            // Arrange
+            var player = new PlayerInfoModel(new CharacterModel());
+
+            // Act
+            var result = Engine.Round.SetCurrentAttacker(player);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+        #endregion SetCurrentAttacker
+
+        #region SetCurrentDefender
+        [Test]
+        public void RoundEngine_SetCurrentDefender_Valid_Should_Return_Defender()
+        {
+            // Arrange
+            var player = new PlayerInfoModel(new CharacterModel());
+
+            // Act
+            var result = Engine.Round.SetCurrentDefender(player);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+        #endregion SetCurrentDefender
     }
 }
