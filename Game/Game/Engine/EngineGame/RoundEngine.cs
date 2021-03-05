@@ -199,8 +199,38 @@ namespace Game.Engine.EngineGame
         {
             // return base.MakePlayerList();
 
+            // HomeCooks after winning each round their current health will be recovered           
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                if (data.Alive)
+                {                 
+                    if (data.Job == CharacterJobEnum.HomeCook)
+                    {
+                        // hold HomeCook original health
+                        var HomeCookOrignalHealth = 0;
+
+                        // Find HomeCook original health
+                        foreach (var chef in EngineSettings.CharacterList)
+                        {
+                            if (chef.Job == CharacterJobEnum.HomeCook)
+                            {
+                                HomeCookOrignalHealth = chef.MaxHealth;
+                                break;
+                            }
+                        }
+
+                        //Health increases By 10% of the original health up to current max health
+                        var RecoverHealth = data.CurrentHealth + (10 * HomeCookOrignalHealth) / 100;
+                        if(RecoverHealth < data.MaxHealth)
+                        {
+                            data.CurrentHealth = RecoverHealth;
+                        }
+                    }
+                }
+            }
+
             // Remember the Insert order, used for Sorting
-            var ListOrder = EngineSettings.CharacterList.Count - 1;
+            var ListOrder = EngineSettings.PlayerList.Count;
 
             // Adding Characters at the first round
             if (EngineSettings.BattleScore.TurnCount == 0)
