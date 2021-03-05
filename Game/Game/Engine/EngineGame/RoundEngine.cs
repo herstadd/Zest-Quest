@@ -128,14 +128,19 @@ namespace Game.Engine.EngineGame
                     if (data.Job == CharacterJobEnum.HomeCook)
                     {
                         
-                        //Health increases By 10% of the original health up to current max health
+                        //Health increases By 10% of the current max health up to current max health
                         var RecoverHealth = data.CurrentHealth + (10 * data.MaxHealth) / 100;
                         if (RecoverHealth < data.MaxHealth)
                         {
                             data.CurrentHealth = RecoverHealth;
                         }
+                        else
+                        {
+                            data.CurrentHealth = data.MaxHealth;
+                        }
                     }
                 }
+                           
             }
 
             // Remember the Insert order, used for Sorting
