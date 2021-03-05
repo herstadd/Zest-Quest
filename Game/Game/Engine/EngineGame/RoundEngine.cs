@@ -197,16 +197,51 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
-            return base.MakePlayerList();
-            // Start from a clean list of players
+            // return base.MakePlayerList();
 
             // Remember the Insert order, used for Sorting
+            var ListOrder = EngineSettings.CharacterList.Count - 1;
 
-            // Add the Characters
+            // Adding Characters at the first round
+            if (EngineSettings.BattleScore.TurnCount == 0)
+            {
 
-            // Add the Monsters
+                // Start from a clean list of players
+                EngineSettings.PlayerList.Clear();
+               
+                foreach (var data in EngineSettings.CharacterList)
+                {
+                    if (data.Alive)
+                    {
+                        EngineSettings.PlayerList.Add(
+                            new PlayerInfoModel(data)
+                            {
+                            // Remember the order
+                            ListOrder = ListOrder
+                            });
 
-            //throw new System.NotImplementedException();
+                        ListOrder++;
+                    }
+                }
+            }
+
+            // Adding new Random Monsters at each round
+            foreach (var data in EngineSettings.MonsterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
+
+                    ListOrder++;
+                }
+            }
+
+            return EngineSettings.PlayerList;       
         }
 
         /// <summary>
