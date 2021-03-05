@@ -118,7 +118,81 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
-            return base.MakePlayerList();
+            // return base.MakePlayerList();
+
+            // HomeCooks after winning each round their current health will be recovered           
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                if (data.Alive)
+                {
+                    if (data.Job == CharacterJobEnum.HomeCook)
+                    {
+                        // hold HomeCook original health
+                        var HomeCookOrignalHealth = 0;
+
+                        // Find HomeCook original health
+                        foreach (var chef in EngineSettings.CharacterList)
+                        {
+                            if (chef.Job == CharacterJobEnum.HomeCook)
+                            {
+                                HomeCookOrignalHealth = chef.MaxHealth;
+                                break;
+                            }
+                        }
+
+                        //Health increases By 10% of the original health up to current max health
+                        var RecoverHealth = data.CurrentHealth + (10 * HomeCookOrignalHealth) / 100;
+                        if (RecoverHealth < data.MaxHealth)
+                        {
+                            data.CurrentHealth = RecoverHealth;
+                        }
+                    }
+                }
+            }
+
+            // Remember the Insert order, used for Sorting
+            var ListOrder = EngineSettings.PlayerList.Count;
+
+            // Adding Characters at the first round
+            if (EngineSettings.BattleScore.TurnCount == 0)
+            {
+
+                // Start from a clean list of players
+                EngineSettings.PlayerList.Clear();
+
+                foreach (var data in EngineSettings.CharacterList)
+                {
+                    if (data.Alive)
+                    {
+                        EngineSettings.PlayerList.Add(
+                            new PlayerInfoModel(data)
+                            {
+                                // Remember the order
+                                ListOrder = ListOrder
+                            });
+
+                        ListOrder++;
+                    }
+                }
+            }
+
+            // Adding new Random Monsters at each round
+            foreach (var data in EngineSettings.MonsterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
+
+                    ListOrder++;
+                }
+            }
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
