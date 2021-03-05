@@ -285,23 +285,27 @@ namespace Game.GameRules
         /// <returns></returns>
         public static MonsterModel GetRandomMonster(int MaxLevel, bool Items = false)
         {
-            var result = new MonsterModel()
+            // Get all current Monsters in the Restaurant
+            MonsterIndexViewModel ViewModel = MonsterIndexViewModel.Instance;
+            var list = ViewModel.Dataset;
+
+            // Get a random Monster
+            var index = DiceHelper.RollDice(1, list.Count()) - 1;
+
+            var result = list.First();
+
+            if (index < list.Count)
             {
-                Level = DiceHelper.RollDice(1, MaxLevel),
-
-                // Randomize Name
-                Name = GetMonsterName(),
-                Description = GetMonsterDescription(),
-
-                // Randomize the Attributes
-                Attack = GetAbilityValue(),
-                Speed = GetAbilityValue(),
-                Defense = GetAbilityValue(),
-
-                ImageURI = GetMonsterImage(),
-
-                Difficulty = GetMonsterDifficultyValue()
-            };
+                result = list.ElementAt(index);
+            }
+            
+            //  Randomize the Attributes
+            result.Level = DiceHelper.RollDice(1, MaxLevel);
+            result.Attack = GetAbilityValue();
+            result.Speed = GetAbilityValue();
+            result.Defense = GetAbilityValue();
+            result.Difficulty = GetMonsterDifficultyValue();
+         
 
             // Adjust values based on Difficulty
             result.Attack = result.Difficulty.ToModifier(result.Attack);
