@@ -972,5 +972,32 @@ namespace UnitTests.Models
             Assert.AreEqual(0, result.Row);
             Assert.AreEqual(0, result.Column);
         }
+
+        [Test]
+        public void MapModel_GetEmptyLocationsSousChef_SousChef_Should_Return_0()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 5;
+
+            var MapGridLocationTarget = new MapModelLocation();
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
+            // Act
+            var result = map.GetEmptyLocationsSousChef(MapGridLocationTarget, MapGridLocationOriginal);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(0, result.Row);
+            Assert.AreEqual(0, result.Column);
+        }
     }
 }
