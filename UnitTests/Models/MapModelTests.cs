@@ -250,6 +250,38 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void MapModel_MovePlayerOnMap_Move_Over_SamePlace_Should_Fail()
+        {
+            // Arrange
+
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 3;
+            map.MapYAxiesCount = 3;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var Monster = new MonsterModel();
+
+            PlayerList.Add(new PlayerInfoModel(Character));
+            PlayerList.Add(new PlayerInfoModel(Monster));
+
+            map.PopulateMapModel(PlayerList);
+
+            var MapLocationData = map.MapGridLocation[0, 0];
+
+            // Act
+            var result = map.MovePlayerOnMap(MapLocationData, new MapModelLocation { Column = 0, Row = 0 });
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public void MapModel_MovePlayerOnMap_Valid_Should_Fail()
         {
             // Arrange
