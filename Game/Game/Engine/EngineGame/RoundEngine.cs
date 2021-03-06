@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
+using Game.GameRules;
 using Game.Models;
 
 namespace Game.Engine.EngineGame
@@ -49,11 +52,45 @@ namespace Game.Engine.EngineGame
             * 
             */
         /// </summary>
+        /// Add 6 Unique random Monsters to each Round from Restautant
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-            // INFO: Teams, work out your logic
-            return base.AddMonstersToRound();
+          
+            int TargetLevel = 1;
+
+            if (EngineSettings.CharacterList.Count() > 0)
+            {
+                // Get the Min Character Level (linq is soo cool....)
+                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
+            }
+
+            for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
+            {
+                bool existed = false;
+                var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+               
+                foreach (var monster in EngineSettings.MonsterList)
+                {
+                    // Not adding same monster type using their unique descriptions
+                    if (data.Description == monster.Description)
+                    {
+                        existed = true;
+                        break;
+                    }
+                }
+                // IF monster type is not in the least add it to the board
+                if (existed == false)
+                {
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            return EngineSettings.MonsterList.Count();
         }
 
         /// <summary>
