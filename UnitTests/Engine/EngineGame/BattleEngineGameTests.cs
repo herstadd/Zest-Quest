@@ -87,22 +87,6 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
-
-        [Test]
-        public void BattleEngine_Valid_PopulateCharacterList_SousChef_Should_Pass()
-        {
-            // Arrange
-            var character = new CharacterModel();
-            character.Job = CharacterJobEnum.SousChef;
-
-            // Act
-            var result = Engine.PopulateCharacterList(character);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
         #endregion PopulateCharacterList
     }
 }

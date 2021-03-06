@@ -30,18 +30,7 @@ namespace Game.Engine.EngineGame
         public override bool PopulateCharacterList(CharacterModel data)
         {
             // INFO: Teams, work out your turn logic
-            //return base.PopulateCharacterList(data);
-
-            var NewPlayer = new PlayerInfoModel(data);
-
-            // Allow Sushi Chef can attack from anywhere
-            if(NewPlayer.Job == CharacterJobEnum.SushiChef) 
-            {
-                NewPlayer.Range = 100;
-            }
-            EngineSettings.CharacterList.Add(NewPlayer);
-
-            return true;
+            return base.PopulateCharacterList(data);
         }
 
         /// <summary>
