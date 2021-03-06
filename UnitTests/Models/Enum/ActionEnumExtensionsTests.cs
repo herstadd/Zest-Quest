@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("item.png", result);
+            Assert.AreEqual("mushroom.png", result);
         }
 
         [Test]
