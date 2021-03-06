@@ -326,11 +326,21 @@ namespace Game.Models
             get
             {
                 var myItem = ItemIndexViewModel.Instance.GetItem(PrimaryHand);
+                
                 if (myItem == null)
                 {
                     return 0;
                 }
-                return myItem.Damage;
+
+                switch (Job)
+                {
+                    case CharacterJobEnum.HeadChef:
+                        return myItem.Damage * 2;
+                    case CharacterJobEnum.Unknown:
+                    default:
+                        return myItem.Damage;
+                }
+                
             }
         }
 
