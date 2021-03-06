@@ -307,7 +307,20 @@ namespace Game.Models
 
         [Ignore]
         // Return the MaxHealth with Item Bonus
-        public int GetMaxHealthItemBonus { get { return GetItemBonus(AttributeEnum.MaxHealth); } }
+        public int GetMaxHealthItemBonus 
+        { 
+            get 
+            {
+                switch (Job)
+                {
+                    case CharacterJobEnum.HeadChef:
+                        return GetItemBonus(AttributeEnum.MaxHealth) * 2;
+                    case CharacterJobEnum.Unknown:
+                    default:
+                        return GetItemBonus(AttributeEnum.MaxHealth);
+                }
+            } 
+        }
 
         [Ignore]
         // Return the Total of All MaxHealth
