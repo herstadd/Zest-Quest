@@ -294,11 +294,13 @@ namespace Game.Models
 
             int LowestDistance = int.MaxValue;
 
+            // Find next empty location for Sous Chef
             if(Job == CharacterJobEnum.SousChef)
             {
                 Result = GetEmptyLocationsSousChef(Target, OriginalLocation);
                 LowestDistance = CalculateDistance(Result, Target);
-            } 
+            }
+            // Find next empty location for other player
             else
             {
                 foreach (var data in GetEmptyLocations())
