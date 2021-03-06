@@ -319,7 +319,7 @@ namespace Game.GameRules
 
             new CharacterModel {
                 Name = "Cat Chef ",
-                Description = "Has nine lives (so if character dies, comes back to life 8 more times,) but cannot hold more than one gadget at a time",
+                Description = "Has 50% chance of revival but Max Health will be cut down to 50% of previous Max Health when it revives",
                 Level = 1,
                 Job = CharacterJobEnum.CatChef,
                 MaxHealth = DiceHelper.RollDice(1, 10),
