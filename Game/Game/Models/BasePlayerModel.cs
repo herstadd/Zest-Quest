@@ -255,7 +255,19 @@ namespace Game.Models
 
         [Ignore]
         // Return the Speed with Item Bonus
-        public int GetSpeedItemBonus { get { return GetItemBonus(AttributeEnum.Speed); } }
+        public int GetSpeedItemBonus {
+            get
+            {
+                switch (Job)
+                {
+                    case CharacterJobEnum.HeadChef:
+                        return GetItemBonus(AttributeEnum.Speed) * 2;
+                    case CharacterJobEnum.Unknown:
+                    default:
+                        return GetItemBonus(AttributeEnum.Speed);
+                }
+            }
+        }
 
         [Ignore]
         // Return the Total of All Speed
