@@ -742,7 +742,22 @@ namespace UnitTests.Models
             Assert.AreEqual(0, result);
         }
 
+        [Test]
+        public void BasePlayerModel_GetSpeedJobBonus_SchoolChef_Should_Return_15()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SchoolChef;
+            data.Speed = 100;
 
+            // Act
+            var result = data.GetSpeedJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(15, result);
+        }
 
         [Test]
         public async Task BasePlayerModel_GetDefenseTotal_Default_Defense_Should_Pass()
