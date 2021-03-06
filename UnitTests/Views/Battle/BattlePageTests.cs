@@ -701,6 +701,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_CreateCharacterDisplayBox_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = page.CreateCharacterDisplayBox(null);
+
+            // Reset
+
+            // Assert
+            // Using this because CreateCharacterDisplayBox returns a StackLayout
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_MakeMapGridBox_InValid_Should_Fail()
         {
             // Arrange
