@@ -262,7 +262,7 @@ namespace Game.GameRules
 
             new CharacterModel {
                 Name = "Sous Chef ",
-                Description = "This character's attack attribute will be 3 times stronger than usual for the first attack in every round",
+                Description = "Able to move through the walls from top to bottom and from left to right, vice versa",
                 Level = 1,
                 Job = CharacterJobEnum.SousChef,
                 MaxHealth = DiceHelper.RollDice(1, 10),
