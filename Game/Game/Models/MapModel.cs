@@ -317,12 +317,19 @@ namespace Game.Models
             return Result;
         }
 
+        /// <summary>
+        /// Get the next empty location for Sous Chef
+        /// </summary>
+        /// <param name="Target"></param>
+        /// <param name="OriginalLocation"></param>
+        /// <returns></returns>
         public MapModelLocation GetEmptyLocationsSousChef(MapModelLocation Target, MapModelLocation OriginalLocation) {
             MapModelLocation Result = OriginalLocation;
             var LowestDistance = CalculateDistance(Result, Target);
             int x = 0;
             int y = 0;
 
+            // Check if next row is out of range
             if (OriginalLocation.Row + 1 == MapXAxiesCount)
             {
                 y = 0;
@@ -346,7 +353,8 @@ namespace Game.Models
                 }
             }
 
-            if(OriginalLocation.Row - 1 < 0)
+            // Check if previous row is out of range
+            if (OriginalLocation.Row - 1 < 0)
             {
                 y = MapXAxiesCount - 1;
                 x = OriginalLocation.Column;
@@ -369,6 +377,7 @@ namespace Game.Models
                 }
             }
 
+            // Check if next column is out of range
             if (OriginalLocation.Column + 1 == MapYAxiesCount)
             {
                 y = OriginalLocation.Row;
@@ -392,6 +401,7 @@ namespace Game.Models
                 }
             }
 
+            // Check if previous column is out of range
             if (OriginalLocation.Column - 1 < 0)
             {
                 y = OriginalLocation.Row;
