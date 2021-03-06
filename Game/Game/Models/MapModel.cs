@@ -416,6 +416,18 @@ namespace Game.Models
             return Result;
         }
 
+        public MapModelLocation GetShortestLocation(int x, int y, MapModelLocation Target, int LowestDistance)
+        {
+            if (MapGridLocation[x, y].Player.PlayerType == PlayerTypeEnum.Unknown)
+            {
+                var temp = CalculateDistance(MapGridLocation[x, y], Target);
+                if (temp < LowestDistance)
+                {
+                    return MapGridLocation[x, y];
+                }
+            }
+            return null;
+        }
 
         /// <summary>
         /// See if the Attacker is next to the Defender by the distance of Range
