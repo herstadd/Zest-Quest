@@ -80,7 +80,43 @@ namespace Game.Engine.EngineGame
              * 
              */
 
-            return base.MoveAsTurn(Attacker);
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+
+                // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
+
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
+
+                // Find Location Nearest to Defender that is Open.
+
+                // Get the Open Locations
+                //var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+                var openSquare = EngineSettings.MapModel.ReturnNextEmptyLocation(locationDefender, locationAttacker);
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+            }
+
+            return true;
         }
 
         /// <summary>
