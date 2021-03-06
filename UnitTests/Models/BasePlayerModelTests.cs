@@ -678,7 +678,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void BasePlayerModel_GetAttackJobBonus_SousChef_Should_Return_2()
+        public void BasePlayerModel_GetAttackJobBonus_SousChef_Should_Return_0()
         {
             // Arrange
             var data = new BasePlayerModel<CharacterModel>();
@@ -691,6 +691,23 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void BasePlayerModel_GetAttackJobBonus_SushiChef_Should_Return_2()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SushiChef;
+            data.Attack = 2;
+
+            // Act
+            var result = data.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
         }
 
         [Test]
