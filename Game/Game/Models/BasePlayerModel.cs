@@ -214,7 +214,19 @@ namespace Game.Models
 
         [Ignore]
         // Return the Defense with Item Bonus
-        public int GetDefenseItemBonus { get { return GetItemBonus(AttributeEnum.Defense); } }
+        public int GetDefenseItemBonus {
+            get
+            {
+                switch (Job)
+                {
+                    case CharacterJobEnum.HeadChef:
+                        return GetItemBonus(AttributeEnum.Defense) * 2;
+                    case CharacterJobEnum.Unknown:
+                    default:
+                        return GetItemBonus(AttributeEnum.Defense);
+                }
+            }
+        }
 
         [Ignore]
         // Return the Total of All Defense
