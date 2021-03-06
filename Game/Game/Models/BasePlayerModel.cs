@@ -184,15 +184,15 @@ namespace Game.Models
         {
             get
             {
-                var result = 0;
+                var result = Attack;
 
                 switch (Job)
                 {
                     case CharacterJobEnum.HeadChef:
-                        result = -1;
+                        result = (int)(Attack * 0.3);
                         break;
-                    case CharacterJobEnum.SousChef:
-                        result = +2;
+                    case CharacterJobEnum.SushiChef:
+                        result = (int)(Attack * 0.5);
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
