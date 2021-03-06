@@ -305,6 +305,14 @@ namespace Game.Engine.EngineGame
             // INFO: Teams, Hookup your Boss if you have one...
             //return base.TargetDied(Target);
 
+            
+            if (Target.Job == CharacterJobEnum.CatChef)
+            {
+                Target.Alive = true;
+                Target.CurrentHealth = Target.MaxHealth;
+                return true;
+            }
+
             bool found;
 
             // Mark Status in output
