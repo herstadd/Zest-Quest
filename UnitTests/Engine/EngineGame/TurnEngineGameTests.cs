@@ -688,7 +688,7 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
+        public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_2()
         {
             // Arrange
             var player = new CharacterModel();
@@ -707,7 +707,7 @@ namespace UnitTests.Engine.EngineGame
             DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }
         #endregion DropItems
 
@@ -1302,7 +1302,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
 
         [Test]
@@ -1323,7 +1323,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
 
         [Test]

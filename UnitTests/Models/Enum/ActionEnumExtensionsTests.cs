@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("item.png", result);
+            Assert.AreEqual("superflower.png", result);
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("item.png", result);
+            Assert.AreEqual("oscar.png", result);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("item.png", result);
+            Assert.AreEqual("mushroom.png", result);
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("item.png", result);
+            Assert.AreEqual("zest_quest_icon2.png", result);
         }
     }
 }
