@@ -47,6 +47,8 @@ namespace Game.Engine.EngineGame
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
             // INFO: Teams, work out your turn logic
+            // Note, instead of modifying this function, we modified the following DetermineActionChoice function
+            //   to control what players do.  This gave us a wider variety of options.
             return base.TakeTurn(Attacker);
         }
 
