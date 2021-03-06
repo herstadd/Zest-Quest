@@ -244,10 +244,7 @@ namespace Game.Models
                 switch (Job)
                 {
                     case CharacterJobEnum.HeadChef:
-                        result = +2;
-                        break;
-                    case CharacterJobEnum.SousChef:
-                        result = -1;
+                        result += (int)(Defense * 0.3);
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
