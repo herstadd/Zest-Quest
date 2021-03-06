@@ -690,7 +690,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(0, result);
         }
 
         [Test]
