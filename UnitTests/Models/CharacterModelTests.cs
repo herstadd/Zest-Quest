@@ -895,7 +895,7 @@ namespace UnitTests.Models
             Game.Helpers.DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }
 
         [Test]
@@ -925,7 +925,7 @@ namespace UnitTests.Models
             Game.Helpers.DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual("1D 1", result);
+            Assert.AreEqual("1D 2", result);
         }
 
         [Test]
@@ -955,7 +955,7 @@ namespace UnitTests.Models
             Game.Helpers.DiceHelper.DisableForcedRolls();
  
             // Assert
-            Assert.AreEqual("1 + 1D 1", result);
+            Assert.AreEqual("1 + 1D 2", result);
         }
     }
 }
