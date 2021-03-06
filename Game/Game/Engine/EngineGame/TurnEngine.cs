@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
+using System.Diagnostics;
 
 namespace Game.Engine.EngineGame
 {
@@ -140,8 +142,29 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            return base.SelectMonsterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first one to hit in the list for now...
+            // Used to be that we attacked the Weakness (lowest HP) MonsterModel first
+            // Now, we attack the monster with the lowest attack value
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                //.OrderBy(m => m.CurrentHealth).FirstOrDefault();
+                .OrderBy(m => m.Attack).LastOrDefault();
+
+            Debug.WriteLine("Monster to attack:\t" + Defender.Name + "\tAttack Value:\t" + Defender.Attack);
+
+            return Defender;
+
         }
 
         /// <summary>
