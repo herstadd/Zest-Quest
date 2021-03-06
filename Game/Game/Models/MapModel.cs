@@ -287,24 +287,146 @@ namespace Game.Models
         /// </summary>
         /// <param name="Target"></param>
         /// <returns></returns>
-        public MapModelLocation ReturnNextEmptyLocation(MapModelLocation Target, MapModelLocation OriginalLocation)
+        public MapModelLocation ReturnNextEmptyLocation(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
             MapModelLocation Result = OriginalLocation;
 
 
             int LowestDistance = int.MaxValue;
 
-            foreach (var data in GetEmptyLocations())
+            if(Job == CharacterJobEnum.SousChef)
             {
-                var distance = CalculateDistance(data, Target);
-                if ((distance < LowestDistance) && (CalculateDistance(OriginalLocation, data) < 2))
+                Result = GetEmptyLocationsSousChef(Target, OriginalLocation);
+                LowestDistance = CalculateDistance(Result, Target);
+            } 
+            else
+            {
+                foreach (var data in GetEmptyLocations())
                 {
-                    Result = data;
-                    LowestDistance = distance;
+                    var distance = CalculateDistance(data, Target);
+                    if ((distance < LowestDistance) && (CalculateDistance(OriginalLocation, data) < 2))
+                    {
+                        Result = data;
+                        LowestDistance = distance;
+                    }
+                }
+            }
+            
+            return Result;
+        }
+
+        public MapModelLocation GetEmptyLocationsSousChef(MapModelLocation Target, MapModelLocation OriginalLocation) {
+            MapModelLocation Result = OriginalLocation;
+            var LowestDistance = CalculateDistance(Result, Target);
+            int x = 0;
+            int y = 0;
+
+            if (OriginalLocation.Row + 1 == MapXAxiesCount)
+            {
+                y = 0;
+                x = OriginalLocation.Column;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if(IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            } 
+            else 
+            {
+                y = OriginalLocation.Row + 1;
+                x = OriginalLocation.Column;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            }
+
+            if(OriginalLocation.Row - 1 < 0)
+            {
+                y = MapXAxiesCount - 1;
+                x = OriginalLocation.Column;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            } 
+            else
+            {
+                y = OriginalLocation.Row - 1;
+                x = OriginalLocation.Column;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            }
+
+            if (OriginalLocation.Column + 1 == MapYAxiesCount)
+            {
+                y = OriginalLocation.Row;
+                x = 0;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            }
+            else
+            {
+                y = OriginalLocation.Row;
+                x = OriginalLocation.Column + 1;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            }
+
+            if (OriginalLocation.Column - 1 < 0)
+            {
+                y = OriginalLocation.Row;
+                x = MapYAxiesCount - 1;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
+                }
+            }
+            else
+            {
+                y = OriginalLocation.Row;
+                x = OriginalLocation.Column - 1;
+                var IsPossible = GetShortestLocation(x, y, Target, LowestDistance);
+                if (IsPossible != null)
+                {
+                    Result = IsPossible;
+                    LowestDistance = CalculateDistance(Result, Target);
                 }
             }
 
             return Result;
+        }
+
+        public MapModelLocation GetShortestLocation(int x, int y, MapModelLocation Target, int LowestDistance)
+        {
+            if (MapGridLocation[x, y].Player.PlayerType == PlayerTypeEnum.Unknown)
+            {
+                var temp = CalculateDistance(MapGridLocation[x, y], Target);
+                if (temp < LowestDistance)
+                {
+                    return MapGridLocation[x, y];
+                }
+            }
+            return null;
         }
 
         /// <summary>
