@@ -1302,7 +1302,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
 
         [Test]
