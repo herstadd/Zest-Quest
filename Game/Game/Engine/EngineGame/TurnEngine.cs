@@ -57,7 +57,23 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override ActionEnum DetermineActionChoice(PlayerInfoModel Attacker)
         {
-            return base.DetermineActionChoice(Attacker);
+            /*
+             * The following is Used for Monsters, and Auto Battle Characters, and now for characters!
+             * 
+             * Order of Priority
+             * If can attack Then Attack
+             * Next use Move, not ability
+             */
+
+            EngineSettings.CurrentAction = ActionEnum.Move;
+
+            // See if Desired Target is within Range, and if so attack away
+            if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
+
+            return EngineSettings.CurrentAction;
         }
 
         /// <summary>
@@ -67,52 +83,47 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool MoveAsTurn(PlayerInfoModel Attacker)
         {
-
             /*
-             * Updated from Mike's logic.  Monster will now move only one space at a time and will move towards the character they're 
+             * Updated from Mike's logic.  Characters and monsters will now move only one space at a time and will move towards the character they're 
              * looking to attack.  Sometimes they will also move the wrong direction because they're not too smart.
              * 
              * If no open spaces, return false
              * 
              */
 
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            // For Attack, Choose Who
+            EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+            if (EngineSettings.CurrentDefender == null)
             {
-                // For Attack, Choose Who
-                EngineSettings.CurrentDefender = AttackChoice(Attacker);
-
-                if (EngineSettings.CurrentDefender == null)
-                {
-                    return false;
-                }
-
-                // Get X, Y for Defender
-                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
-                if (locationDefender == null)
-                {
-                    return false;
-                }
-
-                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                if (locationAttacker == null)
-                {
-                    return false;
-                }
-
-                // Find Location Nearest to Defender that is Open.
-
-                // Get the Open Locations
-                //var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
-                var openSquare = EngineSettings.MapModel.ReturnNextEmptyLocation(locationDefender, locationAttacker);
-
-                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
-
-                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
-
-                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+                return false;
             }
 
-            return true;
+            // Get X, Y for Defender
+            var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+            if (locationDefender == null)
+            {
+                return false;
+            }
+
+            var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            if (locationAttacker == null)
+            {
+                return false;
+            }
+
+            // Find Location Nearest to Defender that is Open.
+
+            // Get the Open Locations
+            //var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+            var openSquare = EngineSettings.MapModel.ReturnNextEmptyLocation(locationDefender, locationAttacker);
+
+            Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+            return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+
         }
 
         /// <summary>

@@ -122,6 +122,11 @@ namespace Game.Models
                 return false;
             }
 
+            if((data.Row == target.Row) && (data.Column == target.Column))
+            {
+                return false;
+            }
+
             MapGridLocation[target.Column, target.Row].Player = data.Player;
 
             // Clear out the old location
