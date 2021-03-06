@@ -194,6 +194,10 @@ namespace Game.Engine.EngineGame
                 {
                     if (data.Alive)
                     {
+                        if (data.Job == CharacterJobEnum.SushiChef)
+                        {
+                            data.Range = 20;
+                        }
                         EngineSettings.PlayerList.Add(
                             new PlayerInfoModel(data)
                             {
