@@ -340,7 +340,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(4, result);
+            Assert.AreEqual(2, result);
         }
 
         [Test]
@@ -786,7 +786,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(15308646, result);
+            Assert.AreEqual(15308644, result);
         }
 
         [Test]
