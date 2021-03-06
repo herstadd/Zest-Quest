@@ -53,59 +53,59 @@ namespace UnitTests.ViewModels
             Assert.IsNotNull(result.Engine);
         }
 
-        //[Test]
-        //public void BattleEngineViewModel_Get_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void BattleEngineViewModel_Get_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = ViewModel;
+            // Act
+            var result = ViewModel;
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result.DatabaseCharacterList);
-        //    Assert.IsNotNull(result.PartyCharacterList);
-        //}
+            // Assert
+            Assert.IsNotNull(result.DatabaseCharacterList);
+            Assert.IsNotNull(result.PartyCharacterList);
+        }
 
-        //[Test]
-        //public void BattleEngineViewModel_Add_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var result = ViewModel;
+        [Test]
+        public void BattleEngineViewModel_Add_Default_Should_Pass()
+        {
+            // Arrange
+            var result = ViewModel;
 
-        //    var countBefore = result.DatabaseCharacterList.Count();
+            var countBefore = result.DatabaseCharacterList.Count();
 
-        //    // Act
-        //    result.DatabaseCharacterList.Add(new CharacterModel());
-        //    result.PartyCharacterList.Add(new CharacterModel());
-
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreEqual(countBefore+1, result.DatabaseCharacterList.Count());
-        //    Assert.AreEqual(1, result.PartyCharacterList.Count());
-        //}
-
-        //[Test]
-        //public void BattleEngineViewModel_Set_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var result = ViewModel;
-
-        //    var countBefore = result.DatabaseCharacterList.Count();
-
-        //    // Act
-        //    result.DatabaseCharacterList = new ObservableCollection<CharacterModel>();
-        //    result.PartyCharacterList = new ObservableCollection<CharacterModel>();
+            // Act
+            result.DatabaseCharacterList.Add(new CharacterModel());
+            result.PartyCharacterList.Add(new CharacterModel());
 
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(0, result.DatabaseCharacterList.Count());
-        //    Assert.AreEqual(0, result.PartyCharacterList.Count());
-        //}
+            // Assert
+            Assert.AreEqual(countBefore + 1, result.DatabaseCharacterList.Count());
+            Assert.AreEqual(1, result.PartyCharacterList.Count());
+        }
+
+        [Test]
+        public void BattleEngineViewModel_Set_Default_Should_Pass()
+        {
+            // Arrange
+            var result = ViewModel;
+
+            var countBefore = result.DatabaseCharacterList.Count();
+
+            // Act
+            result.DatabaseCharacterList = new ObservableCollection<CharacterModel>();
+            result.PartyCharacterList = new ObservableCollection<CharacterModel>();
+
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result.DatabaseCharacterList.Count());
+            Assert.AreEqual(0, result.PartyCharacterList.Count());
+        }
     }
 }
