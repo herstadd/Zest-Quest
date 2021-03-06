@@ -149,7 +149,8 @@ namespace Game.Engine.EngineGame
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
                 .OrderBy(m => m.CurrentHealth).LastOrDefault();
 
-            Debug.WriteLine("Character to attack:\t" + Defender.Name + "\tCurrent Health:\t" + Defender.CurrentHealth);
+            if (Defender != null)
+                Debug.WriteLine("Character to attack:\t" + Defender.Name + "\tCurrent Health:\t" + Defender.CurrentHealth);
 
             return Defender;
         }
@@ -178,7 +179,8 @@ namespace Game.Engine.EngineGame
                 //.OrderBy(m => m.CurrentHealth).FirstOrDefault();
                 .OrderBy(m => m.Attack).LastOrDefault();
 
-            Debug.WriteLine("Monster to attack:\t" + Defender.Name + "\tAttack Value:\t" + Defender.Attack);
+            if(Defender != null)
+                Debug.WriteLine("Monster to attack:\t" + Defender.Name + "\tAttack Value:\t" + Defender.Attack);
 
             return Defender;
 
