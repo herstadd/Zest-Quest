@@ -710,7 +710,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void BasePlayerModel_GetSpeedJobBonus_SousChef_Should_Return_One()
+        public void BasePlayerModel_GetSpeedJobBonus_SousChef_Should_Return_Zero()
         {
             // Arrange
             var data = new BasePlayerModel<CharacterModel>();
@@ -722,7 +722,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(0, result);
         }
 
 
