@@ -133,8 +133,25 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectCharacterToAttack()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            return base.SelectCharacterToAttack();
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select Character with most health to attack first
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.CurrentHealth).LastOrDefault();
+
+            Debug.WriteLine("Character to attack:\t" + Defender.Name + "\tCurrent Health:\t" + Defender.CurrentHealth);
+
+            return Defender;
         }
 
         /// <summary>
