@@ -428,6 +428,14 @@ namespace Game.Models
             return Result;
         }
 
+        /// <summary>
+        /// Find the shortest location from the Sous Chef's surrounding
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="Target"></param>
+        /// <param name="LowestDistance"></param>
+        /// <returns></returns>
         public MapModelLocation GetShortestLocation(int x, int y, MapModelLocation Target, int LowestDistance)
         {
             if (MapGridLocation[x, y].Player.PlayerType == PlayerTypeEnum.Unknown)
