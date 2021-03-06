@@ -117,7 +117,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Arrange
             var Monster = new MonsterModel
             {
-                Speed = 20,
+                Speed = 26,
                 Level = 20,
                 CurrentHealth = 100,
                 ExperienceTotal = 1000,
@@ -165,7 +165,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             var Monster = new MonsterModel
             {
-                Speed = 20,
+                Speed = 26,
                 Level = 1,
                 CurrentHealth = 100,
                 ExperienceTotal = 1,
@@ -213,7 +213,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Arrange
             var Monster = new MonsterModel
             {
-                Speed = 20,
+                Speed = 26,
                 Level = 1,
                 CurrentHealth = 1,
                 ExperienceTotal = 1,
