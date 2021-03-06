@@ -132,5 +132,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Toughen Up", result);
         }
+
+        [Test]
+        public void AbilityEnumExtensionsTests_GetListFighter_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListFighter;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, result.Count);
+        }
     }
 }
