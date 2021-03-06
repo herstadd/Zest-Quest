@@ -1455,7 +1455,7 @@ namespace UnitTests.Engine.EngineKoenig
         {
             // Arrange
 
-            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric});
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric, CurrentHealth = 100, MaxHealth = 100 });
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
