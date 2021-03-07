@@ -64,7 +64,31 @@ namespace Game.Models
         WookieBoots = 160,
 
         //Santa Shoes
-        SantaShoes = 170,       
+        SantaShoes = 170,
+
+        //Fried Chicken Necklace
+        FriedChickenNecklace = 180,
+
+        //Gingerbread
+        Gingerbread = 190,
+
+        //Meat Guitar
+        MeatGuitar = 200,
+
+        //Pot
+        Pot = 210,
+
+        //Puppet
+        Puppet = 220,
+
+        //Viking Hat
+        VikingHat = 230,
+
+        //Wedding Ring
+        WeddingRing = 240,
+
+        //Witch Nail
+        WitchNail = 250,
     }
 
     /// <summary>
