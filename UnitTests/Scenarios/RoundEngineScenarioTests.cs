@@ -97,6 +97,75 @@ namespace UnitTests.Scenarios
             Assert.AreEqual(12, HomeCookCurrentHealth);
 
         }
+
+        [Test]
+        public void RoundEngine_MakePlayerList_HomeCook_Alive_With_CurrentHealth_20_Out_OF_20_Recovering_Should_Return_20_CurrentHealth()
+        {
+            /* 
+             * Test Home Cook Specific Passive Ability .  
+             * 
+             * after first round a Home Cook still alive so it should be recovered by 10% of current max Health
+             * Up to max health.
+             * 
+             * 1 Character
+             *            
+             *      1 Home Cook with current health:10 & current max health:20
+             * 
+             * 1 Monsters
+             *      1 EvilRefrigerator
+             * 
+             * 
+             *  HomeCook still alive and it's recovery should be 22 but because it's more than max health,20,
+             *  it will stay at current max which is 20
+             * 
+             * 
+             */
+
+            //Arrange
+            BattleEngine.EngineSettings.PlayerList.Clear();
+
+            // Add Characters
+            BattleEngine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var HomeCook = new PlayerInfoModel(
+                              new CharacterModel
+                              {
+                                  Job = CharacterJobEnum.HomeCook,
+                              });
+
+            HomeCook.CurrentHealth = 20;
+            HomeCook.MaxHealth = 20;
+
+
+            BattleEngine.EngineSettings.PlayerList.Add(HomeCook);
+
+
+            // Add Monsters
+            var EvilRefrigerator = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    MonsterType = MonsterTypeEnum.EvilRefrigerator,
+                });
+
+            BattleEngine.EngineSettings.PlayerList.Add(EvilRefrigerator);
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            RoundEngine RoundEngine = new RoundEngine();
+
+            //set turn count to 1
+            RoundEngine.EngineSettings.BattleScore.TurnCount = 1;
+
+            //Act
+            RoundEngine.MakePlayerList();
+            var HomeCookCurrentHealth = RoundEngine.EngineSettings.PlayerList[0].CurrentHealth;
+
+            //Reset
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            //Assert
+            Assert.AreEqual(20, HomeCookCurrentHealth);
+
+        }
     }
 }
 
