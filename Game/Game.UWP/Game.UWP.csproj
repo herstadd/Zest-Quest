@@ -138,6 +138,7 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="zest_quest_intro2.png" />
     <Content Include="bandana.png" />
     <Content Include="butcher_knife_necklace.png" />
     <Content Include="chef_hat.png" />
@@ -248,6 +249,7 @@
     <Content Include="zestquest.jpg" />
     <Content Include="zest_quest_icon.png" />
     <Content Include="zest_quest_title_only.png" />
+    <Content Include="zest_quest_title_only_condensed.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

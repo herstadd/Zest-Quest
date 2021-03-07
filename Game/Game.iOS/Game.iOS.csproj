@@ -399,4 +399,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\gingerbread.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zest_quest_title_only_condensed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zest_quest_intro2.png" />
+  </ItemGroup>
 </Project>
