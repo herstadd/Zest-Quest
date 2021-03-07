@@ -91,6 +91,7 @@ namespace UnitTests.Scenarios
             var HomeCookCurrentHealth = RoundEngine.EngineSettings.PlayerList[0].CurrentHealth;
 
             //Reset
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
             //Assert
             Assert.AreEqual(12, HomeCookCurrentHealth);
