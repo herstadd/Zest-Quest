@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UnitTests.Scenarios
 {
-    class RoundEngineTests
+    class BattleEngineScenarioTests
     {
     }
 }
