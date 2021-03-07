@@ -7,7 +7,7 @@
     <ContentPage.Content>
         
         <Grid>
-            <Image Source="zest_quest_title_only_condensed.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Image Source="zest_quest_title_only_condensed.png" HorizontalOptions="Center" VerticalOptions="Start"></Image>
 
             <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
 
