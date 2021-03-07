@@ -372,8 +372,41 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override int DropItems(PlayerInfoModel Target)
         {
-            // INFO: Teams, work out how you want to drop items.
-            return base.DropItems(Target);
+            // INFO: Teams, work out how you want to drop items. // updating
+            var DroppedMessage = "\nItems Dropped : \n";
+
+            // Drop Items to ItemModel Pool
+            var myItemList = Target.DropAllItems();
+
+            //myItemList.Add(MonsterIndexViewModel.Instance.GetUniqueDrop(Target.Name));
+
+            //IntEnumConverter.convert()
+
+            //Game.Models.ItemModelEnumHelper.ConvertStringToEnum
+
+            // I feel generous, even when characters die, random drops happen :-)
+            // If Random drops are enabled, then add some....
+            myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+
+            // Add to ScoreModel
+            foreach (var ItemModel in myItemList)
+            {
+                EngineSettings.BattleScore.ItemsDroppedList += ItemModel.FormatOutput() + "\n";
+                DroppedMessage += ItemModel.Name + "\n";
+            }
+
+            EngineSettings.ItemPool.AddRange(myItemList);
+
+            if (myItemList.Count == 0)
+            {
+                DroppedMessage = " Nothing dropped. ";
+            }
+
+            EngineSettings.BattleMessagesModel.DroppedMessage = DroppedMessage;
+
+            EngineSettings.BattleScore.ItemModelDropList.AddRange(myItemList);
+
+            return myItemList.Count();
         }
 
         /// <summary>
