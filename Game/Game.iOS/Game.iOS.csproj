@@ -334,9 +334,6 @@
     <BundleResource Include="Resources\fried_chicken_necklace.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\gingergread.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\knife.png" />
   </ItemGroup>
   <ItemGroup>
@@ -398,5 +395,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\butcher_knife_necklace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gingerbread.png" />
   </ItemGroup>
 </Project>
