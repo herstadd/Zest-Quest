@@ -12018,14 +12018,14 @@ namespace Game.Droid
 			// aapt resource value: 0x7F0700DC
 			public const int zelda_items = 2131165404;
 			
-			// aapt resource value: 0x7F0700E2
-			public const int zestquest = 2131165410;
-			
-			// aapt resource value: 0x7F0700E3
-			public const int zestquest_transparent = 2131165411;
-			
 			// aapt resource value: 0x7F0700E4
-			public const int ZestScreen = 2131165412;
+			public const int zestquest = 2131165412;
+			
+			// aapt resource value: 0x7F0700E5
+			public const int zestquest_transparent = 2131165413;
+			
+			// aapt resource value: 0x7F0700E6
+			public const int ZestScreen = 2131165414;
 			
 			// aapt resource value: 0x7F0700DD
 			public const int zest_quest_icon = 2131165405;
@@ -12037,10 +12037,16 @@ namespace Game.Droid
 			public const int zest_quest_intro = 2131165407;
 			
 			// aapt resource value: 0x7F0700E0
-			public const int zest_quest_splash = 2131165408;
+			public const int zest_quest_intro2 = 2131165408;
 			
 			// aapt resource value: 0x7F0700E1
-			public const int zest_quest_title_only = 2131165409;
+			public const int zest_quest_splash = 2131165409;
+			
+			// aapt resource value: 0x7F0700E2
+			public const int zest_quest_title_only = 2131165410;
+			
+			// aapt resource value: 0x7F0700E3
+			public const int zest_quest_title_only_condensed = 2131165411;
 			
 			static Drawable()
 			{
