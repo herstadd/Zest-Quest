@@ -355,7 +355,7 @@
                 <Setter Property="HeightRequest" Value="480" />
                 <Setter Property="WidthRequest" Value="480" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/> 
             </Style>
 
             <Style TargetType="Image"
