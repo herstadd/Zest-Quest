@@ -352,8 +352,8 @@
 
             <Style TargetType="Image"
                 x:Key="ImageZestQuestLargerStyle">
-                <Setter Property="HeightRequest" Value="480" />
-                <Setter Property="WidthRequest" Value="480" />
+                <Setter Property="HeightRequest" Value="360" />
+                <Setter Property="WidthRequest" Value="360" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/> 
             </Style>
