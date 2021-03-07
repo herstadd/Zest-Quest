@@ -554,10 +554,17 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_TakeTurn_Default_Should_Pass()
         {
             // Arrange
-            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+
+            var character = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(new MonsterModel());
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Act
-            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+            var result = Engine.Round.Turn.TakeTurn(character);
 
             // Reset
 
