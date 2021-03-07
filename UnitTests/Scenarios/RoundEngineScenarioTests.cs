@@ -167,6 +167,64 @@ namespace UnitTests.Scenarios
 
         }
 
+
+        [Test]
+        public void RoundEngine_MakePlayerList_SushiChef_Can_Attack_From_AnyWhere_Range_Should_Return_20()
+        {
+            /* 
+             * Test SushiChef Chef Specific Passive Ability .  
+             * 
+             * When a SushiChef selected as a characterList it will have range of 20 to attack from anywhere 
+             * 
+             * 
+             * 1 Character
+             *   
+             *      1 SushiChef
+             * 
+             * 
+             * 
+             * SushiChef range become 20 when added to character list in the game
+             * 
+             * 
+             */
+
+            //Arrange
+            BattleEngine.EndBattle();
+
+            // Add Characters
+            BattleEngine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var SushiChef = new PlayerInfoModel(
+                              new CharacterModel
+                              {
+                                  Job = CharacterJobEnum.SushiChef,
+                              });
+
+
+
+            BattleEngine.EngineSettings.CharacterList.Add(SushiChef);
+
+
+            RoundEngine RoundEngine = new RoundEngine();
+
+            //set turn count to 1
+            RoundEngine.EngineSettings.BattleScore.TurnCount = 0;
+
+            //Act
+            RoundEngine.MakePlayerList();
+            var SushiChefRangeValue = RoundEngine.EngineSettings.CharacterList[0].Range;
+
+            //Reset
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            BattleEngine.EngineSettings.CharacterList.Clear();
+
+            //Assert
+            Assert.AreEqual(20, SushiChefRangeValue);
+
+        }
+
+
+
         [Test]
         public void RoundEngine_AddMonstersToRound_All_6_Monsters_Have_Different_Type_Should_Return_True()
         {
