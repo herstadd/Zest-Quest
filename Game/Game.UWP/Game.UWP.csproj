@@ -104,6 +104,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apron.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
     <Content Include="Assets\BadgeLogo.scale-150.png" />
@@ -137,8 +138,26 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="bandana.png" />
+    <Content Include="butcher_knife_necklace.png" />
+    <Content Include="chef_hat.png" />
     <Content Include="clapping_dogs.gif" />
+    <Content Include="crocs.png" />
+    <Content Include="cutting_board.png" />
     <Content Include="emptyspace.png" />
+    <Content Include="flipflop.png" />
+    <Content Include="fried_chicken_necklace.png" />
+    <Content Include="gingergread.png" />
+    <Content Include="knife.png" />
+    <Content Include="meat_guitar.PNG" />
+    <Content Include="onion_ring.png" />
+    <Content Include="pan.png" />
+    <Content Include="pot.png" />
+    <Content Include="puppet.png" />
+    <Content Include="refrigerator.png" />
+    <Content Include="ring_pop.png" />
+    <Content Include="roasted_turkey_hat.png" />
+    <Content Include="santa_shoes.png" />
     <Content Include="score_icon.png" />
     <Content Include="battle_grid.jpg" />
     <Content Include="evil_blender.png" />
@@ -150,10 +169,17 @@
     <Content Include="evil_stove.png" />
     <Content Include="restaurant2.png" />
     <Content Include="robot_chef.png" />
+    <Content Include="scream_ring.png" />
     <Content Include="smiling_sun.png" />
     <Content Include="tasty_dish.png" />
+    <Content Include="timer.png" />
     <Content Include="tombstone.png" />
+    <Content Include="viking_hat.PNG" />
+    <Content Include="wedding_ring.png" />
+    <Content Include="witch_nail.png" />
+    <Content Include="wookie_boots.png" />
     <Content Include="zest_quest_icon2.png" />
+    <Content Include="zest_quest_intro.png" />
     <Content Include="zest_quest_splash.png" />
     <Content Include="normal_screen_1.jpg" />
     <Content Include="normal_screen_2.jpg" />
@@ -221,6 +247,7 @@
     <Content Include="zelda_items.png" />
     <Content Include="zestquest.jpg" />
     <Content Include="zest_quest_icon.png" />
+    <Content Include="zest_quest_title_only.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

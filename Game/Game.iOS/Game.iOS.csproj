@@ -318,4 +318,85 @@
   <ItemGroup>
     <BundleResource Include="Resources\clapping_dogs.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chef_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\crocs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cutting_board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flipflop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fried_chicken_necklace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gingergread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\meat_guitar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\onion_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\puppet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\refrigerator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ring_pop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\roasted_turkey_hat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\santa_shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scream_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\viking_hat.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wedding_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\witch_nail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wookie_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zest_quest_intro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\zest_quest_title_only.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\apron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bandana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\butcher_knife_necklace.png" />
+  </ItemGroup>
 </Project>
