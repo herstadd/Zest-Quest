@@ -332,7 +332,7 @@ namespace Game.Engine.EngineGame
                     {
                         foreach(var chef in EngineSettings.CharacterList)
                         {
-                            chef.BuffAttackValue = (20 * chef.Attack) / 100;
+                            chef.BuffAttackValue += (20 * chef.Attack) / 100;
                         }
                     }
 
