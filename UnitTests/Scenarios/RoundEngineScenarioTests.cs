@@ -166,6 +166,65 @@ namespace UnitTests.Scenarios
             Assert.AreEqual(20, HomeCookCurrentHealth);
 
         }
+
+        [Test]
+        public void RoundEngine_AddMonstersToRound_All_6_Monsters_Have_Different_Type_Should_Return_True()
+        {
+            /* 
+             * Test only monsters with unique type add to the playerlist.  
+             * 
+             * 6 random unique type Monsters should Add to the Playerlist
+             * 
+             *
+             * 
+             * 
+             *  all the Monsters selected should has a unique type 
+             * 
+             * 
+             */
+
+            //Arrange
+            BattleEngine.EngineSettings.PlayerList.Clear();
+          
+         
+            // set engine to add 6 monsters
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 6;
+
+            RoundEngine RoundEngine = new RoundEngine();
+
+            //set turn count to 1
+            RoundEngine.EngineSettings.BattleScore.TurnCount = 1;
+
+            //Act
+            RoundEngine.AddMonstersToRound();
+            var result = true;
+
+            // Check all mosnters have a unique type using their unique type descriptions
+            foreach(var Mosnter in RoundEngine.EngineSettings.PlayerList)
+            {
+                foreach (var NewMonster in RoundEngine.EngineSettings.PlayerList)
+                {
+                    if ( Mosnter.Description == NewMonster.Description)
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+
+                if(result == false)
+                {
+                    break;
+                }
+            }
+
+            //Reset
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            BattleEngine.EngineSettings.PlayerList.Clear();
+
+            //Assert
+            Assert.AreEqual(true, result);
+
+        }
     }
 }
 
