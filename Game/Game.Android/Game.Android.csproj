@@ -298,7 +298,7 @@
     <AndroidResource Include="Resources\drawable\knife.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\meat_guitar.PNG" />
+    <AndroidResource Include="Resources\drawable\meat_guitar.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\onion_ring.png" />

@@ -337,7 +337,7 @@
     <BundleResource Include="Resources\knife.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\meat_guitar.PNG" />
+    <BundleResource Include="Resources\meat_guitar.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\onion_ring.png" />
