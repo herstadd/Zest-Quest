@@ -99,6 +99,7 @@ namespace UnitTests.Scenarios
             BattleEngine.EngineSettings.CharacterList.Remove(SchoolChef);
             BattleEngine.EngineSettings.CharacterList.Remove(HeadChef);
             BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
+            BattleEngine.EngineSettings.BattleScore.CharacterModelDeathList.Remove(SchoolChef);
 
             //Assert
             Assert.AreEqual(2, HeadChefBuffAttackValue);
