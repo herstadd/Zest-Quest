@@ -885,7 +885,6 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
             
             // Act
-            
             var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
 
             // Reset
@@ -930,7 +929,6 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-
             var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
 
             // Reset
@@ -975,7 +973,6 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-
             var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
 
             // Reset
@@ -1020,7 +1017,6 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-
             var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
 
             // Reset
@@ -1065,7 +1061,6 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-
             var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
 
             // Reset
