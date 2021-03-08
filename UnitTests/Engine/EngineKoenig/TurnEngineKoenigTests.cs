@@ -866,6 +866,8 @@ namespace UnitTests.Engine.EngineKoenig
 
             // Reset
             DiceHelper.DisableForcedRolls();
+            Engine.EngineSettings.CharacterList.Remove(CharacterPlayer);
+            Engine.EngineSettings.MonsterList.Remove(MonsterPlayer);
 
             // Assert
             Assert.AreEqual(true, result);
