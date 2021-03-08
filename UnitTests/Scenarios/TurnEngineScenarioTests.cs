@@ -96,6 +96,9 @@ namespace UnitTests.Scenarios
             var HeadChefBuffAttackValue = TurnEnging.EngineSettings.CharacterList[0].BuffAttackValue;
 
             //Reset
+            //BattleEngine.EngineSettings.CharacterList.Remove(SchoolChef);
+            //BattleEngine.EngineSettings.CharacterList.Remove(HeadChef);
+            //BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
 
             //Assert
             Assert.AreEqual(2, HeadChefBuffAttackValue);
@@ -161,6 +164,7 @@ namespace UnitTests.Scenarios
             //Reset
             DiceHelper.DisableForcedRolls();
             BattleEngine.EngineSettings.CharacterList.Remove(CatChef);
+            BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
 
             //Assert
             Assert.AreEqual(true, CatChefAlive);
@@ -202,13 +206,13 @@ namespace UnitTests.Scenarios
                                   Job = CharacterJobEnum.SousChef,
                               });
             PlayerList.Add(SosuChef);
-            BattleEngine.EngineSettings.CharacterList.Add(SosuChef);
+            //BattleEngine.EngineSettings.CharacterList.Add(SosuChef);
 
             // Add Monster
             BattleEngine.EngineSettings.MaxNumberPartyMonsters = 1;
             var EvilRefrigerator = new PlayerInfoModel(new MonsterModel { });
             PlayerList.Add(EvilRefrigerator);
-            BattleEngine.EngineSettings.MonsterList.Add(EvilRefrigerator);
+            //BattleEngine.EngineSettings.MonsterList.Add(EvilRefrigerator);
 
             // Populate the character and monster in the map
             BattleEngine.EngineSettings.MapModel.PopulateMapModel(PlayerList);
