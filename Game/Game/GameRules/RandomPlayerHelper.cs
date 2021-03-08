@@ -48,7 +48,13 @@ namespace Game.GameRules
         {
             var DifficultyList = DifficultyEnumHelper.GetListMonster;
 
-            var RandomDifficulty = DifficultyList.ElementAt(DiceHelper.RollDice(1, DifficultyList.Count()) - 1);
+            //change this MinDifficulty value to make monsters harder
+            //must be 0 - 4.  0 means all values (starting at easy) whereas 4 "starts" at "impossible"
+            var MinDifficulty = 0;
+
+            var RandomDifficulty = DifficultyList.ElementAt(DiceHelper.RollDice(1, (DifficultyList.Count() - MinDifficulty)) - 1 + MinDifficulty);
+            
+            Debug.WriteLine("Monster Difficulty is " + RandomDifficulty.ToString());
 
             var result = DifficultyEnumHelper.ConvertStringToEnum(RandomDifficulty);
 
