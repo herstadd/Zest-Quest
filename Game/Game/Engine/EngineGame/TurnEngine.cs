@@ -389,14 +389,16 @@ namespace Game.Engine.EngineGame
             // Drop Items to ItemModel Pool
             var myItemList = Target.DropAllItems();
 
-            //myItemList.Add(MonsterIndexViewModel.Instance.GetUniqueDrop(Target.Name));
+            var ItemToAdd = Target.UniqueItem;
 
-            //IntEnumConverter.convert()
+            //if the monster has a unique drop item, add it here
+            if (ItemToAdd != "None")
+            {
+                var ItemModelItemToAdd = ItemIndexViewModel.Instance.GetItem(ItemToAdd, true);
+                myItemList.Add(ItemModelItemToAdd);
+            }
 
-            //Game.Models.ItemModelEnumHelper.ConvertStringToEnum
-
-            // I feel generous, even when characters die, random drops happen :-)
-            // If Random drops are enabled, then add some....
+            // Regardless of whether the character had a unique drop, maybe add another item drop
             myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
 
             // Add to ScoreModel
