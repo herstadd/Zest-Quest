@@ -242,32 +242,46 @@ namespace Game.GameRules
         /// <returns></returns>
         public static CharacterModel GetRandomCharacter(int MaxLevel)
         {
-            var result = new CharacterModel()
+            CharacterIndexViewModel NewCharacter = CharacterIndexViewModel.Instance;
+            var list = NewCharacter.Dataset;
+
+            var index = DiceHelper.RollDice(1, list.Count()) - 1;
+
+            var result = list.First();
+
+            if(index < list.Count)
             {
-                Level = DiceHelper.RollDice(1, MaxLevel),
+                result = list.ElementAt(index);
+            }
 
-                // Randomize Name
-                Name = GetCharacterName(),
-                Description = GetCharacterDescription(),
+            //result.Level = DiceHelper.RollDice(1, MaxLevel);
 
-                // Randomize the Attributes
-                Attack = GetAbilityValue(),
-                Speed = GetAbilityValue(),
-                Defense = GetAbilityValue(),
+            ////var result = new CharacterModel()
+            ////{
+                
 
-                // Randomize an Item for Location
-                Head = GetItem(ItemLocationEnum.Head),
-                Necklass = GetItem(ItemLocationEnum.Necklass),
-                PrimaryHand = GetItem(ItemLocationEnum.PrimaryHand),
-                OffHand = GetItem(ItemLocationEnum.OffHand),
-                RightFinger = GetItem(ItemLocationEnum.Finger),
-                LeftFinger = GetItem(ItemLocationEnum.Finger),
-                Feet = GetItem(ItemLocationEnum.Feet),
+            //    // Randomize Name
+            //    Name = GetCharacterName(),
+            //    Description = GetCharacterDescription(),
 
-                ImageURI = GetCharacterImage()
-            };
+            //    // Randomize the Attributes
+            //    Attack = GetAbilityValue(),
+            //    Speed = GetAbilityValue(),
+            //    Defense = GetAbilityValue(),
 
-            result.MaxHealth = DiceHelper.RollDice(MaxLevel, 10);
+            //    // Randomize an Item for Location
+            //    Head = GetItem(ItemLocationEnum.Head),
+            //    Necklass = GetItem(ItemLocationEnum.Necklass),
+            //    PrimaryHand = GetItem(ItemLocationEnum.PrimaryHand),
+            //    OffHand = GetItem(ItemLocationEnum.OffHand),
+            //    RightFinger = GetItem(ItemLocationEnum.Finger),
+            //    LeftFinger = GetItem(ItemLocationEnum.Finger),
+            //    Feet = GetItem(ItemLocationEnum.Feet),
+
+            //    ImageURI = GetCharacterImage()
+            ////};
+
+            //result.MaxHealth = DiceHelper.RollDice(MaxLevel, 10);
 
             // Level up to the new level
             result.LevelUpToValue(result.Level);
