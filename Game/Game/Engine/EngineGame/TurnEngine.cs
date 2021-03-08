@@ -389,14 +389,16 @@ namespace Game.Engine.EngineGame
             // Drop Items to ItemModel Pool
             var myItemList = Target.DropAllItems();
 
-            //myItemList.Add(MonsterIndexViewModel.Instance.GetUniqueDrop(Target.Name));
+            var ItemToAdd = Target.UniqueItem;
 
-            //IntEnumConverter.convert()
+            //if the monster has a unique drop item, add it here
+            if ((ItemToAdd != null) && (ItemToAdd != "None"))
+            {
+                var ItemModelItemToAdd = ItemIndexViewModel.Instance.GetItem(ItemToAdd, true);
+                myItemList.Add(ItemModelItemToAdd);
+            }
 
-            //Game.Models.ItemModelEnumHelper.ConvertStringToEnum
-
-            // I feel generous, even when characters die, random drops happen :-)
-            // If Random drops are enabled, then add some....
+            // Regardless of whether the character had a unique drop, maybe add another item drop
             myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
 
             // Add to ScoreModel
@@ -435,13 +437,12 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<ItemModel> GetRandomMonsterItemDrops(int round)
         {
-            // TODO: Teams, You need to implement your own modification to the Logic cannot use mine as is.
-            // We changed the number to drop, that's a start
+            // We changed the number to drop
 
             // You decide how to drop monster items, level, etc.
 
-            // Vary amount of items dropped by using mod 3, but never too many
-            var NumberToDrop = (DiceHelper.RollDice(1, round % 3));
+            // Vary amount of items dropped between 0 and 1 regardless of level
+            var NumberToDrop = (DiceHelper.RollDice(1, 2) - 1);
 
             var DropItems = new List<ItemModel>();
 

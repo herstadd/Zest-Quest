@@ -62,7 +62,7 @@ namespace Game.Engine.EngineGame
             if (EngineSettings.CharacterList.Count() > 0)
             {
                 // Instead of Min, get the Max Character Level when adding monsters (linq is soo cool....)
-                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Max(m => m.Level));
+                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
             }
 
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
