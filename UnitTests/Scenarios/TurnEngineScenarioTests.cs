@@ -164,5 +164,88 @@ namespace UnitTests.Scenarios
             Assert.AreEqual(true, CatChefAlive);
             Assert.AreEqual(50, CatChefHealth);
         }
+
+        [Test]
+        public void TurnEngine_SousChef_Can_Pass_Wall_Should_Pass()
+        {
+            /* 
+             * Test Sous Chef Specific Passive Ability   
+             * 
+             * When a monster is far away, Sous Chef can pass a wall to get closer to the monster
+             * 
+             *  Character
+             *   
+             *      1 Sous Chef
+             * 
+             * 1 Monsters
+             *      1 EvilRefrigerator
+             * 
+             * 
+             * When it's Sous Chef's turn, Sous chef will pass a wall and move closer to the monster.
+             * 
+             * 
+             */
+
+            //Arrange
+            BattleEngine.EndBattle();
+
+            // Create PlayerList
+            var PlayerList = new List<PlayerInfoModel>();
+
+            // Add Character
+            BattleEngine.EngineSettings.MaxNumberPartyCharacters = 1;
+            var SosuChef = new PlayerInfoModel(
+                              new CharacterModel
+                              {
+                                  Job = CharacterJobEnum.SousChef,
+                              });
+            PlayerList.Add(SosuChef);
+            BattleEngine.EngineSettings.CharacterList.Add(SosuChef);
+
+            // Add Monster
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 1;
+            var EvilRefrigerator = new PlayerInfoModel(new MonsterModel { });
+            PlayerList.Add(EvilRefrigerator);
+            BattleEngine.EngineSettings.MonsterList.Add(EvilRefrigerator);
+
+            // Populate the character and monster in the map
+            BattleEngine.EngineSettings.MapModel.PopulateMapModel(PlayerList);
+
+            // Create a location for the chef in the map
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 1;
+
+            // Create a location for the monster in the map
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 4;
+            monsterNext.Column = 1;
+
+            // Get the current locations of the monster and chef
+            var CurrentLocationPlayer = BattleEngine.EngineSettings.MapModel.GetLocationForPlayer(SosuChef);
+            var CurrentlocationMonster = BattleEngine.EngineSettings.MapModel.GetLocationForPlayer(EvilRefrigerator);
+
+            // Force both monster and chef to move to the desingated locations
+            BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentLocationPlayer, playerNext);
+            BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentlocationMonster, monsterNext);
+
+            // Create a TurnEnging
+            TurnEngine TurnEnging = new TurnEngine();
+
+            //Act
+            // Operate only 1 turn
+            TurnEnging.TakeTurn(SosuChef);
+
+            // Get the location of the character
+            var result = BattleEngine.EngineSettings.MapModel.GetEmptyLocationsSousChef(monsterNext, playerNext);
+
+            //Reset
+            BattleEngine.EngineSettings.CharacterList.Remove(SosuChef);
+            BattleEngine.EngineSettings.CharacterList.Remove(EvilRefrigerator);
+
+            //Assert
+            Assert.AreEqual(5, result.Row);
+            Assert.AreEqual(1, result.Column);
+        }
     }
 }
