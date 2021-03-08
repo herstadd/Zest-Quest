@@ -885,7 +885,7 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
             
             // Act
-            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
 
             // Reset
 
@@ -929,7 +929,7 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
 
             // Reset
 
@@ -973,7 +973,7 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
 
             // Reset
 
@@ -1017,7 +1017,7 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
 
             // Reset
 
@@ -1061,7 +1061,7 @@ namespace UnitTests.Models
             map.MovePlayerOnMap(currMonster, monsterNext);
 
             // Act
-            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
 
             // Reset
 
@@ -1211,6 +1211,49 @@ namespace UnitTests.Models
             Assert.AreEqual(0, result.Row);
         }
 
+        [Test]
+        public void MapModel_ReturnNextEmptyLocation_Monster_MoveOnlyOne_Valid_Should_Pass()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            PlayerList.Add(new PlayerInfoModel(Monster));
+
+            map.PopulateMapModel(PlayerList);
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 0;
+
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 0;
+            monsterNext.Column = 5;
+
+            var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+
+            map.MovePlayerOnMap(currPlayer, playerNext);
+            map.MovePlayerOnMap(currMonster, monsterNext);
+
+            // Act
+            var result = map.ReturnNextEmptyLocation(playerNext, monsterNext, CharacterJobEnum.Unknown);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(4, result.Column);
+            Assert.AreEqual(0, result.Row);
+        }
 
         [Test]
         public void MapModel_ReturnNextEmptyLocation_SousChef_Should_Return_0()
