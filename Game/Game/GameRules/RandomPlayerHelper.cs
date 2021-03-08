@@ -50,7 +50,8 @@ namespace Game.GameRules
 
             //change this MinDifficulty value to make monsters harder
             //must be 0 - 4.  0 means all values (starting at easy) whereas 4 "starts" at "impossible"
-            var MinDifficulty = 1;
+            var MinDifficulty = 0;
+            //Note, if you change this, you have to update the unit test
 
             var RandomDifficulty = DifficultyList.ElementAt(DiceHelper.RollDice(1, (DifficultyList.Count() - MinDifficulty)) - 1 + MinDifficulty);
             
