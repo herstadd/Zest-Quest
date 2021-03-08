@@ -986,6 +986,51 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void MapModel_GetEmptyLocationsSousChef_Right_Valid_Should_Pass()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            PlayerList.Add(new PlayerInfoModel(Monster));
+
+            map.PopulateMapModel(PlayerList);
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 1;
+
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 5;
+            monsterNext.Column = 1;
+
+            var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+
+            map.MovePlayerOnMap(currPlayer, playerNext);
+            map.MovePlayerOnMap(currMonster, monsterNext);
+
+            // Act
+
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext); ;
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(1, result.Column);
+            Assert.AreEqual(5, result.Row);
+        }
+
+        [Test]
         public void MapModel_RemovePlayerFromMap_Valid_Should_Pass()
         {
             // Arrange
