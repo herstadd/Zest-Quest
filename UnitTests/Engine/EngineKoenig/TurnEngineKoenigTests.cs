@@ -766,6 +766,8 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, null);
 
             // Reset
+            Engine.EngineSettings.CharacterList.Remove(CharacterPlayer);
+            Engine.EngineSettings.MonsterList.Remove(MonsterPlayer);
 
             // Assert
             Assert.AreEqual(false, result);
