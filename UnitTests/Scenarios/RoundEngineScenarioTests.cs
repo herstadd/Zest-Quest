@@ -228,17 +228,17 @@ namespace UnitTests.Scenarios
 
 
         [Test]
-        public void RoundEngine_AddMonstersToRound_All_6_Monsters_Have_Different_Type_Should_Return_True()
+        public void RoundEngine_AddMonstersToRound_All_9_Monsters_Have_Different_Type_Should_Return_True()
         {
             /* 
              * Test only monsters with unique type add to the playerlist.  
              * 
-             * 6 random unique type Monsters should Add to the Playerlist
+             * 9 random unique type Monsters should Add to the Playerlist
              * 
              *
              * 
              * 
-             *  all the Monsters selected should has a unique type 
+             *  all the Monsters selected should have a unique type 
              * 
              * 
              */
@@ -248,7 +248,7 @@ namespace UnitTests.Scenarios
           
          
             // set engine to add 6 monsters
-            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 6;
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 9;
 
             RoundEngine RoundEngine = new RoundEngine();
 
