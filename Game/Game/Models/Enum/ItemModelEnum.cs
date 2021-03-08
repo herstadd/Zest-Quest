@@ -123,6 +123,14 @@ namespace Game.Models
                 ItemModelEnum.Crocs => "Crocs",
                 ItemModelEnum.WookieBoots => "WookieBoots",
                 ItemModelEnum.SantaShoes => "SantaShoes",
+                ItemModelEnum.FriedChickenNecklace => "FriedChickenNecklace",
+                ItemModelEnum.Gingerbread => "Gingerbread",
+                ItemModelEnum.MeatGuitar => "MeatGuitar",
+                ItemModelEnum.Pot => "Pot",
+                ItemModelEnum.Puppet => "Puppet",
+                ItemModelEnum.VikingHat => "VikingHat",
+                ItemModelEnum.WeddingRing => "WeddingRing",
+                ItemModelEnum.WitchNail => "WitchNail",
                 ItemModelEnum.Unknown => "Unknown",
             };
             return Message;
