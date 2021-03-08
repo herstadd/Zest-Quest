@@ -217,7 +217,7 @@ namespace Game.Models
             LeftFinger = data.LeftFinger;
             Feet = data.Feet;
 
-            UniqueItem = data.UniqueItem;
+            UniqueItem = data.UniqueDrop.ToMessage();
 
             Difficulty = data.Difficulty;
 
