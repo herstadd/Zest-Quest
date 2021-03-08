@@ -308,9 +308,20 @@ namespace Game.Engine.EngineGame
             
             if (Target.Job == CharacterJobEnum.CatChef)
             {
-                Target.Alive = true;
-                Target.CurrentHealth = Target.MaxHealth;
-                return true;
+                //50% chance of new life
+                var CatLive = DiceHelper.RollDice(1, 2);
+                if (CatLive == 1)
+                {
+                    Target.MaxHealth = Target.MaxHealth / 2;
+                    Target.CurrentHealth = Target.MaxHealth;
+                    if (Target.CurrentHealth != 0)
+                    {
+                        EngineSettings.BattleMessagesModel.TurnMessageSpecial = " yet Cat Chef is revived with half life! ";
+                        Target.Alive = true;
+                        return true;
+                    }
+                }
+                //else, if both if statements aren't satisfied, cat defeated
             }
 
             bool found;
