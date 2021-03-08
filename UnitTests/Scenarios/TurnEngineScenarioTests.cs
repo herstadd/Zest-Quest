@@ -93,12 +93,12 @@ namespace UnitTests.Scenarios
 
             //Act
             TurnEnging.TargetDied(SchoolChef);
-            var HeadChefBuffAttackValue = TurnEnging.EngineSettings.CharacterList[0].BuffAttackValue;
+            var HeadChefBuffAttackValue = BattleEngine.EngineSettings.CharacterList[0].BuffAttackValue;
 
             //Reset
-            //BattleEngine.EngineSettings.CharacterList.Remove(SchoolChef);
-            //BattleEngine.EngineSettings.CharacterList.Remove(HeadChef);
-            //BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
+            BattleEngine.EngineSettings.CharacterList.Remove(SchoolChef);
+            BattleEngine.EngineSettings.CharacterList.Remove(HeadChef);
+            BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
 
             //Assert
             Assert.AreEqual(2, HeadChefBuffAttackValue);
