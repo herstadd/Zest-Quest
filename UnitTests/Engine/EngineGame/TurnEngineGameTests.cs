@@ -695,7 +695,7 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_2()
+        public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
         {
             // Arrange
             var player = new CharacterModel();
@@ -714,7 +714,7 @@ namespace UnitTests.Engine.EngineGame
             DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(1, result);
         }
         #endregion DropItems
 
