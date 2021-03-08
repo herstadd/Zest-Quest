@@ -58,6 +58,7 @@ namespace UnitTests.Scenarios
             BattleEngine.EndBattle();
             BattleEngine.EngineSettings.CharacterList.Clear();
             BattleEngine.EngineSettings.MonsterList.Clear();
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
 
             // Add Characters
             BattleEngine.EngineSettings.MaxNumberPartyCharacters = 2;
@@ -99,6 +100,8 @@ namespace UnitTests.Scenarios
             BattleEngine.EngineSettings.CharacterList.Remove(SchoolChef);
             BattleEngine.EngineSettings.CharacterList.Remove(HeadChef);
             BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
+            BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
 
             //Assert
             Assert.AreEqual(2, HeadChefBuffAttackValue);
