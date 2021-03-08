@@ -99,5 +99,70 @@ namespace UnitTests.Scenarios
             Assert.AreEqual(2, HeadChefBuffAttackValue);
 
         }
+
+        [Test]
+        public void TurnEngine_TargetDied_CatChef_Died_Should_Revive()
+        {
+            /* 
+             * Test Cat Chef Specific Passive Ability .  
+             * 
+             * When a Cat Chef dies, 50% chance of revival with max health cut in half
+             * 
+             * 1 Character
+             *   
+             *      1 Cat Chef
+             * 
+             * 1 Monsters
+             *      1 EvilRefrigerator
+             * 
+             * 
+             * When Cat Chef dies, max health cut in half if revived
+             * 
+             * 
+             */
+
+            //Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+            BattleEngine.EndBattle();
+
+            // Add Characters
+            BattleEngine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CatChef = new PlayerInfoModel(
+                              new CharacterModel
+                              {
+                                  Job = CharacterJobEnum.CatChef,
+                                  MaxHealth = 100
+                              });
+
+
+            BattleEngine.EngineSettings.CharacterList.Add(CatChef);
+
+            // Add Monsters
+            var EvilRefrigerator = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    MonsterType = MonsterTypeEnum.EvilRefrigerator,
+                });
+
+            BattleEngine.EngineSettings.MonsterList.Add(EvilRefrigerator);
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            TurnEngine TurnEngine = new TurnEngine();
+
+            //Act
+            TurnEngine.TargetDied(CatChef);
+            var CatChefAlive = TurnEngine.EngineSettings.CharacterList[0].Alive;
+            var CatChefHealth = TurnEngine.EngineSettings.CharacterList[0].MaxHealth;
+
+            //Reset
+            DiceHelper.DisableForcedRolls();
+            BattleEngine.EngineSettings.CharacterList.Remove(CatChef);
+
+            //Assert
+            Assert.AreEqual(true, CatChefAlive);
+            Assert.AreEqual(50, CatChefHealth);
+        }
     }
 }
