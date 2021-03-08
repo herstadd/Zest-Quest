@@ -345,14 +345,21 @@ namespace Game.Engine.EngineGame
                         {
                             chef.BuffAttackValue += (20 * chef.Attack) / 100;
                         }
+                     
                     }
+
+                  
+
 
                     // Add the Character to the killed list
                     EngineSettings.BattleScore.CharacterAtDeathList += Target.FormatOutput() + "\n";
 
                     EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
 
-                    DropItems(Target);
+                    if (EngineSettings.BattleStateEnum != BattleStateEnum.Unknown)
+                    {
+                        DropItems(Target);
+                    }
 
                     found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
                     found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
