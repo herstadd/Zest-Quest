@@ -392,7 +392,7 @@ namespace Game.Engine.EngineGame
             var ItemToAdd = Target.UniqueItem;
 
             //if the monster has a unique drop item, add it here
-            if (ItemToAdd != "None")
+            if ((ItemToAdd != null) && (ItemToAdd != "None"))
             {
                 var ItemModelItemToAdd = ItemIndexViewModel.Instance.GetItem(ItemToAdd, true);
                 myItemList.Add(ItemModelItemToAdd);
@@ -441,8 +441,8 @@ namespace Game.Engine.EngineGame
 
             // You decide how to drop monster items, level, etc.
 
-            // Vary amount of items dropped between 0 and 1 regardless of level
-            var NumberToDrop = (DiceHelper.RollDice(1, 2) - 1);
+            // Vary amount of items dropped between 1 and 2 regardless of level
+            var NumberToDrop = (DiceHelper.RollDice(1, 2));
 
             var DropItems = new List<ItemModel>();
 
