@@ -56,6 +56,8 @@ namespace UnitTests.Scenarios
 
             //Arrange
             BattleEngine.EndBattle();
+            BattleEngine.EngineSettings.CharacterList.Clear();
+            BattleEngine.EngineSettings.MonsterList.Clear();
 
             // Add Characters
             BattleEngine.EngineSettings.MaxNumberPartyCharacters = 2;
