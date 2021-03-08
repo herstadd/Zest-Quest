@@ -851,7 +851,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MapModel_GetEmptyLocationsSousChef_LeftTop_Valid_Should_Pass()
+        public void MapModel_GetEmptyLocationsSousChef_Pass_Right_Wall_Valid_Should_Pass()
         {
             // Arrange
             var map = new MapModel();
@@ -867,7 +867,8 @@ namespace UnitTests.Models
             PlayerList.Add(CharacterPlayer);
 
             var Monster = new MonsterModel();
-            PlayerList.Add(new PlayerInfoModel(Monster));
+            var MonsterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(MonsterPlayer);
 
             map.PopulateMapModel(PlayerList);
             MapModelLocation playerNext = new MapModelLocation();
@@ -879,7 +880,7 @@ namespace UnitTests.Models
             monsterNext.Column = 1;
 
             var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
-            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
 
             map.MovePlayerOnMap(currPlayer, playerNext);
             map.MovePlayerOnMap(currMonster, monsterNext);
@@ -890,12 +891,12 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(0, result.Column);
             Assert.AreEqual(4, result.Row);
+            Assert.AreEqual(0, result.Column);
         }
 
         [Test]
-        public void MapModel_GetEmptyLocationsSousChef_Down_Valid_Should_Pass()
+        public void MapModel_GetEmptyLocationsSousChef_Move_Down_Valid_Should_Pass()
         {
             // Arrange
             var map = new MapModel();
@@ -911,7 +912,8 @@ namespace UnitTests.Models
             PlayerList.Add(CharacterPlayer);
 
             var Monster = new MonsterModel();
-            PlayerList.Add(new PlayerInfoModel(Monster));
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            PlayerList.Add(MonsterPlayer);
 
             map.PopulateMapModel(PlayerList);
             MapModelLocation playerNext = new MapModelLocation();
@@ -923,7 +925,7 @@ namespace UnitTests.Models
             monsterNext.Column = 4;
 
             var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
-            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
 
             map.MovePlayerOnMap(currPlayer, playerNext);
             map.MovePlayerOnMap(currMonster, monsterNext);
@@ -934,12 +936,12 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(1, result.Column);
             Assert.AreEqual(2, result.Row);
+            Assert.AreEqual(1, result.Column);
         }
 
         [Test]
-        public void MapModel_GetEmptyLocationsSousChef_Up_Valid_Should_Pass()
+        public void MapModel_GetEmptyLocationsSousChef_Pass_Left_Wall_Valid_Should_Pass()
         {
             // Arrange
             var map = new MapModel();
@@ -955,7 +957,8 @@ namespace UnitTests.Models
             PlayerList.Add(CharacterPlayer);
 
             var Monster = new MonsterModel();
-            PlayerList.Add(new PlayerInfoModel(Monster));
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            PlayerList.Add(MonsterPlayer);
 
             map.PopulateMapModel(PlayerList);
             MapModelLocation playerNext = new MapModelLocation();
@@ -967,7 +970,7 @@ namespace UnitTests.Models
             monsterNext.Column = 4;
 
             var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
-            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
 
             map.MovePlayerOnMap(currPlayer, playerNext);
             map.MovePlayerOnMap(currMonster, monsterNext);
@@ -978,12 +981,12 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(5, result.Column);
             Assert.AreEqual(0, result.Row);
+            Assert.AreEqual(5, result.Column);
         }
 
         [Test]
-        public void MapModel_GetEmptyLocationsSousChef_Right_Valid_Should_Pass()
+        public void MapModel_GetEmptyLocationsSousChef_Pass_Pass_Upper_Wall_Valid_Should_Pass()
         {
             // Arrange
             var map = new MapModel();
@@ -999,7 +1002,53 @@ namespace UnitTests.Models
             PlayerList.Add(CharacterPlayer);
 
             var Monster = new MonsterModel();
-            PlayerList.Add(new PlayerInfoModel(Monster));
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            PlayerList.Add(MonsterPlayer);
+
+            map.PopulateMapModel(PlayerList);
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 0;
+
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 4;
+            monsterNext.Column = 0;
+
+            var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
+
+            map.MovePlayerOnMap(currPlayer, playerNext);
+            map.MovePlayerOnMap(currMonster, monsterNext);
+
+            // Act
+            var result = map.GetEmptyLocationsSousChef(monsterNext, playerNext);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(5, result.Row);
+            Assert.AreEqual(0, result.Column);
+        }
+
+        [Test]
+        public void MapModel_GetEmptyLocationsSousChef_Row_Move_Up_Valid_Should_Pass()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            PlayerList.Add(MonsterPlayer);
 
             map.PopulateMapModel(PlayerList);
             MapModelLocation playerNext = new MapModelLocation();
@@ -1011,7 +1060,7 @@ namespace UnitTests.Models
             monsterNext.Column = 1;
 
             var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
-            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
 
             map.MovePlayerOnMap(currPlayer, playerNext);
             map.MovePlayerOnMap(currMonster, monsterNext);
@@ -1022,12 +1071,12 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
+            Assert.AreEqual(1, result.Row);
             Assert.AreEqual(1, result.Column);
-            Assert.AreEqual(5, result.Row);
         }
 
         [Test]
-        public void MapModel_GetEmptyLocationsSousChef_Left_Valid_Should_Pass()
+        public void MapModel_GetEmptyLocationsSousChef_Move_Left_Valid_Should_Pass()
         {
             // Arrange
             var map = new MapModel();
@@ -1043,7 +1092,8 @@ namespace UnitTests.Models
             PlayerList.Add(CharacterPlayer);
 
             var Monster = new MonsterModel();
-            PlayerList.Add(new PlayerInfoModel(Monster));
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            PlayerList.Add(MonsterPlayer);
 
             map.PopulateMapModel(PlayerList);
             MapModelLocation playerNext = new MapModelLocation();
@@ -1055,7 +1105,7 @@ namespace UnitTests.Models
             monsterNext.Column = 1;
 
             var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
-            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(MonsterPlayer);
 
             map.MovePlayerOnMap(currPlayer, playerNext);
             map.MovePlayerOnMap(currMonster, monsterNext);
@@ -1066,8 +1116,8 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(2, result.Column);
             Assert.AreEqual(5, result.Row);
+            Assert.AreEqual(2, result.Column);
         }
 
         [Test]
