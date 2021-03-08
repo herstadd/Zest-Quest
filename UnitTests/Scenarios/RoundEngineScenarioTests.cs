@@ -216,7 +216,9 @@ namespace UnitTests.Scenarios
 
             //Reset
             BattleEngine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            BattleEngine.EngineSettings.PlayerList.Clear();
             BattleEngine.EngineSettings.CharacterList.Clear();
+            RoundEngine.EngineSettings.CharacterList.Clear();
 
             //Assert
             Assert.AreEqual(20, SushiChefRangeValue);
