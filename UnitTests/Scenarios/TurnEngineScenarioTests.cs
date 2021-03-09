@@ -235,6 +235,7 @@ namespace UnitTests.Scenarios
             var CurrentlocationMonster = BattleEngine.EngineSettings.MapModel.GetLocationForPlayer(EvilRefrigerator);
 
             // Force both monster and chef to move to the desingated locations
+            // So, they are far away from each other
             BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentLocationPlayer, playerNext);
             BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentlocationMonster, monsterNext);
 
@@ -250,11 +251,108 @@ namespace UnitTests.Scenarios
 
             //Reset
             BattleEngine.EngineSettings.CharacterList.Remove(SosuChef);
-            BattleEngine.EngineSettings.CharacterList.Remove(EvilRefrigerator);
+            BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
 
             //Assert
             Assert.AreEqual(5, result.Row);
             Assert.AreEqual(1, result.Column);
+        }
+
+        [Test]
+        public void TurnEngine_SushiChef_Can_Hit_From_Anywhere_Should_Pass()
+        {
+            /* 
+             * Test Sushi Chef Specific Passive Ability   
+             * 
+             * Sushi Chef can hit monsters from anywhere although the monsters are far away
+             * 
+             *  Character
+             *   
+             *      1 Sushi Chef
+             * 
+             * 1 Monsters
+             *      1 EvilRefrigerator
+             * 
+             * 
+             * When it's Sushi Chef's turn, Sous chef will attack the monster from far away.
+             * 
+             * 
+             */
+
+            //Arrange
+            BattleEngine.EndBattle();
+
+            // Create PlayerList
+            var PlayerList = new List<PlayerInfoModel>();
+
+            // Add Character
+            BattleEngine.EngineSettings.MaxNumberPartyCharacters = 1;
+            var SushiChef = new PlayerInfoModel(
+                              new CharacterModel
+                              {
+                                  Job = CharacterJobEnum.SushiChef,
+                              });
+            PlayerList.Add(SushiChef);
+
+            // Add Monster
+            BattleEngine.EngineSettings.MaxNumberPartyMonsters = 1;
+            var EvilRefrigerator = new PlayerInfoModel(
+                                        new MonsterModel
+                                        {
+                                            MaxHealth = 50,
+                                            CurrentHealth = 50
+                                        });
+            PlayerList.Add(EvilRefrigerator);
+
+            // Populate the character and monster in the map
+            BattleEngine.EngineSettings.MapModel.PopulateMapModel(PlayerList);
+
+            // Create a location for the chef in the map
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 1;
+
+            // Create a location for the monster in the map
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 4;
+            monsterNext.Column = 1;
+
+            // Get the current locations of the monster and chef
+            var CurrentLocationPlayer = BattleEngine.EngineSettings.MapModel.GetLocationForPlayer(SushiChef);
+            var CurrentlocationMonster = BattleEngine.EngineSettings.MapModel.GetLocationForPlayer(EvilRefrigerator);
+
+            // Force both monster and chef to move to the desingated locations
+            // So, they are far away from each other
+            BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentLocationPlayer, playerNext);
+            BattleEngine.EngineSettings.MapModel.MovePlayerOnMap(CurrentlocationMonster, monsterNext);
+
+            // Create a TurnEnging
+            TurnEngine TurnEnging = new TurnEngine();
+
+            //Act
+            // Set Character always hit
+            BattleEngine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Hit;
+
+            // Set Character is attacking
+            BattleEngine.EngineSettings.CurrentAction = ActionEnum.Attack;
+            BattleEngine.EngineSettings.CurrentAttacker = SushiChef;
+            BattleEngine.EngineSettings.CurrentDefender = EvilRefrigerator;
+
+            // Operate only 1 turn
+            TurnEnging.TakeTurn(SushiChef);
+
+            // Get the location of the character
+            var MonsterMaxHealth = EvilRefrigerator.MaxHealth;
+            var MonsterCurrHealth = EvilRefrigerator.CurrentHealth;
+
+            //Reset
+            BattleEngine.EngineSettings.CharacterList.Remove(SushiChef);
+            BattleEngine.EngineSettings.MonsterList.Remove(EvilRefrigerator);
+            BattleEngine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
+            BattleEngine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+
+            //Assert
+            Assert.True(MonsterCurrHealth < MonsterMaxHealth);
         }
     }
 }
