@@ -108,8 +108,14 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsForAllCharacters()
         {
-            // INFO: Teams, work out your turn logic
-            return base.PickupItemsForAllCharacters();
+            // Will automatically assign items
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                return base.PickupItemsForAllCharacters();
+            }
+            
+            // TODO: Determine what happens if not in autobattle mode
+            return true;
         }
 
         /// <summary>
@@ -242,8 +248,21 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsFromPool(PlayerInfoModel character)
         {
-            // INFO: Teams, work out your turn logic
-            return base.PickupItemsFromPool(character);
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // Have the character, walk the items in the pool, and decide if any are better than current one.
+
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Head);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Necklass);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.PrimaryHand);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.OffHand);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
+                GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
+            } 
+
+            // TODO: Figure out how to manually apply items when not in autobattle
+            return true;
         }
 
         /// <summary>
@@ -253,8 +272,44 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            // INFO: Teams, work out your turn logic
-            return base.GetItemFromPoolIfBetter(character, setLocation);
+            var thisLocation = setLocation;
+            if (setLocation == ItemLocationEnum.RightFinger)
+            {
+                thisLocation = ItemLocationEnum.Finger;
+            }
+
+            if (setLocation == ItemLocationEnum.LeftFinger)
+            {
+                thisLocation = ItemLocationEnum.Finger;
+            }
+
+            var myList = EngineSettings.ItemPool.Where(a => a.Location == thisLocation)
+                .OrderByDescending(a => a.Value)
+                .ToList();
+
+            // If no items in the list, return...
+            if (!myList.Any())
+            {
+                return false;
+            }
+
+            var CharacterItem = character.GetItemByLocation(setLocation);
+            if (CharacterItem == null)
+            {
+                SwapCharacterItem(character, setLocation, myList.FirstOrDefault());
+                return true;
+            }
+
+            foreach (var PoolItem in myList)
+            {
+                if (PoolItem.Value > CharacterItem.Value)
+                {
+                    SwapCharacterItem(character, setLocation, PoolItem);
+                    return true;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
