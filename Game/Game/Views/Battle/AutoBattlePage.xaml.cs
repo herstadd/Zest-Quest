@@ -35,7 +35,7 @@ namespace Game.Views
 			var Character = new CharacterModel
 			{
 				ExperienceTotal = 300,    // Enough for next level
-				Name = "Mike Level Example",
+				Name = "Next Level Zest Quest Chef",
 				Speed = 100,	// Go first
 			};
 
