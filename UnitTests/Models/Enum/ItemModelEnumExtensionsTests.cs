@@ -288,6 +288,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_MeatGuitar_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.MeatGuitar.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("MeatGuitar", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
