@@ -316,6 +316,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Puppet_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Puppet.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Puppet", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
