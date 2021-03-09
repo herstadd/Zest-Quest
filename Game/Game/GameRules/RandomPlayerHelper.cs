@@ -313,9 +313,6 @@ namespace Game.GameRules
                     Speed = GetAbilityValue(),
                     Defense = GetAbilityValue(),
 
-                    // Randomize an Uniqe Dropfor Location
-                    UniqueDrop = ItemModelEnumHelper.ConvertStringToEnum(ItemIndexViewModel.Instance.GetItem(GetMonsterUniqueItem()).Name),
-
                     // Randomize Monster Image
                     ImageURI = GetMonsterImage()
                 };
