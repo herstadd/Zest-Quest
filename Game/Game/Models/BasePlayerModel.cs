@@ -176,7 +176,20 @@ namespace Game.Models
 
         [Ignore]
         // Return the Attack with Item Bonus
-        public int GetAttackItemBonus { get { return GetItemBonus(AttributeEnum.Attack); } }
+        public int GetAttackItemBonus
+        {
+            get
+            {
+                switch (Job)
+                {
+                    case CharacterJobEnum.HeadChef:
+                        return GetItemBonus(AttributeEnum.Attack) * 2;
+                    case CharacterJobEnum.Unknown:
+                    default:
+                        return GetItemBonus(AttributeEnum.Attack);
+                }
+            }
+        }
 
         [Ignore]
         // Return the Attack with Item Bonus
