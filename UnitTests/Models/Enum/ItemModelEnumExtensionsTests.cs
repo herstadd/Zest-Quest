@@ -358,6 +358,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_WitchNail_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.WitchNail.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("WitchNail", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
