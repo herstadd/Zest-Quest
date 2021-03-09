@@ -1332,7 +1332,8 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
         {
             // Arrange
-
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(8);
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel() { MaxHealth = 100, CurrentHealth = 100 });
 
             // Get the longest range weapon in stock.
@@ -1353,6 +1354,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(ActionEnum.Attack, result);
