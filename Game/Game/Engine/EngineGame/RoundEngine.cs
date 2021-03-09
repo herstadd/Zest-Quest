@@ -272,45 +272,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            var thisLocation = setLocation;
-            if (setLocation == ItemLocationEnum.RightFinger)
-            {
-                thisLocation = ItemLocationEnum.Finger;
-            }
-
-            if (setLocation == ItemLocationEnum.LeftFinger)
-            {
-                thisLocation = ItemLocationEnum.Finger;
-            }
-
-            var myList = EngineSettings.ItemPool.Where(a => a.Location == thisLocation)
-                .OrderByDescending(a => a.Value)
-                .ToList();
-
-            // If no items in the list, return...
-            if (!myList.Any())
-            {
-                return false;
-            }
-
-            var CharacterItem = character.GetItemByLocation(setLocation);
-            if (CharacterItem == null)
-            {
-                SwapCharacterItem(character, setLocation, myList.FirstOrDefault());
-                return true;
-            }
-
-            foreach (var PoolItem in myList)
-            {
-                // Prioritizing Attack Attribute items.
-                if (PoolItem.Attribute == AttributeEnum.Attack)
-                {
-                    SwapCharacterItem(character, setLocation, PoolItem);
-                    return true;
-                }
-            }
-
-            return true;
+            return base.GetItemFromPoolIfBetter(character, setLocation);
         }
 
         /// <summary>
