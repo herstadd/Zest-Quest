@@ -302,6 +302,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_Pot_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.Pot.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Pot", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
