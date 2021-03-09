@@ -778,6 +778,32 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void TurnEngine_TargetDied_CatChef_Should_Pass()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+            var player = new CharacterModel
+            {
+                Job = CharacterJobEnum.CatChef,
+                CurrentHealth = 1,
+                MaxHealth = 1
+            };
+
+            var PlayerInfo = new PlayerInfoModel(player);
+            Engine.EngineSettings.CharacterList.Add(PlayerInfo);
+
+            // Act
+            var result = Engine.Round.Turn.TargetDied(PlayerInfo);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion TargetDied
 
         #region TurnAsAttack
