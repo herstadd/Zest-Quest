@@ -41,7 +41,6 @@ namespace UnitTests.Scenarios
              * the team
              * 
              * 2 Character
-             *   
              *      1 School Chef
              *      1 Head Chef with attack value of 10 with BuffAttackValue = 0 
              * 
@@ -117,7 +116,6 @@ namespace UnitTests.Scenarios
              * When a Cat Chef dies, 50% chance of revival with max health cut in half
              * 
              * 1 Character
-             *   
              *      1 Cat Chef
              * 
              * 1 Monsters
@@ -183,7 +181,6 @@ namespace UnitTests.Scenarios
              * When a monster is far away, Sous Chef can pass a wall to get closer to the monster
              * 
              *  Character
-             *   
              *      1 Sous Chef
              * 
              * 1 Monsters
@@ -354,5 +351,6 @@ namespace UnitTests.Scenarios
             //Assert
             Assert.True(MonsterCurrHealth < MonsterMaxHealth);
         }
+
     }
 }
