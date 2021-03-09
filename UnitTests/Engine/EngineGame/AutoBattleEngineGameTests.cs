@@ -172,6 +172,23 @@ namespace UnitTests.Engine.EngineGame
             //Assert
             Assert.AreEqual(6, count);
         }
+
+        [Test]
+        public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_10()
+        {
+            //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 10;
+
+            //Act
+            var result = AutoBattleEngine.CreateCharacterParty();
+            var count = AutoBattleEngine.Battle.EngineSettings.CharacterList.Count();
+
+            //Reset
+            CharacterIndexViewModel.Instance.ForceDataRefresh();
+
+            //Assert
+            Assert.AreEqual(10, count);
+        }
         #endregion CreateCharacterParty   
     }
 }
