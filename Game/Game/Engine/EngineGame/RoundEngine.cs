@@ -302,7 +302,8 @@ namespace Game.Engine.EngineGame
 
             foreach (var PoolItem in myList)
             {
-                if (PoolItem.Value > CharacterItem.Value)
+                // Prioritizing Attack Attribute items.
+                if (PoolItem.Attribute == AttributeEnum.Attack && PoolItem.Value > CharacterItem.Value)
                 {
                     SwapCharacterItem(character, setLocation, PoolItem);
                     return true;
