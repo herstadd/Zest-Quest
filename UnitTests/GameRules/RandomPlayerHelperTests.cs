@@ -343,6 +343,20 @@ namespace UnitTests.Helpers
             Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
         }
 
+        [Test]
+        public void RandomPlayerHelper_GetRandomMonster_Empty_Monster_List_In_Restaurant_Shoud_Return_New_Monster()
+        {
+            // Arrange
+
+            // Act
+            var result = RandomPlayerHelper.GetRandomMonster(1, true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
+        }
+
         //[Test]
         //public async Task RandomPlayerHelper_GetRandomMonster_Valid_Items_True_Should_Return_New_Monster()
         //{
