@@ -304,6 +304,25 @@ namespace UnitTests.Engine.EngineGame
         }
         #endregion OrderPlayListByTurnOrder
 
+        #region PickupItemsForAllCharacters
+        [Test]
+        public void RoundEngine_PickupItemsForAllCharacters_Not_AutoBattle_Should_Return_True()
+        {
+
+            // Arrange
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+
+            // Act
+            var result = Engine.Round.PickupItemsForAllCharacters();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+
+        }
+        #endregion PickupItemsForAllCharacters
+
         #region GetItemFromPoolIfBetter
         [Test]
         public async Task RoundEngine_GetItemFromPoolIfBetter_InValid_Location_Empty_Should_Fail()
