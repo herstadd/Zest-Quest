@@ -344,6 +344,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_WeddingRing_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.WeddingRing.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("WeddingRing", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
