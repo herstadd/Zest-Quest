@@ -330,6 +330,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_VikingHat_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.VikingHat.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("VikingHat", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
