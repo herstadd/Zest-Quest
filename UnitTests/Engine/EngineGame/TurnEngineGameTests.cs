@@ -695,6 +695,30 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void TurnEngine_DropItems_Valid_Monster_UniqueItem_1_Should_Return_1()
+        {
+            // Arrange
+            var player = new MonsterModel
+            {
+                UniqueDrop = ItemModelEnum.Apron
+            };
+
+            var PlayerInfo = new PlayerInfoModel(player);
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(0);
+
+            // Act
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+
+        [Test]
         public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
         {
             // Arrange
