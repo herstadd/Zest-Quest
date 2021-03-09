@@ -260,6 +260,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void ItemModelEnumExtensionsTests_ToMessage_FriedChickenNecklace_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemModelEnum.FriedChickenNecklace.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("FriedChickenNecklace", result);
+        }
+
+        [Test]
         public void ItemModelEnumExtensionsTests_ToMessage_Unknown_Should_Pass()
         {
             // Arrange
