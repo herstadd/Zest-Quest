@@ -517,7 +517,10 @@ namespace Game.Engine.EngineKoenig
         /// </summary>
         public override int ApplyDamage(PlayerInfoModel Target)
         {
-            return base.ApplyDamage(Target);
+            Target.TakeDamage(EngineSettings.BattleMessagesModel.DamageAmount);
+            EngineSettings.BattleMessagesModel.CurrentHealth = Target.GetCurrentHealthTotal;
+
+            return EngineSettings.BattleMessagesModel.DamageAmount;
         }
 
         /// <summary>
