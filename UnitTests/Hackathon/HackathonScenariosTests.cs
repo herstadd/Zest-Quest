@@ -83,7 +83,7 @@ namespace Scenario
 
         #region Scenario1
         [Test]
-        public async Task HackathonScenario_Scenario_1_Valid_Default_Should_Pass()
+        public async Task HackathonScenario_1_Mike_Dies_Valid_Default_Should_Pass()
         {
             /* 
             * Scenario Number:  
