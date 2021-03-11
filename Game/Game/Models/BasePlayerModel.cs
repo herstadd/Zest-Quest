@@ -137,6 +137,7 @@ namespace Game.Models
         // If a character had a pet
         public bool HadPet { get; set; } = false;
 
+        public bool SavedByMax { get; set; } = false;
 
         #endregion PlayerAttributes
 
