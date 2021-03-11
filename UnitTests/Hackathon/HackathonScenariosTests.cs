@@ -181,7 +181,6 @@ namespace Scenario
             * Validation:
             *      Verify TurnAsAttack Returned False
             *      Verify Bob is not in the Player List
-            *      Verify Round Count is 1
             *      Verify current health of the monster in the list is still max health
             *      
             */
@@ -224,7 +223,6 @@ namespace Scenario
             //Assert
             Assert.AreEqual(true, result);
             Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Bob")));
-            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
             Assert.AreEqual(MonsterMaxHealth, MonsterCurrHealth);
         }
         #endregion Scenario2
