@@ -126,7 +126,7 @@ namespace Game.Engine.EngineGame
 
             Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.SeattleSlip + EngineSettings.CurrentDefender.Name;
 
             return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
 
