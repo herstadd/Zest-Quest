@@ -332,15 +332,16 @@ namespace Scenario
             * 
             * Test Algrorithm:
             *      Create Character named GetPet
-            *      Character gets hit and as a result receives a pet
-            *      
+            *      GetPet character gets hit and as a result receives a pet            *      
             * 
             * Test Conditions:
             *      Check for pet's name existing in player list
+            *      Check that first GetPet character has a pet
             * 
             * Validation:
             *      Verify Battle Returned True
             *      Verify Player with name "Pet Smiling Sun" exists
+            *      Verify GetPet character has a pet
             */
 
             // Arrange
@@ -375,17 +376,211 @@ namespace Scenario
             DiceHelper.SetForcedRollValue(20);
 
             // Act
-            var result = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterToGetPet);
+            var result_first_character = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterToGetPet);
 
             // Reset
             DiceHelper.DisableForcedRolls();
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
-            EngineViewModel.Engine.StartBattle(false);
 
             // Assert
-            Assert.AreEqual(true, result);
-            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Pet Smiling Sun")));
+            Assert.AreEqual(true, result_first_character);
+            Assert.AreEqual(true, CharacterToGetPet.HadPet);
+            Assert.NotNull(EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Pet Smiling Sun")));
         }
+
+        [Test]
+        public void HackathonScenario_36_Second_Damaged_Character_Should_Not_Get_Pet_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *       36
+            *      
+            * Description: 
+            *      Make a Character called GetPet who gets hit and then gets a pet and another named
+            *      GetNoPet who will not get a pet because they are number 2 in line and a pet already exists
+            *      for GetPet.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      RoundEngine.cs:  Add in a check to remove any pets and clear any flags for characters having had pets
+            *      TurnEngine.cs:  Add in code to create a new pet for a character only the first time they get hit
+            *      CharacterJobEnum.cs: Add new Pet enum
+            *      BasePlayerModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      CharacterModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      MapModel.cs: Create new function to put pet onto empty square on grid
+            *      PlayerInfoModel.cs:  Update HadPet for player info model.
+            *      
+            * 
+            * Test Algrorithm:
+            *      Create Character named GetPet
+            *      Create Character name GetNoPet
+            *      GetPet character gets hit and as a result receives a pet
+            *      GetNoPet character gets hit and does not receive a pet because GetPet has one
+            *      
+            * 
+            * Test Conditions:
+            *      Check for pet's name existing in player list
+            *      Check that first GetPet character has a pet
+            *      Check that second GetNoPet character has no pet
+            * 
+            * Validation:
+            *      Verify Battle Returned True
+            *      Verify Player with name "Pet Smiling Sun" exists
+            *      Verify GetPet character has a pet
+            *      Verify that GetNoPet character has no pet
+            */
+
+            // Arrange
+            EngineViewModel.Engine.EndBattle();
+            EngineViewModel.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
+            EngineViewModel.Engine.EngineSettings.PlayerList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            var CharacterToGetPet = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "GetPet",
+                            });
+
+            var CharacterNotToGetPet = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "GetNoPet",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterToGetPet);
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterNotToGetPet);
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // Act
+            var result_first_character = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterToGetPet);
+            var result_second_character = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterNotToGetPet);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+
+            // Assert
+            Assert.AreEqual(true, result_first_character);
+            Assert.AreEqual(true, result_second_character);
+            Assert.AreEqual(false, CharacterNotToGetPet.HadPet);
+            Assert.AreEqual(true, CharacterToGetPet.HadPet);
+        }
+
+        [Test]
+        public void HackathonScenario_36_Character_That_Had_Pet_Should_Not_Get_Another_This_Round_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *       36
+            *      
+            * Description: 
+            *      Ensure that a pet is not generated if a character used to have a pet in the past during this round
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      RoundEngine.cs:  Add in a check to remove any pets and clear any flags for characters having had pets
+            *      TurnEngine.cs:  Add in code to create a new pet for a character only the first time they get hit
+            *      CharacterJobEnum.cs: Add new Pet enum
+            *      BasePlayerModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      CharacterModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      MapModel.cs: Create new function to put pet onto empty square on grid
+            *      PlayerInfoModel.cs:  Update HadPet for player info model.
+            *      
+            * 
+            * Test Algrorithm:
+            *      Create Character named GetPet
+            *      Denote that they used to have a pet, but don't give them a pet
+            *      Create Character GetNoPet
+            *      
+            * 
+            * Test Conditions:
+            *      Check that first GetPet character had a pet
+            *      Check that second GetNoPet character has no pet
+            * 
+            * Validation:
+            *      Verify Battle Returned True
+            *      Verify GetPet character had a pet
+            *      Verify that GetNoPet character has no pet
+            */
+
+            // Arrange
+            EngineViewModel.Engine.EndBattle();
+            EngineViewModel.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
+            EngineViewModel.Engine.EngineSettings.PlayerList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            var CharacterToGetPet = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "GetPet",
+                            });
+
+            var CharacterNotToGetPet = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "GetNoPet",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterToGetPet);
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterNotToGetPet);
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // Act
+            CharacterToGetPet.HadPet = true;
+            var result_second_character = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterNotToGetPet);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+
+            // Assert
+            Assert.AreEqual(true, result_second_character);
+            Assert.AreEqual(false, CharacterNotToGetPet.HadPet);
+            Assert.AreEqual(true, CharacterToGetPet.HadPet);
+        }
+
+
         #endregion Scenario36
 
     }
