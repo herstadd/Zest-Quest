@@ -215,6 +215,22 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingsPage_EnableSleeplessZombies_Changed_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var control = (Entry)page.FindByName("SleeplessZombie_Percent");
+            control.Text = "35";
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent, 35);
+
+        }
+
+        [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_Default_Should_Pass()
         {
             // Arrange
