@@ -95,6 +95,23 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_AutoAttackButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.AutoAttackButton_Clicked(null, null);
+
+            // Reset
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        
+
+        [Test]
         public void BattlePage_ShowScoreButton_Clicked_Default_Should_Pass()
         {
             // Arrange
