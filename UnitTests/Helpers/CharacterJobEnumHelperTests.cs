@@ -20,7 +20,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(9, result.Count());
+            Assert.AreEqual(10, result.Count());
         }
     }
 }

@@ -296,6 +296,8 @@ namespace Game.Engine.EngineGame
                     // Apply the Damage
                     ApplyDamage(Target);
 
+
+                    
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
@@ -307,10 +309,83 @@ namespace Game.Engine.EngineGame
                     break;
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            //create a pet for character if they were damaged
+            CreatePetForCharacter(Target);
+
+
+            EngineSettings.BattleMessagesModel.TurnMessage += Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
             Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
 
             return true;
+
+        }
+
+        /// <summary>
+        /// Creates a new pet for target character if no pets exist yet
+        /// </summary>
+        /// <param name="Target">Character who may need a pet</param>
+        void CreatePetForCharacter(PlayerInfoModel Target)
+        {
+            if(Target.Job == CharacterJobEnum.Pet)
+            {
+                return;
+            }
+
+            if (Target.PlayerType != PlayerTypeEnum.Character)
+            {
+                return;
+            }
+
+            if (EngineSettings.BattleMessagesModel.DamageAmount == 0)
+            {
+                return;
+            }
+
+            //if there are no active characters, don't make a pet
+            if (EngineSettings.CharacterList.Count == 0)
+            {
+                return;
+            }
+
+            //Check to see if anyone else has a pet, if so, don't create another
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                if (data.Job == CharacterJobEnum.Pet)
+                {
+                    return;
+                }
+            }
+
+            //check to see if anyone had a pet this round
+            foreach (var data in EngineSettings.CharacterList)
+            {
+                if (data.HadPet == true)
+                {
+                    return;
+                }
+            }
+
+            var NewPet = new PlayerInfoModel(
+                    new CharacterModel
+                    {
+                        Speed = 1,
+                        Level = 1,
+                        CurrentHealth = 1,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Pet Smiling Sun",
+                        Job = CharacterJobEnum.Pet,
+                        ImageURI = "smiling_sun.png"
+                    });
+
+            //EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            //EngineSettings.PlayerList.Add(NewPet);
+            EngineSettings.PlayerList.Add(NewPet);
+            //EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
+            EngineSettings.MapModel.AddNewCharacterToGrid(NewPet);
+            Target.HadPet = true;
+            Debug.WriteLine("Added new pet");
+            EngineSettings.BattleMessagesModel.TurnMessage += NewPet.Name + " jumps in to rescue " + Target.Name + "\n";
         }
 
         /// <summary>

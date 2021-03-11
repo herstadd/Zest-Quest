@@ -134,6 +134,9 @@ namespace Game.Models
         // The Job for the Player
         public CharacterJobEnum Job { get; set; } = CharacterJobEnum.Unknown;
 
+        // If a character had a pet
+        public bool HadPet { get; set; } = false;
+
 
         #endregion PlayerAttributes
 

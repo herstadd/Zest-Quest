@@ -102,6 +102,7 @@ namespace Game.Models
             Difficulty = data.Difficulty;
 
             Job = data.Job;
+            HadPet = data.HadPet;
 
             // Give the copy a differet quid, so it can be used in the battles as a copy
             Guid = System.Guid.NewGuid().ToString();

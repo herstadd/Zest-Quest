@@ -37,6 +37,9 @@ namespace Game.Models
         // After winning a battle, their current health will be recovered by 10% of original max health up to max health
         HomeCook = 24,
 
+        //Pet to help chef if needed
+        Pet = 26,
+
     }
 
     /// <summary>

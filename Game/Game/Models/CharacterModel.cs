@@ -10,12 +10,12 @@ namespace Game.Models
     /// Derive from BasePlayerModel
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
-    {   
+    {
         /// <summary>
         /// Tracks the turn number this character is on
         /// </summary>
         public int TurnNumber { get; set; }
-        
+
         /// <summary>
         /// Tracks if the character currently has a buff
         /// </summary>
@@ -25,6 +25,11 @@ namespace Game.Models
         /// Tracks the number of lives
         /// </summary>
         public int NumLives { get; set; }
+
+        /// <summary>
+        /// Tracks if character had a pet this round
+        /// </summary>
+        public bool HadPet { get; set; }
 
         /// <summary>
         /// Default character
@@ -46,6 +51,7 @@ namespace Game.Models
             NumLives = 1;
             IsBuffGranted = false;
             TurnNumber = 0;
+            HadPet = false;
 
             // Default to unknown, which is no special job
             // Job = CharacterJobEnum.Unknown;

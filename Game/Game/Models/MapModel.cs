@@ -96,6 +96,28 @@ namespace Game.Models
         }
 
         /// <summary>
+        /// Add character to grid
+        /// </summary>
+        /// <param name="NewPlayer">new character to add to grid</param>
+        /// <returns></returns>
+        public bool AddNewCharacterToGrid(PlayerInfoModel NewPlayer)
+        {            
+            for(int y = 0; y < 6; y++)
+            {
+                for (int x = 0; x < 6; x++)
+                {
+                    if (IsEmptySquare(x, y))
+                    {
+                        MapGridLocation[x, y].Player = NewPlayer;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Changes the Row and Column for the Player
         /// </summary>
         /// <param name="data"></param>

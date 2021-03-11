@@ -100,7 +100,31 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool EndRound()
         {
-            return base.EndRound();
+            foreach (var data in EngineSettings.PlayerList.ToList())
+            {
+                if (data.Job == CharacterJobEnum.Pet)
+                {
+                    EngineSettings.PlayerList.Remove(data);
+                }
+            }
+
+            foreach (var data in EngineSettings.CharacterList.ToList())
+            {
+                data.HadPet = false;
+            }
+
+            // In Auto Battle this happens and the characters get their items, In manual mode need to do it manualy
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                PickupItemsForAllCharacters();
+            }
+
+            
+
+            // Reset Monster and Item Lists
+            ClearLists();
+
+            return true;
         }
 
         /// <summary>
