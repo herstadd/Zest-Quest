@@ -209,6 +209,14 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
+            if(EngineSettings.CurrentAttacker != null)
+            {
+                if (EngineSettings.CurrentAttacker.Name == "Bob")
+                {
+                    return null;
+                }
+            }
+
             if (EngineSettings.PlayerList == null)
             {
                 return null;
