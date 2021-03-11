@@ -95,6 +95,35 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_AutoAttackButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.AutoAttackButton_Clicked(null, null);
+
+            // Reset
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_AutoAttackButtonOff_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_ShowScoreButton_Clicked_Default_Should_Pass()
         {
             // Arrange
@@ -103,6 +132,36 @@ namespace UnitTests.Views
             page.ShowScoreButton_Clicked(null, null);
 
             // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_OnTimedEvent_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.OnTimedEvent(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_OnTimedEvent_GameOver_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Act
+            page.OnTimedEvent(null, null);
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
