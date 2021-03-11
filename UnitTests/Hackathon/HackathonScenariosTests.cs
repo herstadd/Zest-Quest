@@ -311,7 +311,7 @@ namespace Scenario
 
         #region Scenario10
         [Test]
-        public void HackathonScenario_10_Player_Critical_Hit_Should_Return_2()
+        public void HackathonScenario_10_Player_Critical_Hit_Should_Return_Negative_1()
         {
             /* 
             * Scenario Number:  
