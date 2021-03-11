@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Timers;
 
 namespace Game.Views
 {
@@ -24,6 +25,9 @@ namespace Game.Views
 
         // Wait time before proceeding
         public int WaitTime = 1500;
+
+        // Timer object for Auto attack
+        public Timer aTimer = new Timer();
 
         // Hold the Map Objects, for easy access to update them
         public Dictionary<string, object> MapLocationObject = new Dictionary<string, object>();
@@ -611,6 +615,37 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Attack Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void AutoAttackButton_Clicked(object sender, EventArgs e)
+        {
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 1000;
+            aTimer.Start();
+        }
+
+        public void AutoAttackButtonOff_Clicked(object sender, EventArgs e)
+        {
+            aTimer.Stop();
+            aTimer = new Timer();
+        }
+
+        // Specify what you want to happen when the Elapsed event is raised.
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
+            {
+                aTimer.Stop();
+            }
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                NextAttackExample();
+            });
+        }
+
+        /// <summary>
         /// Settings Page
         /// </summary>
         /// <param name="sender"></param>
@@ -773,6 +808,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void ExitButton_Clicked(object sender, EventArgs e)
         {
+            aTimer.Stop();
+            aTimer = new Timer();
             await Navigation.PopAsync();
         }
 
@@ -853,6 +890,8 @@ namespace Game.Views
             NextRoundButton.IsVisible = false;
             StartBattleButton.IsVisible = false;
             AttackButton.IsVisible = false;
+            AutoAttackButton.IsVisible = false;
+            AutoAttackOffButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
         }
@@ -962,6 +1001,8 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
+                    AutoAttackButton.IsVisible = true;
+                    AutoAttackOffButton.IsVisible = true;
                     MessageDisplayOuterBox.IsVisible = true;
                     break;
 
