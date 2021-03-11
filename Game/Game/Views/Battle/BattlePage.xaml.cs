@@ -662,6 +662,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Setttings_Clicked(object sender, EventArgs e)
         {
+            TurnOff_AutoAttack();
             await ShowBattleSettingsPage();
         }
 
