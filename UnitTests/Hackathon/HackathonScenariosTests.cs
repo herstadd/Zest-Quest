@@ -241,7 +241,14 @@ namespace Scenario
             *      Make a Character called GetPet who gets hit and then gets a pet
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      //TODO
+            *      RoundEngine.cs:  Add in a check to remove any pets and clear any flags for characters having had pets
+            *      TurnEngine.cs:  Add in code to create a new pet for a character only the first time they get hit
+            *      CharacterJobEnum.cs: Add new Pet enum
+            *      BasePlayerModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      CharacterModel.cs:  Create HadPet bool to keep track if a character had a pet
+            *      MapModel.cs: Create new function to put pet onto empty square on grid
+            *      PlayerInfoModel.cs:  Update HadPet for player info model.
+            *      
             * 
             * Test Algrorithm:
             *      Create Character named GetPet
