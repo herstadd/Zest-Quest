@@ -227,6 +227,88 @@ namespace Scenario
         }
         #endregion Scenario2
 
+        #region Scenario4
+        [Test]
+        public void HackathonScenario_4_Player_Critical_Hit_Should_Return_2()
+        {
+            /* 
+            * Scenario Number:  
+            *      4
+            *      
+            * Description: 
+            *      Make a character who will critical hit a monster
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      No Code changes requied 
+            * 
+            * Test Algrorithm:
+            *      Create Character
+            *      Set speed to 100 so really fast
+            *      Set Max health to 1 so he is weak
+            *      Set Current Health to 1 so he is weak
+            *      
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Battle Returned True
+            *      Verify DamageAmount is 2 instead of 1
+            *  
+            */
+
+            //Arrange
+
+            Game.Engine.EngineGame.TurnEngine TurnEngine = new Game.Engine.EngineGame.TurnEngine();
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // Set Character Conditions
+
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 100, // Will go first...
+                                Level = 1,
+                                CurrentHealth = 1,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                            });
+
+            var MonsterFridge = new PlayerInfoModel(
+                            new MonsterModel
+                            {
+                                MonsterType = MonsterTypeEnum.EvilRefrigerator,
+                                Name = "Frigid",
+                            });
+
+            // Allow critical hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
+
+            // Set Monster Conditions
+
+            // Auto Battle will add the monsters
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            //Act
+            var result = TurnEngine.TurnAsAttack(CharacterPlayerMike, MonsterFridge);
+
+            //Reset
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+            DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(2, EngineViewModel.Engine.EngineSettings.BattleMessagesModel.DamageAmount);
+        }
+        #endregion Scenario4
+
         #region Scenario36
         [Test]
         public void HackathonScenario_36_Character_Damaged_And_Pet_Spawns_Should_Pass()
