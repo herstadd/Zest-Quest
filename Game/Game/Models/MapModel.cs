@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Game.Helpers;
 using Game.Models;
+using Game.ViewModels;
 
 namespace Game.Models
 {
@@ -325,13 +327,31 @@ namespace Game.Models
             // Find next empty location for other player
             else
             {
+                var ChanceToSlip = (DiceHelper.RollDice(1, 100) + 1);
                 foreach (var data in GetEmptyLocations())
                 {
                     var distance = CalculateDistance(data, Target);
+
+                    //Normal mode, move character to close-by location                    
                     if ((distance < LowestDistance) && (CalculateDistance(OriginalLocation, data) < 2))
                     {
                         Result = data;
                         LowestDistance = distance;
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip = " moves closer to ";
+                    }
+
+                    //SeattleWinter, move character to far away location
+                    if ((BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter)
+                        && (Convert.ToInt32(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent)
+                                >= ChanceToSlip))
+                    {
+                        var NewPositionInLocation = DiceHelper.RollDice(1, GetEmptyLocations().Count() - 1);
+                        var data2 = GetEmptyLocations().ElementAt(NewPositionInLocation);
+                        Result = data2;
+                        LowestDistance = distance;
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip = " slips and randomly towards ";
+                        return Result;
+                        
                     }
                 }
             }
