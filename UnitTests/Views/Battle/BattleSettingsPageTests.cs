@@ -174,6 +174,28 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingsPage_EnableSleeplessZombies_Toggled_True_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("EnableSleeplessZombiesSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+            page.EnableSleeplessZombiesSwitch_Toggled(null, args);
+
+            control.IsToggled = true;
+
+            // Act
+            page.EnableSleeplessZombiesSwitch_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_Default_Should_Pass()
         {
             // Arrange
