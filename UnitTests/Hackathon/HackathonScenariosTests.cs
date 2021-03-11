@@ -16,7 +16,7 @@ namespace Scenario
         public void Setup()
         {
             // Choose which engine to run
-            EngineViewModel.SetBattleEngineToKoenig();
+            EngineViewModel.SetBattleEngineToGame();
 
             // Put seed data into the system for all tests
             EngineViewModel.Engine.Round.ClearLists();
@@ -152,5 +152,80 @@ namespace Scenario
             Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario1
+
+        #region Scenario2
+        [Test]
+        public async Task HackathonScenario_2_Bob_Always_Miss_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      2
+            *      
+            * Description: 
+            *      Make a Character called Bob, who always misses hitting
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      TurnAsAttack function in TurnEngine.cs 
+            *      - If the Attacker's name is Bob, it will return false;
+            * 
+            * Test Algrorithm:
+            *      Create Character named Bob
+            *  
+            *      Startup Battle
+            *      Run Battle
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify TurnAsAttack Returned False
+            *      Verify Bob is not in the Player List
+            *      Verify Round Count is 1
+            *      Verify current health of the monster in the list is still max health
+            *      
+            */
+
+            //Arrange
+
+            // Set Character Conditions
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 3,
+                                Level = 1,
+                                CurrentHealth = 10,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Bob",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
+            // Set Monster Conditions
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            // Auto Battle will add the monsters
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            //Act
+            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+            var MonsterCurrHealth = EngineViewModel.Engine.EngineSettings.MonsterList[0].CurrentHealth;
+            var MonsterMaxHealth = EngineViewModel.Engine.EngineSettings.MonsterList[0].MaxHealth;
+
+            //Reset
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+
+            //Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Bob")));
+            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
+            Assert.AreEqual(MonsterMaxHealth, MonsterCurrHealth);
+        }
+        #endregion Scenario2
     }
 }
