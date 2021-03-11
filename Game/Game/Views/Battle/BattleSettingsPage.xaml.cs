@@ -65,6 +65,11 @@ namespace Game.Views
             EnableSeattleWinterSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter;
             SetSeattleWinterSlippingPercent(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent.ToString());
             #endregion
+
+            #region SleeplessZombieToggles
+            EnableSleeplessZombiesSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie;
+            SetSleeplessZombiePercent(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent.ToString());
+            #endregion
         }
 
         /// <summary>
@@ -216,6 +221,46 @@ namespace Game.Views
         public void SetSeattleWinterSlippingPercent(string value)
         {
             SeattleWinterSlipping_Percent.Text = value;
+            return;
+        }
+
+        /// <summary>
+        /// Enable/Disable Seattle Winter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void EnableSleeplessZombiesSwitch_Toggled(object sender, EventArgs e)
+        {
+            if (EnableSleeplessZombiesSwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie = true;
+                SleeplessZombieLabel.IsVisible = true;
+                SleeplessZombie_Percent.IsVisible = true;
+                return;
+            }
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie = false;
+            SleeplessZombieLabel.IsVisible = false;
+            SleeplessZombie_Percent.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Get the percentage of slipping that should happen if it's a Seattle Winter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SleeplessZombiePercentage_Changed(object sender, EventArgs e)
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent =
+                Convert.ToInt32(SleeplessZombie_Percent.Text);
+            return;
+        }
+
+        /// <summary>
+        /// Set the default value for Winter Seattle Slipping
+        /// </summary>
+        public void SetSleeplessZombiePercent(string value)
+        {
+            SleeplessZombie_Percent.Text = value;
             return;
         }
 
