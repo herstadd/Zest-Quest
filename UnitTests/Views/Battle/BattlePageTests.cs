@@ -109,7 +109,19 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        
+        [Test]
+        public void BattlePage_AutoAttackButtonOff_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void BattlePage_ShowScoreButton_Clicked_Default_Should_Pass()
