@@ -4,6 +4,8 @@ using Game.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Game.ViewModels;
+using Game.Helpers;
 
 namespace UnitTests.Models
 {
@@ -1215,6 +1217,57 @@ namespace UnitTests.Models
 
             // Assert 
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void MapModel_ReturnNextEmptyLocation_Character_Slip_Seattle_Winter_Should_Pass()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            PlayerList.Add(new PlayerInfoModel(Monster));
+
+            map.PopulateMapModel(PlayerList);
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 0;
+
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 0;
+            monsterNext.Column = 5;
+
+            var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
+
+            map.MovePlayerOnMap(currPlayer, playerNext);
+            map.MovePlayerOnMap(currMonster, monsterNext);
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = true;
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(10);
+
+            // Act
+            var result = map.ReturnNextEmptyLocation(monsterNext, playerNext, CharacterJobEnum.HeadChef);
+
+            // Reset
+
+            DiceHelper.DisableForcedRolls();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = false;
+
+            // Assert 
+            Assert.AreEqual(1, result.Column);
+            Assert.AreEqual(5, result.Row);
         }
 
         [Test]
