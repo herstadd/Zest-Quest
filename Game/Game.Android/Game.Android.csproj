@@ -357,6 +357,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\zest_quest_intro2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\emptyspace_ice.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

@@ -405,4 +405,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\zest_quest_intro2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\emptyspace_ice.png" />
+  </ItemGroup>
 </Project>
