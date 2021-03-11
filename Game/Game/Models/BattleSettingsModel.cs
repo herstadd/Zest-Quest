@@ -26,5 +26,10 @@ namespace Game.Models
 
         // Can monsters have Items and weapons?
         public bool AllowMonsterItems = false;
+
+        // Enable Seattle Winter?
+        public bool EnableSeattleWinter = false;
+
+        public int SeattleWinterSlippingPercent = 50;
     }
 }
