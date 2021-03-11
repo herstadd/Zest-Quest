@@ -32,7 +32,6 @@ namespace Game.Views
         // Hold the Map Objects, for easy access to update them
         public Dictionary<string, object> MapLocationObject = new Dictionary<string, object>();
 
-
         // Empty Constructor for UTs
         bool UnitTestSetting;
         public BattlePage(bool UnitTest) { UnitTestSetting = UnitTest; }
@@ -615,7 +614,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Attack Action
+        /// Auto Attack Action
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -628,6 +627,11 @@ namespace Game.Views
             aTimer.Start();
         }
 
+        /// <summary>
+        /// Auto Attack Off Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AutoAttackButtonOff_Clicked(object sender, EventArgs e)
         {
             aTimer.Stop();
@@ -636,8 +640,12 @@ namespace Game.Views
             AutoAttackOffButton.IsVisible = false;
         }
 
-        // Specify what you want to happen when the Elapsed event is raised.
-        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        /// <summary>
+        /// Opearte this function when Timer starts
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
+        public void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
             {
@@ -647,6 +655,12 @@ namespace Game.Views
             {
                 NextAttackExample();
             });
+        }
+
+        public void RestButton_Clicked(object sender, EventArgs e) 
+        { 
+            // TODO
+
         }
 
         /// <summary>
@@ -897,6 +911,7 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = false;
+            RestButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
         }
@@ -1006,6 +1021,7 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
+                    RestButton.IsVisible = true;
                     AutoAttackButton.IsVisible = true;
                     MessageDisplayOuterBox.IsVisible = true;
                     break;
