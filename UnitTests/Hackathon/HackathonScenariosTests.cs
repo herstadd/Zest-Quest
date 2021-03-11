@@ -3,6 +3,7 @@
 using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
+using Game.Helpers;
 
 namespace Scenario
 {
@@ -227,5 +228,79 @@ namespace Scenario
             Assert.AreEqual(MonsterMaxHealth, MonsterCurrHealth);
         }
         #endregion Scenario2
+
+        #region Scenario36
+        [Test]
+        public void HackathonScenario_36_Character_Damaged_And_Pet_Spawns_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *       36
+            *      
+            * Description: 
+            *      Make a Character called GetPet who gets hit and then gets a pet
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      //TODO
+            * 
+            * Test Algrorithm:
+            *      Create Character named GetPet
+            *      Character gets hit and as a result receives a pet
+            *      
+            * 
+            * Test Conditions:
+            *      Check for pet's name existing in player list
+            * 
+            * Validation:
+            *      Verify Battle Returned True
+            *      Verify Player with name "Pet Smiling Sun" exists
+            */
+
+            // Arrange
+            EngineViewModel.Engine.EndBattle();
+            EngineViewModel.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
+            EngineViewModel.Engine.EngineSettings.PlayerList.Clear();
+            EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
+            EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            var CharacterToGetPet = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "GetPet",
+                            });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterToGetPet);
+
+            // Force a Hit
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(20);
+
+            // Act
+            var result = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterToGetPet);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+            EngineViewModel.Engine.StartBattle(false);
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Pet Smiling Sun")));
+        }
+        #endregion Scenario36
+
     }
+
 }
