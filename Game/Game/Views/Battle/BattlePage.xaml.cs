@@ -621,6 +621,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AutoAttackButton_Clicked(object sender, EventArgs e)
         {
+            AutoAttackButton.IsVisible = false;
+            AutoAttackOffButton.IsVisible = true;
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             aTimer.Interval = 1000;
             aTimer.Start();
@@ -630,6 +632,8 @@ namespace Game.Views
         {
             aTimer.Stop();
             aTimer = new Timer();
+            AutoAttackButton.IsVisible = true;
+            AutoAttackOffButton.IsVisible = false;
         }
 
         // Specify what you want to happen when the Elapsed event is raised.
@@ -810,6 +814,7 @@ namespace Game.Views
         {
             aTimer.Stop();
             aTimer = new Timer();
+            AutoAttackOffButton.IsVisible = false;
             await Navigation.PopAsync();
         }
 
@@ -1002,7 +1007,6 @@ namespace Game.Views
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
                     AutoAttackButton.IsVisible = true;
-                    AutoAttackOffButton.IsVisible = true;
                     MessageDisplayOuterBox.IsVisible = true;
                     break;
 
