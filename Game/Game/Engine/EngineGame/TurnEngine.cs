@@ -326,16 +326,19 @@ namespace Game.Engine.EngineGame
         /// <param name="Target">Character who may need a pet</param>
         void CreatePetForCharacter(PlayerInfoModel Target)
         {
+            //If character is a pet, they don't need another pet
             if(Target.Job == CharacterJobEnum.Pet)
             {
                 return;
             }
 
+            //If player is not a character, they don't need a pet
             if (Target.PlayerType != PlayerTypeEnum.Character)
             {
                 return;
             }
 
+            //if character didn't receive damage, they don't get a pet (yet)
             if (EngineSettings.BattleMessagesModel.DamageAmount == 0)
             {
                 return;
@@ -359,12 +362,14 @@ namespace Game.Engine.EngineGame
             //check to see if anyone had a pet this round
             foreach (var data in EngineSettings.CharacterList)
             {
+                //if someone had a pet this round, don't make another
                 if (data.HadPet == true)
                 {
                     return;
                 }
             }
 
+            //Create a new pet
             var NewPet = new PlayerInfoModel(
                     new CharacterModel
                     {
@@ -378,11 +383,10 @@ namespace Game.Engine.EngineGame
                         ImageURI = "smiling_sun.png"
                     });
 
-            //EngineSettings.CharacterList.Add(CharacterPlayerMike);
-            //EngineSettings.PlayerList.Add(NewPet);
             EngineSettings.PlayerList.Add(NewPet);
-            //EngineSettings.MapModel.PopulateMapModel(EngineSettings.PlayerList);
             EngineSettings.MapModel.AddNewCharacterToGrid(NewPet);
+            
+            //Note that character now has a pet
             Target.HadPet = true;
             Debug.WriteLine("Added new pet");
             EngineSettings.BattleMessagesModel.TurnMessage += NewPet.Name + " jumps in to rescue " + Target.Name + "\n";
