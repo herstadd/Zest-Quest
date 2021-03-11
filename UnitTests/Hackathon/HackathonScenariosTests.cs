@@ -4,6 +4,7 @@ using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
 using Game.Helpers;
+using System.Collections.Generic;
 
 namespace Scenario
 {
@@ -753,39 +754,35 @@ namespace Scenario
         #region Scenario38
 
         [Test]
-        public void HackathonScenario_38_Character_Test_Stub_Should_Pass_TODO()
+        public void HackathonScenario_38_Seattle_Winter_Character_Movement_Test_Pass_TODO()
         {
             /* 
             * Scenario Number:  
             *       38
             *      
             * Description: 
-            *      Ensure that a pet is not generated if a character used to have a pet in the past during this round
+            *      Ensure that if it is a Seattle Winter, that characters may slip when moving and end up falling on a different random square
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      RoundEngine.cs:  Add in a check to remove any pets and clear any flags for characters having had pets
-            *      TurnEngine.cs:  Add in code to create a new pet for a character only the first time they get hit
-            *      CharacterJobEnum.cs: Add new Pet enum
-            *      BasePlayerModel.cs:  Create HadPet bool to keep track if a character had a pet
-            *      CharacterModel.cs:  Create HadPet bool to keep track if a character had a pet
-            *      MapModel.cs: Create new function to put pet onto empty square on grid
-            *      PlayerInfoModel.cs:  Update HadPet for player info model.
-            *      
+            *      BattleSettingsPage.xaml.cs:  Added section to interface with Seattle Winter settings
+            *      BattleSettingsPage.xaml: Added new Seattle Black Ice settings
+            *      MapModel.cs:  Added code to help players slip when Seattle black ice is present
+            *      BattleSettingsModel.cs:  Created variables to keep track of seattle slipping values from Xaml
+            *      BattleMessagesModel.cs:  Created variable to keep track of Seattle Slip
+            *      TurnEngine.cs:  Update MoveAsTurn function to help explain if the chefs are moving randomly due to slipping on ice, or if they're moving towards enemies
+            * 
             * 
             * Test Algrorithm:
-            *      Create Character named GetPet
-            *      Denote that they used to have a pet, but don't give them a pet
-            *      Create Character GetNoPet
+            *      Turn on SeattleWinter mode
+            *      Create character
+            *      Instruct character to move
             *      
             * 
             * Test Conditions:
-            *      Check that first GetPet character had a pet
-            *      Check that second GetNoPet character has no pet
+            *      See if character moves to a random spot
             * 
             * Validation:
-            *      Verify Battle Returned True
-            *      Verify GetPet character had a pet
-            *      Verify that GetNoPet character has no pet
+            *      Verify that character moves to random spot on grid that is not next to them (where they would normally move)
             */
 
             // Arrange
@@ -795,54 +792,53 @@ namespace Scenario
             EngineViewModel.Engine.EngineSettings.CharacterList.Clear();
             EngineViewModel.Engine.EngineSettings.MonsterList.Clear();
 
+
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            PlayerList.Add(CharacterPlayer);
+
             var Monster = new MonsterModel();
-            var MonsterPlayer = new PlayerInfoModel(Monster);
-            EngineViewModel.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            PlayerList.Add(new PlayerInfoModel(Monster));
 
-            // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+            map.PopulateMapModel(PlayerList);
+            MapModelLocation playerNext = new MapModelLocation();
+            playerNext.Row = 0;
+            playerNext.Column = 0;
 
-            var CharacterToGetPet = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = 1,
-                                Level = 1,
-                                CurrentHealth = 100,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 10,
-                                Name = "GetPet",
-                            });
+            MapModelLocation monsterNext = new MapModelLocation();
+            monsterNext.Row = 0;
+            monsterNext.Column = 5;
 
-            var CharacterNotToGetPet = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = 1,
-                                Level = 1,
-                                CurrentHealth = 100,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 10,
-                                Name = "GetNoPet",
-                            });
+            var currPlayer = map.GetLocationForPlayer(CharacterPlayer);
+            var currMonster = map.GetLocationForPlayer(CharacterPlayer);
 
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterToGetPet);
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterNotToGetPet);
+            map.MovePlayerOnMap(currPlayer, playerNext);
+            map.MovePlayerOnMap(currMonster, monsterNext);
 
-            // Force a Hit
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = true;
             DiceHelper.EnableForcedRolls();
-            DiceHelper.SetForcedRollValue(20);
+            DiceHelper.SetForcedRollValue(15);
 
             // Act
-            CharacterToGetPet.HadPet = true;
-            var result_second_character = EngineViewModel.Engine.Round.Turn.TurnAsAttack(MonsterPlayer, CharacterNotToGetPet);
+            var result = map.ReturnNextEmptyLocation(monsterNext, playerNext, CharacterJobEnum.HeadChef);
 
             // Reset
-            DiceHelper.DisableForcedRolls();
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
-            // Assert
-            Assert.AreEqual(true, result_second_character);
-            Assert.AreEqual(false, CharacterNotToGetPet.HadPet);
-            Assert.AreEqual(true, CharacterToGetPet.HadPet);
+            DiceHelper.DisableForcedRolls();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = false;
+
+            // Assert 
+            Assert.AreEqual(2, result.Column);
+            Assert.AreEqual(4, result.Row);
         }
 
 
