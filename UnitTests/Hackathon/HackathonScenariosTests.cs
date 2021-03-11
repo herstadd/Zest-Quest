@@ -477,6 +477,40 @@ namespace Scenario
         }
         #endregion Scenario10
 
+        #region Scenario17
+        [Test]
+        public void HackathonScenario17_TargetDied_ZombieMonster_Should_Pass()
+        {
+            // Arrange
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(1);
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie = true;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent = 100;
+            var monster = new MonsterModel
+            {
+                PlayerType = PlayerTypeEnum.Monster,
+                Name = "Roar",
+                MaxHealth = 10
+            };
+
+            var PlayerInfo = new PlayerInfoModel(monster);
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(PlayerInfo);
+
+            // Act
+            var result = EngineViewModel.Engine.Round.Turn.TargetDied(PlayerInfo);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie = false;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent = 50;
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(5, PlayerInfo.CurrentHealth);
+            Assert.AreEqual("Zombie Roar", PlayerInfo.Name);
+        }
+        #endregion Scenario17
+
         #region Scenario36
         [Test]
         public void HackathonScenario_36_Character_Damaged_And_Pet_Spawns_Should_Pass()
