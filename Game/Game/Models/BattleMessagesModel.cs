@@ -14,6 +14,9 @@
         // Name of the Attacker
         public string AttackerName = string.Empty;
 
+        //special string if slipped in Seattle black ice
+        public string SeattleSlip = string.Empty;
+
         // Name of who the target was
         public string TargetName = string.Empty;
 
@@ -64,6 +67,7 @@
             ExperienceEarned = string.Empty;
             LevelUpMessage = string.Empty;
             BadCriticalMissMessage = string.Empty;
+            SeattleSlip = string.Empty;
 
             DamageAmount = 0;
             CurrentHealth = 0;
