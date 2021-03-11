@@ -296,8 +296,6 @@ namespace Game.Engine.EngineGame
                     // Apply the Damage
                     ApplyDamage(Target);
 
-
-                    
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
@@ -414,6 +412,16 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override int ApplyDamage(PlayerInfoModel Target)
         {
+            if(Target.PlayerType == PlayerTypeEnum.Character &&
+                Target.Job != CharacterJobEnum.Pet &&
+                Target.CurrentHealth - EngineSettings.BattleMessagesModel.DamageAmount <= 0 && 
+                !Target.SavedByMax)
+            {
+                Target.SavedByMax = true;
+                Target.CurrentHealth = Target.MaxHealth;
+                EngineSettings.BattleMessagesModel.TurnMessage += "Miracle Max saves " + Target.Name + " giving them a second chance at life!\n";
+                return -1;
+            }
             Target.TakeDamage(EngineSettings.BattleMessagesModel.DamageAmount);
             EngineSettings.BattleMessagesModel.CurrentHealth = Target.GetCurrentHealthTotal;
 
