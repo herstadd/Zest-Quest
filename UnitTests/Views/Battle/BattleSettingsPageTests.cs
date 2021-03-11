@@ -138,6 +138,25 @@ namespace UnitTests.Views
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattleSettingsPage_EnableSeattleWinter_Toggled_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("EnableSeattleWinterSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.EnableSeattleWinter_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
 
         [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_Default_Should_Pass()
