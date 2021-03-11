@@ -620,6 +620,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AutoAttackButton_Clicked(object sender, EventArgs e)
         {
+            AttackButton.IsEnabled = false;
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = true;
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
@@ -634,10 +635,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AutoAttackButtonOff_Clicked(object sender, EventArgs e)
         {
-            aTimer.Stop();
-            aTimer = new Timer();
-            AutoAttackButton.IsVisible = true;
-            AutoAttackOffButton.IsVisible = false;
+            TurnOff_AutoAttack();
         }
 
         /// <summary>
@@ -649,18 +647,12 @@ namespace Game.Views
         {
             if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
             {
-                aTimer.Stop();
+                TurnOff_AutoAttack();
             }
             Device.BeginInvokeOnMainThread(() =>
             {
                 NextAttackExample();
             });
-        }
-
-        public void RestButton_Clicked(object sender, EventArgs e) 
-        { 
-            // TODO
-
         }
 
         /// <summary>
@@ -704,6 +696,8 @@ namespace Game.Views
 
             if (RoundCondition == RoundEnum.NewRound)
             {
+                TurnOff_AutoAttack();
+
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
                 // Pause
@@ -719,6 +713,8 @@ namespace Game.Views
             // Check for Game Over
             if (RoundCondition == RoundEnum.GameOver)
             {
+                TurnOff_AutoAttack();
+
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
                 // Wrap up
@@ -826,10 +822,20 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void ExitButton_Clicked(object sender, EventArgs e)
         {
+            TurnOff_AutoAttack();
+            await Navigation.PopAsync();
+        }
+
+        /// <summary>
+        /// Turn off Auto Attack
+        /// </summary>
+        public void TurnOff_AutoAttack()
+        {
             aTimer.Stop();
             aTimer = new Timer();
+            AttackButton.IsEnabled = true;
+            AutoAttackButton.IsVisible = true;
             AutoAttackOffButton.IsVisible = false;
-            await Navigation.PopAsync();
         }
 
         /// <summary>
@@ -911,7 +917,6 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = false;
-            RestButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
         }
@@ -1021,7 +1026,6 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
-                    RestButton.IsVisible = true;
                     AutoAttackButton.IsVisible = true;
                     MessageDisplayOuterBox.IsVisible = true;
                     break;
