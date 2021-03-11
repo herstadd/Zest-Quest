@@ -23,6 +23,38 @@ namespace UnitTests.Engine.EngineModels
             Assert.IsNotNull(result);
         }
 
+        /// <summary>
+        /// Tests that the AddNewCharacter Function will fill up the board and then start returning false
+        /// </summary>
+        [Test]
+        public void AddNewCharacterToGrid_Full_Grid_Should_Pass()
+        {
+            // Arrange
+            var newChar = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 1,
+                                Level = 1,
+                                CurrentHealth = 100,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 10,
+                                Name = "CharToFillUp",
+                            });
+
+            // Act
+
+            var result = EngineSettingsModel.Instance.MapModel.AddNewCharacterToGrid(newChar);
+            for(int x = 0; x < 100; x++)
+            {
+                result = EngineSettingsModel.Instance.MapModel.AddNewCharacterToGrid(newChar);
+            }
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
         [Test]
         public void EngineSettingsModel_Set_Get_Default_Should_Pass()
         {
