@@ -117,6 +117,63 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingsPage_EnableSeattleWinter_Toggled_True_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("EnableSeattleWinterSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+            page.EnableSeattleWinter_Toggled(null, args);
+
+            control.IsToggled = true;
+
+            // Act
+            page.EnableSeattleWinter_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattleSettingsPage_EnableSeattleWinter_Toggled_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("EnableSeattleWinterSwitch");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.EnableSeattleWinter_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(!current); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattleSettingsPage_SeattleWinterSlippingPercentage_Changed_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var control = (Entry)page.FindByName("SeattleWinterSlipping_Percent");
+            control.Text = "35";
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent, 35);
+
+        }
+
+        [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_Default_Should_Pass()
         {
             // Arrange
