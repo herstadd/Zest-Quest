@@ -60,6 +60,11 @@ namespace Game.Views
             #region MonsterToggles
             AllowMonsterItemsSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems;
             #endregion
+
+            #region SeattleWinterToggles
+            EnableSeattleWinterSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter;
+            SetSeattleWinterSlippingPercent(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent.ToString());
+            #endregion
         }
 
         /// <summary>
@@ -172,6 +177,46 @@ namespace Game.Views
             }
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems = false;
+        }
+
+        /// <summary>
+        /// Enable/Disable Seattle Winter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void EnableSeattleWinter_Toggled(object sender, EventArgs e)
+        {
+            if(EnableSeattleWinterSwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = true;
+                SeattleWinterSlippingLabel.IsVisible = true;
+                SeattleWinterSlipping_Percent.IsVisible = true;
+                return;
+            }
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = false;
+            SeattleWinterSlippingLabel.IsVisible = false;
+            SeattleWinterSlipping_Percent.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Get the percentage of slipping that should happen if it's a Seattle Winter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SeattleWinterSlippingPercentage_Changed(object sender, EventArgs e)
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent =
+                Convert.ToInt32(SeattleWinterSlipping_Percent.Text);
+            return;
+        }
+
+        /// <summary>
+        /// Set the default value for Winter Seattle Slipping
+        /// </summary>
+        public void SetSeattleWinterSlippingPercent(string value)
+        {
+            SeattleWinterSlipping_Percent.Text = value;
+            return;
         }
 
     }
