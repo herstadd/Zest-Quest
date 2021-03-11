@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Game.Helpers;
 using Game.ViewModels;
 using Game.GameRules;
+using System;
 
 namespace Game.Engine.EngineGame
 {
@@ -464,7 +465,18 @@ namespace Game.Engine.EngineGame
         {
             // INFO: Teams, Hookup your Boss if you have one...
             //return base.TargetDied(Target);
-
+            if(Target.PlayerType == PlayerTypeEnum.Monster)
+            {
+                var ChanceToRevive = (DiceHelper.RollDice(1, 100) + 1);
+                if((BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSleeplessZombie)
+                        && (Convert.ToInt32(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SleeplessZombiePercent)
+                                >= ChanceToRevive))
+                {
+                    Target.CurrentHealth = Target.MaxHealth / 2;
+                    Target.Name = "Zombie " + Target.Name;
+                    return true;
+                }
+            }    
             
             if (Target.Job == CharacterJobEnum.CatChef)
             {
