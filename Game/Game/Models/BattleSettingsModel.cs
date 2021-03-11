@@ -31,5 +31,10 @@ namespace Game.Models
         public bool EnableSeattleWinter = false;
 
         public int SeattleWinterSlippingPercent = 50;
+
+        // Enable Sleepless Zombies in Seattle?
+        public bool EnableSleeplessZombie = false;
+
+        public int SleeplessZombiePercent = 50;
     }
 }
