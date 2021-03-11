@@ -123,6 +123,36 @@
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
+
+                <Label 
+                    Grid.Row="5" Grid.Column="0"
+                    Text="Enable Seattle Winter" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch 
+                    Grid.Row="5" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="EnableSeattleWinterSwitch"
+                    Toggled="EnableSeattleWinter_Toggled"/>
+
+                <Label 
+                    Grid.Row="6" Grid.Column="0" Grid.RowSpan="2"
+                    Text="  Slipping Percentage" 
+                    IsVisible="false"
+                    x:Name="SeattleWinterSlippingLabel"
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Entry
+                    Grid.Row="6" Grid.Column="1" Grid.RowSpan="2"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    Style="{DynamicResource EntryStyle}"
+                    Text="20"
+                    IsVisible="false"
+                    TextChanged="SeattleWinterSlippingPercentage_Changed"
+                    x:Name="SeattleWinterSlipping_Percent"/>
+                    
             </Grid>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
