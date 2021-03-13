@@ -138,7 +138,9 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="emptyspace_blue.png" />
     <Content Include="emptyspace_ice.png" />
+    <Content Include="emptyspace_new.png" />
     <Content Include="zest_quest_intro2.png" />
     <Content Include="bandana.png" />
     <Content Include="butcher_knife_necklace.png" />

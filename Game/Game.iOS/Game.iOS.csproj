@@ -408,4 +408,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\emptyspace_ice.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\emptyspace_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\emptyspace_new.png" />
+  </ItemGroup>
 </Project>
