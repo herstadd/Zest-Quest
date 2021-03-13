@@ -184,8 +184,21 @@ namespace Game.Views
         /// <returns></returns>
         public bool UpdateMapGrid()
         {
+            // var test = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel;
+            SetAttackerAndDefender();
+            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            if ( Attacker != null)
+            { 
+                var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                var x = (ImageButton)MapObject1;
+                x.BorderWidth = 5;
+                x.BorderColor = Color.Red;
+            }
+          
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
+               
                 // Use the ImageButton from the dictionary because that represents the player object
                 object MapObject = GetMapGridObject(GetDictionaryImageButtonName(data));
                 if (MapObject == null)
@@ -355,6 +368,11 @@ namespace Game.Views
             if (MapLocationObject.ContainsKey(name))
             {
                 // Update it
+                if(MapModel.Player == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
+                {
+                    data.BorderWidth = 2;
+                    data.BorderColor = Color.Red;
+                }
                 MapLocationObject[name] = data;
                 return true;
             }
@@ -474,7 +492,10 @@ namespace Game.Views
              * 
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
-
+            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, data);
+            UpdateMapGrid();
             return true;
         }
 
@@ -559,7 +580,6 @@ namespace Game.Views
             {
                 return;
             }
-
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
@@ -684,7 +704,7 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
-            SetAttackerAndDefender();
+          //  SetAttackerAndDefender();
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -737,12 +757,23 @@ namespace Game.Views
         public void SetAttackerAndDefender()
         {
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
-
+            //AttackerImage.BackgroundColor = Color.Blue;
+            //var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            //var location2 = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            //var button2 = DetermineMapImageButton(location2);
+            //button2.BorderWidth = 3;
+            //button2.BackgroundColor = Color.Red;
+            
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
                     // User would select who to attack
-
+                    //var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                    //object MapObject = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    //var x = (ImageButton)MapObject;
+                    //x.BorderWidth = 2;
+                    //x.BorderColor = Color.Red;
+                    //var data = MakeMapGridBox(location);
                     // for now just auto selecting
                     BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
                     break;
