@@ -60,7 +60,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("ChefHat", result);
+            Assert.AreEqual("Chef Hat", result);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("RoastedTurkeyHat", result);
+            Assert.AreEqual("Roasted Turkey Hat", result);
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("ButcherKnifeNecklace", result);
+            Assert.AreEqual("Butcher Knife Necklace", result);
         }
 
         [Test]
@@ -158,7 +158,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("CuttingBoard", result);
+            Assert.AreEqual("Cutting Board", result);
         }
 
         [Test]
@@ -172,7 +172,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("RingPop", result);
+            Assert.AreEqual("Ring Pop", result);
         }
 
         [Test]
@@ -186,7 +186,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("ScreamRing", result);
+            Assert.AreEqual("Scream Ring", result);
         }
 
         [Test]
@@ -200,7 +200,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("OnionRing", result);
+            Assert.AreEqual("Onion Ring", result);
         }
 
         [Test]
@@ -214,7 +214,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("FlipFlop", result);
+            Assert.AreEqual("Flip Flop", result);
         }
 
         [Test]
@@ -242,7 +242,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("WookieBoots", result);
+            Assert.AreEqual("Wookie Boots", result);
         }
 
         [Test]
@@ -256,7 +256,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("SantaShoes", result);
+            Assert.AreEqual("Santa Shoes", result);
         }
 
         [Test]
@@ -270,7 +270,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("FriedChickenNecklace", result);
+            Assert.AreEqual("Fried Chicken Necklace", result);
         }
 
         [Test]
@@ -298,7 +298,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("MeatGuitar", result);
+            Assert.AreEqual("Meat Guitar", result);
         }
 
         [Test]
@@ -340,7 +340,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("VikingHat", result);
+            Assert.AreEqual("Viking Hat", result);
         }
 
         [Test]
@@ -354,7 +354,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("WeddingRing", result);
+            Assert.AreEqual("Wedding Ring", result);
         }
 
         [Test]
@@ -368,7 +368,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("WitchNail", result);
+            Assert.AreEqual("Witch Nail", result);
         }
 
         [Test]
