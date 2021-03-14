@@ -188,12 +188,15 @@ namespace Game.Views
             SetAttackerAndDefender();
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             if ( Attacker != null)
-            { 
-                var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                var x = (ImageButton)MapObject1;
-                x.BorderWidth = 5;
-                x.BorderColor = Color.Red;
+            {
+                if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    var x = (ImageButton)MapObject1;
+                    x.BorderWidth = 4;
+                    x.BorderColor = Color.Red;
+                }
             }
           
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
@@ -234,6 +237,12 @@ namespace Game.Views
 
                     stackObject.BackgroundColor = DetermineMapBackgroundColor(data);
                 }
+            }
+
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                //NextAttackExample();
+                //AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
             }
 
             return true;
@@ -368,11 +377,11 @@ namespace Game.Views
             if (MapLocationObject.ContainsKey(name))
             {
                 // Update it
-                if(MapModel.Player == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
-                {
-                    data.BorderWidth = 2;
-                    data.BorderColor = Color.Red;
-                }
+                //if(MapModel.Player == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
+                //{
+                //    data.BorderWidth = 2;
+                //    data.BorderColor = Color.Red;
+                //}
                 MapLocationObject[name] = data;
                 return true;
             }
@@ -494,8 +503,20 @@ namespace Game.Views
              */
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(location, data);
+            var AttackerRange = Attacker.GetRange();
+
+            // Can Reach on X?
+            if (distance > AttackerRange)
+            {
+                return false;
+            }
+                 
             BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, data);
+            
             UpdateMapGrid();
+            
+
             return true;
         }
 
@@ -514,6 +535,11 @@ namespace Game.Views
              * 
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
+            //var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+
+            //BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+            //BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data.Player);
+            //NextAttackExample();
 
             data.IsSelectedTarget = true;
             return true;
