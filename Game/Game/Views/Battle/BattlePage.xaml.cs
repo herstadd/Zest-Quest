@@ -515,11 +515,19 @@ namespace Game.Views
             // Can Player reach this location?
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
             {
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", AttackerLocation.Player.Name, AttackerLocation.Column, AttackerLocation.Row, CurrentMapLocation.Column, CurrentMapLocation.Row));
+
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+  
                 BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
 
                 UpdateMapGrid();
                 TurnOff_AutoAttack();
                 AttackButton_Clicked(new Button(), EventArgs.Empty);
+
+                GameMessage();
+                DrawGameBoardAttackerDefenderSection();
                 return true;
             }
 
@@ -967,7 +975,7 @@ namespace Game.Views
                     {
                         x.BorderColor = Color.Red;
                         x.BorderWidth = 4;
-                        ShowBattleMode();
+                       // ShowBattleMode();
                     }
                 }
             });
