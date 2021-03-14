@@ -955,8 +955,24 @@ namespace Game.Views
                 AutoAttackOffButton.IsVisible = false;
                 //NextAttackExample();
                 //SetAttackerAndDefender();
+
+
+                var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+                if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    var x = (ImageButton)MapObject1;
+                    if (x.BorderWidth < 1)
+                    {
+                        x.BorderColor = Color.Red;
+                        x.BorderWidth = 4;
+                        ShowBattleMode();
+                    }
+                }
             });
-           
+         
+
         }
 
         /// <summary>
@@ -1060,7 +1076,7 @@ namespace Game.Views
             DrawPlayerBoxes();
 
             // Update the Mode
-            BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();
+            BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();        
 
             ShowBattleModeDisplay();
 
