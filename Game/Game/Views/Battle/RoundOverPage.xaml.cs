@@ -247,6 +247,12 @@ namespace Game.Views
             return PlayerStack;
         }
 
+        /// <summary>
+        /// Saves the selected character to class data
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="character"></param>
+        /// <returns></returns>
         public bool ClickedCharacter(StackLayout player, PlayerInfoModel character)
         {
             var FlexList = CharacterListFrame.Children.ToList();
@@ -273,14 +279,68 @@ namespace Game.Views
         /// <returns></returns>
         public bool ShowPopup(ItemModel data)
         {
-            PopupLoadingView.IsVisible = true;
-            PopupItemImage.Source = data.ImageURI;
+            if(SelectedCharacter == null)
+            {
+                return false;
+            }
 
+            ItemModel item;
+            
+            switch (data.Location)
+            {
+                case ItemLocationEnum.Head:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Head, true);
+                    break;
+                case ItemLocationEnum.Necklass:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Necklass, true);
+                    break;
+                case ItemLocationEnum.PrimaryHand:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.PrimaryHand, true);
+                    break;
+                case ItemLocationEnum.OffHand:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.OffHand, true);
+                    break;
+                case ItemLocationEnum.RightFinger:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.RightFinger, true);
+                    break;
+                case ItemLocationEnum.LeftFinger:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.LeftFinger, true);
+                    break;
+                case ItemLocationEnum.Feet:
+                    item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Feet, true);
+                    break;
+                default:
+                    item = null;
+                    break;
+            }
+
+            PopupLoadingView.IsVisible = true;
+
+            PopupItemImage.Source = data.ImageURI;
             PopupItemName.Text = data.Name;
             PopupItemDescription.Text = data.Description;
             PopupItemLocation.Text = data.Location.ToMessage();
             PopupItemAttribute.Text = data.Attribute.ToMessage();
             PopupItemValue.Text = " + " + data.Value.ToString();
+
+            if (item == null)
+            {
+                PopupItemImage2.Source = "";
+                PopupItemDescription2.Text = "";
+                PopupItemLocation2.Text = "";
+                PopupItemAttribute2.Text = "";
+                PopupItemValue2.Text = "";
+                PopupItemName2.Text = "No item in this spot";
+                return false;
+            }
+
+            PopupItemImage2.Source = item.ImageURI;
+            PopupItemName2.Text = item.Name;
+            PopupItemDescription2.Text = item.Description;
+            PopupItemLocation2.Text = "Location : " + item.Location.ToMessage();
+            PopupItemAttribute2.Text = item.Attribute.ToMessage();
+            PopupItemValue2.Text = " + " + item.Value.ToString();
+
             return true;
         }
 
