@@ -947,10 +947,16 @@ namespace Game.Views
 
             aTimer.Stop();
             aTimer = new Timer();
-           // AttackButton.IsEnabled = true;
-           // AttackButton.IsVisible = true;
-           // AutoAttackButton.IsVisible = true;
-           // AutoAttackOffButton.IsVisible = false;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                AttackButton.IsEnabled = true;
+                AttackButton.IsVisible = true;
+                AutoAttackButton.IsVisible = true;
+                AutoAttackOffButton.IsVisible = false;
+                //NextAttackExample();
+                //SetAttackerAndDefender();
+            });
+           
         }
 
         /// <summary>
