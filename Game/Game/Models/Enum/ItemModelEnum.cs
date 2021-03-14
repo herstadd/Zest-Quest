@@ -177,7 +177,8 @@ namespace Game.Models
                 var myList = new List<string>();
                 foreach (ItemModelEnum item in Enum.GetValues(typeof(ItemModelEnum)))
                 {
-                    if (item != ItemModelEnum.Unknown)
+                    if (item != ItemModelEnum.Unknown &&
+                        item != ItemModelEnum.None)
                         myList.Add(item.ToMessage());
                 }
 
@@ -199,7 +200,7 @@ namespace Game.Models
             // Get the Message, Determine Which enum has that message, and return that enum.
             foreach (ItemModelEnum item in Enum.GetValues(typeof(ItemModelEnum)))
             {
-                if (item.ToMessage().Equals(value))
+                if (item.ToString().Equals(value))
                 {
                     return item;
                 }
