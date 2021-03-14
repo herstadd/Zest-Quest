@@ -435,4 +435,7 @@
   <ItemGroup>
     <BundleResource Include="transparent_intro_screen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\transparent_intro_screen.png" />
+  </ItemGroup>
 </Project>
