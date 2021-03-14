@@ -50,7 +50,7 @@
                 <!--The Battle Map Display -->
                 <StackLayout x:Name="BattleMapDisplay" Style="{StaticResource BattleMapBox}"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
                     <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        <Image Source="item.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                        <Image Source="" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
                         <Grid x:Name="MapGrid" HorizontalOptions="Center" VerticalOptions="Start" ColumnSpacing="0" RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
                     </AbsoluteLayout>
                 </StackLayout>
