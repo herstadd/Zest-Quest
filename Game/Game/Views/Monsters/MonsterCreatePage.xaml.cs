@@ -36,7 +36,7 @@ namespace Game.Views
             this.ViewModel.Title = "Monster Create";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
+            JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToMessage();
 
             // Initialize the Monster Class Box Picker according to the default Monster type 
             MonsterClassPicker.SelectedItem = ViewModel.Data.MonsterClass.ToString();
