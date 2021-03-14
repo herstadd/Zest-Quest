@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("superflower.png", result);
+            Assert.AreEqual("sword_attack.png", result);
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("oscar.png", result);
+            Assert.AreEqual("mushroom.png", result);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("mushroom.png", result);
+            Assert.AreEqual("boot_walking.png", result);
         }
 
         [Test]
