@@ -15,7 +15,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
                     <ImageButton
-                        Source="zest_quest_intro2.png"
+                        Source="transparent_intro_screen.png"
                         Clicked="GameButton_Clicked"
                         Style="{StaticResource ImageZestQuestLargerStyle}"/>
                 
