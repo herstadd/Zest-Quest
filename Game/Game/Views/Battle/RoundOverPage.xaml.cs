@@ -13,10 +13,13 @@ namespace Game.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoundOverPage: ContentPage
 	{
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		public RoundOverPage()
+
+        private PlayerInfoModel SelectedCharacter = null;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public RoundOverPage()
         {
             InitializeComponent();
 
@@ -239,12 +242,12 @@ namespace Game.Views
                 },
             };
 
-            PlayerImage.Clicked += (sender, args) => ClickedCharacter(PlayerStack);
+            PlayerImage.Clicked += (sender, args) => ClickedCharacter(PlayerStack, data);
 
             return PlayerStack;
         }
 
-        public bool ClickedCharacter(StackLayout player)
+        public bool ClickedCharacter(StackLayout player, PlayerInfoModel character)
         {
             var FlexList = CharacterListFrame.Children.ToList();
             foreach (var data in FlexList)
@@ -252,12 +255,14 @@ namespace Game.Views
                 data.BackgroundColor = Color.Transparent;
             }
 
-            if (player.BackgroundColor == Color.Blue)
+            if (character == SelectedCharacter)
             {
+                SelectedCharacter = null;
                 player.BackgroundColor = Color.Transparent;
                 return true;
             }
-            player.BackgroundColor = Color.Blue;
+            SelectedCharacter = character;
+            player.BackgroundColor = Color.LightGoldenrodYellow;
             return true;
         }
 
