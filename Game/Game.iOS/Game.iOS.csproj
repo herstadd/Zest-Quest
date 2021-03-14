@@ -432,4 +432,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\new_tombstone.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="transparent_intro_screen.png" />
+  </ItemGroup>
 </Project>

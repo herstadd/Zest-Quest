@@ -147,6 +147,7 @@
     <Content Include="new_background3.jpg" />
     <Content Include="new_tombstone.png" />
     <Content Include="sword_attack.png" />
+    <Content Include="transparent_intro_screen.png" />
     <Content Include="zest_quest_intro2.png" />
     <Content Include="bandana.png" />
     <Content Include="butcher_knife_necklace.png" />
