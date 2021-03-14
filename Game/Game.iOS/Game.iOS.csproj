@@ -414,4 +414,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\emptyspace_new.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sword_attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\boot_walking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\new_background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\new_background2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\new_background3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\new_tombstone.png" />
+  </ItemGroup>
 </Project>
