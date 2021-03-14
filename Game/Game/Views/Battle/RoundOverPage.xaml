@@ -94,19 +94,18 @@
                             </Grid.ColumnDefinitions>
 
                             <Label Text="Current Item" Style="{StaticResource LabelStyleCenterBigger}" Grid.Row="0" Grid.Column="0" />
-                            <Image x:Name="PopupItemImage2" Source="oscar.png" Style="{StaticResource ImageLargeStyle}"  Grid.Row="1" Grid.Column="0"/>
+                            <Image x:Name="PopupItemImage2" Style="{StaticResource ImageLargeStyle}"  Grid.Row="1" Grid.Column="0"/>
 
-                            <Label x:Name="PopupItemName2" Text="OscarTheGrouch" Style="{StaticResource LabelStyleCenter}" MaxLines="2" LineBreakMode="WordWrap"  Grid.Row="2" Grid.Column="0"/>
-                            <Label x:Name="PopupItemDescription2" Text="Grouches other monsters around" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="3" Grid.Column="0" />
+                            <Label x:Name="PopupItemName2" Style="{StaticResource LabelStyleCenter}" MaxLines="2" LineBreakMode="WordWrap"  Grid.Row="2" Grid.Column="0"/>
+                            <Label x:Name="PopupItemDescription2" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" Grid.Row="3" Grid.Column="0" />
 
                             <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="4" Grid.Column="0">
-                                <Label Text="Location : " Style="{StaticResource LabelStyle}" />
-                                <Label x:Name="PopupItemLocation2" Text="Head" Style="{StaticResource ValueStyle}" />
+                                <Label x:Name="PopupItemLocation2" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
                             <StackLayout Style="{StaticResource HorizontalStack}" Grid.Row="5" Grid.Column="0">
-                                <Label x:Name="PopupItemAttribute2" Text ="Attitude: " Style="{StaticResource LabelStyle}" />
-                                <Label x:Name="PopupItemValue2" Text=" + 10" Style="{StaticResource ValueStyle}" />
+                                <Label x:Name="PopupItemAttribute2" Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupItemValue2" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
                             <Button x:Name="PopupCloseButton" 
@@ -131,7 +130,7 @@
                             </StackLayout>
 
                             <Button x:Name="EquipItemButton" 
-                                Clicked="ClosePopup_Clicked" 
+                                Clicked="EquipItem_Clicked" 
                                 Text="Equip!"
                                      Grid.Row="6" Grid.Column="2"/>
 

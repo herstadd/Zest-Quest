@@ -184,6 +184,7 @@ namespace Game.Views
         /// <returns></returns>
         public bool UpdateMapGrid()
         {
+           
             // var test = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel;
             SetAttackerAndDefender();
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
@@ -196,8 +197,11 @@ namespace Game.Views
                     var x = (ImageButton)MapObject1;
                     x.BorderWidth = 4;
                     x.BorderColor = Color.Red;
+
+                   
                 }
             }
+
           
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
@@ -237,12 +241,15 @@ namespace Game.Views
 
                     stackObject.BackgroundColor = DetermineMapBackgroundColor(data);
                 }
+
             }
 
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                //NextAttackExample();
+                //Task.Delay(WaitTime);
+                //NextAttackExample();                
                 //AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
+                //AttackButton_Clicked(new Button(), EventArgs.Empty);
             }
 
             return true;
@@ -515,8 +522,8 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, data);
             
             UpdateMapGrid();
-            
-
+            TurnOff_AutoAttack();
+            AttackButton_Clicked(new Button(), EventArgs.Empty);
             return true;
         }
 
@@ -626,7 +633,7 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
                 UpdateMapGrid();
-                DefenderImage.Source = "tombstone.png";
+                DefenderImage.Source = "new_tombstone.png";
             }
 
             BattlePlayerBoxVersus.Text = "vs";
@@ -656,7 +663,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            NextAttackExample();
+            //NextAttackExample();
+            AttackButton.IsEnabled = false;
+            AutoAttackButton.IsVisible = false;
+            AutoAttackOffButton.IsVisible = true;
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
+            aTimer.Interval = 100;
+            aTimer.Start();
         }
 
         /// <summary>
@@ -665,13 +678,13 @@ namespace Game.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void AutoAttackButton_Clicked(object sender, EventArgs e)
-        {
-            AttackButton.IsEnabled = false;
-            AutoAttackButton.IsVisible = false;
-            AutoAttackOffButton.IsVisible = true;
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 1000;
-            aTimer.Start();
+        {      
+                AttackButton.IsEnabled = false;
+                AutoAttackButton.IsVisible = false;
+                AutoAttackOffButton.IsVisible = true;
+                aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                aTimer.Interval = 100;
+                aTimer.Start();          
         }
 
         /// <summary>
@@ -694,6 +707,28 @@ namespace Game.Views
             if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
             {
                 TurnOff_AutoAttack();
+            }        
+                Device.BeginInvokeOnMainThread(() =>
+            {
+                NextAttackExample();
+            });
+        }
+
+        /// <summary>
+        /// Opearte this function when Timer starts
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
+        public void OnTimedEvent2(object source, ElapsedEventArgs e)
+        {
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
+            {
+                TurnOff_AutoAttack2();
+            }
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                TurnOff_AutoAttack2();
+                return;
             }
             Device.BeginInvokeOnMainThread(() =>
             {
@@ -730,7 +765,13 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
-          //  SetAttackerAndDefender();
+            //  SetAttackerAndDefender();
+            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+            var x = (ImageButton)MapObject1;
+            x.BorderWidth = 0;
+            
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -789,7 +830,7 @@ namespace Game.Views
             //var button2 = DetermineMapImageButton(location2);
             //button2.BorderWidth = 3;
             //button2.BackgroundColor = Color.Red;
-            
+
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
@@ -805,6 +846,8 @@ namespace Game.Views
                     break;
 
                 case PlayerTypeEnum.Monster:
+                    break;  
+                    
                 default:
 
                     // Monsters turn, so auto pick a Character to Attack
@@ -887,13 +930,27 @@ namespace Game.Views
         /// <summary>
         /// Turn off Auto Attack
         /// </summary>
-        public void TurnOff_AutoAttack()
+        public async void TurnOff_AutoAttack()
         {
             aTimer.Stop();
             aTimer = new Timer();
             AttackButton.IsEnabled = true;
             AutoAttackButton.IsVisible = true;
             AutoAttackOffButton.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Turn off Auto Attack
+        /// </summary>
+        public async void TurnOff_AutoAttack2()
+        {
+
+            aTimer.Stop();
+            aTimer = new Timer();
+           // AttackButton.IsEnabled = true;
+           // AttackButton.IsVisible = true;
+           // AutoAttackButton.IsVisible = true;
+           // AutoAttackOffButton.IsVisible = false;
         }
 
         /// <summary>
