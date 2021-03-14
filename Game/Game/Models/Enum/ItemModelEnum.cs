@@ -108,29 +108,29 @@ namespace Game.Models
                 ItemModelEnum.None => "None",
                 ItemModelEnum.Apron => "Apron",
                 ItemModelEnum.Bandana => "Bandana",
-                ItemModelEnum.ChefHat => "ChefHat",
-                ItemModelEnum.RoastedTurkeyHat => "RoastedTurkeyHat",
-                ItemModelEnum.ButcherKnifeNecklace => "ButcherKnifeNecklace",
+                ItemModelEnum.ChefHat => "Chef Hat",
+                ItemModelEnum.RoastedTurkeyHat => "Roasted Turkey Hat",
+                ItemModelEnum.ButcherKnifeNecklace => "Butcher Knife Necklace",
                 ItemModelEnum.Timer => "Timer",
                 ItemModelEnum.Refrigerator => "Refrigerator",
                 ItemModelEnum.Pan => "Pan",
                 ItemModelEnum.Knife => "Knife",
-                ItemModelEnum.CuttingBoard => "CuttingBoard",
-                ItemModelEnum.RingPop => "RingPop",
-                ItemModelEnum.ScreamRing => "ScreamRing",
-                ItemModelEnum.OnionRing => "OnionRing",
-                ItemModelEnum.FlipFlop => "FlipFlop",
+                ItemModelEnum.CuttingBoard => "Cutting Board",
+                ItemModelEnum.RingPop => "Ring Pop",
+                ItemModelEnum.ScreamRing => "Scream Ring",
+                ItemModelEnum.OnionRing => "Onion Ring",
+                ItemModelEnum.FlipFlop => "Flip Flop",
                 ItemModelEnum.Crocs => "Crocs",
-                ItemModelEnum.WookieBoots => "WookieBoots",
-                ItemModelEnum.SantaShoes => "SantaShoes",
-                ItemModelEnum.FriedChickenNecklace => "FriedChickenNecklace",
+                ItemModelEnum.WookieBoots => "Wookie Boots",
+                ItemModelEnum.SantaShoes => "Santa Shoes",
+                ItemModelEnum.FriedChickenNecklace => "Fried Chicken Necklace",
                 ItemModelEnum.Gingerbread => "Gingerbread",
-                ItemModelEnum.MeatGuitar => "MeatGuitar",
+                ItemModelEnum.MeatGuitar => "Meat Guitar",
                 ItemModelEnum.Pot => "Pot",
                 ItemModelEnum.Puppet => "Puppet",
-                ItemModelEnum.VikingHat => "VikingHat",
-                ItemModelEnum.WeddingRing => "WeddingRing",
-                ItemModelEnum.WitchNail => "WitchNail",
+                ItemModelEnum.VikingHat => "Viking Hat",
+                ItemModelEnum.WeddingRing => "Wedding Ring",
+                ItemModelEnum.WitchNail => "Witch Nail",
                 ItemModelEnum.Unknown => "Unknown",
             };
             return Message;
@@ -164,6 +164,47 @@ namespace Game.Models
         public static ItemModelEnum ConvertStringToEnum(string value)
         {
             return (ItemModelEnum)Enum.Parse(typeof(ItemModelEnum), value);
+        }
+
+        /// <summary>
+        ///  Gets the list of Item names a character can use
+        ///  Removes Unknown, None
+        /// </summary>
+        public static List<string> GetListItems
+        {
+            get
+            {
+                var myList = new List<string>();
+                foreach (ItemModelEnum item in Enum.GetValues(typeof(ItemModelEnum)))
+                {
+                    if (item != ItemModelEnum.Unknown)
+                        myList.Add(item.ToMessage());
+                }
+
+                return myList;
+            }
+        }
+
+        /// <summary>
+        /// Given the Message for an enum
+        /// Look it up and return the enum
+        /// 
+        /// Chef Hat => ChefHat
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ItemModelEnum ConvertMessageToEnum(string value)
+        {
+            // Get the Message, Determine Which enum has that message, and return that enum.
+            foreach (ItemModelEnum item in Enum.GetValues(typeof(ItemModelEnum)))
+            {
+                if (item.ToMessage().Equals(value))
+                {
+                    return item;
+                }
+            }
+            return ItemModelEnum.Unknown;
         }
     }
 }
