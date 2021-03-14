@@ -45,7 +45,7 @@ namespace Game.Models
     /// <summary>
     /// Friendly strings for the Enum Class
     /// </summary>
-    public static class MonsterJobEnumExtensions
+    public static class MonsterTypeEnumExtensions
     {
         /// <summary>
         /// Display a String for the Enums
@@ -107,7 +107,7 @@ namespace Game.Models
     /// <summary>
     /// Helper for the Attribute Enum Class
     /// </summary>
-    public static class MonsterJobEnumHelper
+    public static class MonsterTypeEnumHelper
     {
         /// <summary>
         /// Returns a list of strings of the enum for Attribute
@@ -123,13 +123,57 @@ namespace Game.Models
         }
 
         /// <summary>
+        ///  Gets the list of Item names a character can use
+        ///  Removes Unknown, None
+        /// </summary>
+        public static List<string> GetListItems
+        {
+            get
+            {
+                var myList = new List<string>();
+                foreach (MonsterTypeEnum item in Enum.GetValues(typeof(MonsterTypeEnum)))
+                {
+                    if (item != MonsterTypeEnum.Unknown)
+                        myList.Add(item.ToMessage());
+                }
+
+                return myList;
+            }
+        }
+
+        /// <summary>
         /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
         public static MonsterTypeEnum ConvertStringToEnum(string value)
         {
+            value = value.Replace(" ", "");
             return (MonsterTypeEnum)Enum.Parse(typeof(MonsterTypeEnum), value);
+        }
+
+        /// <summary>
+        /// Given the Message for an enum
+        /// Look it up and return the enum
+        /// 
+        /// Chef Hat => ChefHat
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MonsterTypeEnum ConvertMessageToEnum(string value)
+        {
+            value = value.Replace(" ", "");
+
+            // Get the Message, Determine Which enum has that message, and return that enum.
+            foreach (MonsterTypeEnum item in Enum.GetValues(typeof(MonsterTypeEnum)))
+            {
+                if (item.ToString().Equals(value))
+                {
+                    return item;
+                }
+            }
+            return MonsterTypeEnum.Unknown;
         }
     }
 }
