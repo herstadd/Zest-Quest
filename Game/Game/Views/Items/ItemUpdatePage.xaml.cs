@@ -39,7 +39,7 @@ namespace Game.Views
             DataCopy = new ItemModel(data.Data);
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            ItemTypeEntry.SelectedItem = ViewModel.Data.Type.ToString();
+            ItemTypeEntry.SelectedItem = ItemModelEnumExtensions.ToMessage(DataCopy.Type);
             LocationPicker.SelectedItem = ItemLocationEnumExtensions.ToMessage(DataCopy.Location);
             AttributePicker.SelectedItem = DataCopy.Attribute.ToString();
         }
