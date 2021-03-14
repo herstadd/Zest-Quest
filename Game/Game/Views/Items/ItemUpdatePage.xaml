@@ -14,6 +14,7 @@
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
             <local_helpers:ItemLocationEnumConverter x:Key="ItemLocationEnumConverter"/>
             <local_helpers:ItemTypeEnumConverter x:Key="ItemTypeEnumConverter"/>
+            <local_helpers:ItemAttributeEnumConverter x:Key="ItemAttributeEnumConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -100,8 +101,8 @@
                         Style="{StaticResource LabelStyle}"/>
 
                         <Picker Grid.Row="4" Grid.Column="1"
-                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListItems}" 
+                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource ItemAttributeEnumConverter}, Mode=TwoWay}"
                         x:Name="AttributePicker"/>
 
                         <Label Grid.Row="5" Grid.Column="0"
