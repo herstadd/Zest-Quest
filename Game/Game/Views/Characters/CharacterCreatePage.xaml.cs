@@ -422,7 +422,7 @@ namespace Game.Views
                     ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
                     ViewModel.Data.AddItem(ItemLocationEnum.Necklass, selected);
                     break;
-                case "PrimaryHand":
+                case "Primary Hand":
                     primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
                     primaryhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
@@ -432,7 +432,7 @@ namespace Game.Views
                     ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
                     ViewModel.Data.AddItem(ItemLocationEnum.PrimaryHand, selected);
                     break;
-                case "OffHand":
+                case "Off Hand":
                     offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
                     offhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
@@ -442,7 +442,7 @@ namespace Game.Views
                     ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
                     ViewModel.Data.AddItem(ItemLocationEnum.OffHand, selected);
                     break;
-                case "RightFinger":
+                case "Right Finger":
                     rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
                     rightfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
@@ -452,7 +452,7 @@ namespace Game.Views
                     ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
                     ViewModel.Data.AddItem(ItemLocationEnum.RightFinger, selected);
                     break;
-                case "LeftFinger":
+                case "Left Finger":
                     leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
                     leftfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
