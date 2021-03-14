@@ -197,6 +197,8 @@ namespace Game.Views
                     var x = (ImageButton)MapObject1;
                     x.BorderWidth = 4;
                     x.BorderColor = Color.Red;
+
+                   
                 }
             }
 
@@ -763,7 +765,13 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
-          //  SetAttackerAndDefender();
+            //  SetAttackerAndDefender();
+            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+            var x = (ImageButton)MapObject1;
+            x.BorderWidth = 0;
+            
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -822,7 +830,7 @@ namespace Game.Views
             //var button2 = DetermineMapImageButton(location2);
             //button2.BorderWidth = 3;
             //button2.BackgroundColor = Color.Red;
-            
+
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
