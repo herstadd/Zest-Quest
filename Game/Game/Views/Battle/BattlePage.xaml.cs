@@ -631,7 +631,7 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
                 UpdateMapGrid();
-                DefenderImage.Source = "tombstone.png";
+                DefenderImage.Source = "new_tombstone.png";
             }
 
             BattlePlayerBoxVersus.Text = "vs";
