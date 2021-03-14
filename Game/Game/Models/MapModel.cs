@@ -308,6 +308,7 @@ namespace Game.Models
 
         public List<MapModelLocation> GetAllValidLocationsForPlayer(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
+            //todo delimit, doc
             var Results = new List<MapModelLocation>();
 
             foreach (var SingleLocation in GetEmptyLocations())
@@ -315,6 +316,12 @@ namespace Game.Models
                 Results.Add(SingleLocation);
             }
             return Results;
+        }
+
+        public bool CanAttackerMoveHere(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
+        {
+            //todo delimit, doc
+            return true;
         }
 
 
