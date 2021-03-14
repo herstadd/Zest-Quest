@@ -12,6 +12,7 @@
         <ResourceDictionary>
             <local_helpers:ItemLocationEnumConverter x:Key="ItemLocationEnumConverter"/>
             <local_helpers:ItemTypeEnumConverter x:Key="ItemTypeEnumConverter"/>
+            <local_helpers:ItemAttributeEnumConverter x:Key="ItemAttributeEnumConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -82,7 +83,7 @@
                     Text="Attribute" 
                     Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="4" Grid.Column="1"
-                    Text="{Binding Data.Attribute}" 
+                    Text="{Binding Data.Attribute, Converter={StaticResource ItemAttributeEnumConverter}, Mode=OneWay}" 
                     Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="5" Grid.Column="0"
