@@ -36,9 +36,7 @@ namespace Game.Views
             this.ViewModel.Title = "Create Gadget";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
-            AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
-            ItemTypeEntry.SelectedItem = ItemModelEnum.RingPop.ToString();
+            ItemTypeEntry.SelectedItem = ItemModelEnum.RingPop.ToMessage();
         }
 
         /// <summary>
@@ -66,7 +64,8 @@ namespace Game.Views
             this.ViewModel.Data.ImageURI = ItemIndexViewModel.Instance.GetImage(selected);
 
             // change Item Type according to the selected Item type
-            this.ViewModel.Data.Type = ItemIndexViewModel.Instance.GetType(selected);
+            //this.ViewModel.Data.ItemModel = ItemIndexViewModel.Instance.GetType(selected);
+            ItemTypeEntry.SelectedItem = ItemIndexViewModel.Instance.GetType(selected).ToMessage();
 
             // Location
             LocationPicker.SelectedItem = ItemIndexViewModel.Instance.GetLocation(selected).ToMessage();
