@@ -69,15 +69,15 @@
             switch (value)
             {
                 case ActionEnum.Attack:
-                    Message = "superflower.png";
+                    Message = "sword_attack.png";
                     break;
 
                 case ActionEnum.Move:
-                    Message = "mushroom.png";
+                    Message = "boot_walking.png";
                     break;
 
                 case ActionEnum.Ability:
-                    Message = "oscar.png";
+                    Message = "mushroom.png";
                     break;
 
                 case ActionEnum.Unknown:
