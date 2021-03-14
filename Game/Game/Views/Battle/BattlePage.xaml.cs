@@ -834,23 +834,11 @@ namespace Game.Views
         public void SetAttackerAndDefender()
         {
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
-            //AttackerImage.BackgroundColor = Color.Blue;
-            //var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
-            //var location2 = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            //var button2 = DetermineMapImageButton(location2);
-            //button2.BorderWidth = 3;
-            //button2.BackgroundColor = Color.Red;
-
+           
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
-                    // User would select who to attack
-                    //var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                    //object MapObject = GetMapGridObject(GetDictionaryImageButtonName(location));
-                    //var x = (ImageButton)MapObject;
-                    //x.BorderWidth = 2;
-                    //x.BorderColor = Color.Red;
-                    //var data = MakeMapGridBox(location);
+                   
                     // for now just auto selecting
                     BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
                     break;
