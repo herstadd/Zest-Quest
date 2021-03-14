@@ -111,6 +111,29 @@ namespace Game.Models
         }
 
         /// <summary>
+        ///  Gets the list of locations a character can use
+        ///  Removes Finger for example, and allows for left and right finger
+        /// </summary>
+        public static List<string> GetListItems
+        {
+            get
+            {
+                var myList = new List<string>();
+                foreach (CharacterJobEnum item in Enum.GetValues(typeof(CharacterJobEnum)))
+                {
+                    if (item != CharacterJobEnum.Unknown &&
+                        item != CharacterJobEnum.Fighter &&
+                        item != CharacterJobEnum.Cleric &&
+                        item != CharacterJobEnum.Pet
+                    )
+                        myList.Add(item.ToMessage());
+                }
+
+                return myList;
+            }
+        }
+
+        /// <summary>
         /// Returns a list of strings of the enum for Attribute
         /// Removes the unknown
         /// </summary>
@@ -132,6 +155,30 @@ namespace Game.Models
         {
             value = value.Replace(" ", "");
             return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
+        }
+
+        /// <summary>
+        /// Given the Message for an enum
+        /// Look it up and return the enum
+        /// 
+        /// Right Finger => RightFinger
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CharacterJobEnum ConvertMessageToEnum(string value)
+        {
+            value = value.Replace(" ", "");
+
+            // Get the Message, Determine Which enum has that message, and return that enum.
+            foreach (CharacterJobEnum item in Enum.GetValues(typeof(CharacterJobEnum)))
+            {
+                if (item.ToString().Equals(value))
+                {
+                    return item;
+                }
+            }
+            return CharacterJobEnum.Unknown;
         }
     }
 }
