@@ -80,6 +80,7 @@
                                         MaxLines="10"
                                         LineHeight="1"
                                         CharacterSpacing="1"
+                                        Padding="10,10,10,10"
                                         Style="{StaticResource LabelStyle}"
                                         FontSize="Micro"/>
 
