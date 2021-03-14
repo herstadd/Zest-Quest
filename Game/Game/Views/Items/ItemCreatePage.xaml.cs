@@ -64,7 +64,6 @@ namespace Game.Views
             this.ViewModel.Data.ImageURI = ItemIndexViewModel.Instance.GetImage(selected);
 
             // change Item Type according to the selected Item type
-            //this.ViewModel.Data.ItemModel = ItemIndexViewModel.Instance.GetType(selected);
             ItemTypeEntry.SelectedItem = ItemIndexViewModel.Instance.GetType(selected).ToMessage();
 
             // Location
