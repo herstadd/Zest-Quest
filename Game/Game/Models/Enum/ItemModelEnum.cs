@@ -197,6 +197,8 @@ namespace Game.Models
         /// <returns></returns>
         public static ItemModelEnum ConvertMessageToEnum(string value)
         {
+            value = value.Replace(" ", "");
+
             // Get the Message, Determine Which enum has that message, and return that enum.
             foreach (ItemModelEnum item in Enum.GetValues(typeof(ItemModelEnum)))
             {
