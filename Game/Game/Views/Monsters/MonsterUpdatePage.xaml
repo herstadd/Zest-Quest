@@ -14,6 +14,8 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:MonsterTypeEnumConverter x:Key="MonsterTypeEnumConverter"/>
+            <local_helpers:ItemTypeEnumConverter x:Key="ItemTypeEnumConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -68,8 +70,8 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="1" Grid.Column="1"
-                        ItemsSource="{x:Static local:MonsterJobEnumHelper.GetListMonster}" 
-                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                        ItemsSource="{x:Static local:MonsterTypeEnumHelper.GetListItems}" 
+                        SelectedItem="{Binding Data.MonsterType, Converter={StaticResource MonsterTypeEnumConverter}, Mode=TwoWay}"
                         SelectedIndexChanged="TypeChanged"
                         x:Name="JobPicker"/>
 
@@ -91,8 +93,8 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="3" Grid.Column="1"                   
-                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}" 
-                        SelectedItem="{Binding Data.UniqueDrop, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItems}" 
+                        SelectedItem="{Binding Data.UniqueDrop, Converter={StaticResource ItemTypeEnumConverter}, Mode=TwoWay}" 
                         x:Name="UniqueDrop"/>
 
                     <Label Grid.Row="4" Grid.Column="0"
