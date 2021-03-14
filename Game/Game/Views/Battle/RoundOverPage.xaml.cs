@@ -51,6 +51,7 @@ namespace Game.Views
             {
                 CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
             }
+
         }
 
         /// <summary>
@@ -238,7 +239,26 @@ namespace Game.Views
                 },
             };
 
+            PlayerImage.Clicked += (sender, args) => ClickedCharacter(PlayerStack);
+
             return PlayerStack;
+        }
+
+        public bool ClickedCharacter(StackLayout player)
+        {
+            var FlexList = CharacterListFrame.Children.ToList();
+            foreach (var data in FlexList)
+            {
+                data.BackgroundColor = Color.Transparent;
+            }
+
+            if (player.BackgroundColor == Color.Blue)
+            {
+                player.BackgroundColor = Color.Transparent;
+                return true;
+            }
+            player.BackgroundColor = Color.Blue;
+            return true;
         }
 
         /// <summary>

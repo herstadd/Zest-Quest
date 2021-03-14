@@ -109,7 +109,7 @@
                                 <Label x:Name="PopupItemValue2" Text=" + 10" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
-                            <Button x:Name="PopupCloseButto2n" 
+                            <Button x:Name="PopupCloseButton" 
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Close"
                                     Grid.Row="6" Grid.Column="0"/>
@@ -130,7 +130,7 @@
                                 <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
-                            <Button x:Name="PopupCloseButton" 
+                            <Button x:Name="EquipItemButton" 
                                 Clicked="ClosePopup_Clicked" 
                                 Text="Equip!"
                                      Grid.Row="6" Grid.Column="2"/>
