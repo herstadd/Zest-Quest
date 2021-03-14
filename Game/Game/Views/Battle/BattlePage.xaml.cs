@@ -496,9 +496,9 @@ namespace Game.Views
         /// <summary>
         /// Event when an empty location is clicked on
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="CurrentMapLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedEmpty(MapModelLocation data)
+        public bool SetSelectedEmpty(MapModelLocation CurrentMapLocation)
         {
             // TODO: Info
 
@@ -510,7 +510,7 @@ namespace Game.Views
              */
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(location, data);
+            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(location, CurrentMapLocation);
             var AttackerRange = Attacker.GetRange();
 
             // Can Reach on X?
@@ -519,7 +519,7 @@ namespace Game.Views
                 return false;
             }
                  
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, data);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, CurrentMapLocation);
             
             UpdateMapGrid();
             TurnOff_AutoAttack();
