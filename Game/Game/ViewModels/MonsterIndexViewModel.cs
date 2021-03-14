@@ -165,7 +165,7 @@ namespace Game.ViewModels
         /// <param name="target"></param>
         public void InitializeDefaultMonster(string target)
         {
-            MonsterTypeEnum monster = MonsterJobEnumHelper.ConvertStringToEnum(target);
+            MonsterTypeEnum monster = MonsterTypeEnumHelper.ConvertStringToEnum(target);
 
             if (DefaultMonster == null)
             {
