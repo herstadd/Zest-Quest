@@ -51,7 +51,7 @@ namespace Game.Models
                     break;
 
                 case AttributeEnum.CurrentHealth:
-                    Message = "CurrentHealth";
+                    Message = "Current Health";
                     break;
 
                 case AttributeEnum.Defense:
@@ -59,7 +59,7 @@ namespace Game.Models
                     break;
 
                 case AttributeEnum.MaxHealth:
-                    Message = "MaxHealth";
+                    Message = "Max Health";
                     break;
 
                 case AttributeEnum.Speed:
@@ -107,6 +107,25 @@ namespace Game.Models
         }
 
         /// <summary>
+        ///  Gets the list of attribute a item can use
+        ///  Removes unknown
+        /// </summary>
+        public static List<string> GetListItems
+        {
+            get
+            {
+                var myList = new List<string>();
+                foreach (AttributeEnum item in Enum.GetValues(typeof(AttributeEnum)))
+                {
+                    if (item != AttributeEnum.Unknown)
+                        myList.Add(item.ToMessage());
+                }
+
+                return myList;
+            }
+        }
+
+        /// <summary>
         /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3
         /// </summary>
         /// <param name="value"></param>
@@ -114,6 +133,28 @@ namespace Game.Models
         public static AttributeEnum ConvertStringToEnum(string value)
         {
             return (AttributeEnum)Enum.Parse(typeof(AttributeEnum), value);
+        }
+
+        /// <summary>
+        /// Given the Message for an enum
+        /// Look it up and return the enum
+        /// 
+        /// Current Health => CurrentHealth
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AttributeEnum ConvertMessageToEnum(string value)
+        {
+            // Get the Message, Determine Which enum has that message, and return that enum.
+            foreach (AttributeEnum item in Enum.GetValues(typeof(AttributeEnum)))
+            {
+                if (item.ToMessage().Equals(value))
+                {
+                    return item;
+                }
+            }
+            return AttributeEnum.Unknown;
         }
     }
 }
