@@ -510,21 +510,21 @@ namespace Game.Views
              */
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentMapLocation);
-            var AttackerRange = Attacker.GetRange();
+            var AttackerJob = Attacker.Job;
 
-            // Can Reach on X?
-            if (distance > AttackerRange)
+            // Can Player reach this location?
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
             {
-                return false;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
+
+                UpdateMapGrid();
+                TurnOff_AutoAttack();
+                AttackButton_Clicked(new Button(), EventArgs.Empty);
+                return true;
             }
-                 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
-            
-            UpdateMapGrid();
-            TurnOff_AutoAttack();
-            AttackButton_Clicked(new Button(), EventArgs.Empty);
-            return true;
+
+            //Attacker can't move here, return without moving
+            return false;
         }
 
         /// <summary>
