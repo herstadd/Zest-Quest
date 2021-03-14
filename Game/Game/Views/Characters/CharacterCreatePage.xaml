@@ -316,7 +316,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Picker Grid.Row="0" Grid.Column="0"
-                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItems}"
                         x:Name="NewItemPicker"
                         SelectedIndexChanged="ItemSelected"/>
                     <Button Grid.Row="0" Grid.Column="1" 
