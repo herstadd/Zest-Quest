@@ -16,7 +16,7 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "ChefHat",
+                    Name = "Chef Hat",
                     Type = ItemModelEnum.ChefHat,
                     Description = "A basic toque blanche worn by chefs worldwide",
                     ImageURI = "chef_hat.png",
@@ -38,7 +38,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "RoastedTurkeyHat",
+                    Name = "Roasted Turkey Hat",
                     Type = ItemModelEnum.RoastedTurkeyHat,
                     Description = "It might smell delicious, but this is for wearing, not eating",
                     ImageURI = "roasted_turkey_hat.png",
@@ -49,7 +49,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "ButcherKnifeNecklace",
+                    Name = "Butcher Knife Necklace",
                     Type = ItemModelEnum.ButcherKnifeNecklace,
                     Description = "Perfect for chefs living life on the edge",
                     ImageURI = "butcher_knife_necklace.png",
@@ -115,7 +115,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "CuttingBoard",
+                    Name = "Cutting Board",
                     Type = ItemModelEnum.CuttingBoard,
                     Description = "Multipurpose: Can be used to cut on or as a weapon!",
                     ImageURI = "cutting_board.png",
@@ -126,7 +126,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "RingPop",
+                    Name = "Ring Pop",
                     Type = ItemModelEnum.RingPop,
                     Description = "A sweet treat that also gives some stats",
                     ImageURI = "ring_pop.png",
@@ -137,7 +137,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "ScreamRing",
+                    Name = "Scream Ring",
                     Type = ItemModelEnum.ScreamRing,
                     Description = "Hopefully the monsters are scared of loud noises!",
                     ImageURI = "scream_ring.png",
@@ -148,7 +148,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "OnionRing",
+                    Name = "Onion Ring",
                     Type = ItemModelEnum.OnionRing,
                     Description = "Tasty, fashionable, and practical",
                     ImageURI = "onion_ring.png",
@@ -159,7 +159,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "FlipFlop",
+                    Name = "Flip Flop",
                     Type = ItemModelEnum.FlipFlop,
                     Description = "Why are you wearing open toed shoes while cooking?",
                     ImageURI = "flipflop.png",
@@ -181,7 +181,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "WookieBoots",
+                    Name = "Wookie Boots",
                     Type = ItemModelEnum.WookieBoots,
                     Description = "If you find hair in your food, don't look at me",
                     ImageURI = "wookie_boots.png",
@@ -192,7 +192,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "SantaShoes",
+                    Name = "Santa Shoes",
                     Type = ItemModelEnum.SantaShoes,
                     Description = "What food would you like for Christmas this year?",
                     ImageURI = "santa_shoes.png",
@@ -203,7 +203,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.MaxHealth
                 },
                 new ItemModel {
-                    Name = "FriedChickenNecklace",
+                    Name = "Fried Chicken Necklace",
                     Type = ItemModelEnum.FriedChickenNecklace,
                     Description = "Delicious Fried Chicken is never more than a glance away!",
                     ImageURI = "fried_chicken_necklace.png",
@@ -225,7 +225,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "VikingHat",
+                    Name = "Viking Hat",
                     Type = ItemModelEnum.VikingHat,
                     Description = "Fight like it's 1000AD!",
                     ImageURI = "viking_hat.png",
@@ -258,7 +258,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "MeatGuitar",
+                    Name = "Meat Guitar",
                     Type = ItemModelEnum.MeatGuitar,
                     Description = "Quick, play a song using whatever you have on hand!",
                     ImageURI = "meat_guitar.png",
@@ -269,7 +269,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
                 new ItemModel {
-                    Name = "WitchNail",
+                    Name = "Witch Nail",
                     Type = ItemModelEnum.WitchNail,
                     Description = "Scare your enemies with this scary witch part",
                     ImageURI = "witch_nail.png",
@@ -280,7 +280,7 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "WeddingRing",
+                    Name = "Wedding Ring",
                     Type = ItemModelEnum.WeddingRing,
                     Description = "Nothing brings power and shields you from trouble like being married",
                     ImageURI = "wedding_ring.png",
