@@ -306,22 +306,66 @@ namespace Game.Models
             return Result;
         }
 
-        public List<MapModelLocation> GetAllValidLocationsForPlayer(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
+        /// <summary>
+        /// Gets all of the valid locations a player can move to
+        /// </summary>
+        /// <param name="Target">Target place to move to</param>
+        /// <param name="OriginalLocation">Original place attacker is located</param>
+        /// <param name="Job">Job of attacker</param>
+        /// <returns>List of MapModelLocations where a player can move to</returns>
+        public List<MapModelLocation> GetAllValidMoveLocationsForPlayer(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
-            //todo delimit, doc
             var Results = new List<MapModelLocation>();
 
-            foreach (var SingleLocation in GetEmptyLocations())
+            // Find next empty location for Sous Chef
+            //if (Job == CharacterJobEnum.SousChef)
+            //{
+            //    Result = GetEmptyLocationsSousChef(Target, OriginalLocation);
+            //    LowestDistance = CalculateDistance(Result, Target);
+            //}
+            //TODO fix up sous chef
+
+            var ChanceToSlip = (DiceHelper.RollDice(1, 100) + 1);
+            foreach (var SingleEmptyLocation in GetEmptyLocations())
             {
-                Results.Add(SingleLocation);
+                var distance = CalculateDistance(SingleEmptyLocation, Target);
+
+                //SeattleWinter, move character to far away location
+                if ((BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter)
+                    && (Convert.ToInt32(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent)
+                            >= ChanceToSlip))
+                {
+                    var NewPositionInLocation = DiceHelper.RollDice(1, GetEmptyLocations().Count() - 1);
+                    Results.Add(GetEmptyLocations().ElementAt(NewPositionInLocation));
+                }
+                else
+                // Not Seattle Winter mode
+                {
+                    //Normal mode, move character to close-by location                    
+                    if (CalculateDistance(OriginalLocation, SingleEmptyLocation) < 2)
+                    {
+                        Results.Add(SingleEmptyLocation);
+                    }
+                }
             }
             return Results;
         }
 
+        /// <summary>
+        /// Returns if the attacker can move to a certain location or not
+        /// </summary>
+        /// <param name="Target">Target place to move to</param>
+        /// <param name="OriginalLocation">Original place attacker is located</param>
+        /// <param name="Job">Job of attacker</param>
+        /// <returns>True if they can move there, false if not</returns>
         public bool CanAttackerMoveHere(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
-            //todo delimit, doc
-            return true;
+            foreach (var PossibleLocation in GetAllValidMoveLocationsForPlayer(Target, OriginalLocation, Job))
+            {
+                if ((PossibleLocation.Column == Target.Column) && (PossibleLocation.Row == Target.Row))
+                    return true;
+            }
+            return false;
         }
 
 
