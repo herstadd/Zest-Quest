@@ -65,23 +65,23 @@ namespace Game.Models
                     break;
 
                 case ItemLocationEnum.PrimaryHand:
-                    Message = "PrimaryHand";
+                    Message = "Primary Hand";
                     break;
 
                 case ItemLocationEnum.OffHand:
-                    Message = "OffHand";
+                    Message = "Off Hand";
                     break;
 
                 case ItemLocationEnum.RightFinger:
-                    Message = "RightFinger";
+                    Message = "Right Finger";
                     break;
 
                 case ItemLocationEnum.LeftFinger:
-                    Message = "LeftFinger";
+                    Message = "Left Finger";
                     break;
 
                 case ItemLocationEnum.Finger:
-                    Message = "AnyFinger";
+                    Message = "Any Finger";
                     break;
 
                 case ItemLocationEnum.Feet:
@@ -103,24 +103,8 @@ namespace Game.Models
     {
         /// <summary>
         /// Gets the list of locations that an Item can have.
-        /// Does not include the Left and Right Finger 
+        /// Does not include the Finger 
         /// </summary>
-        public static List<string> GetListItem
-        {
-            get
-            {
-                var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
-                var myReturn = myList.Where(a =>
-                                            a.ToString() != ItemLocationEnum.Unknown.ToString() &&
-                                            a.ToString() != ItemLocationEnum.LeftFinger.ToString() &&
-                                            a.ToString() != ItemLocationEnum.RightFinger.ToString()
-                                            )
-                                            .OrderBy(a => a)
-                                            .ToList();
-                return myReturn;
-            }
-        }
-
         public static List<string> GetAllListItems
         {
             get
@@ -140,19 +124,20 @@ namespace Game.Models
         ///  Gets the list of locations a character can use
         ///  Removes Finger for example, and allows for left and right finger
         /// </summary>
-        public static List<string> GetListCharacter
+        public static List<string> GetListItems
         {
             get
             {
-                var myList = Enum.GetNames(typeof(ItemLocationEnum)).ToList();
-                var myReturn = myList.Where(a =>
-                                           a.ToString() != ItemLocationEnum.Unknown.ToString() &&
-                                            a.ToString() != ItemLocationEnum.Finger.ToString()
-                                            )
-                                            .OrderBy(a => a)
-                                            .ToList();
+                var myList = new List<string>();
+                foreach (ItemLocationEnum item in Enum.GetValues(typeof(ItemLocationEnum)))
+                {
+                    if (item != ItemLocationEnum.Unknown &&
+                        item != ItemLocationEnum.Finger
+                    )
+                        myList.Add(item.ToMessage());
+                }
 
-                return myReturn;
+                return myList;
             }
         }
 
@@ -164,6 +149,28 @@ namespace Game.Models
         public static ItemLocationEnum ConvertStringToEnum(string value)
         {
             return (ItemLocationEnum)Enum.Parse(typeof(ItemLocationEnum), value);
+        }
+
+        /// <summary>
+        /// Given the Message for an enum
+        /// Look it up and return the enum
+        /// 
+        /// Right Finger => RightFinger
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ItemLocationEnum ConvertMessageToEnum(string value)
+        {
+            // Get the Message, Determine Which enum has that message, and return that enum.
+            foreach (ItemLocationEnum item in Enum.GetValues(typeof(ItemLocationEnum)))
+            {
+                if (item.ToMessage().Equals(value))
+                {
+                    return item;
+                }
+            }
+            return ItemLocationEnum.Unknown;
         }
 
         /// <summary>
