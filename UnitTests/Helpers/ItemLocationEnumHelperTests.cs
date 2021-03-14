@@ -18,7 +18,7 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Instantiate a new ItemLocation Base, should have default of 1 for all values
-            var myDataList = ItemLocationEnumHelper.GetListCharacter;
+            var myDataList = ItemLocationEnumHelper.GetListItems;
 
             // Get Expected set
             var myExpectedList = new List<string>();
