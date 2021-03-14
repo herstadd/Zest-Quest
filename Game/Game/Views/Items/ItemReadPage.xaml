@@ -5,13 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
-             xmlns:local="using:Game.Models"
              x:Class="Game.Views.ItemReadPage"
              Title="{Binding Title}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:ItemLocationEnumConverter x:Key="ItemLocationEnumConverter"/>
+            <local_helpers:ItemTypeEnumConverter x:Key="ItemTypeEnumConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -59,7 +59,7 @@
                    Text="Type" 
                     Style="{StaticResource ItemLabelStyle}"/>
                 <Label Grid.Row="1" Grid.Column="1"
-                    Text="{Binding Data.Type}" 
+                    Text="{Binding Data.Type, Converter={StaticResource ItemTypeEnumConverter}, Mode=OneWay}" 
                     Style="{StaticResource ItemValueStyle}"/>
 
                 <Label Grid.Row="2" Grid.Column="0"
