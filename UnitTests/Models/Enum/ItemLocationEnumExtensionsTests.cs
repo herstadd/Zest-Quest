@@ -32,7 +32,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("PrimaryHand", result);
+            Assert.AreEqual("Primary Hand", result);
         }
 
         [Test]
@@ -60,7 +60,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("PrimaryHand", result);
+            Assert.AreEqual("Primary Hand", result);
         }
 
         [Test]
@@ -74,7 +74,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("OffHand", result);
+            Assert.AreEqual("Off Hand", result);
         }
 
         [Test]
@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("RightFinger", result);
+            Assert.AreEqual("Right Finger", result);
         }
 
         [Test]
@@ -102,7 +102,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("LeftFinger", result);
+            Assert.AreEqual("Left Finger", result);
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("AnyFinger", result);
+            Assert.AreEqual("Any Finger", result);
         }
 
         [Test]
