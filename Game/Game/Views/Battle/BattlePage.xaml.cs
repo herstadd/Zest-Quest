@@ -509,8 +509,8 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
-            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(location, CurrentMapLocation);
+            var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentMapLocation);
             var AttackerRange = Attacker.GetRange();
 
             // Can Reach on X?
@@ -519,7 +519,7 @@ namespace Game.Views
                 return false;
             }
                  
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, CurrentMapLocation);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
             
             UpdateMapGrid();
             TurnOff_AutoAttack();
