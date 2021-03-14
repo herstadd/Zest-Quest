@@ -13,6 +13,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:CharacterJobEnumConverter x:Key="CharacterJobEnumConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -89,8 +90,8 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetListItems}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource CharacterJobEnumConverter}, Mode=TwoWay}"
                         x:Name="JobPicker"
                         SelectedIndexChanged="TypeChanged"/>
 
@@ -315,7 +316,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Picker Grid.Row="0" Grid.Column="0"
-                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItem}"
+                        ItemsSource="{x:Static local_enum:ItemModelEnumHelper.GetListItems}"
                         x:Name="NewItemPicker"
                         SelectedIndexChanged="ItemSelected"/>
                     <Button Grid.Row="0" Grid.Column="1" 
