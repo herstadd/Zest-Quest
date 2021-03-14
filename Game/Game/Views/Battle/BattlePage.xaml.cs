@@ -665,6 +665,7 @@ namespace Game.Views
         {
             //NextAttackExample();
             AttackButton.IsEnabled = false;
+            AttackButton.IsVisible = false;
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = true;
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
@@ -679,12 +680,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AutoAttackButton_Clicked(object sender, EventArgs e)
         {      
-                AttackButton.IsEnabled = false;
-                AutoAttackButton.IsVisible = false;
-                AutoAttackOffButton.IsVisible = true;
-                aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                aTimer.Interval = 100;
-                aTimer.Start();          
+            AttackButton.IsEnabled = false;
+            AttackButton.IsVisible = false;
+            AutoAttackButton.IsVisible = false;
+            AutoAttackOffButton.IsVisible = true;
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 100;
+            aTimer.Start();          
         }
 
         /// <summary>
@@ -949,8 +951,6 @@ namespace Game.Views
             aTimer = new Timer();
             Device.BeginInvokeOnMainThread(() =>
             {
-                AttackButton.IsEnabled = true;
-                AttackButton.IsVisible = true;
                 AutoAttackButton.IsVisible = true;
                 AutoAttackOffButton.IsVisible = false;
                 //NextAttackExample();
