@@ -496,9 +496,9 @@ namespace Game.Views
         /// <summary>
         /// Event when an empty location is clicked on
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="CurrentMapLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedEmpty(MapModelLocation data)
+        public bool SetSelectedEmpty(MapModelLocation CurrentMapLocation)
         {
             // TODO: Info
 
@@ -509,22 +509,22 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
-            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            var distance = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(location, data);
-            var AttackerRange = Attacker.GetRange();
+            var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            var AttackerJob = Attacker.Job;
 
-            // Can Reach on X?
-            if (distance > AttackerRange)
+            // Can Player reach this location?
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
             {
-                return false;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
+
+                UpdateMapGrid();
+                TurnOff_AutoAttack();
+                AttackButton_Clicked(new Button(), EventArgs.Empty);
+                return true;
             }
-                 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(location, data);
-            
-            UpdateMapGrid();
-            TurnOff_AutoAttack();
-            AttackButton_Clicked(new Button(), EventArgs.Empty);
-            return true;
+
+            //Attacker can't move here, return without moving
+            return false;
         }
 
         /// <summary>

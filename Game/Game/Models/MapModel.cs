@@ -306,6 +306,25 @@ namespace Game.Models
             return Result;
         }
 
+        public List<MapModelLocation> GetAllValidLocationsForPlayer(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
+        {
+            //todo delimit, doc
+            var Results = new List<MapModelLocation>();
+
+            foreach (var SingleLocation in GetEmptyLocations())
+            {
+                Results.Add(SingleLocation);
+            }
+            return Results;
+        }
+
+        public bool CanAttackerMoveHere(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
+        {
+            //todo delimit, doc
+            return true;
+        }
+
+
         /// <summary>
         /// Return the next adjacent empty location that is closest to the target
         /// </summary>
@@ -314,7 +333,6 @@ namespace Game.Models
         public MapModelLocation ReturnNextEmptyLocation(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
             MapModelLocation Result = OriginalLocation;
-
 
             int LowestDistance = int.MaxValue;
 
