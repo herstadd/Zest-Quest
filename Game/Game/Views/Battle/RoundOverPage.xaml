@@ -130,7 +130,7 @@
                             </StackLayout>
 
                             <Button x:Name="EquipItemButton" 
-                                Clicked="ClosePopup_Clicked" 
+                                Clicked="EquipItem_Clicked" 
                                 Text="Equip!"
                                      Grid.Row="6" Grid.Column="2"/>
 

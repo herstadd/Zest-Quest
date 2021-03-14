@@ -353,6 +353,16 @@ namespace Game.Views
 		{
 			PopupLoadingView.IsVisible = false;
 		}
+
+        /// <summary>
+        /// Equip the selected item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void EquipItem_Clicked(object sender, EventArgs e)
+        {
+            
+        }
 		
 		/// <summary>
 		/// Closes the Round Over Popup
