@@ -41,7 +41,7 @@ namespace Game.Views
             this.ViewModel.Title = "Create Chef";
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
+            JobPicker.SelectedItem = ViewModel.Data.Job.ToMessage();
 
             NewItemPicker.SelectedItem = "ChefHat";
 
