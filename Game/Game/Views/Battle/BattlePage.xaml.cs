@@ -515,11 +515,19 @@ namespace Game.Views
             // Can Player reach this location?
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
             {
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", AttackerLocation.Player.Name, AttackerLocation.Column, AttackerLocation.Row, CurrentMapLocation.Column, CurrentMapLocation.Row));
+
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+  
                 BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
 
                 UpdateMapGrid();
                 TurnOff_AutoAttack();
                 AttackButton_Clicked(new Button(), EventArgs.Empty);
+
+                GameMessage();
+                DrawGameBoardAttackerDefenderSection();
                 return true;
             }
 
@@ -665,6 +673,7 @@ namespace Game.Views
         {
             //NextAttackExample();
             AttackButton.IsEnabled = false;
+            AttackButton.IsVisible = false;
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = true;
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
@@ -679,12 +688,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AutoAttackButton_Clicked(object sender, EventArgs e)
         {      
-                AttackButton.IsEnabled = false;
-                AutoAttackButton.IsVisible = false;
-                AutoAttackOffButton.IsVisible = true;
-                aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                aTimer.Interval = 100;
-                aTimer.Start();          
+            AttackButton.IsEnabled = false;
+            AttackButton.IsVisible = false;
+            AutoAttackButton.IsVisible = false;
+            AutoAttackOffButton.IsVisible = true;
+            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 100;
+            aTimer.Start();          
         }
 
         /// <summary>
@@ -824,23 +834,11 @@ namespace Game.Views
         public void SetAttackerAndDefender()
         {
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
-            //AttackerImage.BackgroundColor = Color.Blue;
-            //var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
-            //var location2 = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            //var button2 = DetermineMapImageButton(location2);
-            //button2.BorderWidth = 3;
-            //button2.BackgroundColor = Color.Red;
-
+           
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
-                    // User would select who to attack
-                    //var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                    //object MapObject = GetMapGridObject(GetDictionaryImageButtonName(location));
-                    //var x = (ImageButton)MapObject;
-                    //x.BorderWidth = 2;
-                    //x.BorderColor = Color.Red;
-                    //var data = MakeMapGridBox(location);
+                   
                     // for now just auto selecting
                     BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
                     break;
@@ -947,10 +945,30 @@ namespace Game.Views
 
             aTimer.Stop();
             aTimer = new Timer();
-           // AttackButton.IsEnabled = true;
-           // AttackButton.IsVisible = true;
-           // AutoAttackButton.IsVisible = true;
-           // AutoAttackOffButton.IsVisible = false;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                AutoAttackButton.IsVisible = true;
+                AutoAttackOffButton.IsVisible = false;
+                //NextAttackExample();
+                //SetAttackerAndDefender();
+
+
+                var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+                if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    var x = (ImageButton)MapObject1;
+                    if (x.BorderWidth < 1)
+                    {
+                        x.BorderColor = Color.Red;
+                        x.BorderWidth = 4;
+                       // ShowBattleMode();
+                    }
+                }
+            });
+         
+
         }
 
         /// <summary>
@@ -1054,7 +1072,7 @@ namespace Game.Views
             DrawPlayerBoxes();
 
             // Update the Mode
-            BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();
+            BattleModeValue.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();        
 
             ShowBattleModeDisplay();
 

@@ -361,7 +361,12 @@ namespace Game.Views
         /// <param name="e"></param>
         public void EquipItem_Clicked(object sender, EventArgs e)
         {
-            
+            PopupItemImage2.Source = PopupItemImage.Source;
+            PopupItemName2.Text = PopupItemName.Text;
+            PopupItemDescription2.Text = PopupItemDescription.Text;
+            PopupItemLocation2.Text = "Location : " + PopupItemLocation.Text;
+            PopupItemAttribute2.Text = PopupItemAttribute.Text;
+            PopupItemValue2.Text = PopupItemValue.Text;
         }
 		
 		/// <summary>
