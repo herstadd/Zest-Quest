@@ -261,7 +261,7 @@ namespace Game.ViewModels
         /// <param name="target"></param>
         public void InitializeDefaultItem(string target)
         {
-            ItemModelEnum item = ItemModelEnumHelper.ConvertStringToEnum(target);
+            ItemModelEnum item = ItemModelEnumHelper.ConvertMessageToEnum(target);
 
             if (DefaultItem == null)
             {
@@ -300,7 +300,7 @@ namespace Game.ViewModels
         /// <returns></returns>
         public ItemModelEnum GetType(string item)
         {
-            return ItemModelEnumHelper.ConvertStringToEnum(item);
+            return ItemModelEnumHelper.ConvertMessageToEnum(item);
         }
 
         /// <summary>
