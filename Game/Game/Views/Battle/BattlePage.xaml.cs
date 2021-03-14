@@ -668,7 +668,7 @@ namespace Game.Views
             AutoAttackButton.IsVisible = false;
             AutoAttackOffButton.IsVisible = true;
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent2);
-            aTimer.Interval = 1000;
+            aTimer.Interval = 100;
             aTimer.Start();
         }
 
@@ -683,7 +683,7 @@ namespace Game.Views
                 AutoAttackButton.IsVisible = false;
                 AutoAttackOffButton.IsVisible = true;
                 aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                aTimer.Interval = 1000;
+                aTimer.Interval = 100;
                 aTimer.Start();          
         }
 
