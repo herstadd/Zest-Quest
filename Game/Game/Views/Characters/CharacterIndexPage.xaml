@@ -2,11 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local_helpers="clr-namespace:Game.Helpers"
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.CharacterIndexPage"
              Title="Chefs">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:CharacterJobEnumConverter x:Key="CharacterJobEnumConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" IconImageSource="icon_add.png"/>
@@ -52,7 +58,7 @@
                                        HorizontalOptions="Start"/>
 
                                 <Label Grid.Column="1" Grid.Row="1"
-                                       Text="{Binding Job}"
+                                       Text="{Binding Job, Converter={StaticResource CharacterJobEnumConverter}, Mode=OneWay}" 
                                        Style="{StaticResource ListStyle}"/>
                                 
                                 <Label Grid.Column="1" Grid.Row="2"
