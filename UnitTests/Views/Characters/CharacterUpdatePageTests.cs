@@ -874,6 +874,30 @@ namespace UnitTests.Views
             Assert.AreEqual(7, result.Count);
         }
 
+        [Test]
+        public void CharacterUpdatePage_GetInitialLocations_Valid_Should_Return_Locations()
+        {
+            // Arrange
+            var data = new CharacterModel
+            {
+                Head = "Chef Hat",
+                Necklass = "Butcher Knife Necklace",
+                PrimaryHand = "Refrigerator",
+                OffHand = "Knife",
+                Feet = "Crocs",
+                RightFinger = "Scream Ring",
+                LeftFinger = "Ring Pop",
+            };
+
+            // Act
+            var result = page.GetInitialLocations(data);
+
+            // Reset 
+
+            // Assert
+            Assert.AreEqual(7, result.Count);
+        }
+
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()
