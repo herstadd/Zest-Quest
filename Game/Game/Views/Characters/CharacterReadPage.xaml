@@ -114,6 +114,7 @@
                    Style="{StaticResource BigHeaderStyle}"/>
 
             <FlexLayout Direction="Row"
+                        Wrap="Wrap"
                         AlignItems="Start"
                         JustifyContent="Start">
                 <Frame WidthRequest="0"  x:Name="headFrame">
