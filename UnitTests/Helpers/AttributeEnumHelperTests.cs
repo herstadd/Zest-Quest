@@ -154,6 +154,21 @@ namespace UnitTests.Helpers
                 Assert.AreEqual(myExpected, myActual, "string: " + item + TestContext.CurrentContext.Test.Name);
             }
         }
+
+        [Test]
+        public void AttributeEnumHelper_ConvertMessageToEnum_Should_Pass()
+        {
+            // Arrange
+            AttributeEnum myActual;
+            AttributeEnum myExpected = AttributeEnum.Unknown;
+
+            // Act
+            myActual = AttributeEnumHelper.ConvertMessageToEnum("Test");
+
+            // Assert
+            Assert.AreEqual(myExpected, myActual);
+            
+        }
     }
 }
 
