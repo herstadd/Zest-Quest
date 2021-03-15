@@ -63,5 +63,21 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void ItemTypeEnumConverterHelperTests_ConvertBack_bool__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new ItemTypeEnumConverter();
+            var myObject = true;
+            var Expected = 0;
+
+            // Act
+            var Result = myConverter.ConvertBack(myObject, typeof(ItemModelEnum), null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
     }
 }
