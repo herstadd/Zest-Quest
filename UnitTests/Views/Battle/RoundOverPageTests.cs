@@ -669,5 +669,22 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(false, result);
         }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_CurrentItem_Null_Should_Pass()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var CurrentItem = (Label)NewPage.FindByName("CurrentItemName");
+            CurrentItem.Text = "No item in this spot";
+
+            // Act
+            NewPage.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
