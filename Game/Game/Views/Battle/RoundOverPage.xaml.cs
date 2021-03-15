@@ -344,30 +344,30 @@ namespace Game.Views
 
             PopupLoadingView.IsVisible = true;
 
-            PopupItemImage.Source = data.ImageURI;
-            PopupItemName.Text = data.Name;
-            PopupItemDescription.Text = data.Description;
-            PopupItemLocation.Text = data.Location.ToMessage();
-            PopupItemAttribute.Text = data.Attribute.ToMessage();
-            PopupItemValue.Text = " + " + data.Value.ToString();
+            PossibleItemImage.Source = data.ImageURI;
+            PossibleItemName.Text = data.Name;
+            PossibleItemDescription.Text = data.Description;
+            PossibleItemLocation.Text = data.Location.ToMessage();
+            PossibleItemAttribute.Text = data.Attribute.ToMessage();
+            PossibleItemValue.Text = " + " + data.Value.ToString();
 
             if (item == null)
             {
-                PopupItemImage2.Source = "";
-                PopupItemDescription2.Text = "";
-                PopupItemLocation2.Text = "";
-                PopupItemAttribute2.Text = "";
-                PopupItemValue2.Text = "";
-                PopupItemName2.Text = "No item in this spot";
+                CurrentItemImage.Source = "";
+                CurrentItemDescription.Text = "";
+                CurrentItemLocation.Text = "";
+                CurrentItemAttribute.Text = "";
+                CurrentItemValue.Text = "";
+                CurrentItemName.Text = "No item in this spot";
                 return false;
             }
 
-            PopupItemImage2.Source = item.ImageURI;
-            PopupItemName2.Text = item.Name;
-            PopupItemDescription2.Text = item.Description;
-            PopupItemLocation2.Text = "Location : " + item.Location.ToMessage();
-            PopupItemAttribute2.Text = item.Attribute.ToMessage();
-            PopupItemValue2.Text = " + " + item.Value.ToString();
+            CurrentItemImage.Source = item.ImageURI;
+            CurrentItemName.Text = item.Name;
+            CurrentItemDescription.Text = item.Description;
+            CurrentItemLocation.Text = "Location : " + item.Location.ToMessage();
+            CurrentItemAttribute.Text = item.Attribute.ToMessage();
+            CurrentItemValue.Text = " + " + item.Value.ToString();
 
             return true;
         }
@@ -389,16 +389,16 @@ namespace Game.Views
         /// <param name="e"></param>
         public void EquipItem_Clicked(object sender, EventArgs e)
         {
-            PopupItemImage2.Source = PopupItemImage.Source;
-            PopupItemName2.Text = PopupItemName.Text;
-            PopupItemDescription2.Text = PopupItemDescription.Text;
-            PopupItemLocation2.Text = "Location : " + PopupItemLocation.Text;
-            PopupItemAttribute2.Text = PopupItemAttribute.Text;
-            PopupItemValue2.Text = PopupItemValue.Text;
+            CurrentItemImage.Source = PossibleItemImage.Source;
+            CurrentItemName.Text = PossibleItemName.Text;
+            CurrentItemDescription.Text = PossibleItemDescription.Text;
+            CurrentItemLocation.Text = "Location : " + PossibleItemLocation.Text;
+            CurrentItemAttribute.Text = PossibleItemAttribute.Text;
+            CurrentItemValue.Text = PossibleItemValue.Text;
 
-            ItemModel item = ItemIndexViewModel.Instance.GetItem(PopupItemName.Text, true);
+            ItemModel item = ItemIndexViewModel.Instance.GetItem(PossibleItemName.Text, true);
 
-            switch (PopupItemLocation.Text)
+            switch (PossibleItemLocation.Text)
             {
                 case "Head":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.Head);
