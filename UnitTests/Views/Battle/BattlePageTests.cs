@@ -433,6 +433,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_NextAttackExample_NextRound_Null_Attacker_Should_Pass()
+        {
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;     
+
+            // Has no monster, so should show next round.
+
+            // Act
+            page.NextAttackExample();
+
+            // Reset
+            page.SetAttackerAndDefender();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_NextAttackExample_GameOver_Should_Pass()
         {
             // Arrange
