@@ -10,5 +10,23 @@ namespace UnitTests.Helpers
     [TestFixture]
     class MonsterTypeEnumConverterHelperTests
     {
+        [Test]
+        public void MonsterTypeEnumConverterHelperTests_Convert_Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new MonsterTypeEnumConverter();
+
+            var myObject = "EvilRefrigerator";
+            var Expected = "Evil Refrigerator";
+
+            // Act
+            var Result = myConverter.Convert(myObject, null, null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
