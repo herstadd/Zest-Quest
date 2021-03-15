@@ -15,7 +15,7 @@ namespace Game.Views
 	public partial class RoundOverPage: ContentPage
 	{
 
-        private PlayerInfoModel SelectedCharacter = null;
+        public PlayerInfoModel SelectedCharacter = null;
 
         /// <summary>
         /// Constructor
