@@ -134,19 +134,6 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Returns a list of strings of the enum for Attribute
-        /// Removes the unknown
-        /// </summary>
-        public static List<string> GetListCharacter
-        {
-            get
-            {
-                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList().Where(m => m.ToString().Equals("Unknown") == false).ToList();
-                return myList;
-            }
-        }
-
-        /// <summary>
         /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3
         /// </summary>
         /// <param name="value"></param>
