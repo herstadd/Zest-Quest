@@ -697,6 +697,12 @@ namespace Game.Views
             {
                 return;
             }
+
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType)
+            {
+                return;
+            }
+
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
@@ -855,7 +861,7 @@ namespace Game.Views
             var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(Defender);
 
-            if ( Defender != null && Attacker.PlayerType == Defender.PlayerType)
+            if ( Defender != null && Attacker != null && Attacker.PlayerType == Defender.PlayerType)
             {
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
 
