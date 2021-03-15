@@ -9,6 +9,18 @@ namespace UnitTests.Helpers
     [TestFixture]
     class MonsterTypeEnumHelperTests
     {
-        
+        [Test]
+        public void MonsterTypeEnumHelperTests_ConvertMessageToEnum_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterTypeEnumHelper.ConvertMessageToEnum("TEST");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(MonsterTypeEnum.Unknown, result);
+        }
     }
 }
