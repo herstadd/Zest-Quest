@@ -252,6 +252,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemUpdatePage_ValueChange_Attribute_Value_Greater_Than_Zero_Should_Return_4()
+        {
+            // Arrange
+            var NewAttributeValue = 5;
+
+            // Act
+            var Result = page.ValueChange("-", NewAttributeValue, false);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(4, Result); // Got to here, so it happened...
+        }
+
+        [Test]
         public void ItemUpdatePage_ValueChange_Invalid_Attribute_Value_9_To_10_Should_Return_9()
         {
             // Arrange
