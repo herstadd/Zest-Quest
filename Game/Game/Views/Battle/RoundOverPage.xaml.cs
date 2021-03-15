@@ -15,7 +15,7 @@ namespace Game.Views
 	public partial class RoundOverPage: ContentPage
 	{
 
-        private PlayerInfoModel SelectedCharacter = null;
+        public PlayerInfoModel SelectedCharacter = null;
 
         /// <summary>
         /// Constructor
@@ -439,13 +439,14 @@ namespace Game.Views
                 default:
                     break;
             }
-            List<ItemModel> test = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList;
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Remove(PossibleItem);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(PossibleItem);
 
-            if(CurrentItem != null)
+            if (CurrentItem != null)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(CurrentItem);
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Remove(CurrentItem);
             }
 
             DrawItemLists();

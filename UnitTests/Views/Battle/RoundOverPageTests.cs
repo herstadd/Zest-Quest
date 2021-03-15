@@ -265,5 +265,73 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_ClickedCharacter_Same_Character_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+            };
+
+            // Act
+            var result = NewPage.ClickedCharacter(PlayerStack, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ClickedCharacter_Different_Character_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+            };
+
+            // Act
+            var result = NewPage.ClickedCharacter(PlayerStack, new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Head_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = "Chef Hat",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Head,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
