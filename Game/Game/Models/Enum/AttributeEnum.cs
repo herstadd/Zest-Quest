@@ -146,10 +146,11 @@ namespace Game.Models
         /// <returns></returns>
         public static AttributeEnum ConvertMessageToEnum(string value)
         {
+            value = value.Replace(" ", "");
             // Get the Message, Determine Which enum has that message, and return that enum.
             foreach (AttributeEnum item in Enum.GetValues(typeof(AttributeEnum)))
             {
-                if (item.ToMessage().Equals(value))
+                if (item.ToString().Equals(value))
                 {
                     return item;
                 }

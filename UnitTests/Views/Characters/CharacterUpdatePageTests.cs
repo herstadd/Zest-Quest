@@ -739,22 +739,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_Head_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.Head = null;
-
-            // Act
-            page.PopulateInitialItems("Head", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
         public void CharacterUpdatePage_PopulateInitialItems_Valid_Head_Item_Should_Pass()
         {
             // Arrange
@@ -762,23 +746,7 @@ namespace UnitTests.Views
             data.Head = "ChefHat";
 
             // Act
-            page.PopulateInitialItems("Head", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_Necklass_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.Necklass = null;
-
-            // Act
-            page.PopulateInitialItems("Necklass", data);
+            page.PopulateInitialItems("Head", "Chef Hat", data);
 
             // Reset 
 
@@ -794,23 +762,7 @@ namespace UnitTests.Views
             data.Necklass = "ButcherKnifeNecklace";
 
             // Act
-            page.PopulateInitialItems("Necklass", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_PrimaryHand_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.PrimaryHand = null;
-
-            // Act
-            page.PopulateInitialItems("PrimaryHand", data);
+            page.PopulateInitialItems("Necklass", "Butcher Knife Necklace", data);
 
             // Reset 
 
@@ -826,23 +778,7 @@ namespace UnitTests.Views
             data.PrimaryHand = "Refrigerator";
 
             // Act
-            page.PopulateInitialItems("PrimaryHand", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_OffHand_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.OffHand = null;
-
-            // Act
-            page.PopulateInitialItems("OffHand", data);
+            page.PopulateInitialItems("PrimaryHand", "Refrigerator", data);
 
             // Reset 
 
@@ -858,23 +794,7 @@ namespace UnitTests.Views
             data.OffHand = "Knife";
 
             // Act
-            page.PopulateInitialItems("OffHand", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_RightFinger_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.RightFinger = null;
-
-            // Act
-            page.PopulateInitialItems("RightFinger", data);
+            page.PopulateInitialItems("OffHand", "Knife", data);
 
             // Reset 
 
@@ -890,23 +810,7 @@ namespace UnitTests.Views
             data.RightFinger = "ScreamRing";
 
             // Act
-            page.PopulateInitialItems("RightFinger", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_LeftFinger_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.LeftFinger = null;
-
-            // Act
-            page.PopulateInitialItems("LeftFinger", data);
+            page.PopulateInitialItems("RightFinger", "Scream Ring", data);
 
             // Reset 
 
@@ -922,23 +826,7 @@ namespace UnitTests.Views
             data.LeftFinger = "RingPop";
 
             // Act
-            page.PopulateInitialItems("LeftFinger", data);
-
-            // Reset 
-
-            // Assert
-            Assert.IsTrue(true);
-        }
-
-        [Test]
-        public void CharacterUpdatePage_PopulateInitialItems_Null_Feet_Item_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            data.Feet = null;
-
-            // Act
-            page.PopulateInitialItems("Feet", data);
+            page.PopulateInitialItems("LeftFinger", "Ring Pop", data);
 
             // Reset 
 
@@ -954,12 +842,87 @@ namespace UnitTests.Views
             data.Feet = "Crocs";
 
             // Act
-            page.PopulateInitialItems("Feet", data);
+            page.PopulateInitialItems("Feet", "Crocs", data);
 
             // Reset 
 
             // Assert
             Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_GetInitialItems_Valid_Should_Return_Locations()
+        {
+            // Arrange
+            var data = new CharacterModel
+            {
+                Head = "Chef Hat",
+                Necklass = "Butcher Knife Necklace",
+                PrimaryHand = "Refrigerator",
+                OffHand = "Knife",
+                Feet = "Crocs",
+                RightFinger = "Scream Ring",
+                LeftFinger = "Ring Pop",
+            };
+
+            // Act
+            var result = page.GetInitialItems(data);
+
+            // Reset 
+
+            // Assert
+            Assert.AreEqual(7, result.Count);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_GetInitialLocations_Valid_Should_Return_Locations()
+        {
+            // Arrange
+            var data = new CharacterModel
+            {
+                Head = "Chef Hat",
+                Necklass = "Butcher Knife Necklace",
+                PrimaryHand = "Refrigerator",
+                OffHand = "Knife",
+                Feet = "Crocs",
+                RightFinger = "Scream Ring",
+                LeftFinger = "Ring Pop",
+            };
+
+            // Act
+            var result = page.GetInitialLocations(data);
+
+            // Reset 
+
+            // Assert
+            Assert.AreEqual(7, result.Count);
+        }
+
+        [Test]
+        public void CharacterUpdatePage_Not_Default_Constructor_Should_Pass()
+        {
+            // Arrange
+            var CharData = new CharacterModel
+            {
+                Head = "Chef Hat",
+                Necklass = "Butcher Knife Necklace",
+                PrimaryHand = "Refrigerator",
+                OffHand = "Knife",
+                Feet = "Crocs",
+                RightFinger = "Scream Ring",
+                LeftFinger = "Ring Pop",
+            };
+
+            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>();
+            data.Data = CharData;
+
+            // Act
+            CharacterUpdatePage NewPage = new CharacterUpdatePage(data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsNotNull(NewPage);
         }
 
 

@@ -193,6 +193,19 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Actual, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void ItemLocationEnumHelper_ConvertMessageToEnum_Should_Pass()
+        {
+            // Arrange
+            var Expected = ItemLocationEnum.Unknown;
+
+            // Act
+            var Actual = ItemLocationEnumHelper.ConvertMessageToEnum("Test");
+
+            // Assert
+            Assert.AreEqual(Expected, Actual, TestContext.CurrentContext.Test.Name);
+        }
+
         #region ItemLocationEnumConverter
 
         //[Test]

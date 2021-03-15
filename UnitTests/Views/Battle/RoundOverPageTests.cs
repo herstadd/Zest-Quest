@@ -270,7 +270,6 @@ namespace UnitTests.Views
         public void RoundOverPage_ClickedCharacter_Same_Character_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerInfoBox"],
@@ -280,7 +279,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ClickedCharacter(PlayerStack, null);
+            var result = page.ClickedCharacter(PlayerStack, null);
 
             // Reset
 
@@ -292,7 +291,6 @@ namespace UnitTests.Views
         public void RoundOverPage_ClickedCharacter_Different_Character_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerInfoBox"],
@@ -302,7 +300,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ClickedCharacter(PlayerStack, new PlayerInfoModel());
+            var result = page.ClickedCharacter(PlayerStack, new PlayerInfoModel());
 
             // Reset
 
@@ -314,8 +312,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_Head_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Head = "Chef Hat",
             };
@@ -326,7 +323,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -338,8 +335,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Head_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Head = "Null",
             };
@@ -350,7 +346,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -362,8 +358,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_Necklass_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Necklass = "Timer",
             };
@@ -374,7 +369,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -386,8 +381,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Necklass_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Necklass = "Null",
             };
@@ -398,7 +392,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -410,8 +404,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_PrimaryHand_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 PrimaryHand = "Refrigerator",
             };
@@ -422,7 +415,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -434,8 +427,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_PrimaryHand_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 PrimaryHand = "Null",
             };
@@ -446,12 +438,440 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
             // Assert
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_OffHand_Item_Should_Return_True()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = "Knife",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.OffHand,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_OffHand_Item_Should_Return_False()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.OffHand,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_RightFinger_Item_Should_Return_True()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                RightFinger = "Scream Ring",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.RightFinger,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_RightFinger_Item_Should_Return_False()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                RightFinger = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.RightFinger,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_LeftFinger_Item_Should_Return_True()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = "Ring Pop",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.LeftFinger,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_LeftFinger_Item_Should_Return_False()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.LeftFinger,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Feet_Item_Should_Return_True()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Crocs",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Feet,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Feet_Item_Should_Return_False()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Feet,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Unknown_Item_Should_Return_False()
+        {
+            // Arrange
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Unknown,
+            };
+
+            // Act
+            var result = page.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_CurrentItem_Null_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "No item in this spot";
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_CurrentItem_Valid_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Chef Hat";
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_Head_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Chef Hat";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Chef Hat";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Head";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_Necklass_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Timer";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Timer";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Necklass";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Necklass = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_PrimaryHand_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Refrigerator";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Refrigerator";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Primary Hand";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                PrimaryHand = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_OffHand_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Knife";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Knife";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Off Hand";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_RightFinger_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Scream Ring";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Scream Ring";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Right Finger";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                RightFinger = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_LeftFinger_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Ring Pop";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Ring Pop";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Left Finger";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_Feet_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Crocs";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Crocs";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Feet";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
         }
     }
 }
