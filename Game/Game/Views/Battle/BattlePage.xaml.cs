@@ -598,7 +598,7 @@ namespace Game.Views
             }
 
             // Can Player reach this location?
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation) > Attacker.GetRange())
+            if (Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
             {
                 return false;
             }
