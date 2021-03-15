@@ -696,11 +696,7 @@ namespace Game.Views
             {
                 return;
             }
-
-            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType)
-            {
-                return;
-            }
+        
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
