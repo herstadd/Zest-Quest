@@ -79,5 +79,21 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void CharacterJobEnumConverterHelperTests_ConvertBack_Bool__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new CharacterJobEnumConverter();
+            var myObject = true;
+            var Expected = 0;
+
+            // Act
+            var Result = myConverter.ConvertBack(myObject, typeof(CharacterJobEnum), null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
     }
 }
