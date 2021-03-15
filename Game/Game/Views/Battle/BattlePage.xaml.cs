@@ -892,6 +892,12 @@ namespace Game.Views
         public void AutoAttackButtonOff_Clicked(object sender, EventArgs e)
         {
             TurnOff_AutoAttack();
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent3);
+                aTimer.Interval = 100;
+                aTimer.Start();
+            }
         }
 
         /// <summary>
@@ -920,17 +926,39 @@ namespace Game.Views
         {
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
             {
-                TurnOff_AutoAttack2();
+                TurnOff_AutoAttack();
             }
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
-            {
-                TurnOff_AutoAttack2();
-                return;
-            }
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
             Device.BeginInvokeOnMainThread(() =>
             {
                 NextAttackExample();
             });
+        }
+
+        /// <summary>
+        /// Opearte this function when Timer starts
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
+        public void OnTimedEvent3(object source, ElapsedEventArgs e)
+        {
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.GameOver)
+            {
+                TurnOff_AutoAttack();
+            }
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                TurnOff_AutoAttack();
+                return;
+            }
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    NextAttackExample();
+                });
+                return;
+            }
         }
 
         /// <summary>
