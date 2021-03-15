@@ -110,20 +110,7 @@ namespace Game.Models
     public static class MonsterTypeEnumHelper
     {
         /// <summary>
-        /// Returns a list of strings of the enum for Attribute
-        /// Removes the unknown
-        /// </summary>
-        public static List<string> GetListMonster
-        {
-            get
-            {
-                var myList = Enum.GetNames(typeof(MonsterTypeEnum)).ToList().Where(m => m.ToString().Equals("Unknown") == false).ToList();
-                return myList;
-            }
-        }
-
-        /// <summary>
-        ///  Gets the list of Item names a character can use
+        ///  Gets the list of monsters can use
         ///  Removes Unknown, None
         /// </summary>
         public static List<string> GetListItems
