@@ -28,5 +28,22 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void CharacterJobEnumConverterHelperTests_Num_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new CharacterJobEnumConverter();
+            var myObject = 0;
+            var Expected = 0;
+
+            // Act
+            var Result = myConverter.Convert(myObject, null, null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
