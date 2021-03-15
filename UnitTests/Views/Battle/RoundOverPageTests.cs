@@ -477,5 +477,29 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_OffHand_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.OffHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
     }
 }
