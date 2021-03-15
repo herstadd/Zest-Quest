@@ -9,7 +9,24 @@ namespace UnitTests.Helpers
 {
     [TestFixture]
     class CharacterJobEnumConverterHelperTests
-    { 
-        
+    {
+        [Test]
+        public void CharacterJobEnumConverterHelperTests_Convert__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new CharacterJobEnumConverter();
+
+            var myObject = "HeadChef";
+            var Expected = "Head Chef";
+
+            // Act
+            var Result = myConverter.Convert(myObject, null, null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
