@@ -270,7 +270,6 @@ namespace UnitTests.Views
         public void RoundOverPage_ClickedCharacter_Same_Character_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerInfoBox"],
@@ -280,7 +279,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ClickedCharacter(PlayerStack, null);
+            var result = page.ClickedCharacter(PlayerStack, null);
 
             // Reset
 
@@ -292,7 +291,6 @@ namespace UnitTests.Views
         public void RoundOverPage_ClickedCharacter_Different_Character_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerInfoBox"],
@@ -302,7 +300,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ClickedCharacter(PlayerStack, new PlayerInfoModel());
+            var result = page.ClickedCharacter(PlayerStack, new PlayerInfoModel());
 
             // Reset
 
@@ -314,8 +312,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_Head_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Head = "Chef Hat",
             };
@@ -326,7 +323,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -338,8 +335,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Head_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Head = "Null",
             };
@@ -350,7 +346,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -362,8 +358,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_Necklass_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Necklass = "Timer",
             };
@@ -374,7 +369,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -386,8 +381,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Necklass_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Necklass = "Null",
             };
@@ -398,7 +392,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -410,8 +404,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_PrimaryHand_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 PrimaryHand = "Refrigerator",
             };
@@ -422,7 +415,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -434,8 +427,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_PrimaryHand_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 PrimaryHand = "Null",
             };
@@ -446,7 +438,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -458,8 +450,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_OffHand_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 OffHand = "Knife",
             };
@@ -470,7 +461,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -482,8 +473,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_OffHand_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 OffHand = "Null",
             };
@@ -494,7 +484,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -506,8 +496,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_RightFinger_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 RightFinger = "Scream Ring",
             };
@@ -518,7 +507,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -530,8 +519,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_RightFinger_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 RightFinger = "Null",
             };
@@ -542,7 +530,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -554,8 +542,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_LeftFinger_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 LeftFinger = "Ring Pop",
             };
@@ -566,7 +553,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -578,8 +565,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_LeftFinger_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 LeftFinger = "Null",
             };
@@ -590,7 +576,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -602,8 +588,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Valid_Feet_Item_Should_Return_True()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Feet = "Crocs",
             };
@@ -614,7 +599,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -626,8 +611,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Feet_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Feet = "Null",
             };
@@ -638,7 +622,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -650,8 +634,7 @@ namespace UnitTests.Views
         public void RoundOverPage_ShowPopup_Null_Unknown_Item_Should_Return_False()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            NewPage.SelectedCharacter = new PlayerInfoModel
+            page.SelectedCharacter = new PlayerInfoModel
             {
                 Feet = "Null",
             };
@@ -662,7 +645,7 @@ namespace UnitTests.Views
             };
 
             // Act
-            var result = NewPage.ShowPopup(TestItem);
+            var result = page.ShowPopup(TestItem);
 
             // Reset
 
@@ -674,12 +657,11 @@ namespace UnitTests.Views
         public void RoundOverPage_EquipItem_Clicked_CurrentItem_Null_Should_Pass()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            var CurrentItem = (Label)NewPage.FindByName("CurrentItemName");
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
             CurrentItem.Text = "No item in this spot";
 
             // Act
-            NewPage.EquipItem_Clicked(null, null);
+            page.EquipItem_Clicked(null, null);
 
             // Reset
 
@@ -691,12 +673,11 @@ namespace UnitTests.Views
         public void RoundOverPage_EquipItem_Clicked_CurrentItem_Valid_Should_Pass()
         {
             // Arrange
-            RoundOverPage NewPage = new RoundOverPage();
-            var CurrentItem = (Label)NewPage.FindByName("CurrentItemName");
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
             CurrentItem.Text = "Chef Hat";
 
             // Act
-            NewPage.EquipItem_Clicked(null, null);
+            page.EquipItem_Clicked(null, null);
 
             // Reset
 
