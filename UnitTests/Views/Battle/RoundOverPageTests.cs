@@ -549,5 +549,29 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(false, result);
         }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_LeftFinger_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = "Ring Pop",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.LeftFinger,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
