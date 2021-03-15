@@ -625,7 +625,7 @@ namespace Game.Views
              // Empty space can be selected only during the game
              if(AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)                  
              {
-                return false; ;
+                return false;
              }                                              
     
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
