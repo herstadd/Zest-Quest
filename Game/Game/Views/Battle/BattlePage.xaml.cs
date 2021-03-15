@@ -566,9 +566,9 @@ namespace Game.Views
         /// <summary>
         /// Event when a Monster is clicked on
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="CurrentLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedMonster(MapModelLocation data)
+        public bool SetSelectedMonster(MapModelLocation CurrentLocation)
         {
             // TODO: Info
 
@@ -589,17 +589,23 @@ namespace Game.Views
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
-            var Defender = data.Player;
+            var Defender = CurrentLocation.Player;
             
 
-            if(data.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
+            if(CurrentLocation.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                // return false;
             }
+
             // Can Player reach this location?
-            
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation) > Attacker.GetRange())
+            {
+                return false;
+            }
+
+
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = CurrentLocation.Player;
             //Attacker.border
                 
             NextAttackExample();
