@@ -584,7 +584,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "ChefHat";
+            button.BindingContext = "Chef Hat";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
@@ -604,7 +604,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "OnionRing";
+            button.BindingContext = "Onion Ring";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
@@ -624,7 +624,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "RingPop";
+            button.BindingContext = "Ring Pop";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
@@ -703,7 +703,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "CuttingBoard";
+            button.BindingContext = "Cutting Board";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
@@ -723,7 +723,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "WookieBoots";
+            button.BindingContext = "Wookie Boots";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);

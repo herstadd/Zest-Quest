@@ -563,8 +563,42 @@ namespace Game.Views
             //BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data.Player);
             //NextAttackExample();
 
-            data.IsSelectedTarget = true;
-            return true;
+            // Empty space can be selected only during the game
+            if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
+            {
+                return false; ;
+            }
+
+            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+            var AttackerJob = Attacker.Job;
+
+            if(data.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return false;
+            }
+            // Can Player reach this location?
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(data, AttackerLocation, AttackerJob))
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+                NextAttackExample();
+
+                //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+
+                //Debug.WriteLine(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
+                //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.a(AttackerLocation, data);
+
+                //UpdateMapGrid();
+                //TurnOff_AutoAttack();
+                //AttackButton_Clicked(new Button(), EventArgs.Empty);
+
+                //GameMessage();
+                //DrawGameBoardAttackerDefenderSection();
+                return true;
+            }
+
+            //data.IsSelectedTarget = true;
+            return false;
         }
 
         /// <summary>
@@ -782,13 +816,19 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
-            //  SetAttackerAndDefender();
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+            if ( Defender != null && Attacker.PlayerType == Defender.PlayerType)
+            {
+                BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+
+            }
+
             var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
             var x = (ImageButton)MapObject1;
             x.BorderWidth = 0;
-            
+
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();

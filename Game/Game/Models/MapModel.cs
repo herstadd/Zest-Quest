@@ -313,23 +313,33 @@ namespace Game.Models
         /// <param name="OriginalLocation">Original place attacker is located</param>
         /// <param name="Job">Job of attacker</param>
         /// <returns>List of MapModelLocations where a player can move to</returns>
-        public List<MapModelLocation> GetAllValidMoveLocationsForPlayer(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
+        public List<MapModelLocation> GetAllValidMoveLocationsForPlayer(MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
             var Results = new List<MapModelLocation>();
 
             // Find next empty location for Sous Chef
-            //if (Job == CharacterJobEnum.SousChef)
-            //{
-            //    Result = GetEmptyLocationsSousChef(Target, OriginalLocation);
-            //    LowestDistance = CalculateDistance(Result, Target);
-            //}
-            //TODO fix up sous chef
+            if (Job == CharacterJobEnum.SousChef)
+            {
+                foreach (var SingleEmptyLocation in GetEmptyLocations())
+                {
+                    if ((((OriginalLocation.Row + MapXAxiesCount + 1) % MapXAxiesCount == (SingleEmptyLocation.Row % MapXAxiesCount)) &&
+                       ((OriginalLocation.Column) % MapYAxiesCount == (SingleEmptyLocation.Column % MapYAxiesCount))) ||
+                       (((OriginalLocation.Row + MapXAxiesCount - 1) % MapXAxiesCount == (SingleEmptyLocation.Row % MapXAxiesCount)) &&
+                       ((OriginalLocation.Column) % MapYAxiesCount == (SingleEmptyLocation.Column % MapYAxiesCount))) ||
+                       (((OriginalLocation.Row) % MapXAxiesCount == (SingleEmptyLocation.Row % MapXAxiesCount)) &&
+                       ((OriginalLocation.Column + MapYAxiesCount - 1) % MapYAxiesCount == (SingleEmptyLocation.Column % MapYAxiesCount))) ||
+                       (((OriginalLocation.Row) % MapXAxiesCount == (SingleEmptyLocation.Row % MapXAxiesCount)) &&
+                       ((OriginalLocation.Column + MapYAxiesCount + 1) % MapYAxiesCount == (SingleEmptyLocation.Column % MapYAxiesCount))))
+                    {
+                        Results.Add(SingleEmptyLocation);
+                    }
+                }
+                return Results;
+            }
 
             var ChanceToSlip = (DiceHelper.RollDice(1, 100) + 1);
             foreach (var SingleEmptyLocation in GetEmptyLocations())
             {
-                var distance = CalculateDistance(SingleEmptyLocation, Target);
-
                 //SeattleWinter, move character to far away location
                 if ((BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter)
                     && (Convert.ToInt32(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent)
@@ -360,7 +370,7 @@ namespace Game.Models
         /// <returns>True if they can move there, false if not</returns>
         public bool CanAttackerMoveHere(MapModelLocation Target, MapModelLocation OriginalLocation, CharacterJobEnum Job)
         {
-            foreach (var PossibleLocation in GetAllValidMoveLocationsForPlayer(Target, OriginalLocation, Job))
+            foreach (var PossibleLocation in GetAllValidMoveLocationsForPlayer(OriginalLocation, Job))
             {
                 if ((PossibleLocation.Column == Target.Column) && (PossibleLocation.Row == Target.Row))
                     return true;

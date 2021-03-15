@@ -587,7 +587,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "ChefHat";
+            button.BindingContext = "Chef Hat";
 
             var NewPage = new CharacterCreatePage();
 
@@ -663,7 +663,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "ScreamRing";
+            button.BindingContext = "Scream Ring";
 
             var NewPage = new CharacterCreatePage();
 
@@ -682,7 +682,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "RingPop";
+            button.BindingContext = "Ring Pop";
 
             var NewPage = new CharacterCreatePage();
 
@@ -701,7 +701,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "FlipFlop";
+            button.BindingContext = "Flip Flop";
 
             var NewPage = new CharacterCreatePage();
 
