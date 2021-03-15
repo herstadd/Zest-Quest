@@ -287,5 +287,27 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void RoundOverPage_ClickedCharacter_Different_Character_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+            };
+
+            // Act
+            var result = NewPage.ClickedCharacter(PlayerStack, new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
