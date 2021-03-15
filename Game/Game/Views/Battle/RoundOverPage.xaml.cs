@@ -290,24 +290,52 @@ namespace Game.Views
             {
                 case ItemLocationEnum.Head:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Head, true);
+                    if(item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Head);
+                    }
                     break;
                 case ItemLocationEnum.Necklass:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Necklass, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Necklass);
+                    }
                     break;
                 case ItemLocationEnum.PrimaryHand:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.PrimaryHand, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.PrimaryHand);
+                    }
                     break;
                 case ItemLocationEnum.OffHand:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.OffHand, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.OffHand);
+                    }
                     break;
                 case ItemLocationEnum.RightFinger:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.RightFinger, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.RightFinger);
+                    }
                     break;
                 case ItemLocationEnum.LeftFinger:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.LeftFinger, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.LeftFinger);
+                    }
                     break;
                 case ItemLocationEnum.Feet:
                     item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Feet, true);
+                    if (item == null)
+                    {
+                        item = ItemIndexViewModel.Instance.GetItem(SelectedCharacter.Feet);
+                    }
                     break;
                 default:
                     item = null;
@@ -367,6 +395,42 @@ namespace Game.Views
             PopupItemLocation2.Text = "Location : " + PopupItemLocation.Text;
             PopupItemAttribute2.Text = PopupItemAttribute.Text;
             PopupItemValue2.Text = PopupItemValue.Text;
+
+            ItemModel item = ItemIndexViewModel.Instance.GetItem(PopupItemName.Text, true);
+
+            switch (PopupItemLocation.Text)
+            {
+                case "Head":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.Head);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Head, item.Id);
+                    break;
+                case "Necklass":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.Necklass);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Necklass, item.Id);
+                    break;
+                case "Primary Hand":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.PrimaryHand);
+                    SelectedCharacter.AddItem(ItemLocationEnum.PrimaryHand, item.Id);
+                    break;
+                case "Off Hand":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.OffHand);
+                    SelectedCharacter.AddItem(ItemLocationEnum.OffHand, item.Id);
+                    break;
+                case "Right Finger":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.RightFinger);
+                    SelectedCharacter.AddItem(ItemLocationEnum.RightFinger, item.Id);
+                    break;
+                case "Left Finger":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.LeftFinger);
+                    SelectedCharacter.AddItem(ItemLocationEnum.LeftFinger, item.Id);
+                    break;
+                case "Feet":
+                    SelectedCharacter.RemoveItem(ItemLocationEnum.Feet);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Feet, item.Id);
+                    break;
+                default:
+                    break;
+            }
         }
 		
 		/// <summary>
