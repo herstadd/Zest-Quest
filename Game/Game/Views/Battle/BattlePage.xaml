@@ -114,18 +114,18 @@
                                 <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                             </StackLayout>
 
-                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <!--<StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                 <Label x:Name="BattlePlayerBoxVersus" Text="vs" Style="{StaticResource ValueStyleBattleMicro}"
                                     Padding="0,5,0,0"
                                     VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                                 <Image x:Name="AttackerAttack" Source="mapcell.png" Style="{StaticResource ImageSmallStyle}"/>
-                            </StackLayout>
+                            </StackLayout>-->
 
-                            <StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
+                            <!--<StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
                                 <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
                                 <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                                 <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
-                            </StackLayout>
+                            </StackLayout>-->
                         </StackLayout>
                     </Frame>
 
