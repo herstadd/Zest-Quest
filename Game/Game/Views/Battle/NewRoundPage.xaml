@@ -8,7 +8,10 @@
 
             <StackLayout Style="{StaticResource VerticalStack}">
 
-                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <Label Text="Beginning Round" Style="{StaticResource CenterMessageLargeStyle}" Margin="0,0,10,0"/>
+                    <Label Text="" x:Name="BeginningTotalRound" Style="{StaticResource CenterMessageLargeStyle}"/>
+                </StackLayout>
 
                 <Button Clicked="BeginButton_Clicked" Text="Begin"/>
 

@@ -25,8 +25,10 @@ namespace Game.Views
 		{
 			InitializeComponent ();
 
-			// Draw the Characters
-			foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
+            BeginningTotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+
+            // Draw the Characters
+            foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
 			{
                 PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
 			}
