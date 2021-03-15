@@ -682,7 +682,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "RingPop";
+            button.BindingContext = "Ring Pop";
 
             var NewPage = new CharacterCreatePage();
 
