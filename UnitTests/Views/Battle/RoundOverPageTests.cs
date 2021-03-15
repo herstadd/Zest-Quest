@@ -711,5 +711,32 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_Necklass_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Timer";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Timer";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Necklass";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Necklass = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
