@@ -686,5 +686,22 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_CurrentItem_Valid_Should_Pass()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var CurrentItem = (Label)NewPage.FindByName("CurrentItemName");
+            CurrentItem.Text = "Chef Hat";
+
+            // Act
+            NewPage.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
