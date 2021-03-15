@@ -62,5 +62,22 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void CharacterJobEnumConverterHelperTests_ConvertBack_Num__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new CharacterJobEnumConverter();
+            var myObject = 13;
+            var Expected = "Head Chef";
+
+            // Act
+            var Result = myConverter.ConvertBack(myObject, typeof(CharacterJobEnum), null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
