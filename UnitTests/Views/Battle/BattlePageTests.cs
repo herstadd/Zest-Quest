@@ -638,6 +638,10 @@ namespace UnitTests.Views
         [Test]
         public void BattlePage_UpdateMapGrid_InValid_Bogus_Image_Should_Fail()
         {
+            //Arrange
+            page = new BattlePage();
+            page.SetAttackerAndDefender();
+
             // Make the Row Bogus
             BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation[0, 0].Row = -1;
 
@@ -654,6 +658,9 @@ namespace UnitTests.Views
         [Test]
         public void BattlePage_UpdateMapGrid_InValid_Bogus_ImageButton_Should_Fail()
         {
+            //Arrange
+            page.SetAttackerAndDefender();
+
             // Get the current valute
             var name = "MapR0C0ImageButton";
             page.MapLocationObject.TryGetValue(name, out object data);
