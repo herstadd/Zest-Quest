@@ -615,12 +615,12 @@ namespace Game.Views
             
             //if ((BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null) && 
             //        (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null))
-            if ((DefenderName.Text == "") && (AttackerName.Text == ""))
+            if (/*(DefenderName.Text == "") && */ (AttackerName.Text == ""))
             {
                 UpdateMapGrid();
                 Defender.ImageURI = "new_tombstone.png";
                 
-                DefenderName.Text = "Lost";
+                //DefenderName.Text = "Lost";
                 AttackerName.Text = "Win";
                 
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
@@ -685,7 +685,7 @@ namespace Game.Views
         /// </summary>
         public void DrawGameBoardAttackerDefenderSection()
         {
-            BattlePlayerBoxVersus.Text = "";
+            //BattlePlayerBoxVersus.Text = "";
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker == null)
             {
@@ -696,36 +696,32 @@ namespace Game.Views
             {
                 return;
             }
-
-            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType)
-            {
-                return;
-            }
+        
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
             // Show what action the Attacker used
-            AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
+            //AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
             
             var item = ItemIndexViewModel.Instance.GetItem(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand);
             if (item != null)
             {
-                AttackerAttack.Source = item.ImageURI;
+                //AttackerAttack.Source = item.ImageURI;
             }
             
-            DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
-            DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            DefenderHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
+            //DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+            //DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+            //DefenderHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
                 UpdateMapGrid();
-                DefenderImage.Source = "new_tombstone.png";
+                //DefenderImage.Source = "new_tombstone.png";
             }
 
-            BattlePlayerBoxVersus.Text = "vs";
+            //BattlePlayerBoxVersus.Text = "vs";
         }
 
         /// <summary>
@@ -737,12 +733,12 @@ namespace Game.Views
             AttackerName.Text = string.Empty;
             AttackerHealth.Text = string.Empty;
 
-            DefenderImage.Source = string.Empty;
-            DefenderName.Text = string.Empty;
-            DefenderHealth.Text = string.Empty;
-            DefenderImage.BackgroundColor = Color.Transparent;
+            //DefenderImage.Source = string.Empty;
+            //DefenderName.Text = string.Empty;
+            //DefenderHealth.Text = string.Empty;
+            //DefenderImage.BackgroundColor = Color.Transparent;
 
-            BattlePlayerBoxVersus.Text = string.Empty;
+            //BattlePlayerBoxVersus.Text = string.Empty;
         }
 
         /// <summary>
@@ -1228,20 +1224,20 @@ namespace Game.Views
             {
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:          
                     UpdateMapGrid(true);
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
-                    AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     
                     // Show the Game Over Display
                     GameOverDisplay.IsVisible = true;
