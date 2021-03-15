@@ -545,7 +545,7 @@ namespace Game.Views
             //enlarge
             await Task.WhenAny<bool>
             (
-                    FlyingImage.ScaleTo(1.1,30)
+                    FlyingImage.ScaleTo(1.1,30, Easing.SinInOut)
             );
 
             if (Attack)
@@ -553,27 +553,27 @@ namespace Game.Views
                 //Spin to enemy to new location
                 await Task.WhenAny<bool>
                 (
-                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(60 * distance)),
+                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(60 * distance), Easing.SinInOut),
                     //FlyingImage.RelRotateTo(360 * NumRotations, (uint)(60 * distance)),
-                    FlyingImage.ScaleTo(2.0, (uint)(60 * distance))
+                    FlyingImage.ScaleTo(2.0, (uint)(60 * distance), Easing.SinInOut)
                 );
 
                 //de-enlarge upon landing
                 await Task.WhenAny<bool>
                 (
-                    FlyingImage.ScaleTo(0.5, 30)
+                    FlyingImage.ScaleTo(0.5, 30, Easing.SinInOut)
                 );
 
                 //decrease size again
                 await Task.WhenAny<bool>
                 (
-                    FlyingImage.ScaleTo(1.1, 30)
+                    FlyingImage.ScaleTo(1.1, 30, Easing.SinInOut)
                 );
 
                 //return to old location
                 await Task.WhenAny<bool>
                 (
-                    FlyingImage.TranslateTo(OldLocation.Column * 60, OldLocation.Row * 60, (uint)(50 * distance))
+                    FlyingImage.TranslateTo(OldLocation.Column * 60, OldLocation.Row * 60, (uint)(50 * distance), Easing.SinInOut)
                 );
             }
             else
@@ -581,14 +581,14 @@ namespace Game.Views
                 //Move to new location
                 await Task.WhenAny<bool>
                 (
-                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(50 * distance))
+                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(50 * distance), Easing.SinInOut)
                 );
             }
 
             //Decrease size again
             await Task.WhenAny<bool>
             (
-                FlyingImage.ScaleTo(0.833, 30)
+                FlyingImage.ScaleTo(0.833, 30, Easing.SinInOut)
             );
 
             ////try to delay, doesn't work
