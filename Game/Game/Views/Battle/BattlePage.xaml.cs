@@ -508,6 +508,95 @@ namespace Game.Views
             return result;
         }
 
+
+        /// <summary>
+        /// Creates jumping animations for characters to move and attack
+        /// </summary>
+        /// <param name="Player">Player to move or attack</param>
+        /// <param name="OldLocation">Initial location</param>
+        /// <param name="NewLocation">Location or attack destination</param>
+        /// <param name="Attack">true if attacking</param>
+        public async void MoveAnimation(PlayerInfoModel Player, MapModelLocation OldLocation, MapModelLocation NewLocation, bool Attack = false)
+        {
+            var PlayerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Player);
+            object MapObject = GetMapGridObject(GetDictionaryImageButtonName(PlayerLocation));
+            if (MapObject == null)
+            {
+                return;
+            }
+            
+            var ImageOfPlayer = (ImageButton)MapObject;
+            var distance = 1;// BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(NewLocation, OldLocation);
+            var NumRotations = 1; // Math.Ceiling((double)distance/2);
+
+            FlyingImage.IsVisible = true;
+            ImageOfPlayer.IsVisible = false;
+            FlyingImage.Source = ImageOfPlayer.Source;
+
+            //Move image to initial location
+            await Task.WhenAny<bool>
+            (
+                FlyingImage.TranslateTo(OldLocation.Column * 60, OldLocation.Row * 60, 0),
+                FlyingImage.ScaleTo(0.833, 0)
+            );
+
+            //enlarge
+            await Task.WhenAny<bool>
+            (
+                    FlyingImage.ScaleTo(1.1,30)
+            );
+
+            if (Attack)
+            {
+                //Spin to enemy to new location
+                await Task.WhenAny<bool>
+                (
+                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(60 * distance)),
+                    //FlyingImage.RelRotateTo(360 * NumRotations, (uint)(60 * distance)),
+                    FlyingImage.ScaleTo(2.0, (uint)(60 * distance))
+                );
+
+                //de-enlarge upon landing
+                await Task.WhenAny<bool>
+                (
+                    FlyingImage.ScaleTo(0.5, 30)
+                );
+
+                //decrease size again
+                await Task.WhenAny<bool>
+                (
+                    FlyingImage.ScaleTo(1.1, 30)
+                );
+
+                //return to old location
+                await Task.WhenAny<bool>
+                (
+                    FlyingImage.TranslateTo(OldLocation.Column * 60, OldLocation.Row * 60, (uint)(50 * distance))
+                );
+            }
+            else
+            {
+                //Move to new location
+                await Task.WhenAny<bool>
+                (
+                    FlyingImage.TranslateTo(NewLocation.Column * 60, NewLocation.Row * 60, (uint)(50 * distance))
+                );
+            }
+
+            //Decrease size again
+            await Task.WhenAny<bool>
+            (
+                FlyingImage.ScaleTo(0.833, 30)
+            );
+
+            ////try to delay, doesn't work
+
+            FlyingImage.IsVisible = false;
+            ImageOfPlayer.IsVisible = true;
+            
+            return;
+        }
+
         #region MapEvents
         /// <summary>
         /// Event when an empty location is clicked on
@@ -556,6 +645,14 @@ namespace Game.Views
 
                 GameMessage();
                 DrawGameBoardAttackerDefenderSection();
+
+                //Do animation
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    MoveAnimation(Attacker, AttackerLocation, CurrentMapLocation);
+                });
+                
+
                 return true;
             }
 
@@ -590,7 +687,7 @@ namespace Game.Views
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
             var Defender = CurrentLocation.Player;
-            
+
 
             if(CurrentLocation.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
@@ -603,8 +700,13 @@ namespace Game.Views
                 return false;
             }
 
+            //Do animation
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                MoveAnimation(Attacker, AttackerLocation, CurrentLocation, true);
+            });
 
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = CurrentLocation.Player;
             //Attacker.border
                 

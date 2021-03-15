@@ -52,6 +52,7 @@
                     <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                         <Image Source="" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
                         <Grid x:Name="MapGrid" HorizontalOptions="Center" VerticalOptions="Start" ColumnSpacing="0" RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+                        <Image Source="item.png" x:Name="FlyingImage" IsVisible="false" HeightRequest="60" WidthRequest="60"></Image>
                     </AbsoluteLayout>
                 </StackLayout>
 
