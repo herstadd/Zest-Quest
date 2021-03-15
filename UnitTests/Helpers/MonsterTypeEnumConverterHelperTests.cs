@@ -46,5 +46,22 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        [Test]
+        public void MonsterTypeEnumConverterHelperTests_ConvertBack_Num__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new MonsterTypeEnumConverter();
+            var myObject = 12;
+            var Expected = "Evil Toaster";
+
+            // Act
+            var Result = myConverter.ConvertBack(myObject, typeof(ItemModelEnum), null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
