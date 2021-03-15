@@ -405,5 +405,30 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(false, result);
         }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_PrimaryHand_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                PrimaryHand = "Refrigerator",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.PrimaryHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
     }
 }
