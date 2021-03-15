@@ -587,7 +587,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "ChefHat";
+            button.BindingContext = "Chef Hat";
 
             var NewPage = new CharacterCreatePage();
 
