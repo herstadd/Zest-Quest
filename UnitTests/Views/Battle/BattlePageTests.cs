@@ -197,6 +197,26 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        
+        [Test]
+        public void BattlePage_DrawGameBoardAttackerDefenderSection_GameOver_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;
+
+            // Act
+            page.DrawGameBoardAttackerDefenderSection();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
+            page.SetAttackerAndDefender();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+
+
         [Test]
         public void BattlePage_ExitButton_Clicked_Default_Should_Pass()
         {
