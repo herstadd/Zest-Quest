@@ -168,6 +168,36 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_OnTimedEvent2_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.OnTimedEvent2(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_OnTimedEvent2_GameOver_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Act
+            page.OnTimedEvent2(null, null);
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_ExitButton_Clicked_Default_Should_Pass()
         {
             // Arrange
