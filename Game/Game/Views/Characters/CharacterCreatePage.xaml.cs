@@ -43,7 +43,7 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             JobPicker.SelectedItem = ViewModel.Data.Job.ToMessage();
 
-            NewItemPicker.SelectedItem = "ChefHat";
+            NewItemPicker.SelectedItem = "Chef Hat";
 
             foreach (string location in locations)
             {
