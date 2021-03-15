@@ -622,7 +622,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattlePage_SetSelectedEmpty_Default_Should_Pass()
+        public void BattlePage_SetSelectedEmpty_Before_Start_Manual_Game_Clicking_Should_Return_Fail()
         {
             // Arrange
 
@@ -632,7 +632,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.AreEqual(true,result); // Got to here, so it happened...
+            Assert.AreEqual(false,result); // Got to here, so it happened...
         }
 
         [Test]
