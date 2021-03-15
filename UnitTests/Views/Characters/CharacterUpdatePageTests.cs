@@ -898,6 +898,33 @@ namespace UnitTests.Views
             Assert.AreEqual(7, result.Count);
         }
 
+        [Test]
+        public void CharacterUpdatePage_Not_Default_Constructor_Should_Pass()
+        {
+            // Arrange
+            var CharData = new CharacterModel
+            {
+                Head = "Chef Hat",
+                Necklass = "Butcher Knife Necklace",
+                PrimaryHand = "Refrigerator",
+                OffHand = "Knife",
+                Feet = "Crocs",
+                RightFinger = "Scream Ring",
+                LeftFinger = "Ring Pop",
+            };
+
+            GenericViewModel<CharacterModel> data = new GenericViewModel<CharacterModel>();
+            data.Data = CharData;
+
+            // Act
+            CharacterUpdatePage NewPage = new CharacterUpdatePage(data);
+
+            // Reset 
+
+            // Assert
+            Assert.IsNotNull(NewPage);
+        }
+
 
         //[Test]
         //public void CharacterUpdatePage_RollDice_Clicked_Default_Should_Pass()

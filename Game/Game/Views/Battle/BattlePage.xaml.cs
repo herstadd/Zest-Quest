@@ -173,7 +173,7 @@ namespace Game.Views
 
             CreateMapGridObjects();
 
-            UpdateMapGrid();
+            //UpdateMapGrid();
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Game.Views
         /// Update only those that need change
         /// </summary>
         /// <returns></returns>
-        public bool UpdateMapGrid(PlayerInfoModel NewPlayer = null)
+        public bool UpdateMapGrid(bool SkipBorder = false, PlayerInfoModel NewPlayer = null)
         {
            
             // var test = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel;
@@ -194,16 +194,19 @@ namespace Game.Views
                 SetAttackerAndDefender();
                 Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             }
-
-            if ( Attacker != null)
+            if (SkipBorder == false)
             {
-                if (Attacker.PlayerType == PlayerTypeEnum.Character)
+
+                if (Attacker != null)
                 {
-                    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                    var x = (ImageButton)MapObject1;
-                    x.BorderWidth = 4;
-                    x.BorderColor = Color.Green; 
+                    if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                    {
+                        var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                        object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                        var x = (ImageButton)MapObject1;
+                        x.BorderWidth = 4;
+                        x.BorderColor = Color.Green;
+                    }
                 }
             }
             if (NewPlayer != null)
@@ -214,6 +217,7 @@ namespace Game.Views
                 x.BorderWidth = 0;
                 x.BorderColor = Color.Cyan;
             }
+            
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
@@ -600,8 +604,27 @@ namespace Game.Views
                 
             NextAttackExample();
 
-            UpdateMapGrid(Attacker);
+            UpdateMapGrid(false, Attacker);
             //TurnOff_AutoAttack();
+            
+            //if ((BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null) && 
+            //        (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null))
+            if ((DefenderName.Text == "") && (AttackerName.Text == ""))
+            {
+                UpdateMapGrid();
+                Defender.ImageURI = "new_tombstone.png";
+                
+                DefenderName.Text = "Lost";
+                AttackerName.Text = "Win";
+                
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                //TurnOff_AutoAttack2();
+                AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;
+                return true;
+            }
+
             AttackButton_Clicked(new Button(), EventArgs.Empty);
 
             return true;
@@ -832,11 +855,13 @@ namespace Game.Views
 
             }
 
-            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-            object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-            var x = (ImageButton)MapObject1;
-            x.BorderWidth = 0;
-
+            if (Attacker != null)
+            {
+                var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                var x = (ImageButton)MapObject1;
+                x.BorderWidth = 0;
+            }
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -987,9 +1012,12 @@ namespace Game.Views
         {
             aTimer.Stop();
             aTimer = new Timer();
-            AttackButton.IsEnabled = true;
-            AutoAttackButton.IsVisible = true;
-            AutoAttackOffButton.IsVisible = false;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                AttackButton.IsEnabled = true;
+                AutoAttackButton.IsVisible = true;
+                AutoAttackOffButton.IsVisible = false;
+            });
         }
 
         /// <summary>
@@ -1193,8 +1221,8 @@ namespace Game.Views
                     StartBattleButton.IsVisible = true;
                     break;
 
-                case BattleStateEnum.NewRound:
-                    UpdateMapGrid();
+                case BattleStateEnum.NewRound:          
+                    UpdateMapGrid(true);
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
