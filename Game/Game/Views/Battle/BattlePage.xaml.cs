@@ -627,7 +627,6 @@ namespace Game.Views
 
                 //TurnOff_AutoAttack2();
                 AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = null;
                 return true;
             }
 
