@@ -35,19 +35,17 @@ namespace Game.Views
 
             this.ViewModel.Title = "Update " + data.Title;
 
-            var OriginalItem = ViewModel.Data.UniqueDrop.ToString();
+            var OriginalItem = ViewModel.Data.UniqueDrop.ToMessage();
             var OriginalClass= ViewModel.Data.MonsterClass.ToString();
 
             //Need to make the SelectedItem a string, so it can select the correct item.
-            JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToString();
+            JobPicker.SelectedItem = ViewModel.Data.MonsterType.ToMessage();
 
             // Initialize the Monster Class Box Picker according to the default Monster type 
             UniqueDrop.SelectedItem = OriginalItem;
 
             // Initialize the Monster Class Box Picker according to the default Monster type 
             MonsterClassPicker.SelectedItem = OriginalClass;
-
-            
 
             // Make a copy of the Monster for cancel to restore
             DataCopy = new MonsterModel(data.Data);         
