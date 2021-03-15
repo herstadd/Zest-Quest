@@ -663,7 +663,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "ScreamRing";
+            button.BindingContext = "Scream Ring";
 
             var NewPage = new CharacterCreatePage();
 
