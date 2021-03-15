@@ -624,7 +624,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "RingPop";
+            button.BindingContext = "Ring Pop";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
