@@ -701,7 +701,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "FlipFlop";
+            button.BindingContext = "Flip Flop";
 
             var NewPage = new CharacterCreatePage();
 
