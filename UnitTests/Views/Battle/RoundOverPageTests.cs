@@ -309,5 +309,29 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Head_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = "Chef Hat",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Head,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
