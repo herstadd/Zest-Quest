@@ -1,6 +1,7 @@
 ﻿using Game.Models;
 using Game.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -389,6 +390,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void EquipItem_Clicked(object sender, EventArgs e)
         {
+            ItemModel CurrentItem = null;
+
+            if (!CurrentItemName.Text.Equals("No item in this spot"))
+            {
+                CurrentItem = ItemIndexViewModel.Instance.GetItem(CurrentItemName.Text, true);
+            }
+
             CurrentItemImage.Source = PossibleItemImage.Source;
             CurrentItemName.Text = PossibleItemName.Text;
             CurrentItemDescription.Text = PossibleItemDescription.Text;
@@ -396,41 +404,53 @@ namespace Game.Views
             CurrentItemAttribute.Text = PossibleItemAttribute.Text;
             CurrentItemValue.Text = PossibleItemValue.Text;
 
-            ItemModel item = ItemIndexViewModel.Instance.GetItem(PossibleItemName.Text, true);
+            ItemModel PossibleItem = ItemIndexViewModel.Instance.GetItem(PossibleItemName.Text, true);
 
             switch (PossibleItemLocation.Text)
             {
                 case "Head":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.Head);
-                    SelectedCharacter.AddItem(ItemLocationEnum.Head, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Head, PossibleItem.Id);
                     break;
                 case "Necklass":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.Necklass);
-                    SelectedCharacter.AddItem(ItemLocationEnum.Necklass, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Necklass, PossibleItem.Id);
                     break;
                 case "Primary Hand":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.PrimaryHand);
-                    SelectedCharacter.AddItem(ItemLocationEnum.PrimaryHand, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.PrimaryHand, PossibleItem.Id);
                     break;
                 case "Off Hand":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.OffHand);
-                    SelectedCharacter.AddItem(ItemLocationEnum.OffHand, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.OffHand, PossibleItem.Id);
                     break;
                 case "Right Finger":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.RightFinger);
-                    SelectedCharacter.AddItem(ItemLocationEnum.RightFinger, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.RightFinger, PossibleItem.Id);
                     break;
                 case "Left Finger":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.LeftFinger);
-                    SelectedCharacter.AddItem(ItemLocationEnum.LeftFinger, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.LeftFinger, PossibleItem.Id);
                     break;
                 case "Feet":
                     SelectedCharacter.RemoveItem(ItemLocationEnum.Feet);
-                    SelectedCharacter.AddItem(ItemLocationEnum.Feet, item.Id);
+                    SelectedCharacter.AddItem(ItemLocationEnum.Feet, PossibleItem.Id);
                     break;
                 default:
                     break;
             }
+            List<ItemModel> test = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList;
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Remove(PossibleItem);
+
+            if(CurrentItem != null)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(CurrentItem);
+            }
+
+            DrawItemLists();
+
+            PopupLoadingView.IsVisible = false;
         }
 		
 		/// <summary>
