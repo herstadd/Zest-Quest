@@ -452,6 +452,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_TurnOff_AutoAttack2_Character_PlayerType_Attacker_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel() { Job = CharacterJobEnum.SushiChef} ;
+
+            // Has no monster, so should show next round.
+
+            // Act
+            page.TurnOff_AutoAttack2();
+
+            // Reset
+            page.SetAttackerAndDefender();
+            page.GameOver();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_NextAttackExample_GameOver_Should_Pass()
         {
             // Arrange
