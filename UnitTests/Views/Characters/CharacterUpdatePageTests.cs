@@ -703,7 +703,7 @@ namespace UnitTests.Views
         {
             // Arrange
             Button button = new Button();
-            button.BindingContext = "CuttingBoard";
+            button.BindingContext = "Cutting Board";
 
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
