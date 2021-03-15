@@ -786,7 +786,7 @@ namespace Game.Models
         /// <returns></returns>
         public int GetItemRange()
         {
-            var weapon = GetItemByLocation(ItemLocationEnum.PrimaryHand);
+            var weapon = ItemIndexViewModel.Instance.GetItem(PrimaryHand,true);
             if (weapon == null)
             {
                 return 0;
