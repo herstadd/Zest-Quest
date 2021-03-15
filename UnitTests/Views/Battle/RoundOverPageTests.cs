@@ -684,5 +684,32 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_EquipItem_Clicked_PossibleItem_Head_Should_Pass()
+        {
+            // Arrange
+            var CurrentItem = (Label)page.FindByName("CurrentItemName");
+            CurrentItem.Text = "Chef Hat";
+
+            var PossibleItem = (Label)page.FindByName("PossibleItemName");
+            PossibleItem.Text = "Chef Hat";
+
+            var PossibleItemLocation = (Label)page.FindByName("PossibleItemLocation");
+            PossibleItemLocation.Text = "Head";
+
+            page.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = null,
+            };
+
+            // Act
+            page.EquipItem_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
