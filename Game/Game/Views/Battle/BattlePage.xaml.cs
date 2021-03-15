@@ -202,22 +202,28 @@ namespace Game.Views
                     if (Attacker.PlayerType == PlayerTypeEnum.Character)
                     {
                         var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                        object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                        var x = (ImageButton)MapObject1;
-                        x.BorderWidth = 3;
-                        x.BorderColor = Color.FromHex("45806D");
-                        x.BackgroundColor = Color.FromHex("C5EBDF");
+                        if (location != null)
+                        {
+                            object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                            var x = (ImageButton)MapObject1;
+                            x.BorderWidth = 3;
+                            x.BorderColor = Color.FromHex("45806D");
+                            x.BackgroundColor = Color.FromHex("C5EBDF");
+                        }
                     }
                 }
             }
             if (NewPlayer != null)
             {
                 var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                var x = (ImageButton)MapObject1;
-                x.BorderWidth = 0;
-                x.BorderColor = Color.Cyan;
-                x.BackgroundColor = Color.Transparent;
+                if (location != null)
+                {
+                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    var x = (ImageButton)MapObject1;
+                    x.BorderWidth = 0;
+                    x.BorderColor = Color.Cyan;
+                    x.BackgroundColor = Color.Transparent;
+                }
             }
             
 
@@ -1161,14 +1167,17 @@ namespace Game.Views
                 if (Attacker.PlayerType == PlayerTypeEnum.Character)
                 {
                     var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                    var x = (ImageButton)MapObject1;
-                    if (x.BorderWidth < 1)
+                    if (location != null)
                     {
-                        x.BorderColor = Color.FromHex("45806D");
-                        x.BackgroundColor = Color.FromHex("C5EBDF");
-                        x.BorderWidth = 3;
-                       // ShowBattleMode();
+                        object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                        var x = (ImageButton)MapObject1;
+                        if (x.BorderWidth < 1)
+                        {
+                            x.BorderColor = Color.FromHex("45806D");
+                            x.BackgroundColor = Color.FromHex("C5EBDF");
+                            x.BorderWidth = 3;
+                            // ShowBattleMode();
+                        }
                     }
                 }
             });
