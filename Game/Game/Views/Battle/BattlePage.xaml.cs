@@ -182,12 +182,19 @@ namespace Game.Views
         /// Update only those that need change
         /// </summary>
         /// <returns></returns>
-        public bool UpdateMapGrid()
+        public bool UpdateMapGrid(PlayerInfoModel NewPlayer = null)
         {
            
             // var test = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel;
-            SetAttackerAndDefender();
-            var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+
+            var Attacker = NewPlayer;
+
+            if (Attacker == null)
+            {
+                SetAttackerAndDefender();
+                Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            }
+
             if ( Attacker != null)
             {
                 if (Attacker.PlayerType == PlayerTypeEnum.Character)
@@ -196,13 +203,18 @@ namespace Game.Views
                     object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
                     var x = (ImageButton)MapObject1;
                     x.BorderWidth = 4;
-                    x.BorderColor = Color.Red;
-
-                   
+                    x.BorderColor = Color.Green; 
                 }
             }
+            if (NewPlayer != null)
+            {
+                var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                var x = (ImageButton)MapObject1;
+                x.BorderWidth = 0;
+                x.BorderColor = Color.Cyan;
+            }
 
-          
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
                
@@ -525,6 +537,11 @@ namespace Game.Views
 
                 Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", AttackerLocation.Player.Name, AttackerLocation.Column, AttackerLocation.Row, CurrentMapLocation.Column, CurrentMapLocation.Row));
 
+                if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
   
                 BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MovePlayerOnMap(AttackerLocation, CurrentMapLocation);
@@ -557,11 +574,7 @@ namespace Game.Views
              * 
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
-            //var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
 
-            //BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
-            //BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data.Player);
-            //NextAttackExample();
 
             // Empty space can be selected only during the game
             if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
@@ -572,33 +585,26 @@ namespace Game.Views
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
+            var Defender = data.Player;
+            
 
             if(data.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                return false;
+               // return false;
             }
             // Can Player reach this location?
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(data, AttackerLocation, AttackerJob))
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
-                NextAttackExample();
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+            //Attacker.border
+                
+            NextAttackExample();
 
-                //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+            UpdateMapGrid(Attacker);
+            //TurnOff_AutoAttack();
+            AttackButton_Clicked(new Button(), EventArgs.Empty);
 
-                //Debug.WriteLine(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
-                //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.a(AttackerLocation, data);
-
-                //UpdateMapGrid();
-                //TurnOff_AutoAttack();
-                //AttackButton_Clicked(new Button(), EventArgs.Empty);
-
-                //GameMessage();
-                //DrawGameBoardAttackerDefenderSection();
-                return true;
-            }
-
-            //data.IsSelectedTarget = true;
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -818,6 +824,8 @@ namespace Game.Views
             // Get the turn, set the current player and attacker to match
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(Defender);
+
             if ( Defender != null && Attacker.PlayerType == Defender.PlayerType)
             {
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));

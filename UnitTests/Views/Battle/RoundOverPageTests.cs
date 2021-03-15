@@ -265,5 +265,385 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void RoundOverPage_ClickedCharacter_Same_Character_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+            };
+
+            // Act
+            var result = NewPage.ClickedCharacter(PlayerStack, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ClickedCharacter_Different_Character_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+            };
+
+            // Act
+            var result = NewPage.ClickedCharacter(PlayerStack, new PlayerInfoModel());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Head_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = "Chef Hat",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Head,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Head_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Head = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Head,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Necklass_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Necklass = "Timer",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Necklass,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Necklass_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Necklass = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Necklass,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_PrimaryHand_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                PrimaryHand = "Refrigerator",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.PrimaryHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_PrimaryHand_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                PrimaryHand = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.PrimaryHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_OffHand_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = "Knife",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.OffHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_OffHand_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                OffHand = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.OffHand,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_RightFinger_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                RightFinger = "Scream Ring",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.RightFinger,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_RightFinger_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                RightFinger = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.RightFinger,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_LeftFinger_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = "Ring Pop",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.LeftFinger,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_LeftFinger_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                LeftFinger = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.LeftFinger,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Valid_Feet_Item_Should_Return_True()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Crocs",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Feet,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Feet_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Feet,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
     }
 }
