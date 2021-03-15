@@ -215,6 +215,7 @@
 
                 <FlexLayout Direction="Row"
                         AlignItems="Start"
+                        Wrap="Wrap"
                         JustifyContent="Start">
                     <Frame WidthRequest="0"  x:Name="headFrame">
                         <StackLayout Orientation="Vertical">
