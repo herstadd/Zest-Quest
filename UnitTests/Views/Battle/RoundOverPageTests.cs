@@ -621,5 +621,29 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void RoundOverPage_ShowPopup_Null_Feet_Item_Should_Return_False()
+        {
+            // Arrange
+            RoundOverPage NewPage = new RoundOverPage();
+            NewPage.SelectedCharacter = new PlayerInfoModel
+            {
+                Feet = "Null",
+            };
+
+            ItemModel TestItem = new ItemModel
+            {
+                Location = ItemLocationEnum.Feet,
+            };
+
+            // Act
+            var result = NewPage.ShowPopup(TestItem);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
     }
 }
