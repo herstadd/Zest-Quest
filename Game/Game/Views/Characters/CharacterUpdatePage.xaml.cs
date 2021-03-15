@@ -31,7 +31,8 @@ namespace Game.Views
         /// </summary>
         public CharacterUpdatePage(GenericViewModel<CharacterModel> data)
         {
-            List<string> locations = ItemLocationEnumHelper.GetAllListItems;
+            List<string> locations = GetInitialLocations(data.Data);
+            List<string> items = GetInitialItems(data.Data);
 
             InitializeComponent();
 
@@ -50,14 +51,52 @@ namespace Game.Views
             // Restores previous max health instead of recalculating
             MaxHealthValue.Text = DataCopy.MaxHealth.ToString();
 
+            RemoveAllItems();
             MakeAllItemsInvisible();
 
             NewItemPicker.SelectedItem = "Chef Hat";
 
-            foreach (string location in locations)
+            for (int i = 0; i < locations.Count; i++)
             {
-                PopulateInitialItems(location, ViewModel.Data);
+                PopulateInitialItems(locations[i], items[i], ViewModel.Data);
             }
+        }
+
+        public List<string> GetInitialItems(CharacterModel data)
+        {
+            List<string> locations = new List<string>();
+            if (data.Head != null) locations.Add(data.Head);
+            if (data.Necklass != null) locations.Add(data.Necklass);
+            if (data.PrimaryHand != null) locations.Add(data.PrimaryHand);
+            if (data.OffHand != null) locations.Add(data.OffHand);
+            if (data.Feet != null) locations.Add(data.Feet);
+            if (data.RightFinger != null) locations.Add(data.RightFinger);
+            if (data.LeftFinger != null) locations.Add(data.LeftFinger);
+            return locations;
+        }
+
+        public List<string> GetInitialLocations(CharacterModel data)
+        {
+            List<string> locations = new List<string>();
+            if (data.Head != null) locations.Add("Head");
+            if (data.Necklass != null) locations.Add("Necklass");
+            if (data.PrimaryHand != null) locations.Add("PrimaryHand");
+            if (data.OffHand != null) locations.Add("OffHand");
+            if (data.Feet != null) locations.Add("Feet");
+            if (data.RightFinger != null) locations.Add("RightFinger");
+            if (data.LeftFinger != null) locations.Add("LeftFinger");
+            return locations;
+        }
+
+        public void RemoveAllItems() 
+        {
+            ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
+            ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
         }
 
         public void MakeAllItemsInvisible()
@@ -71,100 +110,70 @@ namespace Game.Views
             feetFrame.IsVisible = false;
         }
 
-        public void PopulateInitialItems(string location, CharacterModel data)
+        public void PopulateInitialItems(string location, string item, CharacterModel data)
         {
-            string Item;
-            
             switch (location)
             {
                 case "Head":
-                    Item = data.Head;
-                    if(Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.Head = item;
                     headFrame.IsVisible = true;
                     headFrame.WidthRequest = 120;
-                    head.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    headName.Text = Item;
+                    head.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    headName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Necklass":
-                    Item = data.Necklass;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.Necklass = item;
                     necklassFrame.IsVisible = true;
                     necklassFrame.WidthRequest = 120;
-                    necklass.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    necklassName.Text = Item;
+                    necklass.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    necklassName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "PrimaryHand":
-                    Item = data.PrimaryHand;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.PrimaryHand = item;
                     primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
-                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    primaryhandName.Text = Item;
+                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    primaryhandName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "OffHand":
-                    Item = data.OffHand;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.OffHand = item;
                     offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
-                    offhand.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    offhandName.Text = Item;
+                    offhand.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    offhandName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "RightFinger":
-                    Item = data.RightFinger;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.RightFinger = item;
                     rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
-                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    rightfingerName.Text = Item;
+                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    rightfingerName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "LeftFinger":
-                    Item = data.LeftFinger;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.LeftFinger = item;
                     leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
-                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    leftfingerName.Text = Item;
+                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    leftfingerName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
                 case "Feet":
-                    Item = data.Feet;
-                    if (Item == null)
-                    {
-                        break;
-                    }
+                    ViewModel.Data.Feet = item;
                     feetFrame.IsVisible = true;
                     feetFrame.WidthRequest = 120;
-                    feet.Source = ItemIndexViewModel.Instance.GetImage(Item);
-                    feetName.Text = Item;
+                    feet.Source = ItemIndexViewModel.Instance.GetImage(item);
+                    feetName.Text = item;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
                     break;
@@ -276,8 +285,8 @@ namespace Game.Views
             }
             if (AnyItems == 0)
             {
-                NoItemLabel.HeightRequest = 30;
-                ItemLabel.HeightRequest = 0;
+                NoItemLabel.HeightRequest = 0;
+                ItemLabel.HeightRequest = 30;
             }
             else
             {
@@ -457,30 +466,37 @@ namespace Game.Views
                 {
                     case "Head":
                         headFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
                         break;
                     case "Necklass":
                         necklassFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.Necklass);
                         break;
                     case "PrimaryHand":
                         primaryhandFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.PrimaryHand);
                         break;
                     case "OffHand":
                         offhandFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.OffHand);
                         break;
                     case "Feet":
                         feetFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.Feet);
                         break;
                     case "RightFinger":
                         rightfingerFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.RightFinger);
                         break;
                     case "LeftFinger":
                         leftfingerFrame.IsVisible = false;
+                        NoItemLabel.HeightRequest = 0;
                         ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
                         break;
                     default:
