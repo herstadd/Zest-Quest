@@ -27,5 +27,24 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
+
+        [Test]
+        public void ItemAttributeEnumConverterHelperTests_Convert_Bool__Valid_Should_Pass()
+        {
+            // Arrange
+            var myConverter = new ItemAttributeEnumConverter();
+
+            var myObject = true;
+            var Expected = 0;
+
+            // Act
+            var Result = myConverter.Convert(myObject, null, null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
+        }
+
     }
 }
