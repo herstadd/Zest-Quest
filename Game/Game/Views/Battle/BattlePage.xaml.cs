@@ -572,33 +572,26 @@ namespace Game.Views
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
+            var Defender = data.Player;
+            
 
             if(data.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                return false;
+               // return false;
             }
             // Can Player reach this location?
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(data, AttackerLocation, AttackerJob))
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
-                NextAttackExample();
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+                
+            NextAttackExample();
 
-                //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.SeattleSlip + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
+            UpdateMapGrid();
+            //TurnOff_AutoAttack();
+            AttackButton_Clicked(new Button(), EventArgs.Empty);
 
-                //Debug.WriteLine(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
-                //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.a(AttackerLocation, data);
 
-                //UpdateMapGrid();
-                //TurnOff_AutoAttack();
-                //AttackButton_Clicked(new Button(), EventArgs.Empty);
-
-                //GameMessage();
-                //DrawGameBoardAttackerDefenderSection();
-                return true;
-            }
-
-            //data.IsSelectedTarget = true;
-            return false;
+            return true;
         }
 
         /// <summary>
