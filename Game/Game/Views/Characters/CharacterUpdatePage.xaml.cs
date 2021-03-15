@@ -52,7 +52,7 @@ namespace Game.Views
 
             MakeAllItemsInvisible();
 
-            NewItemPicker.SelectedItem = "ChefHat";
+            NewItemPicker.SelectedItem = "Chef Hat";
 
             foreach (string location in locations)
             {
