@@ -8,16 +8,18 @@
              x:Class="Game.Views.MonsterReadPage"
              Title="{Binding Title}">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:MonsterTypeEnumConverter x:Key="MonsterTypeEnumConverter"/>
+            <local_helpers:ItemTypeEnumConverter x:Key="ItemTypeEnumConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
-
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
     <ContentPage.Content>
 
@@ -57,7 +59,7 @@
                         Text="Type" 
                         Style="{StaticResource MonsterLabelStyle}"/>
                     <Label Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.MonsterType}" 
+                        Text="{Binding Data.MonsterType, Converter={StaticResource MonsterTypeEnumConverter}, Mode=OneWay}" 
                         Style="{StaticResource MonsterValueStyle}"/>
 
                     <Label Grid.Row="2" Grid.Column="0"
@@ -74,7 +76,7 @@
                         Text="Unique Drop" 
                         Style="{StaticResource MonsterLabelStyle}"/>
                     <Label Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.UniqueDrop}" 
+                        Text="{Binding Data.UniqueDrop, Converter={StaticResource ItemTypeEnumConverter}, Mode=OneWay}" 
                         Style="{StaticResource MonsterValueStyle}"
                         x:Name="UniqueDrop"/>
 
