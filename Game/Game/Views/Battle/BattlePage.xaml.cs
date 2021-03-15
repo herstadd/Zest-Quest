@@ -957,10 +957,16 @@ namespace Game.Views
 
             // Get the turn, set the current player and attacker to match
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+
+            if(Attacker == null)
+            {
+                return;
+            }
+
             var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(Defender);
 
-            if ( Defender != null && Attacker != null && Attacker.PlayerType == Defender.PlayerType)
+            if ( Defender == null || Attacker.PlayerType == Defender.PlayerType)
             {
                 BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
 
@@ -969,10 +975,13 @@ namespace Game.Views
             if (Attacker != null)
             {
                 var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
-                object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
-                var x = (ImageButton)MapObject1;
-                x.BorderWidth = 0;
-                x.BackgroundColor = Color.Transparent;
+                if (location != null)
+                {
+                    object MapObject1 = GetMapGridObject(GetDictionaryImageButtonName(location));
+                    var x = (ImageButton)MapObject1;
+                    x.BorderWidth = 0;
+                    x.BackgroundColor = Color.Transparent;
+                }
             }
 
             // Hold the current state
