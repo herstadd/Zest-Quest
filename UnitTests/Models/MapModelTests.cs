@@ -1410,5 +1410,23 @@ namespace UnitTests.Models
             Assert.AreEqual(0, result.Row);
             Assert.AreEqual(0, result.Column);
         }
+
+        [Test]
+        public void MapModel_GetAllValidMoveLocationsForPlayer_Default_Not_SousChef_Should_Return_4()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 5;
+
+            // Act
+            var result = map.GetAllValidMoveLocationsForPlayer(MapGridLocationOriginal, CharacterJobEnum.CatChef);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(4, result.Count);
+        }
     }
 }
