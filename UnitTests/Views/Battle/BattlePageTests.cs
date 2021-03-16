@@ -967,6 +967,25 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_SetSelectedEmpty_Start_Battle_Button_Visible_Should_Return_False()
+        {
+            // Arrange
+            var AttackButton = (Button)page.FindByName("AttackButton");
+            var StartBattleButton = (Button)page.FindByName("StartBattleButton");
+
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = true;
+
+            // Act
+            var result = page.SetSelectedEmpty(new MapModelLocation());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_UpdateMapGrid_InValid_Bogus_Image_Should_Fail()
         {
             //Arrange
