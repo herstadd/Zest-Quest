@@ -673,7 +673,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="CurrentLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedMonster(MapModelLocation CurrentLocation)
+        public bool SetSelectedMonster(MapModelLocation CurrentLocation, bool IsTesting = false)
         {
             // TODO: Info
 
@@ -688,7 +688,7 @@ namespace Game.Views
             // Empty space can be selected only during the game
             if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
             {
-                return false; ;
+                return false;
             }
 
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
@@ -697,10 +697,10 @@ namespace Game.Views
             var Defender = CurrentLocation.Player;
 
 
-            if(CurrentLocation.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-               // return false;
-            }
+            //if(CurrentLocation.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
+            //{
+            //   // return false;
+            //}
 
             // Can Player reach this location?
             if (Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
@@ -725,6 +725,10 @@ namespace Game.Views
             
             //if ((BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null) && 
             //        (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null))
+            if(IsTesting)
+            {
+                AttackerName.Text = "";
+            }
             if (/*(DefenderName.Text == "") && */ (AttackerName.Text == ""))
             {
                 UpdateMapGrid();
