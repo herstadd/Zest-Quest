@@ -532,6 +532,38 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_MoveAnimation_With_Valid_Player_Attacking_Should_Return_True()
+        {
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+
+            var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+
+            var Oldlocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+
+            // Act
+            page.MoveAnimation(NewPlayer, Oldlocation, Oldlocation, true);
+
+            // Reset
+            page.SetAttackerAndDefender();
+            page.GameOver();
+            BattleEngineViewModel.Instance.Engine.EndBattle();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+
+        [Test]
         public void BattlePage_NextAttackExample_GameOver_Should_Pass()
         {
             // Arrange
