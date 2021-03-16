@@ -1428,5 +1428,31 @@ namespace UnitTests.Models
             // Assert 
             Assert.AreEqual(4, result.Count);
         }
+
+        [Test]
+        public void MapModel_GetAllValidMoveLocationsForPlayer_Seattle_Winter_Not_SousChef_Should_Return_4()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 5;
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = true;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.SeattleWinterSlippingPercent = 50;
+
+            DiceHelper.EnableForcedRolls();
+            DiceHelper.SetForcedRollValue(10);
+
+            // Act
+            var result = map.GetAllValidMoveLocationsForPlayer(MapGridLocationOriginal, CharacterJobEnum.CatChef);
+
+            // Reset
+            DiceHelper.DisableForcedRolls();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.EnableSeattleWinter = false;
+
+            // Assert 
+            Assert.AreEqual(36, result.Count);
+        }
     }
 }
