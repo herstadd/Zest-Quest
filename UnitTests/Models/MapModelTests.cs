@@ -1456,7 +1456,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MapModel_CanAttackerMoveHere_HeadChef_Should_Return_False()
+        public void MapModel_CanAttackerMoveHere_HeadChef_Invalid_Move_Should_Return_False()
         {
             // Arrange
             var map = new MapModel();
@@ -1476,6 +1476,29 @@ namespace UnitTests.Models
 
             // Assert 
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void MapModel_CanAttackerMoveHere_HeadChef_Valid_Move_Should_Return_True()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 0;
+            MapGridLocationOriginal.Column = 0;
+
+            var MapGridLocationTarget = new MapModelLocation();
+            MapGridLocationTarget.Row = 0;
+            MapGridLocationTarget.Column = 1;
+
+            // Act
+            var result = map.CanAttackerMoveHere(MapGridLocationTarget, MapGridLocationOriginal, CharacterJobEnum.HeadChef);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(true, result);
         }
     }
 }
