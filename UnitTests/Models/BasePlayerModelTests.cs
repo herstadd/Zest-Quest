@@ -1344,7 +1344,7 @@ namespace UnitTests.Models
 
             var Result = data.GetRange();
 
-            Assert.AreEqual(2, Result);
+            Assert.AreEqual(1, Result);
         }
     }
 }
