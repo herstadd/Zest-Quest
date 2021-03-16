@@ -230,7 +230,7 @@ namespace Game.Engine.EngineGame
 
             // Select first one to hit in the list for now...
             // Used to be that we attacked the Weakness (lowest HP) MonsterModel first
-            // Now, we attack the monster with the lowest attack value
+            // Now, we attack the monster with the highest attack value
 
             var Defender = EngineSettings.PlayerList
                 .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
