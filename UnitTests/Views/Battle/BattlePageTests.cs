@@ -501,7 +501,7 @@ namespace UnitTests.Views
         }
 
           [Test]
-        public void BattlePage_MoveAnimation_With_Valid_Player_Should_Return_True()
+        public void BattlePage_MoveAnimation_With_Valid_Player_Moving_Should_Return_True()
         {
             // Arrange
           
@@ -552,6 +552,27 @@ namespace UnitTests.Views
 
             // Act
             page.MoveAnimation(NewPlayer, Oldlocation, Oldlocation, true);
+
+            // Reset
+            page.SetAttackerAndDefender();
+            page.GameOver();
+            BattleEngineViewModel.Instance.Engine.EndBattle();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_MoveAnimation_With_Not_Valid_Player_Should_Return_True()
+        {
+            // Arrange
+
+            var NewPlayer = new PlayerInfoModel() { Job = CharacterJobEnum.Unknown };
+
+            var Oldlocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+
+            // Act
+            page.MoveAnimation(NewPlayer, Oldlocation, Oldlocation, false);
 
             // Reset
             page.SetAttackerAndDefender();
