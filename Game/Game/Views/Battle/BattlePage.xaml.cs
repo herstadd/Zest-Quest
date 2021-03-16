@@ -527,12 +527,12 @@ namespace Game.Views
         public async void MoveAnimation(PlayerInfoModel Player, MapModelLocation OldLocation, MapModelLocation NewLocation, bool Attack = false)
         {
             var PlayerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Player);
-            object MapObject = GetMapGridObject(GetDictionaryImageButtonName(PlayerLocation));
-            if (MapObject == null)
+            if (PlayerLocation == null)
             {
                 return;
             }
-            
+            object MapObject = GetMapGridObject(GetDictionaryImageButtonName(PlayerLocation));
+               
             var ImageOfPlayer = (ImageButton)MapObject;
             var distance = 1;// BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(NewLocation, OldLocation);
             var NumRotations = 1; // Math.Ceiling((double)distance/2);
