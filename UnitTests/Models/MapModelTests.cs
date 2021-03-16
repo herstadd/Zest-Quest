@@ -1454,5 +1454,28 @@ namespace UnitTests.Models
             // Assert 
             Assert.AreEqual(36, result.Count);
         }
+
+        [Test]
+        public void MapModel_CanAttackerMoveHere_HeadChef_Should_Return_False()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 0;
+            MapGridLocationOriginal.Column = 0;
+
+            var MapGridLocationTarget = new MapModelLocation();
+            MapGridLocationTarget.Row = 5;
+            MapGridLocationTarget.Column = 5;
+
+            // Act
+            var result = map.CanAttackerMoveHere(MapGridLocationTarget, MapGridLocationOriginal, CharacterJobEnum.HeadChef);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(false, result);
+        }
     }
 }
