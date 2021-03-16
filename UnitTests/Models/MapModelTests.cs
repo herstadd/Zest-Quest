@@ -1456,6 +1456,27 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void MapModel_GetAllValidMoveLocationsForPlayer_SousChef_Should_Return_4()
+        {
+            // Arrange
+            var map = new MapModel();
+            map.MapXAxiesCount = 6;
+            map.MapYAxiesCount = 6;
+
+            var MapGridLocationOriginal = new MapModelLocation();
+            MapGridLocationOriginal.Row = 0;
+            MapGridLocationOriginal.Column = 0;
+
+            // Act
+            var result = map.GetAllValidMoveLocationsForPlayer(MapGridLocationOriginal, CharacterJobEnum.SousChef);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(4, result.Count);
+        }
+
+        [Test]
         public void MapModel_CanAttackerMoveHere_HeadChef_Invalid_Move_Should_Return_False()
         {
             // Arrange
