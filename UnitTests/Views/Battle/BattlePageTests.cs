@@ -825,7 +825,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_Should_Return_True()
+        public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
         {
             // Arrange
             
@@ -853,6 +853,43 @@ namespace UnitTests.Views
 
             // Act
             var result = page.SetSelectedMonster(location, true);
+
+            // Reset
+            page.GameOver();
+
+            // Assert
+            Assert.AreEqual(true, result); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_Should_Return_True()
+        {
+            // Arrange
+
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+
+            var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+
+            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
+
+
+            page.AutoAttackButtonOff_Clicked(new Button(), EventArgs.Empty);
+            page.HideUIElements();
+
+            //page.SetAttackerAndDefender();
+
+            // Act
+            var result = page.SetSelectedMonster(location);
 
             // Reset
             page.GameOver();
