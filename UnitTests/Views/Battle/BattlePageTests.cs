@@ -471,6 +471,36 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_UpdateMapGrid_With_Valid_New_Player_Should_Return_True()
+        {
+            // Arrange
+          
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+
+            var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+
+
+            // Act
+            page.UpdateMapGrid(false, NewPlayer);
+
+            // Reset
+            page.SetAttackerAndDefender();
+            page.GameOver();
+            BattleEngineViewModel.Instance.Engine.EndBattle();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_NextAttackExample_GameOver_Should_Pass()
         {
             // Arrange
