@@ -824,42 +824,42 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
-        {
-            // Arrange
+        //[Test]
+        //public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
+        //{
+        //    // Arrange
             
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
 
-            //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+        //    //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
 
-            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+        //    BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
 
-            BattleEngineViewModel.Instance.Engine.StartBattle(false);
+        //    BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
-            var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];     
+        //    var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];     
             
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
 
-            var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
+        //    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
 
 
-            page.AutoAttackButtonOff_Clicked(new Button(), EventArgs.Empty);
-            page.HideUIElements();
+        //    page.AutoAttackButtonOff_Clicked(new Button(), EventArgs.Empty);
+        //    page.HideUIElements();
          
-            //page.SetAttackerAndDefender();
+        //    //page.SetAttackerAndDefender();
 
-            // Act
-            var result = page.SetSelectedMonster(location, true);
+        //    // Act
+        //    var result = page.SetSelectedMonster(location, true);
 
-            // Reset
-            page.GameOver();
+        //    // Reset
+        //    page.GameOver();
 
-            // Assert
-            Assert.AreEqual(true, result); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
         [Test]
         public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_Should_Return_True()
