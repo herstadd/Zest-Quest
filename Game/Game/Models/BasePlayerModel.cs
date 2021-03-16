@@ -792,11 +792,6 @@ namespace Game.Models
                 return 0;
             }
 
-            if (weapon.Range < 0)
-            {
-                return 0;
-            }
-
             return weapon.Range;
         }
 
