@@ -251,7 +251,7 @@ namespace Game.GameRules
                     Type = ItemModelEnum.Puppet,
                     Description = "Tell your enemies to talk to the hand! ... er, puppet",
                     ImageURI = "puppet.png",
-                    Range = 2,
+                    Range = 5,
                     Damage = 0,
                     Value = 5,
                     Location = ItemLocationEnum.PrimaryHand,
