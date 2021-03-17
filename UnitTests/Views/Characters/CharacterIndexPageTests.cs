@@ -52,20 +52,6 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
-        //[Test]
-        //public void CharacterIndexPage_AddCharacter_Clicked_Default_Should_Pass()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    page.Add_Clicked(null, null);
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
-
         [Test]
         public void CharacterIndexPage_OnBackButtonPressed_Valid_Should_Pass()
         {

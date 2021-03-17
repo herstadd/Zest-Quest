@@ -72,8 +72,6 @@ namespace Game.Helpers
             myData.Range = JsonHelper.GetJsonInteger(json, "Range");
             myData.Damage = JsonHelper.GetJsonInteger(json, "Damage");
 
-            //myData.Category = JsonHelper.GetJsonInteger(json, "Category");
-
             myData.Location = (ItemLocationEnum)JsonHelper.GetJsonInteger(json, "Location");
             myData.Attribute = (AttributeEnum)JsonHelper.GetJsonInteger(json, "Attribute");
 

@@ -5,6 +5,7 @@ namespace Game
 {
     public static class Constants
     {
+        // Data file name
         public const string DatabaseFilename = "game.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
@@ -15,6 +16,7 @@ namespace Game
             // enable multi-threaded database access
             SQLite.SQLiteOpenFlags.SharedCache;
 
+        // Get database path
         public static string DatabasePath
         {
             get

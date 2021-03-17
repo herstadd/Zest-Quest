@@ -23,11 +23,13 @@ namespace Game.Helpers
         {
             if (value is Enum)
             {
+                //return (int)value;
                 return (int)value;
             }
 
             if (value is string)
             {
+                // Convert String Enum and then Enum to Message
                 var aa = targetType.GetType();
                 var myReturn = Enum.Parse((targetType), value.ToString());
                 return myReturn;
@@ -48,12 +50,14 @@ namespace Game.Helpers
         {
             if (value is int)
             {
+                // Convert the int to the Enum
                 var myReturn = Enum.ToObject(targetType, value);
                 return myReturn.ToString();
             }
 
             if (value is string)
             {
+                // Convert the Message String to the Enum
                 var aa = targetType.GetType();
                 var myReturn = Enum.Parse((targetType), value.ToString());
                 return myReturn;

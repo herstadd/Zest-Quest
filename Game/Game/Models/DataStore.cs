@@ -1,5 +1,4 @@
-﻿
-namespace Game.Models
+﻿namespace Game.Models
 {
     // What data store will be used.  
     public enum DataStoreEnum

@@ -7,6 +7,10 @@ namespace Game.Helpers
 {
     static public class DataSetsHelper
     {
+        /// <summary>
+        /// To warm up Dataset for Score and Item
+        /// </summary>
+        /// <returns></returns>
         static public bool WarmUp()
         {
             ScoreIndexViewModel.Instance.GetCurrentDataSource();
@@ -15,6 +19,7 @@ namespace Game.Helpers
             return true;
         }
 
+        // Lock for wiping
         private static readonly object WipeLock = new object();
 
         /// <summary>

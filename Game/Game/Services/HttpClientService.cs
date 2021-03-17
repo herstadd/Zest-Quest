@@ -34,13 +34,9 @@ namespace Game.Services
                 }
                 return _httpClientInstance;
             }
-            //set
-            //{
-            //    _httpClientInstance = _httpClient;
-            //}
         }
 
-        // this instance
+        // This instance
         public static HttpClientService Instance
         {
             get

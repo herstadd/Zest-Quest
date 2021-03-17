@@ -64,7 +64,10 @@ namespace Game.Services
             return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
+        // Put in the test mode
         public static bool TestMode = false;
+
+        // To force exception on number
         public int ForceExceptionOnNumber = -1;
 
         // Lazy Connection

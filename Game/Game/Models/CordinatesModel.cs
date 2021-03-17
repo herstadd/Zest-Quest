@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Game.Models
+﻿namespace Game.Models
 {
     /// <summary>
     /// The Cordinates for the Map Cell

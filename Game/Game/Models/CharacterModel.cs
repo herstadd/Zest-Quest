@@ -1,6 +1,5 @@
 ﻿using Game.GameRules;
 using Game.Helpers;
-using System;
 
 namespace Game.Models
 {
@@ -52,9 +51,6 @@ namespace Game.Models
             IsBuffGranted = false;
             TurnNumber = 0;
             HadPet = false;
-
-            // Default to unknown, which is no special job
-            // Job = CharacterJobEnum.Unknown;
         }
 
         /// <summary>
@@ -88,8 +84,6 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
-
-            // Difficulty = newData.Difficulty;
 
             Speed = newData.Speed;
             Defense = newData.Defense;
