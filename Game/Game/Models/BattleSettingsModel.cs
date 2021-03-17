@@ -35,6 +35,7 @@ namespace Game.Models
         // Enable Sleepless Zombies in Seattle?
         public bool EnableSleeplessZombie = false;
 
+        // Set Sleepless Zombie Percentage
         public int SleeplessZombiePercent = 50;
     }
 }
