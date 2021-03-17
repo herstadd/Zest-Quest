@@ -748,14 +748,16 @@ namespace Game.Views
                 AttackerName.Text = "Test";
             }
 
-            //if(IsTesting)
-            //{
-            //    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
-            //}
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
             {
 
-                return GameEndingFromMonster(false);
+                UpdateMapGrid();
+
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
+                return true;
             }
 
             AttackButton_Clicked(new Button(), EventArgs.Empty);
@@ -763,24 +765,6 @@ namespace Game.Views
             return true;
         }
 
-        /// <summary>
-        /// Sets parameters for game ending when monster is clicked on
-        /// </summary>
-        /// <returns></returns>
-        public bool GameEndingFromMonster(bool IsTesting)
-        {
-            if (!IsTesting)
-            {
-                UpdateMapGrid();
-            }
-            
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
-            
-
-            AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
-            
-            return true;
-        }
 
         /// <summary>
         /// Event when a Character is clicked on
