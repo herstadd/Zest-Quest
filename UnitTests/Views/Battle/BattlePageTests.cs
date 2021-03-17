@@ -913,6 +913,33 @@ namespace UnitTests.Views
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattlePage_DetermineMapImageButton_Unknown_PlayerType_Should_Return_ImageButton()
+        {
+            // Arrange
+            BattlePage TestingPage = new BattlePage();
+
+            var NewPlayer = new PlayerInfoModel();
+
+            NewPlayer.PlayerType = PlayerTypeEnum.Unknown;
+            MapModel TestMap = new MapModel();
+            TestMap.AddNewCharacterToGrid(NewPlayer);
+
+            var location = TestMap.GetLocationForPlayer(NewPlayer);
+            var TestButton = new ImageButton();
+
+            // Act           
+            var result = TestingPage.DetermineMapImageButton(location, TestButton);
+            TestButton.PerformClick();
+
+            // Reset
+
+            // Assert
+            Type expectedType = typeof(ImageButton);
+            Assert.AreEqual(expectedType, result.GetType()); // Got to here, so it happened...
+        }
+
+
 
         //[Test]
         //public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
