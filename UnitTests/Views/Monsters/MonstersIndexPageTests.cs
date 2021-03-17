@@ -7,8 +7,6 @@ using Game.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
 using Game.ViewModels;
-using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace UnitTests.Views
 {
