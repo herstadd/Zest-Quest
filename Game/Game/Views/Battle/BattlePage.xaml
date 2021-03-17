@@ -74,7 +74,7 @@
                                 Text="Battle Messages"
                                 FontSize="Large"
                                 HorizontalOptions="Center"/>
-                            
+
                             <Label x:Name="BattleMessages" 
                                         HorizontalOptions="FillAndExpand" 
                                         LineBreakMode="WordWrap" 
@@ -84,18 +84,6 @@
                                         Padding="10,10,10,10"
                                         Style="{StaticResource LabelStyle}"
                                         FontSize="Micro"/>
-
-                            <!--<WebView
-                            x:Name="HtmlBox"
-                            WidthRequest="100"
-                            MinimumWidthRequest="100"
-                            HeightRequest="100"
-                            MinimumHeightRequest="100"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Start"
-                            BackgroundColor="Transparent"
-                            IsVisible="false"
-                            />-->
                         </StackLayout>
                     </StackLayout>
                 </Frame>
@@ -114,19 +102,6 @@
                                 <Label x:Name="AttackerName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                                 <Label x:Name="AttackerHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
                             </StackLayout>
-
-                            <!--<StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                <Label x:Name="BattlePlayerBoxVersus" Text="vs" Style="{StaticResource ValueStyleBattleMicro}"
-                                    Padding="0,5,0,0"
-                                    VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                                <Image x:Name="AttackerAttack" Source="mapcell.png" Style="{StaticResource ImageSmallStyle}"/>
-                            </StackLayout>-->
-
-                            <!--<StackLayout x:Name="DefenderBox" Style="{StaticResource PlayerBattleInfoBox}" HorizontalOptions="End">
-                                <Image x:Name="DefenderImage" Source="item.png" Style="{StaticResource ImageBattleMediumStyle}"/>
-                                <Label x:Name="DefenderName" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
-                                <Label x:Name="DefenderHealth" Text="" Style="{StaticResource ValueStyleBattleMicro}"/>
-                            </StackLayout>-->
                         </StackLayout>
                     </Frame>
 
