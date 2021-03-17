@@ -880,11 +880,26 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattlePage_SetSelectedMonster_Test_Mode_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+              var result = page.SetSelectedMonster(new MapModelLocation(), true);
+
+            // Reset
+
+            // Assert
+              Assert.AreEqual(true, result); // Got to here, so it happened...
+        }
+
+
         //[Test]
         //public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
         //{
         //    // Arrange
-            
+
 
         //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
 
@@ -895,7 +910,7 @@ namespace UnitTests.Views
         //    BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
         //    var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];     
-            
+
         //    BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
 
         //    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
@@ -904,7 +919,7 @@ namespace UnitTests.Views
 
         //    page.AutoAttackButtonOff_Clicked(new Button(), EventArgs.Empty);
         //    page.HideUIElements();
-         
+
         //    //page.SetAttackerAndDefender();
 
         //    // Act
