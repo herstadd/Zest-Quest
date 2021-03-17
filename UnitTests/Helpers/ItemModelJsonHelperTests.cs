@@ -129,9 +129,7 @@ namespace UnitTests.Helpers
             Assert.AreEqual("http://www.clipartbest.com/cliparts/4T9/LaR/4T9LaReTE.png", result.ImageURI);
             Assert.AreEqual(0, result.Range);
             Assert.AreEqual(0, result.Damage);
-            //Assert.AreEqual(-1, result.Count);
-            //Assert.AreEqual(false, result.IsConsumable);
-            //Assert.AreEqual(10, result.Category);
+            
         }
 
         [Test]
