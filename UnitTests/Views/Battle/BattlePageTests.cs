@@ -1006,65 +1006,65 @@ namespace UnitTests.Views
             Assert.AreEqual(false,result); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void BattlePage_SetSelectedEmpty_Attack_Button_Visible_Should_Return_False()
-        //{
-        //    // Arrange
-        //    BattlePage MyPage = new BattlePage();
-        //    var AttackButton = (Button)MyPage.FindByName("AttackButton");
-        //    AttackButton.IsVisible = true;
+        [Test]
+        public void BattlePage_SetSelectedEmpty_Attack_Button_Visible_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            AttackButton.IsVisible = true;
 
-        //    // Act
-        //    var result = page.SetSelectedEmpty(new MapModelLocation());
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation());
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.AreEqual(false, result); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void BattlePage_SetSelectedEmpty_Start_Battle_Button_Visible_Should_Return_False()
-        //{
-        //    // Arrange
-        //    BattlePage MyPage = new BattlePage();
-        //    var AttackButton = (Button)MyPage.FindByName("AttackButton");
-        //    var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+        [Test]
+        public void BattlePage_SetSelectedEmpty_Start_Battle_Button_Visible_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
 
-        //    AttackButton.IsVisible = false;
-        //    StartBattleButton.IsVisible = true;
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = true;
 
-        //    // Act
-        //    var result = page.SetSelectedEmpty(new MapModelLocation());
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation());
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.AreEqual(false, result); // Got to here, so it happened...
+        }
 
-        //[Test]
-        //public void BattlePage_SetSelectedEmpty_Next_Round_Button_Visible_Should_Return_False()
-        //{
-        //    // Arrange
-        //    BattlePage MyPage = new BattlePage();
+        [Test]
+        public void BattlePage_SetSelectedEmpty_Next_Round_Button_Visible_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
 
-        //    var AttackButton = (Button)MyPage.FindByName("AttackButton");
-        //    var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
-        //    var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+            var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
 
-        //    AttackButton.IsVisible = false;
-        //    StartBattleButton.IsVisible = false;
-        //    NextRoundButton.IsVisible = true;
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = false;
+            NextRoundButton.IsVisible = true;
 
-        //    // Act
-        //    var result = page.SetSelectedEmpty(new MapModelLocation());
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation());
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.AreEqual(false, result); // Got to here, so it happened...
+        }
 
         [Test]
         public void BattlePage_UpdateMapGrid_InValid_Bogus_Image_Should_Fail()
@@ -1242,23 +1242,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_Starting_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.Starting;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_NewRound_Should_Pass()
         {
             // Arrange
@@ -1293,23 +1276,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_RoundOver_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.RoundOver;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Should_Pass()
         {
             // Arrange
@@ -1326,21 +1292,7 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_Unknown_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
+        
 
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_MapAbility_Should_Pass()
