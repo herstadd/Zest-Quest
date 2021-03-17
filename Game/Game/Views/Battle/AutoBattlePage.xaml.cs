@@ -3,7 +3,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Game.Engine.EngineKoenig;
 using Game.Models;
 using Game.ViewModels;
 using Game.Engine.EngineInterfaces;

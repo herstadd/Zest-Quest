@@ -3,10 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Game.Engine.EngineInterfaces;
-using Game.Engine.EngineModels;
 using Game.GameRules;
 using Game.Models;
-using Game.ViewModels;
 
 namespace Game.Engine.EngineBase
 {

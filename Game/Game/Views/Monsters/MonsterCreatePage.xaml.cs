@@ -3,7 +3,6 @@ using Game.ViewModels;
 
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

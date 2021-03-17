@@ -5,7 +5,6 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
-using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace Game.Views

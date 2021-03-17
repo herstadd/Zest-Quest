@@ -1,8 +1,6 @@
-﻿using Game.Helpers;
-using Game.Models;
+﻿using Game.Models;
 using Game.ViewModels;
 using System;
-using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
