@@ -742,7 +742,7 @@ namespace Game.Views
             {
                 AttackerName.Text = "Test";
             }
-            if (AttackerName.Text.Equals(""))
+            if ((IsTesting && AttackerName.Text.Equals("Chef")) || AttackerName.Text.Equals(""))
             {
                 UpdateMapGrid();
                 Defender.ImageURI = "new_tombstone.png";
