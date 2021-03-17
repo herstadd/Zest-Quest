@@ -520,9 +520,6 @@ namespace Game.Engine.EngineGame
                      
                     }
 
-                  
-
-
                     // Add the Character to the killed list
                     EngineSettings.BattleScore.CharacterAtDeathList += Target.FormatOutput() + "\n";
 
