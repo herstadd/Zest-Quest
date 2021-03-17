@@ -18,6 +18,10 @@ namespace Game.Views
         // View Model for Score
         public readonly GenericViewModel<ScoreModel> ViewModel;
 
+        /// <summary>
+        /// Constructor for unit testing
+        /// </summary>
+        /// <param name="UnitTest"></param>
         public ScoreReadPage(bool UnitTest) { }
 
         /// <summary>
