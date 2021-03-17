@@ -693,9 +693,12 @@ namespace Game.Views
 
 
             // Empty space can be selected only during the game
-            if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
+            if (IsTesting == false)
             {
-                return false;
+                if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
+                {
+                    return false;
+                }
             }
 
             var Attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
@@ -710,7 +713,7 @@ namespace Game.Views
             //}
 
             // Can Player reach this location?
-            if (Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
+            if (IsTesting == false && Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
             {
                 return false;
             }
