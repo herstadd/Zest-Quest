@@ -434,6 +434,29 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_NextAttackExample_NextRound_With_Null_Defender_Should_Pass()
+        {
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+
+            // Act
+            page.NextAttackExample();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_NextAttackExample_NextRound_Null_Attacker_Should_Pass()
         {
             // Arrange
