@@ -16,7 +16,6 @@
 
         <Grid>
 
-            <Image Source="normal_screen_2.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" ></Image>
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
                 <ListView x:Name="ItemsListView" 
