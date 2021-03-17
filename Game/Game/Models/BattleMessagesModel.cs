@@ -53,7 +53,7 @@
         // Ending of the Html Block for Html formatting
         public string htmlTail = @"</p></body></html>";
 
-
+        // Clear all messages
         public bool ClearMessages()
         {
 
