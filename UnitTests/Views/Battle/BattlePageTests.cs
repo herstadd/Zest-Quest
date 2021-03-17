@@ -867,6 +867,23 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_GameOver_Multiple_Death_List_Should_Pass()
+        {
+            // Arrange
+            BattlePage TestingPage = new BattlePage();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.CharacterModelDeathList.Add(new PlayerInfoModel { Job = CharacterJobEnum.CatChef });
+
+            // Act
+            TestingPage.GameOver();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.CharacterModelDeathList.Clear();
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_SetSelectedMonster_Before_Start_Manual_Game_Button_Clicking_Should_Return_Fail()
         {
             // Arrange
