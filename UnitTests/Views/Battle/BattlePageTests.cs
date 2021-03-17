@@ -1033,6 +1033,48 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_SetSelectedMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
+        {
+            // Arrange
+            BattlePage NewPage = new BattlePage();
+
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel NewInstance = new BattleEngineViewModel();
+
+            NewInstance.Engine.Round.MakePlayerList();
+
+            NewInstance.Engine.StartBattle(false);
+
+            
+
+            //var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
+            var NewPlayer = new PlayerInfoModel();
+
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+            MapModel TestMap = new MapModel();
+            TestMap.AddNewCharacterToGrid(NewPlayer);
+
+            // var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+            var location = TestMap.GetLocationForPlayer(NewPlayer);
+            NewInstance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
+
+
+            // Act
+            var result = NewPage.SetSelectedMonster(location,true,false);
+
+            // Reset
+            NewInstance.Engine.Round.EndRound();
+            NewInstance.Engine.EngineSettings.PlayerList.Clear();
+            NewPage.GameOver();
+
+            // Assert
+            Assert.AreEqual(true, result); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_SetSelectedMonsterTest_Attacker_With_Negative_Range_Should_Return_False()
         {
             // Arrange
@@ -1454,22 +1496,22 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeDisplay_SimpleAbility_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleAbility;
+        //[Test]
+        //public void BattleSettingsPage_ShowBattleModeDisplay_SimpleAbility_Should_Pass()
+        //{
+        //    // Arrange
+        //    var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleAbility;
 
-            // Act
-            page.ShowBattleModeDisplay();
+        //    // Act
+        //    page.ShowBattleModeDisplay();
 
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
+        //    // Reset
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
 
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got Here
+        //}
 
         //[Test]
         //public void BattleSettingsPage_ShowBattleModeDisplay_SimpleUnknown_Should_Pass()
