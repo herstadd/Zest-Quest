@@ -1,11 +1,9 @@
 ﻿using System.Threading.Tasks;
-using System.Linq;
 
 using NUnit.Framework;
 
 using Game.Models;
 using Game.Helpers;
-using Game.ViewModels;
 using Game.Engine.EngineBase;
 
 namespace UnitTests.Engine.EngineBase
