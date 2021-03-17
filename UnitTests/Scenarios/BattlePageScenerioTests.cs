@@ -6,6 +6,8 @@ using NUnit.Framework;
 using Game.ViewModels;
 using Game.Views;
 using Game;
+using Game.Models;
+using System.Linq;
 
 namespace Scenario
 {
@@ -26,7 +28,7 @@ namespace Scenario
             Application.Current = app;
 
             // Choose which engine to run
-            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+            BattleEngineViewModel.Instance.SetBattleEngineToGame();
 
             page = new BattlePage();
         }
@@ -34,6 +36,8 @@ namespace Scenario
         [TearDown]
         public void TearDown()
         {
+            BattleEngineViewModel.Instance.EngineGame.EndBattle();
+            Application.Current = null;
         }
 
         [Test]
@@ -50,65 +54,48 @@ namespace Scenario
             Assert.IsNotNull(result);
         }
 
-       //[Test]
-       // public void BattlePage_RunBattle_Monsters_1_Should_Pass()
-       // {
-       //     //Arrange
+        [Test]
+        public void BattlePage_RunBattle_Set_Attacker_Set_Defender_Attack_Returns_RoundEnum_NextTurn()
+        {
+            // Arrange
 
-       //     // Add Characters
+            //  Add Characters
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
 
-       //     page.EngineViewModel.MaxNumberPartyCharacters = 1;
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Job = CharacterJobEnum.HeadChef,                                
+                                Name = "Doug",
+                                ListOrder = 1,
+                            });
 
-       //     var CharacterPlayerMike = new PlayerInfoModel(
-       //                     new CharacterModel
-       //                     {
-       //                         Speed = -1,
-       //                         Level = 10,
-       //                         CurrentHealth = 11,
-       //                         ExperienceTotal = 1,
-       //                         ExperienceRemaining = 1,
-       //                         Name = "Mike",
-       //                         ListOrder = 1,
-       //                     });
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayerMike);
 
-       //     page.EngineViewModel.CharacterList.Add(CharacterPlayerMike);
+            //  Add Monsters
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel() { PlayerType = PlayerTypeEnum.Monster});
 
+           
+           // Act
+            RoundEnum result;
 
-       //     // Add Monsters
+            // Set defender and attacker
+            page.SetAttackerAndDefender();
 
-       //     // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-       //     page.EngineViewModel.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+            //Hit
+            page.NextAttackExample();           
 
+            result = BattleEngineViewModel.Instance.Engine.EngineSettings.RoundStateEnum;
 
-       //     page.EngineViewModel.SetCurrentDefender( page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault();
-       //     page.EngineViewModel.Engine.Round.SetCurrentAttacker(page.EngineViewModel.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault();
+            //Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.RoundStateEnum = RoundEnum.GameOver;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Clear();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
 
-       //     //Act
-       //     RoundEnum result;
-
-       //     // First Character Hits
-       //     page.AttackButton_Clicked(null, null);
-       //     result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     Assert.AreEqual(RoundEnum.NextTurn, result);
-
-       //     // Monsters Turn
-       //     page.AttackButton_Clicked(null, null);
-       //     result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     Assert.AreEqual(RoundEnum.NextTurn, result);
-
-       //     //// loop until game over
-       //     //do
-       //     //{
-       //     //    page.AttackButton_Clicked(null, null);
-       //     //    result = page.EngineViewModel.Engine.RoundStateEnum;
-       //     //    Assert.AreEqual(RoundEnum.NextTurn, result);
-       //     //}
-       //     //while (result != RoundEnum.GameOver);
-
-       //     //Reset
-
-       //     //Assert
-       //     Assert.AreEqual(true, true);
-       // }
+            //Assert
+            Assert.AreEqual(RoundEnum.NextTurn, result);       
+        }
     }
 }
