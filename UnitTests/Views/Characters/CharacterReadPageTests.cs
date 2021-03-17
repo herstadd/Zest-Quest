@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Linq;
 
 using Game;
 using Game.Views;
@@ -8,7 +7,6 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
-using System.Threading.Tasks;
 
 namespace UnitTests.Views
 {
