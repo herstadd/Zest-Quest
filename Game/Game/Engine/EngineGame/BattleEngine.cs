@@ -30,6 +30,7 @@ namespace Game.Engine.EngineGame
         public override bool PopulateCharacterList(CharacterModel data)
         {
             // INFO: Teams, work out your turn logic
+            // We updated CreateCharacterParty to determine how characters are added to the list
             return base.PopulateCharacterList(data);
         }
 
