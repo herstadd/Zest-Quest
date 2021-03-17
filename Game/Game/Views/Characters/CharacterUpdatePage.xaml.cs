@@ -630,7 +630,7 @@ namespace Game.Views
         }
         public void ItemSelected(object sender, EventArgs e)
         {
-            string picked = (string)((Picker)sender).SelectedItem;
+            string picked = ((ItemModel)((Picker)sender).SelectedItem).Name;
             AddItemButton.BindingContext = picked;
         }
     }
