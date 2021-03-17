@@ -75,22 +75,5 @@ namespace Game.Helpers
             }
             return null;
         }
-
-        /// <summary>
-        /// Gets the item from default data matching the passed in target enum
-        /// </summary>
-        /// <param name="Target"></param>
-        /// <returns></returns>
-        public static ItemModel GetItem(ItemModelEnum Target)
-        {
-            foreach (ItemModel item in ItemList)
-            {
-                if (item.Type == Target)
-                {
-                    return item;
-                }
-            }
-            return null;
-        }
     }
 }
