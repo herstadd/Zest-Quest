@@ -894,24 +894,24 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void BattlePage_SetSelectedMonster_Empty_Attacker_Name_Should_Return_True()
-        //{
-        //    // Arrange
-        //    var CurrentLocation = new MapModelLocation
-        //    {
-        //        Row = 0,
-        //        Column = 0,
-        //    };
+        [Test]
+        public void BattlePage_SetSelectedMonster_Attacker_Name_Not_Empty_Should_Return_True()
+        {
+            // Arrange
+            var CurrentLocation = new MapModelLocation
+            {
+                Row = 0,
+                Column = 0,
+            };
 
-        //    // Act
-        //    var result = page.SetSelectedMonster(CurrentLocation, false, true);
+            // Act
+            var result = page.SetSelectedMonster(CurrentLocation, false, true);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(true, result); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.AreEqual(true, result); // Got to here, so it happened...
+        }
 
 
         //[Test]
