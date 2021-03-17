@@ -16,6 +16,9 @@ namespace Game.ViewModels
     /// </summary>
     public class ScoreIndexViewModel : BaseViewModel<ScoreModel>
     {
+        static string DefaultGameName = "Game ";
+        static int DefaultGameNum = 1;
+
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -60,6 +63,11 @@ namespace Game.ViewModels
             // Register the Create Message
             MessagingCenter.Subscribe<ScoreCreatePage, ScoreModel>(this, "Create", async (obj, data) =>
             {
+                if (data.Name.Equals("This is a gadget")) 
+                {
+                    data.Name = DefaultGameName + DefaultGameNum;
+                    DefaultGameNum++;
+                }
                 await CreateAsync(data as ScoreModel);
             });
 
