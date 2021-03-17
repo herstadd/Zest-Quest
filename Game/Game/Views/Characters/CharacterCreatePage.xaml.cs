@@ -405,7 +405,7 @@ namespace Game.Views
                 case "Head":
                     headFrame.IsVisible = true;
                     headFrame.WidthRequest = 120;
-                    head.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    head.Source = FoundItem.ImageURI;
                     headName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -415,7 +415,7 @@ namespace Game.Views
                 case "Necklass":
                     necklassFrame.IsVisible = true;
                     necklassFrame.WidthRequest = 120;
-                    necklass.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    necklass.Source = FoundItem.ImageURI;
                     necklassName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -425,7 +425,7 @@ namespace Game.Views
                 case "Primary Hand":
                     primaryhandFrame.IsVisible = true;
                     primaryhandFrame.WidthRequest = 120;
-                    primaryhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    primaryhand.Source = FoundItem.ImageURI;
                     primaryhandName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -435,7 +435,7 @@ namespace Game.Views
                 case "Off Hand":
                     offhandFrame.IsVisible = true;
                     offhandFrame.WidthRequest = 120;
-                    offhand.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    offhand.Source = FoundItem.ImageURI;
                     offhandName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -445,7 +445,7 @@ namespace Game.Views
                 case "Right Finger":
                     rightfingerFrame.IsVisible = true;
                     rightfingerFrame.WidthRequest = 120;
-                    rightfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    rightfinger.Source = FoundItem.ImageURI;
                     rightfingerName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -455,7 +455,7 @@ namespace Game.Views
                 case "Left Finger":
                     leftfingerFrame.IsVisible = true;
                     leftfingerFrame.WidthRequest = 120;
-                    leftfinger.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    leftfinger.Source = FoundItem.ImageURI;
                     leftfingerName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -465,7 +465,7 @@ namespace Game.Views
                 case "Feet":
                     feetFrame.IsVisible = true;
                     feetFrame.WidthRequest = 120;
-                    feet.Source = ItemIndexViewModel.Instance.GetImage(selected);
+                    feet.Source = FoundItem.ImageURI;
                     feetName.Text = selected;
                     ItemLabel.HeightRequest = 30;
                     NoItemLabel.HeightRequest = 0;
@@ -477,7 +477,7 @@ namespace Game.Views
 
         public void ItemSelected(object sender, EventArgs e)
         {
-            string picked = (string)((Picker)sender).SelectedItem;
+            string picked = ((ItemModel)((Picker)sender).SelectedItem).Name;
             AddItemButton.BindingContext = picked;
         }
     }
