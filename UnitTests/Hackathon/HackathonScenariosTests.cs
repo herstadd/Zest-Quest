@@ -780,7 +780,7 @@ namespace Scenario
         #region Scenario38
 
         [Test]
-        public void HackathonScenario_38_Seattle_Winter_Character_Movement_Test_Pass_TODO()
+        public void HackathonScenario_38_Seattle_Winter_Character_Movement_Test_Should_Pass()
         {
             /* 
             * Scenario Number:  
