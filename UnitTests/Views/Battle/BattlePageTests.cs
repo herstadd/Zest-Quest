@@ -126,6 +126,21 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattlePage_AutoAttackButtonOff_Clicked_With_Monster_AS_Current_Attacker_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType = PlayerTypeEnum.Monster;
+
+            // Act
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Reset
+
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void BattlePage_AutoAttackButtonOff_Clicked_Default_Should_Pass()
