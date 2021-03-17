@@ -1,4 +1,5 @@
 ﻿using Game.Models;
+using System.Collections.ObjectModel;
 
 namespace Game.ViewModels
 {
@@ -8,6 +9,9 @@ namespace Game.ViewModels
         /// The Item Model
         /// </summary>
         T bindingData { get; set; }
+
+        // Have the Database Character List point to the Item Model List
+        public ObservableCollection<ItemModel> DatabaseItemList { get; set; } = ItemIndexViewModel.Instance.Dataset;
 
         public T Data
         {
