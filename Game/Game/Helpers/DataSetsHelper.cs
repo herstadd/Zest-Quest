@@ -11,8 +11,6 @@ namespace Game.Helpers
         {
             ScoreIndexViewModel.Instance.GetCurrentDataSource();
             ItemIndexViewModel.Instance.GetCurrentDataSource();
-            //CharacterIndexViewModel.Instance.GetCurrentDataSource();
-            //MonsterIndexViewModel.Instance.GetCurrentDataSource();
 
             return true;
         }
@@ -41,19 +39,6 @@ namespace Game.Helpers
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncItem.Wait();
-
-                //var runSyncCharacter = Task.Factory.StartNew(new Func<Task>(async () =>
-                //{
-                //    await CharacterIndexViewModel.Instance.DataStoreWipeDataListAsync();
-                //    await Task.Delay(100);
-                //})).Unwrap();
-
-                //var runSyncMonster = Task.Factory.StartNew(new Func<Task>(async () =>
-                //{
-                //    await MonsterIndexViewModel.Instance.DataStoreWipeDataListAsync();
-                //    await Task.Delay(100);
-                //})).Unwrap();
-                //runSyncCharacter.Wait();
             }
 
             return await Task.FromResult(true);
