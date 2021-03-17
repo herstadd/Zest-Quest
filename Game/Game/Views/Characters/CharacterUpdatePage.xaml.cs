@@ -62,6 +62,11 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Gets the initial items for the character model passed in
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public List<string> GetInitialItems(CharacterModel data)
         {
             List<string> locations = new List<string>();
@@ -75,6 +80,11 @@ namespace Game.Views
             return locations;
         }
 
+        /// <summary>
+        /// Gets the initial item locations for the character model passed in
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public List<string> GetInitialLocations(CharacterModel data)
         {
             List<string> locations = new List<string>();
@@ -88,6 +98,9 @@ namespace Game.Views
             return locations;
         }
 
+        /// <summary>
+        /// Removes all items from the view model
+        /// </summary>
         public void RemoveAllItems() 
         {
             ViewModel.Data.RemoveItem(ItemLocationEnum.Head);
@@ -99,6 +112,9 @@ namespace Game.Views
             ViewModel.Data.RemoveItem(ItemLocationEnum.LeftFinger);
         }
 
+        /// <summary>
+        /// Makes all the items invisible on the UI
+        /// </summary>
         public void MakeAllItemsInvisible()
         {
             headFrame.IsVisible = false;
@@ -110,6 +126,12 @@ namespace Game.Views
             feetFrame.IsVisible = false;
         }
 
+        /// <summary>
+        /// Populates the initial items and makes them visible to the UI
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="item"></param>
+        /// <param name="data"></param>
         public void PopulateInitialItems(string location, string item, CharacterModel data)
         {
             switch (location)
@@ -205,8 +227,6 @@ namespace Game.Views
             }
         }
 
-
-
         /// <summary>
         /// Save calls to Update
         /// </summary>
@@ -223,8 +243,6 @@ namespace Game.Views
             // If the Name in the data box is just white space then data won't update 
             if (string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                // pop message appears when name box is just white spaces
-                //await DisplayAlert("Alert", "Name is Empty!", "OK");
                 return;
             }
 
@@ -454,7 +472,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// 
+        /// Hooks up item removal confirmation equipping and front end
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -508,7 +526,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// 
+        /// Hooks the binding context up to the clicked on item
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -544,6 +562,11 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Adds the clicked on item to the character and displays on UI
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AddItemButtonClicked(object sender, EventArgs e)
         {
             string selected = (string)((Button)sender).BindingContext;
@@ -628,6 +651,12 @@ namespace Game.Views
                     break;
             }
         }
+
+        /// <summary>
+        /// Sets the picked item 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ItemSelected(object sender, EventArgs e)
         {
             string picked = ((ItemModel)((Picker)sender).SelectedItem).Name;
