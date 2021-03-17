@@ -1080,29 +1080,11 @@ namespace UnitTests.Views
             // Arrange
             BattlePage NewPage = new BattlePage();
 
-            BattleEngineViewModel NewInstance = new BattleEngineViewModel();
-
-            NewInstance.Engine.Round.MakePlayerList();
-
-            NewInstance.Engine.StartBattle(false);
-
-            var NewPlayer = new PlayerInfoModel();
-
-            MapModel TestMap = new MapModel();
-            TestMap.AddNewCharacterToGrid(NewPlayer);
-
-            var location = TestMap.GetLocationForPlayer(NewPlayer);
-            NewInstance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
-
-
             // Act
             var result = NewPage.GameEndingFromMonster();
 
             // Reset
-            NewInstance.Engine.Round.EndRound();
-            NewInstance.Engine.EngineSettings.PlayerList.Clear();
-            NewPage.GameOver();
-
+           
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
