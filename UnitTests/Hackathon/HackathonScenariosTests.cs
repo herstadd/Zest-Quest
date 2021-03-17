@@ -135,7 +135,6 @@ namespace Scenario
 
             EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
-            // Set Monster Conditions
 
             // Auto Battle will add the monsters
 
@@ -151,7 +150,6 @@ namespace Scenario
             //Assert
             Assert.AreEqual(true, result);
             Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Mike")));
-            //Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario1
 
@@ -289,9 +287,7 @@ namespace Scenario
             // Allow critical hit
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
 
-            // Set Monster Conditions
 
-            // Auto Battle will add the monsters
 
             // Monsters always hit
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
@@ -369,10 +365,6 @@ namespace Scenario
 
             // Allow critical hit
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = true;
-
-            // Set Monster Conditions
-
-            // Auto Battle will add the monsters
 
             // Monsters always hit
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
@@ -874,7 +866,6 @@ namespace Scenario
             Assert.AreEqual(2, result.Column);
             Assert.AreEqual(4, result.Row);
         }
-
 
         #endregion Scenario38
     }

@@ -111,32 +111,6 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void PickCharactersPage_OnApperaing_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList = new List<PlayerInfoModel>();
-        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
-
-        //    BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList = new List<PlayerInfoModel>();
-        //    BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
-
-        //    BattleEngineViewModel.Instance.PartyCharacterList = new ObservableCollection<CharacterModel>();
-        //    BattleEngineViewModel.Instance.PartyCharacterList.Add(new CharacterModel());
-
-        //    var temp = page.EngineViewModel.Engine;
-
-        //    page.UpdateNextButtonState();
-
-        //    // Act
-        //    OnAppearing();
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
-
         [Test]
         public void PickCharactersPage_UpdateButtonState_Default_Should_Pass()
         {
