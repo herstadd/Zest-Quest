@@ -109,6 +109,23 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        
+        [Test]
+        public void BattlePage_OnTimedEvent3_At_GameOver_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Act
+            page.OnTimedEvent3(null, null);
+
+            // Reset
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
 
         [Test]
         public void BattlePage_AutoAttackButtonOff_Clicked_Default_Should_Pass()
