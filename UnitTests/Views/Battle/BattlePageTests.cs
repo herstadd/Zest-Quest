@@ -1032,15 +1032,53 @@ namespace UnitTests.Views
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
+        //[Test]
+        //public void BattlePage_SetSelectedMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
+        //{
+        //    // Arrange
+        //    BattlePage NewPage = new BattlePage();
+
+        //    //BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+        //    //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+        //    BattleEngineViewModel NewInstance = new BattleEngineViewModel();
+
+        //    NewInstance.Engine.Round.MakePlayerList();
+
+        //    NewInstance.Engine.StartBattle(false);
+
+
+
+        //    //var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
+        //    var NewPlayer = new PlayerInfoModel();
+
+        //    //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
+        //    MapModel TestMap = new MapModel();
+        //    TestMap.AddNewCharacterToGrid(NewPlayer);
+
+        //    // var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
+        //    var location = TestMap.GetLocationForPlayer(NewPlayer);
+        //    NewInstance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
+
+
+        //    // Act
+        //    var result = NewPage.SetSelectedMonster(location,true,false);
+
+        //    // Reset
+        //    NewInstance.Engine.Round.EndRound();
+        //    NewInstance.Engine.EngineSettings.PlayerList.Clear();
+        //    NewPage.GameOver();
+
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
+
         [Test]
-        public void BattlePage_SetSelectedMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
+        public void BattlePage_GameEndingFromMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
         {
             // Arrange
             BattlePage NewPage = new BattlePage();
-
-            //BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
-
-            //BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
 
             BattleEngineViewModel NewInstance = new BattleEngineViewModel();
 
@@ -1048,22 +1086,17 @@ namespace UnitTests.Views
 
             NewInstance.Engine.StartBattle(false);
 
-            
-
-            //var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];
             var NewPlayer = new PlayerInfoModel();
 
-            //BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
             MapModel TestMap = new MapModel();
             TestMap.AddNewCharacterToGrid(NewPlayer);
 
-            // var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
             var location = TestMap.GetLocationForPlayer(NewPlayer);
             NewInstance.Engine.EngineSettings.CurrentAttacker = NewPlayer;
 
 
             // Act
-            var result = NewPage.SetSelectedMonster(location,true,false);
+            var result = NewPage.GameEndingFromMonster();
 
             // Reset
             NewInstance.Engine.Round.EndRound();
@@ -1073,6 +1106,7 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
+
 
         [Test]
         public void BattlePage_SetSelectedMonsterTest_Attacker_With_Negative_Range_Should_Return_False()
