@@ -27,6 +27,11 @@ namespace Game.Views
 			InitializeComponent ();
 		}
 
+		/// <summary>
+		/// Clicked the auto battle button, so start auto battle
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		public async void AutobattleButton_Clicked(object sender, EventArgs e)
 		{
 			// Call into Auto Battle from here to do the Battle...
@@ -48,9 +53,6 @@ namespace Game.Views
 			var BattleMessage = string.Format("You cooked {0} Times", AutoBattle.Battle.EngineSettings.BattleScore.RoundCount);
 
 			BattleMessageValue.Text = BattleMessage;
-
-			// Mike had a gif here, we can add one back in if we get access to a gif
-            //AutobattleImage.Source = "troll6_d.gif";
         }
     }
 }
