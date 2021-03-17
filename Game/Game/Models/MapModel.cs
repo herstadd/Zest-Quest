@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Game.Helpers;
-using Game.Models;
 using Game.ViewModels;
 
 namespace Game.Models
@@ -26,8 +24,12 @@ namespace Game.Models
         // The Map Locations
         public MapModelLocation[,] MapGridLocation;
 
+        // To set empty square
         public PlayerInfoModel EmptySquare = new PlayerInfoModel { PlayerType = PlayerTypeEnum.Unknown, ImageURI= "emptyspace_new.png" };
 
+        /// <summary>
+        /// MapModel constructor 
+        /// </summary>
         public MapModel()
         {
             // Create the Map
