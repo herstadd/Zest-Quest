@@ -38,9 +38,6 @@ namespace Game.Models
             Description = "This is a basic Monster";
             MonsterClass = MonsterClassEnum.Standard;
 
-            // Default to unknown, which is no special job
-            //MonsterType = MonsterTypeEnum.Unknown;
-
             // Default to none, which has no special drop
             UniqueDrop = ItemModelEnum.None;
         }
