@@ -719,9 +719,10 @@ namespace UnitTests.Views
         public void CharacterCreatePage_ItemSelected_Should_Pass()
         {
             // Arrange
-            Picker button = new Picker();
-
             var NewPage = new CharacterCreatePage();
+
+            Picker button = new Picker();
+            button.SelectedItem = new ItemModel();
 
 
             // Act
