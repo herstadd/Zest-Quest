@@ -64,7 +64,6 @@ namespace Game.Views
         /// <returns></returns>
         protected override bool OnBackButtonPressed()
         {
-            // Add your code here...
             return true;
         }
     }
