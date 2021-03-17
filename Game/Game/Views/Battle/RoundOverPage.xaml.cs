@@ -54,7 +54,10 @@ namespace Game.Views
             // Draw the Characters
             foreach (var data in EngineSettingsModel.Instance.PlayerList)
             {
-                CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+                if (!data.Job.Equals(CharacterJobEnum.Pet))
+                {
+                    CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+                }
             }
 
         }
