@@ -1122,10 +1122,25 @@ namespace Game.Views
         {
             // Save the Score to the Score View Model, by sending a message to it.
             var Score = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore;
-            MessagingCenter.Send(this, "AddData", Score);
+
+            List<PlayerInfoModel> deathListNotPet = new List<PlayerInfoModel>();
+
+            foreach (var x in Score.CharacterModelDeathList)
+            {
+                if (x.Job != CharacterJobEnum.Pet)
+                    deathListNotPet.Add(x);
+            }
+
+            Score.CharacterModelDeathList = deathListNotPet;
+
+            GenericViewModel<ScoreModel> ViewModel = new GenericViewModel<ScoreModel>(Score);
+
+            MessagingCenter.Send(new ScoreCreatePage(ViewModel), "Create", Score);
 
             ShowBattleMode();
         }
+
+
         #endregion BasicBattleMode
 
         #region MessageHandelers
