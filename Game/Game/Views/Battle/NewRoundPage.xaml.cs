@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using Game.Engine.EngineModels;
 
 namespace Game.Views
 {
@@ -28,10 +29,12 @@ namespace Game.Views
             BeginningTotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
 
             // Draw the Characters
-            foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
+            foreach (var data in EngineSettingsModel.Instance.PlayerList)
 			{
-                PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
-			}
+                if (data.PlayerType.Equals(PlayerTypeEnum.Character)) {
+                    PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
+                }
+            }
 
 			// Draw the Monsters
 			foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)

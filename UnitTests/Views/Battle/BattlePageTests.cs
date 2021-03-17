@@ -109,6 +109,38 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        
+        [Test]
+        public void BattlePage_OnTimedEvent3_At_GameOver_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Act
+            page.OnTimedEvent3(null, null);
+
+            // Reset
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void BattlePage_AutoAttackButtonOff_Clicked_With_Monster_AS_Current_Attacker_Default_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType = PlayerTypeEnum.Monster;
+
+            // Act
+            page.AutoAttackButtonOff_Clicked(null, null);
+
+            // Reset
+
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void BattlePage_AutoAttackButtonOff_Clicked_Default_Should_Pass()
@@ -434,6 +466,29 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_NextAttackExample_NextRound_With_Null_Defender_Should_Pass()
+        {
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+
+
+            // Act
+            page.NextAttackExample();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_NextAttackExample_NextRound_Null_Attacker_Should_Pass()
         {
             // Arrange
@@ -456,9 +511,10 @@ namespace UnitTests.Views
         public void BattlePage_TurnOff_AutoAttack2_Character_PlayerType_Attacker_Should_Pass()
         {
             // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel() { Job = CharacterJobEnum.SushiChef} ;
-
-            // Has no monster, so should show next round.
+            var player = new PlayerInfoModel() { Job = CharacterJobEnum.SushiChef };
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = player;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType = PlayerTypeEnum.Character;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(player);
 
             // Act
             page.TurnOff_AutoAttack2();
@@ -1274,14 +1330,13 @@ namespace UnitTests.Views
         public void BattleSettingsPage_ShowBattleModeUIElements_Unknown_Should_Pass()
         {
             // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.Unknown;
-
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
             // Act
             page.ShowBattleModeUIElements();
 
             // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
 
             // Assert
             Assert.IsTrue(true); // Got Here
