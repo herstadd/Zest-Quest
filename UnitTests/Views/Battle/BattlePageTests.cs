@@ -1007,6 +1007,29 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_SetSelectedEmpty_Default_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+            var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
+
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = false;
+            NextRoundButton.IsVisible = false;
+
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public void BattlePage_SetSelectedEmpty_Attack_Button_Visible_Should_Return_False()
         {
             // Arrange
@@ -1236,23 +1259,6 @@ namespace UnitTests.Views
             page.ShowBattleMode();
 
             // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_NewRound_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.NewRound;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
 
             // Assert
             Assert.IsTrue(true); // Got Here
