@@ -9,7 +9,7 @@ namespace Game.Helpers
     // This allows the convert in the picker to be data bound back and forth the model
     // The picker requires this because the picker must be a string, but the enum is a value...
 
-    // Converts from a String to the enum value.  Head Chef = 13, would return 13 for the string "Head Chef", and for "Head Chef" will return 13
+    // Converts from a String to the enum value.  HeadChef = 13, would return 13 for the string "HeadChef", and for "HeadChef" will return 13
     public class CharacterJobEnumConverter : IValueConverter
     {
         /// <summary>
