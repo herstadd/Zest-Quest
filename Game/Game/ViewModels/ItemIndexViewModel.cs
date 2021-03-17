@@ -265,13 +265,13 @@ namespace Game.ViewModels
 
             if (DefaultItem == null)
             {
-                DefaultItem = DefaultDataHelper.GetItem(item);
+                DefaultItem = Dataset.Where(a => a.Name.Equals(target)).FirstOrDefault();
             }
             else
             {
                 if (item != DefaultItem.Type)
                 {
-                    DefaultItem = DefaultDataHelper.GetItem(item);
+                    DefaultItem = Dataset.Where(a => a.Name.Equals(target)).FirstOrDefault();
                 }
             }
         }
