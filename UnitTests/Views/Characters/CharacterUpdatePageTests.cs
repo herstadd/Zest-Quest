@@ -236,8 +236,11 @@ namespace UnitTests.Views
         {
             // Arrange
             Picker picker = new Picker();
-            picker.SelectedItem = "Refrigerator";
+            var item = new ItemModel();
+            item.Name = "Refrigerator";
+            picker.SelectedItem = item;
 
+         
             var data = new CharacterModel();
             var ViewModel = new GenericViewModel<CharacterModel>(data);
             var NewPage = new CharacterUpdatePage(ViewModel);
