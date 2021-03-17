@@ -24,21 +24,7 @@ namespace UnitTests.Helpers
             Assert.AreEqual(true, result);
         }
 
-        //[Test]
-        //public void RollDiceHelper_SetForcedRollValue_Valid_1_Should_Return_1()
-        //{
-        //    // Arrange
-        //    DiceHelper.EnableForcedRolls();
-
-        //    // Act
-        //    var result = DiceHelper.SetForcedRollValue(1);
-
-        //    // Reset
-        //    DiceHelper.DisableForcedRolls();
-
-        //    // Assert
-        //    Assert.AreEqual(1, result);
-        //}
+      
 
         [Test]
         public void RollDiceHelper_SetForcedRollValue_InValid_Dice_neg1_Should_Return_neg1()
