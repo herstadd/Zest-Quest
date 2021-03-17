@@ -680,7 +680,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="CurrentLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedMonster(MapModelLocation CurrentLocation, bool IsTesting = false)
+        public bool SetSelectedMonster(MapModelLocation CurrentLocation, bool IsTesting = false, bool LateTest = false)
         {
             // TODO: Info
 
@@ -693,7 +693,7 @@ namespace Game.Views
 
 
             // Empty space can be selected only during the game
-            if (IsTesting == false)
+            if (!IsTesting && !LateTest)
             {
                 if (AttackButton.IsVisible == true || StartBattleButton.IsVisible == true || NextRoundButton.IsVisible == true)
                 {
@@ -705,15 +705,18 @@ namespace Game.Views
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
             var Defender = CurrentLocation.Player;
-
-
-            //if(CurrentLocation.Player.PlayerType == Attacker.PlayerType || Attacker.PlayerType == PlayerTypeEnum.Monster)
-            //{
-            //   // return false;
-            //}
+            
+            if(IsTesting || LateTest)
+            {
+                AttackerLocation = new MapModelLocation
+                {
+                    Row = 0,
+                    Column = 1,
+                };
+            }
 
             // Can Player reach this location?
-            if (IsTesting || Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
+            if ((IsTesting && LateTest)|| Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
             {
                 return false;
             }
@@ -735,11 +738,11 @@ namespace Game.Views
             
             //if ((BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null) && 
             //        (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null))
-            if(IsTesting)
+            if(LateTest)
             {
-                AttackerName.Text = "";
+                AttackerName.Text = "Test";
             }
-            if (AttackerName.Text == "")
+            if (AttackerName.Text.Equals(""))
             {
                 UpdateMapGrid();
                 Defender.ImageURI = "new_tombstone.png";

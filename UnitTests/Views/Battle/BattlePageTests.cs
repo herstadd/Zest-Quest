@@ -886,13 +886,32 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            var result = page.SetSelectedMonster(new MapModelLocation(), true);
+            var result = page.SetSelectedMonster(new MapModelLocation(), true, true);
 
             // Reset
 
             // Assert
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
+
+        //[Test]
+        //public void BattlePage_SetSelectedMonster_Empty_Attacker_Name_Should_Return_True()
+        //{
+        //    // Arrange
+        //    var CurrentLocation = new MapModelLocation
+        //    {
+        //        Row = 0,
+        //        Column = 0,
+        //    };
+
+        //    // Act
+        //    var result = page.SetSelectedMonster(CurrentLocation, false, true);
+
+        //    // Reset
+
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
 
         //[Test]
@@ -1425,22 +1444,22 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got Here
         //}
 
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeDisplay_SimpleNext_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleNext;
+        //[Test]
+        //public void BattleSettingsPage_ShowBattleModeDisplay_SimpleNext_Should_Pass()
+        //{
+        //    // Arrange
+        //    var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleNext;
 
-            // Act
-            page.ShowBattleModeDisplay();
+        //    // Act
+        //    page.ShowBattleModeDisplay();
 
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
+        //    // Reset
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
 
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got Here
+        //}
 
         [Test]
         public void BattleSettingsPage_MapIcon_Clicked_Character_Should_Pass()
