@@ -26,30 +26,6 @@ namespace UnitTests.Helpers
             // Assert
         }
 
-        //[Test]
-        //public void AbilityEnumHelper_GetListFighter_Should_Pass()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    var result = AbilityEnumHelper.GetListFighter;
-
-        //    // Assert
-        //    Assert.AreEqual(4, result.Count());
-        //}
-
-        //[Test]
-        //public void AbilityEnumHelper_GetListCleric_Should_Pass()
-        //{
-        //    // Arrange
-
-        //    // Act
-        //    var result = AbilityEnumHelper.GetListCleric;
-
-        //    // Assert
-        //    Assert.AreEqual(5, result.Count());
-        //}
-
         [Test]
         public void AbilityEnumHelper_GetListOthers_Should_Pass()
         {
