@@ -17,20 +17,27 @@ namespace Game.Helpers
 
         // Holds the random value for the sytem
         private static int _ForcedRandomValue = 1;
-
-        // What number should return for random numbers (1 is good choice...)
+        
+        /// <summary>
+        /// What number should return for random numbers (1 is good choice...)
+        /// </summary>
+        /// <param name="value"></param>
         public static void SetForcedRollValue(int value)
         {
             _ForcedRandomValue = value;
         }
-
-        // Turn Random State Off
+        
+        /// <summary>
+        /// Turn Random State Off
+        /// </summary>
         public static void DisableForcedRolls()
         {
             ForceRollsToNotRandom = false;
         }
 
-        // Turn Random State On
+        /// <summary>
+        /// Turn Random State On
+        /// </summary>
         public static void EnableForcedRolls()
         {
             ForceRollsToNotRandom = true;
