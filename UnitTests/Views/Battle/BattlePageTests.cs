@@ -880,11 +880,26 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattlePage_SetSelectedMonster_Test_Mode_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+              var result = page.SetSelectedMonster(new MapModelLocation(), true);
+
+            // Reset
+
+            // Assert
+              Assert.AreEqual(true, result); // Got to here, so it happened...
+        }
+
+
         //[Test]
         //public void BattlePage_SetSelectedMonster_After_Valid_Monster_Selected_And_Kill_Defender_Should_Return_True()
         //{
         //    // Arrange
-            
+
 
         //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
 
@@ -895,7 +910,7 @@ namespace UnitTests.Views
         //    BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
         //    var NewPlayer = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList[0];     
-            
+
         //    BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(NewPlayer);
 
         //    var location = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(NewPlayer);
@@ -904,7 +919,7 @@ namespace UnitTests.Views
 
         //    page.AutoAttackButtonOff_Clicked(new Button(), EventArgs.Empty);
         //    page.HideUIElements();
-         
+
         //    //page.SetAttackerAndDefender();
 
         //    // Act
@@ -1022,6 +1037,35 @@ namespace UnitTests.Views
 
             // Act
             var result = MyPage.SetSelectedEmpty(new MapModelLocation());
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void BattlePage_SetSelectedEmpty_Null_Defender_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel
+            {
+                Job = CharacterJobEnum.HeadChef,
+            };
+
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+            var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
+
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = false;
+            NextRoundButton.IsVisible = false;
+
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation(), true);
 
             // Reset
 
@@ -1263,42 +1307,6 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
-
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_GameOver_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.GameOver;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.Battling;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        
 
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_MapAbility_Should_Pass()
