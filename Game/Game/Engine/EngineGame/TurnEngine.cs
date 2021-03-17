@@ -245,7 +245,7 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// // MonsterModel Attacks CharacterModel
+        /// MonsterModel Attacks CharacterModel
         /// </summary>
         public override bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
@@ -464,7 +464,6 @@ namespace Game.Engine.EngineGame
         public override bool TargetDied(PlayerInfoModel Target)
         {
             // INFO: Teams, Hookup your Boss if you have one...
-            //return base.TargetDied(Target);
             if(Target.PlayerType == PlayerTypeEnum.Monster)
             {
                 var ChanceToRevive = (DiceHelper.RollDice(1, 100) + 1);

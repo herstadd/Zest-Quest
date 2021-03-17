@@ -268,14 +268,6 @@ namespace Game.Views
 
             }
 
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                //Task.Delay(WaitTime);
-                //NextAttackExample();                
-                //AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
-                //AttackButton_Clicked(new Button(), EventArgs.Empty);
-            }
-
             return true;
         }
 
@@ -408,11 +400,6 @@ namespace Game.Views
             if (MapLocationObject.ContainsKey(name))
             {
                 // Update it
-                //if(MapModel.Player == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
-                //{
-                //    data.BorderWidth = 2;
-                //    data.BorderColor = Color.Red;
-                //}
                 MapLocationObject[name] = data;
                 return true;
             }
@@ -739,23 +726,22 @@ namespace Game.Views
             NextAttackExample();
 
             UpdateMapGrid(false, Attacker);
-            //TurnOff_AutoAttack();
             
-            //if ((BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null) && 
-            //        (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null))
             if(LateTest)
             {
                 AttackerName.Text = "Test";
             }
 
-            //if(IsTesting)
-            //{
-            //    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
-            //}
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
             {
 
-                return GameEndingFromMonster(false);
+                UpdateMapGrid();
+
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
+                return true;
             }
 
             AttackButton_Clicked(new Button(), EventArgs.Empty);
@@ -763,24 +749,6 @@ namespace Game.Views
             return true;
         }
 
-        /// <summary>
-        /// Sets parameters for game ending when monster is clicked on
-        /// </summary>
-        /// <returns></returns>
-        public bool GameEndingFromMonster(bool IsTesting)
-        {
-            if (!IsTesting)
-            {
-                UpdateMapGrid();
-            }
-            
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
-            
-
-            AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
-            
-            return true;
-        }
 
         /// <summary>
         /// Event when a Character is clicked on
@@ -849,26 +817,10 @@ namespace Game.Views
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
             AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
 
-            // Show what action the Attacker used
-            //AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
-            
-            //var item = ItemIndexViewModel.Instance.GetItem(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PrimaryHand);
-           // if (item != null)
-           // {
-                //AttackerAttack.Source = item.ImageURI;
-          //  }
-            
-            //DefenderImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
-            //DefenderName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name;
-            //DefenderHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.GetMaxHealthTotal.ToString();
-
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive == false)
             {
                 UpdateMapGrid();
-                //DefenderImage.Source = "new_tombstone.png";
             }
-
-            //BattlePlayerBoxVersus.Text = "vs";
         }
 
         /// <summary>
@@ -879,13 +831,6 @@ namespace Game.Views
             AttackerImage.Source = string.Empty;
             AttackerName.Text = string.Empty;
             AttackerHealth.Text = string.Empty;
-
-            //DefenderImage.Source = string.Empty;
-            //DefenderName.Text = string.Empty;
-            //DefenderHealth.Text = string.Empty;
-            //DefenderImage.BackgroundColor = Color.Transparent;
-
-            //BattlePlayerBoxVersus.Text = string.Empty;
         }
 
         /// <summary>
@@ -895,7 +840,6 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            //NextAttackExample();
             AttackButton.IsEnabled = false;
             AttackButton.IsVisible = false;
             AutoAttackButton.IsVisible = true;
@@ -1180,9 +1124,6 @@ namespace Game.Views
             {
                 BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
             }
-
-            //htmlSource.Html = BattleEngineViewModel.Instance.Engine.BattleMessagesModel.GetHTMLFormattedTurnMessage();
-            //HtmlBox.Source = HtmlBox.Source = htmlSource;
         }
 
         /// <summary>
@@ -1192,7 +1133,6 @@ namespace Game.Views
         {
             BattleMessages.Text = "";
             htmlSource.Html = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.GetHTMLBlankMessage();
-            //HtmlBox.Source = htmlSource;
         }
 
         #endregion MessageHandelers
@@ -1427,21 +1367,17 @@ namespace Game.Views
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum)
             {
                 case BattleStateEnum.Starting:
-                    //GameUIDisplay.IsVisible = false;
-                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:          
                     UpdateMapGrid(true);
-                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
 
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
-                    //AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     
                     // Show the Game Over Display
                     GameOverDisplay.IsVisible = true;

@@ -15,7 +15,7 @@ namespace Game.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoundOverPage: ContentPage
 	{
-
+        // The currently selected character for item assignment after the round is over
         public PlayerInfoModel SelectedCharacter = null;
 
         /// <summary>

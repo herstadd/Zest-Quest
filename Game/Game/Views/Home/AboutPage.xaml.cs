@@ -95,6 +95,9 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Wipes the data
+        /// </summary>
         public void RunWipeData()
         {
             Task.Run(async () => { await DataSetsHelper.WipeDataInSequence(); });
@@ -199,12 +202,6 @@ namespace Game.Views
             // will return shoes value 10 of speed.
             // Example  result = await ItemsController.Instance.GetItemsFromGame(1, 10, AttributeEnum.Speed, ItemLocationEnum.Feet, false, true);
             dataList = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
-
-            // Null not possible, returns empty instead
-            //if (dataList == null)
-            //{
-            //    return result;
-            //}
 
             if (dataList.Count == 0)
             {

@@ -40,7 +40,6 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = BattleEngineViewModel.Instance;
-            //BindingContext = BattleEngineViewModel.Instance;
 
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();

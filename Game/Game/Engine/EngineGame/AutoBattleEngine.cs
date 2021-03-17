@@ -33,28 +33,6 @@ namespace Game.Engine.EngineGame
         // Output Score
         #endregion Algrorithm
 
-        /// <summary>
-        /// Define the Battle variable 
-        /// </summary>
-        //public new IBattleEngineInterface Battle
-        //{
-        //    get
-        //    {
-        //        if (base.Battle == null)
-        //        {
-        //            base.Battle = new BattleEngine
-        //            {
-        //                Round = new RoundEngine()
-        //                {
-        //                    Turn = new TurnEngine()
-        //                }
-        //            };
-        //        }
-        //        return base.Battle;
-        //    }
-        //    set { base.Battle = Battle; }
-        //}
-
         public AutoBattleEngine()
         {
             Battle = new BattleEngine();
@@ -71,7 +49,7 @@ namespace Game.Engine.EngineGame
 
             // To use your own characters, populate the List before calling RunAutoBattle
 
-            //// Will first pull from existing characters
+            // Will first pull from existing characters
             
             foreach (var data in CharacterIndexViewModel.Instance.Dataset)
             {
@@ -103,7 +81,6 @@ namespace Game.Engine.EngineGame
         public override bool DetectInfinateLoop()
         {
             return base.DetectInfinateLoop();
-            ////throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -113,7 +90,6 @@ namespace Game.Engine.EngineGame
         public override Task<bool> RunAutoBattle()
         {
             return base.RunAutoBattle();
-            //throw new System.NotImplementedException();
         }
     }
 }

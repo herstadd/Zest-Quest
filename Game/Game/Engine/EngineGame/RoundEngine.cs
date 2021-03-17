@@ -17,6 +17,9 @@ namespace Game.Engine.EngineGame
         // Hold the BaseEngine
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
 
+        /// <summary>
+        /// Round Engine Constructor
+        /// </summary>
         public RoundEngine()
         {
             Turn = new TurnEngine();
@@ -38,19 +41,6 @@ namespace Game.Engine.EngineGame
             return base.NewRound();
         }
 
-        /// <summary>
-        /// Add Monsters to the Round
-        /// 
-        /// Because Monsters can be duplicated, will add 1, 2, 3 to their name
-        ///   
-        /*
-            * Hint: 
-            * I don't have crudi monsters yet so will add 6 new ones..
-            * If you have crudi monsters, then pick from the list
-
-            * Consdier how you will scale the monsters up to be appropriate for the characters to fight
-            * 
-            */
         /// </summary>
         /// Add 6 Unique random Monsters to each Round from Restautant
         /// <returns></returns>
@@ -139,7 +129,6 @@ namespace Game.Engine.EngineGame
                 return base.PickupItemsForAllCharacters();
             }
             
-            
             return true;
         }
 
@@ -186,8 +175,6 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
-            // return base.MakePlayerList();
-
             // HomeCooks after winning each round their current health will be recovered           
             foreach (var data in EngineSettings.PlayerList)
             {
