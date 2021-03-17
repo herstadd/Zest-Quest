@@ -1,7 +1,6 @@
 ﻿using Game.Helpers;
 using Game.Models;
 using Game.ViewModels;
-using System.Diagnostics;
 
 using System;
 using System.ComponentModel;
