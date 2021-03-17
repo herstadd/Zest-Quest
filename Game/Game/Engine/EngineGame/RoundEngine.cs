@@ -273,7 +273,8 @@ namespace Game.Engine.EngineGame
                 GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
             } 
 
-            // TODO: Figure out how to manually apply items when not in autobattle
+            // Done: Figure out how to manually apply items when not in autobattle
+            // Modified GetItemFromPoolIfBetter and also created functionality to manually add items to characters
             return true;
         }
 
