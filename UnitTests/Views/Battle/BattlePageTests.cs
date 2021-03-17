@@ -880,19 +880,19 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattlePage_SetSelectedMonster_Test_Mode_Should_Return_True()
-        {
-            // Arrange
+        //[Test]
+        //public void BattlePage_SetSelectedMonster_Test_Mode_Should_Return_True()
+        //{
+        //    // Arrange
 
-            // Act
-              var result = page.SetSelectedMonster(new MapModelLocation(), true);
+        //    // Act
+        //    var result = page.SetSelectedMonster(new MapModelLocation(), true);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-              Assert.AreEqual(true, result); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
 
         //[Test]
@@ -1071,6 +1071,38 @@ namespace UnitTests.Views
 
             // Assert
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void BattlePage_SetSelectedEmpty_NonNull_Defender_Should_Return_True()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = new PlayerInfoModel
+            {
+                PlayerType = PlayerTypeEnum.Monster,
+            };
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel
+            {
+                Job = CharacterJobEnum.HeadChef,
+            };
+
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+            var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
+
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = false;
+            NextRoundButton.IsVisible = false;
+
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation(), true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
         }
 
         [Test]
