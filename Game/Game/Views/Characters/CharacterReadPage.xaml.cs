@@ -31,7 +31,6 @@ namespace Game.Views
         /// <param name="viewModel"></param>
         public CharacterReadPage(GenericViewModel<CharacterModel> data)
         {
-
             List<string> locations = ItemLocationEnumHelper.GetAllListItems;
 
             InitializeComponent();
