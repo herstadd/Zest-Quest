@@ -1074,20 +1074,20 @@ namespace UnitTests.Views
         //    Assert.AreEqual(true, result); // Got to here, so it happened...
         //}
 
-        [Test]
-        public void BattlePage_GameEndingFromMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
-        {
-            // Arrange
-            BattlePage NewPage = new BattlePage();
+        //[Test]
+        //public void BattlePage_GameEndingFromMonster_Test_After_Valid_Monster_Selected_Should_Return_True()
+        //{
+        //    // Arrange
+        //    BattlePage NewPage = new BattlePage();
 
-            // Act
-            var result = NewPage.GameEndingFromMonster(true);
+        //    // Act
+        //    var result = NewPage.GameEndingFromMonster(true);
 
-            // Reset
-           
-            // Assert
-            Assert.AreEqual(true, result); // Got to here, so it happened...
-        }
+        //    // Reset
+
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
 
         [Test]
