@@ -132,13 +132,14 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsForAllCharacters()
         {
+            //This is only called in autobattle mode.  In manual mode, the user can assign the items manually
             // Will automatically assign items
             if (EngineSettings.BattleScore.AutoBattle)
             {
                 return base.PickupItemsForAllCharacters();
             }
             
-            // TODO: Determine what happens if not in autobattle mode
+            
             return true;
         }
 
