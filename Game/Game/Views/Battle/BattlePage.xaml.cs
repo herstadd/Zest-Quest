@@ -747,7 +747,11 @@ namespace Game.Views
             {
                 AttackerName.Text = "Test";
             }
-            //if ((IsTesting && AttackerName.Text.Equals("Chef")) || AttackerName.Text.Equals(""))
+
+            if(IsTesting)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+            }
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
             {
                 UpdateMapGrid();
