@@ -16,6 +16,9 @@ namespace Game.Engine.EngineModels
         private static volatile EngineSettingsModel instance;
         private static readonly object syncRoot = new Object();
 
+        /// <summary>
+        /// Creates an Instance of the EngineSettingsModel if it does not already exist
+        /// </summary>
         public static EngineSettingsModel Instance
         {
             get
