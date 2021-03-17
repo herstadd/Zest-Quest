@@ -456,9 +456,10 @@ namespace UnitTests.Views
         public void BattlePage_TurnOff_AutoAttack2_Character_PlayerType_Attacker_Should_Pass()
         {
             // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel() { Job = CharacterJobEnum.SushiChef} ;
-
-            // Has no monster, so should show next round.
+            var player = new PlayerInfoModel() { Job = CharacterJobEnum.SushiChef };
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = player;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType = PlayerTypeEnum.Character;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.AddNewCharacterToGrid(player);
 
             // Act
             page.TurnOff_AutoAttack2();
@@ -1274,14 +1275,13 @@ namespace UnitTests.Views
         public void BattleSettingsPage_ShowBattleModeUIElements_Unknown_Should_Pass()
         {
             // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.Unknown;
-
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Unknown;
             // Act
             page.ShowBattleModeUIElements();
 
             // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
 
             // Assert
             Assert.IsTrue(true); // Got Here
