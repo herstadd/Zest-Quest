@@ -11,17 +11,6 @@
             <!--Global Styles-->
 
             <!--Colors -->
-
-            <!--
-                Light
-                    #BF895A
-                    #D9C6B0
-                    #733612
-                    #8C3D20
-                    #400D01
-                Dark
-                -->
-
             <Color x:Key="PageBackgroundColor">#dc5753</Color>
             <Color x:Key="ViewBackgroundColor">#66bc9f</Color>
             <Color x:Key="NavigationBarColor">#dd2222</Color>
@@ -68,25 +57,15 @@
                 <Setter Property="Padding" Value="0,0,0,0" />
             </Style>
 
-
-            <!--<Style TargetType="ContentPage"
-                x:Key="BlockingPanel">
-                <Setter Property="BackgroundColor" Value="{StaticResource BlockingColor}" />
-                <Setter Property="HeightRequest" Value="400" />
-                <Setter Property="WidthRequest" Value="400" />
-            </Style>-->
-
             <!--Global Styles for Views-->
 
             <!-- Scroll View -->
-
             <Style TargetType="ScrollView">
                 <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
                 <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
             </Style>
 
             <!-- Label -->
-
             <Style TargetType="Label"
                 x:Key="LabelBaseStyle"
                 BaseResourceKey="LayoutFontSize">
@@ -297,23 +276,6 @@
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
             </Style>
-            
-            <!--<Style TargetType="Label"
-                x:Key="GridLabelStyle"
-                BasedOn="{StaticResource LabelStyle}">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="Padding" Value="3" />
-            </Style>-->
-
-            <!--<Style TargetType="Label"
-                x:Key="GridValueStyle"
-                BasedOn="{StaticResource ValueStyle}">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
-                <Setter Property="HorizontalOptions" Value="Fill" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="Padding" Value="3" />
-            </Style>-->
 
             <Style TargetType="Label"
                 x:Key="PopupItemTextStyle"
