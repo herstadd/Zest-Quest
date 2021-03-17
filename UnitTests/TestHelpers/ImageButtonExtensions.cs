@@ -22,17 +22,7 @@ public static class ImageButtonExtensions
 
         // 1.) Raise the Click-event
         sourceButton.RaiseEventViaReflection(nameof(sourceButton.Clicked), EventArgs.Empty);
-
-        //// 2.) Execute the command, if bound and can be executed
-        //ICommand boundCommand = sourceButton.Command;
-        //if (boundCommand != null)
-        //{
-        //    object parameter = sourceButton.CommandParameter;
-        //    if (boundCommand.CanExecute(parameter) == true)
-        //    {
-        //        boundCommand.Execute(parameter);
-        //    }
-        //}
+       
     }
 
     /// <summary>
@@ -53,7 +43,6 @@ public static class ImageButtonExtensions
         foreach (var handler in eventDelegate.GetInvocationList())
         {
             handler.GetMethodInfo().Invoke(handler.Target, new object[] { source, eventArgs });
-            // handler.GetMethodInfo()?.Invoke(handler.Target, new object[] { source, eventArgs });
         }
     }
 }

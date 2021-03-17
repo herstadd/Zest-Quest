@@ -29,11 +29,7 @@ namespace UnitTests.Helpers
             // Make sure each item is in the list
             foreach (var item in myDataList)
             {
-                //if (item == AttributeEnum.Unknown.ToString())
-                //{
-                //    continue;
-                //}
-
+               
                 var found = false;
                 foreach (var expected in myExpectedList)
                 {
