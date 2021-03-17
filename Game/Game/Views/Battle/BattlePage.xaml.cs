@@ -611,7 +611,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="CurrentMapLocation"></param>
         /// <returns></returns>
-        public bool SetSelectedEmpty(MapModelLocation CurrentMapLocation)
+        public bool SetSelectedEmpty(MapModelLocation CurrentMapLocation, bool testing = false)
         {
             // TODO: Info
 
@@ -632,8 +632,15 @@ namespace Game.Views
             var AttackerLocation = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.GetLocationForPlayer(Attacker);
             var AttackerJob = Attacker.Job;
 
+            if(testing)
+            {
+                AttackerLocation = new MapModelLocation();
+                AttackerLocation.Row = 0;
+                AttackerLocation.Column = 1;
+            }
+
             // Can Player reach this location?
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
+            if (testing || BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CanAttackerMoveHere(CurrentMapLocation, AttackerLocation, AttackerJob))
             {
 
                 Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", AttackerLocation.Player.Name, AttackerLocation.Column, AttackerLocation.Row, CurrentMapLocation.Column, CurrentMapLocation.Row));
