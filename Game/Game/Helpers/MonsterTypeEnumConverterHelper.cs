@@ -4,12 +4,13 @@ using System.Globalization;
 using Xamarin.Forms;
 
 namespace Game.Helpers
-{ 
+{
     // This converter is used by the Pickers, to change from the picker value to the string value etc.
     // This allows the convert in the picker to be data bound back and forth the model
     // The picker requires this because the picker must be a string, but the enum is a value...
 
-    // Converts from a String to the enum value.  Head = 5, would return 5 for the string "Head", and for "Head" will return 5
+    // Converts from a String to the enum value.  EvilRefrigerator = 10, would return 10 for the string "EvilRefrigerator", 
+    // and for "EvilRefrigerator" will return 10
     public class MonsterTypeEnumConverter : IValueConverter
     {
         /// <summary>
@@ -52,6 +53,7 @@ namespace Game.Helpers
         {
             if (value is int)
             {
+                // Convert the int to the Enum
                 var myReturn = Enum.ToObject(targetType, value);
                 return ((MonsterTypeEnum)myReturn).ToMessage();
             }
