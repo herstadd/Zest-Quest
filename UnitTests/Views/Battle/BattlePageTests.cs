@@ -1081,7 +1081,7 @@ namespace UnitTests.Views
             BattlePage NewPage = new BattlePage();
 
             // Act
-            var result = NewPage.GameEndingFromMonster();
+            var result = NewPage.GameEndingFromMonster(true);
 
             // Reset
            

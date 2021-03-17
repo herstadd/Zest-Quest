@@ -755,7 +755,7 @@ namespace Game.Views
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
             {
 
-                return GameEndingFromMonster();
+                return GameEndingFromMonster(false);
             }
 
             AttackButton_Clicked(new Button(), EventArgs.Empty);
@@ -767,13 +767,18 @@ namespace Game.Views
         /// Sets parameters for game ending when monster is clicked on
         /// </summary>
         /// <returns></returns>
-        public bool GameEndingFromMonster()
+        public bool GameEndingFromMonster(bool IsTesting)
         {
-            UpdateMapGrid();
-
+            if (!IsTesting)
+            {
+                UpdateMapGrid();
+            }
+            
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+            
 
             AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
+            
             return true;
         }
 
