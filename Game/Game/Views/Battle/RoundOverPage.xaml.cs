@@ -1,4 +1,5 @@
-﻿using Game.Models;
+﻿using Game.Engine.EngineModels;
+using Game.Models;
 using Game.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,7 @@ namespace Game.Views
             }
 
             // Draw the Characters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+            foreach (var data in EngineSettingsModel.Instance.PlayerList)
             {
                 CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
             }
