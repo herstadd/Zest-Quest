@@ -21,7 +21,6 @@
     <ContentPage.Content>
         <Grid>
 
-            <Image Source="normal_screen_2.jpg" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill" ></Image>
             <ScrollView>
                 <StackLayout Style="{StaticResource OuterBoxStack}"
                 Padding="10"
