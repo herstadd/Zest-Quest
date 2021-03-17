@@ -7,16 +7,19 @@ namespace Game.Helpers
 {
     static public class DataSetsHelper
     {
+        /// <summary>
+        /// To warm up Dataset for Score and Item
+        /// </summary>
+        /// <returns></returns>
         static public bool WarmUp()
         {
             ScoreIndexViewModel.Instance.GetCurrentDataSource();
             ItemIndexViewModel.Instance.GetCurrentDataSource();
-            //CharacterIndexViewModel.Instance.GetCurrentDataSource();
-            //MonsterIndexViewModel.Instance.GetCurrentDataSource();
 
             return true;
         }
 
+        // Lock for wiping
         private static readonly object WipeLock = new object();
 
         /// <summary>
@@ -41,19 +44,6 @@ namespace Game.Helpers
                     await Task.Delay(100);
                 })).Unwrap();
                 runSyncItem.Wait();
-
-                //var runSyncCharacter = Task.Factory.StartNew(new Func<Task>(async () =>
-                //{
-                //    await CharacterIndexViewModel.Instance.DataStoreWipeDataListAsync();
-                //    await Task.Delay(100);
-                //})).Unwrap();
-
-                //var runSyncMonster = Task.Factory.StartNew(new Func<Task>(async () =>
-                //{
-                //    await MonsterIndexViewModel.Instance.DataStoreWipeDataListAsync();
-                //    await Task.Delay(100);
-                //})).Unwrap();
-                //runSyncCharacter.Wait();
             }
 
             return await Task.FromResult(true);
