@@ -307,7 +307,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// 
+        /// Removes selected item from user
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -354,7 +354,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// 
+        /// Sets location to binding context of confirm button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -390,6 +390,11 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Adds the selected item to the character
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AddItemButtonClicked(object sender, EventArgs e)
         {
             string selected = (string)((Button)sender).BindingContext;
@@ -475,6 +480,11 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// Adds the picked item to the binding context of the AddItemButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ItemSelected(object sender, EventArgs e)
         {
             string picked = ((ItemModel)((Picker)sender).SelectedItem).Name;
