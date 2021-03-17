@@ -38,15 +38,7 @@
                     HorizontalTextAlignment="Center"
                     FontSize="Medium"
                     />
-
-                <!--Mike had an image on the autobattle page here, but we don't currently have anything to add.
-                If we end up coming up with something, we can uncomment this block-->
-                <!--<Image
-                        x:Name="AutobattleImage"
-                        Source="elf1_a.gif"
-                        IsAnimationPlaying="True"
-                        Style="{StaticResource ImageLargeStyle}"></Image>-->
-
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
