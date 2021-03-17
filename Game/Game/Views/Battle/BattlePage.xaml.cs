@@ -457,7 +457,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="MapLocationModel"></param>
         /// <returns></returns>
-        public ImageButton DetermineMapImageButton(MapModelLocation MapLocationModel)
+        public ImageButton DetermineMapImageButton(MapModelLocation MapLocationModel, ImageButton TestButton = null)
         {
             var data = new ImageButton
             {
@@ -467,6 +467,11 @@ namespace Game.Views
                 // Store the guid to identify this button
                 AutomationId = MapLocationModel.Player.Guid
             };
+
+            if (TestButton != null)
+            {
+                data = TestButton;
+            }
 
             switch (MapLocationModel.Player.PlayerType)
             {
