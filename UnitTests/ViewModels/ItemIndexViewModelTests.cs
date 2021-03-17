@@ -675,17 +675,18 @@ namespace UnitTests.ViewModels
         public void ItemIndexViewModel_GetValues_Invalid_Command_Should_Return_Zero()
         {
             // Arrange
+            ItemModel DefaultItem = new ItemModel();
+            DefaultItem.Name = "Bandana";
 
             // Act
-            var result = ViewModel.GetValues("Bandana", "InvalidCommand");
+            ViewModel.Dataset.Add(DefaultItem);
+            var result = ItemIndexViewModel.Instance.GetValues("Bandana", "InvalidCommand");
 
             // Reset
+            ViewModel.Dataset.Clear();
 
             // Assert
             Assert.AreEqual(0, result);  // Update returned Pass
         }
-
-        // GeValues(string item, string command)
     }
-
 }
