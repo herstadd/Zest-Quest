@@ -11,7 +11,7 @@ namespace Game.ViewModels
         T bindingData { get; set; }
 
         // Have the Database Character List point to the Item Model List
-        public ObservableCollection<ItemModel> DatabaseItemList { get; set; } = ItemIndexViewModel.Instance.Dataset;
+        public ObservableCollection<ItemModel> DatabaseItemList { get; } = ItemIndexViewModel.Instance.Dataset;
 
         public T Data
         {
