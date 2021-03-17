@@ -2,12 +2,9 @@
 
 using Game;
 using Game.Views;
-using Game.ViewModels;
-using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
-using System.Linq;
 
 namespace UnitTests.Views
 {
