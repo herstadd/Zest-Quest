@@ -205,13 +205,7 @@ namespace Game.ViewModels
         /// <returns></returns>
         public string GetImage(string monster)
         {
-            InitializeDefaultMonster(monster);
-
-            // Can never become null
-            //if (DefaultMonster == null)
-            //{
-            //    return "item.png";
-            //}
+            InitializeDefaultMonster(monster);           
 
             return DefaultMonster.ImageURI;
         }
@@ -223,13 +217,7 @@ namespace Game.ViewModels
         /// <returns></returns>
         public ItemModelEnum GetUniqueDrop(string monster)
         {
-            InitializeDefaultMonster(monster);
-
-            // Can never become null
-            //if (DefaultMonster == null)
-            //{
-            //    return ItemModelEnum.Unknown;
-            //}
+            InitializeDefaultMonster(monster);          
 
             return DefaultMonster.UniqueDrop;
         }
@@ -242,12 +230,6 @@ namespace Game.ViewModels
         public string GetMonsterClass(string monster)
         {
             InitializeDefaultMonster(monster);
-
-            // Can never become null
-            //if (DefaultMonster == null)
-            //{
-            //    return "Standard";
-            //}
 
             return MonsterClassEnumExtensions.ToMessage(DefaultMonster.MonsterClass);
         }
