@@ -1030,6 +1030,35 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_SetSelectedEmpty_Null_Defender_Should_Return_False()
+        {
+            // Arrange
+            BattlePage MyPage = new BattlePage();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel
+            {
+                Job = CharacterJobEnum.HeadChef,
+            };
+
+            var AttackButton = (Button)MyPage.FindByName("AttackButton");
+            var StartBattleButton = (Button)MyPage.FindByName("StartBattleButton");
+            var NextRoundButton = (Button)MyPage.FindByName("NextRoundButton");
+
+            AttackButton.IsVisible = false;
+            StartBattleButton.IsVisible = false;
+            NextRoundButton.IsVisible = false;
+
+            // Act
+            var result = MyPage.SetSelectedEmpty(new MapModelLocation(), true);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
         public void BattlePage_SetSelectedEmpty_Attack_Button_Visible_Should_Return_False()
         {
             // Arrange
@@ -1263,42 +1292,6 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
-
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_GameOver_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.GameOver;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        [Test]
-        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Should_Pass()
-        {
-            // Arrange
-            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.Battling;
-
-            // Act
-            page.ShowBattleModeUIElements();
-
-            // Reset
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
-
-            // Assert
-            Assert.IsTrue(true); // Got Here
-        }
-
-        
 
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_MapAbility_Should_Pass()
