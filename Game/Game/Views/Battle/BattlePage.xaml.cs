@@ -748,27 +748,32 @@ namespace Game.Views
                 AttackerName.Text = "Test";
             }
 
-            if(IsTesting)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
-            }
+            //if(IsTesting)
+            //{
+            //    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = null;
+            //}
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender == null)
             {
-                UpdateMapGrid();
-                Defender.ImageURI = "new_tombstone.png";
-                
-                //DefenderName.Text = "Lost";
-                AttackerName.Text = "Win";
-                
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
-                //TurnOff_AutoAttack2();
-                AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
-                return true;
+                return GameEndingFromMonster();
             }
 
             AttackButton_Clicked(new Button(), EventArgs.Empty);
 
+            return true;
+        }
+
+        /// <summary>
+        /// Sets parameters for game ending when monster is clicked on
+        /// </summary>
+        /// <returns></returns>
+        public bool GameEndingFromMonster()
+        {
+            UpdateMapGrid();
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            AutoAttackButton_Clicked(new Button(), EventArgs.Empty);
             return true;
         }
 
