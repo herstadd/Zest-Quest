@@ -26,7 +26,6 @@
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
-
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
                     <StackLayout Style="{StaticResource VerticalStack}"

@@ -713,7 +713,7 @@ namespace Game.Views
             //}
 
             // Can Player reach this location?
-            if (IsTesting == false && Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
+            if (IsTesting || Math.Abs(BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.CalculateDistance(AttackerLocation, CurrentLocation)) > Attacker.GetRange())
             {
                 return false;
             }
@@ -739,7 +739,7 @@ namespace Game.Views
             {
                 AttackerName.Text = "";
             }
-            if (/*(DefenderName.Text == "") && */ (AttackerName.Text == ""))
+            if (AttackerName.Text == "")
             {
                 UpdateMapGrid();
                 Defender.ImageURI = "new_tombstone.png";
