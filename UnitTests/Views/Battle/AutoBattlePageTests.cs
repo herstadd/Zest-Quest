@@ -6,7 +6,6 @@ using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
 using Game.Helpers;
 using Game.Models;
-using Game.Engine;
 using Game.ViewModels;
 
 namespace UnitTests.Views
