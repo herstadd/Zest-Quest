@@ -569,11 +569,11 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AddItemButtonClicked(object sender, EventArgs e)
         {
-            string selected = (string)((Button)sender).BindingContext;
-            if (selected is null)
+            if (!(((Button)sender).BindingContext is string))
             {
                 return;
             }
+            string selected = (string)((Button)sender).BindingContext;
 
             ItemModel FoundItem = ItemIndexViewModel.Instance.GetItem(selected, true);
 
